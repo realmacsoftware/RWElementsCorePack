@@ -1,0 +1,43 @@
+<div x-data="{open:false}" @mouseover="open = true" @mouseleave="open=false">
+    @if(subPage.isFolder)
+    <button
+        @mouseover="handleMouseEnter"
+        @mouseleave="handleMouseLeave"
+        class="w-full flex justify-between items-center @if(subPage.isActive){{classes.desktop.dropdownItemActive}} @else {{classes.desktop.dropdownItem}} @endif"
+    >
+        {{subPage.title}} @includeIf(subPage.hasPages, template:
+        "desktop_submenu_indicator")
+    </button>
+    @else
+    <a
+        @if(subPage.openInNewWindow)
+        target="_blank"
+        @endif
+        href="{{subPage.url}}"
+        class="{{classes.desktop.dropdownItem}} flex justify-between items-center"
+        role="menuitem"
+    >
+        {{subPage.title}} @includeIf(subPage.hasPages, template:
+        "desktop_submenu_indicator")
+    </a>
+    @endif @if(subPage.hasPages)
+    <div x-show="open" x-collapse>
+        <ul class="mx-2">
+            @each(child in subPage.pages)
+            <li class="">
+                <a
+                    @if(child.openInNewWindow)
+                    target="_blank"
+                    @endif
+                    href="{{child.url}}"
+                    class="{{classes.desktop.dropdownItem}}"
+                    role="menuitem"
+                >
+                    {{child.title}}
+                </a>
+            </li>
+            @endeach
+        </ul>
+    </div>
+    @endif
+</div>

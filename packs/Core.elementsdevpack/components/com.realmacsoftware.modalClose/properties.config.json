@@ -1,0 +1,33 @@
+{
+  "groups": [
+    {
+      "title": "Cursor",
+      "icon": "rectangle.and.hand.point.up.left.filled",
+      "properties": [
+        {
+          "title": "Cursor",
+          "id": "closeCursor",
+          "format": "cursor-{{value}}",
+          "select": {
+            "default": "default",
+            "items": [
+              {
+                "title": "Default",
+                "value": "default"
+              },
+              {
+                "title": "Pointer",
+                "value": "pointer"
+              },
+              {
+                "title": "Zoom Out",
+                "value": "zoom-out"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,27 @@
+<div
+    @mouseenter="$dispatch('gallery-lightbox-scroll-to', {id: '{{id}}', index: {{image::index}}})"
+    @click="$dispatch('gallery-lightbox-show', {id: '{{id}}', slide: {{image::index}}})"
+    class="{{classes.thumbnail}}"
+>
+    @if(image.isVideo)
+    <img
+        src="{{image.image}}"
+        alt="{{image.alt}}"
+        class="{{classes.thumbnailImage}}"
+    />
+    @else
+    <img
+        src="{{image}}"
+        alt="{{image.alt}}"
+        class="{{classes.thumbnailImage}}"
+    />
+    @endif @if(thumbnailWantsMeta)
+    <div class="{{classes.thumbnailMeta}}">
+        @if (thumbnailShowCaption)
+        <div class="{{classes.thumbnailCaption}}">{{image.caption}}</div>
+        @endif @if (thumbnailShowAuthor)
+        <div class="{{classes.thumbnailAuthor}}">{{image.author}}</div>
+        @endif
+    </div>
+    @endif
+</div>

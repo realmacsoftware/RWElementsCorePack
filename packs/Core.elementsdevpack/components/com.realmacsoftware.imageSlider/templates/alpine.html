@@ -1,0 +1,415 @@
+@portal("bodyEnd", id: "image-slider-alpine", includeOnce: true)
+<script>
+    document.addEventListener("alpine:init", () => {
+        Alpine.data("imageSlider", (id, options = {}) => ({
+            // Core state
+            id,
+            options,
+            originalSlides: [],
+            slides: [],
+            currentIndex: 0,
+
+            // Transition state
+            transitioning: false,
+
+            // Drag state
+            isDragging: false,
+            hasDragged: false, // Tracks if actual movement occurred (for link handling)
+            startX: 0,
+            currentX: 0,
+
+            // Autoplay state
+            autoplayInterval: null,
+
+            // Configuration
+            dragThresholdPercentage: 20,
+
+            // Cached values
+            sliderEl: null,
+            sliderWidth: 0,
+            isRTL: false,
+
+            // Cleanup references
+            _resizeHandler: null,
+
+            // Computed properties
+            get isFade() {
+                return this.options.transitionType === "fade";
+            },
+
+            get dragThreshold() {
+                return this.sliderWidth * (this.dragThresholdPercentage / 100);
+            },
+
+            get transitionClass() {
+                if (!this.transitioning || this.isDragging) return "";
+                const durationClass =
+                    this.options.transitionDuration || "duration-[500ms]";
+                return `transition-transform ${durationClass}`;
+            },
+
+            get totalSlides() {
+                return this.originalSlides.length;
+            },
+
+            get activeIndex() {
+                if (this.isFade) return this.currentIndex;
+
+                const { visibleSlides } = this.options;
+                const index = this.currentIndex - visibleSlides;
+                return (
+                    ((index % this.totalSlides) + this.totalSlides) %
+                    this.totalSlides
+                );
+            },
+
+            // Lifecycle
+            init() {
+                this.isRTL = document.documentElement.dir === "rtl";
+                this.sliderEl = this.$refs.slider;
+                this.sliderWidth = this.sliderEl?.offsetWidth ?? 0;
+
+                this.extractSlides();
+                this.setupSlides();
+                this.setupResizeHandler();
+
+                this.$nextTick(() => {
+                    this.transitioning = false;
+                    if (this.options.autoplay) {
+                        this.startAutoplay();
+                    }
+                });
+            },
+
+            destroy() {
+                this.stopAutoplay();
+                if (this._resizeHandler) {
+                    window.removeEventListener("resize", this._resizeHandler);
+                    this._resizeHandler = null;
+                }
+            },
+
+            // Setup methods
+            extractSlides() {
+                const slideElements = this.$el.querySelectorAll(".slide");
+                this.originalSlides = [];
+
+                slideElements.forEach((slide) => {
+                    const img = slide.querySelector("img");
+                    if (img?.src) {
+                        const linkUrl = slide.dataset.link || "";
+                        this.originalSlides.push({
+                            src: img.src,
+                            linkUrl: linkUrl || null,
+                        });
+                    }
+                    slide.remove();
+                });
+            },
+
+            setupSlides() {
+                if (this.isFade) {
+                    // For fade mode, create copies to avoid mutation
+                    this.slides = this.originalSlides.map((slide) => ({
+                        ...slide,
+                    }));
+                    this.currentIndex = 0;
+                    return;
+                }
+
+                // Slide mode: create cloned slides for infinite loop
+                const { visibleSlides } = this.options;
+                const total = this.totalSlides;
+
+                // Pre-allocate array: [clones from end] + [original] + [clones from start]
+                this.slides = new Array(total + visibleSlides * 2);
+
+                // Clone last slides to beginning (copy objects to avoid mutation)
+                for (let i = 0; i < visibleSlides; i++) {
+                    this.slides[i] = {
+                        ...this.originalSlides[total - visibleSlides + i],
+                    };
+                }
+
+                // Copy original slides
+                for (let i = 0; i < total; i++) {
+                    this.slides[visibleSlides + i] = {
+                        ...this.originalSlides[i],
+                    };
+                }
+
+                // Clone first slides to end
+                for (let i = 0; i < visibleSlides; i++) {
+                    this.slides[visibleSlides + total + i] = {
+                        ...this.originalSlides[i],
+                    };
+                }
+
+                this.currentIndex = visibleSlides;
+            },
+
+            setupResizeHandler() {
+                let timeoutId = null;
+
+                this._resizeHandler = () => {
+                    if (timeoutId) clearTimeout(timeoutId);
+                    timeoutId = setTimeout(() => {
+                        this.sliderWidth = this.sliderEl?.offsetWidth ?? 0;
+                    }, 250);
+                };
+
+                window.addEventListener("resize", this._resizeHandler, {
+                    passive: true,
+                });
+            },
+
+            // Navigation
+            next() {
+                // Prevent navigation while transitioning to avoid skipping slides
+                if (this.transitioning) return;
+
+                if (this.isFade) {
+                    this.currentIndex =
+                        (this.currentIndex + 1) % this.totalSlides;
+                } else {
+                    this.currentIndex += this.isRTL ? -1 : 1;
+                }
+
+                this.transitioning = true;
+
+                if (this.options.autoplay) {
+                    this.resetAutoplay();
+                }
+            },
+
+            prev() {
+                // Prevent navigation while transitioning to avoid skipping slides
+                if (this.transitioning) return;
+
+                if (this.isFade) {
+                    this.currentIndex =
+                        (this.currentIndex - 1 + this.totalSlides) %
+                        this.totalSlides;
+                } else {
+                    this.currentIndex += this.isRTL ? 1 : -1;
+                }
+
+                this.transitioning = true;
+
+                if (this.options.autoplay) {
+                    this.resetAutoplay();
+                }
+            },
+
+            goTo(index) {
+                // Prevent navigation while transitioning to avoid skipping slides
+                if (this.transitioning) return;
+                // Also prevent going to the already active slide
+                if (this.activeIndex === index) return;
+
+                if (this.isFade) {
+                    this.currentIndex = index;
+                } else {
+                    this.currentIndex = index + this.options.visibleSlides;
+                }
+
+                this.transitioning = true;
+
+                if (this.options.autoplay) {
+                    this.resetAutoplay();
+                }
+            },
+
+            // Transition handling
+            onTransitionEnd() {
+                if (this.isFade) {
+                    this.transitioning = false;
+                    return;
+                }
+
+                // Handle infinite loop wrapping for slide mode
+                const { visibleSlides } = this.options;
+                const total = this.totalSlides;
+                const minIndex = visibleSlides;
+                const maxIndex = visibleSlides + total - 1;
+
+                if (this.currentIndex < minIndex) {
+                    // Wrapped past beginning, jump to end instantly
+                    this.currentIndex += total;
+                } else if (this.currentIndex > maxIndex) {
+                    // Wrapped past end, jump to beginning instantly
+                    this.currentIndex -= total;
+                }
+
+                this.transitioning = false;
+            },
+
+            // Autoplay
+            startAutoplay() {
+                this.stopAutoplay();
+                const delay = this.options.autoplayDelay || 3000;
+
+                this.autoplayInterval = setInterval(() => {
+                    if (!this.isDragging && !this.transitioning) {
+                        this.isRTL ? this.prev() : this.next();
+                    }
+                }, delay);
+            },
+
+            stopAutoplay() {
+                if (this.autoplayInterval) {
+                    clearInterval(this.autoplayInterval);
+                    this.autoplayInterval = null;
+                }
+            },
+
+            resetAutoplay() {
+                this.stopAutoplay();
+                this.startAutoplay();
+            },
+
+            // Drag handling
+            startDrag(event) {
+                if (this.isFade) return;
+
+                this.stopAutoplay();
+                this.isDragging = true;
+                this.hasDragged = false; // Reset drag detection
+                this.transitioning = false;
+                this.startX = this.getEventX(event);
+                this.currentX = this.startX;
+            },
+
+            drag(event) {
+                if (!this.isDragging) return;
+                this.currentX = this.getEventX(event);
+
+                // Mark as dragged if moved more than 5px (distinguishes from click)
+                if (
+                    !this.hasDragged &&
+                    Math.abs(this.currentX - this.startX) > 5
+                ) {
+                    this.hasDragged = true;
+                }
+            },
+
+            endDrag() {
+                if (!this.isDragging) return;
+
+                const dragDistance = this.currentX - this.startX;
+                const shouldChange =
+                    Math.abs(dragDistance) >= this.dragThreshold;
+
+                // Reset drag state (but keep hasDragged for click handler)
+                this.isDragging = false;
+                this.startX = 0;
+                this.currentX = 0;
+
+                if (shouldChange) {
+                    // next()/prev() will set transitioning = true
+                    dragDistance > 0 ? this.prev() : this.next();
+                } else {
+                    // Snap back to current position with transition
+                    this.transitioning = true;
+                    // Reset transitioning after snap animation completes
+                    // This will be handled by transitionend event
+                }
+
+                if (this.options.autoplay) {
+                    this.startAutoplay();
+                }
+            },
+
+            // Handle link clicks - only navigate if not dragging
+            handleLinkClick(event, linkUrl) {
+                // If a drag occurred, prevent navigation
+                if (this.hasDragged) {
+                    event.preventDefault();
+                    this.hasDragged = false; // Reset for next interaction
+                    return;
+                }
+
+                // Allow normal link navigation
+                if (linkUrl) {
+                    window.location.href = linkUrl;
+                }
+            },
+
+            getEventX(event) {
+                // Check for touch event more efficiently
+                return event.touches?.[0]?.clientX ?? event.clientX;
+            },
+
+            // Slide rendering helpers
+            isSlideActive(index) {
+                return index === this.currentIndex;
+            },
+
+            getSlideStyle(index) {
+                if (!this.isFade) return "";
+
+                const isActive = index === this.currentIndex;
+                return `opacity: ${isActive ? 1 : 0}; z-index: ${
+                    isActive ? 10 : 0
+                };`;
+            },
+
+            // Slider element bindings
+            slider: {
+                [":class"]() {
+                    return this.isFade ? "" : this.transitionClass;
+                },
+
+                [":style"]() {
+                    if (this.isFade) return "";
+
+                    const { visibleSlides } = this.options;
+                    const position = this.currentIndex * (100 / visibleSlides);
+                    const sign = this.isRTL ? "" : "-";
+
+                    if (this.isDragging) {
+                        const dragOffset = this.currentX - this.startX;
+                        return `transform: translateX(calc(${sign}${position}% + ${dragOffset}px))`;
+                    }
+
+                    return `transform: translateX(${sign}${position}%)`;
+                },
+
+                ["@mousedown"](event) {
+                    this.startDrag(event);
+                },
+
+                ["@mousemove"](event) {
+                    if (this.isDragging) this.drag(event);
+                },
+
+                ["@mouseup"]() {
+                    this.endDrag();
+                },
+
+                ["@mouseleave"]() {
+                    if (this.isDragging) this.endDrag();
+                },
+
+                ["@touchstart.passive"](event) {
+                    this.startDrag(event);
+                },
+
+                ["@touchmove.passive"](event) {
+                    if (this.isDragging) this.drag(event);
+                },
+
+                ["@touchend.passive"]() {
+                    this.endDrag();
+                },
+
+                ["@transitionend.self"]() {
+                    if (!this.isFade) {
+                        this.onTransitionEnd();
+                    }
+                },
+            },
+        }));
+    });
+</script>
+@endportal

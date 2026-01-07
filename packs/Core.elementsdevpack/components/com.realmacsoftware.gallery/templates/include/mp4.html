@@ -1,0 +1,6 @@
+<video @click.stop="" id="self-hosted-video" class="aspect-video {{classes.lightboxItem}} w-full h-auto" x-ref="player"
+  preload="auto" :muted="muted ? 'muted' : null" :loop="loop ? 'loop' : null" :controls="controls ? 'controls' : null"
+  :autoplay="autoplay ? 'autoplay' : null">
+  <source src="{{item}}" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>

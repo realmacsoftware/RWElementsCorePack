@@ -1,0 +1,23 @@
+@if (wantsVisibilityHidden)
+.{{id}} {
+    visibility: hidden;
+}
+@endif
+
+@if (scrollAnimations.previewInEditor)
+@keyframes scroll-animation-{{id}} {
+    0% {
+        opacity: var(--scroll-animation-from-opacity);
+        transform: rotate(var(--scroll-animation-from-rotate)) scale(var(--scroll-animation-from-scale)) translate(var(--scroll-animation-from-x), var(--scroll-animation-from-y));
+    }
+    100% {
+        opacity: var(--scroll-animation-to-opacity);
+        transform: rotate(var(--scroll-animation-to-rotate)) scale(var(--scroll-animation-to-scale)) translate(var(--scroll-animation-to-x), var(--scroll-animation-to-y));
+    }
+}
+
+.{{id}} {
+    animation: scroll-animation-{{id}} {{animations.editorPreviewCSSVars.duration}} ease-in-out infinite;
+    animation-delay: {{animations.editorPreviewCSSVars.delay}};
+}
+@endif

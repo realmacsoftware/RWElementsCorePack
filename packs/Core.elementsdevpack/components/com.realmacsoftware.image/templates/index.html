@@ -1,0 +1,54 @@
+@if(!hasImage)
+<img
+    class="{{classes.img}}"
+    src="{{sharedAssetPath}}/images/image-square.png"
+    alt="{{alt}}"
+/>
+@else
+<picture>
+    @if(!isCMSImage)
+        @each(source in darkImage.sources)
+            <source
+                media="{{source.media}} and (prefers-color-scheme: dark)"
+                srcset="{{source.srcset}}"
+            />
+        @endeach
+
+        @if(hasDarkImage)
+            <source
+                media="(prefers-color-scheme: dark)"
+                srcset="{{darkImage.resource.image}}"
+            />
+        @endif
+
+        @each(source in lightImage.sources)
+            <source media="{{source.media}}" srcset="{{source.srcset}}" />
+        @endeach
+    @endif
+
+    <!-- Fallback img element -->
+    <img
+        class="{{classes.img}}"
+        src="{{lightImage.resource.image}}"
+        alt="{{alt}}"
+        width="{{imageWidth}}"
+        height="{{imageHeight}}"
+        @if(wantsLightbox)
+        x-data=""
+        @click="$dispatch('image-lightbox-open', { id: '{{id}}' })"
+        @endif
+        @if(imageProtection)
+        oncontextmenu="return false"
+        ondragstart="return false"
+        onmousedown="return false"
+        @endif
+        @if(imageLazyLoading)
+        loading="lazy"
+        @endif
+        @if(wantsFetchPriority)
+        fetchpriority="{{imageFetchPriority}}"
+        @endif
+        decoding="async"
+    />
+</picture>
+@endif @includeIf(wantsLightbox, template: "lightbox")

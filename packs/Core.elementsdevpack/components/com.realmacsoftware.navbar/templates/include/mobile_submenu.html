@@ -1,0 +1,34 @@
+<ul x-show="open" x-cloak x-collapse class="mt-1 flex flex-col gap-y-1 px-4">
+    @each(child in page.pages)
+    <li
+        x-data="{open:false}"
+        aria-expanded="false"
+        x-bind:aria-expanded="open.toString()"
+        @click="open = !open"
+    >
+        @if(child.isFolder)
+        <button
+            aria-expanded="false"
+            x-bind:aria-expanded="open.toString()"
+            class="{{classes.mobile.item}} flex justify-between items-center w-full"
+        >
+            <span>{{child.title}}</span>
+            @include("mobile_submenu_indicator")
+        </button>
+        @else
+        <div class="{{classes.mobile.item}} flex justify-between items-center">
+            <a
+                class="block"
+                href="{{child.url}}"
+                @click.stop
+                @if(child.openInNewWindow)
+                target="_blank"
+                @endif
+                >{{child.title}}</a
+            >
+            @includeIf(child.hasPages, template: "mobile_submenu_indicator")
+        </div>
+        @endif @includeIf(child.hasPages, template: "mobile_submenu_menu")
+    </li>
+    @endeach
+</ul>

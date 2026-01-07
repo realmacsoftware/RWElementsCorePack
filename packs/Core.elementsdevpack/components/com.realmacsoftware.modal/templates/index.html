@@ -1,0 +1,37 @@
+<span
+    @click="$dispatch('open-modal', { id: '{{id}}' })"
+    class="{{classes.trigger}}"
+>
+    @dropzone("trigger", title: "Trigger")
+</span>
+
+@portal("bodyEnd")
+<div
+    x-dialog
+    @if(!edit)
+    x-cloak
+    @endif
+    x-data="{ open: false }"
+    @open-modal.window="(e) => { open = e.detail.id === '{{id}}' }"
+    x-model="open"
+    class="{{classes.dialog}}"
+    data-modal-id="{{id}}"
+>
+    <div
+        x-dialog:overlay
+        x-transition.opacity
+        class="{{classes.overlay}}"
+    ></div>
+
+    <div @click.stop="open = false" class="{{classes.panel}}">
+        <div
+            @click.stop
+            x-dialog:panel
+            {{transitionAttributes}}
+            class="{{classes.panelInner}}"
+        >
+            @dropzone("content", title: "Content")
+        </div>
+    </div>
+</div>
+@endportal

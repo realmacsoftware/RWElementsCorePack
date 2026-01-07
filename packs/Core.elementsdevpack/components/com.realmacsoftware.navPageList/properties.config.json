@@ -1,0 +1,311 @@
+{
+  "groups": [
+    {
+      "title": "Pages",
+      "icon": "doc",
+      "properties": [
+        {
+          "title": "Display",
+          "heading": {}
+        },
+        {
+          "title": "Show",
+          "id": "show",
+          "select": {
+            "default": "all",
+            "items": [
+              {
+                "title": "Top Level Pages",
+                "value": "all"
+              },
+              {
+                "title": "Folder",
+                "value": "folder"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "show == 'folder'",
+          "title": "Folder",
+          "id": "folderLink",
+          "link": {}
+        },
+        {
+          "title": "Layout",
+          "heading": {}
+        },
+        {
+          "title": "Direction",
+          "id": "flexDirection",
+          "format": "flex-{{value}}",
+          "select": {
+            "default": "row",
+            "items": [
+              {
+                "title": "Horizontal",
+                "value": "row"
+              },
+              {
+                "title": "Vertical",
+                "value": "col"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Align",
+          "id": "flexAlignItems",
+          "format": "items-{{value}}",
+          "select": {
+            "default": "center",
+            "items": [
+              {
+                "title": "Start",
+                "value": "start"
+              },
+              {
+                "title": "Center",
+                "value": "center"
+              },
+              {
+                "title": "End",
+                "value": "end"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Justify",
+          "id": "flexJustify",
+          "format": "justify-{{value}}",
+          "select": {
+            "default": "start",
+            "items": [
+              {
+                "title": "Start",
+                "value": "start"
+              },
+              {
+                "title": "Center",
+                "value": "center"
+              },
+              {
+                "title": "End",
+                "value": "end"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Gap",
+          "id": "gap",
+          "format": "gap-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "4"
+              }
+            }
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Icons",
+          "heading": {}
+        },
+        {
+          "title": "Show",
+          "id": "showIcons",
+          "responsive": false,
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "enable": "showIcons == true",
+          "title": "Layout",
+          "id": "iconLayout",
+          "format": "flex-{{value}}",
+          "select": {
+            "default": "row",
+            "items": [
+              {
+                "title": "Horizontal",
+                "value": "row"
+              },
+              { 
+                "title": "Vertical",
+                "value": "col"
+              }
+            ]
+          }
+        },
+        {
+          "enable": "showIcons == true",
+          "title": "Alignment",
+          "id": "iconAlignment",
+          "format": "items-{{value}}",
+          "select": {
+            "default": "center",
+            "items": [
+              {
+                "title": "Start",
+                "value": "start"
+              },
+              {
+                "title": "Center",
+                "value": "center"
+              },
+              {
+                "title": "End",
+                "value": "end"
+              }
+            ]
+          }
+        },
+        {
+          "enable": "showIcons == true",
+          "title": "Size",
+          "id": "iconSize",
+          "format": "w-{{value}} h-auto",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "4"
+              }
+            }
+          }
+        },
+        {
+          "enable": "showIcons == true",
+          "title": "Spacing",
+          "id": "iconSpacing",
+          "format": "gap-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "2"
+              }
+            }
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Page Titles",
+          "heading": {}
+        },
+        {
+          "title": "Show",
+          "id": "showPageTitles",
+          "responsive": false,
+          "switch": {
+            "default": true
+          }
+        },
+        {
+          "globalControl": "MenuItem"
+        }
+      ]
+    },
+    {
+      "title": "Layout",
+      "icon": "square.split.bottomrightquarter",
+      "properties": [
+        {
+          "globalControl": "Layout"
+        }
+      ]
+    },
+    {
+      "title": "Sizing",
+      "icon": "arrow.down.backward.and.arrow.up.forward.square",
+      "properties": [
+        {
+          "globalControl": "Sizing"
+        }
+      ]
+    },
+    {
+      "title": "Spacing",
+      "icon": "squareshape.squareshape.dotted",
+      "properties": [
+        {
+          "globalControl": "Spacing"
+        }
+      ]
+    },
+    {
+      "title": "Transitions",
+      "icon": "circle.dotted.and.circle",
+      "properties": [
+        {
+          "globalControl": "Transitions"
+        }
+      ]
+    },
+    {
+      "title": "Effects",
+      "icon": "dial.medium",
+      "properties": [
+        {
+          "globalControl": "Effects"
+        }
+      ]
+    },
+    {
+      "title": "Filters",
+      "icon": "camera.filters",
+      "properties": [
+        {
+          "globalControl": "Filters"
+        }
+      ]
+    },
+    {
+      "title": "Transforms",
+      "icon": "skew",
+      "properties": [
+        {
+          "globalControl": "Transforms"
+        }
+      ]
+    },
+    {
+      "title": "Background",
+      "icon": "paintbrush.fill",
+      "properties": [
+        {
+          "globalControl": "BackgroundTransparent"
+        }
+      ]
+    },
+    {
+      "title": "Borders",
+      "icon": "square.dashed",
+      "properties": [
+        {
+          "globalControl": "Borders"
+        }
+      ]
+    },
+    {
+      "title": "Advanced",
+      "properties": [
+        {
+          "divider": {}
+        },
+        {
+          "globalControl": "HTMLTag"
+        }
+      ]
+    }
+  ]
+}

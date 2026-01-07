@@ -1,0 +1,15 @@
+<ul x-show="open" x-collapse class="mt-1 flex flex-col gap-y-1 px-4">
+    @each(page in child.pages)
+    <li>
+        <a
+            class="{{classes.mobile.item}} block"
+            href="{{page.url}}"
+            @click.stop
+            @if(page.openInNewWindow)
+            target="_blank"
+            @endif
+            >{{page.title}}</a
+        >
+    </li>
+    @endeach
+</ul>

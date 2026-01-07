@@ -1,0 +1,38 @@
+<div class="{{classes.indicatorsWrapper}}">
+    <ol
+        x-ref="lightboxIndicators"
+        class="{{classes.indicatorsList}}"
+        @if(edit)style="justify-content: center;
+width: 100%;"
+        @endif
+    >
+        @if(lightboxIndicatorsTypeIsDots) @each(item in resources.resources)
+        <li
+            @if
+            (item::isFirst)data-active="true"
+            @endif
+            x-bind="indicator"
+            data-resource-id="{{item.resourceId}}"
+            id="LightboxIndicator_{{item.resourceId}}"
+            :data-active="currentId === '{{item.resourceId}}'"
+            class="{{classes.indicatorsItem}}"
+            :class="currentId === '{{item.resourceId}}' ? 'bg-black-50' : 'bg-gray-300'"
+        ></li>
+        @endeach @endif @if(lightboxIndicatorsTypeIsThumbnails) @each(item in
+        resources.resources)
+        <li
+            x-bind="indicatorThumbnail"
+            data-resource-id="{{item.resourceId}}"
+            id="LightboxIndicator_{{item.resourceId}}"
+            :data-active="currentId === '{{item.resourceId}}'"
+            class="{{classes.indicatorsItem}}"
+            :class="currentId === '{{item.resourceId}}' ? 'scale-110' : 'scale-100'"
+        >
+            <img
+                src="{{item.thumbnail}}"
+                class="{{classes.indicatorsItemImage}} w-20 h-full object-cover"
+            />
+        </li>
+        @endeach @endif
+    </ol>
+</div>

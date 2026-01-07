@@ -1,0 +1,418 @@
+{
+  "groups": [
+    {
+      "title": "Tags",
+      "icon": "tag",
+      "properties": [
+        {
+          "title" : "Tags",
+          "property" : "tags",
+          "collection": {
+              "identifier": "com.realmacsoftware.grid.collections.tags"
+          }
+        }
+      ]
+    },
+
+    {
+      "title": "Filter",
+      "icon": "text.magnifyingglass",
+      "properties": [
+        {
+          "globalControl": "Filter"
+        }
+      ]
+    },
+    {
+      "title": "Columns & Rows",
+      "icon": "rectangle.split.2x1",
+      "properties": [
+        {
+          "title": "Preview Columns",
+          "heading": {}
+        },
+        {
+          "title": "Enable",
+          "id": "showGrid",
+          "responsive": false,
+          "switch": {}
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Gap",
+          "heading": {}
+        },
+        {
+          "title": "Horizontal",
+          "id": "gapX",
+          "format": "gap-x-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": "2"
+            }
+          }
+        },
+        {
+          "title": "Vertical",
+          "id": "gapY",
+          "format": "gap-y-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": "2"
+            }
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Columns",
+          "id": "columns",
+          "format": "grid-cols-{{value}}",
+          "slider": {
+            "default": "4",
+            "items": [
+              {
+                "value": "1",
+                "title": "1"
+              },
+              {
+                "value": "2",
+                "title": "2"
+              },
+              {
+                "value": "3",
+                "title": "3"
+              },
+              {
+                "value": "4",
+                "title": "4"
+              },
+              {
+                "value": "5",
+                "title": "5"
+              },
+              {
+                "value": "6",
+                "title": "6"
+              },
+              {
+                "value": "7",
+                "title": "7"
+              },
+              {
+                "value": "8",
+                "title": "8"
+              },
+              {
+                "value": "9",
+                "title": "9"
+              },
+              {
+                "value": "10",
+                "title": "10"
+              },
+              {
+                "value": "11",
+                "title": "11"
+              },
+              {
+                "value": "12",
+                "title": "12"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Rows",
+          "id": "rows",
+          "format": "grid-rows-{{value}}",
+          "slider": {
+            "default": "auto",
+            "items": [
+              {
+                "value": "auto",
+                "title": "Auto"
+              },
+              {
+                "value": "1",
+                "title": "1"
+              },
+              {
+                "value": "2",
+                "title": "2"
+              },
+              {
+                "value": "3",
+                "title": "3"
+              },
+              {
+                "value": "4",
+                "title": "4"
+              },
+              {
+                "value": "5",
+                "title": "5"
+              },
+              {
+                "value": "6",
+                "title": "6"
+              },
+              {
+                "value": "7",
+                "title": "7"
+              },
+              {
+                "value": "8",
+                "title": "8"
+              },
+              {
+                "value": "9",
+                "title": "9"
+              },
+              {
+                "value": "10",
+                "title": "10"
+              },
+              {
+                "value": "11",
+                "title": "11"
+              },
+              {
+                "value": "12",
+                "title": "12"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "Grid Alignment",
+      "icon": "align.vertical.center",
+      "properties": [
+        {
+          "title": "Auto Flow",
+          "id": "autoFlow",
+          "format": "grid-flow-{{value}}",
+          "select": {
+            "default": "row",
+            "items": [
+              {
+                "value": "row",
+                "title": "Row"
+              },
+              {
+                "value": "col",
+                "title": "Column"
+              },
+              {
+                "value": "dense",
+                "title": "Dense"
+              },
+              {
+                "value": "row-dense",
+                "title": "Row Dense"
+              },
+              {
+                "value": "col-dense",
+                "title": "Column Dense"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Auto Cols",
+          "id": "autoColumns",
+          "format": "auto-cols-{{value}}",
+          "select": {
+            "default": "none",
+            "items": [
+              {
+                "value": "none",
+                "title": "None"
+              },
+              {
+                "value": "auto",
+                "title": "Auto"
+              },
+              {
+                "value": "min",
+                "title": "Min Content"
+              },
+              {
+                "value": "max",
+                "title": "Max Content"
+              },
+              {
+                "value": "fr",
+                "title": "1 Fr"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Auto Rows",
+          "id": "autoRows",
+          "format": "auto-rows-{{value}}",
+          "select": {
+            "default": "none",
+            "items": [
+              {
+                "value": "none",
+                "title": "None"
+              },
+              {
+                "value": "auto",
+                "title": "Auto"
+              },
+              {
+                "value": "min",
+                "title": "Min Content"
+              },
+              {
+                "value": "max",
+                "title": "Max Content"
+              },
+              {
+                "value": "fr",
+                "title": "1 Fr"
+              }
+            ]
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Justify",
+          "heading": {}
+        },
+        {
+          "globalControl": "JustifyContent"
+        },
+        {
+          "globalControl": "JustifyItems"
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Align",
+          "heading": {}
+        },
+        {
+          "globalControl": "AlignContent"
+        },
+        {
+          "globalControl": "AlignItems"
+        }
+      ]
+    },
+    {
+      "title": "Link",
+      "icon": "link",
+      "properties": [
+        {
+          "globalControl": "Link"
+        }
+      ]
+    },
+    {
+      "title": "Layout",
+      "icon": "square.split.bottomrightquarter",
+      "properties": [
+        {
+          "globalControl": "Layout"
+        }
+      ]
+    },
+    {
+      "title": "Sizing",
+      "icon": "arrow.down.backward.and.arrow.up.forward.square",
+      "properties": [
+        {
+          "globalControl": "SizingContainer"
+        }
+      ]
+    },
+    {
+      "title": "Spacing",
+      "icon": "squareshape.squareshape.dotted",
+      "properties": [
+        {
+          "globalControl": "SpacingContainer"
+        }
+      ]
+    },
+    {
+      "title": "Transitions",
+      "icon": "wand.and.stars.inverse",
+      "properties": [
+        {
+          "globalControl": "Transitions"
+        }
+      ]
+    },
+    {
+      "title": "Effects",
+      "icon": "wand.and.stars.inverse",
+      "properties": [
+        {
+          "globalControl": "Effects"
+        }
+      ]
+    },
+    {
+      "title": "Filters",
+      "icon": "camera.filters",
+      "properties": [
+        {
+          "globalControl": "Filters"
+        }
+      ]
+    },
+    {
+      "title": "Transforms",
+      "icon": "skew",
+      "properties": [
+        {
+          "globalControl": "Transforms"
+        }
+      ]
+    },
+    {
+      "title": "Background",
+      "icon": "paintbrush.fill",
+      "properties": [
+        {
+          "globalControl": "BackgroundTransparent"
+        }
+      ]
+    },
+    {
+      "title": "Borders",
+      "icon": "square.dashed",
+      "properties": [
+        {
+          "globalControl": "Borders"
+        }
+      ]
+    },
+    {
+      "title": "Advanced",
+      "properties": [
+        {
+          "divider": {}
+        },
+        {
+          "globalControl": "HTMLTag"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "author": "Realmac Software",
+  "title": "System",
+  "subTitle": "Clean, fresh, and modern.",
+  "tags": [
+    "tailwind",
+    "default"
+  ],
+  "build": "100",
+  "version": "1.0.0",
+  "deprecated": false,
+  "helpURL": "https://forums.realmacsoftware.com/",
+  "infoURL": "https://www.realmacsoftware.com/"
+}

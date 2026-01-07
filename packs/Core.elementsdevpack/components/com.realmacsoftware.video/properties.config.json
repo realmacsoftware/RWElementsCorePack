@@ -1,0 +1,231 @@
+{
+  "groups": [
+    {
+      "title": "Video",
+      "icon": "play.rectangle",
+      "properties": [
+        {
+          "title": "Resource",
+          "id": "video",
+          "resource": {}
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Options",
+          "heading": {}
+        },
+        {
+          "title": "Autoplay",
+          "id": "autoplay",
+          "responsive": false,
+          "select": {
+            "default": "never",
+            "items": [
+              {
+                "value": "immediate",
+                "title": "Immediately"
+              },
+              {
+                "value": "viewport",
+                "title": "When in viewport"
+              },
+              {
+                "value": "never",
+                "title": "Never"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Muted",
+          "id": "mute",
+          "responsive": false,
+          "switch": {
+            "default": true
+          }
+        },
+        {
+          "title": "Controls",
+          "id": "controls",
+          "responsive": false,
+          "switch": {}
+        },
+        {
+          "title": "Loop",
+          "id": "loop",
+          "responsive": false,
+          "switch": {}
+        }
+      ]
+    },
+    {
+      "title": "Lightbox",
+      "icon": "square.filled.on.square",
+      "properties": [
+        {
+          "title": "Enable",
+          "id": "wantsLightbox",
+          "responsive": false,
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "visible": "wantsLightbox == true",
+          "title": "Backdrop",
+          "heading": {}
+        },
+        {
+          "visible": "wantsLightbox == true",
+          "title": "Color",
+          "id": "videoLightboxColor",
+          "format": "bg-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "black",
+              "brightness": 50
+            }
+          }
+        },
+        {
+          "visible": "wantsLightbox == true",
+          "title": "Opacity",
+          "id": "videoLightboxColorOpacity",
+          "format": "bg-opacity-[{{value}}%]",
+          "responsive": false,
+          "slider": {
+            "default": "50",
+            "use": "Slider",
+            "units": "%"
+          }
+        },
+        {
+          "visible": "wantsLightbox == true",
+          "title": "Blur",
+          "id": "videoLightbox{{value}}",
+          "globalControl": "BackdropBlur"
+        }
+      ]
+    },
+    {
+      "title": "Thumbnail",
+      "icon": "photo",
+      "properties": [
+        {
+          "globalControl": "Image"
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Overlay",
+          "heading": {}
+        },
+        {
+          "title": "Color",
+          "id": "overlayColor",
+          "format": "bg-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 50
+            }
+          }
+        },
+        {
+          "title": "Opacity",
+          "id": "overlayOpacity",
+          "format": "bg-opacity-[{{value}}%] dark:bg-opacity-[{{value}}%]",
+          "slider": {
+            "default": 50,
+            "use": "Slider",
+            "units": "%"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Aspect Ratio",
+      "icon": "aspectratio",
+      "properties": [
+        {
+          "globalControl": "AspectRatio"
+        }
+      ]
+    },
+    {
+      "title": "Layout",
+      "icon": "square.split.bottomrightquarter",
+      "properties": [
+        {
+          "globalControl": "Layout"
+        }
+      ]
+    },
+    {
+      "title": "Sizing",
+      "icon": "arrow.down.backward.and.arrow.up.forward.square",
+      "properties": [
+        {
+          "globalControl": "SizingImage"
+        }
+      ]
+    },
+    {
+      "title": "Spacing",
+      "icon": "squareshape.squareshape.dotted",
+      "properties": [
+        {
+          "globalControl": "Spacing"
+        }
+      ]
+    },
+    {
+      "title": "Transitions",
+      "icon": "timer",
+      "properties": [
+        {
+          "globalControl": "Transitions"
+        }
+      ]
+    },
+    {
+      "title": "Effects",
+      "icon": "wand.and.stars.inverse",
+      "properties": [
+        {
+          "globalControl": "Effects"
+        }
+      ]
+    },
+    {
+      "title": "Transforms",
+      "icon": "skew",
+      "properties": [
+        {
+          "globalControl": "Transforms"
+        }
+      ]
+    },
+    {
+      "title": "Filters",
+      "icon": "camera.filters",
+      "properties": [
+        {
+          "globalControl": "Filters"
+        }
+      ]
+    },
+    {
+      "title": "Borders",
+      "icon": "square.dashed",
+      "properties": [
+        {
+          "globalControl": "Borders"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,285 @@
+{
+  "groups": [
+    {
+      "title": "General",
+      "icon": "textformat",
+      "properties": [
+        {
+          "title": "Tag",
+          "id": "tag",
+          "responsive": false,
+          "select": {
+            "default": "p",
+            "items": [
+              {
+                "value": "p",
+                "title": "Paragraph - <p>"
+              },
+              {
+                "value": "h1",
+                "title": "Heading 1 - <h1>"
+              },
+              {
+                "value": "h2",
+                "title": "Heading 2 - <h2>"
+              },
+              {
+                "value": "h3",
+                "title": "Heading 3 - <h3>"
+              },
+              {
+                "value": "h4",
+                "title": "Heading 4 - <h4>"
+              },
+              {
+                "value": "h5",
+                "title": "Heading 5 - <h5>"
+              },
+              {
+                "value": "h6",
+                "title": "Heading 6 - <h6>"
+              },
+              {
+                "value": "span",
+                "title": "Span - <span>"
+              },
+              {
+                "value": "div",
+                "title": "Div - <div>"
+              },
+              {
+                "value": "custom",
+                "title": "Custom"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "tag == 'custom'",
+          "title": "Custom Tag",
+          "id": "customTag",
+          "text": {
+            "default": "div"
+          }
+        },
+        {
+          "information": {},
+          "title": "Used for semantic and SEO purposes. Does not effect styling."
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Text Align",
+          "id": "headingTextAlign",
+          "segmented": {
+            "use": "TextAlign"
+          }
+        },
+        {
+          "globalControl": "TextFontsAndTextStyles"
+        }
+      ]
+    },
+    {
+      "title": "Color",
+      "icon": "paintpalette",
+      "properties": [
+        {
+          "globalControl": "HeadingColor"
+        }
+      ]
+    },
+    {
+      "title": "Links",
+      "icon": "link",
+      "properties": [
+        {
+          "title": "State",
+          "id": "linkState",
+          "segmented": {
+            "default": "default",
+            "items": [
+              {
+                "title": "Default",
+                "value": "default"
+              },
+              {
+                "title": "Hover",
+                "value": "hover"
+              },
+              {
+                "title": "Visited",
+                "value": "visited"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "linkState == 'default'",
+          "title": "Color",
+          "id": "linkColor",
+          "format": "text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "brand",
+              "brightness": 500
+            }
+          }
+        },
+        {
+          "visible": "linkState == 'default'",
+          "title": "Font Weight",
+          "id": "linkFontWeight",
+          "format": "font-[{{value}}]",
+          "slider": {
+            "use": "FontWeight"
+          }
+        },
+        {
+          "visible": "linkState == 'default'",
+          "title": "Underline",
+          "id": "linkUnderline",
+          "switch": {
+            "trueValue": "underline",
+            "falseValue": "no-underline"
+          }
+        },
+        {
+          "visible": "linkState == 'hover'",
+          "title": "Color",
+          "id": "linkColorHover",
+          "format": "text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "brand",
+              "brightness": 800
+            }
+          }
+        },
+        {
+          "visible": "linkState == 'hover'",
+          "title": "Font Weight",
+          "id": "linkFontWeightHover",
+          "format": "font-[{{value}}]",
+          "slider": {
+            "use": "FontWeight"
+          }
+        },
+        {
+          "visible": "linkState == 'hover'",
+          "title": "Underline",
+          "id": "linkUnderlineHover",
+          "format": "{{value}}",
+          "switch": {
+            "trueValue": "underline",
+            "falseValue": "no-underline"
+          }
+        },
+        {
+          "visible": "linkState == 'visited'",
+          "title": "Color",
+          "id": "linkColorVisited",
+          "format": "text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "brand",
+              "brightness": 800
+            }
+          }
+        },
+        {
+          "visible": "linkState == 'visited'",
+          "title": "Font Weight",
+          "id": "linkFontWeightVisited",
+          "format": "font-[{{value}}]",
+          "slider": {
+            "use": "FontWeight"
+          }
+        },
+        {
+          "visible": "linkState == 'visited'",
+          "title": "Underline",
+          "id": "linkUnderlineVisited",
+          "format": "{{value}}",
+          "switch": {
+            "trueValue": "underline",
+            "falseValue": "no-underline"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Layout",
+      "icon": "square.split.bottomrightquarter",
+      "properties": [
+        {
+          "globalControl": "Layout"
+        }
+      ]
+    },
+    {
+      "title": "Sizing",
+      "icon": "square.resize",
+      "properties": [
+        {
+          "globalControl": "Sizing"
+        }
+      ]
+    },
+    {
+      "title": "Spacing",
+      "icon": "squareshape.squareshape.dotted",
+      "properties": [
+        {
+          "globalControl": "Spacing"
+        }
+      ]
+    },
+    {
+      "title": "Transitions",
+      "icon": "timer",
+      "properties": [
+        {
+          "globalControl": "Transitions"
+        }
+      ]
+    },
+    {
+      "title": "Effects",
+      "icon": "wand.and.stars.inverse",
+      "properties": [
+        {
+          "globalControl": "Effects"
+        }
+      ]
+    },
+    {
+      "title": "Filters",
+      "icon": "camera.filters",
+      "properties": [
+        {
+          "globalControl": "Filters"
+        }
+      ]
+    },
+    {
+      "title": "Transforms",
+      "icon": "skew",
+      "properties": [
+        {
+          "globalControl": "Transforms"
+        }
+      ]
+    },
+    {
+      "title": "Border",
+      "icon": "square.dashed",
+      "properties": [
+        {
+          "globalControl": "Borders"
+        }
+      ]
+    }
+  ]
+}

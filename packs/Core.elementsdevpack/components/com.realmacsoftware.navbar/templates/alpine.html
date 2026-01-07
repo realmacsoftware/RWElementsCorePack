@@ -1,0 +1,79 @@
+@portal("bodyEnd", id: "com.realmacsoftware.alpineData.navigation-standard", includeOnce: true)
+<script>
+    document.addEventListener("alpine:init", () => {
+        Alpine.data("navigationStandard", (id = null) => ({
+            id,
+            open: false,
+
+            init() {
+                window.addEventListener("navigation-standard-close", (e) => {
+                    if (this.id === e.detail) {
+                        this.close();
+                    }
+                });
+
+                window.addEventListener("navigation-standard-toggle", (e) => {
+                    if (this.id === e.detail) {
+                        this.toggle();
+                    }
+                });
+
+                window.addEventListener("keyup", (e) => {
+                    if (e.key === "Escape") {
+                        this.close();
+                    }
+                });
+
+                this.$el.addEventListener("click", (e) => {
+                    const link = e.target.closest("a");
+                    if (link && this.open) {
+                        this.close();
+                    }
+                });
+
+                this.$watch("open", (value) => {
+                    if (value) {
+                        document.body.style.overflow = "hidden";
+                    } else {
+                        document.body.style.overflow = "auto";
+                    }
+                });
+            },
+
+            toggle() {
+                if (this.open) {
+                    return this.close();
+                }
+
+                this.open = true;
+            },
+
+            close() {
+                if (!this.open) {
+                    return;
+                }
+
+                this.open = false;
+            },
+
+            backdrop: {
+                ["x-show"]() {
+                    return this.open;
+                },
+                ["@click"]() {
+                    this.close();
+                },
+            },
+
+            menu: {
+                ["x-show"]() {
+                    return this.open;
+                },
+                ["@click.away"]() {
+                    this.close();
+                },
+            },
+        }));
+    });
+</script>
+@endportal

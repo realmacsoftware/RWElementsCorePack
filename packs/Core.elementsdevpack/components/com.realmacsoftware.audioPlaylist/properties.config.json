@@ -1,0 +1,770 @@
+{
+    "groups": [
+        {
+            "title": "Tracks",
+            "icon": "music.note",
+            "properties": [
+                {
+                    "title": "Tracks",
+                    "id": "tracks",
+                    "collection": {
+                        "identifier": "com.realmacsoftware.audioPlaylist.collections.tracks"
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Now Playing",
+            "icon": "play.square.stack.fill",
+            "properties": [
+                {
+                    "title": "Layout",
+                    "id": "nowPlayingLayout",
+                    "responsive": false,
+                    "segmented": {
+                        "default": "flex-col text-center",
+                        "items": [
+                            {
+                                "title": "Vertical",
+                                "value": "flex-col text-center"
+                            },
+                            {
+                                "title": "Horizontal",
+                                "value": "flex-row text-left"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "title": "Gap",
+                    "id": "nowPlayingGap",
+                    "format": "gap-{{value}}",
+                    "themeSpacing": {
+                        "mode": "single",
+                        "default": {
+                            "base": "5"
+                        }
+                    }
+                },
+                {
+                    "title": "Padding",
+                    "id": "nowPlayingPadding",
+                    "themeSpacing": {
+                        "mode": "padding",
+                        "default": {
+                            "base": {
+                                "top": "5",
+                                "right": "5",
+                                "bottom": "5",
+                                "left": "5"
+                            }
+                        }
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Artwork",
+                    "heading": {}
+                },
+                {
+                    "title": "Size",
+                    "id": "nowPlayingArtworkSize",
+                    "format": "size-{{value}}",
+                    "themeSpacing": {
+                        "mode": "single",
+                        "default": {
+                            "base": {
+                                "value": "48"
+                            }
+                        }
+                    }
+                },
+                {
+                    "title": "Shadow",
+                    "id": "nowPlayingArtworkShadow",
+                    "themeShadow": {
+                        "default": {
+                            "base": {
+                                "name": "none"
+                            }
+                        }
+                    }
+                },
+                {
+                    "title": "Radius",
+                    "id": "nowPlayingArtworkBorderRadius",
+                    "themeBorderRadius": {
+                        "default": {
+                            "base": {
+                                "topLeft": "Default",
+                                "topRight": "Default",
+                                "bottomLeft": "Default",
+                                "bottomRight": "Default"
+                            }
+                        }
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Title",
+                    "heading": {}
+                },
+                {
+                    "title": "Color",
+                    "id": "nowPlayingTitleTextColor",
+                    "format": "text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "text",
+                            "brightness": 600
+                        }
+                    }
+                },
+                {
+                    "title": "Size",
+                    "id": "nowPlayingTitleFontSize",
+                    "themeTextStyle": {
+                        "default": {
+                            "base": "lg"
+                        }
+                    }
+                },
+                {
+                    "title": "Artist",
+                    "heading": {}
+                },
+                {
+                    "title": "Color",
+                    "id": "nowPlayingArtistTextColor",
+                    "format": "text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "text",
+                            "brightness": 600
+                        }
+                    }
+                },
+                {
+                    "title": "Size",
+                    "id": "nowPlayingArtistFontSize",
+                    "themeTextStyle": {
+                        "default": {
+                            "base": "sm"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Progress Bar",
+            "icon": "timer.circle.fill",
+            "properties": [
+                {
+                    "title": "Progress Bar",
+                    "heading": {}
+                },
+                {
+                    "title": "Background",
+                    "id": "nowPlayingProgressBarBgColor",
+                    "format": "bg-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 100
+                        }
+                    }
+                },
+                {
+                    "title": "Foreground",
+                    "id": "nowPlayingProgressBarForegroundColor",
+                    "format": "bg-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 300
+                        }
+                    }
+                },
+                {
+                    "title": "Size",
+                    "id": "nowPlayingProgressBarSize",
+                    "format": "h-{{value}}",
+                    "themeSpacing": {
+                        "mode": "single",
+                        "default": {
+                            "base": {
+                                "value": "1.5"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Track List",
+            "icon": "list.bullet",
+            "properties": [
+                {
+                    "title": "Max Height",
+                    "id": "trackListMaxHeight",
+                    "format": "max-h-{{value}}",
+                    "themeSpacing": {
+                        "mode": "single",
+                        "default": {
+                            "base": {
+                                "value": "72"
+                            }
+                        }
+                    }
+                },
+                {
+                    "title": "Padding",
+                    "id": "trackListPadding",
+                    "themeSpacing": {
+                        "mode": "padding",
+                        "default": {
+                            "base": {
+                                "value": "0"
+                            }
+                        }
+                    }
+                },
+                {
+                    "title": "Gap",
+                    "id": "trackListGap",
+                    "format": "gap-{{value}}",
+                    "themeSpacing": {
+                        "mode": "single",
+                        "default": {
+                            "base": {
+                                "value": "2"
+                            }
+                        }
+                    }
+                },
+                {
+                    "title": "Radius",
+                    "id": "trackItemBorderRadius",
+                    "themeBorderRadius": {
+                        "default": {
+                            "base": {
+                                "topLeft": "Default",
+                                "topRight": "Default",
+                                "bottomLeft": "Default",
+                                "bottomRight": "Default"
+                            }
+                        }
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Artwork",
+                    "heading": {}
+                },
+                {
+                    "title": "Size",
+                    "id": "trackListArtworkSize",
+                    "format": "size-{{value}}",
+                    "themeSpacing": {
+                        "mode": "single",
+                        "default": {
+                            "base": {
+                                "value": "12"
+                            }
+                        }
+                    }
+                },
+                {
+                    "title": "Shadow",
+                    "id": "trackListArtworkShadow",
+                    "themeShadow": {
+                        "default": {
+                            "base": {
+                                "name": "none"
+                            }
+                        }
+                    }
+                },
+                {
+                    "title": "Radius",
+                    "id": "trackListArtworkBorderRadius",
+                    "themeBorderRadius": {
+                        "default": {
+                            "base": {
+                                "topLeft": "Default",
+                                "topRight": "Default",
+                                "bottomLeft": "Default",
+                                "bottomRight": "Default"
+                            }
+                        }
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Dividers",
+                    "heading": {}
+                },
+                {
+                    "title": "Dividers",
+                    "id": "trackDividersColor",
+                    "format": "divide-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 800
+                        }
+                    }
+                },
+                {
+                    "title": "Thickness",
+                    "id": "trackDividersThickness",
+                    "format": "divide-y-[{{value}}px]",
+                    "slider": {
+                        "use": "Slider",
+                        "default": 0,
+                        "max": 10,
+                        "units": "px"
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Text Size",
+                    "heading": {}
+                },
+                {
+                    "title": "Title",
+                    "id": "trackListTitleFontSize",
+                    "themeTextStyle": {
+                        "default": {
+                            "base": {
+                                "name": "lg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "title": "Artist",
+                    "id": "trackListArtistFontSize",
+                    "themeTextStyle": {
+                        "default": {
+                            "base": {
+                                "name": "base"
+                            }
+                        }
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Colors",
+                    "heading": {}
+                },
+                {
+                    "title": "State",
+                    "id": "trackState",
+                    "segmented": {
+                        "default": "normal",
+                        "items": [
+                            {
+                                "title": "Normal",
+                                "value": "normal"
+                            },
+                            {
+                                "title": "Hover",
+                                "value": "hover"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "visible": "trackState == 'normal'",
+                    "title": "Background",
+                    "id": "trackBg",
+                    "format": "bg-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "white",
+                            "brightness": 50
+                        }
+                    }
+                },
+                {
+                    "visible": "trackState == 'normal'",
+                    "title": "Opacity",
+                    "id": "trackBgOpacity",
+                    "format": "bg-opacity-[{{value}}%]",
+                    "slider": {
+                        "use": "Slider",
+                        "units": "%",
+                        "default": "100"
+                    }
+                },
+                {
+                    "visible": "trackState == 'normal'",
+                    "title": "Title",
+                    "id": "trackTitleTextColor",
+                    "format": "text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "text",
+                            "brightness": 600
+                        }
+                    }
+                },
+                {
+                    "visible": "trackState == 'normal'",
+                    "title": "Artist",
+                    "id": "trackArtistTextColor",
+                    "format": "text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "text",
+                            "brightness": 600
+                        }
+                    }
+                },
+                {
+                    "visible": "trackState == 'hover'",
+                    "title": "Background",
+                    "id": "trackBgHover",
+                    "format": "hover:bg-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "white",
+                            "brightness": 50
+                        }
+                    }
+                },
+                {
+                    "visible": "trackState == 'hover'",
+                    "title": "Opacity",
+                    "id": "trackBgOpacityHover",
+                    "format": "hover:bg-opacity-[{{value}}%]",
+                    "slider": {
+                        "use": "Slider",
+                        "units": "%",
+                        "default": "100"
+                    }
+                },
+                {
+                    "visible": "trackState == 'hover'",
+                    "title": "Title",
+                    "id": "trackTitleTextColorHover",
+                    "format": "group-hover/track:text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "text",
+                            "brightness": 600
+                        }
+                    }
+                },
+                {
+                    "visible": "trackState == 'hover'",
+                    "title": "Artist",
+                    "id": "trackArtistTextColorHover",
+                    "format": "group-hover/track:text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "text",
+                            "brightness": 600
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Icons",
+            "icon": "playpause.fill",
+            "properties": [
+                {
+                    "title": "Spacing",
+                    "id": "iconSpacing",
+                    "format": "gap-{{value}}",
+                    "themeSpacing": {
+                        "mode": "single",
+                        "default": {
+                            "base": {
+                                "value": "6"
+                            }
+                        }
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Play and Pause",
+                    "heading": {}
+                },
+                {
+                    "title": "Color",
+                    "id": "iconPlayPauseColor",
+                    "format": "text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 500
+                        }
+                    }
+                },
+                {
+                    "title": "Hover",
+                    "id": "iconPlayPauseColorHover",
+                    "format": "hover:text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 600
+                        }
+                    }
+                },
+                {
+                    "title": "Size",
+                    "id": "iconPlayPauseSize",
+                    "format": "size-{{value}}",
+                    "themeSpacing": {
+                        "mode": "single",
+                        "default": {
+                            "base": {
+                                "value": "12"
+                            }
+                        }
+                    }
+                },
+                {
+                    "title": "Play",
+                    "property": "iconPlay",
+                    "resource": {}
+                },
+                {
+                    "title": "Pause",
+                    "property": "iconPause",
+                    "resource": {}
+                },
+
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Next and Previous",
+                    "heading": {}
+                },
+                {
+                    "title": "Enable",
+                    "property": "enableNextAndPrevious",
+                    "responsive": false,
+                    "switch": {
+                        "default": true
+                    }
+                },
+                {
+                    "enable": "enableNextAndPrevious == true",
+                    "title": "Color",
+                    "id": "iconNextPrevColor",
+                    "format": "text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 500
+                        }
+                    }
+                },
+                {
+                    "enable": "enableNextAndPrevious == true",
+                    "title": "Hover",
+                    "id": "iconNextPrevColorHover",
+                    "format": "hover:text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 600
+                        }
+                    }
+                },
+                {
+                    "enable": "enableNextAndPrevious == true",
+                    "title": "Size",
+                    "id": "iconNextPrevSize",
+                    "format": "size-{{value}}",
+                    "themeSpacing": {
+                        "mode": "single",
+                        "default": {
+                            "base": {
+                                "value": "6"
+                            }
+                        }
+                    }
+                },
+                {
+                    "enable": "enableNextAndPrevious == true",
+                    "title": "Next",
+                    "property": "iconNext",
+                    "resource": {}
+                },
+                {
+                    "enable": "enableNextAndPrevious == true",
+                    "title": "Previous",
+                    "property": "iconPrevious",
+                    "resource": {}
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Skip Back and Forward",
+                    "heading": {}
+                },
+                {
+                    "title": "Enable",
+                    "property": "enableSkipBackAndForward",
+                    "responsive": false,
+                    "switch": {
+                        "default": false
+                    }
+                },
+                {
+                    "enable": "enableSkipBackAndForward == true",
+                    "title": "Color",
+                    "id": "iconSkipColor",
+                    "format": "text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 500
+                        }
+                    }
+                },
+                {
+                    "enable": "enableSkipBackAndForward == true",
+                    "title": "Hover",
+                    "id": "iconSkipColorHover",
+                    "format": "hover:text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 600
+                        }
+                    }
+                },
+                {
+                    "enable": "enableSkipBackAndForward == true",
+                    "title": "Size",
+                    "id": "iconSkipSize",
+                    "format": "size-{{value}}",
+                    "themeSpacing": {
+                        "mode": "single",
+                        "default": {
+                            "base": {
+                                "value": "6"
+                            }
+                        }
+                    }
+                },
+                {
+                    "enable": "enableSkipBackAndForward == true",
+                    "title": "Skip Back",
+                    "property": "iconSkipBack",
+                    "resource": {}
+                },
+                {
+                    "enable": "enableSkipBackAndForward == true",
+                    "title": "Skip Forward",
+                    "property": "iconSkipForward",
+                    "resource": {}
+                }
+            ]
+        },
+        {
+            "title": "Layout",
+            "icon": "square.split.bottomrightquarter",
+            "properties": [
+                {
+                    "globalControl": "Layout"
+                }
+            ]
+        },
+        {
+            "title": "Sizing",
+            "icon": "arrow.down.backward.and.arrow.up.forward.square",
+            "properties": [
+                {
+                    "globalControl": "Sizing"
+                }
+            ]
+        },
+        {
+            "title": "Spacing",
+            "icon": "squareshape.squareshape.dotted",
+            "properties": [
+                {
+                    "globalControl": "Spacing"
+                }
+            ]
+        },
+        {
+            "title": "Transitions",
+            "icon": "circle.dotted.and.circle",
+            "properties": [
+                {
+                    "globalControl": "Transitions"
+                }
+            ]
+        },
+        {
+            "title": "Effects",
+            "icon": "dial.medium",
+            "properties": [
+                {
+                    "globalControl": "Effects"
+                }
+            ]
+        },
+        {
+            "title": "Filters",
+            "icon": "camera.filters",
+            "properties": [
+                {
+                    "globalControl": "Filters"
+                }
+            ]
+        },
+        {
+            "title": "Transforms",
+            "icon": "skew",
+            "properties": [
+                {
+                    "globalControl": "Transforms"
+                }
+            ]
+        },
+        {
+            "title": "Background",
+            "icon": "paintbrush.fill",
+            "properties": [
+                {
+                    "globalControl": "Background"
+                }
+            ]
+        },
+        {
+            "title": "Borders",
+            "icon": "square.dashed",
+            "properties": [
+                {
+                    "globalControl": "Borders"
+                }
+            ]
+        }
+    ]
+}

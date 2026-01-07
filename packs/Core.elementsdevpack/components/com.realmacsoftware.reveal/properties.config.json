@@ -1,0 +1,49 @@
+{
+  "groups": [
+    {
+      "title": "Reveal",
+      "icon": "arrow.up.and.down.and.sparkles",
+      "properties": [
+        {
+          "globalControl": "Reveals"
+        }
+      ]
+    },
+    {
+      "title": "Flexbox and Grid",
+      "icon": "square.grid.2x2",
+      "properties": [
+        {
+          "globalControl": "ActAsGridOrFlexItem"
+        }
+      ]
+    },
+    {
+      "title": "Layout",
+      "icon": "square.split.bottomrightquarter",
+      "properties": [
+        {
+          "globalControl": "Layout"
+        }
+      ]
+    },
+    {
+      "title": "Sizing",
+      "icon": "arrow.down.backward.and.arrow.up.forward.square",
+      "properties": [
+        {
+          "globalControl": "SizingContainer"
+        }
+      ]
+    },
+    {
+      "title": "Spacing",
+      "icon": "squareshape.squareshape.dotted",
+      "properties": [
+        {
+          "globalControl": "Spacing"
+        }
+      ]
+    }
+  ]
+}

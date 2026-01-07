@@ -1,0 +1,315 @@
+<!-- Now Playing -->
+<div class="{{classes.nowPlaying.wrapper}}">
+    <img
+        :src="currentTrack.cover"
+        src="{{ firstTrack.coverImage }}"
+        class="{{classes.nowPlaying.artwork}}"
+        alt="cover"
+    />
+    <div class="{{classes.nowPlaying.content}}">
+        <div class="mb-4">
+            <h3
+                class="{{classes.nowPlaying.title}}"
+                x-text="currentTrack.title"
+            >
+                {{ firstTrack.title }}
+            </h3>
+            <p
+                class="{{classes.nowPlaying.artist}}"
+                x-text="currentTrack.artist"
+            >
+                {{ firstTrack.artist }}
+            </p>
+        </div>
+
+        <!-- Controls -->
+        <div class="{{classes.icons.wrapper}}">
+            @if(enableSkipBackAndForward)
+            <!-- Skip -10s -->
+            <button
+                @click="skipBack"
+                class="{{classes.icons.skip}}"
+                aria-label="Skip back 10 seconds"
+            >
+                {{ iconSkipBack }}
+            </button>
+            @endif @if(enableNextAndPrevious)
+            <!-- Prev track -->
+            <button
+                @click="prevTrack"
+                class="{{classes.icons.track}}"
+                aria-label="Previous track"
+            >
+                {{ iconPrevious }}
+            </button>
+            @endif
+            <!-- Play/Pause -->
+            <button
+                @click="togglePlay"
+                class="{{classes.icons.playButton}}"
+                aria-label="Play or pause"
+            >
+                <div x-show="!isPlaying" class="{{classes.icons.play}}">
+                    {{iconPlay}}
+                </div>
+                <div x-cloak x-show="isPlaying" class="{{classes.icons.play}}">
+                    {{iconPause}}
+                </div>
+            </button>
+
+            @if(enableNextAndPrevious)
+            <!-- Next track -->
+            <button
+                @click="nextTrack"
+                class="{{classes.icons.track}}"
+                aria-label="Next track"
+            >
+                {{ iconNext }}
+            </button>
+            @endif @if(enableSkipBackAndForward)
+            <!-- Skip +10s -->
+            <button
+                @click="skipForward"
+                class="{{classes.icons.skip}}"
+                aria-label="Skip forward 10 seconds"
+            >
+                {{ iconSkipForward }}
+            </button>
+            @endif
+        </div>
+    </div>
+
+    <div
+        x-ref="progressBar"
+        class="{{classes.nowPlaying.progressBar.wrapper}}"
+        @mousedown="startScrubbing"
+        @touchstart.prevent="startScrubbing"
+    >
+        <!-- Filled portion -->
+        <div
+            class="{{classes.nowPlaying.progressBar.foreground}}"
+            @if(edit)
+            style="width: calc(50%)"
+            @endif
+            :style="{ width: ((isScrubbing ? scrubTime : currentTime) / duration * 100) + '%' }"
+        ></div>
+
+        <!-- Draggable thumb -->
+        <div
+            class="{{classes.nowPlaying.progressBar.thumb}}"
+            @if(edit)
+            style="display: none"
+            @endif
+            :style="{ left: `calc(${((isScrubbing ? scrubTime : currentTime) / duration) * 100}%) - $el.clientWidth` }"
+            x-show="duration"
+        ></div>
+    </div>
+</div>
+
+<ul class="{{classes.list}}">
+    @each(track in tracks)
+    <li
+        data-track
+        data-title="{{ track.title }}"
+        data-artist="{{ track.artist }}"
+        data-cover="{{ track.coverImage }}"
+        data-url="{{ track.audioSource.path }}"
+        class="{{classes.track.wrapper}}"
+    >
+        <img
+            src="{{ track.coverImage }}"
+            class="{{classes.track.artwork}}"
+            alt="cover"
+        />
+        <div class="flex-1">
+            <h4 class="{{classes.track.title}}">{{ track.title }}</h4>
+            <p class="{{classes.track.artist}}">{{ track.artist }}</p>
+        </div>
+        <div
+            x-cloak
+            class="[&_svg]:size-4 [&_svg]:{{trackTitleTextColor}}"
+            x-show="currentTrackIndex === {{ track::index }}"
+            @click.stop="togglePlay"
+        >
+            <template x-if="!isPlaying"> {{ iconPlay }} </template>
+            <template x-if="isPlaying"> {{ iconPause }} </template>
+        </div>
+    </li>
+    @endeach
+</ul>
+
+<!-- Hidden audio -->
+<audio
+    x-ref="audio"
+    @ended="nextTrack"
+    @timeupdate="updateTime"
+    @loadedmetadata="updateDuration"
+></audio>
+
+@portal(bodyEnd, includeOnce: true)
+<script>
+    function elementsAudioPlaylist() {
+        return {
+            tracks: [],
+            currentTrackIndex: 0,
+            isPlaying: false,
+            currentTime: 0,
+            duration: 0,
+            isScrubbing: false,
+            scrubTime: 0,
+            _lastTimeUpdate: 0,
+
+            get currentTrack() {
+                return this.tracks[this.currentTrackIndex] || {};
+            },
+
+            init() {
+                // Find only <li data-track> elements inside this component
+                const trackEls = this.$el.querySelectorAll("[data-track]");
+                this.tracks = Array.from(trackEls).map((el, index) => {
+                    el.addEventListener("click", () => this.loadTrack(index));
+                    return {
+                        title: el.dataset.title,
+                        artist: el.dataset.artist,
+                        cover: el.dataset.cover,
+                        url: el.dataset.url,
+                    };
+                });
+
+                if (this.tracks.length > 0) {
+                    this.$refs.audio.src = this.tracks[0].url;
+                }
+
+                // Ensure only one playlist plays at a time across the page
+                this.$refs.audio.addEventListener("play", () => {
+                    window.dispatchEvent(
+                        new CustomEvent("elementsAudioPlaylist:play", {
+                            detail: this.$refs.audio,
+                        })
+                    );
+                });
+
+                window.addEventListener(
+                    "elementsAudioPlaylist:play",
+                    (event) => {
+                        if (event.detail !== this.$refs.audio) {
+                            this.$refs.audio.pause();
+                            this.isPlaying = false;
+                        }
+                    }
+                );
+            },
+
+            togglePlay() {
+                const audio = this.$refs.audio;
+                if (audio.paused) {
+                    audio.play();
+                    this.isPlaying = true;
+                } else {
+                    audio.pause();
+                    this.isPlaying = false;
+                }
+            },
+
+            loadTrack(index) {
+                this.currentTrackIndex = index;
+                const audio = this.$refs.audio;
+                audio.src = this.tracks[index].url;
+                audio.play();
+                this.isPlaying = true;
+            },
+
+            prevTrack() {
+                this.currentTrackIndex =
+                    (this.currentTrackIndex - 1 + this.tracks.length) %
+                    this.tracks.length;
+                const audio = this.$refs.audio;
+                audio.src = this.tracks[this.currentTrackIndex].url;
+                audio.play();
+                this.isPlaying = true;
+            },
+
+            nextTrack() {
+                this.currentTrackIndex =
+                    (this.currentTrackIndex + 1) % this.tracks.length;
+                const audio = this.$refs.audio;
+                audio.src = this.tracks[this.currentTrackIndex].url;
+                audio.play();
+                this.isPlaying = true;
+            },
+
+            updateTime() {
+                if (!this.isScrubbing) {
+                    const now = Date.now();
+                    if (now - this._lastTimeUpdate > 200) {
+                        this.currentTime = this.$refs.audio.currentTime;
+                        this._lastTimeUpdate = now;
+                    }
+                }
+            },
+
+            updateDuration() {
+                this.duration = this.$refs.audio.duration;
+            },
+
+            seek(time) {
+                this.$refs.audio.currentTime = parseFloat(time);
+                this.currentTime = parseFloat(time);
+            },
+
+            skipBack() {
+                const audio = this.$refs.audio;
+                audio.currentTime = Math.max(0, audio.currentTime - 10);
+                this.currentTime = audio.currentTime;
+            },
+
+            skipForward() {
+                const audio = this.$refs.audio;
+                audio.currentTime = Math.min(
+                    audio.duration,
+                    audio.currentTime + 10
+                );
+                this.currentTime = audio.currentTime;
+            },
+
+            startScrubbing(event) {
+                this.isScrubbing = true;
+                this.scrubTo(event);
+
+                // Listen for drag and release
+                const moveHandler = (e) => this.scrubTo(e);
+                const upHandler = () => {
+                    this.seek(this.scrubTime);
+                    this.isScrubbing = false;
+                    window.removeEventListener("mousemove", moveHandler);
+                    window.removeEventListener("mouseup", upHandler);
+                    window.removeEventListener("touchmove", moveHandler);
+                    window.removeEventListener("touchend", upHandler);
+                };
+
+                window.addEventListener("mousemove", moveHandler);
+                window.addEventListener("mouseup", upHandler);
+                window.addEventListener("touchmove", moveHandler);
+                window.addEventListener("touchend", upHandler);
+            },
+
+            scrubTo(event) {
+                const bar = this.$refs.progressBar;
+                const rect = bar.getBoundingClientRect();
+                const clientX = event.touches?.[0]?.clientX ?? event.clientX;
+                const percent = Math.min(
+                    Math.max(0, (clientX - rect.left) / rect.width),
+                    1
+                );
+                this.scrubTime = percent * this.duration;
+            },
+
+            formatTime(seconds) {
+                const mins = Math.floor(seconds / 60) || 0;
+                const secs = Math.floor(seconds % 60) || 0;
+                return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
+            },
+        };
+    }
+</script>
+@endportal

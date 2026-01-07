@@ -1,0 +1,100 @@
+@portal(bodyEnd, id: "com.realmacsoftware.video.lightbox.js", includeOnce: true)
+<script>
+    document.addEventListener("alpine:init", () => {
+        Alpine.data("videoLightbox", (id) => ({
+            id,
+            open: false,
+            iframeUrl: "",
+            init() {
+                const handlers = {
+                    keydown: (e) => e.key === "Escape" && (this.open = false),
+                    "video-lightbox-toggle": () => (this.open = !this.open),
+                    "video-lightbox-close": () => (this.open = false),
+                    "video-lightbox-open": () => (this.open = true),
+                };
+
+                document.addEventListener("video-lightbox-open", () => {
+                    this.open = true;
+                });
+
+                Object.entries(handlers).forEach(([event, handler]) => {
+                    (event === "keydown" ? document : window).addEventListener(
+                        event,
+                        (e) => {
+                            if (
+                                event === "keydown" ||
+                                e.detail.id === this.id
+                            ) {
+                                this.iframeUrl = e.detail.iframeUrl || "";
+                                handler(e);
+                            }
+                        }
+                    );
+                });
+
+                this.$watch("open", () => {
+                    if (this.open && this.$refs.video) {
+                        setTimeout(() => {
+                            this.$refs.video.play();
+                        }, 100);
+                    }
+                });
+            },
+        }));
+    });
+</script>
+@endportal @portal(bodyEnd)
+<div x-data="videoLightbox('{{id}}')" x-show="open">
+    <div
+        class="fixed inset-0 z-50 grid place-items-center {{classes.lightbox.overlay}}"
+    >
+        <button
+            @click="$dispatch('video-lightbox-close', { id: '{{id}}' })"
+            class="absolute top-0 right-0 p-4 text-white z-10"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-8 h-8"
+                viewBox="0 0 24 24"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                color="currentColor"
+            >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+        </button>
+        <div
+            class="flex items-center justify-center relative z-10 w-[95vw] h-[95vh] overflow-hidden"
+        >
+            <template x-if="open">
+                @if(!isMP4)
+                <iframe
+                    :src="iframeUrl"
+                    width="100%"
+                    height="auto"
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                    allowfullscreen
+                    class="{{classes.videoLightbox}}"
+                >
+                </iframe>
+                @else
+                <video
+                    x-ref="video"
+                    controls
+                    autoplay
+                    class="{{classes.videoLightbox}}"
+                >
+                    <source src="{{video.path}}" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                @endif
+            </template>
+        </div>
+    </div>
+</div>
+@endportal

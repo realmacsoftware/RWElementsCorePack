@@ -1,0 +1,7 @@
+.group\/{{id}}:has(>[data-rwx-droparea]) {
+  max-width: 100%;
+}
+
+.group\/{{id}}:not(:has(>[data-rwx-droparea])) {
+  max-width: unset;
+}

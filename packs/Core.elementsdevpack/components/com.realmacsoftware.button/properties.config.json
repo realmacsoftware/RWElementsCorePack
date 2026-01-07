@@ -1,0 +1,158 @@
+{
+  "groups": [
+    {
+      "title": "Link",
+      "icon": "link",
+      "properties": [
+        {
+          "globalControl": "Link"
+        }
+      ]
+    },
+    {
+      "title": "Font and Text Styles",
+      "icon": "textformat.size",
+      "properties": [
+        {
+          "title": "Text",
+          "heading": {}
+        },
+        {
+          "title": "Show",
+          "id": "showText",
+          "switch": {
+            "default": true
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "globalControl": "ButtonFontAndTextStyles"
+        }
+      ]
+    },
+    {
+      "title": "Dropzone",
+      "icon": "square.and.arrow.down",
+      "properties": [
+        {
+          "title": "Dropzone",
+          "id": "dropzoneType",
+          "segmented": {
+            "default": false,
+            "items": [
+              {
+                "title": "None",
+                "value": false
+              },
+              {
+                "title": "Left",
+                "value": "left"
+              },
+              {
+                "title": "Right",
+                "value": "right"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "dropzoneType != false",
+          "title": "Spacing",
+          "id": "dropzoneSpacing",
+          "format": "gap-x-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "2"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Layout",
+      "icon": "square.split.bottomrightquarter",
+      "properties": [
+        {
+          "globalControl": "Layout"
+        }
+      ]
+    },
+    {
+      "title": "Sizing",
+      "icon": "arrow.down.backward.and.arrow.up.forward.square",
+      "properties": [
+        {
+          "globalControl": "Sizing"
+        }
+      ]
+    },
+    {
+      "title": "Spacing",
+      "icon": "squareshape.squareshape.dotted",
+      "properties": [
+        {
+          "globalControl": "SpacingButton"
+        }
+      ]
+    },
+    {
+      "title": "Transitions",
+      "icon": "wand.and.stars.inverse",
+      "properties": [
+        {
+          "globalControl": "Transitions"
+        }
+      ]
+    },
+    {
+      "title": "Effects",
+      "icon": "dial.medium",
+      "properties": [
+        {
+          "globalControl": "Effects"
+        }
+      ]
+    },
+    {
+      "title": "Filters",
+      "icon": "camera.filters",
+      "properties": [
+        {
+          "globalControl": "Filters"
+        }
+      ]
+    },
+    {
+      "title": "Transforms",
+      "icon": "skew",
+      "properties": [
+        {
+          "globalControl": "Transforms"
+        }
+      ]
+    },
+    {
+      "title": "Background",
+      "icon": "paintbrush.fill",
+      "properties": [
+        {
+          "globalControl": "BackgroundButton"
+        }
+      ]
+    },
+    {
+      "title": "Borders",
+      "icon": "square.dashed",
+      "properties": [
+        {
+          "globalControl": "Borders"
+        }
+      ]
+    }
+  ]
+}

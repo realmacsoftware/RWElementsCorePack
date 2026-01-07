@@ -1,0 +1,35 @@
+@portal(bodyEnd, id: "com.realmacsoftware.filterTags.alpine", includeOnce: true)
+<script>
+  document.addEventListener('alpine:init', function() {
+    Alpine.data('filterTags', (groupId, options) => ({
+      groupId,
+      options,
+      init() {
+        Alpine.store('filters').registerList(this.groupId, { tags: this.options });
+      },
+      toggle(tag) {
+        Alpine.store('filters').toggleTag(this.groupId, tag);
+      },
+      isActive(tag) {
+        return Alpine.store('filters').isActiveTag(this.groupId, tag);
+      },
+      get tags() {
+        return Alpine.store('filters').getTags(this.groupId);
+      }
+    }));
+  });
+</script>
+@endportal
+
+@if(edit)
+  <button class="{{classes.tag}}">Example Tag</button>
+  <button class="{{classes.tag}}" data-active="true">Active Tag</button>
+@endif
+<template x-for="tag in tags" :key="tag">
+    <button 
+        @click="toggle(tag)"
+        :data-active="isActive(tag)"
+        x-text="tag"
+        class="{{classes.tag}}"
+    ></button>
+</template>

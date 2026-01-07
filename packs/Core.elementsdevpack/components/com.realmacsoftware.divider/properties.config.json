@@ -1,0 +1,99 @@
+{
+  "groups": [
+    {
+      "title": "Spacing",
+      "icon": "squareshape.squareshape.dotted",
+      "properties": [
+        {
+          "globalControl": "Spacing"
+        }
+      ]
+    },
+    {
+      "title": "Sizing",
+      "icon": "square.resize",
+      "properties": [
+        {
+          "title": "Width",
+          "id": "width",
+          "format": "w-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "value": "auto"
+            }
+          }
+        },
+        {
+          "title": "Height",
+          "id": "height",
+          "format": "h-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "value": "0.5"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Background",
+      "icon": "paintpalette",
+      "properties": [
+        {
+          "visible": "false",
+          "id": "globalControlTypeBg",
+          "title": "Background Type",
+          "input": {
+            "default": "static"
+          }
+        },
+        {
+          "title": "Style",
+          "id": "globalBgType",
+          "responsive": false,
+          "segmented": {
+            "default": "color",
+            "items": [
+              {
+                "icon": "paintbrush",
+                "value": "color"
+              },
+              {
+                "icon": "photo",
+                "value": "image"
+              },
+              {
+                "icon": "swatchpalette",
+                "value": "gradient"
+              }
+            ]
+          }
+        },
+        {
+          "globalControl": "Background_Color",
+          "default": {
+            "name": "brand",
+            "brightness": 500
+          }
+        },
+        {
+          "globalControl": "Background_Gradient"
+        },
+        {
+          "globalControl": "Background_Image"
+        }
+      ]
+    },
+    {
+      "title": "Borders",
+      "icon": "square.dashed",
+      "properties": [
+        {
+          "globalControl": "Borders"
+        }
+      ]
+    }
+  ]
+}

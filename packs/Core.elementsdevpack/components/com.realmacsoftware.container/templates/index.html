@@ -1,0 +1,11 @@
+<div class="{{classes.content}}">@dropzone("Content", title: "Container")</div>
+<div class="{{classes.background}}">
+    @if(hasBgVideo)
+        <div class="fixed w-full h-full">
+            @includeIf(bgVideo.isYoutube, template:"youtube")
+            @includeIf(bgVideo.isVimeo, template:"vimeo")
+            @includeIf(bgVideo.isMP4, template:"mp4")
+        </div>
+    @endif
+</div>
+@includeIf(wantsOverlay, template:"overlay")

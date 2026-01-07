@@ -1,0 +1,114 @@
+{
+  "groups": [
+    {
+      "title": "Link",
+      "icon": "link",
+      "properties": [
+        {
+          "globalControl": "Link"
+        }
+      ]
+    },
+    {
+      "title": "Flexbox and Grid",
+      "icon": "square.grid.2x2",
+      "properties": [
+        {
+          "globalControl": "ActAsGridOrFlexItem"
+        }
+      ]
+    },
+    {
+      "title": "Layout",
+      "icon": "square.split.bottomrightquarter",
+      "properties": [
+        {
+          "globalControl": "Layout"
+        }
+      ]
+    },
+    {
+      "title": "Sizing",
+      "icon": "square.resize",
+      "properties": [
+        {
+          "globalControl": "SizingBox"
+        }
+      ]
+    },
+    {
+      "title": "Spacing",
+      "icon": "squareshape.squareshape.dotted",
+      "properties": [
+        {
+          "globalControl": "Spacing"
+        }
+      ]
+    },
+    {
+      "title": "Transitions",
+      "icon": "timer",
+      "properties": [
+        {
+          "globalControl": "Transitions"
+        }
+      ]
+    },
+    {
+      "title": "Effects",
+      "icon": "wand.and.stars.inverse",
+      "properties": [
+        {
+          "globalControl": "Effects"
+        }
+      ]
+    },
+    {
+      "title": "Transforms",
+      "icon": "skew",
+      "properties": [
+        {
+          "globalControl": "Transforms"
+        }
+      ]
+    },
+    {
+      "title": "Filters",
+      "icon": "camera.filters",
+      "properties": [
+        {
+          "globalControl": "Filters"
+        }
+      ]
+    },
+    {
+      "title": "Background",
+      "icon": "paintpalette",
+      "properties": [
+        {
+          "globalControl": "BackgroundTransparent"
+        }
+      ]
+    },
+    {
+      "title": "Border",
+      "icon": "square.dashed",
+      "properties": [
+        {
+          "globalControl": "Borders"
+        }
+      ]
+    },
+    {
+      "title": "Advanced",
+      "properties": [
+        {
+          "divider": {}
+        },
+        {
+          "globalControl": "HTMLTag"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+@portal("bodyEnd", id: "com.realmacsoftware.alpine.gallery", includeOnce: true)
+<script>
+    document.addEventListener("alpine:init", () => {
+        Alpine.data("gallery", (id = null) => ({
+            id,
+            open: false,
+
+            init() {
+                window.addEventListener("gallery-close", (e) => {
+                    if (this.id === e.detail) {
+                        this.close();
+                    }
+                });
+
+                window.addEventListener("gallery-toggle", (e) => {
+                    if (this.id === e.detail.id) {
+                        this.toggle();
+                    }
+
+                    if (e.detail.slide) {
+                        this.$dispatch("slider-scroll-to", {
+                            id: this.id,
+                            index: e.detail.slide,
+                        });
+                    }
+                });
+
+                window.addEventListener("keyup", (e) => {
+                    if (e.key === "Escape") {
+                        this.close();
+                    }
+                });
+            },
+
+            next() {
+                console.log("next");
+            },
+
+            toggle() {
+                this.open = !this.open;
+            },
+
+            close() {
+                this.open = false;
+            },
+
+            wrapper: {
+                ["x-show"]() {
+                    return this.open;
+                },
+            },
+
+            backdrop: {
+                ["x-show"]() {
+                    return this.open;
+                },
+                ["@click"]() {
+                    this.close();
+                },
+            },
+
+            lightbox: {
+                ["x-show"]() {
+                    return this.open;
+                },
+                ["@click.away"]() {
+                    this.close();
+                },
+            },
+        }));
+    });
+</script>
+@endportal

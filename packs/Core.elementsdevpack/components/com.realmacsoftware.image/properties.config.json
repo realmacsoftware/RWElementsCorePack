@@ -1,0 +1,280 @@
+{
+    "groups": [
+        {
+            "title": "Image",
+            "icon": "photo",
+            "properties": [
+                {
+                    "title": "Resource",
+                    "heading": {}
+                },
+                {
+                    "globalControl": "Image"
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Sizing",
+                    "heading": {}
+                },
+                {
+                    "visible": "imageType != 'resource'",
+                    "title": "Width",
+                    "id": "imageIntrinsicWidth",
+                    "responsive": false,
+                    "number": {
+                        "default": 1280
+                    }
+                },
+                {
+                    "visible": "imageType != 'resource'",
+                    "title": "Height",
+                    "id": "imageIntrinsicHeight",
+                    "responsive": false,
+                    "number": {
+                        "default": 720
+                    }
+                },
+                {
+                    "visible": "imageType != 'resource'",
+                    "information": {},
+                    "title": "The intrinsic size of the image. Display sizing is set via the Sizing controls."
+                },
+                {
+                    "visible": "imageType == 'resource'",
+                    "title": "Type",
+                    "id": "imageSizingType",
+                    "responsive": false,
+                    "segmented": {
+                        "default": "devices",
+                        "items": [
+                            {
+                                "title": "Original",
+                                "value": "none"
+                            },
+                            {
+                                "title": "Custom",
+                                "value": "custom"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "visible": "imageType != 'cms' && imageSizingType == 'custom'",
+                    "title": "File Size",
+                    "id": "imageFileSize",
+                    "number": {
+                        "default": 400,
+                        "round": true,
+                        "subtitle": "In pixels"
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Image Protection",
+                    "heading": {}
+                },
+                {
+                    "title": "Enable",
+                    "id": "imageProtection",
+                    "responsive": false,
+                    "switch": {}
+                },
+                {
+                    "information": {},
+                    "title": "Prevent this image from being easily downloaded."
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Lazy Loading",
+                    "heading": {}
+                },
+                {
+                    "title": "Enable",
+                    "id": "imageLazyLoading",
+                    "responsive": false,
+                    "switch": {}
+                },
+                {
+                    "information": {},
+                    "title": "Adds the loading='lazy' attribute to the image."
+                },
+                {
+                  "divider": {}
+              },
+                {
+                    "title": "Fetch Priority",
+                    "heading": {}
+                },
+                {
+                    "title": "Value",
+                    "id": "imageFetchPriority",
+                    "responsive": false,
+                    "segmented": {
+                        "default": "auto",
+                        "items": [
+                            {
+                                "title": "Auto",
+                                "value": "auto"
+                            },
+                            {
+                                "title": "High",
+                                "value": "high"
+                            },
+                            {
+                                "title": "Low",
+                                "value": "low"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "information": {},
+                    "title": "Adds the fetchpriority attribute to the image."
+                }
+            ]
+        },
+        {
+            "title": "Lightbox",
+            "icon": "square.filled.on.square",
+            "properties": [
+                {
+                    "title": "Enable",
+                    "id": "wantsLightbox",
+                    "responsive": false,
+                    "switch": {}
+                },
+                {
+                    "visible": "wantsLightbox == true",
+                    "title": "Backdrop",
+                    "heading": {}
+                },
+                {
+                    "visible": "wantsLightbox == true",
+                    "title": "Color",
+                    "id": "imageLightboxColor",
+                    "format": "bg-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "black",
+                            "brightness": 50
+                        }
+                    }
+                },
+                {
+                    "visible": "wantsLightbox == true",
+                    "title": "Opacity",
+                    "id": "imageLightboxColorOpacity",
+                    "format": "bg-opacity-[{{value}}%]",
+                    "responsive": false,
+                    "slider": {
+                        "default": "50",
+                        "use": "Slider",
+                        "units": "%"
+                    }
+                },
+                {
+                    "visible": "wantsLightbox == true",
+                    "title": "Blur",
+                    "id": "imageLightbox{{value}}",
+                    "globalControl": "BackdropBlur"
+                }
+            ]
+        },
+        {
+            "title": "Link",
+            "icon": "link",
+            "properties": [
+                {
+                    "globalControl": "Link"
+                }
+            ]
+        },
+        {
+            "title": "Aspect Ratio",
+            "icon": "aspectratio",
+            "properties": [
+                {
+                    "globalControl": "AspectRatio"
+                }
+            ]
+        },
+        {
+            "title": "Layout",
+            "icon": "square.split.bottomrightquarter",
+            "properties": [
+                {
+                    "globalControl": "Layout"
+                }
+            ]
+        },
+        {
+            "title": "Sizing",
+            "icon": "arrow.down.backward.and.arrow.up.forward.square",
+            "properties": [
+                {
+                    "globalControl": "SizingImage"
+                }
+            ]
+        },
+        {
+            "title": "Spacing",
+            "icon": "squareshape.squareshape.dotted",
+            "properties": [
+                {
+                    "globalControl": "Spacing"
+                }
+            ]
+        },
+        {
+            "title": "Transitions",
+            "icon": "timer",
+            "properties": [
+                {
+                    "globalControl": "Transitions"
+                }
+            ]
+        },
+        {
+            "title": "Effects",
+            "icon": "wand.and.stars.inverse",
+            "properties": [
+                {
+                    "globalControl": "Effects"
+                }
+            ]
+        },
+        {
+            "title": "Transforms",
+            "icon": "skew",
+            "properties": [
+                {
+                    "globalControl": "Transforms"
+                }
+            ]
+        },
+        {
+            "title": "Filters",
+            "icon": "camera.filters",
+            "properties": [
+                {
+                    "globalControl": "Filters"
+                }
+            ]
+        },
+        {
+            "title": "Borders",
+            "icon": "square.dashed",
+            "properties": [
+                {
+                    "globalControl": "Borders"
+                }
+            ]
+        }
+    ]
+}

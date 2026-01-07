@@ -1,0 +1,15 @@
+<div x-bind="trigger" x-ref="trigger">
+    @dropzone("trigger", title: "Trigger")
+</div>
+
+@if (includePanel)
+<div x-ref="panel" x-bind="panel" class="{{classes.panel}}">
+    <div
+        x-show="open"
+        {{transitionAttributes}}
+        class="{{dropdownTransitionDuration}}"
+    >
+        @dropzone("content", title: "Content")
+    </div>
+</div>
+@endif

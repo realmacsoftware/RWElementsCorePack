@@ -1,0 +1,103 @@
+@portal(bodyEnd, id: "com.realmacsoftware.alpineData.video", includeOnce: true)
+  <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('videoPlayer', (id, platform, videoId, options = { muted: false, loop: false, controls: true, autoplay: 'never' }) => ({
+          id: id,
+          platform: platform,
+          videoId: videoId,
+          options: options,
+          showVideo: false,
+
+          get iframeAttributes() {
+            return `autoplay=1&loop=${this.options.loop}&mute=${this.options.muted}&controls=${this.options.controls}`;
+          },
+
+          get iframeUrl() {
+              if (this.platform === 'youtube') {
+                  return `https://www.youtube.com/embed/${this.videoId}?${this.iframeAttributes}`;
+              } else if (this.platform === 'vimeo') {
+                  return `https://player.vimeo.com/video/${this.videoId}?${this.iframeAttributes}`;
+              } else if (this.platform === 'mp4') {
+                  return this.videoId;
+              }
+          },
+
+          init() {
+              if (this.options.autoplay === 'immediate') {
+                if (this.options.wantsLightbox) {
+                    setTimeout(() => {
+                        this.$dispatch('video-lightbox-toggle', { id: this.id, iframeUrl: this.iframeUrl });
+                    }, 0);
+                } else {
+                  this.showVideo = true;
+                  if (this.platform === 'mp4') {
+                    setTimeout(() => {
+                        this.$refs.video.muted = this.options.muted;
+                        this.$refs.video.loop = this.options.loop;
+                        this.$refs.video.controls = this.options.controls;
+                        this.$refs.video.play();
+                        }, 100);
+                    }
+                }
+              }
+
+              if (this.options.autoplay === 'viewport') {
+                  const observer = new IntersectionObserver((entries) => {
+                      entries.forEach(entry => {
+                          if (entry.isIntersecting) {
+                              if (this.options.wantsLightbox) {
+                                this.$dispatch('video-lightbox-open', { id: this.id, iframeUrl: this.iframeUrl });
+                              } else {
+                                this.showVideo = true;
+                              }
+
+                              observer.disconnect();
+                          }
+                      });
+                  });
+                  observer.observe(this.$el);
+              }
+
+              this.$watch('showVideo', () => {
+                if (this.showVideo && this.platform === 'mp4') {
+                  setTimeout(() => {
+                    this.$refs.video.muted = this.options.muted;
+                    this.$refs.video.loop = this.options.loop;
+                    this.$refs.video.controls = this.options.controls;
+                    this.$refs.video.play();
+                  }, 100);
+                }
+              });
+          },
+          trigger: {
+            ['@click']() {
+                if (this.options.wantsLightbox) {
+                  this.$dispatch('video-lightbox-toggle', { id: this.id, iframeUrl: this.iframeUrl });
+                } else {
+                  this.showVideo = true;
+                }
+            },
+            ['x-show']() {
+                if (this.options.wantsLightbox) {
+                    return true;
+                }
+
+                return !this.showVideo;
+            },
+          },
+
+          mp4: {
+            [':muted']() {
+              return this.options.muted ? true : false;
+            },
+            [':loop']() {
+              return this.options.loop ? true : false;
+            },
+            [':controls']() {
+              return this.options.controls ? true : false;
+            },
+          }
+      }));
+    });
+  </script>
+@endportal

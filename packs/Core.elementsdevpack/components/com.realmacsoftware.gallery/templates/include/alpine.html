@@ -1,0 +1,185 @@
+<script>
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('gallery', (id = null) => ({
+      id,
+      open: false,
+      scrollPosition: 0,
+      currentSlide: null,
+      isScrolling: false,
+      scrollTimeout: null,
+      init() {
+        const slides = this.$refs.lightboxContent?.children;
+
+        this.$refs.lightboxContent?.addEventListener('scroll', () => {
+          this.isScrolling = true;
+          clearTimeout(this.scrollTimeout);
+          this.scrollTimeout = setTimeout(() => {
+            this.isScrolling = false;
+          }, 100);
+        });
+
+        Array.from(slides).forEach((slide, index) => {
+          const observer = new IntersectionObserver(([entry]) => {
+            this.currentSlide = entry.isIntersecting && entry.intersectionRatio === 1
+              ? entry.target.dataset.resourceId 
+              : null;
+          }, {
+            threshold: 1.0
+          });
+
+          observer.observe(slide);
+        });
+
+        window.addEventListener('gallery-close', (e) => {
+          if (this.id === e.detail) {
+            this.close();
+          }
+        });
+
+        window.addEventListener('gallery-toggle', (e) => {
+          if (this.id === e.detail) {
+            this.toggle();
+          }
+        });
+
+        window.addEventListener('gallery-scroll-to-slide', (e) => {
+          if (this.id === e.detail.id) {
+            this.scrollToSlide(e.detail.resourceId || '');
+          }
+        });
+
+        window.addEventListener('keyup', (e) => {
+          if (e.key === 'Escape') {
+            this.close();
+          }
+          if (e.key === 'ArrowLeft') {
+            this.previous();
+          }
+          if (e.key === 'ArrowRight') {
+            this.next();
+          }
+        });
+
+        this.$watch('open', (value) => {
+          if (value) {
+            setTimeout(() => {
+              this.$refs.lightboxContent.scrollTo({
+                left: this.scrollPosition
+              });
+            }, 10);
+          }
+        });
+      },
+
+      toggle() {
+        if (this.open) {
+          return this.close();
+        }
+
+        this.open = true;
+      },
+
+      close() {
+        if (!this.open) {
+          return;
+        }
+
+        this.open = false;
+      },
+
+      scrollToSlide(resourceId) {
+        const { lightboxContent } = this.$refs;
+        if (!resourceId || !lightboxContent) {
+          return;
+        }
+
+        const element = lightboxContent.querySelector(`[data-resource-id="${resourceId}"]`);
+        if (!element) {
+          return;
+        }
+
+        const slides = Array.from(lightboxContent.children);
+        const slideIndex = slides.indexOf(element);
+        
+        this.scrollPosition = slideIndex * window.innerWidth;
+      },
+
+      previous() {
+        if (this.isScrolling) return;
+
+        const currentIndex = Array.from(this.$refs.lightboxContent.children).findIndex(child => child.dataset.resourceId === this.currentSlide);
+        if (currentIndex == 0) {
+          return;
+        }
+
+        const previousIndex = currentIndex - 1;
+        this.$refs.lightboxContent.scrollTo({
+          left: previousIndex * window.innerWidth,
+          behavior: 'smooth'
+        });
+      },
+
+      next() {
+        if (this.isScrolling) return;
+
+        const currentIndex = Array.from(this.$refs.lightboxContent.children).findIndex(child => child.dataset.resourceId === this.currentSlide);
+
+        if (currentIndex == this.$refs.lightboxContent.children.length - 1) {
+          return;
+        }
+
+        const nextIndex = currentIndex + 1;
+        this.$refs.lightboxContent.scrollTo({
+          left: nextIndex * window.innerWidth,
+          behavior: 'smooth'
+        });
+
+      },
+
+      wrapper: {
+        ['x-show']() {
+          return this.open;
+        },
+      },
+
+      backdrop: {
+        ['x-show']() {
+          return this.open;
+        },
+        ['@click']() {
+          this.open = false;
+        },
+      },
+
+      lightbox: {
+        ['x-ref']() {
+          return 'lightbox';
+        },
+        ['x-show']() {
+          return this.open;
+        },
+        ['@click.away']() {
+          this.close();
+        },
+      },
+
+      nextButton: {
+        ['@click']() {
+          this.next();
+        },
+        [':disabled']() {
+          return this.currentSlide === this.$refs.lightboxContent?.children[this.$refs.lightboxContent?.children.length - 1]?.dataset.resourceId;
+        },
+      },
+
+      previousButton: {
+        ['@click']() {
+          this.previous();
+        },
+        [':disabled']() {
+          return this.currentSlide === this.$refs.lightboxContent?.children[0]?.dataset.resourceId;
+        },
+      },
+    }));
+  });
+</script>

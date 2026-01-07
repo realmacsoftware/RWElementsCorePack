@@ -1,0 +1,17 @@
+{
+    "groups": [
+        {
+            "title" : "Tag",
+            "properties" : [
+                {
+                    "title": "Title",
+                    "property": "title",
+                    "responsive": false,
+                    "text": {
+                        "default": ""
+                    }
+                }
+            ]
+        }
+    ]
+}

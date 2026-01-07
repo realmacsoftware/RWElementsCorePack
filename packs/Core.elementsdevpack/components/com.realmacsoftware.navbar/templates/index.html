@@ -1,0 +1,130 @@
+
+<nav class="{{classes.desktop.nav}}">
+    <!-- Logo -->
+    <div class="{{classes.logoWrapper}}">
+    @if(hasLogoLink)
+        <a
+            href="{{logoLink.href}}"
+            title="{{logoLink.title}}"
+            target="{{logoLink.target}}"
+            class="-m-1.5 p-1.5"
+        >
+    @endif
+
+            @if(wantsLogo) 
+                @include("logo")
+            @elseif(wantsTitle)
+                @include("title")
+            @else
+                @dropzone("logo", title: "Logo")
+            @endif
+        
+    @if(hasLogoLink)
+        </a>
+    @endif
+    </div>
+
+    <!-- Mobile menu button -->
+    <div class="{{classes.mobile.menuButton}}">
+        @if(wantsMobileTrigger)
+        <button
+            x-data
+            type="button"
+            class="{{classes.mobile.trigger}}"
+            @click="$dispatch('navigation-standard-toggle', '{{mobileMenuId}}')"
+        >
+            <span class="sr-only">Open main menu</span>
+            <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+            </svg>
+        </button>
+        @else
+        <div
+            x-data
+            @click="$dispatch('navigation-standard-toggle', '{{mobileMenuId}}')"
+            class="{{classes.mobile.trigger}}"
+        >
+            @dropzone("mobileTrigger", title: "Mobile Trigger")
+        </div>
+        @endif
+    </div>
+
+    <!-- Desktop items -->
+    <div class="{{classes.desktop.items}}">
+        @each(page in pages) @include("desktop_item") @endeach
+    </div>
+
+    <!-- Desktop right items -->
+    <div class="{{classes.desktop.rightItems}}">
+        @dropzone("desktop", title: "Desktop")
+    </div>
+</nav>
+
+@if(includeMobileMenu) @portal("bodyStart")
+<div x-data="navigationStandard('{{mobileMenuId}}')" class="relative z-50">
+    <div
+        @if(!edit)
+        style="display: none"
+        @endif
+        x-bind="backdrop"
+        {{mobileBackdropTransitionAttributes}}
+        class="{{classes.mobile.backdrop}}"
+        aria-hidden="true"
+    ></div>
+
+    <div
+        @if(!edit)
+        style="display: none"
+        @endif
+        x-bind="menu"
+        {{mobileTransitionAttributes}}
+        class="{{classes.mobile.menu}}"
+        tabindex="-1"
+    >
+        <div class="flex items-center justify-between">
+            <button
+                aria-label="Close menu"
+                type="button"
+                @click="open = false"
+                class="{{classes.mobile.closeTrigger}}"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    class="{{classes.mobile.closeSvg}}"
+                >
+                    <path
+                        d="m17.25 6.75-10.5 10.5M6.75 6.75l10.5 10.5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    ></path>
+                </svg>
+            </button>
+            @dropzone("mobileLogo", title: "Mobile Logo")
+        </div>
+        <nav>
+            <ul class="{{classes.mobile.items}}">
+                @each(page in pages) @if(page.isFolder)
+                @include("mobile_folder") @else @include("mobile_item") @endif
+                @endeach
+            </ul>
+        </nav>
+
+        @dropzone("mobileContent", title: "Mobile Content")
+    </div>
+</div>
+@endportal @endif

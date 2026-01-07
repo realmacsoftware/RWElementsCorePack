@@ -1,0 +1,128 @@
+@portal("bodyEnd", id: "com.realmacsoftware.alpine.gallery-lightbox",
+includeOnce: true)
+<script>
+    document.addEventListener("alpine:init", () => {
+        Alpine.data("galleryLightbox", (id = null, options = {}) => ({
+            id,
+            skip: 1,
+            atBeginning: false,
+            atEnd: false,
+            show: false,
+            scrollTarget: null,
+
+            init() {
+                this.setupKeyboardControls();
+                this.setupEventListeners();
+            },
+
+            setupKeyboardControls() {
+                const keyActions = {
+                    Escape: () => this.hide(),
+                    ArrowRight: () => this.next(),
+                    ArrowLeft: () => this.prev(),
+                    ArrowUp: () => this.prev(),
+                    ArrowDown: () => this.next(),
+                    Space: () => this.next(),
+                    Enter: () => this.next(),
+                };
+
+                window.addEventListener("keydown", (event) => {
+                    const action = keyActions[event.key];
+                    if (action) {
+                        event.preventDefault();
+                        action();
+                    }
+                });
+            },
+
+            setupEventListeners() {
+                window.addEventListener(
+                    "gallery-lightbox-scroll-to",
+                    (event) => {
+                        if (this.id === event.detail.id) {
+                            this.scrollTarget = event.detail.index;
+                        }
+                    }
+                );
+
+                window.addEventListener("gallery-lightbox-show", (event) => {
+                    if (this.id === event.detail.id) {
+                        this.show = true;
+                        this.scrollTarget = event.detail.slide;
+                    }
+                });
+
+                this.$watch("show", (value) => {
+                    if (value && this.scrollTarget !== null) {
+                        this.scrollToTarget();
+                    }
+                });
+            },
+
+            scrollToTarget() {
+                const slider = this.$refs.slider;
+                const totalScrollable = slider.scrollWidth - slider.clientWidth;
+                const numberOfIntervals = slider.children.length - 1;
+                const scrollInterval = totalScrollable / numberOfIntervals;
+
+                slider.scrollLeft = scrollInterval * this.scrollTarget;
+                this.scrollTarget = null;
+            },
+
+            hide() {
+                this.show = false;
+            },
+
+            next() {
+                this.to((current, offset) => current + offset * this.skip);
+            },
+
+            prev() {
+                this.to((current, offset) => current - offset * this.skip);
+            },
+
+            to(strategy) {
+                const slider = this.$refs.slider;
+                const current = slider.scrollLeft;
+                const offset =
+                    slider.firstElementChild.getBoundingClientRect().width;
+
+                slider.scrollTo({
+                    left: strategy(current, offset),
+                    behavior: "smooth",
+                });
+            },
+
+            focusableWhenVisible: {
+                "x-intersect:enter"() {
+                    this.$el.removeAttribute("tabindex");
+                },
+                "x-intersect:leave"() {
+                    this.$el.setAttribute("tabindex", "-1");
+                },
+            },
+
+            disableNextAndPreviousButtons: {
+                "x-intersect:enter.threshold.05"() {
+                    this.updateNavigationState(true);
+                },
+                "x-intersect:leave.threshold.05"() {
+                    this.updateNavigationState(false);
+                },
+            },
+
+            updateNavigationState(isEntering) {
+                const slideEls = this.$el.parentElement.children;
+                const isFirstSlide = slideEls[0] === this.$el;
+                const isLastSlide = slideEls[slideEls.length - 1] === this.$el;
+
+                if (isFirstSlide) {
+                    this.atBeginning = isEntering;
+                } else if (isLastSlide) {
+                    this.atEnd = isEntering;
+                }
+            },
+        }));
+    });
+</script>
+@endportal

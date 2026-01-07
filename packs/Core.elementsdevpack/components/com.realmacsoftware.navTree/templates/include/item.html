@@ -1,0 +1,78 @@
+@if(page.hasPages)
+<li role="none" class="group">
+    <div
+        id="{{page.id}}"
+        tabindex="{{page.index}}"
+        role="treeitem"
+        :aria-expanded="isOpen('{{page.id}}')"
+        @click="toggle('{{page.id}}')"
+        @keydown.enter.prevent="toggle('{{page.id}}')"
+        @keydown.space.prevent="toggle('{{page.id}}')"
+        @focus="setCurrent('{{page.id}}')"
+        class="{{classes.item}} @if(page.isTopLevel) {{classes.topLevel}} @elseif(page.isSecondLevel) {{classes.subMenuItem}} @elseif(page.isThirdLevel) {{classes.thirdLevelItem}} @endif"
+        :data-state="({{page.isActive}} || {{page.hasActiveChild}}) ? 'active' : null"
+    >
+        @if(page.showPageIcon)
+        <div class="{{classes.pageIcon}}">{{page.icon}}</div>
+        @endif
+        <button
+            type="button"
+            class="{{classes.iconWrapper}}"
+            :aria-label="isOpen('{{page.id}}') ? 'Collapse {{page.title}}' : 'Expand {{page.title}}'"
+            aria-hidden="true"
+            :class="{ 'rotate-90': isOpen('{{page.id}}') }"
+        >
+            @if(!hasSvgIcon)
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class=""
+                viewBox="0 0 20 20"
+                fill="currentColor"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                    clip-rule="evenodd"
+                />
+            </svg>
+            @else {{svgIcon}} @endif
+        </button>
+        @if(page.isFolder)
+        <span class="{{classes.title}}"> {{page.title}} </span>
+        @else
+        <a href="{{page.url}}" class="{{classes.title}}" @if(page.openInNewWindow) target="_blank" @endif> {{page.title}}</a>
+        @endif
+    </div>
+
+    @if(showSubMenus) @if(page.hasPages)
+    <ul
+        x-show="isOpen('{{page.id}}')"
+        x-collapse.duration.{{collapseDuration}}
+        role="group"
+        class="@if(page.isTopLevel) {{classes.subMenu}} @elseif(page.isSecondLevel) {{classes.thirdLevel}} @elseif(page.isThirdLevel) {{classes.thirdLevel}} @endif"
+    >
+        @each(subPage in page.pages) @include("item", page: subPage) @endeach
+    </ul>
+    @endif @endif
+</li>
+@else
+<!-- SINGLE LINK -->
+<li role="none">
+    <a
+        href="{{page.url}}"
+        id="{{page.id}}"
+        tabindex="{{page.index}}"
+        role="treeitem"
+        @focus="setCurrent('{{page.id}}')"
+        class="{{classes.item}} @if(page.isTopLevel) {{classes.topLevel}} @elseif(page.isSecondLevel) {{classes.subMenuItem}} @elseif(page.isThirdLevel) {{classes.thirdLevelItem}} @endif"
+        :data-state="({{page.isActive}} || {{page.hasActiveChild}}) ? 'active' : null"
+        @if(page.openInNewWindow)
+        target="_blank"
+        @endif
+    >
+        @if(page.showPageIcon)
+        <div class="{{classes.pageIcon}}">{{page.icon}}</div>
+        @endif {{page.title}}
+    </a>
+</li>
+@endif

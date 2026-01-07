@@ -1,0 +1,12 @@
+@if(bgFixed)
+<div class="{{classes.bgWrapper}}">
+    @endif
+    <div
+        class="{{classes.background}}"
+        @if(isCms) style="background-image: url({{cmsField}})" @endif
+    >
+        @if(isSvg) {{globalBgSVGResource}} @endif
+    </div>
+    @if(bgFixed)
+</div>
+@endif @if(dropzoneEnabled) @dropzone("content") @endif

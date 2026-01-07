@@ -1,0 +1,31 @@
+<div class="{{overlay.wrapper}}">
+    <!-- Responsive Column Overlays -->
+    @each(deviceColumns in overlay.columns)
+    <div
+        class="{{deviceColumns.className}} grid grid-cols-subgrid col-span-full row-span-full pointer-events-none"
+    >
+        @each(column in deviceColumns.items) @if(column::isFirst)
+        <div class="{{overlay.column}} border-r pointer-events-none"></div>
+        @elseif(column::isLast)
+        <div class="{{overlay.column}} border-l pointer-events-none"></div>
+        @else
+        <div class="{{overlay.column}} border-x pointer-events-none"></div>
+        @endif @endeach
+    </div>
+    @endeach
+
+    <!-- Responsive Row Overlays -->
+    @each(deviceRows in overlay.rows)
+    <div
+        class="{{deviceRows.className}} grid grid-rows-subgrid row-span-full col-span-full pointer-events-none"
+    >
+        @each(row in deviceRows.items) @if(row::isFirst)
+        <div class="{{overlay.row}} border-b pointer-events-none"></div>
+        @elseif(row::isLast)
+        <div class="{{overlay.row}} border-t pointer-events-none"></div>
+        @else
+        <div class="{{overlay.row}} border-y pointer-events-none"></div>
+        @endif @endeach
+    </div>
+    @endeach
+</div>

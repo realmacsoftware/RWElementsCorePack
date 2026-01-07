@@ -1,0 +1,47 @@
+@portal(bodyEnd, includeOnce: true, id: "com.realmacsoftware.accordion.alpine")
+<script>
+    document.addEventListener("alpine:init", () => {
+        Alpine.data("accordion", (id, options = {}) => ({
+            open: options.openOnLoad || false,
+            id,
+            options,
+            init() {
+                this.$watch("open", (value) => {
+                    if (value && this.options.groupId) {
+                        this.$dispatch("close-accordions-in-group", {
+                            groupId: this.options.groupId,
+                            id: this.id,
+                        });
+                    }
+                });
+            },
+
+            details: {
+                ["@close-accordions-in-group.window"](e) {
+                    const { groupId, id } = e.detail;
+                    console.log(groupId, this.options.groupId, id, this.id);
+                    if (groupId == this.options.groupId && id != this.id) {
+                        console.log("closing", id, this.id);
+                        this.open = false;
+                    }
+                },
+                [":data-open"]() {
+                    return this.open.toString();
+                },
+            },
+
+            summary: {
+                ["@click"]() {
+                    this.open = !this.open;
+                },
+            },
+
+            content: {
+                ["x-show"]() {
+                    return this.open;
+                },
+            },
+        }));
+    });
+</script>
+@endportal

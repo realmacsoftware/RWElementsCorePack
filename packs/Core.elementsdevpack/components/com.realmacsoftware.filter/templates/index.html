@@ -1,0 +1,25 @@
+@portal(bodyEnd, id: "com.realmacsoftware.accordionFilter.alpine", includeOnce: true)
+<script>
+    document.addEventListener('alpine:init', function() {
+      Alpine.data('filter', (groupId) => ({
+        groupId,
+        q: '',
+        init() {
+          Alpine.store('filters').registerList(this.groupId);
+        },
+        updateSearch() {
+          Alpine.store('filters').updateQuery(this.groupId, this.q);
+        }
+      }));
+  });
+</script>
+@endportal
+
+<input 
+    type="search"
+    x-model="q"
+    @input="updateSearch()"
+    placeholder="{{placeholder}}"
+    class="{{classes.input}}"
+    aria-label="{{placeholder}}"
+>

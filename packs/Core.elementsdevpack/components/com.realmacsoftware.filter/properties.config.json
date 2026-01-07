@@ -1,0 +1,162 @@
+{
+  "groups": [
+    {
+      "title": "Settings",
+      "icon": "gearshape",
+      "properties": [
+        {
+          "title": "Filter",
+          "heading": {}
+        },
+        {
+          "title": "Group",
+          "id": "globalFilterGroup",
+          "segmented": {
+              "default": "parent",
+              "items": [
+                  {
+                      "title": "Parent",
+                      "value": "parent"
+                  },
+                  {
+                      "title": "Custom",
+                      "value": "custom"
+                  }
+              ]
+          }
+        },
+        {
+            "visible": "globalFilterGroup == 'custom'",
+            "title": "Group ID",
+            "id": "globalFilterCustomGroupId",
+            "text": {
+                "default": "unique-group-id"
+            }
+        }
+      ]
+    },
+    {
+      "title": "Font and Text Styles",
+      "icon": "textformat.size",
+      "properties": [
+        {
+          "globalControl": "InputFontAndTextStyles"
+        }
+      ]
+    },
+    {
+      "title": "Placeholder",
+      "icon": "rectangle.and.pencil.and.ellipsis",
+      "properties": [
+        {
+          "title": "Text",
+          "id": "placeholder",
+          "text": {
+            "default": "Filter..."
+          }
+        },
+        {
+          "title": "Color",
+          "id": "placeholderColor",
+          "format": "placeholder-{{value}}",
+          "themeColor": {
+            "default": {
+                "name": "text",
+                "brightness": 400
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Outline",
+      "icon": "inset.filled.rectangle",
+      "properties": [
+        {
+          "globalControl": "Outline"
+        }
+      ]
+    },
+    {
+      "title": "Layout",
+      "icon": "square.split.bottomrightquarter",
+      "properties": [
+        {
+          "globalControl": "Layout"
+        }
+      ]
+    },
+    {
+      "title": "Sizing",
+      "icon": "arrow.down.backward.and.arrow.up.forward.square",
+      "properties": [
+        {
+          "globalControl": "Sizing"
+        }
+      ]
+    },
+    {
+      "title": "Spacing",
+      "icon": "squareshape.squareshape.dotted",
+      "properties": [
+        {
+          "globalControl": "SpacingInput"
+        }
+      ]
+    },
+    {
+      "title": "Transitions",
+      "icon": "wand.and.stars.inverse",
+      "properties": [
+        {
+          "globalControl": "Transitions"
+        }
+      ]
+    },
+    {
+      "title": "Effects",
+      "icon": "wand.and.stars.inverse",
+      "properties": [
+        {
+          "globalControl": "Effects"
+        }
+      ]
+    },
+    {
+      "title": "Filters",
+      "icon": "camera.filters",
+      "properties": [
+        {
+          "globalControl": "Filters"
+        }
+      ]
+    },
+    {
+      "title": "Transforms",
+      "icon": "skew",
+      "properties": [
+        {
+          "globalControl": "Transforms"
+        }
+      ]
+    },
+    {
+      "title": "Background",
+      "icon": "paintbrush.fill",
+      "properties": [
+        {
+          "globalControl": "BackgroundTransparent"
+        }
+      ]
+    },
+    {
+      "title": "Borders",
+      "icon": "square.dashed",
+      "properties": [
+        {
+          "globalControl": "BordersInput"
+        }
+      ]
+    }
+  ]
+}

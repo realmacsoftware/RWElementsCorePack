@@ -1,0 +1,107 @@
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+    document.addEventListener("DOMContentLoaded", () => {
+        const revealElements = document.querySelectorAll("[data-reveal]");
+        revealElements.forEach((element, index) => {
+            element.style.visibility = "hidden";
+            element.style.transitionProperty = "none";
+
+            const {
+                revealAnimation: animation = "fadeUpIn",
+                revealExitAnimation: exitAnimation = "fadeUpOut",
+                revealPlay: play = "enter-exit",
+                revealStart: start = "top bottom",
+                revealEnd: end = "top top",
+                revealDelay: delay = 0,
+                revealDuration: duration = 0.5,
+                revealEasing: easing = "power1.out",
+                revealDistance: distance = 200,
+                revealDegrees: degrees = 90,
+                revealScrub: scrub = false,
+                revealDebug: debug = false,
+                revealId,
+            } = element.dataset;
+
+            const id = `${revealId}-${index}`;
+            const wantsScrub = scrub === "true";
+            const wantsDebug = debug === "true";
+            const wantsExitAnimation = play == "enter-exit";
+            const playOnce = play == "enter-once";
+            const durationNumber = parseFloat(duration);
+            const delayNumber = parseFloat(delay);
+            const degreesNumber = parseFloat(degrees);
+            const degreesNumberOut = degreesNumber * -1;
+            
+            let triggeredOnce = false;
+            
+            const config = {
+                duration: durationNumber,
+                ease: easing,
+                delay: delayNumber,
+                distance: distance,
+                degrees: degreesNumber,
+                degreesOut: degreesNumberOut,
+                clearProps: "auto",
+                onComplete: () => {
+                    element.style.transitionProperty = "";
+                },
+            }
+
+            const markers = wantsDebug
+                ? {
+                    startColor: "green",
+                    endColor: "red",
+                    fontSize: "12px",
+                    fontWeight: "bold",
+                    indent: 20,
+                }
+                : false;
+
+            if (wantsScrub) {
+                gsap.effects[animation](element, {
+                    scrollTrigger: {
+                        trigger: element,
+                        start: start,
+                        end: end,
+                        scrub: true,
+                        markers,
+                        id,
+                    },
+                    ...config
+                });
+            } else {
+                ScrollTrigger.create({
+                    trigger: element,
+                    start: start,
+                    end: end,
+                    markers,
+                    id,
+                    onEnter: () => {
+                        if (playOnce && triggeredOnce) return;
+                        element.style.transitionProperty = "none";
+                        triggeredOnce = true;
+                        gsap.effects[animation](element, config);
+                    },
+                    onLeave: () => {
+                        if (wantsExitAnimation) {
+                            element.style.transitionProperty = "none";
+                            gsap.effects[exitAnimation](element, { delay: 0, ...config });
+                        }
+                    },
+                    onEnterBack: () => {
+                        if (wantsExitAnimation) {
+                            element.style.transitionProperty = "none";
+                            gsap.effects[animation](element, config);
+                        }
+                    },
+                    onLeaveBack: () => {
+                        if (wantsExitAnimation) {
+                            element.style.transitionProperty = "none";
+                            gsap.effects[exitAnimation](element, { delay: 0, ...config });
+                        }
+                    },
+                });
+            }
+        });
+    });
+</script>

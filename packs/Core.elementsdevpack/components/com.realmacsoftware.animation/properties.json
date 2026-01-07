@@ -1,0 +1,1837 @@
+{
+  "groups": [
+    {
+      "title": "General",
+      "icon": "gearshape",
+      "properties": [
+        {
+          "title": "Type",
+          "id": "globalScrollAnimationTrigger",
+          "responsive": false,
+          "select": {
+            "default": "instant",
+            "items": [
+              {
+                "title": "Instant",
+                "value": "instant"
+              },
+              {
+                "title": "Scroll",
+                "value": "inView"
+              },
+              {
+                "title": "Scrub",
+                "value": "scroll"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalScrollAnimationTrigger == 'instant'",
+          "information": {},
+          "title": "The animation is triggered immediately on page load."
+        },
+        {
+          "visible": "globalScrollAnimationTrigger == 'inView'",
+          "information": {},
+          "title": "The animation is triggered when the component enters the viewport."
+        },
+        {
+          "visible": "globalScrollAnimationTrigger == 'scroll'",
+          "information": {},
+          "title": "The animation progress is linked to window scroll position."
+        },
+        {
+          "divider": {}
+        },
+        {
+          "visible": "globalScrollAnimationTrigger != 'scroll'",
+          "title": "Duration",
+          "id": "globalScrollAnimationDuration",
+          "responsive": false,
+          "number": {
+            "default": 2000
+          }
+        },
+        {
+          "visible": "globalScrollAnimationTrigger != 'scroll'",
+          "title": "Delay",
+          "id": "globalScrollAnimationDelay",
+          "responsive": false,
+          "number": {
+            "default": 0,
+            "subtitle": "In milliseconds"
+          }
+        },
+        {
+          "title": "Origin",
+          "id": "globalScrollAnimationOrigin",
+          "responsive": false,
+          "select": {
+            "default": "center",
+            "items": [
+              {
+                "value": "center",
+                "title": "Center"
+              },
+              {
+                "value": "top",
+                "title": "Top"
+              },
+              {
+                "value": "top-right",
+                "title": "Top Right"
+              },
+              {
+                "value": "right",
+                "title": "Right"
+              },
+              {
+                "value": "bottom-right",
+                "title": "Bottom Right"
+              },
+              {
+                "value": "bottom",
+                "title": "Bottom"
+              },
+              {
+                "value": "bottom-left",
+                "title": "Bottom Left"
+              },
+              {
+                "value": "left",
+                "title": "Left"
+              },
+              {
+                "value": "top-left",
+                "title": "Top Left"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Ease",
+          "id": "globalScrollAnimationEase",
+          "responsive": false,
+          "select": {
+            "default": "easeInOut",
+            "items": [
+              {
+                "title": "None",
+                "value": "none"
+              },
+              {
+                "title": "Linear",
+                "value": "linear"
+              },
+              {
+                "title": "Power0",
+                "value": "power0"
+              },
+              {
+                "title": "Power1",
+                "value": "power1"
+              },
+              {
+                "title": "Power2",
+                "value": "power2"
+              },
+              {
+                "title": "Power3",
+                "value": "power3"
+              },
+              {
+                "title": "Power4",
+                "value": "power4"
+              },
+              {
+                "title": "Sine easeIn",
+                "value": "sine.in"
+              },
+              {
+                "title": "Sine easeOut",
+                "value": "sine.out"
+              },
+              {
+                "title": "Sine easeInOut",
+                "value": "sine.inOut"
+              },
+              {
+                "title": "Circ easeIn",
+                "value": "circ.in"
+              },
+              {
+                "title": "Circ easeOut",
+                "value": "circ.out"
+              },
+              {
+                "title": "Circ easeInOut",
+                "value": "circ.inOut"
+              },
+              {
+                "title": "Expo easeIn",
+                "value": "expo.in"
+              },
+              {
+                "title": "Expo easeOut",
+                "value": "expo.out"
+              },
+              {
+                "title": "Expo easeInOut",
+                "value": "expo.inOut"
+              },
+              {
+                "title": "Back easeIn",
+                "value": "back.in"
+              },
+              {
+                "title": "Back easeOut",
+                "value": "back.out"
+              },
+              {
+                "title": "Back easeInOut",
+                "value": "back.inOut"
+              },
+              {
+                "title": "Elastic easeIn",
+                "value": "elastic.in"
+              },
+              {
+                "title": "Elastic easeOut",
+                "value": "elastic.out"
+              },
+              {
+                "title": "Elastic easeInOut",
+                "value": "elastic.inOut"
+              },
+              {
+                "title": "Bounce easeIn",
+                "value": "bounce.in"
+              },
+              {
+                "title": "Bounce easeOut",
+                "value": "bounce.out"
+              },
+              {
+                "title": "Bounce easeInOut",
+                "value": "bounce.inOut"
+              },
+              {
+                "title": "Steps",
+                "value": "steps"
+              },
+              {
+                "title": "Custom",
+                "value": "custom"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalScrollAnimationEase == 'steps'",
+          "title": "Steps",
+          "id": "globalScrollAnimationEaseSteps",
+          "responsive": false,
+          "number": {
+            "default": 10
+          }
+        },
+        {
+          "visible": "globalScrollAnimationEase == 'custom'",
+          "title": "Custom Ease",
+          "id": "globalScrollAnimationEaseCustom",
+          "responsive": false,
+          "text": {
+            "default": ".17,.67,.83,.67"
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Spring",
+          "heading": {}
+        },
+        {
+          "id": "globalScrollAnimationIsSpring",
+          "title": "Enable",
+          "responsive": false,
+          "switch": {}
+        },
+        {
+          "visible": "globalScrollAnimationIsSpring == 'true'",
+          "title": "Strength",
+          "id": "globalScrollAnimationSpringStrength",
+          "responsive": false,
+          "slider": {
+            "default": "0.3",
+            "items": [
+              {
+                "title": "0.1",
+                "value": "0.1"
+              },
+              {
+                "title": "0.2",
+                "value": "0.2"
+              },
+              {
+                "title": "0.3",
+                "value": "0.3"
+              },
+              {
+                "title": "0.4",
+                "value": "0.4"
+              },
+              {
+                "title": "0.5",
+                "value": "0.5"
+              },
+              {
+                "title": "0.6",
+                "value": "0.6"
+              },
+              {
+                "title": "0.7",
+                "value": "0.7"
+              },
+              {
+                "title": "0.8",
+                "value": "0.8"
+              },
+              {
+                "title": "0.9",
+                "value": "0.9"
+              },
+              {
+                "title": "1",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalScrollAnimationIsSpring == 'true'",
+          "title": "Aplitude",
+          "id": "globalScrollAnimationSpringAmplitude",
+          "responsive": false,
+          "slider": {
+            "default": "1",
+            "items": [
+              {
+                "title": "0.5",
+                "value": "0.5"
+              },
+              {
+                "title": "0.75",
+                "value": "0.75"
+              },
+              {
+                "title": "1",
+                "value": "1"
+              },
+              {
+                "title": "1.25",
+                "value": "1.25"
+              },
+              {
+                "title": "1.5",
+                "value": "1.5"
+              },
+              {
+                "title": "1.75",
+                "value": "1.75"
+              },
+              {
+                "title": "2",
+                "value": "2"
+              },
+              {
+                "title": "2.25",
+                "value": "2.25"
+              },
+              {
+                "title": "2.5",
+                "value": "2.5"
+              },
+              {
+                "title": "2.75",
+                "value": "2.75"
+              },
+              {
+                "title": "3",
+                "value": "3"
+              }
+            ]
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "visible": "globalScrollAnimationTrigger == 'scroll' || globalScrollAnimationTrigger == 'inView'",
+          "title": "Trigger Enter",
+          "heading": {}
+        },
+        {
+          "visible": "globalScrollAnimationTrigger == 'scroll' || globalScrollAnimationTrigger == 'inView'",
+          "title": "Element",
+          "id": "globalScrollAnimationTriggerElementPositionEnter",
+          "responsive": false,
+          "select": {
+            "default": "top",
+            "items": [
+              {
+                "title": "Top",
+                "value": "top"
+              },
+              {
+                "title": "Center",
+                "value": "center"
+              },
+              {
+                "title": "Bottom",
+                "value": "bottom"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalScrollAnimationTrigger == 'scroll' || globalScrollAnimationTrigger == 'inView'",
+          "title": "Viewport",
+          "id": "globalScrollAnimationTriggerViewportPositionEnter",
+          "responsive": false,
+          "select": {
+            "default": "center",
+            "items": [
+              {
+                "title": "Top",
+                "value": "top"
+              },
+              {
+                "title": "Center",
+                "value": "center"
+              },
+              {
+                "title": "Bottom",
+                "value": "bottom"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalScrollAnimationTrigger == 'scroll' || globalScrollAnimationTrigger == 'inView'",
+          "title": "Trigger Exit",
+          "heading": {}
+        },
+        {
+          "visible": "globalScrollAnimationTrigger == 'scroll' || globalScrollAnimationTrigger == 'inView'",
+          "title": "Element",
+          "id": "globalScrollAnimationTriggerElementPositionExit",
+          "responsive": false,
+          "select": {
+            "default": "top",
+            "items": [
+              {
+                "title": "Top",
+                "value": "top"
+              },
+              {
+                "title": "Center",
+                "value": "center"
+              },
+              {
+                "title": "Bottom",
+                "value": "bottom"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalScrollAnimationTrigger == 'scroll' || globalScrollAnimationTrigger == 'inView'",
+          "title": "Viewport",
+          "id": "globalScrollAnimationTriggerViewportPositionExit",
+          "responsive": false,
+          "select": {
+            "default": "center",
+            "items": [
+              {
+                "title": "Top",
+                "value": "top"
+              },
+              {
+                "title": "Center",
+                "value": "center"
+              },
+              {
+                "title": "Bottom",
+                "value": "bottom"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalScrollAnimationTrigger == 'scroll' || globalScrollAnimationTrigger == 'inView'",
+          "divider": {}
+        },
+        {
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationTrigger == 'inView'",
+          "title": "Trigger Margin",
+          "heading": {}
+        },
+        {
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationTrigger == 'inView'",
+          "title": "Top",
+          "id": "globalScrollAnimationMarginTop",
+          "responsive": false,
+          "number": {
+            "default": 0
+          }
+        },
+        {
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationTrigger == 'inView'",
+          "title": "Bottom",
+          "id": "globalScrollAnimationMarginBottom",
+          "responsive": false,
+          "number": {
+            "default": 0
+          }
+        },
+        {
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationTrigger == 'inView'",
+          "divider": {}
+        },
+        {
+          "visible": "globalScrollAnimationTrigger != 'none'",
+          "title": "Repeat",
+          "heading": {}
+        },
+        {
+          "visible": "globalScrollAnimationTrigger != 'none'",
+          "title": "Repeat",
+          "id": "globalScrollAnimationRepeat",
+          "responsive": false,
+          "select": {
+            "default": "false",
+            "items": [
+              {
+                "title": "Off",
+                "value": "false"
+              },
+              {
+                "title": "Infinite",
+                "value": "infinite"
+              },
+              {
+                "title": "Set Number of Times",
+                "value": "setTimes"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalScrollAnimationRepeat == 'setTimes'",
+          "title": "Times",
+          "id": "globalScrollAnimationRepeatTimes",
+          "responsive": false,
+          "number": {
+            "default": 3
+          }
+        },
+        {
+          "visible": "globalScrollAnimationRepeat != 'false'",
+          "title": "Yoyo",
+          "id": "globalScrollAnimationRepeatYoyo",
+          "responsive": false,
+          "switch": {}
+        },
+        {
+          "visible": "globalScrollAnimationRepeat != 'false'",
+          "title": "Delay",
+          "id": "globalScrollAnimationRepeatDelay",
+          "responsive": false,
+          "number": {
+            "default": 0,
+            "subtitle": "In milliseconds"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Effects",
+      "icon": "sparkles",
+      "properties": [
+        {
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationVisibleSettings == 'effects'",
+          "title": "Preview",
+          "id": "globalScrollAnimationPreviewInEditor",
+          "responsive": false,
+          "switch": {}
+        },
+        {
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationVisibleSettings == 'effects' && globalScrollAnimationPreviewInEditor == 'true'",
+          "information": {},
+          "title": "Previews the settings below. Spring effects are not supported in editor."
+        },
+        {
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationVisibleSettings == 'effects'",
+          "title": "State",
+          "id": "globalScrollAnimationEnterState",
+          "responsive": false,
+          "segmented": {
+            "default": "start",
+            "items": [
+              {
+                "title": "Start",
+                "value": "start"
+              },
+              {
+                "title": "End",
+                "value": "end"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Opacity",
+          "id": "globalScrollAnimationOpacityEnterStart",
+          "responsive": false,
+          "slider": {
+            "default": 100,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          },
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationVisibleSettings == 'effects' && globalScrollAnimationEnterState == 'start'"
+        },
+        {
+          "title": "Rotate",
+          "id": "globalScrollAnimationRotateEnterStart",
+          "responsive": false,
+          "slider": {
+            "min": -360,
+            "max": 360,
+            "round": true,
+            "default": 0,
+            "units": "deg"
+          },
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationVisibleSettings == 'effects' && globalScrollAnimationEnterState == 'start'"
+        },
+        {
+          "title": "Scale",
+          "id": "globalScrollAnimationScaleEnterStart",
+          "responsive": false,
+          "slider": {
+            "default": 100,
+            "min": 0,
+            "max": 200,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          },
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationVisibleSettings == 'effects' && globalScrollAnimationEnterState == 'start'"
+        },
+        {
+          "title": "Horizontal",
+          "id": "globalScrollAnimationTranslateXEnterStart",
+          "responsive": false,
+          "slider": {
+            "default": 0,
+            "min": -100,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          },
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationVisibleSettings == 'effects' && globalScrollAnimationEnterState == 'start'"
+        },
+        {
+          "title": "Vertical",
+          "id": "globalScrollAnimationTranslateYEnterStart",
+          "responsive": false,
+          "slider": {
+            "default": 0,
+            "min": -100,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          },
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationVisibleSettings == 'effects' && globalScrollAnimationEnterState == 'start'"
+        },
+        {
+          "title": "Opacity",
+          "id": "globalScrollAnimationOpacityEnterEnd",
+          "responsive": false,
+          "slider": {
+            "default": 100,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          },
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationVisibleSettings == 'effects' && globalScrollAnimationEnterState == 'end'"
+        },
+        {
+          "title": "Rotate",
+          "id": "globalScrollAnimationRotateEnterEnd",
+          "responsive": false,
+          "slider": {
+            "min": -360,
+            "max": 360,
+            "round": true,
+            "default": 0,
+            "units": "deg"
+          },
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationVisibleSettings == 'effects' && globalScrollAnimationEnterState == 'end'"
+        },
+        {
+          "title": "Scale",
+          "id": "globalScrollAnimationScaleEnterEnd",
+          "responsive": false,
+          "slider": {
+            "default": 100,
+            "min": 0,
+            "max": 200,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          },
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationVisibleSettings == 'effects' && globalScrollAnimationEnterState == 'end'"
+        },
+        {
+          "title": "Horizontal",
+          "id": "globalScrollAnimationTranslateXEnterEnd",
+          "responsive": false,
+          "slider": {
+            "default": 0,
+            "min": -100,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          },
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationVisibleSettings == 'effects' && globalScrollAnimationEnterState == 'end'"
+        },
+        {
+          "title": "Vertical",
+          "id": "globalScrollAnimationTranslateYEnterEnd",
+          "responsive": false,
+          "slider": {
+            "default": 0,
+            "min": -100,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          },
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationVisibleSettings == 'effects' && globalScrollAnimationEnterState == 'end'"
+        },
+        {
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationVisibleSettings == 'effects'",
+          "divider": {}
+        },
+        {
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationVisibleSettings == 'effects'",
+          "title": "Exit",
+          "heading": {}
+        },
+        {
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationVisibleSettings == 'effects'",
+          "title": "Enable",
+          "id": "globalScrollAnimationExitEnabled",
+          "responsive": false,
+          "switch": {}
+        },
+        {
+          "title": "Opacity",
+          "id": "globalScrollAnimationOpacityExitEnd",
+          "responsive": false,
+          "slider": {
+            "default": 100,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          },
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationVisibleSettings == 'effects' && globalScrollAnimationExitEnabled == 'true'"
+        },
+        {
+          "title": "Rotate",
+          "id": "globalScrollAnimationRotateExitEnd",
+          "responsive": false,
+          "slider": {
+            "min": -360,
+            "max": 360,
+            "round": true,
+            "default": 0,
+            "units": "deg"
+          },
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationVisibleSettings == 'effects' && globalScrollAnimationExitEnabled == 'true'"
+        },
+        {
+          "title": "Scale",
+          "id": "globalScrollAnimationScaleExitEnd",
+          "responsive": false,
+          "slider": {
+            "default": 100,
+            "min": 0,
+            "max": 200,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          },
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationVisibleSettings == 'effects' && globalScrollAnimationExitEnabled == 'true'"
+        },
+        {
+          "title": "Horizontal",
+          "id": "globalScrollAnimationTranslateXExitEnd",
+          "responsive": false,
+          "slider": {
+            "default": 0,
+            "min": -100,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          },
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationVisibleSettings == 'effects' && globalScrollAnimationExitEnabled == 'true'"
+        },
+        {
+          "title": "Vertical",
+          "id": "globalScrollAnimationTranslateYExitEnd",
+          "responsive": false,
+          "slider": {
+            "default": 0,
+            "min": -100,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          },
+          "visible": "globalScrollAnimationTrigger != 'none' && globalScrollAnimationVisibleSettings == 'effects' && globalScrollAnimationExitEnabled == 'true'"
+        }
+      ]
+    },
+    {
+      "title": "Flexbox and Grid",
+      "icon": "square.grid.2x2",
+      "properties": [
+        {
+          "title": "Act As",
+          "heading": {}
+        },
+        {
+          "visible": "globalGridOrFlexDisplayAs == 'grid'",
+          "information": {},
+          "title": "Component must be inside a Grid for settings to apply."
+        },
+        {
+          "visible": "globalGridOrFlexDisplayAs == 'flex'",
+          "information": {},
+          "title": "Component must be inside a Flex for settings to apply."
+        },
+        {
+          "title": "Type",
+          "id": "globalGridOrFlexDisplayAs",
+          "responsive": false,
+          "segmented": {
+            "default": "default",
+            "items": [
+              {
+                "value": "default",
+                "title": "Default"
+              },
+              {
+                "value": "grid",
+                "title": "Grid Item"
+              },
+              {
+                "value": "flex",
+                "title": "Flex Item"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalGridOrFlexDisplayAs != 'default'",
+          "title": "Settings",
+          "id": "globalGridOrFlexItemSettings",
+          "responsive": false,
+          "segmented": {
+            "default": "basic",
+            "items": [
+              {
+                "value": "basic",
+                "title": "Standard"
+              },
+              {
+                "value": "advanced",
+                "title": "Advanced"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalGridOrFlexDisplayAs != 'default'",
+          "divider": {}
+        },
+        {
+          "visible": "globalGridOrFlexDisplayAs == 'grid' && globalGridOrFlexItemSettings == 'advanced'",
+          "title": "Columns",
+          "heading": {}
+        },
+        {
+          "visible": "globalGridOrFlexDisplayAs == 'grid'",
+          "title": "Columns",
+          "id": "globalGridItemColSpan",
+          "format": "col-span-{{value}}",
+          "slider": {
+            "default": {
+              "base": "6"
+            },
+            "items": [
+              {
+                "value": "auto",
+                "title": "Auto"
+              },
+              {
+                "value": "1",
+                "title": "1"
+              },
+              {
+                "value": "2",
+                "title": "2"
+              },
+              {
+                "value": "3",
+                "title": "3"
+              },
+              {
+                "value": "4",
+                "title": "4"
+              },
+              {
+                "value": "5",
+                "title": "5"
+              },
+              {
+                "value": "6",
+                "title": "6"
+              },
+              {
+                "value": "7",
+                "title": "7"
+              },
+              {
+                "value": "8",
+                "title": "8"
+              },
+              {
+                "value": "9",
+                "title": "9"
+              },
+              {
+                "value": "10",
+                "title": "10"
+              },
+              {
+                "value": "11",
+                "title": "11"
+              },
+              {
+                "value": "12",
+                "title": "12"
+              }
+            ]
+          }
+        },
+        {
+          "id": "globlaGridItemColStart",
+          "format": "col-start-{{value}}",
+          "title": "Start",
+          "slider": {
+            "default": {
+              "base": "auto"
+            },
+            "items": [
+              {
+                "value": "auto",
+                "title": "Auto"
+              },
+              {
+                "value": "1",
+                "title": "1"
+              },
+              {
+                "value": "2",
+                "title": "2"
+              },
+              {
+                "value": "3",
+                "title": "3"
+              },
+              {
+                "value": "4",
+                "title": "4"
+              },
+              {
+                "value": "5",
+                "title": "5"
+              },
+              {
+                "value": "6",
+                "title": "6"
+              },
+              {
+                "value": "7",
+                "title": "7"
+              },
+              {
+                "value": "8",
+                "title": "8"
+              },
+              {
+                "value": "9",
+                "title": "9"
+              },
+              {
+                "value": "10",
+                "title": "10"
+              },
+              {
+                "value": "11",
+                "title": "11"
+              },
+              {
+                "value": "12",
+                "title": "12"
+              }
+            ]
+          },
+          "visible": "globalGridOrFlexDisplayAs == 'grid' && globalGridOrFlexItemSettings == 'advanced'"
+        },
+        {
+          "id": "globalGridItemColEnd",
+          "format": "col-end-{{value}}",
+          "title": "End",
+          "slider": {
+            "default": {
+              "base": "auto"
+            },
+            "items": [
+              {
+                "value": "auto",
+                "title": "Auto"
+              },
+              {
+                "value": "1",
+                "title": "1"
+              },
+              {
+                "value": "2",
+                "title": "2"
+              },
+              {
+                "value": "3",
+                "title": "3"
+              },
+              {
+                "value": "4",
+                "title": "4"
+              },
+              {
+                "value": "5",
+                "title": "5"
+              },
+              {
+                "value": "6",
+                "title": "6"
+              },
+              {
+                "value": "7",
+                "title": "7"
+              },
+              {
+                "value": "8",
+                "title": "8"
+              },
+              {
+                "value": "9",
+                "title": "9"
+              },
+              {
+                "value": "10",
+                "title": "10"
+              },
+              {
+                "value": "11",
+                "title": "11"
+              },
+              {
+                "value": "12",
+                "title": "12"
+              },
+              {
+                "value": "13",
+                "title": "13"
+              }
+            ]
+          },
+          "visible": "globalGridOrFlexDisplayAs == 'grid' && globalGridOrFlexItemSettings == 'advanced'"
+        },
+        {
+          "visible": "globalGridOrFlexDisplayAs == 'grid' && globalGridOrFlexItemSettings == 'advanced'",
+          "divider": {}
+        },
+        {
+          "visible": "globalGridOrFlexDisplayAs == 'grid' && globalGridOrFlexItemSettings == 'advanced'",
+          "title": "Rows",
+          "heading": {}
+        },
+        {
+          "visible": "globalGridOrFlexDisplayAs == 'grid'",
+          "id": "globalGridItemRowSpan",
+          "title": "Rows",
+          "format": "row-span-{{value}}",
+          "slider": {
+            "default": {
+              "base": "auto"
+            },
+            "items": [
+              {
+                "value": "auto",
+                "title": "Auto"
+              },
+              {
+                "value": "1",
+                "title": "1"
+              },
+              {
+                "value": "2",
+                "title": "2"
+              },
+              {
+                "value": "3",
+                "title": "3"
+              },
+              {
+                "value": "4",
+                "title": "4"
+              },
+              {
+                "value": "5",
+                "title": "5"
+              },
+              {
+                "value": "6",
+                "title": "6"
+              },
+              {
+                "value": "7",
+                "title": "7"
+              },
+              {
+                "value": "8",
+                "title": "8"
+              },
+              {
+                "value": "9",
+                "title": "9"
+              },
+              {
+                "value": "10",
+                "title": "10"
+              },
+              {
+                "value": "11",
+                "title": "11"
+              },
+              {
+                "value": "12",
+                "title": "12"
+              }
+            ]
+          }
+        },
+        {
+          "id": "globalGridItemRowStart",
+          "format": "row-start-{{value}}",
+          "title": "Start",
+          "slider": {
+            "default": {
+              "base": "auto"
+            },
+            "items": [
+              {
+                "value": "auto",
+                "title": "Auto"
+              },
+              {
+                "value": "1",
+                "title": "1"
+              },
+              {
+                "value": "2",
+                "title": "2"
+              },
+              {
+                "value": "3",
+                "title": "3"
+              },
+              {
+                "value": "4",
+                "title": "4"
+              },
+              {
+                "value": "5",
+                "title": "5"
+              },
+              {
+                "value": "6",
+                "title": "6"
+              },
+              {
+                "value": "7",
+                "title": "7"
+              },
+              {
+                "value": "8",
+                "title": "8"
+              },
+              {
+                "value": "9",
+                "title": "9"
+              },
+              {
+                "value": "10",
+                "title": "10"
+              },
+              {
+                "value": "11",
+                "title": "11"
+              },
+              {
+                "value": "12",
+                "title": "12"
+              }
+            ]
+          },
+          "visible": "globalGridOrFlexDisplayAs == 'grid' && globalGridOrFlexItemSettings == 'advanced'"
+        },
+        {
+          "id": "globalGridItemRowEnd",
+          "format": "row-end-{{value}}",
+          "title": "End",
+          "slider": {
+            "default": {
+              "base": "auto"
+            },
+            "items": [
+              {
+                "value": "auto",
+                "title": "Auto"
+              },
+              {
+                "value": "1",
+                "title": "1"
+              },
+              {
+                "value": "2",
+                "title": "2"
+              },
+              {
+                "value": "3",
+                "title": "3"
+              },
+              {
+                "value": "4",
+                "title": "4"
+              },
+              {
+                "value": "5",
+                "title": "5"
+              },
+              {
+                "value": "6",
+                "title": "6"
+              },
+              {
+                "value": "7",
+                "title": "7"
+              },
+              {
+                "value": "8",
+                "title": "8"
+              },
+              {
+                "value": "9",
+                "title": "9"
+              },
+              {
+                "value": "10",
+                "title": "10"
+              },
+              {
+                "value": "11",
+                "title": "11"
+              },
+              {
+                "value": "12",
+                "title": "12"
+              },
+              {
+                "value": "13",
+                "title": "13"
+              }
+            ]
+          },
+          "visible": "globalGridOrFlexDisplayAs == 'grid' && globalGridOrFlexItemSettings == 'advanced'"
+        },
+        {
+          "visible": "globalGridOrFlexDisplayAs == 'grid' && globalGridOrFlexItemSettings == 'advanced'",
+          "divider": {}
+        },
+        {
+          "visible": "globalGridOrFlexDisplayAs == 'grid' && globalGridOrFlexItemSettings == 'advanced'",
+          "title": "Alignment",
+          "heading": {}
+        },
+        {
+          "title": "Align",
+          "id": "globalGridOrFlexItemAlignSelf",
+          "format": "self-{{value}}",
+          "select": {
+            "default": "auto",
+            "items": [
+              {
+                "value": "auto",
+                "title": "Auto"
+              },
+              {
+                "value": "start",
+                "title": "Start"
+              },
+              {
+                "value": "end",
+                "title": "End"
+              },
+              {
+                "value": "center",
+                "title": "Center"
+              },
+              {
+                "value": "stretch",
+                "title": "Stretch"
+              }
+            ]
+          },
+          "visible": "globalGridOrFlexDisplayAs == 'grid' && globalGridOrFlexItemSettings == 'advanced'"
+        },
+        {
+          "title": "Justify Self",
+          "id": "globalGridOrFlexItemJustifySelf",
+          "format": "justify-self-{{value}}",
+          "select": {
+            "default": "auto",
+            "items": [
+              {
+                "value": "auto",
+                "title": "Auto"
+              },
+              {
+                "value": "start",
+                "title": "Start"
+              },
+              {
+                "value": "end",
+                "title": "End"
+              },
+              {
+                "value": "center",
+                "title": "Center"
+              },
+              {
+                "value": "stretch",
+                "title": "Stretch"
+              }
+            ]
+          },
+          "visible": "globalGridOrFlexDisplayAs == 'grid' && globalGridOrFlexItemSettings == 'advanced'"
+        },
+        {
+          "title": "Alignment",
+          "heading": {},
+          "visible": "globalGridOrFlexDisplayAs == 'flex'"
+        },
+        {
+          "title": "Align",
+          "id": "globalGridOrFlexItemAlignSelf",
+          "format": "self-{{value}}",
+          "select": {
+            "default": "auto",
+            "items": [
+              {
+                "value": "auto",
+                "title": "Auto"
+              },
+              {
+                "value": "start",
+                "title": "Start"
+              },
+              {
+                "value": "end",
+                "title": "End"
+              },
+              {
+                "value": "center",
+                "title": "Center"
+              },
+              {
+                "value": "stretch",
+                "title": "Stretch"
+              }
+            ]
+          },
+          "visible": "globalGridOrFlexDisplayAs == 'flex'"
+        },
+        {
+          "title": "Justify Self",
+          "id": "globalGridOrFlexItemJustifySelf",
+          "format": "justify-self-{{value}}",
+          "select": {
+            "default": "auto",
+            "items": [
+              {
+                "value": "auto",
+                "title": "Auto"
+              },
+              {
+                "value": "start",
+                "title": "Start"
+              },
+              {
+                "value": "end",
+                "title": "End"
+              },
+              {
+                "value": "center",
+                "title": "Center"
+              },
+              {
+                "value": "stretch",
+                "title": "Stretch"
+              }
+            ]
+          },
+          "visible": "globalGridOrFlexDisplayAs == 'flex'"
+        },
+        {
+          "visible": "globalGridOrFlexDisplayAs != 'default' && globalGridOrFlexItemSettings == 'advanced'",
+          "title": "Order",
+          "id": "globalGridOrFlexItemOrder",
+          "format": "order-{{value}}",
+          "segmented": {
+            "default": "none",
+            "items": [
+              {
+                "value": "none",
+                "title": "Auto"
+              },
+              {
+                "value": "first",
+                "title": "First"
+              },
+              {
+                "value": "last",
+                "title": "Last"
+              },
+              {
+                "value": "custom",
+                "title": "Custom"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalGridOrFlexDisplayAs != 'default' && globalGridOrFlexItemSettings == 'advanced' && globalGridOrFlexItemOrder == 'custom'",
+          "title": "Custom",
+          "id": "globalGridOrFlexItemOrderCustom",
+          "format": "order-[{{value}}]",
+          "number": {
+            "default": 1
+          }
+        },
+        {
+          "title": "Requires other grid items to have an order value set.",
+          "information": {},
+          "visible": "globalGridOrFlexDisplayAs != 'default' && globalGridOrFlexItemSettings == 'advanced' && globalGridOrFlexItemOrder == 'custom'"
+        },
+        {
+          "title": "Advanced Settings",
+          "heading": {},
+          "visible": "globalGridOrFlexDisplayAs == 'flex' && globalGridOrFlexItemSettings == 'advanced'"
+        },
+        {
+          "visible": "globalGridOrFlexDisplayAs == 'flex' && globalGridOrFlexItemSettings == 'advanced'",
+          "title": "Flex",
+          "id": "globalFlexItemFlex",
+          "format": "flex-{{value}}",
+          "segmented": {
+            "default": "none",
+            "items": [
+              {
+                "value": "auto",
+                "title": "Auto"
+              },
+              {
+                "title": "None",
+                "value": "none"
+              },
+              {
+                "title": "1",
+                "value": "1"
+              },
+              {
+                "title": "Initial",
+                "value": "initial"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalGridOrFlexDisplayAs == 'flex' && globalGridOrFlexItemSettings == 'advanced'",
+          "title": "Grow",
+          "id": "globalFlexItemGrow",
+          "segmented": {
+            "default": "",
+            "items": [
+              {
+                "value": "",
+                "title": "Auto"
+              },
+              {
+                "title": "Grow",
+                "value": "grow"
+              },
+              {
+                "title": "No Grow",
+                "value": "grow-0"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalGridOrFlexDisplayAs == 'flex' && globalGridOrFlexItemSettings == 'advanced'",
+          "title": "Shrink",
+          "id": "globalFlexItemShrink",
+          "segmented": {
+            "default": "",
+            "items": [
+              {
+                "value": "",
+                "title": "Auto"
+              },
+              {
+                "title": "Shrink",
+                "value": "shrink"
+              },
+              {
+                "title": "No Shrink",
+                "value": "shrink-0"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalGridOrFlexDisplayAs == 'flex' && globalGridOrFlexItemSettings == 'advanced'",
+          "title": "Basis",
+          "id": "globalFlexItemBasis",
+          "format": "basis-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": "auto"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Layout",
+      "icon": "square.split.bottomrightquarter",
+      "properties": [
+        {
+          "title": "General",
+          "heading": {}
+        },
+        {
+          "title": "Position",
+          "id": "globalLayoutPosition",
+          "select": {
+            "default": "",
+            "items": [
+              {
+                "title": "None",
+                "value": ""
+              },
+              {
+                "title": "Static",
+                "value": "static"
+              },
+              {
+                "title": "Relative",
+                "value": "relative"
+              },
+              {
+                "title": "Absolute",
+                "value": "absolute"
+              },
+              {
+                "title": "Fixed",
+                "value": "fixed"
+              },
+              {
+                "title": "Sticky",
+                "value": "sticky"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Z-Index",
+          "id": "globalLayoutZIndexType",
+          "responsive": false,
+          "segmented": {
+            "default": "",
+            "items": [
+              {
+                "title": "None",
+                "value": ""
+              },
+              {
+                "title": "Auto",
+                "value": "z-auto"
+              },
+              {
+                "title": "Custom",
+                "value": "custom"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalLayoutZIndexType == 'custom'",
+          "title": "",
+          "id": "globalLayoutZIndex",
+          "format": "z-[{{value}}]",
+          "number": {
+            "default": 0,
+            "subtitle": "Can be positive or negative."
+          }
+        },
+        {
+          "title": "Top / Right / Bottom / Left",
+          "heading": {}
+        },
+        {
+          "title": "Type",
+          "id": "globalLayoutTopRightBottomLeftType",
+          "segmented": {
+            "default": "none",
+            "items": [
+              {
+                "title": "None",
+                "value": "none"
+              },
+              {
+                "title": "Uniform",
+                "value": "uniform"
+              },
+              {
+                "title": "Individual",
+                "value": "individual"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Inset",
+          "id": "globalLayoutInset",
+          "format": "inset-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": "0"
+            }
+          },
+          "visible": "globalLayoutTopRightBottomLeftType == 'uniform'"
+        },
+        {
+          "visible": "globalLayoutTopRightBottomLeftType == 'individual'",
+          "title": "Top",
+          "id": "globalLayoutTop",
+          "format": "top-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": 0
+              }
+            }
+          }
+        },
+        {
+          "visible": "globalLayoutTopRightBottomLeftType == 'individual'",
+          "title": "Right",
+          "id": "globalLayoutRight",
+          "format": "right-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": 0
+              }
+            }
+          }
+        },
+        {
+          "visible": "globalLayoutTopRightBottomLeftType == 'individual'",
+          "title": "Bottom",
+          "id": "globalLayoutBottom",
+          "format": "bottom-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": 0
+              }
+            }
+          }
+        },
+        {
+          "visible": "globalLayoutTopRightBottomLeftType == 'individual'",
+          "title": "Left",
+          "id": "globalLayoutLeft",
+          "format": "left-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": 0
+              }
+            }
+          }
+        },
+        {
+          "heading": {},
+          "title": "Display"
+        },
+        {
+          "title": "Hidden",
+          "id": "globalLayoutHidden",
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "title": "Visibility",
+          "id": "globalLayoutVisibility",
+          "select": {
+            "default": "",
+            "items": [
+              {
+                "title": "Auto",
+                "value": ""
+              },
+              {
+                "title": "Visible",
+                "value": "visible"
+              },
+              {
+                "title": "Invisible",
+                "value": "invisible"
+              }
+            ]
+          }
+        },
+        {
+          "heading": {},
+          "title": "Advanced"
+        },
+        {
+          "title": "Overflow",
+          "id": "globalLayoutOverflow",
+          "select": {
+            "default": "",
+            "items": [
+              {
+                "title": "None",
+                "value": ""
+              },
+              {
+                "title": "Visible",
+                "value": "overflow-visible"
+              },
+              {
+                "title": "Hidden",
+                "value": "overflow-hidden"
+              },
+              {
+                "title": "Scroll",
+                "value": "overflow-scroll"
+              },
+              {
+                "title": "Auto",
+                "value": "overflow-auto"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Isolation",
+          "id": "globalLayoutIsolation",
+          "segmented": {
+            "default": "",
+            "items": [
+              {
+                "title": "None",
+                "value": ""
+              },
+              {
+                "title": "Isolate",
+                "value": "isolate"
+              },
+              {
+                "title": "Auto",
+                "value": "isolate-auto"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "Advanced",
+      "icon": "gearshape",
+      "properties": [
+        {
+          "title": "CSS Classes",
+          "id": "cssClasses",
+          "textArea": {
+            "default": ""
+          }
+        },
+        {
+          "title": "ID",
+          "id": "globalID",
+          "responsive": false,
+          "text": {
+            "default": ""
+          }
+        }
+      ]
+    }
+  ]
+}

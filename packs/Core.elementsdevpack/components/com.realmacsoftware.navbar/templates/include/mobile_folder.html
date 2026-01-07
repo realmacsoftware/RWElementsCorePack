@@ -1,0 +1,11 @@
+<li x-data="{ open: false }" class="cursor-pointer">
+    <button
+        class="{{classes.mobile.item}} flex items-center justify-between w-full"
+        @click="open = !open"
+    >
+        <span class="">{{page.title}}</span>
+        @includeIf(page.hasPages, template: "mobile_submenu_indicator")
+    </button>
+
+    @includeIf(page.hasPages, template: "mobile_submenu")
+</li>

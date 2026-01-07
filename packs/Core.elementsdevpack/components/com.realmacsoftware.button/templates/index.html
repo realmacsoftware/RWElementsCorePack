@@ -1,0 +1,8 @@
+@if(showText)
+@text("text", title: "Button Text", default: "Click Me")
+@endif
+@if(wantsDropzone)
+<div class="{{dropzoneSide}}">
+  @dropzone("dropzone", title: "Icon")
+</div>
+@endif

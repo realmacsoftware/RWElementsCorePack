@@ -1,0 +1,13 @@
+{
+    "groups": [
+        {
+            "title": "Track",
+            "properties": [
+                { "title": "Title", "property": "title", "responsive": false, "text": { "default": "" } },
+                { "title": "Artist", "property": "artist", "responsive": false, "text": { "default": "" } },
+                { "title": "Artwork", "property": "coverImage", "responsive": false, "resource": {} },
+                { "title": "Audio Source", "property": "audioSource", "responsive": false, "resource": {} }
+            ]
+        }
+    ]
+}

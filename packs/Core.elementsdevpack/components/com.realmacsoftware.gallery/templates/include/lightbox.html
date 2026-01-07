@@ -1,0 +1,165 @@
+@portal("bodyEnd")
+<div
+    x-data="galleryLightbox('{{id}}')"
+    @if(!edit)
+    x-cloak
+    @endif
+    x-effect="setTimeout(() => $el.classList.toggle('invisible', !show), show ? 0 : 300)"
+    x-effect="setTimeout(() => $el.classList.toggle('pointer-events-none', !show), show ? 0 : 300)"
+    :class="{ 'visible': show }"
+    class="isolate fixed inset-0 z-50 flex w-full items-center justify-center pointer-events-none"
+>
+    <div
+        class="{{classes.overlay}}"
+        @click="show = false"
+        x-show="show"
+        x-transition:enter="transition-opacity duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition-opacity duration-300"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+    ></div>
+    <button
+        x-show="show"
+        x-on:click="show = false"
+        class="{{classes.lightboxCloseButton}}"
+        x-transition:enter="transition duration-300"
+        x-transition:enter-start="-translate-y-full opacity-0"
+        x-transition:enter-end="translate-y-0 opacity-100"
+        x-transition:leave="transition duration-300"
+        x-transition:leave-start="translate-y-0 opacity-100"
+        x-transition:leave-end="-translate-y-full opacity-0"
+    >
+        <svg
+            class="{{classes.lightboxCloseButtonIcon}}"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+            />
+        </svg>
+    </button>
+    <div
+        class="flex w-full flex-col transition duration-300"
+        :class="{ 'opacity-0': !show, 'opacity-100': show }"
+    >
+        <div
+            x-on:keydown.right="next"
+            x-on:keydown.left="prev"
+            tabindex="0"
+            role="region"
+            aria-labelledby="carousel-label"
+            class="flex"
+        >
+            <h2 id="carousel-label" class="sr-only" hidden>{{images.title}}</h2>
+
+            <!-- Prev Button -->
+            <button
+                x-on:click="prev"
+                class="{{classes.lightboxButton}} left-3 hidden md:block"
+                :aria-disabled="atBeginning"
+                :tabindex="atBeginning ? -1 : 0"
+                :disabled="atBeginning"
+                x-show="show"
+                x-transition:enter="transition duration-300"
+                x-transition:enter-start="-translate-x-full opacity-0"
+                x-transition:enter-end="translate-x-0 opacity-100"
+                x-transition:leave="transition duration-300"
+                x-transition:leave-start="translate-x-0 opacity-100"
+                x-transition:leave-end="-translate-x-full opacity-0"
+            >
+                <span aria-hidden="true">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="{{classes.lightboxButtonIcon}}"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15.75 19.5 8.25 12l7.5-7.5"
+                        />
+                    </svg>
+                </span>
+                <span class="sr-only">Skip to previous slide page</span>
+            </button>
+
+            <span id="carousel-content-label" class="sr-only" hidden
+                >Carousel</span
+            >
+
+            <ul
+                x-ref="slider"
+                tabindex="0"
+                role="listbox"
+                aria-labelledby="carousel-content-label"
+                class="flex w-full snap-x snap-mandatory overflow-x-scroll transition-all duration-300"
+                :class="{ 'scale-95': !show, 'scale-100': show }"
+            >
+                @each(item in resources)
+                <li
+                    class="{{classes.lightboxItem}}"
+                    @click="show = false"
+                    role="option"
+                >
+                    @includeIf(item.isYouTube, template: "youtube")
+                    @includeIf(item.isVimeo, template: "vimeo")
+                    @includeIf(item.isMP4, template: "mp4") @if(!item.isVideo)
+                    <img
+                        src="{{item}}"
+                        alt="{{item.alt}}"
+                        class="{{classes.lightboxItemMedia}} aspect-[{{item.aspect}}]"
+                        @click.stop
+                    />
+                    @endif
+                </li>
+                @endeach
+            </ul>
+
+            <!-- Next Button -->
+            <button
+                x-on:click="next"
+                class="{{classes.lightboxButton}} right-3 hidden md:block"
+                :aria-disabled="atEnd"
+                :tabindex="atEnd ? -1 : 0"
+                :disabled="atEnd"
+                x-show="show"
+                x-transition:enter="transition duration-300"
+                x-transition:enter-start="translate-x-full opacity-0"
+                x-transition:enter-end="translate-x-0 opacity-100"
+                x-transition:leave="transition duration-300"
+                x-transition:leave-start="translate-x-0 opacity-100"
+                x-transition:leave-end="translate-x-full opacity-0"
+            >
+                <span aria-hidden="true">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="{{classes.lightboxButtonIcon}}"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                        />
+                    </svg>
+                </span>
+                <span class="sr-only">Skip to next slide page</span>
+            </button>
+        </div>
+    </div>
+</div>
+@endportal

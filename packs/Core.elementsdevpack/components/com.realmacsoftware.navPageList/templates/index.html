@@ -1,0 +1,17 @@
+@each(page in pages)
+<a
+    class="{{classes.item}}"
+    href="{{page.url}}"
+    data-state="@if(page.isActive)active@endif"
+    @if(page.isExternal)
+    x-data
+    :data-state="window.location.pathname === '{{page.url}}' ? 'active' : ''"
+    @endif
+>
+    @if(page.showIcon) @if(page.iconIsSvg) {{page.iconSvg}} @else
+    <img src="{{page.icon}}" alt="{{page.title}}" class="{{classes.icon}}" />
+    @endif @endif @if(showPageTitles)
+    <span class="{{classes.title}}">{{page.title}}</span>
+    @endif
+</a>
+@endeach

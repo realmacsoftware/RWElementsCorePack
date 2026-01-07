@@ -1,0 +1,220 @@
+@if(!hasImages)
+<div
+    rwResourceDropZone="images"
+    class="col-span-full w-full h-64 flex flex-col items-center justify-center border-2 border-dashed border-gray-300 rounded-xl bg-gray-50 hover:bg-gray-100 transition cursor-pointer text-center px-4 py-6"
+>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-10 h-10 text-gray-700 mb-2"
+    >
+        <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
+        />
+    </svg>
+    <p class="text-lg font-medium text-gray-700">
+        Drag & drop a folder of images
+    </p>
+    <p class="text-sm text-gray-400">or add them via the component inspector</p>
+</div>
+@else @if(edit)
+<div x-ref="slider" x-bind="slider" class="{{classes.slider}} overflow-hidden">
+    @each(image in images.resources)
+    <div
+        class="{{classes.slideEdit}} @if(image::isFirst) {{classes.slideFirstEdit}} @else {{classes.slideOtherEdit}} @endif"
+    >
+        <div class="{{classes.slideImageWrapper}}">
+            @if(image.linkURL)
+            <a
+                href="{{image.linkURL}}"
+                class="block w-full h-full"
+                draggable="false"
+            >
+                <img
+                    src="{{image.image}}"
+                    alt="{{image.alt}}"
+                    class="{{classes.slideImage}}"
+                    draggable="false"
+                />
+            </a>
+            @else
+            <img
+                src="{{image.image}}"
+                alt="{{image.alt}}"
+                class="{{classes.slideImage}}"
+                draggable="false"
+            />
+            @endif
+        </div>
+    </div>
+    @endeach
+</div>
+@if(enablePaginationArrows)
+<button @click="prev()" class="{{classes.paginationButton}} order-first">
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="{{classes.paginationButtonSvg}}"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+    >
+        <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+        />
+    </svg>
+</button>
+<button @click="next()" class="{{classes.paginationButton}}">
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="{{classes.paginationButtonSvg}}"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+    >
+        <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"
+        />
+    </svg>
+</button>
+@endif @if(enablePaginationDots)
+<div class="{{classes.paginationDots}}">
+    @each(image in images.resources)
+    <button
+        @click="goTo(index)"
+        data-active="@if(image::isFirst) true @else false @endif"
+        class="{{classes.paginationDot}}"
+    ></button>
+    @endeach
+</div>
+@endif @else
+<div class="{{classes.container}}">
+    <div x-ref="slider" x-bind="slider" class="{{classes.slider}}">
+        @if(isResources) @each(image in images.resources)
+        <div class="slide {{classes.slide}}" data-link="{{image.linkURL}}">
+            <div class="{{classes.slideImageWrapper}}">
+                <img
+                    src="{{image}}"
+                    alt="{{image.alt}}"
+                    width="{{image.width}}"
+                    height="{{image.height}}"
+                    class="{{classes.slideImage}}"
+                    draggable="false"
+                />
+            </div>
+        </div>
+        @endeach @else @raw() {% for image in item.@endraw{{cmsField}}@raw() %}
+        @endraw
+        <div class="slide {{classes.slide}}" data-link="">
+            <div class="{{classes.slideImageWrapper}}">
+                @raw()
+                <img
+                    src="{{image.src}}"
+                    alt="{{image.alt}}"
+                    width="{{image.width}}"
+                    height="{{image.height}}"
+                    class="@endraw{{classes.slideImage}}@raw()"
+                    draggable="false"
+                />
+                @endraw
+            </div>
+        </div>
+        @raw() {% endfor %} @endraw @endif
+        <template x-for="(slide, index) in slides" :key="index">
+            <div
+                class="{{classes.slide}}"
+                :style="getSlideStyle(index)"
+                @transitionend.self="onTransitionEnd()"
+            >
+                <div class="{{classes.slideImageWrapper}}">
+                    <template x-if="slide.linkUrl">
+                        <a
+                            :href="slide.linkUrl"
+                            class="block w-full h-full"
+                            @click="handleLinkClick($event, slide.linkUrl)"
+                            draggable="false"
+                        >
+                            <img
+                                :src="slide.src"
+                                alt="Slide"
+                                class="{{classes.slideImage}}"
+                                draggable="false"
+                            />
+                        </a>
+                    </template>
+                    <template x-if="!slide.linkUrl">
+                        <img
+                            :src="slide.src"
+                            alt="Slide"
+                            class="{{classes.slideImage}}"
+                            draggable="false"
+                        />
+                    </template>
+                </div>
+            </div>
+        </template>
+    </div>
+</div>
+
+@if(enablePaginationArrows)
+<button
+    @click="prev()"
+    class="{{classes.paginationButton}} order-first"
+    :class="isRTL ? 'rotate-180' : ''"
+>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="{{classes.paginationButtonSvg}}"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+    >
+        <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+        />
+    </svg>
+</button>
+<button
+    @click="next()"
+    class="{{classes.paginationButton}}"
+    :class="isRTL ? 'rotate-180' : ''"
+>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="{{classes.paginationButtonSvg}}"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+    >
+        <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"
+        />
+    </svg>
+</button>
+@endif @if(enablePaginationDots)
+<div class="{{classes.paginationDots}}" x-show="originalSlides.length > 0">
+    <template x-for="(slide, index) in originalSlides" :key="index">
+        <button
+            @click="goTo(index)"
+            :data-active="activeIndex === index ? 'true' : 'false'"
+            class="{{classes.paginationDot}}"
+        ></button>
+    </template>
+</div>
+@endif @endif @endif

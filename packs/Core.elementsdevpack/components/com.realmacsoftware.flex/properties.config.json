@@ -1,0 +1,221 @@
+{
+  "groups": [
+    {
+      "title": "Tags",
+      "icon": "tag",
+      "properties": [
+        {
+          "title" : "Tags",
+          "property" : "tags",
+          "collection": {
+              "identifier": "com.realmacsoftware.flex.collections.tags"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Filter",
+      "icon": "text.magnifyingglass",
+      "properties": [
+        {
+          "globalControl": "Filter"
+        }
+      ]
+    },
+    {
+      "title": "Flexbox Settings",
+      "icon": "rectangle.split.1x2",
+      "properties": [
+        {
+          "title": "Layout",
+          "heading": {}
+        },
+        {
+          "globalControl": "FlexDirection"
+        },
+        {
+          "title": "Wrap Items",
+          "id": "wrap",
+          "format": "flex-{{value}}",
+          "select": {
+            "default": "nowrap",
+            "items": [
+              {
+                "value": "nowrap",
+                "title": "No Wrap"
+              },
+              {
+                "value": "wrap",
+                "title": "Wrap"
+              },
+              {
+                "value": "wrap-reverse",
+                "title": "Wrap Reverse"
+              }
+            ]
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Gap",
+          "heading": {}
+        },
+        {
+          "title": "Horizontal",
+          "id": "gapX",
+          "format": "gap-x-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "2"
+              }
+            }
+          }
+        },
+        {
+          "title": "Vertical",
+          "id": "gapY",
+          "format": "gap-y-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "2"
+              }
+            }
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Align",
+          "heading": {}
+        },
+        {
+          "globalControl": "AlignContent"
+        },
+        {
+          "globalControl": "AlignItems"
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Justify",
+          "heading": {}
+        },
+        {
+          "globalControl": "JustifyContent"
+        },
+        {
+          "globalControl": "JustifyItems"
+        }
+      ]
+    },
+    {
+      "title": "Link",
+      "icon": "link",
+      "properties": [
+        {
+          "globalControl": "Link"
+        }
+      ]
+    },
+    {
+      "title": "Layout",
+      "icon": "square.split.bottomrightquarter",
+      "properties": [
+        {
+          "globalControl": "Layout"
+        }
+      ]
+    },
+    {
+      "title": "Sizing",
+      "icon": "arrow.down.backward.and.arrow.up.forward.square",
+      "properties": [
+        {
+          "globalControl": "SizingContainer"
+        }
+      ]
+    },
+    {
+      "title": "Spacing",
+      "icon": "squareshape.squareshape.dotted",
+      "properties": [
+        {
+          "globalControl": "Spacing"
+        }
+      ]
+    },
+    {
+      "title": "Transitions",
+      "icon": "wand.and.stars.inverse",
+      "properties": [
+        {
+          "globalControl": "Transitions"
+        }
+      ]
+    },
+    {
+      "title": "Effects",
+      "icon": "wand.and.stars.inverse",
+      "properties": [
+        {
+          "globalControl": "Effects"
+        }
+      ]
+    },
+    {
+      "title": "Filters",
+      "icon": "camera.filters",
+      "properties": [
+        {
+          "globalControl": "Filters"
+        }
+      ]
+    },
+    {
+      "title": "Transforms",
+      "icon": "skew",
+      "properties": [
+        {
+          "globalControl": "Transforms"
+        }
+      ]
+    },
+    {
+      "title": "Background",
+      "icon": "paintbrush.fill",
+      "properties": [
+        {
+          "globalControl": "BackgroundTransparent"
+        }
+      ]
+    },
+    {
+      "title": "Borders",
+      "icon": "square.dashed",
+      "properties": [
+        {
+          "globalControl": "Borders"
+        }
+      ]
+    },
+    {
+      "title": "Advanced",
+      "properties": [
+        {
+          "divider": {}
+        },
+        {
+          "globalControl": "HTMLTag"
+        }
+      ]
+    }
+  ]
+}

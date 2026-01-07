@@ -1,0 +1,60 @@
+@portal("bodyEnd", id: "com.realmacsoftware.dropdown", incldeOnce: true)
+<script>
+    document.addEventListener("alpine:init", () => {
+        Alpine.data("dropdown", (id) => ({
+            id,
+            open: false,
+            init() {
+                this.$el.addEventListener("click", (e) => {
+                    const link = e.target.closest("a");
+                    if (link) {
+                        this.toggle();
+                    }
+                });
+            },
+            toggle() {
+                if (this.open) {
+                    return this.close();
+                }
+
+                this.$refs.button.focus();
+
+                this.open = true;
+            },
+            close(focusAfter) {
+                if (!this.open) return;
+
+                this.open = false;
+
+                focusAfter && focusAfter.focus();
+            },
+
+            wrapper: {
+                ["@keydown.escape.prevent.stop"]() {
+                    this.close($refs.button);
+                },
+                ["@focusin.window"]() {
+                    !this.$refs.panel.contains(this.$event.target) &&
+                        this.close();
+                },
+                ["x-id"]: `['dropdown-button']`,
+            },
+
+            trigger: {
+                ["x-ref"]: "button",
+                ["@click"]: "toggle()",
+                ["aria-expanded"]: "open",
+                ["aria-controls"]: "$id('dropdown-button')",
+                type: "button",
+            },
+
+            panel: {
+                ["x-ref"]: "panel",
+                ["x-on:click.outside"]: "close($refs.button)",
+                ["@id"]: "$id('dropdown-button')",
+                ["x-cloak"]: "",
+            },
+        }));
+    });
+</script>
+@endportal

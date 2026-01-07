@@ -1,0 +1,212 @@
+{
+  "groups": [
+    {
+      "title": "Settings",
+      "icon": "gearshape",
+      "properties": [
+        {
+          "title": "Filter",
+          "heading": {}
+        },
+        {
+          "title": "Group",
+          "id": "globalFilterGroup",
+          "segmented": {
+              "default": "parent",
+              "items": [
+                  {
+                      "title": "Parent",
+                      "value": "parent"
+                  },
+                  {
+                      "title": "Custom",
+                      "value": "custom"
+                  }
+              ]
+          }
+        },
+        {
+            "visible": "globalFilterGroup == 'custom'",
+            "title": "Group ID",
+            "id": "globalFilterCustomGroupId",
+            "text": {
+                "default": "unique-group-id"
+            }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Query",
+          "heading": {}
+        },
+        {
+          "title": "Mode",
+          "id": "globalFilterTagsMode",
+          "select": {
+            "default": "multiple",
+            "items": [
+              {
+                "title": "Multiple",
+                "value": "multiple"
+              },
+              {
+                "title": "Single",
+                "value": "single"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalFilterTagsMode == 'multiple'",
+          "title": "Match",
+          "id": "globalFilterQueryMatch",
+          "select": {
+            "default": "any",
+            "items": [
+              {
+                "title": "Any",
+                "value": "any"
+              },
+              {
+                "title": "All",
+                "value": "all"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "Tags Layout",
+      "icon": "tag",
+      "properties": [
+        {
+          "title": "Alignment",
+          "id": "tagsAlignment",
+          "format": "justify-{{value}}",
+          "segmented": {
+            "default": "start",
+            "items": [
+              {
+                "icon": "arrow.left.to.line.compact",
+                "value": "start"
+              },
+              {
+                "icon": "arrow.right.and.line.vertical.and.arrow.left",
+                "value": "center"
+              },
+              {
+                "icon": "arrow.right.to.line.compact",
+                "value": "end"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Gap",
+          "id": "tagsGap",
+          "format": "gap-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "4"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Font and Text Styles",
+      "icon": "textformat.size",
+      "properties": [
+        {
+          "globalControl": "ButtonFontAndTextStyles"
+        }
+      ]
+    },
+    {
+      "title": "Layout",
+      "icon": "square.split.bottomrightquarter",
+      "properties": [
+        {
+          "globalControl": "Layout"
+        }
+      ]
+    },
+    {
+      "title": "Sizing",
+      "icon": "arrow.down.backward.and.arrow.up.forward.square",
+      "properties": [
+        {
+          "globalControl": "Sizing"
+        }
+      ]
+    },
+    {
+      "title": "Spacing",
+      "icon": "squareshape.squareshape.dotted",
+      "properties": [
+        {
+          "globalControl": "SpacingInput"
+        }
+      ]
+    },
+    {
+      "title": "Transitions",
+      "icon": "wand.and.stars.inverse",
+      "properties": [
+        {
+          "globalControl": "Transitions"
+        }
+      ]
+    },
+    {
+      "title": "Effects",
+      "icon": "wand.and.stars.inverse",
+      "properties": [
+        {
+          "globalControl": "Effects"
+        }
+      ]
+    },
+    {
+      "title": "Filters",
+      "icon": "camera.filters",
+      "properties": [
+        {
+          "globalControl": "Filters"
+        }
+      ]
+    },
+    {
+      "title": "Transforms",
+      "icon": "skew",
+      "properties": [
+        {
+          "globalControl": "Transforms"
+        }
+      ]
+    },
+    {
+      "title": "Background",
+      "icon": "paintbrush.fill",
+      "properties": [
+        {
+          "globalControl": "BackgroundButton"
+        }
+      ]
+    },
+    {
+      "title": "Borders",
+      "icon": "square.dashed",
+      "properties": [
+        {
+          "globalControl": "Borders"
+        }
+      ]
+    }
+  ]
+}

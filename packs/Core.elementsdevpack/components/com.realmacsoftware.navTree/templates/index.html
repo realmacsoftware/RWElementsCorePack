@@ -1,0 +1,208 @@
+<div
+    x-data="treeNav({
+    storageKey: 'siteTreeNav-v1',
+    initialOpen: [{{initialOpen}}]
+    })"
+    @keydown.arrowdown.prevent="focusNext()"
+    @keydown.arrowup.prevent="focusPrev()"
+    @keydown.arrowright.prevent="openCurrentOrFocusChild()"
+    @keydown.arrowleft.prevent="closeCurrentOrFocusParent()"
+    @keydown.home.prevent="focusFirst()"
+    @keydown.end.prevent="focusLast()"
+    class=""
+    role="tree"
+>
+    <!-- LEVEL 1 -->
+    <ul class="{{classes.list}}">
+        @each(page in pages)
+            @include("item", page: page)
+        @endeach
+    </ul>
+</div>
+
+@portal(bodyEnd, includeOnce: true)
+<script>
+    document.addEventListener("alpine:init", () => {
+        Alpine.data(
+            "treeNav",
+            ({ storageKey = null, initialOpen = [] } = {}) => ({
+                open: new Set(initialOpen),
+                currentId: null,
+
+                init() {
+                    // Restore persisted state
+                    if (storageKey) {
+                        try {
+                            const saved = JSON.parse(
+                                localStorage.getItem(storageKey)
+                            );
+                            if (Array.isArray(saved))
+                                this.open = new Set(saved);
+                        } catch (_) {}
+                    }
+
+                    // Ensure something is focusable
+                    const first = this.$root.querySelector('[role="treeitem"]');
+                    if (first) first.setAttribute("tabindex", "0");
+                },
+
+                persist() {
+                    if (!storageKey) return;
+                    localStorage.setItem(
+                        storageKey,
+                        JSON.stringify([...this.open])
+                    );
+                },
+
+                isOpen(id) {
+                    return this.open.has(id);
+                },
+
+                toggle(id) {
+                    if (this.open.has(id)) this.open.delete(id);
+                    else this.open.add(id);
+                    this.persist();
+
+                    // Keep focus on toggled node
+                    if (id) {
+                        this.setCurrent(id);
+                        this.$nextTick(() => this.focusById(id));
+                    }
+                },
+
+                // --- Focus management (roving tabindex) ---
+                setCurrent(id) {
+                    this.currentId = id;
+                    this.$root
+                        .querySelectorAll('[role="treeitem"]')
+                        .forEach((el) => el.setAttribute("tabindex", "-1"));
+                    const el = this.$root.querySelector(
+                        `[id="${CSS.escape(id)}"]`
+                    );
+                    if (el) el.setAttribute("tabindex", "0");
+                },
+
+                setTabIndex(id) {
+                    // First focusable will be 0 by init(); others -1 by default
+                    return this.currentId === id ? 0 : -1;
+                },
+
+                focusById(id) {
+                    const el = this.$root.querySelector(
+                        `[id="${CSS.escape(id)}"]`
+                    );
+                    if (el) el.focus();
+                },
+
+                items() {
+                    return Array.from(
+                        this.$root.querySelectorAll('[role="treeitem"]')
+                    );
+                },
+
+                indexOfCurrent() {
+                    const list = this.items();
+                    return Math.max(
+                        0,
+                        list.findIndex((el) => el.id === this.currentId)
+                    );
+                },
+
+                focusNext() {
+                    const list = this.items();
+                    const i = this.indexOfCurrent();
+                    const next = list[Math.min(list.length - 1, i + 1)];
+                    if (next) {
+                        this.setCurrent(next.id);
+                        next.focus();
+                    }
+                },
+
+                focusPrev() {
+                    const list = this.items();
+                    const i = this.indexOfCurrent();
+                    const prev = list[Math.max(0, i - 1)];
+                    if (prev) {
+                        this.setCurrent(prev.id);
+                        prev.focus();
+                    }
+                },
+
+                focusFirst() {
+                    const first = this.items()[0];
+                    if (first) {
+                        this.setCurrent(first.id);
+                        first.focus();
+                    }
+                },
+
+                focusLast() {
+                    const list = this.items();
+                    const last = list[list.length - 1];
+                    if (last) {
+                        this.setCurrent(last.id);
+                        last.focus();
+                    }
+                },
+
+                openCurrentOrFocusChild() {
+                    const el = this.$root.querySelector(
+                        `[id="${CSS.escape(this.currentId)}"]`
+                    );
+                    if (!el) return;
+
+                    // If it controls a subtree, expand it; else move forward
+                    const container = el.closest("li");
+                    const toggleMap = {
+                        Docs: "docs",
+                        "Getting Started": "getting-started",
+                        Guides: "guides",
+                    };
+
+                    const label = el.textContent.trim();
+                    const nodeKey = toggleMap[label];
+
+                    if (nodeKey && !this.isOpen(nodeKey)) {
+                        this.toggle(nodeKey, el.id);
+                        return;
+                    }
+
+                    // Otherwise go to next
+                    this.focusNext();
+                },
+
+                closeCurrentOrFocusParent() {
+                    const el = this.$root.querySelector(
+                        `[id="${CSS.escape(this.currentId)}"]`
+                    );
+                    if (!el) return;
+
+                    const container = el.closest("li");
+                    if (!container) return;
+
+                    // If inside a nested <ul role="group">, focus parent header
+                    const parentGroup = container.closest('ul[role="group"]');
+                    const parentHeader = parentGroup?.previousElementSibling; // the parent treeitem div
+                    if (parentHeader?.getAttribute("role") === "treeitem") {
+                        // Try to collapse if it's open
+                        const label = parentHeader.textContent.trim();
+                        const toggleMap = {
+                            Docs: "docs",
+                            "Getting Started": "getting-started",
+                            Guides: "guides",
+                        };
+                        const nodeKey = toggleMap[label];
+
+                        if (nodeKey && this.isOpen(nodeKey)) {
+                            this.toggle(nodeKey, parentHeader.id);
+                        } else {
+                            this.setCurrent(parentHeader.id);
+                            parentHeader.focus();
+                        }
+                    }
+                },
+            })
+        );
+    });
+</script>
+@endportal

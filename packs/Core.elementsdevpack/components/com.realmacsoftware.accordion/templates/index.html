@@ -1,0 +1,33 @@
+<div 
+    x-bind="summary" 
+    :id="'accordion-header-' + '{{id}}'"
+    role="button"
+    :aria-expanded="open.toString()" 
+    :aria-controls="'accordion-content-' + '{{id}}'"
+    class="{{classes.summary}}"
+>
+    <span class="flex-1 text-left">
+        @dropzone("title", title: "Title")
+    </span>
+    @if(showIcon)
+    <span class="{{classes.icon}}" aria-hidden="true">
+        @include("icon")
+    </span>
+    @endif
+</div>
+@if(showContent)
+<div 
+    x-bind="content" 
+    x-collapse
+    @if(!edit)
+    style="display: none;"
+    @endif
+    :id="'accordion-content-' + '{{id}}'"
+    role="region"
+    :aria-hidden="(!open).toString()"
+    :aria-labelledby="'accordion-header-' + '{{id}}'"
+    class="{{classes.content}}"
+>
+    @dropzone("content", title: "Content")
+</div>
+@endif

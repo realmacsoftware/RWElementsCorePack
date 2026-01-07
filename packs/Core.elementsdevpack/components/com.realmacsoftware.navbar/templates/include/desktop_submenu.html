@@ -1,0 +1,32 @@
+@if(includeDesktopSubmenu)
+<div
+    x-show="open"
+    @mouseover="handleMouseEnter"
+    @mouseleave="handleMouseLeave"
+    {{desktopTransitionAttributes}}
+    class="absolute z-50 mt-2"
+    x-cloak
+>
+    <div class="{{classes.desktop.subMenu}}">
+        <div
+            class="py-2"
+            role="menu"
+            aria-orientation="vertical"
+            aria-labelledby="options-menu"
+        >
+            @each(subPage in page.pages) @if(!subPage.hasPages)
+            <a
+                @if(subPage.openInNewWindow)
+                target="_blank"
+                @endif
+                href="{{subPage.url}}"
+                class="{{classes.desktop.dropdownItem}}"
+                role="menuitem"
+            >
+                {{subPage.title}}
+            </a>
+            @else @include("desktop_submenu_menu") @endif @endeach
+        </div>
+    </div>
+</div>
+@endif

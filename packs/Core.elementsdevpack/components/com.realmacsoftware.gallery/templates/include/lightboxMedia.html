@@ -1,0 +1,10 @@
+<div class="{{classes.lightboxItem}}" data-resource-id="{{item.resourceId}}" @click="close()">
+  @includeIf(item.isYouTube, template: "youtube")
+  @includeIf(item.isVimeo, template: "vimeo")
+  @includeIf(item.isMP4, template: "mp4")
+
+  @if(!item.isVideo)
+  <img src="{{item.fallbackSrc}}" srcset="{{item.srcset}}" alt="{{item.alt}}"
+    class="{{classes.lightboxItemMedia}} aspect-[{{item.aspect}}]" @click.stop />
+  @endif
+</div>

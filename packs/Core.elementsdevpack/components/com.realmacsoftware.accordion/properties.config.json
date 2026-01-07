@@ -1,0 +1,374 @@
+{
+    "groups": [
+        {
+            "title": "Settings",
+            "icon": "gearshape",
+            "properties": [
+                {
+                    "title": "Show Content In Edit",
+                    "heading": {}
+                },
+                {
+                    "title": "Enable",
+                    "id": "showContentInEdit",
+                    "responsive": false,
+                    "switch": {
+                        "default": true
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Default State",
+                    "id": "openOnLoad",
+                    "responsive": false,
+                    "segmented": {
+                        "default": false,
+                        "items": [
+                            {
+                                "title": "Open",
+                                "value": true
+                            },
+                            {
+                                "title": "Closed",
+                                "value": false
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Tags",
+            "icon": "tag",
+            "properties": [
+                {
+                    "title": "Tags",
+                    "id": "tags",
+                    "collection": {
+                        "identifier": "com.realmacsoftware.accordion.collections.tags"
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Filter",
+            "icon": "text.magnifyingglass",
+            "properties": [
+                {
+                    "globalControl": "Filter"
+                }
+            ]
+        },
+        {
+            "title": "Grouping",
+            "icon": "list.star",
+            "properties": [
+                {
+                    "title": "Group",
+                    "id": "accordionGroup",
+                    "segmented": {
+                        "default": "parent",
+                        "items": [
+                            {
+                                "title": "None",
+                                "value": "none"
+                            },
+                            {
+                                "title": "Parent",
+                                "value": "parent"
+                            },
+                            {
+                                "title": "Custom",
+                                "value": "custom"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "visible": "accordionGroup == 'custom'",
+                    "title": "Group ID",
+                    "id": "accordionCustomGroupId",
+                    "text": {
+                        "default": "unique-group-id"
+                    }
+                },
+                {
+                    "information": {},
+                    "title": "Grouping accordions will ensure only one accordion in the same group is open at a time."
+                }
+            ]
+        },
+        {
+            "title": "Summary",
+            "icon": "text.book.closed",
+            "properties": [
+                {
+                    "title": "State",
+                    "id": "summaryState",
+                    "responsive": false,
+                    "segmented": {
+                        "default": "closed",
+                        "items": [
+                            {
+                                "title": "Open",
+                                "value": "open"
+                            },
+                            {
+                                "title": "Closed",
+                                "value": "closed"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "visible": "summaryState == 'open'",
+                    "title": "Background",
+                    "id": "summaryBackground",
+                    "format": "hover:bg-{{value}} aria-expanded:bg-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "none",
+                            "brightness": 50
+                        }
+                    }
+                },
+                {
+                    "visible": "summaryState == 'closed'",
+                    "title": "Background",
+                    "id": "summaryBackgroundClosed",
+                    "format": "bg-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "none",
+                            "brightness": 50
+                        }
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Padding",
+                    "id": "summaryPadding",
+                    "format": "p-{{value}}",
+                    "themeSpacing": {
+                        "default": {
+                            "base": {
+                                "top": 2,
+                                "bottom": 2,
+                                "left": 3.5,
+                                "right": 3.5
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Icon",
+            "icon": "square.and.pencil",
+            "properties": [
+                {
+                    "title": "Show Icon",
+                    "id": "showIcon",
+                    "responsive": false,
+                    "switch": {
+                        "default": true
+                    }
+                },
+                {
+                    "visible": "showIcon == true",
+                    "title": "SVG",
+                    "id": "icon",
+                    "resource": {
+                        "accepts": "svg"
+                    }
+                },
+                {
+                    "visible": "showIcon == true",
+                    "title": "Alignment",
+                    "id": "iconAlignment",
+                    "format": "order-{{value}}",
+                    "segmented": {
+                        "default": "last",
+                        "items": [
+                            {
+                                "icon": "inset.filled.lefthalf.rectangle",
+                                "value": "first"
+                            },
+                            {
+                                "icon": "inset.filled.righthalf.rectangle",
+                                "value": "last"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "visible": "showIcon == true",
+                    "title": "Size",
+                    "id": "iconSize",
+                    "format": "[&>svg]:size-[{{value}}]",
+                    "text": {
+                        "default": "24px",
+                        "subtitle": "Any valid CSS unit, e.g. 16px, 1rem, 50%."
+                    }
+                },
+                {
+                    "visible": "showIcon == true",
+                    "divider": {}
+                },
+                {
+                    "visible": "showIcon == true",
+                    "title": "State",
+                    "id": "iconState",
+                    "responsive": false,
+                    "segmented": {
+                        "default": "open",
+                        "items": [
+                            {
+                                "title": "Open",
+                                "value": "open"
+                            },
+                            {
+                                "title": "Closed",
+                                "value": "closed"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "visible": "showIcon == true && iconState == 'open'",
+                    "title": "Rotation",
+                    "id": "iconRotation",
+                    "format": "[&>svg]:rotate-[{{value}}deg]",
+                    "number": {
+                        "default": 90,
+                        "subtitle": "in degrees"
+                    }
+                },
+                {
+                    "visible": "showIcon == true && iconState == 'open'",
+                    "title": "Color",
+                    "id": "iconColor",
+                    "format": "[&>svg]:text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 900
+                        }
+                    }
+                },
+                {
+                    "visible": "showIcon == true && iconState == 'closed'",
+                    "title": "Rotation",
+                    "id": "iconRotationClosed",
+                    "format": "[&>svg]:group-data-[open=false]:rotate-[{{value}}deg]",
+                    "number": {
+                        "default": 180,
+                        "subtitle": "in degrees"
+                    }
+                },
+                {
+                    "visible": "showIcon == true && iconState == 'closed'",
+                    "title": "Color",
+                    "id": "iconColorClosed",
+                    "format": "[&>svg]:group-data-[open=false]:text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 900
+                        }
+                    }
+                },
+                {
+                    "visible": "showIcon == true",
+                    "information": {},
+                    "title": "Color will be used for SVG icons"
+                }
+            ]
+        },
+        {
+            "title": "Layout",
+            "icon": "square.split.bottomrightquarter",
+            "properties": [
+                {
+                    "globalControl": "Layout"
+                }
+            ]
+        },
+        {
+            "title": "Sizing",
+            "icon": "arrow.down.backward.and.arrow.up.forward.square",
+            "properties": [
+                {
+                    "globalControl": "Sizing"
+                }
+            ]
+        },
+        {
+            "title": "Spacing",
+            "icon": "squareshape.squareshape.dotted",
+            "properties": [
+                {
+                    "globalControl": "Spacing"
+                }
+            ]
+        },
+        {
+            "title": "Transitions",
+            "icon": "wand.and.stars.inverse",
+            "properties": [
+                {
+                    "globalControl": "Transitions"
+                }
+            ]
+        },
+        {
+            "title": "Effects",
+            "icon": "wand.and.stars.inverse",
+            "properties": [
+                {
+                    "globalControl": "Effects"
+                }
+            ]
+        },
+        {
+            "title": "Filters",
+            "icon": "camera.filters",
+            "properties": [
+                {
+                    "globalControl": "Filters"
+                }
+            ]
+        },
+        {
+            "title": "Transforms",
+            "icon": "skew",
+            "properties": [
+                {
+                    "globalControl": "Transforms"
+                }
+            ]
+        },
+        {
+            "title": "Background",
+            "icon": "paintbrush.fill",
+            "properties": [
+                {
+                    "globalControl": "BackgroundTransparent"
+                }
+            ]
+        },
+        {
+            "title": "Borders",
+            "icon": "square.dashed",
+            "properties": [
+                {
+                    "globalControl": "Borders"
+                }
+            ]
+        }
+    ]
+}

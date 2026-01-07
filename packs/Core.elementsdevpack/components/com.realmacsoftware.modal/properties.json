@@ -1,0 +1,253 @@
+{
+  "groups": [
+    {
+      "title": "Settings",
+      "icon": "gearshape",
+      "properties": [
+        {
+          "title": "Modal",
+          "heading": {}
+        },
+        {
+          "title": "Show",
+          "id": "modalShowInEdit",
+          "responsive": false,
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Auto Open",
+          "id": "modalAutoOpen",
+          "responsive": false,
+          "select": {
+            "default": "never",
+            "items": [
+              {
+                "title": "Never",
+                "value": "never"
+              },
+              {
+                "title": "Page Load",
+                "value": "onload"
+              },
+              {
+                "title": "After Delay",
+                "value": "delay"
+              },
+              {
+                "title": "Exit Intent",
+                "value": "exitIntent"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "modalAutoOpen == 'delay'",
+          "title": "Seconds",
+          "id": "modalAutoOpenTime",
+          "format": "{{value}}",
+          "number": {
+            "default": 0
+          }
+        }
+      ]
+    },
+    {
+      "title": "Transition",
+      "icon": "wand.and.stars.inverse",
+      "properties": [
+        {
+          "title": "Style",
+          "id": "modalTransitionStyle",
+          "select": {
+            "default": "fade",
+            "items": [
+              {
+                "title": "Fade",
+                "value": "fade"
+              },
+              {
+                "title": "Zoom",
+                "value": "zoom"
+              },
+              {
+                "title": "Slide Left",
+                "value": "slideLeft"
+              },
+              {
+                "title": "Slide Right",
+                "value": "slideRight"
+              },
+              {
+                "title": "Slide Up",
+                "value": "slideUp"
+              },
+              {
+                "title": "Slide Down",
+                "value": "slideDown"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Duration",
+          "id": "modalTransitionDuration",
+          "format": "duration-[{{value}}ms]",
+          "number": {
+            "default": 300
+          }
+        }
+      ]
+    },
+    {
+      "title": "Trigger",
+      "icon": "rectangle.and.hand.point.up.left.filled",
+      "properties": [
+        {
+          "title": "Cursor",
+          "id": "triggerCursor",
+          "format": "cursor-{{value}}",
+          "select": {
+            "default": "default",
+            "items": [
+              {
+                "title": "Default",
+                "value": "default"
+              },
+              {
+                "title": "Pointer",
+                "value": "pointer"
+              },
+              {
+                "title": "Help",
+                "value": "help"
+              },
+              {
+                "title": "Zoom In",
+                "value": "zoom-in"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "Content",
+      "icon": "textformat",
+      "properties": [
+        {
+          "title": "Placement",
+          "heading": {}
+        },
+        {
+          "title": "Horizontal",
+          "id": "modalJustify",
+          "format": "justify-{{value}}",
+          "select": {
+            "default": "center",
+            "items": [
+              {
+                "title": "Start",
+                "value": "start"
+              },
+              {
+                "title": "Center",
+                "value": "center"
+              },
+              {
+                "title": "End",
+                "value": "end"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Vertical",
+          "id": "modalAlign",
+          "format": "items-{{value}}",
+          "select": {
+            "default": "center",
+            "items": [
+              {
+                "title": "Start",
+                "value": "start"
+              },
+              {
+                "title": "Center",
+                "value": "center"
+              },
+              {
+                "title": "End",
+                "value": "end"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "Overlay",
+      "icon": "circle.hexagongrid",
+      "properties": [
+        {
+          "title": "Color",
+          "id": "modalOverlayColor",
+          "format": "bg-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 50
+            }
+          }
+        },
+        {
+          "title": "Opacity",
+          "id": "modalOverlayOpacity",
+          "format": "[{{value}}%]",
+          "slider": {
+            "default": 15,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "title": "Blur",
+          "id": "globalFiltersBackdropBlur",
+          "format": "backdrop-blur-[{{value}}px]",
+          "number": {
+            "default": 0,
+            "subtitle": "In pixels"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Advanced",
+      "icon": "gearshape",
+      "properties": [
+        {
+          "title": "CSS Classes",
+          "id": "cssClasses",
+          "textArea": {
+            "default": ""
+          }
+        },
+        {
+          "title": "ID",
+          "id": "globalID",
+          "responsive": false,
+          "text": {
+            "default": ""
+          }
+        }
+      ]
+    }
+  ]
+}

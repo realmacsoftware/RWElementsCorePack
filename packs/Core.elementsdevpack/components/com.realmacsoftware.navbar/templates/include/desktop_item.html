@@ -1,0 +1,56 @@
+@portal(bodyEnd, id: "com.realmacsoftware.alpineData.desktopSubmenu",
+includeOnce: true)
+<script>
+    document.addEventListener("alpine:init", () => {
+        Alpine.data("desktopSubmenu", () => ({
+            open: false,
+            closeTimeout: null,
+            closeDelay: 300,
+
+            openMenu() {
+                clearTimeout(this.closeTimeout);
+                this.open = true;
+            },
+
+            startCloseTimer() {
+                this.closeTimeout = setTimeout(() => {
+                    this.closeMenu();
+                }, this.closeDelay);
+            },
+
+            cancelCloseTimer() {
+                clearTimeout(this.closeTimeout);
+            },
+
+            closeMenu() {
+                this.open = false;
+            },
+
+            handleMouseEnter() {
+                this.openMenu();
+            },
+
+            handleMouseLeave() {
+                this.startCloseTimer();
+            },
+        }));
+    });
+</script>
+@endportal
+
+<div x-data="desktopSubmenu" class="relative">
+    @if(page.isFolder) @include("desktop_folder") @else
+    <a
+        @if(page.openInNewWindow)
+        target="_blank"
+        @endif
+        href="{{page.url}}"
+        @mouseover="handleMouseEnter"
+        @mouseleave="handleMouseLeave"
+        class="flex items-center @if(page.isActive){{classes.desktop.itemActive}} @else {{classes.desktop.item}} @endif"
+    >
+        {{page.title}} @includeIf(page.hasPages, template:
+        "desktop_submenu_indicator")
+    </a>
+    @includeIf(page.hasPages, template: "desktop_submenu") @endif
+</div>

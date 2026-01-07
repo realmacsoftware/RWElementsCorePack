@@ -1,0 +1,115 @@
+@dropzone("content", title: "Content")
+
+@portal(bodyEnd, id: "com.realmacsoftware.container.animations", includeOnce: true)
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    function parseJSON(str) {
+        try {
+            return JSON.parse(str);
+        } catch (e) {
+            return JSON.parse(str.replace(/&quot;/g, '"'));
+        }
+    }
+
+    const animationScroll = (element) => {
+        const {
+            animationTriggerType: type,
+            animationEnterFrom,
+            animationEnterTo,
+            animationExitTo,
+            animationTriggerStart = "top center",
+            animationTriggerEnd = "bottom top",
+        } = element.dataset;
+
+        const enterFrom = parseJSON(animationEnterFrom);
+        const enterTo = parseJSON(animationEnterTo);
+        const exitTo = parseJSON(animationExitTo);
+
+        gsap.to(element, {
+            scrollTrigger: {
+                trigger: element,
+                start: animationTriggerStart,
+                end: animationTriggerEnd,
+                scrub: type == "scroll",
+                onEnter: () => gsap.fromTo(element, enterFrom, enterTo),
+                onLeave: () => gsap.to(element, exitTo),
+                onEnterBack: () => gsap.fromTo(element, exitTo, enterTo),
+                onLeaveBack: () => gsap.to(element, enterFrom)
+            }
+        });
+    }
+
+    const animationScrub = (element) => {
+        const {
+            animationTriggerType: type,
+            animationEnterFrom,
+            animationEnterTo,
+            animationExitTo,
+            animationTriggerStart = "top center",
+            animationTriggerEnd = "bottom top",
+        } = element.dataset;
+
+        const enterFrom = parseJSON(animationEnterFrom);
+        const enterTo = parseJSON(animationEnterTo);
+        const exitTo = parseJSON(animationExitTo);
+
+        // Create a timeline for scrubbable animations
+        const timeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: element,
+                start: animationTriggerStart,
+                end: animationTriggerEnd,
+                scrub: type === "scroll" ? true : false, // Link progress to scroll position
+                markers: true, // Debugging: Remove in production
+            },
+        });
+
+        // Add the enter animation to the timeline
+        timeline.fromTo(element, enterFrom, enterTo);
+
+        // Add the exit animation to the timeline
+        if (exitTo) {
+            timeline.to(element, exitTo);
+        }
+    };
+    
+    const animationInstant = (element) => {
+        const {
+            animationEnterFrom,
+            animationEnterTo,
+            animationRepeat = "false",
+        } = element.dataset;
+
+        let enterFrom = parseJSON(animationEnterFrom);
+        let enterTo = parseJSON(animationEnterTo);
+        const repeat = animationRepeat == "false" ? {} : parseJSON(animationRepeat);
+
+        const children = element.children;
+
+        // merge repeat in to enterFrom and enterTo
+        enterFrom = { ...enterFrom, ...repeat };
+        enterTo = { ...enterTo, ...repeat };
+        
+        Array.from(children).forEach(child => {
+            gsap.fromTo(child, enterFrom, enterTo);
+        });
+    }
+
+    document.querySelectorAll("[data-animation='true']").forEach((element, index) => {
+        const { animationTriggerType } = element.dataset;
+        
+        switch (animationTriggerType) {
+            case "inView":
+                animationScroll(element);
+                break;
+            case "scroll":
+                animationScrub(element);
+                break;
+            case "instant":
+                animationInstant(element);
+                break;
+        }
+    });
+</script>
+@endportal

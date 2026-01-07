@@ -1,0 +1,18 @@
+{
+  "author": "Realmac Software",
+  "title": "Architect",
+ "subTitle": "Crisp, strict, and classy.",
+  "tags": [
+    "tailwind",
+    "default"
+  ],
+  "build": "100",
+  "version": "1.0.0",
+  "deprecated": false,
+  "helpURL": "https://forums.realmacsoftware.com/",
+  "infoURL": "https://www.realmacsoftware.com/",
+  "googleFontNames": [
+    "Lora",
+    "Jost",
+  ]
+}

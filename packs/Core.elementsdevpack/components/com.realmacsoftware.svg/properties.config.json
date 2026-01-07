@@ -1,0 +1,344 @@
+{
+  "groups": [
+    {
+      "title": "SVG",
+      "icon": "photo",
+      "properties": [
+        {
+          "title": "SVG",
+          "id": "svg",
+          "resource": {
+            "accepts": "svg"
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Remove Attributes",
+          "heading": {}
+        },
+        {
+          "information": {},
+          "title": "Enable each option to remove the attribute from the SVG."
+        },
+        {
+          "title": "Size",
+          "id": "stripSize",
+          "responsive": false,
+          "switch": {
+            "default": true
+          }
+        },
+        {
+          "title": "Fill",
+          "id": "stripFill",
+          "responsive": false,
+          "switch": {
+            "default": true
+          }
+        },
+        {
+          "title": "Stroke",
+          "id": "stripStroke",
+          "responsive": false,
+          "switch": {
+            "default": true
+          }
+        },
+        {
+          "title": "Styles",
+          "id": "stripStyles",
+          "responsive": false,
+          "switch": {
+            "default": true
+          }
+        }
+      ]
+    },
+    {
+      "title": "Fill",
+      "icon": "paintpalette.fill",
+      "properties": [
+        {
+          "globalControl": "ControlType",
+          "id": "{{value}}SVGFill"
+        },
+        {
+          "visible": "globalControlTypeSVGFill == 'hover'",
+          "title": "Over",
+          "id": "fillColorHoverElement",
+          "responsive": false,
+          "select": {
+            "default": "self",
+            "items": [
+              {
+                "title": "Self",
+                "value": "self"
+              },
+              {
+                "title": "Parent",
+                "value": "parent"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalControlTypeSVGFill != 'none' && globalControlTypeSVGFill != 'static'",
+          "title": "State",
+          "id": "globalSVGFillState",
+          "responsive": false,
+          "segmented": {
+            "default": "start",
+            "items": [
+              {
+                "title": "Start",
+                "value": "start"
+              },
+              {
+                "title": "End",
+                "value": "end"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalControlTypeSVGFill == 'static' || (globalControlTypeSVGFill == 'hover' && globalSVGFillState == 'start')",
+          "title": "Color",
+          "id": "fillColor",
+          "format": "fill-{{value}}/[--svgOpacity] text-{{value}}/[--svgOpacity]",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 50
+            }
+          }
+        },
+        {
+          "visible": "globalControlTypeSVGFill == 'static' || (globalControlTypeSVGFill == 'hover' && globalSVGFillState == 'start')",
+          "title": "Opacity",
+          "id": "fillColorOpacity",
+          "format": "[--svgOpacity:_{{value}}%]",
+          "responsive": false,
+          "slider": {
+            "use": "Slider",
+            "default": 100,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "globalControlTypeSVGFill == 'hover' && globalSVGFillState == 'end'",
+          "title": "Color",
+          "id": "fillColorEnd",
+          "format": "hover:fill-{{value}}/[--svgOpacity] hover:text-{{value}}/[--svgOpacity]",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 50
+            }
+          }
+        },
+        {
+          "visible": "globalControlTypeSVGFill == 'hover' && globalSVGFillState == 'end'",
+          "title": "Opacity",
+          "id": "fillColorOpacityEnd",
+          "format": "hover:[--svgOpacity:{{value}}%]",
+          "responsive": false,
+          "slider": {
+            "use": "Slider",
+            "default": 100,
+            "units": "%"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Stroke",
+      "icon": "paintpalette",
+      "properties": [
+        {
+          "globalControl": "ControlType",
+          "id": "{{value}}SVGStroke"
+        },
+        {
+          "visible": "globalControlTypeSVGStroke == 'hover'",
+          "title": "State",
+          "id": "globalSVGStrokeState",
+          "responsive": false,
+          "segmented": {
+            "default": "start",
+            "items": [
+              {
+                "title": "Start",
+                "value": "start"
+              },
+              {
+                "title": "End",
+                "value": "end"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalControlTypeSVGStroke == 'hover'",
+          "title": "Over",
+          "id": "strokeColorHoverElement",
+          "responsive": false,
+          "select": {
+            "default": "self",
+            "items": [
+              {
+                "title": "Self",
+                "value": "self"
+              },
+              {
+                "title": "Parent",
+                "value": "parent"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalControlTypeSVGStroke == 'static' || (globalControlTypeSVGStroke == 'hover' && globalSVGStrokeState == 'start')",
+          "title": "Color",
+          "id": "strokeColor",
+          "format": "stroke-{{value}}/[--strokeOpacity]",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 50
+            }
+          }
+        },
+        {
+          "visible": "globalControlTypeSVGStroke == 'static' || (globalControlTypeSVGStroke == 'hover' && globalSVGStrokeState == 'start')",
+          "title": "Opacity",
+          "id": "strokeColorOpacity",
+          "format": "[--strokeOpacity:{{value}}%]",
+          "responsive": false,
+          "slider": {
+            "use": "Slider",
+            "default": 100,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "globalControlTypeSVGStroke == 'static' || (globalControlTypeSVGStroke == 'hover' && globalSVGStrokeState == 'start')",
+          "title": "Width",
+          "id": "strokeWidth",
+          "format": "stroke-[{{value}}px]",
+          "number": {
+            "default": 1,
+            "subtitle": "in pixels"
+          }
+        },
+        {
+          "visible": "globalControlTypeSVGStroke == 'hover' && globalSVGStrokeState == 'end'",
+          "title": "Color",
+          "id": "strokeColorEnd",
+          "format": "hover:stroke-{{value}}/[--strokeOpacity]",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 50
+            }
+          }
+        },
+        {
+          "visible": "globalControlTypeSVGStroke == 'hover' && globalSVGStrokeState == 'end'",
+          "title": "Opacity",
+          "id": "strokeColorOpacityEnd",
+          "format": "hover:[--strokeOpacity:{{value}}%]",
+          "responsive": false,
+          "slider": {
+            "use": "Slider",
+            "default": 100,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "globalControlTypeSVGStroke == 'hover' && globalSVGStrokeState == 'end'",
+          "title": "Width",
+          "id": "strokeWidthEnd",
+          "format": "hover:stroke-[{{value}}px]",
+          "number": {
+            "default": 1,
+            "subtitle": "in pixels"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Link",
+      "icon": "link",
+      "properties": [
+        {
+          "globalControl": "Link"
+        }
+      ]
+    },
+    {
+      "title": "Layout",
+      "icon": "square.split.bottomrightquarter",
+      "properties": [
+        {
+          "globalControl": "Layout"
+        }
+      ]
+    },
+    {
+      "title": "Sizing",
+      "icon": "square.resize",
+      "properties": [
+        {
+          "globalControl": "SizingSVG"
+        }
+      ]
+    },
+    {
+      "title": "Spacing",
+      "icon": "squareshape.squareshape.dotted",
+      "properties": [
+        {
+          "globalControl": "Spacing"
+        }
+      ]
+    },
+    {
+      "title": "Transitions",
+      "icon": "timer",
+      "properties": [
+        {
+          "globalControl": "Transitions"
+        }
+      ]
+    },
+    {
+      "title": "Effects",
+      "icon": "wand.and.stars.inverse",
+      "properties": [
+        {
+          "globalControl": "Effects"
+        }
+      ]
+    },
+    {
+      "title": "Transforms",
+      "icon": "skew",
+      "properties": [
+        {
+          "globalControl": "Transforms"
+        }
+      ]
+    },
+    {
+      "title": "Filters",
+      "icon": "camera.filters",
+      "properties": [
+        {
+          "globalControl": "Filters"
+        }
+      ]
+    }
+  ]
+}
