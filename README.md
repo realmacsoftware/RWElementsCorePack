@@ -7,7 +7,6 @@
 **Build stunning, professional websites with 25+ production-ready UI components**
 
 [![License: ESL](https://img.shields.io/badge/License-ESL-green.svg)](LICENSE)
-[![RapidWeaver](https://img.shields.io/badge/RapidWeaver-Elements-orange.svg)](https://www.realmacsoftware.com/rapidweaver/)
 
 </div>
 
@@ -24,7 +23,7 @@ Whether you're building a portfolio, business site, blog, or landing page, the C
 - **300+ Ready-to-Use Resources** — Icons, images, and SVG graphics
 - **170+ Page Templates** — Pre-built layouts to jumpstart your projects
 
-Built by **Realmac Software**, the makers of RapidWeaver, the Core Pack is designed to work seamlessly with the Elements editor, giving you a pixel-perfect WYSIWYG experience.
+The Core Pack is designed to work seamlessly with the Elements editor, giving you a pixel-perfect WYSIWYG experience.
 
 ---
 
@@ -210,17 +209,3 @@ This project is licensed under the **Elements Source License (ESL)** — a custo
 
 See the [LICENSE](LICENSE) file for the complete license terms.
 
----
-
-## 🔗 Links
-
-- [RapidWeaver Website](https://www.realmacsoftware.com/rapidweaver/)
-- [Realmac Software](https://www.realmacsoftware.com/)
-
----
-
-<div align="center">
-
-**Made with ❤️ by [Realmac Software](https://www.realmacsoftware.com/)**
-
-</div>
