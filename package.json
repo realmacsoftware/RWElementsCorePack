@@ -16,6 +16,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "rw-element-tools": "^1.1.1"
+    "rw-elements-tools": "^1.2.1"
   }
 }
