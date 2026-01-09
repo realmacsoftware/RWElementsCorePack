@@ -6,7 +6,7 @@
 
 **Build stunning, professional websites with 25+ production-ready UI components**
 
-[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+[![License: ESL](https://img.shields.io/badge/License-ESL-green.svg)](LICENSE)
 [![RapidWeaver](https://img.shields.io/badge/RapidWeaver-Elements-orange.svg)](https://www.realmacsoftware.com/rapidweaver/)
 
 </div>
@@ -194,7 +194,21 @@ We welcome contributions! Here's how to get involved:
 
 ## 📄 License
 
-This project is licensed under the **ISC License** — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **Elements Source License (ESL)** — a custom license designed for the RapidWeaver Elements ecosystem.
+
+### What You Can Do
+
+✅ Use, study, and modify the source code  
+✅ Create component packs and extensions for RapidWeaver Elements  
+✅ Redistribute in source or compiled form for use with RapidWeaver Elements  
+
+### What You Cannot Do
+
+❌ Use in other website builders or competing platforms  
+❌ Incorporate into SaaS products or other applications  
+❌ Use independently outside the RapidWeaver Elements ecosystem  
+
+See the [LICENSE](LICENSE) file for the complete license terms.
 
 ---
 
