@@ -1425,7 +1425,7 @@ const advancedClasses = (rw) => {
     globalBgImageFetchPriorityLinkElementEnd
   } = globalBgImageFetchPriority(rw), wantsGrouping = accordionGroup != "none", groupId = accordionGroup == "custom" ? accordionCustomGroupId : parent.id, classes = {
     details: classnames([
-      "group transform",
+      `group/${id} transform`,
       globalLayout(rw),
       globalSizing(rw),
       globalSpacing(rw),
@@ -1451,8 +1451,8 @@ const advancedClasses = (rw) => {
       iconAlignment,
       iconRotation,
       iconColor,
-      iconRotationClosed,
-      iconColorClosed
+      iconRotationClosed && `[&>svg]:group-data-[open=false]/${id}:rotate-[${iconRotationClosed}deg]`,
+      iconColorClosed && `[&>svg]:group-data-[open=false]/${id}:text-${iconColorClosed}`
     ]).toString()
   };
   rw.setRootElement({

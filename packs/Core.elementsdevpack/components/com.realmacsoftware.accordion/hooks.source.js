@@ -40,7 +40,7 @@ const transformHook = (rw) => {
 
     const classes = {
         details: classnames([
-            `group transform`,
+            `group/${id} transform`,
             globalLayout(rw),
             globalSizing(rw),
             globalSpacing(rw),
@@ -66,8 +66,8 @@ const transformHook = (rw) => {
             iconAlignment,
             iconRotation,
             iconColor,
-            iconRotationClosed,
-            iconColorClosed,
+            iconRotationClosed && `[&>svg]:group-data-[open=false]/${id}:rotate-[${iconRotationClosed}deg]`,
+            iconColorClosed && `[&>svg]:group-data-[open=false]/${id}:text-${iconColorClosed}`,
         ]).toString(),
     };
 
