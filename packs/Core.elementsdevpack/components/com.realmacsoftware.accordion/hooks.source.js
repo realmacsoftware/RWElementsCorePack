@@ -40,7 +40,7 @@ const transformHook = (rw) => {
 
     const classes = {
         details: classnames([
-            `group transform`,
+            `group/${id} transform`,
             globalLayout(rw),
             globalSizing(rw),
             globalSpacing(rw),
@@ -66,8 +66,8 @@ const transformHook = (rw) => {
             iconAlignment,
             iconRotation,
             iconColor,
-            iconRotationClosed,
-            iconColorClosed,
+            iconRotationClosed && `[&>svg]:group-data-[open=false]/${id}:rotate-[${iconRotationClosed}deg]`,
+            iconColorClosed && `[&>svg]:group-data-[open=false]/${id}:text-${iconColorClosed}`,
         ]).toString(),
     };
 
@@ -75,18 +75,16 @@ const transformHook = (rw) => {
         as: "div",
         class: classes.details,
         args: {
-            "x-data": `() => accordion($id('accordion'), ${JSON.stringify({
+            "x-data": `() => accordion('${id}', ${JSON.stringify({
                 groupId: wantsGrouping ? groupId : null,
                 openOnLoad: openOnLoad == "true",
             }).replace(/"/g, "'")})`,
-            "x-id": "['accordion']",
-            ":id": "$id('accordion')",
             "x-bind": "details",
             "data-open": "false",
             role: "group",
             "aria-roledescription": "accordion",
-            ":aria-label": `'Accordion section ${id}'`,
-            id: globalID,
+            "aria-label": `Accordion section ${id}`,
+            id: globalID || id,
             ...filter.args,
             "data-filter-tags": dataTags,
         },
@@ -97,6 +95,7 @@ const transformHook = (rw) => {
     }
 
     rw.setProps({
+        id,
         classes,
         hasAnIcon,
         edit: rw.project.mode == "edit",

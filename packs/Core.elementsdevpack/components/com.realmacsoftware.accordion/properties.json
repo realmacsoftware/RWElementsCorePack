@@ -324,7 +324,7 @@
           "visible": "showIcon == true && iconState == 'closed'",
           "title": "Rotation",
           "id": "iconRotationClosed",
-          "format": "[&>svg]:group-data-[open=false]:rotate-[{{value}}deg]",
+          "format": "{{value}}",
           "number": {
             "default": 180,
             "subtitle": "in degrees"
@@ -334,7 +334,7 @@
           "visible": "showIcon == true && iconState == 'closed'",
           "title": "Color",
           "id": "iconColorClosed",
-          "format": "[&>svg]:group-data-[open=false]:text-{{value}}",
+          "format": "{{value}}",
           "themeColor": {
             "default": {
               "name": "surface",
