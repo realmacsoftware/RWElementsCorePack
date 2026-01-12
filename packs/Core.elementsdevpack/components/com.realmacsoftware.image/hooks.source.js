@@ -134,11 +134,28 @@ const transformHook = (rw) => {
               ...responsiveImageDataDark,
           };
 
-    // Generate mask style if SVG resource is present
+    // Generate mask classes if SVG resource is present
     const wantsMask = !!imageMaskResource?.image;
-    const maskStyle = wantsMask
-        ? `-webkit-mask-image: url('${imageMaskResource.image}'); mask-image: url('${imageMaskResource.image}'); -webkit-mask-size: ${imageMaskSize}; mask-size: ${imageMaskSize}; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center;`
-        : "";
+    console.log("wantsMask", imageMaskResource);
+    const maskClasses = [];
+    if (wantsMask) {
+        const svgContent = imageMaskResource.image;
+        const encodedSvg = encodeURIComponent(svgContent);
+        const maskUrl = `url('data:image/svg+xml,${encodedSvg}')`;
+        
+        maskClasses.push(
+            `[-webkit-mask-image:${maskUrl}]`,
+            `[mask-image:${maskUrl}]`,
+            `[-webkit-mask-size:${imageMaskSize}]`,
+            `[mask-size:${imageMaskSize}]`,
+            `[-webkit-mask-repeat:no-repeat]`,
+            `[mask-repeat:no-repeat]`,
+            `[-webkit-mask-position:center]`,
+            `[mask-position:center]`
+        );
+    }
+
+    console.log("maskClasses", maskClasses);
 
     const classes = {
         wrapper: classnames([
@@ -161,6 +178,7 @@ const transformHook = (rw) => {
             rw.props.aspectRatio == "aspect-[auto]"
                 ? `aspect-[${image?.aspect}]`
                 : aspectRatioClasses(rw),
+            ...maskClasses,
         ]).toString(),
         lightbox: {
             overlay: classnames([
@@ -206,8 +224,6 @@ const transformHook = (rw) => {
         wantsLightbox: wantsLightbox && mode != "edit",
         id: rw.node.id,
         wantsFetchPriority,
-        wantsMask,
-        maskStyle,
     });
 };
 

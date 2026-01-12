@@ -140,6 +140,46 @@
             ]
         },
         {
+            "title": "Mask",
+            "icon": "theatermask.and.paintbrush",
+            "properties": [
+                {
+                    "title": "SVG",
+                    "id": "imageMaskResource",
+                    "resource": {
+                        "types": ["svg"]
+                    }
+                },
+                {
+                    "visible": "imageMaskResource != null",
+                    "title": "Size",
+                    "id": "imageMaskSize",
+                    "responsive": false,
+                    "select": {
+                        "default": "contain",
+                        "items": [
+                            {
+                                "title": "Contain",
+                                "value": "contain"
+                            },
+                            {
+                                "title": "Cover",
+                                "value": "cover"
+                            },
+                            {
+                                "title": "Fill",
+                                "value": "100% 100%"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "information": {},
+                    "title": "Add an SVG to mask this image. The black areas of the SVG will be visible."
+                }
+            ]
+        },
+        {
             "title": "Lightbox",
             "icon": "square.filled.on.square",
             "properties": [
@@ -273,46 +313,6 @@
             "properties": [
                 {
                     "globalControl": "Borders"
-                }
-            ]
-        },
-        {
-            "title": "Mask",
-            "icon": "theatermask.and.paintbrush",
-            "properties": [
-                {
-                    "title": "SVG",
-                    "id": "imageMaskResource",
-                    "resource": {
-                        "types": ["svg"]
-                    }
-                },
-                {
-                    "visible": "imageMaskResource != null",
-                    "title": "Size",
-                    "id": "imageMaskSize",
-                    "responsive": false,
-                    "select": {
-                        "default": "contain",
-                        "items": [
-                            {
-                                "title": "Contain",
-                                "value": "contain"
-                            },
-                            {
-                                "title": "Cover",
-                                "value": "cover"
-                            },
-                            {
-                                "title": "Fill",
-                                "value": "100% 100%"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "information": {},
-                    "title": "Add an SVG to mask this image. The black areas of the SVG will be visible."
                 }
             ]
         }
