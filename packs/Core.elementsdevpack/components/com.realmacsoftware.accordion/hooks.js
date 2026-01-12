@@ -1459,22 +1459,21 @@ const advancedClasses = (rw) => {
     as: "div",
     class: classes.details,
     args: {
-      "x-data": `() => accordion($id('accordion'), ${JSON.stringify({
+      "x-data": `() => accordion('${id}', ${JSON.stringify({
         groupId: wantsGrouping ? groupId : null,
         openOnLoad: openOnLoad == "true"
       }).replace(/"/g, "'")})`,
-      "x-id": "['accordion']",
-      ":id": "$id('accordion')",
       "x-bind": "details",
       "data-open": "false",
       role: "group",
       "aria-roledescription": "accordion",
-      ":aria-label": `'Accordion section ${id}'`,
-      id: globalID,
+      "aria-label": `Accordion section ${id}`,
+      id: globalID || id,
       ...filter.args,
       "data-filter-tags": dataTags
     }
   }), globalID.length > 0 && rw.addAnchor(globalID), rw.setProps({
+    id,
     classes,
     hasAnIcon,
     edit: rw.project.mode == "edit",

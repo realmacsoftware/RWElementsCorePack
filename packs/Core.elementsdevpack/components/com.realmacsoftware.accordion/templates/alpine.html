@@ -19,9 +19,7 @@
             details: {
                 ["@close-accordions-in-group.window"](e) {
                     const { groupId, id } = e.detail;
-                    console.log(groupId, this.options.groupId, id, this.id);
                     if (groupId == this.options.groupId && id != this.id) {
-                        console.log("closing", id, this.id);
                         this.open = false;
                     }
                 },
