@@ -15,6 +15,9 @@ const transformHook = (rw) => {
         imageLightboxColor,
         imageLightboxColorOpacity,
         imageLightboxGlobalFiltersBackdropBlur,
+
+        imageMaskResource,
+        imageMaskSize,
     } = rw.props;
 
     const {
@@ -131,6 +134,29 @@ const transformHook = (rw) => {
               ...responsiveImageDataDark,
           };
 
+    // Generate mask classes if SVG resource is present
+    const wantsMask = !!imageMaskResource?.image;
+    console.log("wantsMask", imageMaskResource);
+    const maskClasses = [];
+    if (wantsMask) {
+        const svgContent = imageMaskResource.image;
+        const encodedSvg = encodeURIComponent(svgContent);
+        const maskUrl = `url('data:image/svg+xml,${encodedSvg}')`;
+        
+        maskClasses.push(
+            `[-webkit-mask-image:${maskUrl}]`,
+            `[mask-image:${maskUrl}]`,
+            `[-webkit-mask-size:${imageMaskSize}]`,
+            `[mask-size:${imageMaskSize}]`,
+            `[-webkit-mask-repeat:no-repeat]`,
+            `[mask-repeat:no-repeat]`,
+            `[-webkit-mask-position:center]`,
+            `[mask-position:center]`
+        );
+    }
+
+    console.log("maskClasses", maskClasses);
+
     const classes = {
         wrapper: classnames([
             `transform-gpu`,
@@ -152,6 +178,7 @@ const transformHook = (rw) => {
             rw.props.aspectRatio == "aspect-[auto]"
                 ? `aspect-[${image?.aspect}]`
                 : aspectRatioClasses(rw),
+            ...maskClasses,
         ]).toString(),
         lightbox: {
             overlay: classnames([

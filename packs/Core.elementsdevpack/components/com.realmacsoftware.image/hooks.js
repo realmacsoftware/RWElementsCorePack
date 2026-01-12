@@ -1416,7 +1416,9 @@ const advancedClasses = (rw) => {
     wantsLightbox,
     imageLightboxColor,
     imageLightboxColorOpacity,
-    imageLightboxGlobalFiltersBackdropBlur
+    imageLightboxGlobalFiltersBackdropBlur,
+    imageMaskResource,
+    imageMaskSize
   } = rw.props, {
     imageFileSize,
     imageCmsField: responsiveImageCmsField,
@@ -1464,7 +1466,24 @@ const advancedClasses = (rw) => {
       image: imageCustomSrcDark
     },
     ...responsiveImageDataDark
-  }, classes = {
+  }, wantsMask = !!(imageMaskResource != null && imageMaskResource.image);
+  console.log("wantsMask", imageMaskResource);
+  const maskClasses = [];
+  if (wantsMask) {
+    const svgContent = imageMaskResource.image, maskUrl = `url('data:image/svg+xml,${encodeURIComponent(svgContent)}')`;
+    maskClasses.push(
+      `[-webkit-mask-image:${maskUrl}]`,
+      `[mask-image:${maskUrl}]`,
+      `[-webkit-mask-size:${imageMaskSize}]`,
+      `[mask-size:${imageMaskSize}]`,
+      "[-webkit-mask-repeat:no-repeat]",
+      "[mask-repeat:no-repeat]",
+      "[-webkit-mask-position:center]",
+      "[mask-position:center]"
+    );
+  }
+  console.log("maskClasses", maskClasses);
+  const classes = {
     wrapper: classnames([
       "transform-gpu",
       globalLayout(rw),
@@ -1482,7 +1501,8 @@ const advancedClasses = (rw) => {
       globalBorders(rw),
       // displaySize(),
       objectClasses(rw),
-      rw.props.aspectRatio == "aspect-[auto]" ? `aspect-[${image == null ? void 0 : image.aspect}]` : aspectRatioClasses(rw)
+      rw.props.aspectRatio == "aspect-[auto]" ? `aspect-[${image == null ? void 0 : image.aspect}]` : aspectRatioClasses(rw),
+      ...maskClasses
     ]).toString(),
     lightbox: {
       overlay: classnames([
