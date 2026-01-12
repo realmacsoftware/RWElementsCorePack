@@ -6,13 +6,14 @@ alwaysApply: false
 
 # /feature Command
 
-When the user invokes `/feature` or `/feature <name>`, create and switch to a new feature branch.
+When the user invokes `/feature`, `/feature <name>`, or `/feature <issue-number>`, create and switch to a new feature branch.
 
 ## Steps
 
-1. **Get the feature name**:
-   - If the user provided a name (e.g., `/feature add-icons`), use it
-   - If no name was provided, ask the user what to call the feature branch
+1. **Get the feature reference**:
+   - If the user provided an issue number (e.g., `/feature 42` or `/feature #42`), fetch the issue details using `gh issue view <number>`
+   - If the user provided a name (e.g., `/feature add-icons`), use it directly
+   - If no name or issue was provided, ask the user what to call the feature branch or for an issue number
 
 2. **Ensure starting from latest main**:
    - Check current branch with `git branch --show-current`
@@ -21,16 +22,20 @@ When the user invokes `/feature` or `/feature <name>`, create and switch to a ne
    - Fetch and checkout main: `git checkout main && git pull origin main`
 
 3. **Create the feature branch**:
+   - If from an issue: create `feature/<issue-number>-<short-description>` (e.g., `feature/42-add-dark-mode`)
+   - If from a name: create `feature/<name>` (e.g., `feature/add-dark-mode`)
    - Sanitize the branch name (lowercase, replace spaces with hyphens)
-   - Create and switch to the new branch: `git checkout -b feature/<name>`
+   - Create and switch to the new branch: `git checkout -b feature/<branch-name>`
 
 4. **Confirm success**:
    - Run `git branch --show-current` to confirm
+   - If from an issue, summarize what needs to be built based on the issue
    - Tell the user they're ready to start working on the feature
 
 ## Branch Naming
 
 - Prefix all branches with `feature/`
+- When from an issue, include the issue number for traceability (e.g., `feature/42-user-settings`)
 - Use lowercase and hyphens (e.g., `feature/add-dark-mode`)
 - Keep names concise but descriptive
 
@@ -38,4 +43,6 @@ When the user invokes `/feature` or `/feature <name>`, create and switch to a ne
 
 - Always request `git_write` and `network` permissions for these operations
 - If the branch already exists, inform the user and ask if they want to switch to it or pick a different name
+- If an issue number is provided but doesn't exist or can't be fetched, inform the user
+- Link the issue in any subsequent PR created with `/PR`
 - Never delete or force-push branches without explicit user consent
