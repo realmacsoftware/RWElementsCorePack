@@ -1,0 +1,127 @@
+{
+  "groups": [
+    {
+      "title": "General",
+      "icon": "textformat",
+      "properties": [
+        {
+          "globalControl": "Typography"
+        },
+        {
+          "title": "Tag",
+          "id": "tag",
+          "responsive": false,
+          "select": {
+            "default": "article",
+            "items": [
+              {
+                "value": "article",
+                "title": "Article - <article>"
+              },
+              {
+                "value": "section",
+                "title": "Section - <section>"
+              },
+              {
+                "value": "aside",
+                "title": "Aside - <aside>"
+              },
+              {
+                "value": "main",
+                "title": "Main Content - <main>"
+              },
+              {
+                "value": "header",
+                "title": "Header - <header>"
+              },
+              {
+                "value": "footer",
+                "title": "Footer - <footer>"
+              },
+              {
+                "value": "div",
+                "title": "Div - <div>"
+              },
+              {
+                "value": "span",
+                "title": "Span - <span>"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "Sizing",
+      "icon": "square.resize",
+      "properties": [
+        {
+          "globalControl": "Sizing"
+        }
+      ]
+    },
+    {
+      "title": "Spacing",
+      "icon": "squareshape.squareshape.dotted",
+      "properties": [
+        {
+          "globalControl": "Spacing"
+        }
+      ]
+    },
+    {
+      "title": "Transitions",
+      "icon": "timer",
+      "properties": [
+        {
+          "globalControl": "Transitions"
+        }
+      ]
+    },
+    {
+      "title": "Effects",
+      "icon": "wand.and.stars.inverse",
+      "properties": [
+        {
+          "globalControl": "Effects"
+        }
+      ]
+    },
+    {
+      "title": "Transforms",
+      "icon": "skew",
+      "properties": [
+        {
+          "globalControl": "Transforms"
+        }
+      ]
+    },
+    {
+      "title": "Filters",
+      "icon": "camera.filters",
+      "properties": [
+        {
+          "globalControl": "Filters"
+        }
+      ]
+    },
+    {
+      "title": "Background",
+      "icon": "paintpalette",
+      "properties": [
+        {
+          "globalControl": "BackgroundTransparent"
+        }
+      ]
+    },
+    {
+      "title": "Border",
+      "icon": "square.dashed",
+      "properties": [
+        {
+          "globalControl": "Borders"
+        }
+      ]
+    }
+  ]
+}
