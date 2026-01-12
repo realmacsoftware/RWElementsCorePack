@@ -1416,7 +1416,9 @@ const advancedClasses = (rw) => {
     wantsLightbox,
     imageLightboxColor,
     imageLightboxColorOpacity,
-    imageLightboxGlobalFiltersBackdropBlur
+    imageLightboxGlobalFiltersBackdropBlur,
+    imageMaskResource,
+    imageMaskSize
   } = rw.props, {
     imageFileSize,
     imageCmsField: responsiveImageCmsField,
@@ -1464,7 +1466,7 @@ const advancedClasses = (rw) => {
       image: imageCustomSrcDark
     },
     ...responsiveImageDataDark
-  }, classes = {
+  }, wantsMask = !!(imageMaskResource != null && imageMaskResource.image), maskStyle = wantsMask ? `-webkit-mask-image: url('${imageMaskResource.image}'); mask-image: url('${imageMaskResource.image}'); -webkit-mask-size: ${imageMaskSize}; mask-size: ${imageMaskSize}; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center;` : "", classes = {
     wrapper: classnames([
       "transform-gpu",
       globalLayout(rw),
@@ -1520,7 +1522,9 @@ const advancedClasses = (rw) => {
     sharedAssetPath,
     wantsLightbox: wantsLightbox && mode != "edit",
     id: rw.node.id,
-    wantsFetchPriority
+    wantsFetchPriority,
+    wantsMask,
+    maskStyle
   });
 };
 exports.transformHook = transformHook;

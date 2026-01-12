@@ -33,6 +33,9 @@
         alt="{{alt}}"
         width="{{imageWidth}}"
         height="{{imageHeight}}"
+        @if(wantsMask)
+        style="{{maskStyle}}"
+        @endif
         @if(wantsLightbox)
         x-data=""
         @click="$dispatch('image-lightbox-open', { id: '{{id}}' })"

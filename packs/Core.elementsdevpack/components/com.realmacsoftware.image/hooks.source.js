@@ -15,6 +15,9 @@ const transformHook = (rw) => {
         imageLightboxColor,
         imageLightboxColorOpacity,
         imageLightboxGlobalFiltersBackdropBlur,
+
+        imageMaskResource,
+        imageMaskSize,
     } = rw.props;
 
     const {
@@ -131,6 +134,12 @@ const transformHook = (rw) => {
               ...responsiveImageDataDark,
           };
 
+    // Generate mask style if SVG resource is present
+    const wantsMask = !!imageMaskResource?.image;
+    const maskStyle = wantsMask
+        ? `-webkit-mask-image: url('${imageMaskResource.image}'); mask-image: url('${imageMaskResource.image}'); -webkit-mask-size: ${imageMaskSize}; mask-size: ${imageMaskSize}; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center;`
+        : "";
+
     const classes = {
         wrapper: classnames([
             `transform-gpu`,
@@ -197,6 +206,8 @@ const transformHook = (rw) => {
         wantsLightbox: wantsLightbox && mode != "edit",
         id: rw.node.id,
         wantsFetchPriority,
+        wantsMask,
+        maskStyle,
     });
 };
 
