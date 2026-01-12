@@ -1,0 +1,60 @@
+---
+description: /PR - Commit, push, and open a pull request on GitHub
+globs: 
+alwaysApply: false
+---
+
+# /PR Command
+
+When the user invokes `/PR`, follow these steps to commit changes, push to the remote, and create a pull request on GitHub.
+
+## Prerequisites
+
+- Ensure `gh` CLI is installed and authenticated
+- User should be on a feature branch (not `main` or `master`)
+
+## Steps
+
+1. **Check current state** (run in parallel):
+   - `git status` to see all changes
+   - `git diff --staged` and `git diff` to review changes
+   - `git branch --show-current` to confirm the current branch
+   - `git log --oneline -5` to see recent commit style
+
+2. **Stage and commit**:
+   - Stage all relevant changes with `git add`
+   - Analyze the changes and write a clear, concise commit message following the repository's commit style
+   - Commit using a HEREDOC format:
+     ```bash
+     git commit -m "$(cat <<'EOF'
+     Your commit message here
+     EOF
+     )"
+     ```
+
+3. **Push to remote**:
+   - Push the branch with `git push -u origin HEAD`
+
+4. **Create the pull request**:
+   - Use `gh pr create` with a descriptive title and body
+   - Format the PR body using a HEREDOC:
+     ```bash
+     gh pr create --title "PR title" --body "$(cat <<'EOF'
+     ## Summary
+     - Brief description of changes
+
+     ## Test plan
+     - How to verify the changes work
+
+     EOF
+     )"
+     ```
+
+5. **Return the PR URL** to the user so they can view it.
+
+## Important Notes
+
+- Never force push or use `--no-verify`
+- If there are no changes to commit, inform the user
+- If already on `main`/`master`, warn the user and ask if they want to create a new branch first
+- Always request `git_write` and `network` permissions for these operations

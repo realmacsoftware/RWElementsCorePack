@@ -1,0 +1,41 @@
+---
+description: /feature - Create a new feature branch from main
+globs: 
+alwaysApply: false
+---
+
+# /feature Command
+
+When the user invokes `/feature` or `/feature <name>`, create and switch to a new feature branch.
+
+## Steps
+
+1. **Get the feature name**:
+   - If the user provided a name (e.g., `/feature add-icons`), use it
+   - If no name was provided, ask the user what to call the feature branch
+
+2. **Ensure starting from latest main**:
+   - Check current branch with `git branch --show-current`
+   - Check for uncommitted changes with `git status`
+   - If there are uncommitted changes, warn the user and ask how to proceed (stash, commit, or abort)
+   - Fetch and checkout main: `git checkout main && git pull origin main`
+
+3. **Create the feature branch**:
+   - Sanitize the branch name (lowercase, replace spaces with hyphens)
+   - Create and switch to the new branch: `git checkout -b feature/<name>`
+
+4. **Confirm success**:
+   - Run `git branch --show-current` to confirm
+   - Tell the user they're ready to start working on the feature
+
+## Branch Naming
+
+- Prefix all branches with `feature/`
+- Use lowercase and hyphens (e.g., `feature/add-dark-mode`)
+- Keep names concise but descriptive
+
+## Important Notes
+
+- Always request `git_write` and `network` permissions for these operations
+- If the branch already exists, inform the user and ask if they want to switch to it or pick a different name
+- Never delete or force-push branches without explicit user consent

@@ -1,0 +1,43 @@
+---
+description: /fix - Start working on a GitHub issue
+globs: 
+alwaysApply: false
+---
+
+# /fix Command
+
+When the user invokes `/fix <issue>`, fetch the GitHub issue details and set up a branch to work on it.
+
+## Steps
+
+1. **Get the issue reference**:
+   - User provides issue number (e.g., `/fix 42`) or URL (e.g., `/fix https://github.com/owner/repo/issues/42`)
+   - If no issue provided, ask the user for the issue number
+
+2. **Fetch issue details**:
+   - Use `gh issue view <number>` to get the issue title and body
+   - Summarize the issue for the user
+
+3. **Create a fix branch**:
+   - Check for uncommitted changes with `git status` (warn if any)
+   - Pull latest main: `git checkout main && git pull origin main`
+   - Create branch from issue: `git checkout -b fix/<issue-number>-<short-description>`
+   - Example: `fix/42-button-not-clickable`
+
+4. **Provide context**:
+   - Summarize what needs to be fixed based on the issue
+   - Suggest relevant files to look at if apparent from the issue
+   - Ask the user how they'd like to proceed
+
+## Branch Naming
+
+- Prefix with `fix/`
+- Include issue number for traceability
+- Add short kebab-case description from issue title
+- Example: `fix/123-navbar-overflow`
+
+## Important Notes
+
+- Always request `git_write` and `network` permissions
+- If the issue doesn't exist or can't be fetched, inform the user
+- Link the issue in any subsequent PR created with `/PR`
