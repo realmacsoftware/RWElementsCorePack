@@ -151,7 +151,6 @@
                     }
                 },
                 {
-                    "visible": "imageMaskResource != null",
                     "title": "Size",
                     "id": "imageMaskSize",
                     "responsive": false,
