@@ -24,10 +24,11 @@ When the user invokes `/fix <issue>`, fetch the GitHub issue details and set up 
    - Create branch from issue: `git checkout -b fix/<issue-number>-<short-description>`
    - Example: `fix/42-button-not-clickable`
 
-4. **Provide context**:
+4. **Begin implementation**:
    - Summarize what needs to be fixed based on the issue
-   - Suggest relevant files to look at if apparent from the issue
-   - Ask the user how they'd like to proceed
+   - Immediately start working on the fix on this new branch
+   - Do NOT wait for user confirmation—proceed with the implementation
+   - Make all code changes directly on the new branch
 
 ## Branch Naming
 

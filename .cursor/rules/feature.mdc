@@ -30,7 +30,11 @@ When the user invokes `/feature`, `/feature <name>`, or `/feature <issue-number>
 4. **Confirm success**:
    - Run `git branch --show-current` to confirm
    - If from an issue, summarize what needs to be built based on the issue
-   - Tell the user they're ready to start working on the feature
+
+5. **Begin implementation**:
+   - Immediately start working on the feature on this new branch
+   - Do NOT wait for user confirmation—proceed with the implementation
+   - Make all code changes directly on the new branch
 
 ## Branch Naming
 
