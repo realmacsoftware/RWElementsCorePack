@@ -1,0 +1,19 @@
+{
+  "author": "Realmac Software",
+  "title": "Yarrow",
+ "subTitle": "Warm, editorial vibe inspired by Ghost's Renge theme.",
+  "tags": [
+    "tailwind",
+    "default"
+  ],
+  "build": "100",
+  "version": "1.0.0",
+  "deprecated": false,
+  "helpURL": "https://forums.realmacsoftware.com/",
+  "infoURL": "https://www.realmacsoftware.com/",
+  "googleFontNames": [
+    "Josefin Sans",
+    "Cardo",
+    "Crimson Text"
+  ]
+}
