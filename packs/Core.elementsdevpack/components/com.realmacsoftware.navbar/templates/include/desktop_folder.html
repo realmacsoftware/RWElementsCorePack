@@ -2,7 +2,10 @@
     <button
         @mouseover="handleMouseEnter"
         @mouseleave="handleMouseLeave"
-        class="flex items-center @if(page.isActive){{classes.desktop.itemActive}} @else {{classes.desktop.item}} @endif"
+        class="flex items-center {{classes.desktop.item}}"
+        @if(page.isActive)
+        aria-current="page"
+        @endif
     >
         {{page.title}} @includeIf(page.hasPages, template:
         "desktop_submenu_indicator")

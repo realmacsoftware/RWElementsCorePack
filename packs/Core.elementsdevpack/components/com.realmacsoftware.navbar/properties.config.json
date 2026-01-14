@@ -407,7 +407,7 @@
                     "visible": "globlaNavItemsState == 'hover'",
                     "title": "Color",
                     "id": "globalNavItemsTextColorHover",
-                    "format": "hover:text-{{value}}",
+                    "format": "hover:text-{{value}} aria-[current=page]:text-{{value}}",
                     "themeColor": {
                         "default": {
                             "name": "text",
@@ -419,7 +419,7 @@
                     "visible": "globlaNavItemsState == 'hover'",
                     "title": "Opacity",
                     "id": "globalNavItemsTextColorOpacityHover",
-                    "format": "hover:text-opacity-[{{value}}%] dark:hover:text-opacity-[{{value}}%]",
+                    "format": "hover:text-opacity-[{{value}}%] dark:hover:text-opacity-[{{value}}%] aria-[current=page]:text-opacity-[{{value}}%] dark:aria-[current=page]:text-opacity-[{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "default": 100,
@@ -443,7 +443,7 @@
                     "visible": "globlaNavItemsState == 'hover'",
                     "title": "Text Shadow",
                     "id": "globalNavItemsTextShadowHover",
-                    "format": "hover:{{value}}",
+                    "format": "hover:{{value}} aria-[current=page]:{{value}}",
                     "themeShadow": {
                         "mode": "text",
                         "default": {
@@ -467,7 +467,7 @@
                     "visible": "globlaNavItemsState == 'hover'",
                     "title": "Underline",
                     "id": "globalNavItemsUnderlineHover",
-                    "format": "hover:{{value}}",
+                    "format": "hover:{{value}} aria-[current=page]:{{value}}",
                     "switch": {
                         "default": false,
                         "trueValue": "underline",

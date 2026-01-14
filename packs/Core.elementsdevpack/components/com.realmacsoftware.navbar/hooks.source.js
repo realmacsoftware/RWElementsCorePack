@@ -143,10 +143,6 @@ const transformHook = (rw) => {
                 globalNavItems(rw),
                 globalTransitions(rw, { isContainer: true }),
             ]).toString(),
-            itemActive: classnames([
-                globalNavItems(rw, true),
-                globalTransitions(rw, { isContainer: true }),
-            ]).toString(),
             logo: classnames([`h-8 w-auto`]).toString(),
             rightItems: classnames([
                 `hidden ${deviceModifierForMobileTrigger}flex ${deviceModifierForMobileTrigger}justify-end`,

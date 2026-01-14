@@ -10,7 +10,7 @@
         @keydown.space.prevent="toggle('{{page.id}}')"
         @focus="setCurrent('{{page.id}}')"
         class="{{classes.item}} @if(page.isTopLevel) {{classes.topLevel}} @elseif(page.isSecondLevel) {{classes.subMenuItem}} @elseif(page.isThirdLevel) {{classes.thirdLevelItem}} @endif"
-        :data-state="({{page.isActive}} || {{page.hasActiveChild}}) ? 'active' : null"
+        :aria-current="({{page.isActive}} || {{page.hasActiveChild}}) ? 'page' : null"
     >
         @if(page.showPageIcon)
         <div class="{{classes.pageIcon}}">{{page.icon}}</div>
@@ -65,7 +65,7 @@
         role="treeitem"
         @focus="setCurrent('{{page.id}}')"
         class="{{classes.item}} @if(page.isTopLevel) {{classes.topLevel}} @elseif(page.isSecondLevel) {{classes.subMenuItem}} @elseif(page.isThirdLevel) {{classes.thirdLevelItem}} @endif"
-        :data-state="({{page.isActive}} || {{page.hasActiveChild}}) ? 'active' : null"
+        :aria-current="({{page.isActive}} || {{page.hasActiveChild}}) ? 'page' : null"
         @if(page.openInNewWindow)
         target="_blank"
         @endif
