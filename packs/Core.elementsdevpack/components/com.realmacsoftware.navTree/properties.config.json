@@ -343,7 +343,7 @@
                     "visible": "topLevelState == 'hover'",
                     "title": "Text",
                     "id": "topLevelTextColorHover",
-                    "format": "hover:text-{{value}} data-[state=active]:text-{{value}}",
+                    "format": "hover:text-{{value}} aria-[current=page]:text-{{value}}",
                     "themeColor": {
                         "default": {
                             "name": "brand",
@@ -355,7 +355,7 @@
                     "visible": "topLevelState == 'hover'",
                     "title": "Background",
                     "id": "topLevelBgColorHover",
-                    "format": "hover:bg-{{value}} data-[state=active]:bg-{{value}}",
+                    "format": "hover:bg-{{value}} aria-[current=page]:bg-{{value}}",
                     "themeColor": {
                         "default": {
                             "name": "surface",
@@ -367,7 +367,7 @@
                     "visible": "topLevelState == 'hover'",
                     "title": "Opacity",
                     "id": "topLevelBgColorOpacityHover",
-                    "format": "hover:bg-opacity-[{{value}}%] data-[state=active]:bg-opacity-[{{value}}%]",
+                    "format": "hover:bg-opacity-[{{value}}%] aria-[current=page]:bg-opacity-[{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "default": 100,
@@ -593,7 +593,7 @@
                     "visible": "subMenuItemState == 'hover'",
                     "title": "Text",
                     "id": "subMenuItemTextColorHover",
-                    "format": "hover:text-{{value}} data-[state=active]:text-{{value}}",
+                    "format": "hover:text-{{value}} aria-[current=page]:text-{{value}}",
                     "themeColor": {
                         "default": {
                             "name": "brand",
@@ -605,7 +605,7 @@
                     "visible": "subMenuItemState == 'hover'",
                     "title": "Background",
                     "id": "subMenuItemBgColorHover",
-                    "format": "hover:bg-{{value}} data-[state=active]:bg-{{value}}",
+                    "format": "hover:bg-{{value}} aria-[current=page]:bg-{{value}}",
                     "themeColor": {
                         "default": {
                             "name": "surface",
@@ -617,7 +617,7 @@
                     "visible": "subMenuItemState == 'hover'",
                     "title": "Opacity",
                     "id": "subMenuItemBgColorOpacityHover",
-                    "format": "hover:bg-opacity-[{{value}}%] data-[state=active]:bg-opacity-[{{value}}%]",
+                    "format": "hover:bg-opacity-[{{value}}%] aria-[current=page]:bg-opacity-[{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "default": 0,
@@ -843,7 +843,7 @@
                     "visible": "thirdLevelItemState == 'hover'",
                     "title": "Text",
                     "id": "thirdLevelItemTextColorHover",
-                    "format": "hover:text-{{value}} data-[state=active]:text-{{value}}",
+                    "format": "hover:text-{{value}} aria-[current=page]:text-{{value}}",
                     "themeColor": {
                         "default": {
                             "name": "brand",
@@ -855,7 +855,7 @@
                     "visible": "thirdLevelItemState == 'hover'",
                     "title": "Background",
                     "id": "thirdLevelItemBgColorHover",
-                    "format": "hover:bg-{{value}} data-[state=active]:bg-{{value}}",
+                    "format": "hover:bg-{{value}} aria-[current=page]:bg-{{value}}",
                     "themeColor": {
                         "default": {
                             "name": "surface",
@@ -867,7 +867,7 @@
                     "visible": "thirdLevelItemState == 'hover'",
                     "title": "Opacity",
                     "id": "thirdLevelItemBgColorOpacityHover",
-                    "format": "hover:bg-opacity-[{{value}}%] data-[state=active]:bg-opacity-[{{value}}%]",
+                    "format": "hover:bg-opacity-[{{value}}%] aria-[current=page]:bg-opacity-[{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "default": 100,

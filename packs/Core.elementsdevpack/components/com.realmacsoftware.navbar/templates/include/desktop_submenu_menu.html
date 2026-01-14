@@ -3,7 +3,10 @@
     <button
         @mouseover="handleMouseEnter"
         @mouseleave="handleMouseLeave"
-        class="w-full flex justify-between items-center @if(subPage.isActive){{classes.desktop.dropdownItemActive}} @else {{classes.desktop.dropdownItem}} @endif"
+        class="w-full flex justify-between items-center {{classes.desktop.dropdownItem}}"
+        @if(subPage.isActive)
+        aria-current="page"
+        @endif
     >
         {{subPage.title}} @includeIf(subPage.hasPages, template:
         "desktop_submenu_indicator")
@@ -16,6 +19,9 @@
         href="{{subPage.url}}"
         class="{{classes.desktop.dropdownItem}} flex justify-between items-center"
         role="menuitem"
+        @if(subPage.isActive)
+        aria-current="page"
+        @endif
     >
         {{subPage.title}} @includeIf(subPage.hasPages, template:
         "desktop_submenu_indicator")

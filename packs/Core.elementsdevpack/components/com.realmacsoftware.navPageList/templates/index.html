@@ -2,10 +2,12 @@
 <a
     class="{{classes.item}}"
     href="{{page.url}}"
-    data-state="@if(page.isActive)active@endif"
+    @if(page.isActive)
+    aria-current="page"
+    @endif
     @if(page.isExternal)
     x-data
-    :data-state="window.location.pathname === '{{page.url}}' ? 'active' : ''"
+    :aria-current="window.location.pathname === '{{page.url}}' ? 'page' : null"
     @endif
 >
     @if(page.showIcon) @if(page.iconIsSvg) {{page.iconSvg}} @else
