@@ -1,0 +1,15 @@
+{
+  "author": "Realmac Software",
+  "title": "Elegant",
+  "subTitle": "Sandy, terracotta, and softly rounded.",
+  "tags": [
+    "tailwind",
+    "elegant",
+    "sandy"
+  ],
+  "build": "100",
+  "version": "1.0.0",
+  "deprecated": false,
+  "helpURL": "https://forums.realmacsoftware.com/",
+  "infoURL": "https://www.realmacsoftware.com/"
+}
