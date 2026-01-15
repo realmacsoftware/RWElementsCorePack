@@ -12,6 +12,7 @@
     x-cloak
     @endif
     x-data="{ open: false }"
+    x-init="$watch('open', value => { if (!value) { $dispatch('modal-closed', { id: '{{id}}' }) } })"
     @open-modal.window="(e) => { open = e.detail.id === '{{id}}' }"
     x-model="open"
     class="{{classes.dialog}}"

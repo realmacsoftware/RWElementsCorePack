@@ -7,6 +7,7 @@
           videoId: videoId,
           options: options,
           showVideo: false,
+          modalClosedHandler: null,
 
           get iframeAttributes() {
             return `autoplay=1&loop=${this.options.loop}&mute=${this.options.muted}&controls=${this.options.controls}`;
@@ -68,6 +69,35 @@
                   }, 100);
                 }
               });
+
+              this.modalClosedHandler = (event) => {
+                const modalId = event?.detail?.id;
+
+                if (!modalId) {
+                  return;
+                }
+
+                if (!this.$el.closest(`[data-modal-id='${modalId}']`)) {
+                  return;
+                }
+
+                this.stopPlayback();
+              };
+
+              window.addEventListener('modal-closed', this.modalClosedHandler);
+          },
+          destroy() {
+              if (this.modalClosedHandler) {
+                window.removeEventListener('modal-closed', this.modalClosedHandler);
+              }
+          },
+          stopPlayback() {
+              this.showVideo = false;
+
+              if (this.platform === 'mp4' && this.$refs.video) {
+                this.$refs.video.pause();
+                this.$refs.video.currentTime = 0;
+              }
           },
           trigger: {
             ['@click']() {
