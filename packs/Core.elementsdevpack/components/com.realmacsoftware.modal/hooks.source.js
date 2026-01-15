@@ -1,3 +1,22 @@
+const applyOpacityToTailwindBgClasses = (classes, opacity) => {
+    if (!classes || !opacity) return classes || "";
+
+    return classes
+        .split(/\s+/)
+        .filter(Boolean)
+        .map((token) => {
+            // Only apply the `/opacity` suffix to background color classes.
+            // `themeColor` may emit both light + dark classes, e.g.
+            // `bg-surface-50 dark:bg-surface-900`.
+            if (!/(^|:)bg-/.test(token)) return token;
+
+            // If an opacity was already provided, replace it.
+            const tokenWithoutOpacity = token.replace(/\/(\[[^\]]+\]|\d+)$/, "");
+            return `${tokenWithoutOpacity}/${opacity}`;
+        })
+        .join(" ");
+};
+
 const transformHook = (rw) => {
     const {
         globalID,
@@ -37,8 +56,7 @@ const transformHook = (rw) => {
         ]).toString(),
         overlay: classnames([
             "fixed inset-0 bg-black/25",
-            `${modalOverlayColor}/${modalOverlayOpacity}`,
-            modalOverlayOpacity,
+            applyOpacityToTailwindBgClasses(modalOverlayColor, modalOverlayOpacity),
             globalFiltersBackdropBlur,
             modalTransitionDuration,
             mode === "edit" && "pointer-events-none",
