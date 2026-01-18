@@ -944,6 +944,26 @@
                         "default": 0,
                         "units": "px"
                     }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Item Spacing",
+                    "heading": {}
+                },
+                {
+                    "title": "Vertical",
+                    "id": "submenuItemSpacing",
+                    "format": "py-{{value}}",
+                    "themeSpacing": {
+                        "mode": "single",
+                        "default": {
+                            "base": {
+                                "value": "2"
+                            }
+                        }
+                    }
                 }
             ]
         },
