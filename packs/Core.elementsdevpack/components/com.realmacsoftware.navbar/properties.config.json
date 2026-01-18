@@ -822,6 +822,31 @@
                     }
                 },
                 {
+                    "divider": {}
+                },
+                {
+                    "title": "Sub Menu",
+                    "heading": {}
+                },
+                {
+                    "information": {},
+                    "title": "Adjust the vertical padding for dropdown and mobile menu items"
+                },
+                {
+                    "title": "Item Spacing",
+                    "id": "subMenuItemPaddingY",
+                    "format": "py-{{value}}",
+                    "themeSpacing": {
+                        "mode": "single",
+                        "default": {
+                            "base": {
+                                "custom": false,
+                                "value": "2"
+                            }
+                        }
+                    }
+                },
+                {
                     "title": "Background",
                     "id": "mobileMenuBackground",
                     "format": "bg-{{value}}",

@@ -43,6 +43,7 @@ const transformHook = (rw) => {
         mobileBackdropColor,
         mobileBackdropOpacity,
         mobileBackdropBlur,
+        subMenuItemPaddingY,
     } = rw.props;
     const { project } = rw;
     const { logo, title } = project;
@@ -161,7 +162,8 @@ const transformHook = (rw) => {
                 mobileMenuBorderColor,
             ]).toString(),
             dropdownItem: classnames([
-                `block px-4 py-2`,
+                `block px-4`,
+                subMenuItemPaddingY,
                 globalNavItems(rw),
                 globalTransitions(rw, { isContainer: true }),
             ]).toString(),
@@ -198,7 +200,8 @@ const transformHook = (rw) => {
             nav: classnames([`-my-6 divide-y divide-gray-500/10`]).toString(),
             items: classnames([]).toString(),
             item: classnames([
-                `block py-2`,
+                `block`,
+                subMenuItemPaddingY,
                 globalNavItems(rw),
                 globalTransitions(rw, { isContainer: true }),
             ]).toString(),
