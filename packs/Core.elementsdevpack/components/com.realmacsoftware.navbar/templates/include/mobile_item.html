@@ -2,12 +2,18 @@
     <div
         class="{{classes.mobile.item}} flex items-center justify-between"
         @click="open = !open"
+        @if(page.isActive)
+        aria-current="page"
+        @endif
     >
         @if(page.isFolder)
         <button
             aria-expanded="false"
             x-bind:aria-expanded="open.toString()"
             class="flex justify-between items-center"
+            @if(page.isActive)
+            aria-current="page"
+            @endif
         >
             <span>{{page.title}}</span>
             @include("mobile_submenu_indicator")
@@ -16,6 +22,9 @@
         <a
             class="flex justify-between items-center"
             href="{{page.url}}"
+            @if(page.isActive)
+            aria-current="page"
+            @endif
             @if(page.openInNewWindow)
             target="_blank"
             @endif

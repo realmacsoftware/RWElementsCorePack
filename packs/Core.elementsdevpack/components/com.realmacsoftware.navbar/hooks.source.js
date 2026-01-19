@@ -14,6 +14,13 @@ const transformHook = (rw) => {
         itemsAlignment,
         contentGap,
 
+        globalNavItemsBackgroundType,
+        globalNavItemsBackgroundColor,
+        globalNavItemsBackgroundOpacity,
+        globalNavItemsBackgroundTypeHover,
+        globalNavItemsBackgroundColorHover,
+        globalNavItemsBackgroundOpacityHover,
+
         mobileTriggerDisplay,
         mobileTriggerPosition,
         mobileTriggerType,
@@ -105,6 +112,16 @@ const transformHook = (rw) => {
         ? `${mobileTriggerDisplay}:`
         : "";
     console.log({ deviceModifierForMobileTrigger });
+
+    const menuItemBackgroundClasses = classnames([
+        globalNavItemsBackgroundType == "color" && globalNavItemsBackgroundColor,
+        globalNavItemsBackgroundType == "color" && globalNavItemsBackgroundOpacity,
+        globalNavItemsBackgroundTypeHover == "color" &&
+            globalNavItemsBackgroundColorHover,
+        globalNavItemsBackgroundTypeHover == "color" &&
+            globalNavItemsBackgroundOpacityHover,
+    ]).toString();
+
     const classes = {
         wrapper: classnames([
             `group/${id} group/navbar items-center`,
@@ -142,6 +159,7 @@ const transformHook = (rw) => {
             item: classnames([
                 // `text-sm font-semibold leading-6 text-gray-900`,
                 globalNavItems(rw),
+                menuItemBackgroundClasses,
                 globalTransitions(rw, { isContainer: true }),
             ]).toString(),
             logo: classnames([`h-8 w-auto`]).toString(),
@@ -165,6 +183,7 @@ const transformHook = (rw) => {
                 `block px-4`,
                 submenuItemSpacing,
                 globalNavItems(rw),
+                menuItemBackgroundClasses,
                 globalTransitions(rw, { isContainer: true }),
             ]).toString(),
         },
@@ -203,6 +222,7 @@ const transformHook = (rw) => {
                 `block`,
                 submenuItemSpacing,
                 globalNavItems(rw),
+                menuItemBackgroundClasses,
                 globalTransitions(rw, { isContainer: true }),
             ]).toString(),
             backdrop: classnames([
