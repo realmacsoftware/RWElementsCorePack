@@ -1,0 +1,63 @@
+@portal(bodyEnd, includeOnce: true, id: "com.realmacsoftware.tabs.alpine")
+<script>
+    document.addEventListener("alpine:init", () => {
+        Alpine.data("elementsTabs", (id, defaultTab = 0) => ({
+            activeTab: defaultTab,
+            id,
+
+            init() {
+                // Allow external control of tabs via custom event
+                this.$watch("activeTab", (value) => {
+                    this.$dispatch("tabs-changed", { id: this.id, activeTab: value });
+                });
+            },
+
+            tabButton: {
+                ["@click"]() {
+                    const index = parseInt(this.$el.dataset.tabIndex);
+                    if (!isNaN(index)) {
+                        this.activeTab = index;
+                    }
+                },
+                ["@keydown.arrow-right.prevent"]() {
+                    const buttons = this.$el.parentElement.querySelectorAll("[role='tab']");
+                    const currentIndex = Array.from(buttons).indexOf(this.$el);
+                    const nextIndex = (currentIndex + 1) % buttons.length;
+                    buttons[nextIndex].focus();
+                    this.activeTab = nextIndex;
+                },
+                ["@keydown.arrow-left.prevent"]() {
+                    const buttons = this.$el.parentElement.querySelectorAll("[role='tab']");
+                    const currentIndex = Array.from(buttons).indexOf(this.$el);
+                    const prevIndex = (currentIndex - 1 + buttons.length) % buttons.length;
+                    buttons[prevIndex].focus();
+                    this.activeTab = prevIndex;
+                },
+                ["@keydown.home.prevent"]() {
+                    const buttons = this.$el.parentElement.querySelectorAll("[role='tab']");
+                    buttons[0].focus();
+                    this.activeTab = 0;
+                },
+                ["@keydown.end.prevent"]() {
+                    const buttons = this.$el.parentElement.querySelectorAll("[role='tab']");
+                    const lastIndex = buttons.length - 1;
+                    buttons[lastIndex].focus();
+                    this.activeTab = lastIndex;
+                },
+            },
+
+            tabPanel: {
+                ["x-transition:enter"]() {
+                    return "transition ease-out duration-200";
+                },
+                ["x-transition:enter-start"]() {
+                    return "opacity-0";
+                },
+                ["x-transition:enter-end"]() {
+                    return "opacity-100";
+                },
+            },
+        }));
+    });
+</script>
+@endportal

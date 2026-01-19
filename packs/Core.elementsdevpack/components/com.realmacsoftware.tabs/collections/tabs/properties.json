@@ -1,0 +1,25 @@
+{
+    "groups": [
+        {
+            "title": "Tab",
+            "properties": [
+                {
+                    "title": "Title",
+                    "property": "title",
+                    "responsive": false,
+                    "text": {
+                        "default": "Tab"
+                    }
+                },
+                {
+                    "title": "Icon",
+                    "property": "icon",
+                    "responsive": false,
+                    "resource": {
+                        "accepts": "svg"
+                    }
+                }
+            ]
+        }
+    ]
+}
