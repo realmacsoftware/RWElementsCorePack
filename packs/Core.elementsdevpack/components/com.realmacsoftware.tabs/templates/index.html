@@ -1,0 +1,66 @@
+@include("alpine")
+
+<!-- Tab List -->
+<div
+    class="{{classes.tabList}}"
+    role="tablist"
+    aria-label="Tabs"
+>
+    @each(tab in tabItems)
+        <button
+            @if(!edit)
+                x-bind="tabButton"
+                :class="activeTab === {{ tab.index }} ? '{{classes.tabButtonActive}}' : '{{classes.tabButtonInactive}}'"
+            @endif
+            class="{{tab.buttonClass}}"
+            role="tab"
+            :id="'tab-btn-' + '{{id}}' + '-' + {{ tab.index }}"
+            :aria-selected="activeTab === {{ tab.index }}"
+            :aria-controls="'tab-panel-' + '{{id}}' + '-' + {{ tab.index }}"
+            :tabindex="activeTab === {{ tab.index }} ? 0 : -1"
+            data-tab-index="{{ tab.index }}"
+        >
+            @if(tab.showIcon)
+                <span
+                    class="{{tab.iconClass}}"
+                    @if(!edit)
+                    :class="activeTab === {{ tab.index }} ? '{{classes.iconActive}}' : '{{classes.iconInactive}}'"
+                    @endif
+                    aria-hidden="true"
+                >
+                    {{ tab.icon.image }}
+                </span>
+            @endif
+
+            <span
+                class="{{tab.titleClass}}"
+                @if(!edit)
+                :class="activeTab === {{ tab.index }} ? '{{classes.titleActive}}' : '{{classes.titleInactive}}'"
+                @endif
+            >
+                {{ tab.title }}
+            </span>
+        </button>
+    @endeach
+</div>
+
+<!-- Tab Panels -->
+@each(tab in tabItems)
+<div
+    @if(!edit)
+    x-bind="tabPanel"
+    x-show="activeTab === {{ tab.index }}"
+    x-cloak
+    @endif
+    @if(tab.hideInEditor)
+    style="display: none;"
+    @endif
+    class="{{classes.tabPanel}}"
+    role="tabpanel"
+    :id="'tab-panel-' + '{{id}}' + '-' + {{ tab.index }}"
+    :aria-labelledby="'tab-btn-' + '{{id}}' + '-' + {{ tab.index }}"
+    data-tab-panel="{{ tab.index }}"
+>
+    @dropzone("tabContent", title: "Tab Content")
+</div>
+@endeach

@@ -1,0 +1,18 @@
+@if (edit)
+
+/* Ensure dropzones stretch properly in editor mode */
+[data-rwx-droparea] {
+    /* min-height: 100px; */
+}
+
+/* Tab panels in editor - show the one being edited */
+[role="tabpanel"] {
+    display: none;
+}
+
+/* The active panel should be visible */
+[role="tabpanel"][data-tab-panel="{{editorActiveTabIndex}}"] {
+    display: block;
+}
+
+@endif
