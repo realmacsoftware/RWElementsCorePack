@@ -1,23 +1,13 @@
 <li x-data="{ open: false }" class="cursor-pointer">
-    <div
-        class="{{classes.mobile.item}} flex items-center justify-between"
-        @click="open = !open"
-    >
-        @if(page.isFolder)
-        <button
-            aria-expanded="false"
-            x-bind:aria-expanded="open.toString()"
-            class="flex justify-between items-center"
-        >
-            <span>{{page.title}}</span>
-            @include("mobile_submenu_indicator")
-        </button>
-        @else
+    <div class="flex items-center justify-between">
         <a
-            class="flex justify-between items-center"
+            class="{{classes.mobile.item}} flex justify-between items-center flex-1"
             href="{{page.url}}"
             @if(page.openInNewWindow)
             target="_blank"
+            @endif
+            @if(page.isActive)
+            aria-current="page"
             @endif
             >{{page.title}}</a
         >
@@ -30,7 +20,7 @@
         >
             @include("mobile_submenu_indicator")
         </button>
-        @endif @endif
+        @endif
     </div>
 
     @includeIf(page.hasPages, template: "mobile_submenu")

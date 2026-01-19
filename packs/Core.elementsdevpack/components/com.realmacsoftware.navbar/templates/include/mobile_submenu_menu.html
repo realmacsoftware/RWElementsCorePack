@@ -8,6 +8,9 @@
             @if(page.openInNewWindow)
             target="_blank"
             @endif
+            @if(page.isActive)
+            aria-current="page"
+            @endif
             >{{page.title}}</a
         >
     </li>

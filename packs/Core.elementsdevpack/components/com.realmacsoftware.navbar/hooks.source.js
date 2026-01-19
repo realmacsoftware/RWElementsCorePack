@@ -14,6 +14,12 @@ const transformHook = (rw) => {
         itemsAlignment,
         contentGap,
 
+        globalNavItemsBackgroundPadding,
+        globalNavItemsBackgroundColor,
+        globalNavItemsBackgroundColorOpacity,
+        globalNavItemsBackgroundColorHover,
+        globalNavItemsBackgroundColorOpacityHover,
+
         mobileTriggerDisplay,
         mobileTriggerPosition,
         mobileTriggerType,
@@ -141,6 +147,11 @@ const transformHook = (rw) => {
             ]).toString(),
             item: classnames([
                 // `text-sm font-semibold leading-6 text-gray-900`,
+                globalNavItemsBackgroundPadding,
+                globalNavItemsBackgroundColor,
+                globalNavItemsBackgroundColorOpacity,
+                globalNavItemsBackgroundColorHover,
+                globalNavItemsBackgroundColorOpacityHover,
                 globalNavItems(rw),
                 globalTransitions(rw, { isContainer: true }),
             ]).toString(),
@@ -164,6 +175,10 @@ const transformHook = (rw) => {
             dropdownItem: classnames([
                 `block px-4`,
                 submenuItemSpacing,
+                globalNavItemsBackgroundColor,
+                globalNavItemsBackgroundColorOpacity,
+                globalNavItemsBackgroundColorHover,
+                globalNavItemsBackgroundColorOpacityHover,
                 globalNavItems(rw),
                 globalTransitions(rw, { isContainer: true }),
             ]).toString(),
@@ -202,6 +217,10 @@ const transformHook = (rw) => {
             item: classnames([
                 `block`,
                 submenuItemSpacing,
+                globalNavItemsBackgroundColor,
+                globalNavItemsBackgroundColorOpacity,
+                globalNavItemsBackgroundColorHover,
+                globalNavItemsBackgroundColorOpacityHover,
                 globalNavItems(rw),
                 globalTransitions(rw, { isContainer: true }),
             ]).toString(),

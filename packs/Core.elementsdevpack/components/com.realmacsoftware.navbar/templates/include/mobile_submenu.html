@@ -11,18 +11,24 @@
             aria-expanded="false"
             x-bind:aria-expanded="open.toString()"
             class="{{classes.mobile.item}} flex justify-between items-center w-full"
+            @if(child.isActive)
+            aria-current="page"
+            @endif
         >
             <span>{{child.title}}</span>
             @include("mobile_submenu_indicator")
         </button>
         @else
-        <div class="{{classes.mobile.item}} flex justify-between items-center">
+        <div class="flex justify-between items-center">
             <a
-                class="block"
+                class="{{classes.mobile.item}} block flex-1"
                 href="{{child.url}}"
                 @click.stop
                 @if(child.openInNewWindow)
                 target="_blank"
+                @endif
+                @if(child.isActive)
+                aria-current="page"
                 @endif
                 >{{child.title}}</a
             >

@@ -404,6 +404,29 @@
                     }
                 },
                 {
+                    "visible": "globlaNavItemsState == 'default'",
+                    "title": "Background",
+                    "id": "globalNavItemsBackgroundColor",
+                    "format": "bg-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "none",
+                            "brightness": 50
+                        }
+                    }
+                },
+                {
+                    "visible": "globlaNavItemsState == 'default'",
+                    "title": "Background Opacity",
+                    "id": "globalNavItemsBackgroundColorOpacity",
+                    "format": "bg-opacity-[{{value}}%] dark:bg-opacity-[{{value}}%]",
+                    "slider": {
+                        "use": "Slider",
+                        "default": 100,
+                        "units": "%"
+                    }
+                },
+                {
                     "visible": "globlaNavItemsState == 'hover'",
                     "title": "Color",
                     "id": "globalNavItemsTextColorHover",
@@ -424,6 +447,46 @@
                         "use": "Slider",
                         "default": 100,
                         "units": "%"
+                    }
+                },
+                {
+                    "visible": "globlaNavItemsState == 'hover'",
+                    "title": "Background",
+                    "id": "globalNavItemsBackgroundColorHover",
+                    "format": "hover:bg-{{value}} aria-[current=page]:bg-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "none",
+                            "brightness": 50
+                        }
+                    }
+                },
+                {
+                    "visible": "globlaNavItemsState == 'hover'",
+                    "title": "Background Opacity",
+                    "id": "globalNavItemsBackgroundColorOpacityHover",
+                    "format": "hover:bg-opacity-[{{value}}%] dark:hover:bg-opacity-[{{value}}%] aria-[current=page]:bg-opacity-[{{value}}%] dark:aria-[current=page]:bg-opacity-[{{value}}%]",
+                    "slider": {
+                        "use": "Slider",
+                        "default": 100,
+                        "units": "%"
+                    }
+                },
+                {
+                    "title": "Background Padding",
+                    "id": "globalNavItemsBackgroundPadding",
+                    "themeSpacing": {
+                        "mode": "padding",
+                        "default": {
+                            "base": {
+                                "top": "0",
+                                "right": "0",
+                                "bottom": "0",
+                                "left": "0",
+                                "linkVertical": true,
+                                "linkHorizontal": true
+                            }
+                        }
                     }
                 },
                 {

@@ -38,6 +38,9 @@
                     href="{{child.url}}"
                     class="{{classes.desktop.dropdownItem}}"
                     role="menuitem"
+                    @if(child.isActive)
+                    aria-current="page"
+                    @endif
                 >
                     {{child.title}}
                 </a>
