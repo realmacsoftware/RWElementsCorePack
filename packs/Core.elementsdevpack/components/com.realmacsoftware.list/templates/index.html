@@ -1,0 +1,12 @@
+@if(globalBgImageFetchPriorityEnabled)
+    @portal(headStart)
+        {{globalBgImageFetchPriorityLinkElement}}
+        {{globalBgImageFetchPriorityLinkElementEnd}}
+    @endportal
+@endif
+
+@each(item in items)
+    <li class="{{classes.item}}">
+        @dropzone("item", title: "Item")
+    </li>
+@endeach
