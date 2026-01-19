@@ -1,0 +1,240 @@
+{
+    "groups": [
+        {
+            "title": "List",
+            "icon": "list.bullet",
+            "properties": [
+                {
+                    "title": "Type",
+                    "id": "listType",
+                    "responsive": false,
+                    "segmented": {
+                        "default": "ul",
+                        "items": [
+                            {
+                                "title": "Unordered",
+                                "value": "ul"
+                            },
+                            {
+                                "title": "Ordered",
+                                "value": "ol"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "title": "Items",
+                    "id": "numberOfItems",
+                    "number": {
+                        "default": 3
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "heading": {},
+                    "title": "List Style"
+                },
+                {
+                    "title": "Type",
+                    "id": "listStyleType",
+                    "select": {
+                        "default": "list-disc",
+                        "items": [
+                            {
+                                "title": "None",
+                                "value": "list-none"
+                            },
+                            {
+                                "title": "Disc",
+                                "value": "list-disc"
+                            },
+                            {
+                                "title": "Decimal",
+                                "value": "list-decimal"
+                            },
+                            {
+                                "title": "Circle",
+                                "value": "[list-style-type:circle]"
+                            },
+                            {
+                                "title": "Square",
+                                "value": "[list-style-type:square]"
+                            },
+                            {
+                                "title": "Lower Alpha",
+                                "value": "[list-style-type:lower-alpha]"
+                            },
+                            {
+                                "title": "Upper Alpha",
+                                "value": "[list-style-type:upper-alpha]"
+                            },
+                            {
+                                "title": "Lower Roman",
+                                "value": "[list-style-type:lower-roman]"
+                            },
+                            {
+                                "title": "Upper Roman",
+                                "value": "[list-style-type:upper-roman]"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "title": "Size",
+                    "id": "listStyleSize",
+                    "format": "marker:text-[{{value}}px]",
+                    "number": {
+                        "default": 16,
+                        "subtitle": "in pixels"
+                    }
+                },
+                {
+                    "title": "Position",
+                    "id": "listStylePosition",
+                    "segmented": {
+                        "default": "list-inside",
+                        "items": [
+                            {
+                                "title": "Inside",
+                                "value": "list-inside"
+                            },
+                            {
+                                "title": "Outside",
+                                "value": "list-outside"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "title": "Marker Color",
+                    "id": "markerColor",
+                    "format": "marker:text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "text",
+                            "brightness": 50
+                        }
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "heading": {},
+                    "title": "Items"
+                },
+                {
+                    "title": "Gap",
+                    "id": "itemGap",
+                    "format": "gap-{{value}}",
+                    "themeSpacing": {
+                        "mode": "single",
+                        "default": {
+                            "base": {
+                                "value": "2"
+                            }
+                        }
+                    }
+                },
+                {
+                    "title": "Padding",
+                    "id": "itemPadding",
+                    "themeSpacing": {
+                        "mode": "padding",
+                        "default": {
+                            "base": {
+                                "top": "0",
+                                "right": "0",
+                                "bottom": "0",
+                                "left": "0"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Layout",
+            "icon": "square.split.bottomrightquarter",
+            "properties": [
+                {
+                    "globalControl": "Layout"
+                }
+            ]
+        },
+        {
+            "title": "Sizing",
+            "icon": "square.resize",
+            "properties": [
+                {
+                    "globalControl": "Sizing"
+                }
+            ]
+        },
+        {
+            "title": "Spacing",
+            "icon": "squareshape.squareshape.dotted",
+            "properties": [
+                {
+                    "globalControl": "Spacing"
+                }
+            ]
+        },
+        {
+            "title": "Transitions",
+            "icon": "timer",
+            "properties": [
+                {
+                    "globalControl": "Transitions"
+                }
+            ]
+        },
+        {
+            "title": "Effects",
+            "icon": "wand.and.stars.inverse",
+            "properties": [
+                {
+                    "globalControl": "Effects"
+                }
+            ]
+        },
+        {
+            "title": "Filters",
+            "icon": "camera.filters",
+            "properties": [
+                {
+                    "globalControl": "Filters"
+                }
+            ]
+        },
+        {
+            "title": "Transforms",
+            "icon": "skew",
+            "properties": [
+                {
+                    "globalControl": "Transforms"
+                }
+            ]
+        },
+        {
+            "title": "Background",
+            "icon": "paintbrush.fill",
+            "properties": [
+                {
+                    "globalControl": "BackgroundTransparent"
+                }
+            ]
+        },
+        {
+            "title": "Border",
+            "icon": "square.dashed",
+            "properties": [
+                {
+                    "globalControl": "Borders"
+                }
+            ]
+        }
+    ]
+}
