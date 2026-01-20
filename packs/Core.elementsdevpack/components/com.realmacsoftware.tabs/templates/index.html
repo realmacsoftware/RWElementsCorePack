@@ -45,22 +45,24 @@
 </div>
 
 <!-- Tab Panels -->
-@each(tab in tabItems)
-<div
-    @if(!edit)
-    x-bind="tabPanel"
-    x-show="activeTab === {{ tab.index }}"
-    x-cloak
-    @endif
-    @if(tab.hideInEditor)
-    style="display: none;"
-    @endif
-    class="{{classes.tabPanel}}"
-    role="tabpanel"
-    :id="'tab-panel-' + '{{id}}' + '-' + {{ tab.index }}"
-    :aria-labelledby="'tab-btn-' + '{{id}}' + '-' + {{ tab.index }}"
-    data-tab-panel="{{ tab.index }}"
->
-    @dropzone("tabContent", title: "Tab Content")
+<div class="{{classes.tabPanelsWrapper}}">
+    @each(tab in tabItems)
+    <div
+        @if(!edit)
+        x-bind="tabPanel"
+        x-show="activeTab === {{ tab.index }}"
+        x-cloak
+        @endif
+        @if(tab.hideInEditor)
+        style="display: none;"
+        @endif
+        class="{{classes.tabPanel}}"
+        role="tabpanel"
+        :id="'tab-panel-' + '{{id}}' + '-' + {{ tab.index }}"
+        :aria-labelledby="'tab-btn-' + '{{id}}' + '-' + {{ tab.index }}"
+        data-tab-panel="{{ tab.index }}"
+    >
+        @dropzone("tabContent", title: "Tab Content")
+    </div>
+    @endeach
 </div>
-@endeach

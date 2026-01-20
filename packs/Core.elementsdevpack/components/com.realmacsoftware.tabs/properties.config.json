@@ -897,7 +897,6 @@
                 {
                     "title": "Border Radius",
                     "id": "tabContentBorderRadius",
-                    "format": "rounded-{{value}}",
                     "themeBorderRadius": {
                         "default": {
                             "base": {

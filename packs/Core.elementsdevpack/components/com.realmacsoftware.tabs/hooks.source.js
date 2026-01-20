@@ -271,10 +271,13 @@ const transformHook = (rw) => {
         iconBase: iconBaseClasses,
         iconInactive: iconInactiveClasses,
         iconActive: iconActiveClasses,
+        tabPanelsWrapper: classnames([
+            "grid [&>*]:col-start-1 [&>*]:row-start-1 overflow-hidden",
+            tabContentBorderRadius,
+        ]).toString(),
         tabPanel: classnames([
             tabContentPadding,
             tabContentBackground,
-            tabContentBorderRadius,
         ]).toString(),
     };
 
