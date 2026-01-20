@@ -246,7 +246,7 @@
                 },
                 {
                     "visible": "logoType == 'title'",
-                    "title": "Letter Spacing",
+                    "title": "Spacing",
                     "id": "globalNavTitleLetterSpacing",
                     "format": "tracking-{{value}}",
                     "slider": {
@@ -344,7 +344,7 @@
                     }
                 },
                 {
-                    "title": "Letter Spacing",
+                    "title": "Spacing",
                     "id": "globalNavItemsLetterSpacing",
                     "format": "tracking-{{value}}",
                     "slider": {
