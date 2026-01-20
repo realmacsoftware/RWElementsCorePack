@@ -194,6 +194,30 @@
                     }
                 },
                 {
+                    "visible": "tabButtonState == 'inactive'",
+                    "title": "Border Width",
+                    "id": "tabButtonBorderWidth",
+                    "themeBorderWidth": {
+                        "default": {
+                            "base": {
+                                "name": "none"
+                            }
+                        }
+                    }
+                },
+                {
+                    "visible": "tabButtonState == 'inactive'",
+                    "title": "Border Color",
+                    "id": "tabButtonBorderColor",
+                    "format": "border-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 200
+                        }
+                    }
+                },
+                {
                     "visible": "tabButtonState == 'active'",
                     "title": "Background",
                     "id": "tabButtonBackgroundActive",
@@ -226,6 +250,30 @@
                             "base": {
                                 "name": "none"
                             }
+                        }
+                    }
+                },
+                {
+                    "visible": "tabButtonState == 'active'",
+                    "title": "Border Width",
+                    "id": "tabButtonBorderWidthActive",
+                    "themeBorderWidth": {
+                        "default": {
+                            "base": {
+                                "name": "none"
+                            }
+                        }
+                    }
+                },
+                {
+                    "visible": "tabButtonState == 'active'",
+                    "title": "Border Color",
+                    "id": "tabButtonBorderColorActive",
+                    "format": "border-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "brand",
+                            "brightness": 500
                         }
                     }
                 },
@@ -263,6 +311,31 @@
                             "base": {
                                 "name": "none"
                             }
+                        }
+                    }
+                },
+                {
+                    "visible": "tabButtonState == 'hover'",
+                    "title": "Border Width",
+                    "id": "tabButtonBorderWidthHover",
+                    "format": "hover:{{value}}",
+                    "themeBorderWidth": {
+                        "default": {
+                            "base": {
+                                "name": "none"
+                            }
+                        }
+                    }
+                },
+                {
+                    "visible": "tabButtonState == 'hover'",
+                    "title": "Border Color",
+                    "id": "tabButtonBorderColorHover",
+                    "format": "hover:border-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 300
                         }
                     }
                 },
@@ -394,7 +467,7 @@
                 },
                 {
                     "visible": "tabTitleState == 'inactive'",
-                    "title": "Font Weight",
+                    "title": "Weight",
                     "id": "tabTitleFontWeight",
                     "format": "font-[{{value}}]",
                     "slider": {
@@ -404,7 +477,7 @@
                 },
                 {
                     "visible": "tabTitleState == 'active'",
-                    "title": "Font Weight",
+                    "title": "Weight",
                     "id": "tabTitleFontWeightActive",
                     "format": "font-[{{value}}]",
                     "slider": {
@@ -414,7 +487,7 @@
                 },
                 {
                     "visible": "tabTitleState == 'hover'",
-                    "title": "Font Weight",
+                    "title": "Weight",
                     "id": "tabTitleFontWeightHover",
                     "format": "hover:font-[{{value}}]",
                     "slider": {
@@ -424,7 +497,7 @@
                 },
                 {
                     "visible": "tabTitleState == 'inactive'",
-                    "title": "Letter Spacing",
+                    "title": "Spacing",
                     "id": "tabTitleLetterSpacing",
                     "format": "tracking-{{value}}",
                     "slider": {
@@ -434,7 +507,7 @@
                 },
                 {
                     "visible": "tabTitleState == 'active'",
-                    "title": "Letter Spacing",
+                    "title": "Spacing",
                     "id": "tabTitleLetterSpacingActive",
                     "format": "tracking-{{value}}",
                     "slider": {
@@ -444,7 +517,7 @@
                 },
                 {
                     "visible": "tabTitleState == 'hover'",
-                    "title": "Letter Spacing",
+                    "title": "Spacing",
                     "id": "tabTitleLetterSpacingHover",
                     "format": "hover:tracking-{{value}}",
                     "slider": {
@@ -891,6 +964,28 @@
                         "default": {
                             "name": "none",
                             "brightness": 50
+                        }
+                    }
+                },
+                {
+                    "title": "Border Width",
+                    "id": "tabContentBorderWidth",
+                    "themeBorderWidth": {
+                        "default": {
+                            "base": {
+                                "name": "none"
+                            }
+                        }
+                    }
+                },
+                {
+                    "title": "Border Color",
+                    "id": "tabContentBorderColor",
+                    "format": "border-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 200
                         }
                     }
                 },

@@ -17,6 +17,12 @@ const transformHook = (rw) => {
         tabButtonShadow,
         tabButtonShadowActive,
         tabButtonShadowHover,
+        tabButtonBorderWidth,
+        tabButtonBorderWidthActive,
+        tabButtonBorderWidthHover,
+        tabButtonBorderColor,
+        tabButtonBorderColorActive,
+        tabButtonBorderColorHover,
         tabButtonPadding,
         tabButtonBorderRadius,
         tabButtonBorderRadiusActive,
@@ -76,6 +82,8 @@ const transformHook = (rw) => {
         // Content
         tabContentPadding,
         tabContentBackground,
+        tabContentBorderWidth,
+        tabContentBorderColor,
         tabContentBorderRadius,
     } = rw.props;
 
@@ -106,6 +114,8 @@ const transformHook = (rw) => {
         tabButtonBackgroundHover,
         tabButtonTextColorHover,
         tabButtonShadowHover,
+        tabButtonBorderWidthHover,
+        tabButtonBorderColorHover,
         tabButtonBorderRadiusHover,
     ]).toString();
 
@@ -114,6 +124,8 @@ const transformHook = (rw) => {
         tabButtonBackground,
         tabButtonTextColor,
         tabButtonShadow,
+        tabButtonBorderWidth,
+        tabButtonBorderColor,
         tabButtonBorderRadius,
     ]).toString();
 
@@ -122,6 +134,8 @@ const transformHook = (rw) => {
         tabButtonBackgroundActive,
         tabButtonTextColorActive,
         tabButtonShadowActive,
+        tabButtonBorderWidthActive,
+        tabButtonBorderColorActive,
         tabButtonBorderRadiusActive,
     ]).toString();
 
@@ -278,6 +292,8 @@ const transformHook = (rw) => {
         tabPanel: classnames([
             tabContentPadding,
             tabContentBackground,
+            tabContentBorderWidth,
+            tabContentBorderColor,
         ]).toString(),
     };
 
