@@ -39,10 +39,6 @@ const transformHook = (rw) => {
         tabTitleLineHeight,
         tabTitleLineHeightActive,
         tabTitleLineHeightHover,
-        // Color per state
-        tabTitleColor,
-        tabTitleColorActive,
-        tabTitleColorHover,
         // Underline per state
         tabTitleUnderline,
         tabTitleUnderlineActive,
@@ -136,7 +132,6 @@ const transformHook = (rw) => {
         tabTitleFontWeightHover,
         tabTitleLetterSpacingHover,
         tabTitleLineHeightHover,
-        tabTitleColorHover,
         tabTitleUnderlineHover,
     ]).toString();
 
@@ -146,7 +141,6 @@ const transformHook = (rw) => {
         tabTitleFontWeight,
         tabTitleLetterSpacing,
         tabTitleLineHeight,
-        tabTitleColor,
         tabTitleUnderline,
     ]).toString();
 
@@ -156,7 +150,6 @@ const transformHook = (rw) => {
         tabTitleFontWeightActive,
         tabTitleLetterSpacingActive,
         tabTitleLineHeightActive,
-        tabTitleColorActive,
         tabTitleUnderlineActive,
     ]).toString();
 

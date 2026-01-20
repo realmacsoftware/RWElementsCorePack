@@ -363,42 +363,6 @@
                 },
                 {
                     "visible": "tabTitleState == 'inactive'",
-                    "title": "Color",
-                    "id": "tabTitleColor",
-                    "format": "text-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "text",
-                            "brightness": 50
-                        }
-                    }
-                },
-                {
-                    "visible": "tabTitleState == 'active'",
-                    "title": "Color",
-                    "id": "tabTitleColorActive",
-                    "format": "text-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "surface",
-                            "brightness": 50
-                        }
-                    }
-                },
-                {
-                    "visible": "tabTitleState == 'hover'",
-                    "title": "Color",
-                    "id": "tabTitleColorHover",
-                    "format": "hover:text-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "text",
-                            "brightness": 50
-                        }
-                    }
-                },
-                {
-                    "visible": "tabTitleState == 'inactive'",
                     "title": "Size",
                     "id": "tabTitleFontSize",
                     "themeTextStyle": {
