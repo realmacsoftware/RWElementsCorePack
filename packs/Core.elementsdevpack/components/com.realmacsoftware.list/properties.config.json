@@ -156,6 +156,18 @@
             ]
         },
         {
+            "title": "Item Text",
+            "icon": "textformat.alt",
+            "properties": [
+                {
+                    "globalControl": "TextColor"
+                },
+                {
+                    "globalControl": "TextFontsAndTextStyles"
+                }
+            ]
+        },
+        {
             "title": "Layout",
             "icon": "square.split.bottomrightquarter",
             "properties": [

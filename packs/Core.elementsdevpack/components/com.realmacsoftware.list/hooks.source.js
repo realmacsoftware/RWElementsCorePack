@@ -19,7 +19,10 @@ const transformHook = (rw) => {
         globalBgImageFetchPriorityLinkElementEnd,
     } = globalBgImageFetchPriority(rw);
 
-    const items = Array.from({ length: numberOfItems }, (_, index) => index + 1);
+    const items = Array.from({ length: numberOfItems }, (_, index) => ({
+        index: index + 1,
+        title: `Item ${index + 1}`,
+    }));
 
     // List wrapper classes
     const listClasses = classnames([
@@ -47,6 +50,14 @@ const transformHook = (rw) => {
             : "",
         itemPadding,
         listStyleSize,
+        globalHeadingTextColor(rw),
+        mode === "edit"
+            ? classnames(
+                globalTextFontsAndTextStyles(rw).split(" ").filter(Boolean)
+            )
+                .modifier("[&_[data-slate-node]]")
+                .toString()
+            : globalTextFontsAndTextStyles(rw),
     ]).toString();
 
     const classes = {
