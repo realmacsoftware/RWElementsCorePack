@@ -1087,6 +1087,28 @@
                     "divider": {}
                 },
                 {
+                    "title": "Desktop Dropdown",
+                    "heading": {}
+                },
+                {
+                    "title": "Padding",
+                    "id": "desktopSubmenuPadding",
+                    "themeSpacing": {
+                        "mode": "padding",
+                        "default": {
+                            "base": {
+                                "top": "2",
+                                "right": "0",
+                                "bottom": "2",
+                                "left": "0"
+                            }
+                        }
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
                     "title": "Item Spacing",
                     "heading": {}
                 },

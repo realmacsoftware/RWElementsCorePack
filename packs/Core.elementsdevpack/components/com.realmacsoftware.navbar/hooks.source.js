@@ -52,6 +52,7 @@ const transformHook = (rw) => {
         mobileBackdropColor,
         mobileBackdropOpacity,
         mobileBackdropBlur,
+        desktopSubmenuPadding,
         submenuItemSpacing,
     } = rw.props;
     const { project } = rw;
@@ -183,6 +184,7 @@ const transformHook = (rw) => {
                 mobileMenuBorder,
                 mobileMenuBorderColor,
             ]).toString(),
+            subMenuPadding: classnames([desktopSubmenuPadding]).toString(),
             dropdownItem: classnames([
                 `block px-4`,
                 submenuItemSpacing,
