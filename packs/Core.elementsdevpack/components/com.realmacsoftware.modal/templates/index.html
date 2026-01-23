@@ -11,7 +11,21 @@
     @if(!edit)
     x-cloak
     @endif
-    x-data="{ open: false }"
+    x-data="{ 
+        open: false,
+        stopAllMedia() {
+            this.$el.querySelectorAll('video, audio').forEach(media => {
+                media.pause();
+                media.currentTime = 0;
+            });
+            this.$el.querySelectorAll('iframe').forEach(iframe => {
+                const src = iframe.src;
+                iframe.src = '';
+                iframe.src = src;
+            });
+        }
+    }"
+    x-init="$watch('open', value => { if (!value) { stopAllMedia(); } })"
     @open-modal.window="(e) => { open = e.detail.id === '{{id}}' }"
     x-model="open"
     class="{{classes.dialog}}"
