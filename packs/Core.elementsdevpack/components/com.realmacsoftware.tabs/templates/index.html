@@ -1,5 +1,27 @@
 @include("alpine")
 
+@if(showAboveContent)
+<!-- Above Panels -->
+<div class="{{classes.abovePanelsWrapper}}">
+    @each(tab in tabItems)
+    <div
+        @if(!edit)
+        x-bind="tabPanel"
+        x-show="activeTab === {{ tab.index }}"
+        x-cloak
+        @endif
+        @if(tab.hideInEditor)
+        style="display: none;"
+        @endif
+        class="{{classes.abovePanel}}"
+        data-tab-above-panel="{{ tab.index }}"
+    >
+        @dropzone("tabAboveContent", title: "Above Content")
+    </div>
+    @endeach
+</div>
+@endif
+
 <!-- Tab List -->
 <div
     class="{{classes.tabList}}"

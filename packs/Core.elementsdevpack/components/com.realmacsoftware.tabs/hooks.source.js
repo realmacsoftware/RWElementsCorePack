@@ -85,6 +85,13 @@ const transformHook = (rw) => {
         tabContentBorderWidth,
         tabContentBorderColor,
         tabContentBorderRadius,
+        // Top content (above)
+        showAboveContent,
+        topContentPadding,
+        topContentBackground,
+        topContentBorderWidth,
+        topContentBorderColor,
+        topContentBorderRadius,
     } = rw.props;
 
     const { mode } = rw.project;
@@ -295,6 +302,16 @@ const transformHook = (rw) => {
             tabContentBorderWidth,
             tabContentBorderColor,
         ]).toString(),
+        abovePanelsWrapper: classnames([
+            "grid [&>*]:col-start-1 [&>*]:row-start-1 overflow-hidden",
+            topContentBorderRadius,
+        ]).toString(),
+        abovePanel: classnames([
+            topContentPadding,
+            topContentBackground,
+            topContentBorderWidth,
+            topContentBorderColor,
+        ]).toString(),
     };
 
     rw.setRootElement({
@@ -316,6 +333,7 @@ const transformHook = (rw) => {
         tabItems,
         edit,
         editorActiveTabIndex: activeTabIndex,
+        showAboveContent: showAboveContent === true || showAboveContent === "true",
     });
 };
 

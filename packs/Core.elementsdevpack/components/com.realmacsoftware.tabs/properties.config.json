@@ -1003,6 +1003,88 @@
             ]
         },
         {
+            "title": "Tab Content Above",
+            "icon": "doc.text",
+            "properties": [
+                {
+                    "title": "Show",
+                    "id": "showAboveContent",
+                    "responsive": false,
+                    "switch": {
+                        "default": false
+                    }
+                },
+                {
+                    "visible": "showAboveContent == true",
+                    "divider": {}
+                },
+                {
+                    "visible": "showAboveContent == true",
+                    "title": "Padding",
+                    "id": "topContentPadding",
+                    "themeSpacing": {
+                        "mode": "padding",
+                        "default": {
+                            "base": {
+                                "top": "4",
+                                "right": "4",
+                                "bottom": "4",
+                                "left": "4"
+                            }
+                        }
+                    }
+                },
+                {
+                    "visible": "showAboveContent == true",
+                    "title": "Background",
+                    "id": "topContentBackground",
+                    "format": "bg-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "none",
+                            "brightness": 50
+                        }
+                    }
+                },
+                {
+                    "visible": "showAboveContent == true",
+                    "title": "Border Width",
+                    "id": "topContentBorderWidth",
+                    "themeBorderWidth": {
+                        "default": {
+                            "base": {
+                                "name": "none"
+                            }
+                        }
+                    }
+                },
+                {
+                    "visible": "showAboveContent == true",
+                    "title": "Border Color",
+                    "id": "topContentBorderColor",
+                    "format": "border-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 200
+                        }
+                    }
+                },
+                {
+                    "visible": "showAboveContent == true",
+                    "title": "Border Radius",
+                    "id": "topContentBorderRadius",
+                    "themeBorderRadius": {
+                        "default": {
+                            "base": {
+                                "value": "none"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
             "title": "Layout",
             "icon": "square.split.bottomrightquarter",
             "properties": [
