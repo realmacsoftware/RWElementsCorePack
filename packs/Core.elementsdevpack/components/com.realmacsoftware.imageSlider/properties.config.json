@@ -279,6 +279,18 @@
                 },
                 {
                     "enable": "enablePaginationArrows == true",
+                    "title": "Radius",
+                    "id": "paginationArrowBorderRadius",
+                    "themeBorderRadius": {
+                        "default": {
+                            "base": {
+                                "value": "full"
+                            }
+                        }
+                    }
+                },
+                {
+                    "enable": "enablePaginationArrows == true",
                     "title": "State",
                     "id": "paginationArrowState",
                     "segmented": {

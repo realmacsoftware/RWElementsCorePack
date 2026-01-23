@@ -18,6 +18,7 @@ const transformHook = (rw) => {
         enablePaginationArrows,
         enablePaginationDots,
         paginationArrowSize,
+        paginationArrowBorderRadius,
         paginationArrowBgColor,
         paginationArrowColor,
         paginationArrowBgColorHover,
@@ -128,7 +129,8 @@ const transformHook = (rw) => {
             ? "w-full h-full object-cover pointer-events-none select-none"
             : "w-full h-auto pointer-events-none select-none",
         paginationButton: [
-            `transition duration-200 self-center p-2 rounded-full`,
+            `transition duration-200 self-center p-2`,
+            paginationArrowBorderRadius || "rounded-full",
             paginationArrowBgColor,
             paginationArrowBgColorHover,
         ].join(" "),
