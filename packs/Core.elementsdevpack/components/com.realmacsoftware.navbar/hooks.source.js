@@ -20,6 +20,8 @@ const transformHook = (rw) => {
         globalNavItemsBackgroundTypeHover,
         globalNavItemsBackgroundColorHover,
         globalNavItemsBackgroundOpacityHover,
+        globalNavItemsBackgroundPadding,
+        globalNavItemsBackgroundRadius,
 
         mobileTriggerDisplay,
         mobileTriggerPosition,
@@ -120,6 +122,8 @@ const transformHook = (rw) => {
             globalNavItemsBackgroundColorHover,
         globalNavItemsBackgroundTypeHover == "color" &&
             globalNavItemsBackgroundOpacityHover,
+        globalNavItemsBackgroundPadding,
+        globalNavItemsBackgroundRadius,
     ]).toString();
 
     const classes = {

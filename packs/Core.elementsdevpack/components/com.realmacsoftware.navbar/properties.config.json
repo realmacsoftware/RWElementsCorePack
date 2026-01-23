@@ -404,52 +404,6 @@
                     }
                 },
                 {
-                    "visible": "globlaNavItemsState == 'default'",
-                    "title": "Background",
-                    "heading": {}
-                },
-                {
-                    "visible": "globlaNavItemsState == 'default'",
-                    "title": "Type",
-                    "id": "globalNavItemsBackgroundType",
-                    "segmented": {
-                        "default": "none",
-                        "items": [
-                            {
-                                "title": "None",
-                                "value": "none"
-                            },
-                            {
-                                "title": "Color",
-                                "value": "color"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "visible": "globlaNavItemsState == 'default' && globalNavItemsBackgroundType == 'color'",
-                    "title": "Color",
-                    "id": "globalNavItemsBackgroundColor",
-                    "format": "bg-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "surface",
-                            "brightness": 100
-                        }
-                    }
-                },
-                {
-                    "visible": "globlaNavItemsState == 'default' && globalNavItemsBackgroundType == 'color'",
-                    "title": "Opacity",
-                    "id": "globalNavItemsBackgroundOpacity",
-                    "format": "bg-opacity-[{{value}}%]",
-                    "slider": {
-                        "use": "Slider",
-                        "default": 100,
-                        "units": "%"
-                    }
-                },
-                {
                     "visible": "globlaNavItemsState == 'hover'",
                     "title": "Color",
                     "id": "globalNavItemsTextColorHover",
@@ -466,52 +420,6 @@
                     "title": "Opacity",
                     "id": "globalNavItemsTextColorOpacityHover",
                     "format": "hover:text-opacity-[{{value}}%] dark:hover:text-opacity-[{{value}}%] aria-[current=page]:text-opacity-[{{value}}%] dark:aria-[current=page]:text-opacity-[{{value}}%]",
-                    "slider": {
-                        "use": "Slider",
-                        "default": 100,
-                        "units": "%"
-                    }
-                },
-                {
-                    "visible": "globlaNavItemsState == 'hover'",
-                    "title": "Background",
-                    "heading": {}
-                },
-                {
-                    "visible": "globlaNavItemsState == 'hover'",
-                    "title": "Type",
-                    "id": "globalNavItemsBackgroundTypeHover",
-                    "segmented": {
-                        "default": "none",
-                        "items": [
-                            {
-                                "title": "None",
-                                "value": "none"
-                            },
-                            {
-                                "title": "Color",
-                                "value": "color"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "visible": "globlaNavItemsState == 'hover' && globalNavItemsBackgroundTypeHover == 'color'",
-                    "title": "Color",
-                    "id": "globalNavItemsBackgroundColorHover",
-                    "format": "hover:bg-{{value}} aria-[current=page]:bg-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "surface",
-                            "brightness": 100
-                        }
-                    }
-                },
-                {
-                    "visible": "globlaNavItemsState == 'hover' && globalNavItemsBackgroundTypeHover == 'color'",
-                    "title": "Opacity",
-                    "id": "globalNavItemsBackgroundOpacityHover",
-                    "format": "hover:bg-opacity-[{{value}}%] aria-[current=page]:bg-opacity-[{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "default": 100,
@@ -564,6 +472,144 @@
                         "default": false,
                         "trueValue": "underline",
                         "falseValue": ""
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Background",
+                    "heading": {}
+                },
+                {
+                    "title": "State",
+                    "id": "globalNavItemsBackgroundState",
+                    "segmented": {
+                        "default": "default",
+                        "items": [
+                            {
+                                "title": "Default",
+                                "value": "default"
+                            },
+                            {
+                                "title": "Active",
+                                "value": "hover"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "visible": "globalNavItemsBackgroundState == 'default'",
+                    "title": "Type",
+                    "id": "globalNavItemsBackgroundType",
+                    "segmented": {
+                        "default": "none",
+                        "items": [
+                            {
+                                "title": "None",
+                                "value": "none"
+                            },
+                            {
+                                "title": "Color",
+                                "value": "color"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "visible": "globalNavItemsBackgroundState == 'default' && globalNavItemsBackgroundType == 'color'",
+                    "title": "Color",
+                    "id": "globalNavItemsBackgroundColor",
+                    "format": "bg-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 100
+                        }
+                    }
+                },
+                {
+                    "visible": "globalNavItemsBackgroundState == 'default' && globalNavItemsBackgroundType == 'color'",
+                    "title": "Opacity",
+                    "id": "globalNavItemsBackgroundOpacity",
+                    "format": "bg-opacity-[{{value}}%]",
+                    "slider": {
+                        "use": "Slider",
+                        "default": 100,
+                        "units": "%"
+                    }
+                },
+                {
+                    "visible": "globalNavItemsBackgroundState == 'hover'",
+                    "title": "Type",
+                    "id": "globalNavItemsBackgroundTypeHover",
+                    "segmented": {
+                        "default": "none",
+                        "items": [
+                            {
+                                "title": "None",
+                                "value": "none"
+                            },
+                            {
+                                "title": "Color",
+                                "value": "color"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "visible": "globalNavItemsBackgroundState == 'hover' && globalNavItemsBackgroundTypeHover == 'color'",
+                    "title": "Color",
+                    "id": "globalNavItemsBackgroundColorHover",
+                    "format": "hover:bg-{{value}} aria-[current=page]:bg-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 100
+                        }
+                    }
+                },
+                {
+                    "visible": "globalNavItemsBackgroundState == 'hover' && globalNavItemsBackgroundTypeHover == 'color'",
+                    "title": "Opacity",
+                    "id": "globalNavItemsBackgroundOpacityHover",
+                    "format": "hover:bg-opacity-[{{value}}%] aria-[current=page]:bg-opacity-[{{value}}%]",
+                    "slider": {
+                        "use": "Slider",
+                        "default": 100,
+                        "units": "%"
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Padding",
+                    "id": "globalNavItemsBackgroundPadding",
+                    "themeSpacing": {
+                        "mode": "padding",
+                        "default": {
+                            "base": {
+                                "top": "0",
+                                "right": "0",
+                                "bottom": "0",
+                                "left": "0"
+                            }
+                        }
+                    }
+                },
+                {
+                    "title": "Radius",
+                    "id": "globalNavItemsBackgroundRadius",
+                    "themeBorderRadius": {
+                        "default": {
+                            "base": {
+                                "topLeft": "none",
+                                "topRight": "none",
+                                "bottomRight": "none",
+                                "bottomLeft": "none"
+                            }
+                        }
                     }
                 }
             ]
