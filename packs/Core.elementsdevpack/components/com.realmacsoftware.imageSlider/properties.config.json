@@ -279,7 +279,7 @@
                 },
                 {
                     "enable": "enablePaginationArrows == true",
-                    "title": "Border Radius",
+                    "title": "Radius",
                     "id": "paginationArrowBorderRadius",
                     "themeBorderRadius": {
                         "default": {
