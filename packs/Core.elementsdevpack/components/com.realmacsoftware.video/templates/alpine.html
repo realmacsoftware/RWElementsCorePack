@@ -94,6 +94,10 @@
           stopPlayback() {
               this.showVideo = false;
 
+              if (this.options.wantsLightbox) {
+                this.$dispatch('video-lightbox-close', { id: this.id });
+              }
+
               if (this.platform === 'mp4' && this.$refs.video) {
                 this.$refs.video.pause();
                 this.$refs.video.currentTime = 0;
