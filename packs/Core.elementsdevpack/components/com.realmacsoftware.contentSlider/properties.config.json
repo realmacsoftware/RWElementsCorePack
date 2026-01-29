@@ -1,0 +1,316 @@
+{
+    "groups": [
+        {
+            "title": "Slides",
+            "icon": "rectangle.stack",
+            "properties": [
+                {
+                    "title": "Number of Slides",
+                    "id": "slideCount",
+                    "responsive": false,
+                    "number": {
+                        "default": 3,
+                        "subtitle": "1-20 slides"
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Slides Per View",
+                    "id": "slidesPerView",
+                    "responsive": false,
+                    "slider": {
+                        "default": "1",
+                        "items": [
+                            {"title": "1", "value": "1"},
+                            {"title": "2", "value": "2"},
+                            {"title": "3", "value": "3"},
+                            {"title": "4", "value": "4"},
+                            {"title": "5", "value": "5"}
+                        ]
+                    }
+                },
+                {
+                    "title": "Loop",
+                    "id": "loop",
+                    "responsive": false,
+                    "switch": {
+                        "default": true
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Editor Preview",
+                    "heading": {}
+                },
+                {
+                    "title": "Active Slide",
+                    "id": "editorActiveSlide",
+                    "responsive": false,
+                    "number": {
+                        "default": 1,
+                        "subtitle": "Preview slide in editor"
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Navigation",
+            "icon": "arrow.left.arrow.right",
+            "properties": [
+                {
+                    "title": "Arrows",
+                    "heading": {}
+                },
+                {
+                    "title": "Show Arrows",
+                    "id": "showArrows",
+                    "responsive": false,
+                    "switch": {
+                        "default": true
+                    }
+                },
+                {
+                    "enable": "showArrows == true",
+                    "title": "Size",
+                    "id": "arrowSize",
+                    "format": "size-{{value}}",
+                    "themeSpacing": {
+                        "mode": "single",
+                        "default": {
+                            "base": {
+                                "value": "10"
+                            }
+                        }
+                    }
+                },
+                {
+                    "enable": "showArrows == true",
+                    "title": "Radius",
+                    "id": "arrowBorderRadius",
+                    "themeBorderRadius": {
+                        "default": {
+                            "base": {
+                                "value": "full"
+                            }
+                        }
+                    }
+                },
+                {
+                    "enable": "showArrows == true",
+                    "title": "State",
+                    "id": "arrowState",
+                    "segmented": {
+                        "default": "normal",
+                        "items": [
+                            {"title": "Normal", "value": "normal"},
+                            {"title": "Hover", "value": "hover"}
+                        ]
+                    }
+                },
+                {
+                    "enable": "showArrows == true",
+                    "visible": "arrowState == 'normal'",
+                    "title": "Background",
+                    "id": "arrowBgColor",
+                    "format": "bg-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 100
+                        }
+                    }
+                },
+                {
+                    "enable": "showArrows == true",
+                    "visible": "arrowState == 'normal'",
+                    "title": "Color",
+                    "id": "arrowColor",
+                    "format": "text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "text",
+                            "brightness": 50
+                        }
+                    }
+                },
+                {
+                    "enable": "showArrows == true",
+                    "visible": "arrowState == 'hover'",
+                    "title": "Background",
+                    "id": "arrowBgColorHover",
+                    "format": "hover:bg-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 200
+                        }
+                    }
+                },
+                {
+                    "enable": "showArrows == true",
+                    "visible": "arrowState == 'hover'",
+                    "title": "Color",
+                    "id": "arrowColorHover",
+                    "format": "hover:text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "text",
+                            "brightness": 50
+                        }
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Dots",
+                    "heading": {}
+                },
+                {
+                    "title": "Show Dots",
+                    "id": "showDots",
+                    "responsive": false,
+                    "switch": {
+                        "default": true
+                    }
+                },
+                {
+                    "enable": "showDots == true",
+                    "title": "Size",
+                    "id": "dotSize",
+                    "format": "size-{{value}}",
+                    "themeSpacing": {
+                        "mode": "single",
+                        "default": {
+                            "base": {
+                                "value": "3"
+                            }
+                        }
+                    }
+                },
+                {
+                    "enable": "showDots == true",
+                    "title": "Spacing",
+                    "id": "dotGap",
+                    "format": "gap-{{value}}",
+                    "themeSpacing": {
+                        "mode": "single",
+                        "default": {
+                            "base": {
+                                "value": "2"
+                            }
+                        }
+                    }
+                },
+                {
+                    "enable": "showDots == true",
+                    "title": "State",
+                    "id": "dotState",
+                    "segmented": {
+                        "default": "normal",
+                        "items": [
+                            {"title": "Normal", "value": "normal"},
+                            {"title": "Active", "value": "active"}
+                        ]
+                    }
+                },
+                {
+                    "enable": "showDots == true",
+                    "visible": "dotState == 'normal'",
+                    "title": "Color",
+                    "id": "dotColor",
+                    "format": "bg-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 300
+                        }
+                    }
+                },
+                {
+                    "enable": "showDots == true",
+                    "visible": "dotState == 'active'",
+                    "title": "Active Color",
+                    "id": "dotColorActive",
+                    "format": "bg-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "brand",
+                            "brightness": 500
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Layout",
+            "icon": "square.split.bottomrightquarter",
+            "properties": [
+                {
+                    "globalControl": "Layout"
+                }
+            ]
+        },
+        {
+            "title": "Sizing",
+            "icon": "arrow.down.backward.and.arrow.up.forward.square",
+            "properties": [
+                {
+                    "globalControl": "Sizing"
+                }
+            ]
+        },
+        {
+            "title": "Spacing",
+            "icon": "squareshape.squareshape.dotted",
+            "properties": [
+                {
+                    "globalControl": "Spacing"
+                }
+            ]
+        },
+        {
+            "title": "Background",
+            "icon": "paintbrush.fill",
+            "properties": [
+                {
+                    "globalControl": "BackgroundTransparent"
+                }
+            ]
+        },
+        {
+            "title": "Borders",
+            "icon": "square.dashed",
+            "properties": [
+                {
+                    "globalControl": "Borders"
+                }
+            ]
+        },
+        {
+            "title": "Advanced",
+            "icon": "gearshape",
+            "properties": [
+                {
+                    "title": "CSS Classes",
+                    "id": "cssClasses",
+                    "textArea": {
+                        "default": ""
+                    }
+                },
+                {
+                    "title": "ID",
+                    "id": "globalID",
+                    "responsive": false,
+                    "text": {
+                        "default": ""
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,89 @@
+@include("alpine")
+
+<div
+    class="{{classes.glide}}"
+    @if(!edit)
+    x-data="elementsContentSlider('{{id}}', {{glideOptions}})"
+    @endif
+>
+    <div class="{{classes.track}}" data-glide-el="track">
+        <ul class="{{classes.slides}}">
+            @each(slide in slides)
+            <li
+                class="{{classes.slide}}"
+                @if(slide.hideInEditor)
+                style="display: none;"
+                @endif
+            >
+                @dropzone("slide", title: "Slide Content")
+            </li>
+            @endeach
+        </ul>
+    </div>
+
+    @if(showArrows)
+    <div class="{{classes.arrows}}" data-glide-el="controls">
+        <button
+            class="{{classes.arrowButton}}"
+            data-glide-dir="<"
+            aria-label="Previous slide"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15 19l-7-7 7-7"
+                />
+            </svg>
+        </button>
+        <button
+            class="{{classes.arrowButton}}"
+            data-glide-dir=">"
+            aria-label="Next slide"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 5l7 7-7 7"
+                />
+            </svg>
+        </button>
+    </div>
+    @endif
+
+    @if(showDots)
+    <div class="{{classes.bullets}}" data-glide-el="controls[nav]">
+        @each(slide in slides)
+        @if(edit)
+        <button
+            class="{{classes.bullet}} @if(slide.isActive) {{classes.bulletActive}} @else {{classes.bulletNormal}} @endif"
+            data-glide-dir="={{slide.index}}"
+            aria-label="Go to slide {{slide.number}}"
+        ></button>
+        @else
+        <button
+            class="{{classes.bullet}}"
+            :class="activeIndex === {{slide.index}} ? '{{classes.bulletActive}}' : '{{classes.bulletNormal}}'"
+            data-glide-dir="={{slide.index}}"
+            aria-label="Go to slide {{slide.number}}"
+        ></button>
+        @endif
+        @endeach
+    </div>
+    @endif
+</div>

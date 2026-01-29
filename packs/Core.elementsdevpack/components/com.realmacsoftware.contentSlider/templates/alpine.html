@@ -1,0 +1,67 @@
+@portal(headEnd, id: "com.realmacsoftware.contentSlider.styles", includeOnce: true)
+<link rel="stylesheet" href="{{componentAssetPath}}/glide.core.min.css">
+<style>
+    .glide__slides {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .glide__slide {
+        height: auto;
+    }
+</style>
+@endportal
+
+@portal(bodyEnd, id: "com.realmacsoftware.contentSlider.script", includeOnce: true)
+<script src="{{componentAssetPath}}/glide.min.js"></script>
+<script>
+    document.addEventListener("alpine:init", () => {
+        Alpine.data("elementsContentSlider", (id, options) => ({
+            glide: null,
+            activeIndex: 0,
+            id,
+
+            init() {
+                // Find the glide element within this component
+                const glideEl = this.$el;
+                
+                if (!glideEl) {
+                    console.warn("Content Slider: Could not find glide element");
+                    return;
+                }
+
+                // Parse options if string
+                const config = typeof options === "string" ? JSON.parse(options) : options;
+
+                // Initialize Glide.js
+                this.glide = new Glide(glideEl, {
+                    type: config.type || "carousel",
+                    perView: config.perView || 1,
+                    gap: config.gap || 0,
+                    rewind: config.rewind !== false,
+                    animationDuration: 400,
+                    animationTimingFunc: "ease-in-out",
+                });
+
+                // Listen for slide changes - use run.after to ensure index is updated
+                this.glide.on(["run.after", "move.after"], () => {
+                    this.activeIndex = this.glide.index;
+                });
+
+                // Mount the slider
+                this.glide.mount();
+
+                // Set initial active index after mount
+                this.activeIndex = this.glide.index;
+            },
+
+            destroy() {
+                if (this.glide) {
+                    this.glide.destroy();
+                    this.glide = null;
+                }
+            },
+        }));
+    });
+</script>
+@endportal
