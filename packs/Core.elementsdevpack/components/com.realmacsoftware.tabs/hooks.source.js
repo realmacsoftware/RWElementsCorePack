@@ -114,7 +114,7 @@ const transformHook = (rw) => {
 
     // Base button classes (shared, no state-specific styles)
     const tabButtonBase = classnames([
-        "flex items-center cursor-pointer transition-all",
+        "group/tab-button flex items-center cursor-pointer transition-all",
         wantsIcon ? iconPositionClass : "items-center",
         wantsIcon && iconGap,
         tabButtonPadding,
@@ -247,11 +247,7 @@ const transformHook = (rw) => {
             // Pre-computed for template: hide panel in editor if not active
             hideInEditor: edit && !isActive,
         };
-    }) || [
-            { id: `tab-${id}-0`, title: "Tab 1", icon: null, hasIcon: false, showIcon: false, index: 0, isActive: true, buttonClass: edit ? `${tabButtonBase} ${tabButtonActiveClasses}` : tabButtonBase, titleClass: edit ? `${titleBaseClasses} ${titleActiveClasses}` : titleBaseClasses, iconClass: edit ? `${iconBaseClasses} ${iconActiveClasses}` : iconBaseClasses, hideInEditor: false },
-            { id: `tab-${id}-1`, title: "Tab 2", icon: null, hasIcon: false, showIcon: false, index: 1, isActive: false, buttonClass: edit ? `${tabButtonBase} ${tabButtonInactiveClasses}` : tabButtonBase, titleClass: edit ? `${titleBaseClasses} ${titleInactiveClasses}` : titleBaseClasses, iconClass: edit ? `${iconBaseClasses} ${iconInactiveClasses}` : iconBaseClasses, hideInEditor: edit },
-            { id: `tab-${id}-2`, title: "Tab 3", icon: null, hasIcon: false, showIcon: false, index: 2, isActive: false, buttonClass: edit ? `${tabButtonBase} ${tabButtonInactiveClasses}` : tabButtonBase, titleClass: edit ? `${titleBaseClasses} ${titleInactiveClasses}` : titleBaseClasses, iconClass: edit ? `${iconBaseClasses} ${iconInactiveClasses}` : iconBaseClasses, hideInEditor: edit },
-        ];
+    }) || [];
 
     // Tab list layout classes
     const tabListAlignmentClass = {

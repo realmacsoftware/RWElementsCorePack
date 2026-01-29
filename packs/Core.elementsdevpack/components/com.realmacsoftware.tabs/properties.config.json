@@ -804,7 +804,7 @@
                     "visible": "showIcon == true && tabIconState == 'hover'",
                     "title": "Color",
                     "id": "iconFillColorHover",
-                    "format": "group-hover/{{globalID}}:[&_svg]:fill-{{value}}/[--iconFillOpacityHover] group-hover/{{globalID}}:[&_svg]:text-{{value}}/[--iconFillOpacityHover]",
+                    "format": "group-hover/tab-button:[&_svg]:fill-{{value}}/[--iconFillOpacityHover] group-hover/tab-button:[&_svg]:text-{{value}}/[--iconFillOpacityHover]",
                     "themeColor": {
                         "default": {
                             "name": "text",
@@ -816,7 +816,7 @@
                     "visible": "showIcon == true && tabIconState == 'hover'",
                     "title": "Opacity",
                     "id": "iconFillOpacityHover",
-                    "format": "group-hover/{{globalID}}:[--iconFillOpacityHover:{{value}}%]",
+                    "format": "group-hover/tab-button:[--iconFillOpacityHover:{{value}}%]",
                     "responsive": false,
                     "slider": {
                         "use": "Slider",
@@ -905,7 +905,7 @@
                     "visible": "showIcon == true && tabIconState == 'hover'",
                     "title": "Color",
                     "id": "iconStrokeColorHover",
-                    "format": "group-hover/{{globalID}}:[&_svg]:stroke-{{value}}/[--iconStrokeOpacityHover]",
+                    "format": "group-hover/tab-button:[&_svg]:stroke-{{value}}/[--iconStrokeOpacityHover]",
                     "themeColor": {
                         "default": {
                             "name": "none",
@@ -917,7 +917,7 @@
                     "visible": "showIcon == true && tabIconState == 'hover'",
                     "title": "Opacity",
                     "id": "iconStrokeOpacityHover",
-                    "format": "group-hover/{{globalID}}:[--iconStrokeOpacityHover:{{value}}%]",
+                    "format": "group-hover/tab-button:[--iconStrokeOpacityHover:{{value}}%]",
                     "responsive": false,
                     "slider": {
                         "use": "Slider",
@@ -929,7 +929,7 @@
                     "visible": "showIcon == true && tabIconState == 'hover'",
                     "title": "Width",
                     "id": "iconStrokeWidthHover",
-                    "format": "group-hover/{{globalID}}:[&_svg]:stroke-[{{value}}px]",
+                    "format": "group-hover/tab-button:[&_svg]:stroke-[{{value}}px]",
                     "number": {
                         "default": 0,
                         "subtitle": "in pixels"
