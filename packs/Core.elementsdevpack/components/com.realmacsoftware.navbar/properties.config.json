@@ -1098,9 +1098,9 @@
                         "default": {
                             "base": {
                                 "top": "2",
-                                "right": "0",
+                                "right": "2",
                                 "bottom": "2",
-                                "left": "0"
+                                "left": "2"
                             }
                         }
                     }
