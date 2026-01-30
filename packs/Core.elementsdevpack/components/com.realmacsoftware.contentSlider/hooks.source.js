@@ -2,7 +2,10 @@ const transformHook = (rw) => {
     const {
         globalID,
         slideCount,
-        slidesPerView,
+        transitionEffect,
+        transitionSpeed,
+        autoPlay,
+        autoPlayInterval,
         loop,
         editorActiveSlide,
         showArrows,
@@ -25,7 +28,8 @@ const transformHook = (rw) => {
 
     // Parse slide count with bounds
     const count = Math.max(1, Math.min(20, parseInt(slideCount) || 3));
-    const perView = parseInt(slidesPerView) || 1;
+    const isAutoPlay = autoPlay === true || autoPlay === "true";
+    const interval = parseInt(autoPlayInterval) || 3000;
     const isLoop = loop === true || loop === "true";
 
     // Determine which slide to show as active in editor mode
@@ -46,23 +50,20 @@ const transformHook = (rw) => {
         wrapper: classnames([
             `group/${id}`,
             "relative",
-            globalLayout(rw),
             globalSizing(rw),
             globalSpacing(rw),
             globalBackground(rw),
             globalBorders(rw),
             advancedClasses(rw),
         ]).toString(),
-        glide: "glide",
-        track: "glide__track",
-        slides: "glide__slides",
+        swiper: "swiper",
+        swiperWrapper: "swiper-wrapper",
         slide: classnames([
-            "glide__slide",
+            "swiper-slide",
             "min-h-[100px]",
         ]).toString(),
         arrows: classnames([
-            "glide__arrows",
-            "absolute inset-0 flex items-center justify-between pointer-events-none px-2",
+            "absolute inset-0 flex items-center justify-between pointer-events-none px-2 z-10",
         ]).toString(),
         arrowButton: classnames([
             "pointer-events-auto flex items-center justify-center cursor-pointer transition-all",
@@ -73,27 +74,38 @@ const transformHook = (rw) => {
             arrowBgColorHover,
             arrowColorHover,
         ]).toString(),
-        bullets: classnames([
-            "glide__bullets",
-            "flex items-center justify-center mt-4",
+        pagination: classnames([
+            "swiper-pagination",
+            "!relative flex items-center justify-center mt-4",
             dotGap,
         ]).toString(),
-        bullet: classnames([
-            "glide__bullet",
+        paginationBullet: classnames([
             "rounded-full cursor-pointer transition-all",
             dotSize,
         ]).toString(),
-        bulletNormal: dotColor,
-        bulletActive: dotColorActive,
+        paginationBulletNormal: dotColor,
+        paginationBulletActive: dotColorActive,
     };
 
-    // Glide.js options to pass to Alpine
-    const glideOptions = {
-        type: isLoop ? "carousel" : "slider",
-        perView: perView,
-        gap: 0,
+    // Parse transition settings
+    const effect = transitionEffect || 'slide';
+    const speed = parseInt(transitionSpeed) || 400;
+
+    // Swiper options to pass to Alpine
+    const swiperOptions = {
+        loop: isLoop,
         rewind: !isLoop,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        speed: speed,
+        effect: effect,
+        autoplay: isAutoPlay ? { delay: interval, disableOnInteraction: false } : false,
     };
+
+    // Add fade-specific options for smooth crossfade
+    if (effect === 'fade') {
+        swiperOptions.fadeEffect = { crossFade: true };
+    }
 
     rw.setRootElement({
         as: "div",
@@ -114,9 +126,9 @@ const transformHook = (rw) => {
         edit,
         showArrows: showArrows === true || showArrows === "true",
         showDots: showDots === true || showDots === "true",
-        glideOptions: JSON.stringify(glideOptions).replace(/"/g, "'"),
+        swiperOptions: JSON.stringify(swiperOptions).replace(/"/g, "'"),
         activeSlideIndex,
-        perView,
+        isAutoPlay,
         isLoop,
         componentAssetPath: rw.component.assetPath,
     });

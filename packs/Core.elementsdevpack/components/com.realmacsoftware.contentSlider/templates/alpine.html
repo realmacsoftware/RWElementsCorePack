@@ -1,64 +1,132 @@
 @portal(headEnd, id: "com.realmacsoftware.contentSlider.styles", includeOnce: true)
-<link rel="stylesheet" href="{{componentAssetPath}}/glide.core.min.css">
+<link rel="stylesheet" href="{{componentAssetPath}}/swiper-bundle.min.css">
 <style>
-    .glide__slides {
+    .swiper-wrapper {
         margin: 0;
         padding: 0;
         list-style: none;
     }
-    .glide__slide {
+    .swiper-slide {
+        height: auto;
+    }
+    /* Custom pagination bullets - no Swiper styling, just Tailwind classes */
+    .content-slider-bullet {
+        display: inline-block;
+    }
+    /* Hide Swiper's default navigation button icons since we use custom SVGs */
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        display: none;
+    }
+    /* Override Swiper's SVG sizing so our custom icons display correctly */
+    .swiper-button-prev svg,
+    .swiper-button-next svg {
+        width: auto;
         height: auto;
     }
 </style>
 @endportal
 
 @portal(bodyEnd, id: "com.realmacsoftware.contentSlider.script", includeOnce: true)
-<script src="{{componentAssetPath}}/glide.min.js"></script>
+<script src="{{componentAssetPath}}/swiper-bundle.min.js"></script>
 <script>
     document.addEventListener("alpine:init", () => {
         Alpine.data("elementsContentSlider", (id, options) => ({
-            glide: null,
+            swiper: null,
             activeIndex: 0,
             id,
 
             init() {
-                // Find the glide element within this component
-                const glideEl = this.$el;
-                
-                if (!glideEl) {
-                    console.warn("Content Slider: Could not find glide element");
+                const swiperEl = this.$el;
+
+                if (!swiperEl) {
+                    console.warn("Content Slider: Could not find swiper element");
                     return;
                 }
 
                 // Parse options if string
                 const config = typeof options === "string" ? JSON.parse(options) : options;
 
-                // Initialize Glide.js
-                this.glide = new Glide(glideEl, {
-                    type: config.type || "carousel",
-                    perView: config.perView || 1,
-                    gap: config.gap || 0,
+                // Build Swiper config
+                const swiperConfig = {
+                    loop: config.loop || false,
                     rewind: config.rewind !== false,
-                    animationDuration: 400,
-                    animationTimingFunc: "ease-in-out",
+                    slidesPerView: config.slidesPerView || 1,
+                    spaceBetween: config.spaceBetween || 0,
+                    speed: config.speed || 400,
+                    effect: config.effect || 'slide',
+                };
+
+                // Add fade-specific options for smooth crossfade
+                if (config.effect === 'fade') {
+                    swiperConfig.fadeEffect = config.fadeEffect || { crossFade: true };
+                }
+
+                // Add autoplay if enabled
+                if (config.autoplay && config.autoplay.delay) {
+                    swiperConfig.autoplay = config.autoplay;
+                }
+
+                // Add navigation if arrows exist
+                const prevEl = swiperEl.querySelector('.swiper-button-prev');
+                const nextEl = swiperEl.querySelector('.swiper-button-next');
+                if (prevEl && nextEl) {
+                    swiperConfig.navigation = { prevEl, nextEl };
+                }
+
+                // Add pagination if exists - use custom bullet classes to avoid Swiper's default styling
+                const paginationEl = swiperEl.querySelector('.swiper-pagination');
+                if (paginationEl) {
+                    const bulletClass = paginationEl.dataset.bulletClass || '';
+                    const bulletNormal = paginationEl.dataset.bulletNormal || '';
+                    const bulletActive = paginationEl.dataset.bulletActive || '';
+                    const normalClasses = bulletNormal.split(' ').filter(Boolean);
+                    const activeClasses = bulletActive.split(' ').filter(Boolean);
+
+                    swiperConfig.pagination = {
+                        el: paginationEl,
+                        clickable: true,
+                        bulletClass: 'content-slider-bullet ' + bulletClass,
+                        bulletActiveClass: 'content-slider-bullet-active',
+                        renderBullet: function(index, className) {
+                            // Start with normal color, active will be updated by callback
+                            return '<span class="' + className + ' ' + bulletNormal + '"></span>';
+                        },
+                    };
+
+                    // Update bullet colors when pagination updates
+                    swiperConfig.on = swiperConfig.on || {};
+                    swiperConfig.on.paginationUpdate = function(swiper) {
+                        const bullets = paginationEl.querySelectorAll('.content-slider-bullet');
+                        bullets.forEach((bullet, index) => {
+                            const isActive = bullet.classList.contains('content-slider-bullet-active');
+                            if (isActive) {
+                                normalClasses.forEach(cls => bullet.classList.remove(cls));
+                                activeClasses.forEach(cls => bullet.classList.add(cls));
+                            } else {
+                                activeClasses.forEach(cls => bullet.classList.remove(cls));
+                                normalClasses.forEach(cls => bullet.classList.add(cls));
+                            }
+                        });
+                    };
+                }
+
+                // Initialize Swiper
+                this.swiper = new Swiper(swiperEl, swiperConfig);
+
+                // Listen for slide changes
+                this.swiper.on('slideChange', () => {
+                    this.activeIndex = this.swiper.realIndex;
                 });
 
-                // Listen for slide changes - use run.after to ensure index is updated
-                this.glide.on(["run.after", "move.after"], () => {
-                    this.activeIndex = this.glide.index;
-                });
-
-                // Mount the slider
-                this.glide.mount();
-
-                // Set initial active index after mount
-                this.activeIndex = this.glide.index;
+                // Set initial active index
+                this.activeIndex = this.swiper.realIndex;
             },
 
             destroy() {
-                if (this.glide) {
-                    this.glide.destroy();
-                    this.glide = null;
+                if (this.swiper) {
+                    this.swiper.destroy();
+                    this.swiper = null;
                 }
             },
         }));
