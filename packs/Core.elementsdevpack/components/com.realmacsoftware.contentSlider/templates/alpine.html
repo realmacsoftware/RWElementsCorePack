@@ -6,9 +6,17 @@
         padding: 0;
         list-style: none;
     }
+
     .swiper-slide {
         height: auto;
     }
+
+    .swiper-slide > * > * {
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        isolation: isolate;
+    }
+
     /* Custom pagination bullets - no Swiper styling, just Tailwind classes */
     .content-slider-bullet {
         display: inline-block;
@@ -67,9 +75,9 @@
                     swiperConfig.autoplay = config.autoplay;
                 }
 
-                // Add navigation if arrows exist
-                const prevEl = swiperEl.querySelector('.swiper-button-prev');
-                const nextEl = swiperEl.querySelector('.swiper-button-next');
+                // Add navigation if arrows exist (use custom classes to avoid Swiper's default styling)
+                const prevEl = swiperEl.querySelector('.content-slider-prev');
+                const nextEl = swiperEl.querySelector('.content-slider-next');
                 if (prevEl && nextEl) {
                     swiperConfig.navigation = { prevEl, nextEl };
                 }
