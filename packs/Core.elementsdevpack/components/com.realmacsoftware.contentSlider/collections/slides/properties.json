@@ -1,0 +1,17 @@
+{
+    "groups": [
+        {
+            "title": "Slide",
+            "properties": [
+                {
+                    "title": "Title",
+                    "property": "title",
+                    "responsive": false,
+                    "text": {
+                        "default": "Slide"
+                    }
+                }
+            ]
+        }
+    ]
+}

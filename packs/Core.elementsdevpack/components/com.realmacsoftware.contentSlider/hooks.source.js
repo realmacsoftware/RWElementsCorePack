@@ -1,12 +1,9 @@
 const transformHook = (rw) => {
     const {
         globalID,
-        slideCount,
         transitionEffect,
-        transitionSpeed,
         autoPlay,
         autoPlayInterval,
-        loop,
         editorActiveSlide,
         showArrows,
         showDots,
@@ -26,19 +23,21 @@ const transformHook = (rw) => {
     const { id } = rw.node;
     const edit = mode === "edit";
 
-    // Parse slide count with bounds
-    const count = Math.max(1, Math.min(20, parseInt(slideCount) || 3));
+    // Get slides from collection
+    const collectionSlides = rw.collections.slides || [];
+    const count = Math.max(1, collectionSlides.length);
     const isAutoPlay = autoPlay === true || autoPlay === "true";
     const interval = parseInt(autoPlayInterval) || 3000;
-    const isLoop = loop === true || loop === "true";
+    const isLoop = true;
 
     // Determine which slide to show as active in editor mode
     const activeSlideIndex = edit
         ? Math.max(0, Math.min((parseInt(editorActiveSlide) || 1) - 1, count - 1))
         : 0;
 
-    // Generate slides array based on slideCount
-    const slides = Array.from({ length: count }, (_, index) => ({
+    // Map collection slides to template data
+    const slides = collectionSlides.map((slide, index) => ({
+        ...slide,
         index,
         number: index + 1,
         isActive: index === activeSlideIndex,
@@ -89,7 +88,6 @@ const transformHook = (rw) => {
 
     // Parse transition settings
     const effect = transitionEffect || 'slide';
-    const speed = parseInt(transitionSpeed) || 400;
 
     // Swiper options to pass to Alpine
     const swiperOptions = {
@@ -97,7 +95,7 @@ const transformHook = (rw) => {
         rewind: !isLoop,
         slidesPerView: 1,
         spaceBetween: 0,
-        speed: speed,
+        speed: 400,
         effect: effect,
         autoplay: isAutoPlay ? { delay: interval, disableOnInteraction: false } : false,
     };
