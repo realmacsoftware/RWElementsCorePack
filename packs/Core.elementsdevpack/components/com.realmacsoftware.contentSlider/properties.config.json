@@ -5,36 +5,45 @@
             "icon": "rectangle.stack",
             "properties": [
                 {
+                    "title": "Number of Slides",
+                    "heading": {}
+                },
+                {
+                    "information": {},
+                    "title": "Create slides by adding items to the Slides collection."
+                },
+                {
+                    "title": "Slides",
+                    "property": "slides",
+                    "collection": {
+                        "identifier": "com.realmacsoftware.contentSlider.collections.slides"
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
                     "title": "Editor Preview",
                     "heading": {}
+                },
+                {
+                    "information": {},
+                    "title": "Preview the slide that will be shown in the editor."
                 },
                 {
                     "title": "Active Slide",
                     "id": "editorActiveSlide",
                     "responsive": false,
                     "number": {
-                        "default": 1,
-                        "subtitle": "Preview slide in editor"
+                        "default": 1
                     }
-                },
-                {
-                    "divider": {}
-                },
-                {
-                    "title": "Number of Slides",
-                    "heading": {}
-                },
-                {
-                    "title": "Slides",
-                    "id": "slideCount",
-                    "responsive": false,
-                    "number": {
-                        "default": 3
-                    }
-                },
-                {
-                    "divider": {}
-                },
+                }
+            ]
+        },
+        {
+            "title": "Playback",
+            "icon": "play.rectangle",
+            "properties": [
                 {
                     "title": "Transition",
                     "heading": {}
@@ -58,15 +67,6 @@
                     }
                 },
                 {
-                    "title": "Speed",
-                    "id": "transitionSpeed",
-                    "responsive": false,
-                    "number": {
-                        "default": 400,
-                        "subtitle": "in milliseconds"
-                    }
-                },
-                {
                     "divider": {}
                 },
                 {
@@ -86,23 +86,31 @@
                     "title": "Interval",
                     "id": "autoPlayInterval",
                     "responsive": false,
-                    "number": {
-                        "default": 3000,
-                        "subtitle": "in milliseconds"
+                    "select": {
+                        "default": "5000",
+                        "items": [
+                            {
+                                "title": "3 seconds",
+                                "value": "3000"
+                            },
+                            {
+                                "title": "5 seconds",
+                                "value": "5000"
+                            },
+                            {
+                                "title": "7 seconds",
+                                "value": "7000"
+                            },
+                            {
+                                "title": "10 seconds",
+                                "value": "10000"
+                            },
+                            {
+                                "title": "15 seconds",
+                                "value": "15000"
+                            }
+                        ]
                     }
-                },
-                {
-                    "divider": {}
-                },
-                {
-                    "title": "Loop",
-                    "heading": {}
-                },
-                {
-                    "title": "Enabled",
-                    "id": "loop",
-                    "responsive": false,
-                    "switch": {}
                 }
             ]
         },
