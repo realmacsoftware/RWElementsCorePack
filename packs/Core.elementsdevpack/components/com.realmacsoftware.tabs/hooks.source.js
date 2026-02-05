@@ -272,7 +272,7 @@ const transformHook = (rw) => {
             advancedClasses(rw),
         ]).toString(),
         tabList: classnames([
-            "flex flex-row",
+            "flex flex-row flex-wrap",
             tabListAlignmentClass,
             tabListGap,
             tabListPadding,
