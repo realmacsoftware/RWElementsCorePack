@@ -1,0 +1,23 @@
+{
+    "groups": [
+        {
+            "title": "Column",
+            "properties": [
+                {
+                    "title": "Width",
+                    "property": "columnWidth",
+                    "format": "w-{{value}}",
+                    "themeSpacing": {
+                        "mode": "single",
+                        "default": {
+                            "base": {
+                                "custom": false,
+                                "value": "auto"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

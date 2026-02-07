@@ -1,0 +1,22 @@
+<table class="{{classes.table}}">
+    <thead>
+        <tr class="{{classes.theadRow}}">
+            @each(column in columns)
+            <th class="{{classes.th}} {{column.widthClass}}">
+                @dropzone("column", title: "Column")
+            </th>
+            @endeach
+        </tr>
+    </thead>
+    <tbody class="{{classes.tbody}}">
+        @each(row in rows)
+        <tr class="{{classes.tr}}">
+            @each(column in columns)
+                <td class="{{classes.td}} {{column.widthClass}}">
+                    @dropzone("cell", title: "Cell")
+                </td>
+            @endeach
+        </tr>
+        @endeach
+    </tbody>
+</table>

@@ -1,0 +1,328 @@
+{
+    "groups": [
+        {
+            "title": "Settings",
+            "icon": "gearshape",
+            "properties": [
+                {
+                    "title": "Columns",
+                    "id": "columns",
+                    "collection": {
+                        "identifier": "com.realmacsoftware.table.collections.columns"
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Table Settings",
+                    "heading": {}
+                },
+                {
+                    "title": "Rows",
+                    "id": "rowCount",
+                    "responsive": false,
+                    "number": {
+                        "default": 3
+                    }
+                },
+                {
+                    "title": "Borders",
+                    "heading": {}
+                },
+                {
+                    "title": "Width",
+                    "id": "tableBorderWidth",
+                    "themeBorderWidth": {
+                        "default": {
+                            "base": {
+                                "name": "1"
+                            }
+                        }
+                    }
+                },
+                {
+                    "title": "Color",
+                    "id": "tableBorderColor",
+                    "format": "border-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 300
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Header Styling",
+            "icon": "rectangle.topthird.inset.filled",
+            "properties": [
+                {
+                    "title": "Padding",
+                    "id": "headerCellPadding",
+                    "themeSpacing": {
+                        "mode": "padding",
+                        "default": {
+                            "base": {
+                                "top": "1",
+                                "right": "2",
+                                "bottom": "1",
+                                "left": "2"
+                            }
+                        }
+                    }
+                },
+                {
+                    "title": "Background",
+                    "id": "headerBackground",
+                    "format": "bg-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 600
+                        }
+                    }
+                },
+                {
+                    "title": "Borders",
+                    "heading": {}
+                },
+                {
+                    "title": "Style",
+                    "id": "headerCellBorderStyle",
+                    "format": "border-{{value}}",
+                    "segmented": {
+                        "default": "solid",
+                        "items": [
+                            {
+                                "icon": "square",
+                                "value": "solid"
+                            },
+                            {
+                                "icon": "square.dashed",
+                                "value": "dashed"
+                            },
+                            {
+                                "icon": "square.dotted",
+                                "value": "dotted"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "title": "Width",
+                    "id": "headerCellBorderWidth",
+                    "themeBorderWidth": {
+                        "default": {
+                            "base": {
+                                "name": "1"
+                            }
+                        }
+                    }
+                },
+                {
+                    "title": "Color",
+                    "id": "headerCellBorderColor",
+                    "format": "border-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 300
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Body Cells",
+            "icon": "rectangle.bottomthird.inset.filled",
+            "properties": [
+                {
+                    "title": "Padding",
+                    "id": "bodyCellPadding",
+                    "themeSpacing": {
+                        "mode": "padding",
+                        "default": {
+                            "base": {
+                                "top": "2",
+                                "right": "2",
+                                "bottom": "2",
+                                "left": "2"
+                            }
+                        }
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Background",
+                    "heading": {}
+                },
+                {
+                    "title": "Color",
+                    "id": "oddRowBackground",
+                    "format": "odd:bg-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 50
+                        }
+                    }
+                },
+                {
+                    "title": "Striped",
+                    "id": "stripedRows",
+                    "responsive": false,
+                    "switch": {
+                        "default": false
+                    }
+                },
+                {
+                    "visible": "stripedRows == true",
+                    "title": "Even",
+                    "id": "evenRowBackground",
+                    "format": "even:bg-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 100
+                        }
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Borders",
+                    "heading": {}
+                },
+                {
+                    "title": "Width",
+                    "id": "bodyCellBorderWidth",
+                    "themeBorderWidth": {
+                        "default": {
+                            "base": {
+                                "name": "1"
+                            }
+                        }
+                    }
+                },
+                {
+                    "title": "Color",
+                    "id": "bodyCellBorderColor",
+                    "format": "border-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 300
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Layout",
+            "icon": "square.split.bottomrightquarter",
+            "properties": [
+                {
+                    "globalControl": "Layout"
+                }
+            ]
+        },
+        {
+            "title": "Sizing",
+            "icon": "square.resize",
+            "properties": [
+                {
+                    "globalControl": "Sizing"
+                }
+            ]
+        },
+        {
+            "title": "Spacing",
+            "icon": "squareshape.squareshape.dotted",
+            "properties": [
+                {
+                    "globalControl": "Spacing"
+                }
+            ]
+        },
+        {
+            "title": "Transitions",
+            "icon": "timer",
+            "properties": [
+                {
+                    "globalControl": "Transitions"
+                }
+            ]
+        },
+        {
+            "title": "Effects",
+            "icon": "wand.and.stars.inverse",
+            "properties": [
+                {
+                    "globalControl": "Effects"
+                }
+            ]
+        },
+        {
+            "title": "Filters",
+            "icon": "camera.filters",
+            "properties": [
+                {
+                    "globalControl": "Filters"
+                }
+            ]
+        },
+        {
+            "title": "Transforms",
+            "icon": "skew",
+            "properties": [
+                {
+                    "globalControl": "Transforms"
+                }
+            ]
+        },
+        {
+            "title": "Background",
+            "icon": "paintbrush.fill",
+            "properties": [
+                {
+                    "globalControl": "BackgroundTransparent"
+                }
+            ]
+        },
+        {
+            "title": "Border",
+            "icon": "square.dashed",
+            "properties": [
+                {
+                    "globalControl": "Borders"
+                }
+            ]
+        },
+        {
+            "title": "Advanced",
+            "icon": "gearshape",
+            "properties": [
+                {
+                    "title": "CSS Classes",
+                    "id": "cssClasses",
+                    "textArea": {
+                        "default": ""
+                    }
+                },
+                {
+                    "title": "ID",
+                    "id": "globalID",
+                    "responsive": false,
+                    "text": {
+                        "default": ""
+                    }
+                }
+            ]
+        }
+    ]
+}
