@@ -467,7 +467,7 @@
             "icon": "square.dashed",
             "properties": [
                 {
-                    "globalControl": "Borders"
+                    "globalControl": "BordersTable"
                 }
             ]
         },

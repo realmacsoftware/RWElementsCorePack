@@ -80,7 +80,7 @@ const transformHook = (rw) => {
         table: classnames([
             "min-w-full w-full border-collapse",
             hasCustomWidths ? "table-fixed" : "",
-            globalBorders(rw),
+            globalBordersTable(rw),
         ]).toString(),
         theadRow: classnames([
             headerBackground,
