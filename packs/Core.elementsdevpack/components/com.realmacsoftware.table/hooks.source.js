@@ -2,6 +2,7 @@ const transformHook = (rw) => {
     const {
         globalID,
         rowCount,
+        showHeader,
         // Header styling
         headerBackground,
         // Header cells
@@ -9,15 +10,27 @@ const transformHook = (rw) => {
         headerCellBorderStyle,
         headerCellBorderWidth,
         headerCellBorderColor,
+        // Header text
+        headerTextAlignment,
+        headerTextFont,
+        headerTextColor,
+        headerTextSize,
+        headerTextWeight,
+        headerTextLetterSpacing,
         // Body styling
         stripedRows,
         oddRowBackground,
         evenRowBackground,
         // Body cells
         bodyCellPadding,
+        // Body text
+        bodyTextAlignment,
+        bodyTextFont,
+        bodyTextColor,
+        bodyTextSize,
+        bodyTextWeight,
+        bodyTextLetterSpacing,
         // Borders
-        tableBorderWidth,
-        tableBorderColor,
         bodyCellBorders,
         bodyCellBorderWidth,
         bodyCellBorderColor,
@@ -60,14 +73,12 @@ const transformHook = (rw) => {
             globalFilters(rw),
             globalTransforms(rw),
             globalBackground(rw),
-            globalBorders(rw),
             advancedClasses(rw),
         ]).toString(),
         table: classnames([
             "min-w-full w-full border-collapse",
             hasCustomWidths ? "table-fixed" : "",
-            tableBorderWidth,
-            tableBorderColor,
+            globalBorders(rw),
         ]).toString(),
         theadRow: classnames([
             headerBackground,
@@ -77,18 +88,28 @@ const transformHook = (rw) => {
             headerCellBorderStyle,
             headerCellBorderWidth,
             headerCellBorderColor,
+            headerTextAlignment,
+            headerTextFont,
+            headerTextColor,
+            headerTextSize,
+            headerTextWeight,
+            headerTextLetterSpacing,
         ]).toString(),
         tbody: "",
         tr: classnames([
-            tableBorderWidth ? "border-t" : "",
-            tableBorderColor,
             rowBgClasses,
         ]).toString(),
         td: classnames([
             bodyCellPadding,
             bodyCellBorderWidth,
             bodyCellBorderColor,
-            bodyCellBorders === true || bodyCellBorders === "true" ? bodyCellBorderColor : "",
+            bodyCellBorders,
+            bodyTextAlignment,
+            bodyTextFont,
+            bodyTextColor,
+            bodyTextSize,
+            bodyTextWeight,
+            bodyTextLetterSpacing,
         ]).toString(),
     };
 
@@ -104,10 +125,13 @@ const transformHook = (rw) => {
         rw.addAnchor(globalID);
     }
 
+    const wantsHeader = showHeader === true || showHeader === "true";
+
     rw.setProps({
         classes,
         columns: processedColumns,
         rows,
+        showHeader: wantsHeader,
     });
 };
 

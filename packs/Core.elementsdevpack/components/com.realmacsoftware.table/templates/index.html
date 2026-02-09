@@ -1,19 +1,21 @@
 <table class="{{classes.table}}">
+    @if(showHeader)
     <thead>
         <tr class="{{classes.theadRow}}">
             @each(column in columns)
             <th class="{{classes.th}} {{column.widthClass}}">
-                @dropzone("column", title: "Column")
+                @text("column", default: "Column")
             </th>
             @endeach
         </tr>
     </thead>
+    @endif
     <tbody class="{{classes.tbody}}">
         @each(row in rows)
         <tr class="{{classes.tr}}">
             @each(column in columns)
                 <td class="{{classes.td}} {{column.widthClass}}">
-                    @dropzone("cell", title: "Cell")
+                    @text("cell", default: "Cell")
                 </td>
             @endeach
         </tr>

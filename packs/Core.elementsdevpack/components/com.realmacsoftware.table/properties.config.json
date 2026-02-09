@@ -25,70 +25,64 @@
                     "number": {
                         "default": 3
                     }
-                },
-                {
-                    "title": "Borders",
-                    "heading": {}
-                },
-                {
-                    "title": "Width",
-                    "id": "tableBorderWidth",
-                    "themeBorderWidth": {
-                        "default": {
-                            "base": {
-                                "name": "1"
-                            }
-                        }
-                    }
-                },
-                {
-                    "title": "Color",
-                    "id": "tableBorderColor",
-                    "format": "border-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "surface",
-                            "brightness": 300
-                        }
-                    }
                 }
             ]
         },
         {
-            "title": "Header Styling",
+            "title": "Header Cells",
             "icon": "rectangle.topthird.inset.filled",
             "properties": [
                 {
+                    "title": "Header Cells",
+                    "heading": {}
+                },
+                {
+                    "title": "Show",
+                    "id": "showHeader",
+                    "responsive": false,
+                    "switch": {
+                        "default": true
+                    }
+                },
+                {
+                    "visible": "showHeader == true",
+                    "divider": {}
+                },
+                {
+                    "visible": "showHeader == true",
                     "title": "Padding",
                     "id": "headerCellPadding",
                     "themeSpacing": {
                         "mode": "padding",
                         "default": {
                             "base": {
-                                "top": "1",
+                                "top": "2",
                                 "right": "2",
-                                "bottom": "1",
+                                "bottom": "2",
                                 "left": "2"
                             }
                         }
                     }
                 },
                 {
+                    "visible": "showHeader == true",
                     "title": "Background",
                     "id": "headerBackground",
                     "format": "bg-{{value}}",
                     "themeColor": {
                         "default": {
                             "name": "surface",
-                            "brightness": 600
+                            "brightness": 50
                         }
                     }
                 },
                 {
+                    "visible": "showHeader == true",
                     "title": "Borders",
                     "heading": {}
                 },
                 {
+                    "visible": "showHeader == true",
                     "title": "Style",
                     "id": "headerCellBorderStyle",
                     "format": "border-{{value}}",
@@ -111,32 +105,99 @@
                     }
                 },
                 {
+                    "visible": "showHeader == true",
                     "title": "Width",
                     "id": "headerCellBorderWidth",
                     "themeBorderWidth": {
                         "default": {
                             "base": {
-                                "name": "1"
+                                "top": "Default",
+                                "right": "Default",
+                                "bottom": "Default",
+                                "left": "Default"
                             }
                         }
                     }
                 },
                 {
+                    "visible": "showHeader == true",
                     "title": "Color",
                     "id": "headerCellBorderColor",
                     "format": "border-{{value}}",
                     "themeColor": {
                         "default": {
                             "name": "surface",
-                            "brightness": 300
+                            "brightness": 200
                         }
                     }
                 }
             ]
         },
         {
+            "title": "Header Text",
+            "icon": "textformat",
+            "visible": "showHeader == true",
+            "properties": [
+                {
+                    "title": "Alignment",
+                    "id": "headerTextAlignment",
+                    "segmented": {
+                        "use": "TextAlign"
+                    }
+                },
+                {
+                    "title": "Font",
+                    "id": "headerTextFont",
+                    "themeFont": {
+                        "default": {
+                            "name": "heading"
+                        }
+                    }
+                },
+                {
+                    "title": "Color",
+                    "id": "headerTextColor",
+                    "format": "text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "text",
+                            "brightness": 50
+                        }
+                    }
+                },
+                {
+                    "title": "Size",
+                    "id": "headerTextSize",
+                    "themeTextStyle": {
+                        "default": {
+                            "base": {
+                                "name": "base"
+                            }
+                        }
+                    }
+                },
+                {
+                    "title": "Weight",
+                    "id": "headerTextWeight",
+                    "format": "font-[{{value}}]",
+                    "slider": {
+                        "use": "FontWeight",
+                        "default": 600
+                    }
+                },
+                {
+                    "title": "Spacing",
+                    "id": "headerTextLetterSpacing",
+                    "format": "tracking-{{value}}",
+                    "slider": {
+                        "use": "LetterSpacing"
+                    }
+                }
+            ]
+        },
+        {
             "title": "Body Cells",
-            "icon": "rectangle.bottomthird.inset.filled",
+            "icon": "tablecells",
             "properties": [
                 {
                     "title": "Padding",
@@ -204,7 +265,10 @@
                     "themeBorderWidth": {
                         "default": {
                             "base": {
-                                "name": "1"
+                                "top": "Default",
+                                "right": "Default",
+                                "bottom": "Default",
+                                "left": "Default"
                             }
                         }
                     }
@@ -216,8 +280,69 @@
                     "themeColor": {
                         "default": {
                             "name": "surface",
-                            "brightness": 300
+                            "brightness": 200
                         }
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Body Text",
+            "icon": "textformat",
+            "properties": [
+                {
+                    "title": "Alignment",
+                    "id": "bodyTextAlignment",
+                    "segmented": {
+                        "use": "TextAlign"
+                    }
+                },
+                {
+                    "title": "Font",
+                    "id": "bodyTextFont",
+                    "themeFont": {
+                        "default": {
+                            "name": "body"
+                        }
+                    }
+                },
+                {
+                    "title": "Color",
+                    "id": "bodyTextColor",
+                    "format": "text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "text",
+                            "brightness": 50
+                        }
+                    }
+                },
+                {
+                    "title": "Size",
+                    "id": "bodyTextSize",
+                    "themeTextStyle": {
+                        "default": {
+                            "base": {
+                                "name": "base"
+                            }
+                        }
+                    }
+                },
+                {
+                    "title": "Weight",
+                    "id": "bodyTextWeight",
+                    "format": "font-[{{value}}]",
+                    "slider": {
+                        "use": "FontWeight",
+                        "default": 400
+                    }
+                },
+                {
+                    "title": "Spacing",
+                    "id": "bodyTextLetterSpacing",
+                    "format": "tracking-{{value}}",
+                    "slider": {
+                        "use": "LetterSpacing"
                     }
                 }
             ]
