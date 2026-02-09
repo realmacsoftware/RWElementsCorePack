@@ -7,6 +7,7 @@ const transformHook = (rw) => {
         headerBackground,
         // Header cells
         headerCellPadding,
+        headerVerticalAlignment,
         headerCellBorderStyle,
         headerCellBorderWidth,
         headerCellBorderColor,
@@ -23,6 +24,7 @@ const transformHook = (rw) => {
         evenRowBackground,
         // Body cells
         bodyCellPadding,
+        bodyVerticalAlignment,
         // Body text
         bodyTextAlignment,
         bodyTextFont,
@@ -85,6 +87,7 @@ const transformHook = (rw) => {
         ]).toString(),
         th: classnames([
             headerCellPadding,
+            headerVerticalAlignment,
             headerCellBorderStyle,
             headerCellBorderWidth,
             headerCellBorderColor,
@@ -101,6 +104,7 @@ const transformHook = (rw) => {
         ]).toString(),
         td: classnames([
             bodyCellPadding,
+            bodyVerticalAlignment,
             bodyCellBorderWidth,
             bodyCellBorderColor,
             bodyCellBorders,
