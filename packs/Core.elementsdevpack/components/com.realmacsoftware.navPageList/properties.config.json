@@ -211,14 +211,6 @@
           }
         },
         {
-          "title": "Show",
-          "id": "showPageTitles",
-          "responsive": false,
-          "switch": {
-            "default": true
-          }
-        },
-        {
           "title": "Font",
           "id": "globalMenuItemFontFamily",
           "themeFont": {
