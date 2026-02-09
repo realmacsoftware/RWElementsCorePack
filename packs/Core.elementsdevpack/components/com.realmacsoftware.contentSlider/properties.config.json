@@ -350,27 +350,6 @@
                     "globalControl": "Borders"
                 }
             ]
-        },
-        {
-            "title": "Advanced",
-            "icon": "gearshape",
-            "properties": [
-                {
-                    "title": "CSS Classes",
-                    "id": "cssClasses",
-                    "textArea": {
-                        "default": ""
-                    }
-                },
-                {
-                    "title": "ID",
-                    "id": "globalID",
-                    "responsive": false,
-                    "text": {
-                        "default": ""
-                    }
-                }
-            ]
         }
     ]
 }
