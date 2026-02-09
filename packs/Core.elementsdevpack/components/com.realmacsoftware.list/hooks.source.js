@@ -43,14 +43,13 @@ const transformHook = (rw) => {
         advancedClasses(rw),
     ]).toString();
 
-    // List item classes - target dropzone directly in edit mode to preserve marker alignment
+    // List item classes — apply the text line-height directly on the <li> so the
+    // ::marker inherits it (line-height can't be set on ::marker directly in WebKit)
     const itemClasses = classnames([
-        mode === "edit"
-            ? "[&>[data-rwx-droparea]]:inline-flex [&>[data-rwx-droparea]]:items-center [&>[data-rwx-droparea]]:align-middle"
-            : "",
         itemPadding,
         listStyleSize,
         globalHeadingTextColor(rw),
+        mode === "edit" ? "[&>[data-slate-editor=true]]:align-top [&>[data-slate-editor=true]]:-translate-y-[2px]" : "",
         mode === "edit"
             ? classnames(
                 globalTextFontsAndTextStyles(rw).split(" ").filter(Boolean)

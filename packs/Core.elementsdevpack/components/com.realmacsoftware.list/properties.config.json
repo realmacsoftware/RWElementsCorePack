@@ -94,7 +94,7 @@
                     "title": "Position",
                     "id": "listStylePosition",
                     "segmented": {
-                        "default": "list-inside",
+                        "default": "list-outside",
                         "items": [
                             {
                                 "title": "Inside",
