@@ -1,8 +1,10 @@
 @if(hasBreadcrumbs)
 <ol class="{{classes.list}}">
     @each(crumb in items)
-    <li class="{{classes.item}}">
-        @if(crumb.isLast)
+    <li class="{{classes.item}} @if(crumb.hiddenOnMobile){{classes.hiddenOnMobile}}@endif @if(crumb.mobileOnly){{classes.mobileOnly}}@endif">
+        @if(crumb.isEllipsis)
+        <span class="{{classes.current}}">&hellip;</span>
+        @elseif(crumb.isLast)
         <span class="{{classes.current}}" aria-current="page">{{crumb.title}}</span>
         @else
         <a class="{{classes.link}}" href="{{crumb.url}}">{{crumb.title}}</a>

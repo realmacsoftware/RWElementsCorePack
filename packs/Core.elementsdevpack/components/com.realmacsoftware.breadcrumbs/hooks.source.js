@@ -6,6 +6,7 @@ const transformHook = (rw) => {
         separatorSize,
         showHome,
         homeLabel,
+        truncateOnMobile,
         gap,
         flexAlignItems,
     } = rw.props;
@@ -71,12 +72,36 @@ const transformHook = (rw) => {
     }
 
     // Mark each item with positional flags
-    const items = breadcrumbs.map((crumb, index) => ({
+    let items = breadcrumbs.map((crumb, index) => ({
         ...crumb,
         isFirst: index === 0,
         isLast: index === breadcrumbs.length - 1,
         showSeparator: index < breadcrumbs.length - 1,
     }));
+
+    // Mobile truncation: collapse middle items and show only the direct
+    // parent + current page on small screens. An ellipsis item is inserted
+    // to indicate hidden content. Uses CSS responsive classes so the full
+    // trail is still visible on larger breakpoints.
+    const wantsTruncate =
+        truncateOnMobile === true || truncateOnMobile === "true";
+
+    if (wantsTruncate && items.length > 2) {
+        // Hide every item except the last two (parent + current)
+        items = items.map((item, index) => ({
+            ...item,
+            hiddenOnMobile: index < items.length - 2,
+        }));
+
+        // Insert an ellipsis item just before the parent
+        const ellipsis = {
+            isEllipsis: true,
+            mobileOnly: true,
+            showSeparator: true,
+            hiddenOnMobile: false,
+        };
+        items.splice(items.length - 2, 0, ellipsis);
+    }
 
     // Default chevron SVG used when no custom separator icon is provided
     const defaultChevron =
@@ -148,6 +173,8 @@ const transformHook = (rw) => {
             separatorColor,
             "flex-shrink-0",
         ]).toString(),
+        hiddenOnMobile: "hidden md:flex",
+        mobileOnly: "flex md:hidden",
     };
 
     rw.setRootElement({

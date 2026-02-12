@@ -65,6 +65,25 @@
           "divider": {}
         },
         {
+          "title": "Truncate on Mobile",
+          "heading": {}
+        },
+        {
+          "title": "Enable",
+          "id": "truncateOnMobile",
+          "responsive": false,
+          "switch": {
+            "default": true
+          }
+        },
+        {
+          "information": {},
+          "title": "Show only the direct parent and current page on small screens"
+        },
+        {
+          "divider": {}
+        },
+        {
           "title": "Layout",
           "heading": {}
         },
