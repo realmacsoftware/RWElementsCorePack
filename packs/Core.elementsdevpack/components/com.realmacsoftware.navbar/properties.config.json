@@ -1115,7 +1115,7 @@
                 {
                     "title": "Vertical",
                     "id": "submenuItemSpacing",
-                    "format": "py-{{value}}",
+                    "format": "my-{{value}}",
                     "themeSpacing": {
                         "mode": "single",
                         "default": {
