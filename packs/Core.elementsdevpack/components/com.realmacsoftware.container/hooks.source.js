@@ -42,11 +42,11 @@ const transformHook = (rw) => {
     const bgVideo =
         globalBgType == "video" && globalBgVideo
             ? {
-                  isYoutube: globalBgVideo.format == "youtube",
-                  isVimeo: globalBgVideo.format == "vimeo",
-                  isMP4: globalBgVideo.format == "mp4",
-                  video: globalBgVideo,
-              }
+                isYoutube: globalBgVideo.format == "youtube",
+                isVimeo: globalBgVideo.format == "vimeo",
+                isMP4: globalBgVideo.format == "mp4",
+                video: globalBgVideo,
+            }
             : false;
 
     const contentWidthProps = {
@@ -69,57 +69,57 @@ const transformHook = (rw) => {
     const classes = {
         wrapper: classnames([
             id,
-            `group/container group/${id} [&>*]:col-start-1 [&>*]:row-start-1`,
+            `group/container group/${id} grid-cols-1 [&>*]:col-start-1 [&>*]:row-start-1 [&>*]:min-w-0`,
             globalID && `group/${globalID}`,
             globalActAsGridOrFlexItem(rw),
             globalLayout(rw, { defaultDisplay: "grid" }),
             globalSizingContainer(rw),
             globalTransitions(rw),
             globalEffectsApplyTo === "everything" &&
-                globalEffects(rw, { isContainer: true }),
+            globalEffects(rw, { isContainer: true }),
             globalTransformsApplyTo === "everything" &&
-                globalTransforms(rw, { isContainer: true }),
+            globalTransforms(rw, { isContainer: true }),
             globalFiltersApplyTo === "everything" &&
-                globalFilters(rw, { isContainer: true }),
+            globalFilters(rw, { isContainer: true }),
             spacingEnabled == "true" && margin,
             globalControlTypeBorders != "none" && globalBordersRadius,
             advancedClasses(rw),
             globalBgType == "video" &&
-                globalBgVideo &&
-                globalBgVideoAspectRatio &&
-                "aspect-video",
+            globalBgVideo &&
+            globalBgVideoAspectRatio &&
+            "aspect-video",
         ]).toString(),
         background: classnames([
             `z-0 transform-gpu`,
             globalTransitions(rw),
             globalBorders(rw, { isContainer: true }),
             globalEffectsApplyTo === "background" &&
-                globalEffects(rw, { isContainer: true }),
+            globalEffects(rw, { isContainer: true }),
             globalTransformsApplyTo === "background" &&
-                globalTransforms(rw, { isContainer: true }),
+            globalTransforms(rw, { isContainer: true }),
             globalFiltersApplyTo === "background" &&
-                globalFilters(rw, { isContainer: true }),
+            globalFilters(rw, { isContainer: true }),
             globalBackground(rw, { peer: true }),
+            globalBackground(rw),
             `overflow-hidden`,
         ]).toString(),
         content: classnames([
             `relative z-30 flex flex-col peer`,
             globalTransitions(rw),
             globalEffectsApplyTo === "content" &&
-                globalEffects(rw, { isContainer: true }),
+            globalEffects(rw, { isContainer: true }),
             globalTransformsApplyTo === "content" &&
-                globalTransforms(rw, { isContainer: true }),
+            globalTransforms(rw, { isContainer: true }),
             globalFiltersApplyTo === "content" &&
-                globalFilters(rw, { isContainer: true }),
+            globalFilters(rw, { isContainer: true }),
             globalSizingContainer(contentWidthProps),
             contentAlignSelf,
             contentJustifySelf,
             contentGap,
             spacingEnabled == "true" && padding,
         ]).toString(),
-        overlay: `relative z-20 ${
-            globalControlTypeBorders != "none" && globalBordersRadius
-        } ${globalTransitions(rw)} ${globalOverlay(rw, { isContainer: true })}`,
+        overlay: `relative z-20 ${globalControlTypeBorders != "none" && globalBordersRadius
+            } ${globalTransitions(rw)} ${globalOverlay(rw, { isContainer: true })}`,
     };
 
     rw.setRootElement({
