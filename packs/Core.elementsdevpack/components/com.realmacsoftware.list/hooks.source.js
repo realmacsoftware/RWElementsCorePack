@@ -13,6 +13,9 @@ const transformHook = (rw) => {
 
     const { mode } = rw.project;
 
+    const isListInside = listStylePosition === "list-inside";
+    const markerSizePx = listStyleSize?.match(/marker:text-\[(\d+)px\]/)?.[1] || "16";
+
     const {
         globalBgImageFetchPriorityEnabled,
         globalBgImageFetchPriorityLinkElement,
@@ -49,7 +52,7 @@ const transformHook = (rw) => {
         itemPadding,
         listStyleSize,
         globalHeadingTextColor(rw),
-        mode === "edit" ? "[&>[data-slate-editor=true]]:align-top [&>[data-slate-editor=true]]:-translate-y-[2px]" : "",
+        mode === "edit" ? `[&>[data-slate-editor=true]]:align-top [&>[data-slate-editor=true]]:-translate-y-[2px]${isListInside ? ` [&>[data-slate-editor=true]]:w-[calc(100%-${markerSizePx}px)]` : ""}` : "",
         mode === "edit"
             ? classnames(
                 globalTextFontsAndTextStyles(rw).split(" ").filter(Boolean)
