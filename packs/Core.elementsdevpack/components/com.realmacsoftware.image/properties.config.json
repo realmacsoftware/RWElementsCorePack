@@ -185,7 +185,7 @@
                 {
                     "title": "Enable",
                     "id": "wantsLightbox",
-                    "responsive": false,
+                    "responsive": true,
                     "switch": {}
                 },
                 {

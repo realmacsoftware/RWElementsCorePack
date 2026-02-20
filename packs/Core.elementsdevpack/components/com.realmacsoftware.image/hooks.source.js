@@ -11,7 +11,6 @@ const transformHook = (rw) => {
         imageProtection,
         imageFetchPriority,
 
-        wantsLightbox,
         imageLightboxColor,
         imageLightboxColorOpacity,
         imageLightboxGlobalFiltersBackdropBlur,
@@ -26,6 +25,7 @@ const transformHook = (rw) => {
         imageCmsFieldDark: responsiveImageCmsFieldDark,
         imageCustomSource,
         imageCustomSourceDark,
+        wantsLightbox,
     } = rw.responsiveProps;
     const { breakpoints } = rw.theme;
     const { names, screens } = breakpoints;
@@ -39,6 +39,22 @@ const transformHook = (rw) => {
     const isCMSImage = imageType == "cms";
     const isCustomImage = imageType == "custom";
     const isResourceImage = imageType == "resource";
+
+    const wantsLightboxAtAnyBreakpoint = Object.values(wantsLightbox).some(v => v === true);
+
+    const lightboxCursorClasses = Object.entries(wantsLightbox)
+        .map(([breakpoint, enabled]) => {
+            const prefix = breakpoint === 'base' ? '' : `${breakpoint}:`;
+            return enabled ? `${prefix}cursor-zoom-in` : `${prefix}cursor-default`;
+        })
+        .join(' ');
+
+    const lightboxBreakpoints = Object.entries(wantsLightbox)
+        .map(([breakpoint, enabled]) => ({
+            minWidth: breakpoint === 'base' ? 0 : (screens[breakpoint] || 0),
+            enabled,
+        }))
+        .sort((a, b) => a.minWidth - b.minWidth);
 
     // generate responsive image data for picture element
     const generateResponsiveImageData = (resourceObject) => {
@@ -166,7 +182,7 @@ const transformHook = (rw) => {
             advancedClasses(rw),
         ]).toString(),
         img: classnames([
-            wantsLightbox && "cursor-zoom-in",
+            wantsLightboxAtAnyBreakpoint && lightboxCursorClasses,
             `max-w-[100%] w-full`,
             globalTransitions(rw),
             globalEffects(rw),
@@ -221,7 +237,8 @@ const transformHook = (rw) => {
         imageHeight: !isResourceImage ? imageIntrinsicHeight : image?.height,
         assetPath,
         sharedAssetPath,
-        wantsLightbox: wantsLightbox && mode != "edit",
+        wantsLightbox: wantsLightboxAtAnyBreakpoint && mode != "edit",
+        lightboxBreakpointsJSON: JSON.stringify(lightboxBreakpoints),
         id: rw.node.id,
         wantsFetchPriority,
     });

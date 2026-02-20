@@ -35,7 +35,13 @@
             height="{{imageHeight}}"
             @if(wantsLightbox)
             x-data=""
-            @click="$dispatch('image-lightbox-open', { id: '{{id}}' })"
+            data-lightbox-breakpoints='{{lightboxBreakpointsJSON}}'
+            @click="
+                const bps = JSON.parse($el.dataset.lightboxBreakpoints);
+                let enabled = false;
+                bps.forEach(bp => { if (window.innerWidth >= bp.minWidth) enabled = bp.enabled; });
+                if (enabled) $dispatch('image-lightbox-open', { id: '{{id}}' });
+            "
             @endif
             @if(imageProtection)
             oncontextmenu="return false"
