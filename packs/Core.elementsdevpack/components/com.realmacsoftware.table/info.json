@@ -2,5 +2,6 @@
     "identifier": "com.realmacsoftware.table",
     "title": "Table",
     "group": "Content",
-    "icon": "icon"
+    "icon": "icon",
+    "helpURL": "https://docs.realmacsoftware.com/elements-docs/elements-app/components/built-in-components/table"
 }
