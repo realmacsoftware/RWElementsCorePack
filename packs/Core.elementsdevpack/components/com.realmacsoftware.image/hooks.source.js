@@ -84,12 +84,20 @@ const transformHook = (rw) => {
         const sources = names
             .filter((name) => imageFileSize[name])
             .sort((a, b) => screens[b] - screens[a])
-            .map((name) => ({
-                media: `(min-width: ${screens[name]}px)`,
-                srcset: rw.resizeResource(resource, imageFileSize[name] * 2),
-                breakpoint: name,
-                minWidth: screens[name],
-            }));
+            .map((name) => {
+                const displayWidth = Math.min(imageFileSize[name], resource?.width || Infinity);
+                const source = {
+                    media: `(min-width: ${screens[name]}px)`,
+                    srcset: rw.resizeResource(resource, imageFileSize[name] * 2),
+                    breakpoint: name,
+                    minWidth: screens[name],
+                };
+                if (resource?.width && resource?.height) {
+                    source.width = displayWidth;
+                    source.height = Math.round(displayWidth * resource.height / resource.width);
+                }
+                return source;
+            });
 
         return {
             sources,
@@ -100,10 +108,16 @@ const transformHook = (rw) => {
 
     const generateDefaultSrc = (resource) => {
         if (!wantsCustomSizing) return resource;
-        return {
+        const displayWidth = Math.min(imageFileSize.base, resource?.width || Infinity);
+        const resized = {
             ...resource,
             image: rw.resizeResource(resource, imageFileSize.base * 2),
         };
+        if (resource?.width && resource?.height) {
+            resized.width = displayWidth;
+            resized.height = Math.round(displayWidth * resource.height / resource.width);
+        }
+        return resized;
     };
 
     const responsiveImageData = generateResponsiveImageData(
@@ -233,8 +247,8 @@ const transformHook = (rw) => {
         defaultSrc: image,
         alt: imageAlt,
         classes,
-        imageWidth: !isResourceImage ? imageIntrinsicWidth : image?.width,
-        imageHeight: !isResourceImage ? imageIntrinsicHeight : image?.height,
+        imageWidth: !isResourceImage ? imageIntrinsicWidth : lightImage.resource?.width,
+        imageHeight: !isResourceImage ? imageIntrinsicHeight : lightImage.resource?.height,
         assetPath,
         sharedAssetPath,
         wantsLightbox: wantsLightboxAtAnyBreakpoint && mode != "edit",
