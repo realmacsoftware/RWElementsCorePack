@@ -137,8 +137,7 @@ const transformHook = (rw) => {
     const imageCustomSrcDark =
         isEditMode && isCMSImage
             ? `${sharedAssetPath}/images/image-square.png`
-            : responsiveImageDataDark?.baseSrc ||
-              `${sharedAssetPath}/images/image-square.png`;
+            : responsiveImageDataDark?.baseSrc || null;
 
     const lightImage = isResourceImage
         ? {
@@ -166,7 +165,6 @@ const transformHook = (rw) => {
 
     // Generate mask classes if SVG resource is present
     const wantsMask = !!imageMaskResource?.image;
-    console.log("wantsMask", imageMaskResource);
     const maskClasses = [];
     if (wantsMask) {
         const svgContent = imageMaskResource.image;
@@ -184,8 +182,6 @@ const transformHook = (rw) => {
             `[mask-position:center]`
         );
     }
-
-    console.log("maskClasses", maskClasses);
 
     const classes = {
         wrapper: classnames([
