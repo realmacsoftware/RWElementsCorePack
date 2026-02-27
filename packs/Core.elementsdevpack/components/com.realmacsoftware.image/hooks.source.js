@@ -84,12 +84,20 @@ const transformHook = (rw) => {
         const sources = names
             .filter((name) => imageFileSize[name])
             .sort((a, b) => screens[b] - screens[a])
-            .map((name) => ({
-                media: `(min-width: ${screens[name]}px)`,
-                srcset: rw.resizeResource(resource, imageFileSize[name] * 2),
-                breakpoint: name,
-                minWidth: screens[name],
-            }));
+            .map((name) => {
+                const displayWidth = Math.min(imageFileSize[name], resource?.width || Infinity);
+                const source = {
+                    media: `(min-width: ${screens[name]}px)`,
+                    srcset: rw.resizeResource(resource, imageFileSize[name] * 2),
+                    breakpoint: name,
+                    minWidth: screens[name],
+                };
+                if (resource?.width && resource?.height) {
+                    source.width = displayWidth;
+                    source.height = Math.round(displayWidth * resource.height / resource.width);
+                }
+                return source;
+            });
 
         return {
             sources,
@@ -100,10 +108,16 @@ const transformHook = (rw) => {
 
     const generateDefaultSrc = (resource) => {
         if (!wantsCustomSizing) return resource;
-        return {
+        const displayWidth = Math.min(imageFileSize.base, resource?.width || Infinity);
+        const resized = {
             ...resource,
             image: rw.resizeResource(resource, imageFileSize.base * 2),
         };
+        if (resource?.width && resource?.height) {
+            resized.width = displayWidth;
+            resized.height = Math.round(displayWidth * resource.height / resource.width);
+        }
+        return resized;
     };
 
     const responsiveImageData = generateResponsiveImageData(
@@ -123,8 +137,7 @@ const transformHook = (rw) => {
     const imageCustomSrcDark =
         isEditMode && isCMSImage
             ? `${sharedAssetPath}/images/image-square.png`
-            : responsiveImageDataDark?.baseSrc ||
-              `${sharedAssetPath}/images/image-square.png`;
+            : responsiveImageDataDark?.baseSrc || null;
 
     const lightImage = isResourceImage
         ? {
@@ -152,7 +165,6 @@ const transformHook = (rw) => {
 
     // Generate mask classes if SVG resource is present
     const wantsMask = !!imageMaskResource?.image;
-    console.log("wantsMask", imageMaskResource);
     const maskClasses = [];
     if (wantsMask) {
         const svgContent = imageMaskResource.image;
@@ -170,8 +182,6 @@ const transformHook = (rw) => {
             `[mask-position:center]`
         );
     }
-
-    console.log("maskClasses", maskClasses);
 
     const classes = {
         wrapper: classnames([
@@ -233,8 +243,8 @@ const transformHook = (rw) => {
         defaultSrc: image,
         alt: imageAlt,
         classes,
-        imageWidth: !isResourceImage ? imageIntrinsicWidth : image?.width,
-        imageHeight: !isResourceImage ? imageIntrinsicHeight : image?.height,
+        imageWidth: !isResourceImage ? imageIntrinsicWidth : lightImage.resource?.width,
+        imageHeight: !isResourceImage ? imageIntrinsicHeight : lightImage.resource?.height,
         assetPath,
         sharedAssetPath,
         wantsLightbox: wantsLightboxAtAnyBreakpoint && mode != "edit",

@@ -11,6 +11,10 @@
                 <source
                     media="{{source.media}} and (prefers-color-scheme: dark)"
                     srcset="{{source.srcset}}"
+                    @if(source.width)
+                    width="{{source.width}}"
+                    height="{{source.height}}"
+                    @endif
                 />
             @endeach
 
@@ -22,7 +26,14 @@
             @endif
 
             @each(source in lightImage.sources)
-                <source media="{{source.media}}" srcset="{{source.srcset}}" />
+                <source
+                    media="{{source.media}}"
+                    srcset="{{source.srcset}}"
+                    @if(source.width)
+                    width="{{source.width}}"
+                    height="{{source.height}}"
+                    @endif
+                />
             @endeach
         @endif
 

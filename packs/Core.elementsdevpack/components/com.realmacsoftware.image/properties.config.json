@@ -61,7 +61,7 @@
                     }
                 },
                 {
-                    "visible": "imageType != 'cms' && imageSizingType == 'custom'",
+                    "visible": "imageType == 'resource' && imageSizingType == 'custom'",
                     "title": "File Size",
                     "id": "imageFileSize",
                     "number": {
