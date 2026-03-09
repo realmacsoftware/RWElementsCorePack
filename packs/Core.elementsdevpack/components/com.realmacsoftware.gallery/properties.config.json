@@ -330,7 +330,7 @@
         {
           "title": "Opacity",
           "id": "overlayOpacity",
-          "format": "bg-opacity-[{{value}}%]",
+          "format": "bg-opacity-[{{value}}%] dark:bg-opacity-[{{value}}%]",
           "slider": {
             "use": "Slider",
             "default": 20,
@@ -478,7 +478,7 @@
         {
           "visible": "navigationState == 'hover'",
           "title": "Opacity",
-          "id": "navigationCloseButtonOpacityHover", 
+          "id": "navigationCloseButtonOpacityHover",
           "format": "hover:opacity-[{{value}}%]",
           "slider": {
             "use": "Slider",
@@ -512,7 +512,7 @@
           "format": "hover:bg-{{value}}",
           "themeColor": {
             "default": {
-              "name": "surface", 
+              "name": "surface",
               "brightness": 50
             }
           }
