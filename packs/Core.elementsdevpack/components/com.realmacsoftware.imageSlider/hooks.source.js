@@ -64,6 +64,10 @@ const transformHook = (rw) => {
               ],
           };
 
+    resources?.resources?.forEach((resource) => {
+        resource.alt = resource.caption || "";
+    });
+
     const gridColumns = enablePaginationArrows
         ? "grid-cols-[auto_1fr_auto]"
         : "grid-cols-1";
