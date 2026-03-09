@@ -1,4 +1,8 @@
 document.addEventListener('alpine:init', () => {
+    function stripDiacritics(str) {
+        return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
     Alpine.store('filters', {
         lists: {},
         filteredLists: {},
@@ -81,7 +85,7 @@ document.addEventListener('alpine:init', () => {
         createItem(element) {
             return {
                 element,
-                text: (element.textContent || '').toLowerCase().trim(),
+                text: stripDiacritics((element.textContent || '').toLowerCase().trim()),
                 tags: element.getAttribute('data-filter-tags')?.split(',').map(t => t.trim()) || [],
                 transitionName: element.getAttribute('data-filter-transition') || null,
                 visible: true
@@ -233,7 +237,7 @@ document.addEventListener('alpine:init', () => {
             const { q = '', activeTags = new Set() } = list;
             const tagMatchMode = list.options?.tags?.match || 'any';
             const itemText = (item.text || '').toLowerCase();
-            const searchTerms = q.toLowerCase().trim();
+            const searchTerms = stripDiacritics(q.toLowerCase().trim());
             
             const matchesSearch = !searchTerms || itemText.includes(searchTerms);
             
@@ -241,13 +245,19 @@ document.addEventListener('alpine:init', () => {
             
             if (!Array.isArray(item.tags)) return false;
             
-            const itemTagsLower = item.tags.map(tag => tag?.toLowerCase()).filter(Boolean);
+            const itemTagsLower = item.tags.map(tag => 
+                stripDiacritics(tag?.toLowerCase() || '')
+            ).filter(Boolean);
+            
+            const activeTagsNormalized = new Set(
+                Array.from(activeTags).map(t => stripDiacritics(t))
+            );
             
             const matchesTags = tagMatchMode === 'all'
-                ? Array.from(activeTags).every(activeTag => 
+                ? Array.from(activeTagsNormalized).every(activeTag => 
                     itemTagsLower.includes(activeTag)
                   )
-                : itemTagsLower.some(tag => activeTags.has(tag));
+                : itemTagsLower.some(tag => activeTagsNormalized.has(tag));
             
             return matchesSearch && matchesTags;
         }
