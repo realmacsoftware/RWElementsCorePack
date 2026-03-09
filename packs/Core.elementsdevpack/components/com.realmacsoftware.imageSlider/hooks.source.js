@@ -42,27 +42,27 @@ const transformHook = (rw) => {
     const resources = !isCms
         ? images
         : {
-              resources: [
-                  {
-                      image: `${assetPath}/image-square.png`,
-                      alt: "Image 1",
-                      width: 500,
-                      height: 500,
-                  },
-                  {
-                      image: `${assetPath}/image-square.png`,
-                      alt: "Image 2",
-                      width: 500,
-                      height: 500,
-                  },
-                  {
-                      image: `${assetPath}/image-square.png`,
-                      alt: "Image 3",
-                      width: 500,
-                      height: 500,
-                  },
-              ],
-          };
+            resources: [
+                {
+                    image: `${assetPath}/image-square.png`,
+                    alt: "Image 1",
+                    width: 500,
+                    height: 500,
+                },
+                {
+                    image: `${assetPath}/image-square.png`,
+                    alt: "Image 2",
+                    width: 500,
+                    height: 500,
+                },
+                {
+                    image: `${assetPath}/image-square.png`,
+                    alt: "Image 3",
+                    width: 500,
+                    height: 500,
+                },
+            ],
+        };
 
     resources?.resources?.forEach((resource) => {
         resource.alt = resource.caption || "";
@@ -108,9 +108,8 @@ const transformHook = (rw) => {
             ? "grid w-full"
             : "flex w-full cursor-grab active:cursor-grabbing",
         slide: isFade
-            ? `[grid-area:1/1] w-full transition-opacity ${
-                  transitionDuration || "duration-[500ms]"
-              } ${padding}`
+            ? `[grid-area:1/1] w-full transition-opacity ${transitionDuration || "duration-[500ms]"
+            } ${padding}`
             : `shrink-0 min-w-0 snap-start ${widths[visibleSlides]} ${padding}`,
         // Edit mode slide class - no transitions, immediate opacity
         slideEdit: isFade
