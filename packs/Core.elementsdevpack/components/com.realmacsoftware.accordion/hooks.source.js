@@ -65,9 +65,9 @@ const transformHook = (rw) => {
             iconSize,
             iconAlignment,
             iconRotation,
-            iconColor,
+            injectPrefixOnDarkModeColors("[&>svg]", iconColor),
             iconRotationClosed && `[&>svg]:group-data-[open=false]/${id}:rotate-[${iconRotationClosed}deg]`,
-            iconColorClosed && `[&>svg]:group-data-[open=false]/${id}:text-${iconColorClosed}`,
+            iconColorClosed && injectPrefixOnDarkModeColors(`[&>svg]:group-data-[open=false]/${id}`, `[&>svg]:group-data-[open=false]/${id}:text-${iconColorClosed}`),
         ]).toString(),
     };
 
