@@ -10921,7 +10921,7 @@
                         "TWC": {
                             "colorStripId": "text",
                             "shade": 50
-                        , "darkShade" : 950, "darkColorStripId" : "text"}
+                        }
                     },
                     "group:Grouping": {
                         "B": false
@@ -15595,7 +15595,7 @@
                         "TWC": {
                             "shade": 50,
                             "colorStripId": "text"
-                        , "darkShade" : 950, "darkColorStripId" : "text"}
+                        }
                     },
                     "globalLayoutZIndex": {
                         "R": {
@@ -24766,7 +24766,7 @@
                         "TWC": {
                             "colorStripId": "text",
                             "shade": 50
-                        , "darkShade" : 950, "darkColorStripId" : "text"}
+                        }
                     },
                     "globalFiltersDropShadowEnd": {
                         "R": {
@@ -28500,7 +28500,7 @@
                         "TWC": {
                             "shade": 50,
                             "colorStripId": "text"
-                        , "darkShade" : 950, "darkColorStripId" : "text"}
+                        }
                     },
                     "globalBgGradientFromOpacityEnd": {
                         "R": {
