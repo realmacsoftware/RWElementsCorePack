@@ -148,6 +148,7 @@ const transformHook = (rw) => {
               resource: {
                   image: imageCustomSrc,
               },
+              srcset: responsiveImageData?.baseSrc,
               ...responsiveImageData,
           };
 
@@ -160,6 +161,7 @@ const transformHook = (rw) => {
               resource: {
                   image: imageCustomSrcDark,
               },
+              srcset: responsiveImageDataDark?.baseSrc,
               ...responsiveImageDataDark,
           };
 
