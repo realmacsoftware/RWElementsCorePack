@@ -57,6 +57,22 @@
           "id": "loop",
           "responsive": false,
           "switch": {}
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Start At",
+          "heading": {}
+        },
+        {
+          "title": "Time (seconds)",
+          "id": "startAt",
+          "responsive": false,
+          "number": {
+            "default": 0,
+            "subtitle": "Start playback at this time in seconds"
+          }
         }
       ]
     },
