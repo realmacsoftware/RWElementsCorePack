@@ -1,8 +1,42 @@
+const parseCSV = (csvString) => {
+    const lines = csvString.split('\n').filter((line) => line.trim().length > 0);
+    const rows = [];
+    const headers = [];
+
+    lines.forEach((line, index) => {
+        const cells = line.split(',').map((cell) => cell.trim());
+        if (index === 0) {
+            headers.push(...cells);
+        } else {
+            rows.push(cells);
+        }
+    });
+
+    return { headers, rows };
+};
+
+const fetchCSV = async (url) => {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return await response.text();
+    } catch (error) {
+        console.error('Error fetching CSV:', error);
+        return '';
+    }
+};
+
 const transformHook = (rw) => {
     const {
         globalID,
         rowCount,
         showHeader,
+        dataSource,
+        csvResource,
+        csvUrl,
+        csvFirstRowHeader,
         // Header styling
         headerBackground,
         // Header cells
@@ -41,16 +75,59 @@ const transformHook = (rw) => {
     const { id } = rw.node;
     const { columns } = rw.collections;
 
-    // Build rows array from rowCount
-    const count = Math.max(1, parseInt(rowCount) || 3);
-    const rows = Array.from({ length: count }, (_, i) => ({ index: i }));
+    let rows = [];
+    let processedColumns = [];
 
-    // Process columns to include per-column width classes (respects collection order)
-    const processedColumns = columns?.map((col, index) => ({
-        ...col,
-        widthClass: col.columnWidth || "",
-        index,
-    })) || [];
+    // Handle CSV data source
+    if (dataSource === 'csv') {
+        let csvData = '';
+
+        // Try to get CSV from resource first
+        if (csvResource && csvResource.url) {
+            csvData = csvResource.url;
+        } else if (csvUrl) {
+            csvData = csvUrl;
+        }
+
+        if (csvData) {
+            const parsed = parseCSV(csvData);
+            const usesFirstRowAsHeader = csvFirstRowHeader === true || csvFirstRowHeader === 'true';
+
+            // Set up columns from CSV
+            const columnLabels = usesFirstRowAsHeader ? parsed.headers : [];
+            processedColumns = columnLabels.map((label, index) => ({
+                column: label || `Column ${index + 1}`,
+                columnWidth: '',
+                widthClass: '',
+                index,
+            }));
+
+            // Set up rows from CSV data
+            rows = (usesFirstRowAsHeader ? parsed.rows : [parsed.headers, ...parsed.rows]).map((rowData, rowIndex) => ({
+                index: rowIndex,
+                cells: rowData.map((cell, colIndex) => ({
+                    text: cell,
+                    columnIndex: colIndex,
+                })),
+            }));
+        } else {
+            // No CSV data, show empty table
+            rows = [];
+            processedColumns = [];
+        }
+    } else {
+        // Manual data source - use existing logic
+        // Build rows array from rowCount
+        const count = Math.max(1, parseInt(rowCount) || 3);
+        rows = Array.from({ length: count }, (_, i) => ({ index: i }));
+
+        // Process columns to include per-column width classes (respects collection order)
+        processedColumns = columns?.map((col, index) => ({
+            ...col,
+            widthClass: col.columnWidth || "",
+            index,
+        })) || [];
+    }
 
     // Use table-fixed layout when any column has a custom (non-auto) width
     const hasCustomWidths = processedColumns.some((col) => {

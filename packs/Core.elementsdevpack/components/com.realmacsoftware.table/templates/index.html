@@ -1,10 +1,14 @@
 <table class="{{classes.table}}">
-    @if(showHeader)
+    @if(showHeader && columns.length > 0)
     <thead>
         <tr class="{{classes.theadRow}}">
             @each(column in columns)
             <th class="{{classes.th}} {{column.widthClass}}">
-                @text("column", default: "Column")
+                @if(column.column)
+                    {{column.column}}
+                @else
+                    @text("column", default: "Column")
+                @endif
             </th>
             @endeach
         </tr>
@@ -15,7 +19,11 @@
         <tr class="{{classes.tr}}">
             @each(column in columns)
                 <td class="{{classes.td}} {{column.widthClass}}">
-                    @text("cell", default: "Cell")
+                    @if(row.cells)
+                        {{row.cells[column.index].text}}
+                    @else
+                        @text("cell", default: "Cell")
+                    @endif
                 </td>
             @endeach
         </tr>
