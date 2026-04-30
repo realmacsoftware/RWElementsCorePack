@@ -1,0 +1,667 @@
+{
+  "social" : {
+    "useSocialTags" : true
+  },
+  "ui" : {
+    "catalogFilter" : {
+      "smartDocumentElements" : false,
+      "showFavourites" : false
+    },
+    "elementEditor" : {
+      "show" : false,
+      "showOutline" : false
+    },
+    "projectInspector" : {
+      "show" : false
+    },
+    "resourceInspector" : {
+      "show" : false
+    },
+    "contentArea" : {
+      "scale" : 0.740234375,
+      "darkAppearance" : false,
+      "size" : [
+        1280,
+        896
+      ],
+      "responsiveSize" : "xl"
+    }
+  },
+  "privacy" : {
+    "anonymiseThirdPartyRequests" : false
+  },
+  "uiStateIdentifier" : "F161D87E-8B75-40EB-85F5-8D5983D89F99",
+  "publishing" : {
+    "publishSettingsConfigured" : false,
+    "publishingDestinations" : [
+
+    ]
+  },
+  "theme" : {
+    "borderRadius" : [
+      {
+        "id" : "FB5C17CF-1452-49F4-A26B-3C252CE6BCBC",
+        "name" : "glass",
+        "remValue" : 3.5
+      }
+    ],
+    "textShadows" : [
+
+    ],
+    "borderWidth" : [
+
+    ],
+    "typographies" : [
+
+    ],
+    "baseThemeIdentifier" : "com.realmacsoftware.themes.system",
+    "page" : {
+      "backgroundColor" : {
+        "darkColorStripId" : "none",
+        "darkShade" : 500,
+        "colorStripId" : "none",
+        "shade" : 500
+      }
+    },
+    "colors" : [
+
+    ],
+    "fontStyle" : [
+
+    ],
+    "screens" : [
+      {
+        "pixels" : 1536,
+        "enabled" : false,
+        "description" : "",
+        "name" : "2xl",
+        "maxContainerWidth" : 0,
+        "sfIcon" : "desktopcomputer",
+        "classPrefix" : "2xl",
+        "id" : "E04B08D5-626C-45A8-80AE-D5E66EE25968",
+        "units" : "auto"
+      },
+      {
+        "pixels" : 1280,
+        "enabled" : true,
+        "description" : "",
+        "name" : "xl",
+        "maxContainerWidth" : 0,
+        "sfIcon" : "laptopcomputer",
+        "classPrefix" : "xl",
+        "id" : "C0DBFD02-D6CA-4A4E-9156-7B7FC038690D",
+        "units" : "auto"
+      },
+      {
+        "pixels" : 1024,
+        "enabled" : true,
+        "description" : "",
+        "name" : "lg",
+        "maxContainerWidth" : 0,
+        "sfIcon" : "ipad.landscape",
+        "classPrefix" : "lg",
+        "id" : "10FE4EB2-9D30-45BD-AE74-59366DD6F787",
+        "units" : "auto"
+      },
+      {
+        "enabled" : true,
+        "id" : "B21487E6-A7E2-40F2-B2D0-3C2024C43B7A",
+        "pixels" : 768,
+        "description" : "This breakpoint is for tablets and small laptop screens. It usually encompasses widths from 600 pixels to 1023 pixels.",
+        "classPrefix" : "md",
+        "sfIcon" : "ipad",
+        "maxContainerWidth" : 0,
+        "units" : "auto",
+        "name" : "md"
+      },
+      {
+        "enabled" : true,
+        "id" : "8C0EEB8B-7CDB-41AE-A3BA-107180CDCB23",
+        "pixels" : 640,
+        "description" : "This breakpoint targets devices with small sceens like smartphones. The resolution width varies but typically starts from 320 pixels and below 600 pixels.",
+        "classPrefix" : "sm",
+        "sfIcon" : "iphone.landscape",
+        "maxContainerWidth" : 0,
+        "units" : "auto",
+        "name" : "sm"
+      },
+      {
+        "maxContainerWidth" : 0,
+        "sfIcon" : "iphone",
+        "enabled" : true,
+        "units" : "auto",
+        "id" : "83CC4579-FB7E-49EF-977F-A3E955D35166",
+        "classPrefix" : "",
+        "pixels" : 0,
+        "description" : "",
+        "name" : "mobile"
+      }
+    ],
+    "fontFamily" : [
+
+    ],
+    "shadows" : [
+
+    ],
+    "spacing" : [
+
+    ]
+  },
+  "localization" : {
+
+  },
+  "project" : {
+    "uniqueBackupName" : "824FE9BF-5001-4EEA-B997-22D199D3BC2E_rwbackup",
+    "autoStartWebServer" : false
+  },
+  "site" : {
+    "themeName" : "Elements",
+    "defaultFileExtension" : "html",
+    "consolidateCSSFiles" : true,
+    "useCacheBusting" : true,
+    "wantsXMLSiteMap" : true,
+    "minifyExtraFiles" : true,
+    "cruftlessLinks" : true,
+    "baseURL" : "https:\/\/www.realmacsoftware.com",
+    "allowDarkMode" : false,
+    "title" : "Landing"
+  },
+  "rootPrefabNode" : {
+    "expanded" : true,
+    "identifier" : "D207B920-9F46-4AE8-9E7A-93E673680E82",
+    "children" : [
+
+    ],
+    "item" : null,
+    "title" : "Project",
+    "kind" : {
+      "folder" : {
+
+      }
+    }
+  },
+  "siteResources" : {
+    "resources" : {
+      "A2EDAD86-F8A8-47F9-A9C0-E6635A025522" : {
+        "name" : "facebook.svg",
+        "smartFolderKind" : 0,
+        "typeIdentifier" : "public.svg-image",
+        "parentIdentifier" : "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C",
+        "kind" : 1,
+        "changedStatuses" : {
+
+        },
+        "timeStamp" : 1750254072900.8809,
+        "isSVG" : true,
+        "identifier" : "A2EDAD86-F8A8-47F9-A9C0-E6635A025522",
+        "expanded" : false,
+        "hostedImageURLs" : [
+
+        ],
+        "originalName" : "facebook.svg"
+      },
+      "F9E815A6-3C20-4239-9F33-F50FB084417D" : {
+        "changedStatuses" : {
+
+        },
+        "hostedImageURLs" : [
+
+        ],
+        "expanded" : false,
+        "originalName" : "instagram.svg",
+        "timeStamp" : 1750254131190.557,
+        "kind" : 1,
+        "isSVG" : true,
+        "smartFolderKind" : 0,
+        "parentIdentifier" : "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C",
+        "typeIdentifier" : "public.svg-image",
+        "name" : "instagram.svg",
+        "identifier" : "F9E815A6-3C20-4239-9F33-F50FB084417D"
+      },
+      "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10" : {
+        "name" : "backgrounds",
+        "smartFolderKind" : 0,
+        "parentIdentifier" : "D1E46739-8BE7-4510-92B9-6D3F58FE5DCC",
+        "kind" : 0,
+        "changedStatuses" : {
+
+        },
+        "timeStamp" : -62135769600000,
+        "identifier" : "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10",
+        "expanded" : true,
+        "hostedImageURLs" : [
+
+        ]
+      },
+      "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C" : {
+        "name" : "Icons",
+        "smartFolderKind" : 0,
+        "parentIdentifier" : "D1E46739-8BE7-4510-92B9-6D3F58FE5DCC",
+        "kind" : 0,
+        "changedStatuses" : {
+
+        },
+        "timeStamp" : -62135769600000,
+        "identifier" : "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C",
+        "expanded" : false,
+        "hostedImageURLs" : [
+
+        ]
+      },
+      "74428BAC-FF0E-4211-BF58-A34502EA37B2" : {
+        "smartFolderKind" : 0,
+        "expanded" : false,
+        "typeIdentifier" : "public.jpeg",
+        "parentIdentifier" : "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10",
+        "name" : "solaris.jpg",
+        "originalName" : "solaris.jpg",
+        "hostedImageURLs" : [
+
+        ],
+        "kind" : 1,
+        "isSVG" : false,
+        "changedStatuses" : {
+
+        },
+        "identifier" : "74428BAC-FF0E-4211-BF58-A34502EA37B2",
+        "metadata" : {
+          "aspect" : 1.3270903010033446,
+          "caption" : "Create a wavy gradient header background in rainbow colours, keep it clean and smooth --ar 4:3 --v 7 Job ID: cc7a7f46-71b4-4ce1-8817-a9024098023e",
+          "author" : "theriverboatcaptain",
+          "height" : 1495,
+          "width" : 1984
+        },
+        "timeStamp" : 1750366332235.5872
+      },
+      "8AEA3401-7258-4C6C-BA41-C23690A55342" : {
+        "smartFolderKind" : 0,
+        "expanded" : false,
+        "typeIdentifier" : "public.jpeg",
+        "parentIdentifier" : "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10",
+        "name" : "skylight.jpg",
+        "originalName" : "skylight.jpg",
+        "hostedImageURLs" : [
+
+        ],
+        "kind" : 1,
+        "isSVG" : false,
+        "changedStatuses" : {
+
+        },
+        "identifier" : "8AEA3401-7258-4C6C-BA41-C23690A55342",
+        "metadata" : {
+          "aspect" : 1.3273073263558515,
+          "caption" : "sunrise sky, fluffy clouds, fantasy, morning, smooth, wallpaper in a digital paint style --ar 4:3 --v 7 Job ID: 063601c6-6ed8-449d-b5e5-56d3b9f5ca75",
+          "author" : "theriverboatcaptain",
+          "height" : 1051,
+          "width" : 1395
+        },
+        "timeStamp" : 1750368884319.799
+      },
+      "9EC75AAE-1D9F-488D-9C0C-F4D05A3582A2" : {
+        "changedStatuses" : {
+
+        },
+        "hostedImageURLs" : [
+
+        ],
+        "expanded" : false,
+        "originalName" : "x-twitter.svg",
+        "timeStamp" : 1750253993686.3252,
+        "kind" : 1,
+        "isSVG" : true,
+        "smartFolderKind" : 0,
+        "parentIdentifier" : "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C",
+        "typeIdentifier" : "public.svg-image",
+        "name" : "x-twitter.svg",
+        "identifier" : "9EC75AAE-1D9F-488D-9C0C-F4D05A3582A2"
+      },
+      "54A0E1D4-B649-423E-81FC-7EED50057C81" : {
+        "name" : "arrow.svg",
+        "smartFolderKind" : 0,
+        "typeIdentifier" : "public.svg-image",
+        "parentIdentifier" : "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C",
+        "kind" : 1,
+        "changedStatuses" : {
+
+        },
+        "timeStamp" : 1750264925381.481,
+        "isSVG" : true,
+        "identifier" : "54A0E1D4-B649-423E-81FC-7EED50057C81",
+        "expanded" : false,
+        "hostedImageURLs" : [
+
+        ],
+        "originalName" : "arrow-keyboard-right.svg"
+      },
+      "D1E46739-8BE7-4510-92B9-6D3F58FE5DCC" : {
+        "name" : "Resources",
+        "smartFolderKind" : 0,
+        "kind" : 0,
+        "changedStatuses" : {
+
+        },
+        "timeStamp" : -62135769600000,
+        "identifier" : "D1E46739-8BE7-4510-92B9-6D3F58FE5DCC",
+        "expanded" : true,
+        "hostedImageURLs" : [
+
+        ]
+      }
+    },
+    "children" : {
+      "D1E46739-8BE7-4510-92B9-6D3F58FE5DCC" : [
+        "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10",
+        "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C"
+      ],
+      "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10" : [
+        "74428BAC-FF0E-4211-BF58-A34502EA37B2",
+        "8AEA3401-7258-4C6C-BA41-C23690A55342"
+      ],
+      "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C" : [
+        "F9E815A6-3C20-4239-9F33-F50FB084417D",
+        "A2EDAD86-F8A8-47F9-A9C0-E6635A025522",
+        "9EC75AAE-1D9F-488D-9C0C-F4D05A3582A2",
+        "54A0E1D4-B649-423E-81FC-7EED50057C81"
+      ]
+    },
+    "root" : "D1E46739-8BE7-4510-92B9-6D3F58FE5DCC"
+  },
+  "identifier" : "F161D87E-8B75-40EB-85F5-8D5983D89F99",
+  "customComponents" : {
+    "components" : {
+      "FCA17D58-D475-44E0-B84D-6B1B466A228E" : {
+        "author" : "",
+        "collections" : [
+
+        ],
+        "identifier" : "FCA17D58-D475-44E0-B84D-6B1B466A228E",
+        "build" : "",
+        "subTitle" : "",
+        "deprecated" : false,
+        "version" : "",
+        "hidden" : false,
+        "tags" : [
+
+        ],
+        "title" : "Custom Counter",
+        "uuid" : "3C85B41D-ABBE-4FE5-AB95-FC83AFE4213E",
+        "files" : [
+          {
+            "kind" : {
+              "template" : {
+
+              }
+            },
+            "identifier" : "021CA265-B2C3-4D05-9C4A-A11563C04A08",
+            "filename" : "Template",
+            "content" : "<div \n  class=\"\"\n  x-data=\"{ count: 0, hasAnimated: false }\"\n  x-intersect.once=\"if (!hasAnimated) { hasAnimated = true; $nextTick(() => { let start = 0; let end = +{{myNumber}}; let duration = 1500; let startTime = null; function animate(now) { if(!startTime) startTime = now; let progress = Math.min((now - startTime) \/ duration, 1); count = Math.floor(progress * (end - start) + start); if(progress < 1){ requestAnimationFrame(animate); } } requestAnimationFrame(animate); }); }\"\n>\n  @if(edit)\n    <div class=\"font-bold {{textColor}} {{headingTextStyles}} {{fontFamily}}\">{{myNumber}}<\/div>\n  @else\n    <div class=\"font-bold {{textColor}} {{headingTextStyles}} {{fontFamily}}\" x-text=\"count\"><\/div>\n  @endif\n<\/div>"
+          },
+          {
+            "filename" : "Styles",
+            "kind" : {
+              "css" : {
+
+              }
+            },
+            "identifier" : "D509C38B-1614-49C1-9E01-C0EEB85B7EE8",
+            "content" : ""
+          },
+          {
+            "filename" : "Javascript",
+            "kind" : {
+              "js" : {
+
+              }
+            },
+            "identifier" : "33F04429-74AB-4B5A-9C2F-2372F8A702C9",
+            "content" : "console.log(`Running JS for element with id: {{id}}`)"
+          },
+          {
+            "filename" : "Hooks",
+            "kind" : {
+              "hooks" : {
+
+              }
+            },
+            "identifier" : "229D0702-9414-465A-A17A-48FFED4C5A36",
+            "content" : ""
+          },
+          {
+            "filename" : "Properties",
+            "kind" : {
+              "properties" : {
+
+              }
+            },
+            "identifier" : "2B1AFCC4-781B-406C-80EB-E18D0ADDD0CD",
+            "content" : "{\n  \"groups\": [\n    {\n      \"title\": \"General\",\n      \"icon\": \"gearshape\",\n      \"properties\": [\n        {\n          \"title\": \"Number\",\n          \"id\": \"myNumber\",\n          \"number\": {\n            \"default\": 100\n          }\n        },\n        {\n          \"title\": \"Font\",\n          \"id\": \"fontFamily\",\n          \"themeFont\": {\n            \"default\": {\n              \"base\": { \"name\": \"body\" }\n            }\n          }\n        },\n        {\n          \"title\": \"Size\",\n          \"id\": \"headingTextStyles\",\n          \"themeTextStyle\": {\n            \"default\": {\n              \"base\": {\n                \"name\": \"5xl\"\n              }\n            }\n          }\n        },\n        {\n          \"title\": \"Color\",\n          \"id\": \"textColor\",\n          \"format\": \"text-{{value}}\",\n          \"themeColor\": {\n            \"default\": {\n              \"name\": \"text\",\n              \"brightness\": 300\n            }\n          }\n        }\n      ]\n    }\n  ]\n}"
+          },
+          {
+            "kind" : {
+              "data" : {
+
+              }
+            },
+            "filename" : "Data",
+            "identifier" : "82C630BD-4BBA-4550-AE67-AAFC1DF82FD9",
+            "content" : "{\n    \"collections\": [{\n        \"id\" : \"F8A7DF12-9196-4EF0-A1DB-C35F39401941\",\n        \"title\" : \"Features\",\n        \"items\" : [{\n            \"id\" : \"2DA6C715-0A28-4287-9E2B-EA50078AEF23\",\n            \"featureName\" : \"Data Driven\",\n            \"body\" : \"A dynamic and user-friendly platform offering a wide range of services and information.\"\n        }]\n    }]\n}"
+          }
+        ],
+        "group" : "Custom"
+      }
+    }
+  },
+  "version" : 9,
+  "images" : {
+    "logoAltText" : "",
+    "webIcons" : {
+      "pinnedTab" : {
+        "autoGenerate" : false,
+        "type" : 3
+      },
+      "medium" : {
+        "autoGenerate" : false,
+        "type" : 1
+      },
+      "faviconLarge" : {
+        "autoGenerate" : false,
+        "type" : 4
+      },
+      "large" : {
+        "autoGenerate" : false,
+        "type" : 0
+      },
+      "faviconSmall" : {
+        "autoGenerate" : false,
+        "type" : 6
+      },
+      "faviconMedium" : {
+        "autoGenerate" : false,
+        "type" : 5
+      },
+      "small" : {
+        "autoGenerate" : false,
+        "type" : 2
+      }
+    }
+  },
+  "rootPage" : {
+    "code" : null,
+    "isIndex" : false,
+    "externalPageURL" : null,
+    "kind" : "folder",
+    "iconIdentifier" : null,
+    "identifier" : "F8B73E6F-D702-4BBB-AAAB-93E3B8AE8F79",
+    "pageDescription" : null,
+    "expanded" : true,
+    "browserTitle" : null,
+    "manifests" : {
+
+    },
+    "children" : [
+      {
+        "code" : null,
+        "isIndex" : true,
+        "externalPageURL" : null,
+        "kind" : "page",
+        "iconIdentifier" : null,
+        "identifier" : "7E7514D1-4ACD-4542-B01D-056E035223EE",
+        "pageDescription" : null,
+        "expanded" : true,
+        "browserTitle" : "Landing",
+        "manifests" : {
+
+        },
+        "children" : [
+
+        ],
+        "attributes" : {
+          "shouldIndexPage" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "customJavaScript" : "",
+          "lastChangedDate" : 1772321010276.9739,
+          "expires" : false,
+          "hidden" : false,
+          "shouldFollowLinks" : true,
+          "customPageStart" : "",
+          "credit" : true,
+          "shouldArchivePage" : true,
+          "shouldAllowPreview" : true,
+          "shouldIndexImages" : true,
+          "customHeader" : "",
+          "useCustomSiteTitle" : false,
+          "shouldEnableSocialTags" : true,
+          "customHeadEnd" : "",
+          "expiryQuantity" : 2,
+          "customCSS" : "",
+          "customHeadStart" : "",
+          "enabled" : true,
+          "customBodyEnd" : "",
+          "shouldEnableRobotTags" : true,
+          "excludeFromSitemap" : false,
+          "filename" : "index.html",
+          "encoding" : 1,
+          "customBodyStart" : "",
+          "expiryUnit" : 0,
+          "customPageEnd" : "",
+          "customSiteTitle" : "",
+          "backgroundColor" : {
+            "darkColorStripId" : "none",
+            "colorStripId" : "none",
+            "shade" : 500,
+            "darkShade" : 500
+          },
+          "linkOpensInNewWindow" : false
+        },
+        "title" : "Home",
+        "createdDate" : 1751131322047.461,
+        "uniqueID" : "page0"
+      },
+      {
+        "code" : null,
+        "isIndex" : false,
+        "externalPageURL" : null,
+        "kind" : "page",
+        "iconIdentifier" : null,
+        "identifier" : "0BB2DD2C-EEF2-4FFE-8AB7-2897FA454B46",
+        "pageDescription" : null,
+        "expanded" : true,
+        "browserTitle" : null,
+        "manifests" : {
+
+        },
+        "children" : [
+
+        ],
+        "attributes" : {
+          "shouldIndexPage" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "customJavaScript" : "",
+          "lastChangedDate" : 1772321022100.98,
+          "expires" : false,
+          "hidden" : false,
+          "shouldFollowLinks" : true,
+          "customPageStart" : "",
+          "credit" : true,
+          "shouldArchivePage" : true,
+          "shouldAllowPreview" : true,
+          "shouldIndexImages" : true,
+          "customHeader" : "",
+          "useCustomSiteTitle" : false,
+          "shouldEnableSocialTags" : true,
+          "customHeadEnd" : "",
+          "expiryQuantity" : 2,
+          "customCSS" : "",
+          "customHeadStart" : "",
+          "enabled" : true,
+          "customBodyEnd" : "",
+          "shouldEnableRobotTags" : true,
+          "excludeFromSitemap" : false,
+          "filename" : "index.html",
+          "encoding" : 1,
+          "customBodyStart" : "",
+          "expiryUnit" : 0,
+          "customPageEnd" : "",
+          "customSiteTitle" : "",
+          "backgroundColor" : {
+            "colorStripId" : "none",
+            "darkShade" : 500,
+            "shade" : 500,
+            "darkColorStripId" : "none"
+          },
+          "linkOpensInNewWindow" : false
+        },
+        "title" : "Check Email",
+        "createdDate" : 1751472846593.1958,
+        "uniqueID" : "page1"
+      }
+    ],
+    "attributes" : {
+      "customCSS" : "",
+      "shouldFollowLinks" : true,
+      "shouldEnableSocialTags" : true,
+      "useCustomSiteTitle" : false,
+      "customJavaScript" : "",
+      "customPageStart" : "",
+      "hidden" : false,
+      "customHeader" : "",
+      "customHeadEnd" : "",
+      "customBodyEnd" : "",
+      "customPageEnd" : "",
+      "enabled" : true,
+      "customHeadStart" : "",
+      "customSiteTitle" : "",
+      "expiryUnit" : 0,
+      "lastChangedDate" : 1751131322040.557,
+      "shouldIndexPage" : true,
+      "expires" : false,
+      "encoding" : 1,
+      "linkOpensInNewWindow" : false,
+      "changedStatuses" : {
+
+      },
+      "shouldArchivePage" : true,
+      "excludeFromSitemap" : false,
+      "shouldEnableRobotTags" : true,
+      "expiryQuantity" : 2,
+      "shouldIndexImages" : true,
+      "customBodyStart" : "",
+      "credit" : true,
+      "shouldAllowPreview" : true,
+      "filename" : ""
+    },
+    "title" : "root",
+    "createdDate" : 1751131322040.632,
+    "uniqueID" : "F8B73E6F-D702-4BBB-AAAB-93E3B8AE8F79"
+  },
+  "globalElements" : {
+    "globals" : {
+
+    }
+  }
+}
