@@ -15,6 +15,7 @@ const transformHook = (rw) => {
         loop,
         mute: muted,
         controls,
+        startAt,
 
         globalPadding,
     } = rw.props;
@@ -29,6 +30,7 @@ const transformHook = (rw) => {
         muted,
         controls,
         wantsLightbox,
+        startAt: startAt || 0,
     };
 
     if (video?.format == "mp4") {
