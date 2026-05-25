@@ -75,14 +75,11 @@ const transformHook = (rw) => {
     const { id } = rw.node;
     const { columns } = rw.collections;
 
-    let rows = [];
     let processedColumns = [];
+    let rows = [];
 
-    // Handle CSV data source
     if (dataSource === 'csv') {
         let csvData = '';
-
-        // Try to get CSV from resource first
         if (csvResource && csvResource.url) {
             csvData = csvResource.url;
         } else if (csvUrl) {
@@ -93,40 +90,41 @@ const transformHook = (rw) => {
             const parsed = parseCSV(csvData);
             const usesFirstRowAsHeader = csvFirstRowHeader === true || csvFirstRowHeader === 'true';
 
-            // Set up columns from CSV
             const columnLabels = usesFirstRowAsHeader ? parsed.headers : [];
             processedColumns = columnLabels.map((label, index) => ({
-                column: label || `Column ${index + 1}`,
+                title: label || `Column ${index + 1}`,
                 columnWidth: '',
                 widthClass: '',
                 index,
+                useCsvTitle: true,
             }));
 
-            // Set up rows from CSV data
-            rows = (usesFirstRowAsHeader ? parsed.rows : [parsed.headers, ...parsed.rows]).map((rowData, rowIndex) => ({
+            const csvRows = usesFirstRowAsHeader ? parsed.rows : [parsed.headers, ...parsed.rows];
+            rows = csvRows.map((rowData, rowIndex) => ({
                 index: rowIndex,
-                cells: rowData.map((cell, colIndex) => ({
-                    text: cell,
-                    columnIndex: colIndex,
+                cells: rowData.map((cellText) => ({
+                    text: cellText,
+                    widthClass: '',
+                    useCsvText: true,
                 })),
             }));
-        } else {
-            // No CSV data, show empty table
-            rows = [];
-            processedColumns = [];
         }
     } else {
-        // Manual data source - use existing logic
-        // Build rows array from rowCount
-        const count = Math.max(1, parseInt(rowCount) || 3);
-        rows = Array.from({ length: count }, (_, i) => ({ index: i }));
-
-        // Process columns to include per-column width classes (respects collection order)
         processedColumns = columns?.map((col, index) => ({
             ...col,
             widthClass: col.columnWidth || "",
             index,
+            useCsvTitle: false,
         })) || [];
+
+        const count = Math.max(1, parseInt(rowCount) || 3);
+        rows = Array.from({ length: count }, (_, i) => ({
+            index: i,
+            cells: processedColumns.map((col) => ({
+                widthClass: col.widthClass,
+                useCsvText: false,
+            })),
+        }));
     }
 
     // Use table-fixed layout when any column has a custom (non-auto) width
@@ -206,13 +204,14 @@ const transformHook = (rw) => {
         rw.addAnchor(globalID);
     }
 
-    const wantsHeader = showHeader === true || showHeader === "true";
+    const wantsShowHeader = showHeader === true || showHeader === "true";
+    const wantsHeader = wantsShowHeader && processedColumns.length > 0;
 
     rw.setProps({
         classes,
         columns: processedColumns,
         rows,
-        showHeader: wantsHeader,
+        wantsHeader,
     });
 };
 

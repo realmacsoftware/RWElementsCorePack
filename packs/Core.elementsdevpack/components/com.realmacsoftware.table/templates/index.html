@@ -1,11 +1,11 @@
 <table class="{{classes.table}}">
-    @if(showHeader && columns.length > 0)
+    @if(wantsHeader)
     <thead>
         <tr class="{{classes.theadRow}}">
             @each(column in columns)
             <th class="{{classes.th}} {{column.widthClass}}">
-                @if(column.column)
-                    {{column.column}}
+                @if(column.useCsvTitle)
+                    {{column.title}}
                 @else
                     @text("column", default: "Column")
                 @endif
@@ -17,10 +17,10 @@
     <tbody class="{{classes.tbody}}">
         @each(row in rows)
         <tr class="{{classes.tr}}">
-            @each(column in columns)
-                <td class="{{classes.td}} {{column.widthClass}}">
-                    @if(row.cells)
-                        {{row.cells[column.index].text}}
+            @each(cell in row.cells)
+                <td class="{{classes.td}} {{cell.widthClass}}">
+                    @if(cell.useCsvText)
+                        {{cell.text}}
                     @else
                         @text("cell", default: "Cell")
                     @endif
