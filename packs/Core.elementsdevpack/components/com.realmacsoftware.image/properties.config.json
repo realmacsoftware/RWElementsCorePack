@@ -12,6 +12,10 @@
                     "globalControl": "Image"
                 },
                 {
+                    "information": {},
+                    "title": "Deprecated: the Alt field above is no longer used. Set alt text via the Alt input on the image resource inspector instead."
+                },
+                {
                     "divider": {}
                 },
                 {
