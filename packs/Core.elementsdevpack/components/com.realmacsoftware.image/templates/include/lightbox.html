@@ -36,30 +36,13 @@
             class="relative z-10 max-w-[90%] max-h-[90%] overflow-hidden w-full h-full"
         >
             <picture>
-                <source
-                    srcset="{{lightImage.srcset}}"
-                    @if(lightImage.sizes)
-                    sizes="{{lightImage.sizes}}"
-                    @endif
-                    media="(prefers-color-scheme: light)"
-                />
-                @if(hasDarkImage)
-                <source
-                    srcset="{{darkImage.srcset}}"
-                    @if(darkImage.sizes)
-                    sizes="{{darkImage.sizes}}"
-                    @endif
-                    media="(prefers-color-scheme: dark)"
-                />
-                @endif
+                <template x-if="srcDark">
+                    <source :srcset="srcDark" media="(prefers-color-scheme: dark)" />
+                </template>
                 <img
                     class="{{classes.lightboxImg}} w-full h-full object-contain object-center"
-                    src="{{lightImage.resource.image}}"
+                    :src="src"
                     alt="{{alt}}"
-                    @if(wantsLightbox)
-                    x-data=""
-                    @click="$dispatch('image-lightbox-open', { id: '{{id}}' })"
-                    @endif
                     @if(imageProtection)
                     oncontextmenu="return false"
                     ondragstart="return false"
