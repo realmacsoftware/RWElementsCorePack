@@ -139,10 +139,8 @@ const transformHook = (rw) => {
             ? `${sharedAssetPath}/images/image-square.png`
             : responsiveImageDataDark?.baseSrc || null;
 
-    const lightboxSrc = isResourceImage ? image?.image : imageCustomSrc;
-    const lightboxSrcDark = isResourceImage
-        ? imageDark?.image || null
-        : imageCustomSrcDark;
+    const lightboxResource = isResourceImage ? image : null;
+    const lightboxResourceDark = isResourceImage ? imageDark : null;
 
     const lightImage = isResourceImage
         ? {
@@ -254,8 +252,8 @@ const transformHook = (rw) => {
         sharedAssetPath,
         wantsLightbox: wantsLightboxAtAnyBreakpoint && mode != "edit",
         lightboxBreakpointsJSON: JSON.stringify(lightboxBreakpoints),
-        lightboxSrc,
-        lightboxSrcDark,
+        lightboxResource,
+        lightboxResourceDark,
         id: rw.node.id,
         wantsFetchPriority,
     });

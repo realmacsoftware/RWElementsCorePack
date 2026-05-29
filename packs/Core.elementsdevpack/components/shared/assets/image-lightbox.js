@@ -4,6 +4,7 @@ document.addEventListener("alpine:init", () => {
         open: false,
         src: "",
         srcDark: null,
+        alt: "",
         init() {
             const handlers = {
                 keydown: (e) => e.key === "Escape" && (this.open = false),
@@ -12,6 +13,7 @@ document.addEventListener("alpine:init", () => {
                 "image-lightbox-open": (e) => {
                     this.src = e.detail.src || "";
                     this.srcDark = e.detail.srcDark || null;
+                    this.alt = e.detail.alt || "";
                     this.open = true;
                 },
             };
