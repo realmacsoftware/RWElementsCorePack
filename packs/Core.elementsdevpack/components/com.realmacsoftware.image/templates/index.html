@@ -37,6 +37,20 @@
             @endeach
         @endif
 
+        @if(wantsLightbox)
+            @if(isResourceImage)
+                @if(hasDarkImage)
+                <source data-lightbox-role="dark" srcset="{{lightboxResourceDark.image}}" media="not all" />
+                @endif
+                <source data-lightbox-role="light" srcset="{{lightboxResource.image}}" media="not all" />
+            @else
+                @if(hasDarkImage)
+                <source data-lightbox-role="dark" srcset="{{darkImage.resource.image}}" media="not all" />
+                @endif
+                <source data-lightbox-role="light" srcset="{{lightImage.resource.image}}" media="not all" />
+            @endif
+        @endif
+
         <!-- Fallback img element -->
         <img
             class="{{classes.img}}"
@@ -47,18 +61,19 @@
             @if(wantsLightbox)
             x-data=""
             data-lightbox-breakpoints='{{lightboxBreakpointsJSON}}'
-            data-lightbox-src="{{lightboxSrc}}"
-            @if(hasDarkImage)
-            data-lightbox-src-dark="{{lightboxSrcDark}}"
-            @endif
             @click="
                 const bps = JSON.parse($el.dataset.lightboxBreakpoints);
                 let enabled = false;
                 bps.forEach(bp => { if (window.innerWidth >= bp.minWidth) enabled = bp.enabled; });
-                if (enabled) $dispatch('image-lightbox-open', {
+                if (!enabled) return;
+                const pic = $el.closest('picture');
+                const light = pic && pic.querySelector('source[data-lightbox-role=&quot;light&quot;]');
+                const dark = pic && pic.querySelector('source[data-lightbox-role=&quot;dark&quot;]');
+                $dispatch('image-lightbox-open', {
                     id: '{{id}}',
-                    src: $el.dataset.lightboxSrc,
-                    srcDark: $el.dataset.lightboxSrcDark || null,
+                    src: (light && light.getAttribute('srcset')) || $el.currentSrc || $el.src,
+                    srcDark: (dark && dark.getAttribute('srcset')) || null,
+                    alt: $el.alt,
                 });
             "
             @endif
