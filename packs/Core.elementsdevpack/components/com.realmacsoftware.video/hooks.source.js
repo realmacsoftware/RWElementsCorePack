@@ -65,7 +65,7 @@ const transformHook = (rw) => {
         objectClasses(rw),
         globalPadding,
     ]).toString();
-    
+
     const videoLightboxClasses = classnames([
         `aspect-video w-[min(95vw,calc(95vh*16/9))] max-w-[1920px] max-h-[95vh]`,
         objectClasses(rw),
@@ -105,9 +105,8 @@ const transformHook = (rw) => {
     };
 
     const getXData = () => {
-        return `videoPlayer('${id}', '${finalVideo.format}', '${
-            finalVideo.videoId
-        }', ${getOptions()})`;
+        return `videoPlayer('${id}', '${finalVideo.format}', '${finalVideo.videoId
+            }', ${getOptions()})`;
     };
 
     rw.setRootElement({
@@ -139,7 +138,7 @@ const transformHook = (rw) => {
         hasDarkThumbnail,
         thumbnail,
         thumbnailDark,
-        thumbnailAlt: thumbnailAlt || video?.name,
+        thumbnailAlt: video?.alt || thumbnailAlt || "",
         wantsLightbox: wantsLightbox && rw.project.mode != "edit",
     });
 };
