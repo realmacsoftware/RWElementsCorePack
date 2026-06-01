@@ -1,0 +1,9 @@
+{
+  "build" : 1,
+  "author" : "Elements Platform",
+  "identifier" : "com.elementsplatform.coretemplates2",
+  "categories" : [
+    "templates"
+  ],
+  "version" : 1
+}
