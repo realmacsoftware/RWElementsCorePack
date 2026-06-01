@@ -60,7 +60,7 @@ const transformHook = (rw) => {
     resources?.resources?.forEach((resource) => {
         resource.srcset = "";
         resource.thumbnail = rw.resizeResource(resource, 400);
-        resource.alt = resource.caption || resource.author || "";
+        resource.alt = resource.alt || resource.caption || resource.author || "";
 
         // check if this is a video
         resource.isVideo =
