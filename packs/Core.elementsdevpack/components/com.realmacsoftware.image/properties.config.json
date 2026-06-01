@@ -12,10 +12,6 @@
                     "globalControl": "Image"
                 },
                 {
-                    "information": {},
-                    "title": "Deprecated: the Alt field above is no longer used. Set alt text via the Alt input on the image resource inspector instead."
-                },
-                {
                     "divider": {}
                 },
                 {
@@ -109,8 +105,8 @@
                     "title": "Adds the loading='lazy' attribute to the image."
                 },
                 {
-                  "divider": {}
-              },
+                    "divider": {}
+                },
                 {
                     "title": "Fetch Priority",
                     "heading": {}
@@ -151,7 +147,9 @@
                     "title": "SVG",
                     "id": "imageMaskResource",
                     "resource": {
-                        "types": ["svg"]
+                        "types": [
+                            "svg"
+                        ]
                     }
                 },
                 {
