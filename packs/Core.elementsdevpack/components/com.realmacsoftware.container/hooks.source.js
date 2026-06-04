@@ -28,9 +28,12 @@ const transformHook = (rw) => {
 
     const { mode } = rw.project;
     const { id } = rw.node;
-    const { tags } = rw.collections;
+    const { tags, attributes } = rw.collections;
     const dataTags = tags?.map((tag) => tag.title).join(",") || "";
-
+    const customAttributes = attributes?.reduce((acc, { attribute, value }) => {
+        if (attribute) acc[attribute] = value || "";
+        return acc;
+    }, {}) || {};
     const link = globalLink(rw);
     const filter = globalFilter(rw);
     const {
@@ -130,6 +133,7 @@ const transformHook = (rw) => {
             ...link.args,
             ...filter.args,
             "data-filter-tags": dataTags,
+            ...customAttributes,
         },
     });
 
