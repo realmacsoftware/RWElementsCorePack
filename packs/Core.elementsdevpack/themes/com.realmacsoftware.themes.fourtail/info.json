@@ -1,0 +1,21 @@
+{
+  "author": "Realmac Software",
+  "title": "Four Tail",
+  "subTitle": "Clean, fresh, and modern.",
+  "tags": [
+    "tailwind",
+    "default"
+  ],
+  "build": "100",
+  "version": "1.0.0",
+  "deprecated": false,
+  "deploy": true,
+  "hidden": true,
+  "tailwindVersion": "v4",
+  "helpURL": "https://forums.realmacsoftware.com/",
+  "infoURL": "https://www.realmacsoftware.com/",
+  "googleFontNames": [
+    "Inter",
+    "Lexend"
+  ]
+}
