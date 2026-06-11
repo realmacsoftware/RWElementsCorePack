@@ -1,0 +1,25 @@
+{
+  "groups": [
+    {
+      "title": "Attribute",
+      "properties": [
+        {
+          "title": "Attribute",
+          "property": "attribute",
+          "responsive": false,
+          "text": {
+            "default": ""
+          }
+        },
+        {
+          "title": "Value",
+          "property": "value",
+          "responsive": false,
+          "text": {
+            "default": ""
+          }
+        }
+      ]
+    }
+  ]
+}

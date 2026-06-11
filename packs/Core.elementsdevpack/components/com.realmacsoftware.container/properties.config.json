@@ -405,6 +405,20 @@
                 },
                 {
                     "globalControl": "HTMLTag"
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Custom Attributes",
+                    "heading": {}
+                },
+                {
+                    "title": "Attributes",
+                    "id": "customAttributes",
+                    "collection": {
+                        "identifier": "com.realmacsoftware.container.collections.customAttributes"
+                    }
                 }
             ]
         }
