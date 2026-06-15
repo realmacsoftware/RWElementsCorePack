@@ -5,22 +5,68 @@
             "icon": "gearshape",
             "properties": [
                 {
-                    "title": "Columns",
-                    "id": "columns",
-                    "collection": {
-                        "identifier": "com.realmacsoftware.table.collections.columns"
+                    "title": "Data Source",
+                    "id": "dataSource",
+                    "responsive": false,
+                    "segmented": {
+                        "default": "manual",
+                        "items": [
+                            {
+                                "title": "Manual",
+                                "value": "manual"
+                            },
+                            {
+                                "title": "CSV",
+                                "value": "csv"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "title": "CSV File",
+                    "id": "csvResource",
+                    "visible": "dataSource == 'csv'",
+                    "responsive": false,
+                    "resource": {}
+                },
+                {
+                    "title": "CSV URL",
+                    "id": "csvUrl",
+                    "visible": "dataSource == 'csv'",
+                    "responsive": false,
+                    "text": {
+                        "default": ""
+                    }
+                },
+                {
+                    "title": "First Row as Header",
+                    "id": "csvFirstRowHeader",
+                    "visible": "dataSource == 'csv'",
+                    "responsive": false,
+                    "switch": {
+                        "default": true
                     }
                 },
                 {
                     "divider": {}
                 },
                 {
+                    "title": "Columns",
+                    "id": "columns",
+                    "visible": "dataSource == 'manual'",
+                    "collection": {
+                        "identifier": "com.realmacsoftware.table.collections.columns"
+                    }
+                },
+                {
                     "title": "Table Settings",
+                    "visible": "dataSource == 'manual'",
                     "heading": {}
                 },
                 {
                     "title": "Rows",
                     "id": "rowCount",
+                    "visible": "dataSource == 'manual'",
                     "responsive": false,
                     "number": {
                         "default": 3
