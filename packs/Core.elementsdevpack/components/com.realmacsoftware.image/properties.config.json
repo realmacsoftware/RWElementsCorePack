@@ -300,6 +300,15 @@
             ]
         },
         {
+            "title": "3D",
+            "icon": "cube",
+            "properties": [
+                {
+                    "globalControl": "Transforms3D"
+                }
+            ]
+        },
+        {
             "title": "Filters",
             "icon": "camera.filters",
             "properties": [
