@@ -1,0 +1,31 @@
+{
+  "groups": [
+    {
+      "title": "Transforms",
+      "icon": "skew",
+      "properties": [
+        {
+          "globalControl": "Transforms"
+        }
+      ]
+    },
+    {
+      "title": "3D",
+      "icon": "cube",
+      "properties": [
+        {
+          "globalControl": "Transforms3D"
+        }
+      ]
+    },
+    {
+      "title": "Transitions",
+      "icon": "wand.and.stars.inverse",
+      "properties": [
+        {
+          "globalControl": "Transitions"
+        }
+      ]
+    }
+  ]
+}
