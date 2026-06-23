@@ -43,6 +43,7 @@ const transformHook = (rw) => {
         justifyItems,
         alignContent,
         justifyContent,
+        globalPerspective3D(rw),
     ]).toString();
 
     rw.setRootElement({

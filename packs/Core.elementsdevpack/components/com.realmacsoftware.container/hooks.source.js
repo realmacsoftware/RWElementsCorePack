@@ -91,6 +91,8 @@ const transformHook = (rw) => {
             globalBgVideo &&
             globalBgVideoAspectRatio &&
             "aspect-video",
+            globalPerspective3D(rw),
+            globalTransforms3D(rw),
         ]).toString(),
         background: classnames([
             `z-0 transform-gpu`,
