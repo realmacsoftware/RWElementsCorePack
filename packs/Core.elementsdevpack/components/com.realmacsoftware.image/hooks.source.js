@@ -196,7 +196,6 @@ const transformHook = (rw) => {
         ]).toString(),
         picture: classnames([
             'block',
-            globalPerspective3D(rw),
         ]).toString(),
         img: classnames([
             wantsLightboxAtAnyBreakpoint && lightboxCursorClasses,
@@ -208,7 +207,6 @@ const transformHook = (rw) => {
             globalBorders(rw),
             // displaySize(),
             objectClasses(rw),
-            globalTransforms3D(rw),
             rw.props.aspectRatio == "aspect-[auto]"
                 ? `aspect-[${image?.aspect}]`
                 : aspectRatioClasses(rw),
