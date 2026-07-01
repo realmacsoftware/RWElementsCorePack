@@ -5,10 +5,10 @@
       "icon": "tag",
       "properties": [
         {
-          "title" : "Tags",
-          "property" : "tags",
+          "title": "Tags",
+          "property": "tags",
           "collection": {
-              "identifier": "com.realmacsoftware.flex.collections.tags"
+            "identifier": "com.realmacsoftware.flex.collections.tags"
           }
         }
       ]
@@ -185,6 +185,15 @@
       "properties": [
         {
           "globalControl": "Transforms"
+        }
+      ]
+    },
+    {
+      "title": "3D",
+      "icon": "cube",
+      "properties": [
+        {
+          "globalControl": "Transforms3D"
         }
       ]
     },

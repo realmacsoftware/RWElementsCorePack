@@ -132,7 +132,7 @@ const transformHook = (rw) => {
         isEditMode && isCMSImage
             ? `${sharedAssetPath}/images/image-square.png`
             : responsiveImageData?.baseSrc ||
-              `${sharedAssetPath}/images/image-square.png`;
+            `${sharedAssetPath}/images/image-square.png`;
 
     const imageCustomSrcDark =
         isEditMode && isCMSImage
@@ -144,27 +144,27 @@ const transformHook = (rw) => {
 
     const lightImage = isResourceImage
         ? {
-              resource: generateDefaultSrc(image),
-              ...generateResourceSources(image),
-          }
+            resource: generateDefaultSrc(image),
+            ...generateResourceSources(image),
+        }
         : {
-              resource: {
-                  image: imageCustomSrc,
-              },
-              ...responsiveImageData,
-          };
+            resource: {
+                image: imageCustomSrc,
+            },
+            ...responsiveImageData,
+        };
 
     const darkImage = isResourceImage
         ? {
-              resource: generateDefaultSrc(imageDark),
-              ...generateResourceSources(imageDark),
-          }
+            resource: generateDefaultSrc(imageDark),
+            ...generateResourceSources(imageDark),
+        }
         : {
-              resource: {
-                  image: imageCustomSrcDark,
-              },
-              ...responsiveImageDataDark,
-          };
+            resource: {
+                image: imageCustomSrcDark,
+            },
+            ...responsiveImageDataDark,
+        };
 
     // Generate mask classes if SVG resource is present
     const wantsMask = !!imageMaskResource?.image;
@@ -173,7 +173,7 @@ const transformHook = (rw) => {
         const svgContent = imageMaskResource.image;
         const encodedSvg = encodeURIComponent(svgContent);
         const maskUrl = `url('data:image/svg+xml,${encodedSvg}')`;
-        
+
         maskClasses.push(
             `[-webkit-mask-image:${maskUrl}]`,
             `[mask-image:${maskUrl}]`,
@@ -193,6 +193,9 @@ const transformHook = (rw) => {
             globalSizing(rw),
             globalSpacing(rw),
             advancedClasses(rw),
+        ]).toString(),
+        picture: classnames([
+            'block',
         ]).toString(),
         img: classnames([
             wantsLightboxAtAnyBreakpoint && lightboxCursorClasses,

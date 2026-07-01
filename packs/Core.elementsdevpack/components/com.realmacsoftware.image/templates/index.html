@@ -1,11 +1,13 @@
 @if(!hasImage)
-<img
-    class="{{classes.img}}"
-    src="{{sharedAssetPath}}/images/image-square.png"
-    alt="{{alt}}"
-/>
+    <picture class="{{classes.picture}}">
+        <img
+            class="{{classes.img}}"
+            src="{{sharedAssetPath}}/images/image-square.png"
+            alt="{{alt}}"
+        />
+    </picture>
 @else
-    <picture>
+    <picture class="{{classes.picture}}">
         @if(!isCMSImage)
             @each(source in darkImage.sources)
                 <source
