@@ -1,4 +1,5 @@
 {
   "subTitle" : "Structure, clarity, and confidence.",
-  "title" : "Atlas"
+  "title" : "Atlas",
+  "tailwindVersion": "v4"
 }

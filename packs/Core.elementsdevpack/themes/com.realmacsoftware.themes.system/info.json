@@ -9,6 +9,7 @@
   "build": "100",
   "version": "1.0.0",
   "deprecated": false,
+  "tailwindVersion": "v4",
   "helpURL": "https://forums.realmacsoftware.com/",
   "infoURL": "https://www.realmacsoftware.com/"
 }
