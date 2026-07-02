@@ -106,7 +106,7 @@
           "visible": "globalControlTypeSVGFill == 'static' || (globalControlTypeSVGFill == 'hover' && globalSVGFillState == 'start')",
           "title": "Color",
           "id": "fillColor",
-          "format": "fill-{{value}}/[--svgOpacity] text-{{value}}/[--svgOpacity]",
+          "format": "fill-{{value}}/(--svgOpacity) text-{{value}}/(--svgOpacity)",
           "themeColor": {
             "default": {
               "name": "surface",
@@ -118,7 +118,7 @@
           "visible": "globalControlTypeSVGFill == 'static' || (globalControlTypeSVGFill == 'hover' && globalSVGFillState == 'start')",
           "title": "Opacity",
           "id": "fillColorOpacity",
-          "format": "[--svgOpacity:_{{value}}%]",
+          "format": "[--svgOpacity:{{value}}%]",
           "responsive": false,
           "slider": {
             "use": "Slider",
@@ -130,7 +130,7 @@
           "visible": "globalControlTypeSVGFill == 'hover' && globalSVGFillState == 'end'",
           "title": "Color",
           "id": "fillColorEnd",
-          "format": "hover:fill-{{value}}/[--svgOpacity] hover:text-{{value}}/[--svgOpacity]",
+          "format": "hover:fill-{{value}}/(--svgOpacity) hover:text-{{value}}/(--svgOpacity)",
           "themeColor": {
             "default": {
               "name": "surface",
@@ -202,7 +202,7 @@
           "visible": "globalControlTypeSVGStroke == 'static' || (globalControlTypeSVGStroke == 'hover' && globalSVGStrokeState == 'start')",
           "title": "Color",
           "id": "strokeColor",
-          "format": "stroke-{{value}}/[--strokeOpacity]",
+          "format": "stroke-{{value}}/(--strokeOpacity)",
           "themeColor": {
             "default": {
               "name": "surface",
@@ -236,7 +236,7 @@
           "visible": "globalControlTypeSVGStroke == 'hover' && globalSVGStrokeState == 'end'",
           "title": "Color",
           "id": "strokeColorEnd",
-          "format": "hover:stroke-{{value}}/[--strokeOpacity]",
+          "format": "hover:stroke-{{value}}/(--strokeOpacity)",
           "themeColor": {
             "default": {
               "name": "surface",

@@ -177,7 +177,6 @@ const transformHook = (rw) => {
                 `w-max`,
                 mobileMenuBackground,
                 mobileMenuBackgroundOpacity,
-                `dark:${mobileMenuBackgroundOpacity}`,
                 mobileMenuBlur,
                 mobileMenuShadow,
                 mobileMenuRounded,
@@ -235,7 +234,6 @@ const transformHook = (rw) => {
                 `fixed inset-0 z-50 duration-150 pointer-events-none`,
                 mobileBackdropColor,
                 mobileBackdropOpacity,
-                `dark:${mobileBackdropOpacity}`,
                 mobileBackdropBlur,
             ]).toString(),
             menu: classnames([
@@ -243,7 +241,6 @@ const transformHook = (rw) => {
                 `overflow-y-auto`,
                 mobileMenuBackground,
                 mobileMenuBackgroundOpacity,
-                `dark:${mobileMenuBackgroundOpacity}`,
                 mobileMenuBlur,
                 mobileMenuShadow,
                 mobileMenuRounded,

@@ -384,7 +384,7 @@
                     "visible": "globlaNavItemsState == 'default'",
                     "title": "Color",
                     "id": "globalNavItemsTextColor",
-                    "format": "text-{{value}}",
+                    "format": "text-{{value}}/(--nav-item-text-opacity)",
                     "themeColor": {
                         "default": {
                             "name": "text",
@@ -396,7 +396,7 @@
                     "visible": "globlaNavItemsState == 'default'",
                     "title": "Opacity",
                     "id": "globalNavItemsTextColorOpacity",
-                    "format": "text-opacity-[{{value}}%] dark:text-opacity-[{{value}}%]",
+                    "format": "[--nav-item-text-opacity:{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "default": 100,
@@ -407,7 +407,7 @@
                     "visible": "globlaNavItemsState == 'hover'",
                     "title": "Color",
                     "id": "globalNavItemsTextColorHover",
-                    "format": "hover:text-{{value}} aria-[current=page]:text-{{value}}",
+                    "format": "hover:text-{{value}}/(--nav-item-text-opacity) aria-[current=page]:text-{{value}}/(--nav-item-text-opacity)",
                     "themeColor": {
                         "default": {
                             "name": "text",
@@ -419,7 +419,7 @@
                     "visible": "globlaNavItemsState == 'hover'",
                     "title": "Opacity",
                     "id": "globalNavItemsTextColorOpacityHover",
-                    "format": "hover:text-opacity-[{{value}}%] dark:hover:text-opacity-[{{value}}%] aria-[current=page]:text-opacity-[{{value}}%] dark:aria-[current=page]:text-opacity-[{{value}}%]",
+                    "format": "hover:[--nav-item-text-opacity:{{value}}%] aria-[current=page]:[--nav-item-text-opacity:{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "default": 100,
@@ -520,7 +520,7 @@
                     "visible": "globalNavItemsBackgroundState == 'default' && globalNavItemsBackgroundType == 'color'",
                     "title": "Color",
                     "id": "globalNavItemsBackgroundColor",
-                    "format": "bg-{{value}}",
+                    "format": "bg-{{value}}/(--nav-item-bg-opacity)",
                     "themeColor": {
                         "default": {
                             "name": "surface",
@@ -532,7 +532,7 @@
                     "visible": "globalNavItemsBackgroundState == 'default' && globalNavItemsBackgroundType == 'color'",
                     "title": "Opacity",
                     "id": "globalNavItemsBackgroundOpacity",
-                    "format": "bg-opacity-[{{value}}%]",
+                    "format": "[--nav-item-bg-opacity:{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "default": 100,
@@ -561,7 +561,7 @@
                     "visible": "globalNavItemsBackgroundState == 'hover' && globalNavItemsBackgroundTypeHover == 'color'",
                     "title": "Color",
                     "id": "globalNavItemsBackgroundColorHover",
-                    "format": "hover:bg-{{value}} aria-[current=page]:bg-{{value}}",
+                    "format": "hover:bg-{{value}}/(--nav-item-bg-opacity) aria-[current=page]:bg-{{value}}/(--nav-item-bg-opacity)",
                     "themeColor": {
                         "default": {
                             "name": "surface",
@@ -573,7 +573,7 @@
                     "visible": "globalNavItemsBackgroundState == 'hover' && globalNavItemsBackgroundTypeHover == 'color'",
                     "title": "Opacity",
                     "id": "globalNavItemsBackgroundOpacityHover",
-                    "format": "hover:bg-opacity-[{{value}}%] aria-[current=page]:bg-opacity-[{{value}}%]",
+                    "format": "hover:[--nav-item-bg-opacity:{{value}}%] aria-[current=page]:[--nav-item-bg-opacity:{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "default": 100,
@@ -962,7 +962,7 @@
                 {
                     "title": "Background",
                     "id": "mobileMenuBackground",
-                    "format": "bg-{{value}}",
+                    "format": "bg-{{value}}/(--mobile-menu-bg-opacity)",
                     "themeColor": {
                         "default": {
                             "name": "surface",
@@ -973,7 +973,7 @@
                 {
                     "title": "Opacity",
                     "id": "mobileMenuBackgroundOpacity",
-                    "format": "bg-opacity-[{{value}}%]",
+                    "format": "[--mobile-menu-bg-opacity:{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "default": 100,
@@ -1055,7 +1055,7 @@
                 {
                     "title": "Color",
                     "id": "mobileBackdropColor",
-                    "format": "bg-{{value}}",
+                    "format": "bg-{{value}}/(--mobile-backdrop-bg-opacity)",
                     "themeColor": {
                         "default": {
                             "name": "surface",
@@ -1066,7 +1066,7 @@
                 {
                     "title": "Opacity",
                     "id": "mobileBackdropOpacity",
-                    "format": "bg-opacity-[{{value}}%]",
+                    "format": "[--mobile-backdrop-bg-opacity:{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "default": 20,

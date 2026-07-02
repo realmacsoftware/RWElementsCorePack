@@ -1,1700 +1,1465 @@
 {
-  "baseThemeIdentifier" : null,
-  "borderRadius" : [
+  "baseThemeIdentifier": null,
+  "borderRadius": [
     {
-      "id" : "9EBBCC6C-9C48-4A94-ABBD-B062C3360CF8",
-      "name" : "Default",
-      "remValue" : 0.2
+      "id": "9EBBCC6C-9C48-4A94-ABBD-B062C3360CF8",
+      "name": "Default",
+      "remValue": 0.2
     },
     {
-      "id" : "6A11E314-C523-437E-8992-4DC421F176DC",
-      "name" : "none",
-      "remValue" : 0
+      "id": "6A11E314-C523-437E-8992-4DC421F176DC",
+      "name": "none",
+      "remValue": 0
     },
     {
-      "id" : "4A42A763-E4A9-4886-ABEC-6B5294E6A447",
-      "name" : "xs",
-      "remValue" : 0.125
+      "id": "4A42A763-E4A9-4886-ABEC-6B5294E6A447",
+      "name": "xs",
+      "remValue": 0.125
     },
     {
-      "id" : "E609D32A-237D-4D95-9057-88271BA4005C",
-      "name" : "sm",
-      "remValue" : 0.2
+      "id": "E609D32A-237D-4D95-9057-88271BA4005C",
+      "name": "sm",
+      "remValue": 0.2
     },
     {
-      "id" : "377AB4A2-050E-40A5-88CA-7D525C42240C",
-      "name" : "md",
-      "remValue" : 0.375
+      "id": "377AB4A2-050E-40A5-88CA-7D525C42240C",
+      "name": "md",
+      "remValue": 0.375
     },
     {
-      "id" : "19A3C7A0-1406-4D57-BF75-75F53F1B0828",
-      "name" : "lg",
-      "remValue" : 0.5
+      "id": "19A3C7A0-1406-4D57-BF75-75F53F1B0828",
+      "name": "lg",
+      "remValue": 0.5
     },
     {
-      "id" : "C94C4779-4DFD-4394-AB9D-965D4B48F79C",
-      "name" : "xl",
-      "remValue" : 0.75
+      "id": "C94C4779-4DFD-4394-AB9D-965D4B48F79C",
+      "name": "xl",
+      "remValue": 0.75
     },
     {
-      "id" : "53A6DAC5-721D-402C-BDEA-6013F8173717",
-      "name" : "2xl",
-      "remValue" : 1
+      "id": "53A6DAC5-721D-402C-BDEA-6013F8173717",
+      "name": "2xl",
+      "remValue": 1
     },
     {
-      "id" : "75C76753-C348-42D4-AE07-42409A85678C",
-      "name" : "3xl",
-      "remValue" : 1.5
+      "id": "75C76753-C348-42D4-AE07-42409A85678C",
+      "name": "3xl",
+      "remValue": 1.5
     },
     {
-      "id" : "193E58CB-F895-4F48-9407-7840834A936E",
-      "name" : "full",
-      "remValue" : 36
+      "id": "193E58CB-F895-4F48-9407-7840834A936E",
+      "name": "full",
+      "remValue": 36
     }
   ],
-  "fontStyle" : [
+  "fontStyle": [
     {
-      "letterSpacing" : -0.01,
-      "name" : "xs",
-      "id" : "CF06D6EE-CBFF-438E-99C4-686E0AFD134B",
-      "lineHeight" : 1,
-      "fontSize" : 0.75,
-      "fontWeight" : 400
+      "letterSpacing": -0.01,
+      "name": "xs",
+      "id": "CF06D6EE-CBFF-438E-99C4-686E0AFD134B",
+      "lineHeight": 1,
+      "fontSize": 0.75,
+      "fontWeight": 400
     },
     {
-      "letterSpacing" : -0.01,
-      "name" : "sm",
-      "id" : "32737A30-F4E4-445B-AFE3-39D456B3454E",
-      "lineHeight" : 1.25,
-      "fontSize" : 0.88,
-      "fontWeight" : 400
+      "letterSpacing": -0.01,
+      "name": "sm",
+      "id": "32737A30-F4E4-445B-AFE3-39D456B3454E",
+      "lineHeight": 1.25,
+      "fontSize": 0.88,
+      "fontWeight": 400
     },
     {
-      "letterSpacing" : -0.01,
-      "name" : "base",
-      "id" : "BEC42374-C33E-4BE3-A244-C1966E747C18",
-      "lineHeight" : 1.5,
-      "fontSize" : 1,
-      "fontWeight" : 400
+      "letterSpacing": -0.01,
+      "name": "base",
+      "id": "BEC42374-C33E-4BE3-A244-C1966E747C18",
+      "lineHeight": 1.5,
+      "fontSize": 1,
+      "fontWeight": 400
     },
     {
-      "letterSpacing" : -0.01,
-      "name" : "lg",
-      "id" : "031E0570-124E-472C-BC73-3F2F54A7FDE6",
-      "lineHeight" : 1.75,
-      "fontSize" : 1.12,
-      "fontWeight" : 400
+      "letterSpacing": -0.01,
+      "name": "lg",
+      "id": "031E0570-124E-472C-BC73-3F2F54A7FDE6",
+      "lineHeight": 1.75,
+      "fontSize": 1.12,
+      "fontWeight": 400
     },
     {
-      "letterSpacing" : -0.01,
-      "name" : "xl",
-      "id" : "AF684983-A9E5-42BC-A1A4-94C3F8E90ECB",
-      "lineHeight" : 1.75,
-      "fontSize" : 1.25,
-      "fontWeight" : 400
+      "letterSpacing": -0.01,
+      "name": "xl",
+      "id": "AF684983-A9E5-42BC-A1A4-94C3F8E90ECB",
+      "lineHeight": 1.75,
+      "fontSize": 1.25,
+      "fontWeight": 400
     },
     {
-      "letterSpacing" : -0.01,
-      "name" : "2xl",
-      "id" : "14AF6075-8436-4E50-8293-C4D8EA5FB8C4",
-      "lineHeight" : 2,
-      "fontSize" : 1.5,
-      "fontWeight" : 400
+      "letterSpacing": -0.01,
+      "name": "2xl",
+      "id": "14AF6075-8436-4E50-8293-C4D8EA5FB8C4",
+      "lineHeight": 2,
+      "fontSize": 1.5,
+      "fontWeight": 400
     },
     {
-      "letterSpacing" : -0.01,
-      "name" : "3xl",
-      "id" : "57ECF1BB-165C-4977-8DD7-61EE5D10449F",
-      "lineHeight" : 2.25,
-      "fontSize" : 1.88,
-      "fontWeight" : 400
+      "letterSpacing": -0.01,
+      "name": "3xl",
+      "id": "57ECF1BB-165C-4977-8DD7-61EE5D10449F",
+      "lineHeight": 2.25,
+      "fontSize": 1.88,
+      "fontWeight": 400
     },
     {
-      "letterSpacing" : -0.01,
-      "name" : "4xl",
-      "id" : "127550C5-B3D7-4CFB-85FB-38B0933C119F",
-      "lineHeight" : 2.5,
-      "fontSize" : 2.25,
-      "fontWeight" : 400
+      "letterSpacing": -0.01,
+      "name": "4xl",
+      "id": "127550C5-B3D7-4CFB-85FB-38B0933C119F",
+      "lineHeight": 2.5,
+      "fontSize": 2.25,
+      "fontWeight": 400
     },
     {
-      "letterSpacing" : -0.01,
-      "name" : "5xl",
-      "id" : "974D25E0-E2EE-4AF4-8A4D-7CA73658EC9A",
-      "lineHeight" : 3.5,
-      "fontSize" : 3,
-      "fontWeight" : 400
+      "letterSpacing": -0.01,
+      "name": "5xl",
+      "id": "974D25E0-E2EE-4AF4-8A4D-7CA73658EC9A",
+      "lineHeight": 3.5,
+      "fontSize": 3,
+      "fontWeight": 400
     },
     {
-      "letterSpacing" : -0.01,
-      "name" : "6xl",
-      "id" : "8C812243-8568-43F1-8264-AC3F3CE1DC2B",
-      "lineHeight" : 4.5,
-      "fontSize" : 3.75,
-      "fontWeight" : 400
+      "letterSpacing": -0.01,
+      "name": "6xl",
+      "id": "8C812243-8568-43F1-8264-AC3F3CE1DC2B",
+      "lineHeight": 4.5,
+      "fontSize": 3.75,
+      "fontWeight": 400
     },
     {
-      "letterSpacing" : -0.01,
-      "name" : "7xl",
-      "id" : "86B86139-2511-4AA8-8C2E-7F45EA05C604",
-      "lineHeight" : 5.5,
-      "fontSize" : 4.5,
-      "fontWeight" : 400
+      "letterSpacing": -0.01,
+      "name": "7xl",
+      "id": "86B86139-2511-4AA8-8C2E-7F45EA05C604",
+      "lineHeight": 5.5,
+      "fontSize": 4.5,
+      "fontWeight": 400
     },
     {
-      "letterSpacing" : -0.01,
-      "name" : "8xl",
-      "id" : "E18EFD15-7B64-4103-8FC4-B0C6852B4CFA",
-      "lineHeight" : 6.5,
-      "fontSize" : 6,
-      "fontWeight" : 400
+      "letterSpacing": -0.01,
+      "name": "8xl",
+      "id": "E18EFD15-7B64-4103-8FC4-B0C6852B4CFA",
+      "lineHeight": 6.5,
+      "fontSize": 6,
+      "fontWeight": 400
     },
     {
-      "letterSpacing" : -0.01,
-      "name" : "9xl",
-      "id" : "FF687FC5-7046-4FEB-9F9D-BC445961030E",
-      "lineHeight" : 8.5,
-      "fontSize" : 8,
-      "fontWeight" : 400
+      "letterSpacing": -0.01,
+      "name": "9xl",
+      "id": "FF687FC5-7046-4FEB-9F9D-BC445961030E",
+      "lineHeight": 8.5,
+      "fontSize": 8,
+      "fontWeight": 400
     }
   ],
-  "shadows" : [
+  "shadows": [
     {
-      "id" : "9A12B34E-FC82-4E86-8E53-41B777D330A7",
-      "name" : "Default",
-      "shadows" : [
+      "id": "9A12B34E-FC82-4E86-8E53-41B777D330A7",
+      "name": "Default",
+      "shadows": [
         {
-          "radius" : 0,
-          "inner" : false,
-          "color" : "0.102838 0.164325 0.321587 0.2",
-          "x" : 0,
-          "y" : 0
+          "radius": 0,
+          "inner": false,
+          "color": "0.102838 0.164325 0.321587 0.2",
+          "x": 0,
+          "y": 0
         }
       ]
     },
     {
-      "id" : "B6C53732-F4C0-4E65-9BB9-7EA14A6DD442",
-      "name" : "none",
-      "shadows" : [
-
-      ]
+      "id": "B6C53732-F4C0-4E65-9BB9-7EA14A6DD442",
+      "name": "none",
+      "shadows": []
     },
     {
-      "id" : "8B8FFC24-7AA8-4986-BA58-1F82E20C52A4",
-      "name" : "inner",
-      "shadows" : [
+      "id": "8B8FFC24-7AA8-4986-BA58-1F82E20C52A4",
+      "name": "inner",
+      "shadows": [
         {
-          "radius" : 0,
-          "inner" : true,
-          "color" : "0.102838 0.164325 0.321587 0.331824",
-          "x" : 0,
-          "y" : 1
+          "radius": 0,
+          "inner": true,
+          "color": "0.102838 0.164325 0.321587 0.331824",
+          "x": 0,
+          "y": 1
         }
       ]
     },
     {
-      "id" : "6641DC05-427C-4D31-9298-F2FEC14270D6",
-      "name" : "xs",
-      "shadows" : [
+      "id": "6641DC05-427C-4D31-9298-F2FEC14270D6",
+      "name": "xs",
+      "shadows": [
         {
-          "radius" : 0,
-          "inner" : false,
-          "color" : "0.102838 0.164325 0.321587 0.2",
-          "x" : 0,
-          "y" : 1
+          "radius": 0,
+          "inner": false,
+          "color": "0.102838 0.164325 0.321587 0.2",
+          "x": 0,
+          "y": 1
         }
       ]
     },
     {
-      "id" : "3E30FF55-25C1-42A0-86FC-01F9C49BB933",
-      "name" : "sm",
-      "shadows" : [
+      "id": "3E30FF55-25C1-42A0-86FC-01F9C49BB933",
+      "name": "sm",
+      "shadows": [
         {
-          "radius" : 0,
-          "inner" : false,
-          "color" : "0.102838 0.164325 0.321587 0.2",
-          "x" : 0,
-          "y" : 0
+          "radius": 0,
+          "inner": false,
+          "color": "0.102838 0.164325 0.321587 0.2",
+          "x": 0,
+          "y": 0
         }
       ]
     },
     {
-      "id" : "F7D8DE8A-CEEF-48C1-AB5B-E67CBF99E394",
-      "name" : "md",
-      "shadows" : [
+      "id": "F7D8DE8A-CEEF-48C1-AB5B-E67CBF99E394",
+      "name": "md",
+      "shadows": [
         {
-          "radius" : 0,
-          "inner" : false,
-          "color" : "0.102838 0.164325 0.321587 0.2",
-          "x" : 0,
-          "y" : 2
+          "radius": 0,
+          "inner": false,
+          "color": "0.102838 0.164325 0.321587 0.2",
+          "x": 0,
+          "y": 2
         },
         {
-          "radius" : 0,
-          "inner" : false,
-          "color" : "0.102838 0.164325 0.321587 0.2",
-          "x" : 0,
-          "y" : 1
+          "radius": 0,
+          "inner": false,
+          "color": "0.102838 0.164325 0.321587 0.2",
+          "x": 0,
+          "y": 1
         }
       ]
     },
     {
-      "id" : "A58E72BF-E9B6-43FB-A387-AD1886550FF9",
-      "name" : "lg",
-      "shadows" : [
+      "id": "A58E72BF-E9B6-43FB-A387-AD1886550FF9",
+      "name": "lg",
+      "shadows": [
         {
-          "radius" : 0,
-          "inner" : false,
-          "color" : "0.102838 0.164325 0.321587 0.2",
-          "x" : 0,
-          "y" : 4
+          "radius": 0,
+          "inner": false,
+          "color": "0.102838 0.164325 0.321587 0.2",
+          "x": 0,
+          "y": 4
         }
       ]
     },
     {
-      "id" : "5817851C-0440-4F82-8335-79ABA91A4D91",
-      "name" : "xl",
-      "shadows" : [
+      "id": "5817851C-0440-4F82-8335-79ABA91A4D91",
+      "name": "xl",
+      "shadows": [
         {
-          "radius" : 0,
-          "inner" : false,
-          "color" : "0.102838 0.164325 0.321587 0.2",
-          "x" : 0,
-          "y" : 5
+          "radius": 0,
+          "inner": false,
+          "color": "0.102838 0.164325 0.321587 0.2",
+          "x": 0,
+          "y": 5
         }
       ]
     },
     {
-      "id" : "EC3B7FAD-3E25-4958-B8A9-93501E36842C",
-      "name" : "2xl",
-      "shadows" : [
+      "id": "EC3B7FAD-3E25-4958-B8A9-93501E36842C",
+      "name": "2xl",
+      "shadows": [
         {
-          "radius" : 0,
-          "inner" : false,
-          "color" : "0.102838 0.164325 0.321587 0.204191",
-          "x" : 0,
-          "y" : 6
+          "radius": 0,
+          "inner": false,
+          "color": "0.102838 0.164325 0.321587 0.204191",
+          "x": 0,
+          "y": 6
         }
       ]
     }
   ],
-  "textShadows" : [
-
-  ],
-  "fontFamily" : [
+  "textShadows": [],
+  "fontFamily": [
     {
-      "fontNames" : "Sora",
-      "name" : "body",
-      "id" : "C73E8C64-B4D5-4F6F-AD74-2F58702A9B20",
-      "kind" : "google",
-      "resources" : [
-
-      ]
+      "fontNames": "Sora",
+      "name": "body",
+      "id": "C73E8C64-B4D5-4F6F-AD74-2F58702A9B20",
+      "kind": "google",
+      "resources": []
     },
     {
-      "fontNames" : "Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
-      "name" : "code",
-      "id" : "A75A22BD-A763-49E3-B3E4-60E2F2709E9C",
-      "kind" : "names",
-      "resources" : [
-
-      ]
+      "fontNames": "Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+      "name": "code",
+      "id": "A75A22BD-A763-49E3-B3E4-60E2F2709E9C",
+      "kind": "names",
+      "resources": []
     },
     {
-      "fontNames" : "Space Grotesk",
-      "name" : "heading",
-      "id" : "1AB84AA4-49AF-4AB5-906B-1344B84C90AF",
-      "kind" : "google",
-      "resources" : [
-
-      ]
+      "fontNames": "Space Grotesk",
+      "name": "heading",
+      "id": "1AB84AA4-49AF-4AB5-906B-1344B84C90AF",
+      "kind": "google",
+      "resources": []
     },
     {
-      "fontNames" : "Georgia, Cambria, 'Times New Roman', Times, serif",
-      "name" : "quote",
-      "id" : "E43F4655-FB61-4294-8989-EE0757484D88",
-      "kind" : "names",
-      "resources" : [
-
-      ]
+      "fontNames": "Georgia, Cambria, 'Times New Roman', Times, serif",
+      "name": "quote",
+      "id": "E43F4655-FB61-4294-8989-EE0757484D88",
+      "kind": "names",
+      "resources": []
     }
   ],
-  "page" : {
-    "backgroundColor" : {
-      "darkColorStripId" : "surface",
-      "shade" : 50,
-      "darkShade" : 950,
-      "colorStripId" : "surface"
+  "page": {
+    "backgroundColor": {
+      "darkColorStripId": "surface",
+      "shade": 50,
+      "darkShade": 950,
+      "colorStripId": "surface"
     }
   },
-  "colors" : [
+  "colors": [
     {
-      "customSwatches" : {
-        "400" : "#efefef",
-        "700" : "#dbdbdb",
-        "800" : "#d0d0d0",
-        "950" : "#c1c1c1",
-        "500" : "#e9e9e9",
-        "50" : "#ffffff",
-        "200" : "#f5f5f5",
-        "300" : "#f1f1f1",
-        "100" : "#f6f6f6",
-        "600" : "#e3e3e3",
-        "900" : "#c1c1c1"
+      "customSwatches": {
+        "400": "#efefef",
+        "700": "#dbdbdb",
+        "800": "#d0d0d0",
+        "950": "#c1c1c1",
+        "500": "#e9e9e9",
+        "50": "#ffffff",
+        "200": "#f5f5f5",
+        "300": "#f1f1f1",
+        "100": "#f6f6f6",
+        "600": "#e3e3e3",
+        "900": "#c1c1c1"
       },
-      "useCustomSwatches" : false,
-      "id" : "5F6BD179-A4B6-4DFD-B3D9-02EE82AC3D29",
-      "swatches" : {
-        "400" : "#ffffff",
-        "500" : "#ffffff",
-        "200" : "#ffffff",
-        "700" : "#ffffff",
-        "900" : "#ffffff",
-        "300" : "#ffffff",
-        "100" : "#ffffff",
-        "800" : "#ffffff",
-        "50" : "#ffffff",
-        "600" : "#ffffff",
-        "950" : "#ffffff"
+      "useCustomSwatches": false,
+      "id": "5F6BD179-A4B6-4DFD-B3D9-02EE82AC3D29",
+      "swatches": {
+        "400": "#ffffff",
+        "500": "#ffffff",
+        "200": "#ffffff",
+        "700": "#ffffff",
+        "900": "#ffffff",
+        "300": "#ffffff",
+        "100": "#ffffff",
+        "800": "#ffffff",
+        "50": "#ffffff",
+        "600": "#ffffff",
+        "950": "#ffffff"
       },
-      "chosenColor" : "1 1 1 1",
-      "name" : "white",
-      "brightness" : 950
+      "chosenColor": "1 1 1 1",
+      "name": "white",
+      "brightness": 950
     },
     {
-      "customSwatches" : {
-        "100" : "#111111",
-        "700" : "#787878",
-        "500" : "#606060",
-        "50" : "#000000",
-        "900" : "#999999",
-        "950" : "#999999",
-        "400" : "#4d4d4d",
-        "600" : "#6f6f6f",
-        "200" : "#282828",
-        "800" : "#868686",
-        "300" : "#3d3d3d"
+      "customSwatches": {
+        "100": "#111111",
+        "700": "#787878",
+        "500": "#606060",
+        "50": "#000000",
+        "900": "#999999",
+        "950": "#999999",
+        "400": "#4d4d4d",
+        "600": "#6f6f6f",
+        "200": "#282828",
+        "800": "#868686",
+        "300": "#3d3d3d"
       },
-      "useCustomSwatches" : false,
-      "id" : "3433B6D5-112C-4B0A-A8CE-907F52626AB9",
-      "swatches" : {
-        "950" : "#000000",
-        "500" : "#000000",
-        "300" : "#000000",
-        "50" : "#000000",
-        "200" : "#000000",
-        "700" : "#000000",
-        "600" : "#000000",
-        "900" : "#000000",
-        "100" : "#000000",
-        "400" : "#000000",
-        "800" : "#000000"
+      "useCustomSwatches": false,
+      "id": "3433B6D5-112C-4B0A-A8CE-907F52626AB9",
+      "swatches": {
+        "950": "#000000",
+        "500": "#000000",
+        "300": "#000000",
+        "50": "#000000",
+        "200": "#000000",
+        "700": "#000000",
+        "600": "#000000",
+        "900": "#000000",
+        "100": "#000000",
+        "400": "#000000",
+        "800": "#000000"
       },
-      "chosenColor" : "0 0 0 1",
-      "name" : "black",
-      "brightness" : 50
+      "chosenColor": "0 0 0 1",
+      "name": "black",
+      "brightness": 50
     },
     {
-      "customSwatches" : {
-        "50" : "#dcfffb",
-        "100" : "#aafff2",
-        "200" : "#6bffe8",
-        "300" : "#2dffde",
-        "400" : "#00f5d0",
-        "500" : "#00e5c3",
-        "600" : "#00c4a8",
-        "700" : "#00a08a",
-        "800" : "#007d6e",
-        "900" : "#005a50",
-        "950" : "#003d35"
+      "customSwatches": {
+        "50": "#dcfffb",
+        "100": "#aafff2",
+        "200": "#6bffe8",
+        "300": "#2dffde",
+        "400": "#00f5d0",
+        "500": "#00e5c3",
+        "600": "#00c4a8",
+        "700": "#00a08a",
+        "800": "#007d6e",
+        "900": "#005a50",
+        "950": "#003d35"
       },
-      "useCustomSwatches" : true,
-      "id" : "C8C18D66-49EE-4B59-B6C1-DCB32A6A1CDC",
-      "swatches" : {
-        "50" : "#dcfffb",
-        "100" : "#aafff2",
-        "200" : "#6bffe8",
-        "300" : "#2dffde",
-        "400" : "#00f5d0",
-        "500" : "#00e5c3",
-        "600" : "#00c4a8",
-        "700" : "#00a08a",
-        "800" : "#007d6e",
-        "900" : "#005a50",
-        "950" : "#003d35"
+      "useCustomSwatches": true,
+      "id": "C8C18D66-49EE-4B59-B6C1-DCB32A6A1CDC",
+      "swatches": {
+        "50": "#dcfffb",
+        "100": "#aafff2",
+        "200": "#6bffe8",
+        "300": "#2dffde",
+        "400": "#00f5d0",
+        "500": "#00e5c3",
+        "600": "#00c4a8",
+        "700": "#00a08a",
+        "800": "#007d6e",
+        "900": "#005a50",
+        "950": "#003d35"
       },
-      "chosenColor" : "0 0.898039 0.764706 1",
-      "name" : "brand",
-      "brightness" : 500
+      "chosenColor": "0 0.898039 0.764706 1",
+      "name": "brand",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-        "50" : "#ffecf5",
-        "100" : "#ffd1e8",
-        "200" : "#ffa3d1",
-        "300" : "#ff75b8",
-        "400" : "#ff47a0",
-        "500" : "#ff1988",
-        "600" : "#e60070",
-        "700" : "#cc0060",
-        "800" : "#99004a",
-        "900" : "#660033",
-        "950" : "#4d0026"
+      "customSwatches": {
+        "50": "#ffecf5",
+        "100": "#ffd1e8",
+        "200": "#ffa3d1",
+        "300": "#ff75b8",
+        "400": "#ff47a0",
+        "500": "#ff1988",
+        "600": "#e60070",
+        "700": "#cc0060",
+        "800": "#99004a",
+        "900": "#660033",
+        "950": "#4d0026"
       },
-      "useCustomSwatches" : true,
-      "id" : "612CFBDE-6E63-4C41-8989-15EC6F840B48",
-      "swatches" : {
-        "50" : "#ffecf5",
-        "100" : "#ffd1e8",
-        "200" : "#ffa3d1",
-        "300" : "#ff75b8",
-        "400" : "#ff47a0",
-        "500" : "#ff1988",
-        "600" : "#e60070",
-        "700" : "#cc0060",
-        "800" : "#99004a",
-        "900" : "#660033",
-        "950" : "#4d0026"
+      "useCustomSwatches": true,
+      "id": "612CFBDE-6E63-4C41-8989-15EC6F840B48",
+      "swatches": {
+        "50": "#ffecf5",
+        "100": "#ffd1e8",
+        "200": "#ffa3d1",
+        "300": "#ff75b8",
+        "400": "#ff47a0",
+        "500": "#ff1988",
+        "600": "#e60070",
+        "700": "#cc0060",
+        "800": "#99004a",
+        "900": "#660033",
+        "950": "#4d0026"
       },
-      "chosenColor" : "1 0.0980392 0.533333 1",
-      "name" : "accent",
-      "brightness" : 500
+      "chosenColor": "1 0.0980392 0.533333 1",
+      "name": "accent",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-        "50" : "#f4f5f9",
-        "100" : "#e8eaf0",
-        "200" : "#d4d7e2",
-        "300" : "#b8bccf",
-        "400" : "#9499b3",
-        "500" : "#6e7392",
-        "600" : "#535770",
-        "700" : "#3d4054",
-        "800" : "#282a38",
-        "900" : "#1a1b24",
-        "950" : "#12131a"
+      "customSwatches": {
+        "50": "#f4f5f9",
+        "100": "#e8eaf0",
+        "200": "#d4d7e2",
+        "300": "#b8bccf",
+        "400": "#9499b3",
+        "500": "#6e7392",
+        "600": "#535770",
+        "700": "#3d4054",
+        "800": "#282a38",
+        "900": "#1a1b24",
+        "950": "#12131a"
       },
-      "useCustomSwatches" : true,
-      "id" : "A5236A40-1798-4E94-88C8-8E7E63C74323",
-      "swatches" : {
-        "50" : "#f4f5f9",
-        "100" : "#e8eaf0",
-        "200" : "#d4d7e2",
-        "300" : "#b8bccf",
-        "400" : "#9499b3",
-        "500" : "#6e7392",
-        "600" : "#535770",
-        "700" : "#3d4054",
-        "800" : "#282a38",
-        "900" : "#1a1b24",
-        "950" : "#12131a"
+      "useCustomSwatches": true,
+      "id": "A5236A40-1798-4E94-88C8-8E7E63C74323",
+      "swatches": {
+        "50": "#f4f5f9",
+        "100": "#e8eaf0",
+        "200": "#d4d7e2",
+        "300": "#b8bccf",
+        "400": "#9499b3",
+        "500": "#6e7392",
+        "600": "#535770",
+        "700": "#3d4054",
+        "800": "#282a38",
+        "900": "#1a1b24",
+        "950": "#12131a"
       },
-      "chosenColor" : "0.156863 0.164706 0.219608 1",
-      "name" : "surface",
-      "brightness" : 500
+      "chosenColor": "0.156863 0.164706 0.219608 1",
+      "name": "surface",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-        "50" : "#16181e",
-        "100" : "#1e2028",
-        "200" : "#2a2d38",
-        "300" : "#3d404d",
-        "400" : "#5c5f6e",
-        "500" : "#787c8e",
-        "600" : "#969aab",
-        "700" : "#b4b7c4",
-        "800" : "#d2d4dd",
-        "900" : "#e8e9ef",
-        "950" : "#f5f5f8"
+      "customSwatches": {
+        "50": "#16181e",
+        "100": "#1e2028",
+        "200": "#2a2d38",
+        "300": "#3d404d",
+        "400": "#5c5f6e",
+        "500": "#787c8e",
+        "600": "#969aab",
+        "700": "#b4b7c4",
+        "800": "#d2d4dd",
+        "900": "#e8e9ef",
+        "950": "#f5f5f8"
       },
-      "useCustomSwatches" : true,
-      "id" : "6C16A68D-777F-4CF3-AC48-249D5F980B41",
-      "swatches" : {
-        "50" : "#16181e",
-        "100" : "#1e2028",
-        "200" : "#2a2d38",
-        "300" : "#3d404d",
-        "400" : "#5c5f6e",
-        "500" : "#787c8e",
-        "600" : "#969aab",
-        "700" : "#b4b7c4",
-        "800" : "#d2d4dd",
-        "900" : "#e8e9ef",
-        "950" : "#f5f5f8"
+      "useCustomSwatches": true,
+      "id": "6C16A68D-777F-4CF3-AC48-249D5F980B41",
+      "swatches": {
+        "50": "#16181e",
+        "100": "#1e2028",
+        "200": "#2a2d38",
+        "300": "#3d404d",
+        "400": "#5c5f6e",
+        "500": "#787c8e",
+        "600": "#969aab",
+        "700": "#b4b7c4",
+        "800": "#d2d4dd",
+        "900": "#e8e9ef",
+        "950": "#f5f5f8"
       },
-      "chosenColor" : "0.470588 0.486275 0.556863 1",
-      "name" : "text",
-      "brightness" : 500
+      "chosenColor": "0.470588 0.486275 0.556863 1",
+      "name": "text",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-
+      "customSwatches": {},
+      "useCustomSwatches": false,
+      "id": "235291BC-0D39-4EE5-B1A8-72D49C4448EA",
+      "swatches": {
+        "950": "#451a03",
+        "400": "#fbbf24",
+        "800": "#92400e",
+        "700": "#b45309",
+        "900": "#78350f",
+        "300": "#fcd34d",
+        "50": "#fffbeb",
+        "600": "#d97706",
+        "500": "#f59e0b",
+        "200": "#fde68a",
+        "100": "#fef3c7"
       },
-      "useCustomSwatches" : false,
-      "id" : "235291BC-0D39-4EE5-B1A8-72D49C4448EA",
-      "swatches" : {
-        "950" : "#451a03",
-        "400" : "#fbbf24",
-        "800" : "#92400e",
-        "700" : "#b45309",
-        "900" : "#78350f",
-        "300" : "#fcd34d",
-        "50" : "#fffbeb",
-        "600" : "#d97706",
-        "500" : "#f59e0b",
-        "200" : "#fde68a",
-        "100" : "#fef3c7"
-      },
-      "chosenColor" : "0.960784 0.619608 0.0431373 1",
-      "name" : "amber",
-      "brightness" : 500
+      "chosenColor": "0.960784 0.619608 0.0431373 1",
+      "name": "amber",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-
+      "customSwatches": {},
+      "useCustomSwatches": false,
+      "id": "7EEDDC86-1681-4440-A7E0-6FC6A2B70951",
+      "swatches": {
+        "800": "#1e40af",
+        "500": "#3b82f6",
+        "200": "#bfdbfe",
+        "400": "#60a5fa",
+        "50": "#eff6ff",
+        "950": "#172554",
+        "300": "#93c5fd",
+        "100": "#dbeafe",
+        "700": "#1d4ed8",
+        "600": "#2563eb",
+        "900": "#1e3a8a"
       },
-      "useCustomSwatches" : false,
-      "id" : "7EEDDC86-1681-4440-A7E0-6FC6A2B70951",
-      "swatches" : {
-        "800" : "#1e40af",
-        "500" : "#3b82f6",
-        "200" : "#bfdbfe",
-        "400" : "#60a5fa",
-        "50" : "#eff6ff",
-        "950" : "#172554",
-        "300" : "#93c5fd",
-        "100" : "#dbeafe",
-        "700" : "#1d4ed8",
-        "600" : "#2563eb",
-        "900" : "#1e3a8a"
-      },
-      "chosenColor" : "0.231373 0.509804 0.964706 1",
-      "name" : "blue",
-      "brightness" : 500
+      "chosenColor": "0.231373 0.509804 0.964706 1",
+      "name": "blue",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-
+      "customSwatches": {},
+      "useCustomSwatches": false,
+      "id": "5E7F40FB-E97E-4EE5-9F6F-BC72C4433A3A",
+      "swatches": {
+        "100": "#cffafe",
+        "500": "#06b6d4",
+        "600": "#0891b2",
+        "950": "#083344",
+        "400": "#22d3ee",
+        "700": "#0e7490",
+        "900": "#164e63",
+        "200": "#a5f3fc",
+        "300": "#67e8f9",
+        "50": "#ecfeff",
+        "800": "#155e75"
       },
-      "useCustomSwatches" : false,
-      "id" : "5E7F40FB-E97E-4EE5-9F6F-BC72C4433A3A",
-      "swatches" : {
-        "100" : "#cffafe",
-        "500" : "#06b6d4",
-        "600" : "#0891b2",
-        "950" : "#083344",
-        "400" : "#22d3ee",
-        "700" : "#0e7490",
-        "900" : "#164e63",
-        "200" : "#a5f3fc",
-        "300" : "#67e8f9",
-        "50" : "#ecfeff",
-        "800" : "#155e75"
-      },
-      "chosenColor" : "0.0235294 0.713725 0.831373 1",
-      "name" : "cyan",
-      "brightness" : 500
+      "chosenColor": "0.0235294 0.713725 0.831373 1",
+      "name": "cyan",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-
+      "customSwatches": {},
+      "useCustomSwatches": false,
+      "id": "43D086BC-461E-4010-9F1F-78B939A62881",
+      "swatches": {
+        "50": "#ecfdf5",
+        "200": "#a7f3d0",
+        "500": "#10b981",
+        "950": "#022c22",
+        "600": "#059669",
+        "800": "#065f46",
+        "100": "#d1fae5",
+        "900": "#064e3b",
+        "700": "#047857",
+        "400": "#34d399",
+        "300": "#6ee7b7"
       },
-      "useCustomSwatches" : false,
-      "id" : "43D086BC-461E-4010-9F1F-78B939A62881",
-      "swatches" : {
-        "50" : "#ecfdf5",
-        "200" : "#a7f3d0",
-        "500" : "#10b981",
-        "950" : "#022c22",
-        "600" : "#059669",
-        "800" : "#065f46",
-        "100" : "#d1fae5",
-        "900" : "#064e3b",
-        "700" : "#047857",
-        "400" : "#34d399",
-        "300" : "#6ee7b7"
-      },
-      "chosenColor" : "0.0627451 0.72549 0.505882 1",
-      "name" : "emerald",
-      "brightness" : 500
+      "chosenColor": "0.0627451 0.72549 0.505882 1",
+      "name": "emerald",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-
+      "customSwatches": {},
+      "useCustomSwatches": false,
+      "id": "3EBF051F-82F1-49C2-8E26-EA61C4CF1E1D",
+      "swatches": {
+        "200": "#f5d0fe",
+        "600": "#c026d3",
+        "700": "#a21caf",
+        "500": "#d946ef",
+        "400": "#e879f9",
+        "950": "#4a044e",
+        "900": "#701a75",
+        "300": "#f0abfc",
+        "100": "#fae8ff",
+        "50": "#fdf4ff",
+        "800": "#86198f"
       },
-      "useCustomSwatches" : false,
-      "id" : "3EBF051F-82F1-49C2-8E26-EA61C4CF1E1D",
-      "swatches" : {
-        "200" : "#f5d0fe",
-        "600" : "#c026d3",
-        "700" : "#a21caf",
-        "500" : "#d946ef",
-        "400" : "#e879f9",
-        "950" : "#4a044e",
-        "900" : "#701a75",
-        "300" : "#f0abfc",
-        "100" : "#fae8ff",
-        "50" : "#fdf4ff",
-        "800" : "#86198f"
-      },
-      "chosenColor" : "0.85098 0.27451 0.937255 1",
-      "name" : "fuchsia",
-      "brightness" : 500
+      "chosenColor": "0.85098 0.27451 0.937255 1",
+      "name": "fuchsia",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-
+      "customSwatches": {},
+      "useCustomSwatches": false,
+      "id": "A3F0A210-10EC-4624-AC0D-D197570CC9D5",
+      "swatches": {
+        "900": "#111827",
+        "200": "#e5e7eb",
+        "100": "#f3f4f6",
+        "300": "#d1d5db",
+        "400": "#9ca3af",
+        "700": "#374151",
+        "800": "#1f2937",
+        "50": "#f9fafb",
+        "600": "#4b5563",
+        "500": "#6b7280",
+        "950": "#030712"
       },
-      "useCustomSwatches" : false,
-      "id" : "A3F0A210-10EC-4624-AC0D-D197570CC9D5",
-      "swatches" : {
-        "900" : "#111827",
-        "200" : "#e5e7eb",
-        "100" : "#f3f4f6",
-        "300" : "#d1d5db",
-        "400" : "#9ca3af",
-        "700" : "#374151",
-        "800" : "#1f2937",
-        "50" : "#f9fafb",
-        "600" : "#4b5563",
-        "500" : "#6b7280",
-        "950" : "#030712"
-      },
-      "chosenColor" : "0.419608 0.447059 0.501961 1",
-      "name" : "gray",
-      "brightness" : 500
+      "chosenColor": "0.419608 0.447059 0.501961 1",
+      "name": "gray",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-
+      "customSwatches": {},
+      "useCustomSwatches": false,
+      "id": "1FC4C65E-6EEB-4D51-83A4-F61EAF304B30",
+      "swatches": {
+        "200": "#bbf7d0",
+        "100": "#dcfce7",
+        "950": "#052e16",
+        "400": "#4ade80",
+        "600": "#16a34a",
+        "900": "#14532d",
+        "300": "#86efac",
+        "500": "#22c55e",
+        "800": "#166534",
+        "700": "#15803d",
+        "50": "#f0fdf4"
       },
-      "useCustomSwatches" : false,
-      "id" : "1FC4C65E-6EEB-4D51-83A4-F61EAF304B30",
-      "swatches" : {
-        "200" : "#bbf7d0",
-        "100" : "#dcfce7",
-        "950" : "#052e16",
-        "400" : "#4ade80",
-        "600" : "#16a34a",
-        "900" : "#14532d",
-        "300" : "#86efac",
-        "500" : "#22c55e",
-        "800" : "#166534",
-        "700" : "#15803d",
-        "50" : "#f0fdf4"
-      },
-      "chosenColor" : "0.133333 0.772549 0.368627 1",
-      "name" : "green",
-      "brightness" : 500
+      "chosenColor": "0.133333 0.772549 0.368627 1",
+      "name": "green",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-
+      "customSwatches": {},
+      "useCustomSwatches": false,
+      "id": "659726C3-35DC-456F-9FE2-529CC7AE3768",
+      "swatches": {
+        "950": "#1e1b4b",
+        "900": "#312e81",
+        "300": "#a5b4fc",
+        "800": "#3730a3",
+        "500": "#6366f1",
+        "100": "#e0e7ff",
+        "50": "#eef2ff",
+        "400": "#818cf8",
+        "600": "#4f46e5",
+        "200": "#c7d2fe",
+        "700": "#4338ca"
       },
-      "useCustomSwatches" : false,
-      "id" : "659726C3-35DC-456F-9FE2-529CC7AE3768",
-      "swatches" : {
-        "950" : "#1e1b4b",
-        "900" : "#312e81",
-        "300" : "#a5b4fc",
-        "800" : "#3730a3",
-        "500" : "#6366f1",
-        "100" : "#e0e7ff",
-        "50" : "#eef2ff",
-        "400" : "#818cf8",
-        "600" : "#4f46e5",
-        "200" : "#c7d2fe",
-        "700" : "#4338ca"
-      },
-      "chosenColor" : "0.388235 0.4 0.945098 1",
-      "name" : "indigo",
-      "brightness" : 500
+      "chosenColor": "0.388235 0.4 0.945098 1",
+      "name": "indigo",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-
+      "customSwatches": {},
+      "useCustomSwatches": false,
+      "id": "4033B28C-0C98-4090-A088-74D1F1DAE6C3",
+      "swatches": {
+        "400": "#a3e635",
+        "300": "#bef264",
+        "950": "#1a2e05",
+        "600": "#65a30d",
+        "900": "#365314",
+        "500": "#84cc16",
+        "100": "#ecfccb",
+        "200": "#d9f99d",
+        "700": "#4d7c0f",
+        "800": "#3f6212",
+        "50": "#f7fee7"
       },
-      "useCustomSwatches" : false,
-      "id" : "4033B28C-0C98-4090-A088-74D1F1DAE6C3",
-      "swatches" : {
-        "400" : "#a3e635",
-        "300" : "#bef264",
-        "950" : "#1a2e05",
-        "600" : "#65a30d",
-        "900" : "#365314",
-        "500" : "#84cc16",
-        "100" : "#ecfccb",
-        "200" : "#d9f99d",
-        "700" : "#4d7c0f",
-        "800" : "#3f6212",
-        "50" : "#f7fee7"
-      },
-      "chosenColor" : "0.517647 0.8 0.0862745 1",
-      "name" : "lime",
-      "brightness" : 500
+      "chosenColor": "0.517647 0.8 0.0862745 1",
+      "name": "lime",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-
+      "customSwatches": {},
+      "useCustomSwatches": false,
+      "id": "48617C8D-DA22-419B-835E-08F47EA0736D",
+      "swatches": {
+        "300": "#d4d4d4",
+        "950": "#0a0a0a",
+        "100": "#f5f5f5",
+        "50": "#fafafa",
+        "600": "#525252",
+        "500": "#737373",
+        "800": "#262626",
+        "700": "#404040",
+        "900": "#171717",
+        "400": "#a3a3a3",
+        "200": "#e5e5e5"
       },
-      "useCustomSwatches" : false,
-      "id" : "48617C8D-DA22-419B-835E-08F47EA0736D",
-      "swatches" : {
-        "300" : "#d4d4d4",
-        "950" : "#0a0a0a",
-        "100" : "#f5f5f5",
-        "50" : "#fafafa",
-        "600" : "#525252",
-        "500" : "#737373",
-        "800" : "#262626",
-        "700" : "#404040",
-        "900" : "#171717",
-        "400" : "#a3a3a3",
-        "200" : "#e5e5e5"
-      },
-      "chosenColor" : "0.45098 0.45098 0.45098 1",
-      "name" : "neutral",
-      "brightness" : 500
+      "chosenColor": "0.45098 0.45098 0.45098 1",
+      "name": "neutral",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-
+      "customSwatches": {},
+      "useCustomSwatches": false,
+      "id": "1ED2DEC0-03AB-405D-93F3-14A6CA1594ED",
+      "swatches": {
+        "600": "#ea580c",
+        "900": "#7c2d12",
+        "400": "#fb923c",
+        "950": "#431407",
+        "300": "#fdba74",
+        "500": "#f97316",
+        "200": "#fed7aa",
+        "100": "#ffedd5",
+        "700": "#c2410c",
+        "800": "#9a3412",
+        "50": "#fff7ed"
       },
-      "useCustomSwatches" : false,
-      "id" : "1ED2DEC0-03AB-405D-93F3-14A6CA1594ED",
-      "swatches" : {
-        "600" : "#ea580c",
-        "900" : "#7c2d12",
-        "400" : "#fb923c",
-        "950" : "#431407",
-        "300" : "#fdba74",
-        "500" : "#f97316",
-        "200" : "#fed7aa",
-        "100" : "#ffedd5",
-        "700" : "#c2410c",
-        "800" : "#9a3412",
-        "50" : "#fff7ed"
-      },
-      "chosenColor" : "0.976471 0.45098 0.0862745 1",
-      "name" : "orange",
-      "brightness" : 500
+      "chosenColor": "0.976471 0.45098 0.0862745 1",
+      "name": "orange",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-
+      "customSwatches": {},
+      "useCustomSwatches": false,
+      "id": "E4E9FD4F-D4CD-4BDA-8A89-144AD3432364",
+      "swatches": {
+        "700": "#be185d",
+        "600": "#db2777",
+        "500": "#ec4899",
+        "950": "#500724",
+        "800": "#9d174d",
+        "900": "#831843",
+        "400": "#f472b6",
+        "300": "#f9a8d4",
+        "50": "#fdf2f8",
+        "200": "#fbcfe8",
+        "100": "#fce7f3"
       },
-      "useCustomSwatches" : false,
-      "id" : "E4E9FD4F-D4CD-4BDA-8A89-144AD3432364",
-      "swatches" : {
-        "700" : "#be185d",
-        "600" : "#db2777",
-        "500" : "#ec4899",
-        "950" : "#500724",
-        "800" : "#9d174d",
-        "900" : "#831843",
-        "400" : "#f472b6",
-        "300" : "#f9a8d4",
-        "50" : "#fdf2f8",
-        "200" : "#fbcfe8",
-        "100" : "#fce7f3"
-      },
-      "chosenColor" : "0.92549 0.282353 0.6 1",
-      "name" : "pink",
-      "brightness" : 500
+      "chosenColor": "0.92549 0.282353 0.6 1",
+      "name": "pink",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-
+      "customSwatches": {},
+      "useCustomSwatches": false,
+      "id": "D84D17C3-323B-4902-8897-1630A326D465",
+      "swatches": {
+        "600": "#9333ea",
+        "100": "#f3e8ff",
+        "900": "#581c87",
+        "950": "#3b0764",
+        "300": "#d8b4fe",
+        "700": "#7e22ce",
+        "500": "#a855f7",
+        "50": "#faf5ff",
+        "800": "#6b21a8",
+        "200": "#e9d5ff",
+        "400": "#c084fc"
       },
-      "useCustomSwatches" : false,
-      "id" : "D84D17C3-323B-4902-8897-1630A326D465",
-      "swatches" : {
-        "600" : "#9333ea",
-        "100" : "#f3e8ff",
-        "900" : "#581c87",
-        "950" : "#3b0764",
-        "300" : "#d8b4fe",
-        "700" : "#7e22ce",
-        "500" : "#a855f7",
-        "50" : "#faf5ff",
-        "800" : "#6b21a8",
-        "200" : "#e9d5ff",
-        "400" : "#c084fc"
-      },
-      "chosenColor" : "0.658824 0.333333 0.968627 1",
-      "name" : "purple",
-      "brightness" : 500
+      "chosenColor": "0.658824 0.333333 0.968627 1",
+      "name": "purple",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-
+      "customSwatches": {},
+      "useCustomSwatches": false,
+      "id": "267E67A6-358E-4894-A491-6E41FE0609F7",
+      "swatches": {
+        "400": "#f87171",
+        "200": "#fecaca",
+        "500": "#ef4444",
+        "600": "#dc2626",
+        "800": "#991b1b",
+        "900": "#7f1d1d",
+        "100": "#fee2e2",
+        "50": "#fef2f2",
+        "950": "#450a0a",
+        "700": "#b91c1c",
+        "300": "#fca5a5"
       },
-      "useCustomSwatches" : false,
-      "id" : "267E67A6-358E-4894-A491-6E41FE0609F7",
-      "swatches" : {
-        "400" : "#f87171",
-        "200" : "#fecaca",
-        "500" : "#ef4444",
-        "600" : "#dc2626",
-        "800" : "#991b1b",
-        "900" : "#7f1d1d",
-        "100" : "#fee2e2",
-        "50" : "#fef2f2",
-        "950" : "#450a0a",
-        "700" : "#b91c1c",
-        "300" : "#fca5a5"
-      },
-      "chosenColor" : "0.937255 0.266667 0.266667 1",
-      "name" : "red",
-      "brightness" : 500
+      "chosenColor": "0.937255 0.266667 0.266667 1",
+      "name": "red",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-
+      "customSwatches": {},
+      "useCustomSwatches": false,
+      "id": "9EFA1F99-23A8-4822-BBF2-7EDD02173B27",
+      "swatches": {
+        "300": "#fda4af",
+        "900": "#881337",
+        "600": "#e11d48",
+        "700": "#be123c",
+        "50": "#fff1f2",
+        "500": "#f43f5e",
+        "200": "#fecdd3",
+        "800": "#9f1239",
+        "100": "#ffe4e6",
+        "950": "#4c0519",
+        "400": "#fb7185"
       },
-      "useCustomSwatches" : false,
-      "id" : "9EFA1F99-23A8-4822-BBF2-7EDD02173B27",
-      "swatches" : {
-        "300" : "#fda4af",
-        "900" : "#881337",
-        "600" : "#e11d48",
-        "700" : "#be123c",
-        "50" : "#fff1f2",
-        "500" : "#f43f5e",
-        "200" : "#fecdd3",
-        "800" : "#9f1239",
-        "100" : "#ffe4e6",
-        "950" : "#4c0519",
-        "400" : "#fb7185"
-      },
-      "chosenColor" : "0.956863 0.247059 0.368627 1",
-      "name" : "rose",
-      "brightness" : 500
+      "chosenColor": "0.956863 0.247059 0.368627 1",
+      "name": "rose",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-
+      "customSwatches": {},
+      "useCustomSwatches": false,
+      "id": "F60F82D5-87FE-4136-AB5C-29157DAFCB5B",
+      "swatches": {
+        "700": "#0369a1",
+        "500": "#0ea5e9",
+        "800": "#075985",
+        "100": "#e0f2fe",
+        "900": "#0c4a6e",
+        "50": "#f0f9ff",
+        "950": "#082f49",
+        "300": "#7dd3fc",
+        "600": "#0284c7",
+        "200": "#bae6fd",
+        "400": "#38bdf8"
       },
-      "useCustomSwatches" : false,
-      "id" : "F60F82D5-87FE-4136-AB5C-29157DAFCB5B",
-      "swatches" : {
-        "700" : "#0369a1",
-        "500" : "#0ea5e9",
-        "800" : "#075985",
-        "100" : "#e0f2fe",
-        "900" : "#0c4a6e",
-        "50" : "#f0f9ff",
-        "950" : "#082f49",
-        "300" : "#7dd3fc",
-        "600" : "#0284c7",
-        "200" : "#bae6fd",
-        "400" : "#38bdf8"
-      },
-      "chosenColor" : "0.054902 0.647059 0.913725 1",
-      "name" : "sky",
-      "brightness" : 500
+      "chosenColor": "0.054902 0.647059 0.913725 1",
+      "name": "sky",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-
+      "customSwatches": {},
+      "useCustomSwatches": false,
+      "id": "54761873-AE15-4DC2-B2CD-08EAF0E5A6C5",
+      "swatches": {
+        "700": "#334155",
+        "300": "#cbd5e1",
+        "950": "#020617",
+        "50": "#f8fafc",
+        "100": "#f1f5f9",
+        "800": "#1e293b",
+        "200": "#e2e8f0",
+        "600": "#475569",
+        "900": "#0f172a",
+        "400": "#94a3b8",
+        "500": "#64748b"
       },
-      "useCustomSwatches" : false,
-      "id" : "54761873-AE15-4DC2-B2CD-08EAF0E5A6C5",
-      "swatches" : {
-        "700" : "#334155",
-        "300" : "#cbd5e1",
-        "950" : "#020617",
-        "50" : "#f8fafc",
-        "100" : "#f1f5f9",
-        "800" : "#1e293b",
-        "200" : "#e2e8f0",
-        "600" : "#475569",
-        "900" : "#0f172a",
-        "400" : "#94a3b8",
-        "500" : "#64748b"
-      },
-      "chosenColor" : "0.392157 0.454902 0.545098 1",
-      "name" : "slate",
-      "brightness" : 500
+      "chosenColor": "0.392157 0.454902 0.545098 1",
+      "name": "slate",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-
+      "customSwatches": {},
+      "useCustomSwatches": false,
+      "id": "5C4F5B2B-E92E-4397-9247-2E395866343B",
+      "swatches": {
+        "600": "#57534e",
+        "300": "#d6d3d1",
+        "500": "#78716c",
+        "50": "#fafaf9",
+        "200": "#e7e5e4",
+        "400": "#a8a29e",
+        "800": "#292524",
+        "100": "#f5f5f4",
+        "700": "#44403c",
+        "900": "#1c1917",
+        "950": "#0c0a09"
       },
-      "useCustomSwatches" : false,
-      "id" : "5C4F5B2B-E92E-4397-9247-2E395866343B",
-      "swatches" : {
-        "600" : "#57534e",
-        "300" : "#d6d3d1",
-        "500" : "#78716c",
-        "50" : "#fafaf9",
-        "200" : "#e7e5e4",
-        "400" : "#a8a29e",
-        "800" : "#292524",
-        "100" : "#f5f5f4",
-        "700" : "#44403c",
-        "900" : "#1c1917",
-        "950" : "#0c0a09"
-      },
-      "chosenColor" : "0.470588 0.443137 0.423529 1",
-      "name" : "stone",
-      "brightness" : 500
+      "chosenColor": "0.470588 0.443137 0.423529 1",
+      "name": "stone",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-
+      "customSwatches": {},
+      "useCustomSwatches": false,
+      "id": "825D975C-9256-43B5-8F62-06AAC28F9371",
+      "swatches": {
+        "50": "#f0fdfa",
+        "500": "#14b8a6",
+        "100": "#ccfbf1",
+        "400": "#2dd4bf",
+        "600": "#0d9488",
+        "200": "#99f6e4",
+        "950": "#042f2e",
+        "300": "#5eead4",
+        "700": "#0f766e",
+        "800": "#115e59",
+        "900": "#134e4a"
       },
-      "useCustomSwatches" : false,
-      "id" : "825D975C-9256-43B5-8F62-06AAC28F9371",
-      "swatches" : {
-        "50" : "#f0fdfa",
-        "500" : "#14b8a6",
-        "100" : "#ccfbf1",
-        "400" : "#2dd4bf",
-        "600" : "#0d9488",
-        "200" : "#99f6e4",
-        "950" : "#042f2e",
-        "300" : "#5eead4",
-        "700" : "#0f766e",
-        "800" : "#115e59",
-        "900" : "#134e4a"
-      },
-      "chosenColor" : "0.0784314 0.721569 0.65098 1",
-      "name" : "teal",
-      "brightness" : 500
+      "chosenColor": "0.0784314 0.721569 0.65098 1",
+      "name": "teal",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-
+      "customSwatches": {},
+      "useCustomSwatches": false,
+      "id": "81251C4D-072D-4086-BCBC-7787BB0D3025",
+      "swatches": {
+        "500": "#8b5cf6",
+        "400": "#a78bfa",
+        "800": "#5b21b6",
+        "200": "#ddd6fe",
+        "900": "#4c1d95",
+        "50": "#f5f3ff",
+        "600": "#7c3aed",
+        "100": "#ede9fe",
+        "700": "#6d28d9",
+        "300": "#c4b5fd",
+        "950": "#2e1065"
       },
-      "useCustomSwatches" : false,
-      "id" : "81251C4D-072D-4086-BCBC-7787BB0D3025",
-      "swatches" : {
-        "500" : "#8b5cf6",
-        "400" : "#a78bfa",
-        "800" : "#5b21b6",
-        "200" : "#ddd6fe",
-        "900" : "#4c1d95",
-        "50" : "#f5f3ff",
-        "600" : "#7c3aed",
-        "100" : "#ede9fe",
-        "700" : "#6d28d9",
-        "300" : "#c4b5fd",
-        "950" : "#2e1065"
-      },
-      "chosenColor" : "0.545098 0.360784 0.964706 1",
-      "name" : "violet",
-      "brightness" : 500
+      "chosenColor": "0.545098 0.360784 0.964706 1",
+      "name": "violet",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-
+      "customSwatches": {},
+      "useCustomSwatches": false,
+      "id": "DFAFBB19-7B2D-49BC-9A17-ED064F472FCC",
+      "swatches": {
+        "600": "#ca8a04",
+        "200": "#fef08a",
+        "700": "#a16207",
+        "300": "#fde047",
+        "400": "#facc15",
+        "900": "#713f12",
+        "800": "#854d0e",
+        "100": "#fef9c3",
+        "950": "#422006",
+        "50": "#fefce8",
+        "500": "#eab308"
       },
-      "useCustomSwatches" : false,
-      "id" : "DFAFBB19-7B2D-49BC-9A17-ED064F472FCC",
-      "swatches" : {
-        "600" : "#ca8a04",
-        "200" : "#fef08a",
-        "700" : "#a16207",
-        "300" : "#fde047",
-        "400" : "#facc15",
-        "900" : "#713f12",
-        "800" : "#854d0e",
-        "100" : "#fef9c3",
-        "950" : "#422006",
-        "50" : "#fefce8",
-        "500" : "#eab308"
-      },
-      "chosenColor" : "0.917647 0.701961 0.0313725 1",
-      "name" : "yellow",
-      "brightness" : 500
+      "chosenColor": "0.917647 0.701961 0.0313725 1",
+      "name": "yellow",
+      "brightness": 500
     },
     {
-      "customSwatches" : {
-
+      "customSwatches": {},
+      "useCustomSwatches": false,
+      "id": "7B5E6D16-D6D3-4B45-93B5-6A3AAB33FF6A",
+      "swatches": {
+        "950": "#09090b",
+        "700": "#3f3f46",
+        "900": "#18181b",
+        "100": "#f4f4f5",
+        "50": "#fafafa",
+        "200": "#e4e4e7",
+        "800": "#27272a",
+        "400": "#a1a1aa",
+        "600": "#52525b",
+        "300": "#d4d4d8",
+        "500": "#71717a"
       },
-      "useCustomSwatches" : false,
-      "id" : "7B5E6D16-D6D3-4B45-93B5-6A3AAB33FF6A",
-      "swatches" : {
-        "950" : "#09090b",
-        "700" : "#3f3f46",
-        "900" : "#18181b",
-        "100" : "#f4f4f5",
-        "50" : "#fafafa",
-        "200" : "#e4e4e7",
-        "800" : "#27272a",
-        "400" : "#a1a1aa",
-        "600" : "#52525b",
-        "300" : "#d4d4d8",
-        "500" : "#71717a"
-      },
-      "chosenColor" : "0.443137 0.443137 0.478431 1",
-      "name" : "zinc",
-      "brightness" : 500
+      "chosenColor": "0.443137 0.443137 0.478431 1",
+      "name": "zinc",
+      "brightness": 500
     }
   ],
-  "spacing" : [
+  "screens": [],
+  "borderWidth": [
     {
-      "name" : "0",
-      "id" : "068AB372-8F3E-4F29-BB8B-475C5AD85759",
-      "remValue" : 0
+      "id": "249435BC-262D-4CC0-BE9D-F87F3A2F4C9A",
+      "name": "0",
+      "remValue": 0
     },
     {
-      "name" : "px",
-      "id" : "195AE989-A49F-4F0A-89DB-3B01DAABD738",
-      "remValue" : 0.0625
+      "id": "BC497EFE-67A0-4543-A805-E877AA5332AC",
+      "name": "1",
+      "remValue": 0.06
     },
     {
-      "name" : "0.5",
-      "id" : "BB906BB5-DA22-4F15-9035-76BBD8081C9D",
-      "remValue" : 0.125
+      "id": "4D2C4F2B-9BEF-4532-8CEB-635344E497FB",
+      "name": "2",
+      "remValue": 0.125
     },
     {
-      "name" : "1",
-      "id" : "DC5BAF48-786B-47DB-A13F-C744C98AB16A",
-      "remValue" : 0.25
+      "id": "0AFCFA90-FD34-45AA-8CDE-998F380A11CC",
+      "name": "4",
+      "remValue": 0.25
     },
     {
-      "name" : "1.5",
-      "id" : "77058F1C-2672-43D7-8806-D688CCBE0F31",
-      "remValue" : 0.375
+      "id": "522ED118-5C89-446A-8F82-59D8755D441A",
+      "name": "8",
+      "remValue": 0.5
     },
     {
-      "name" : "2",
-      "id" : "82C5DE53-F37B-4F38-875A-242113B0E252",
-      "remValue" : 0.5
-    },
-    {
-      "name" : "2.5",
-      "id" : "CA915777-8A4D-48C2-A970-8ED1225C6446",
-      "remValue" : 0.625
-    },
-    {
-      "name" : "3",
-      "id" : "49A90567-A931-499E-9332-88012681EF9A",
-      "remValue" : 0.75
-    },
-    {
-      "name" : "3.5",
-      "id" : "E3544D56-8EFC-4CFD-8ECD-CDD68120E4F6",
-      "remValue" : 0.875
-    },
-    {
-      "name" : "4",
-      "id" : "91E1B441-EAC2-4B39-A0B8-29ABEB0BD0E7",
-      "remValue" : 1
-    },
-    {
-      "name" : "5",
-      "id" : "538617C3-E7EE-4A16-BCF0-440F427B4280",
-      "remValue" : 1.25
-    },
-    {
-      "name" : "6",
-      "id" : "A0B7F89C-C946-4E57-A765-BA19BA1D0CF1",
-      "remValue" : 1.5
-    },
-    {
-      "name" : "7",
-      "id" : "5099ABBA-8BFB-477C-A4B5-63DB6B04C683",
-      "remValue" : 1.75
-    },
-    {
-      "name" : "8",
-      "id" : "FC6818D6-8A17-4920-8138-02BB157F2464",
-      "remValue" : 2
-    },
-    {
-      "name" : "9",
-      "id" : "6C3D54CC-63E3-4CBE-AA38-EDB49F2449FC",
-      "remValue" : 2.25
-    },
-    {
-      "name" : "10",
-      "id" : "6A0669A9-DB19-4AA1-ACB5-EDB2D81BCE8C",
-      "remValue" : 2.5
-    },
-    {
-      "name" : "11",
-      "id" : "D0522077-475A-45EE-8F77-B2742F2164C7",
-      "remValue" : 2.75
-    },
-    {
-      "name" : "12",
-      "id" : "A8209642-F9A0-4E83-9034-9AEA64595429",
-      "remValue" : 3
-    },
-    {
-      "name" : "14",
-      "id" : "49D7FF44-2474-4711-951C-122C61BA4AEB",
-      "remValue" : 3.5
-    },
-    {
-      "name" : "16",
-      "id" : "28DDFF1A-7D24-411F-8C4F-1716AB323B50",
-      "remValue" : 4
-    },
-    {
-      "name" : "20",
-      "id" : "DCA992E3-0A1E-4A80-9CF9-40F49F0C3FC3",
-      "remValue" : 5
-    },
-    {
-      "name" : "24",
-      "id" : "E0C72595-FDF1-4655-9BB3-619B8A0DCA2F",
-      "remValue" : 6
-    },
-    {
-      "name" : "28",
-      "id" : "22432691-F8F4-4E4A-8B48-83D2C493CF73",
-      "remValue" : 7
-    },
-    {
-      "name" : "32",
-      "id" : "47229944-4145-4F5C-8054-E0BAD241E15B",
-      "remValue" : 8
-    },
-    {
-      "name" : "36",
-      "id" : "7274C69B-EBB6-4C79-8024-DA538C7DCA94",
-      "remValue" : 9
-    },
-    {
-      "name" : "40",
-      "id" : "346D7AE8-7D2E-4A3E-BC31-74A53389088B",
-      "remValue" : 10
-    },
-    {
-      "name" : "44",
-      "id" : "8C56CF43-7C32-4E12-8AA4-C3CFA159BF49",
-      "remValue" : 11
-    },
-    {
-      "name" : "48",
-      "id" : "ABCDAD3F-3889-4EAD-9A92-B348A1133B29",
-      "remValue" : 12
-    },
-    {
-      "name" : "52",
-      "id" : "6D8E4EA7-6B73-4FD7-960B-0288511BE749",
-      "remValue" : 13
-    },
-    {
-      "name" : "56",
-      "id" : "4063E268-1659-4343-BF37-36D2C014EE99",
-      "remValue" : 14
-    },
-    {
-      "name" : "60",
-      "id" : "5DAE6F26-5AA2-4F30-9CA7-2FEEDAF1A287",
-      "remValue" : 15
-    },
-    {
-      "name" : "64",
-      "id" : "EC171B2B-4893-48DA-A4D0-ADE675024B82",
-      "remValue" : 16
-    },
-    {
-      "name" : "72",
-      "id" : "F4AD5C5B-8C03-4BA9-ACC2-B3A51DD2AEE8",
-      "remValue" : 18
-    },
-    {
-      "name" : "80",
-      "id" : "A9B27058-C09A-41F1-B189-A3EA3F8F38B7",
-      "remValue" : 20
-    },
-    {
-      "name" : "96",
-      "id" : "618EA666-FDA7-4FD9-9A65-D538B3EC5DC6",
-      "remValue" : 24
+      "id": "A0EAE262-6964-4BD7-BD7F-ECA190944078",
+      "name": "Default",
+      "remValue": 0.12
     }
   ],
-  "screens" : [
-
-  ],
-  "borderWidth" : [
+  "typographies": [
     {
-      "id" : "249435BC-262D-4CC0-BE9D-F87F3A2F4C9A",
-      "name" : "0",
-      "remValue" : 0
-    },
-    {
-      "id" : "BC497EFE-67A0-4543-A805-E877AA5332AC",
-      "name" : "1",
-      "remValue" : 0.06
-    },
-    {
-      "id" : "4D2C4F2B-9BEF-4532-8CEB-635344E497FB",
-      "name" : "2",
-      "remValue" : 0.125
-    },
-    {
-      "id" : "0AFCFA90-FD34-45AA-8CDE-998F380A11CC",
-      "name" : "4",
-      "remValue" : 0.25
-    },
-    {
-      "id" : "522ED118-5C89-446A-8F82-59D8755D441A",
-      "name" : "8",
-      "remValue" : 0.5
-    },
-    {
-      "id" : "A0EAE262-6964-4BD7-BD7F-ECA190944078",
-      "name" : "Default",
-      "remValue" : 0.12
-    }
-  ],
-  "typographies" : [
-    {
-      "h2" : {
-        "margin" : {
-          "left" : 0,
-          "linkVertical" : false,
-          "rightSpacingId" : "0",
-          "linkHorizontal" : false,
-          "bottomSpacingId" : "0",
-          "right" : 0,
-          "top" : 0,
-          "useCustomSpacing" : false,
-          "leftSpacingId" : "0",
-          "topSpacingId" : "0",
-          "bottom" : 0
+      "h2": {
+        "margin": {
+          "left": 0,
+          "linkVertical": false,
+          "rightSpacingId": "0",
+          "linkHorizontal": false,
+          "bottomSpacingId": "0",
+          "right": 0,
+          "top": 0,
+          "useCustomSpacing": false,
+          "leftSpacingId": "0",
+          "topSpacingId": "0",
+          "bottom": 0
         },
-        "id" : "5041B542-9452-43BB-A8F5-EC821AB7EB93",
-        "fontSize" : "5xl",
-        "fontFamily" : "heading",
-        "fontWeight" : 600,
-        "linkColorHover" : {
-          "shade" : 700,
-          "colorStripId" : "accent",
-          "darkShade" : 300,
-          "darkColorStripId" : "accent"
+        "id": "5041B542-9452-43BB-A8F5-EC821AB7EB93",
+        "fontSize": "5xl",
+        "fontFamily": "heading",
+        "fontWeight": 600,
+        "linkColorHover": {
+          "shade": 700,
+          "colorStripId": "accent",
+          "darkShade": 300,
+          "darkColorStripId": "accent"
         },
-        "linkColorVisited" : {
-          "shade" : 700,
-          "colorStripId" : "accent",
-          "darkShade" : 300,
-          "darkColorStripId" : "accent"
+        "linkColorVisited": {
+          "shade": 700,
+          "colorStripId": "accent",
+          "darkShade": 300,
+          "darkColorStripId": "accent"
         },
-        "color" : {
-          "darkColorStripId" : "text",
-          "shade" : 100,
-          "darkShade" : 800,
-          "colorStripId" : "text"
+        "color": {
+          "darkColorStripId": "text",
+          "shade": 100,
+          "darkShade": 800,
+          "colorStripId": "text"
         },
-        "linkColor" : {
-          "shade" : 500,
-          "colorStripId" : "accent",
-          "darkShade" : 500,
-          "darkColorStripId" : "accent"
+        "linkColor": {
+          "shade": 500,
+          "colorStripId": "accent",
+          "darkShade": 500,
+          "darkColorStripId": "accent"
         },
-        "lineHeight" : 1.2000000000000002,
-        "alignment" : "left",
-        "letterSpacing" : 0.05
+        "lineHeight": 1.2000000000000002,
+        "alignment": "left",
+        "letterSpacing": 0.05
       },
-      "id" : "65C34657-DF36-49DB-BF6C-6DFD6B8F2EA3",
-      "name" : "article",
-      "quote" : {
-        "color" : {
-          "shade" : 600,
-          "colorStripId" : "brand",
-          "darkShade" : 600,
-          "darkColorStripId" : "brand"
+      "id": "65C34657-DF36-49DB-BF6C-6DFD6B8F2EA3",
+      "name": "article",
+      "quote": {
+        "color": {
+          "shade": 600,
+          "colorStripId": "brand",
+          "darkShade": 600,
+          "darkColorStripId": "brand"
         },
-        "linkColor" : {
-          "darkShade" : 500,
-          "darkColorStripId" : "accent",
-          "colorStripId" : "accent",
-          "shade" : 500
+        "linkColor": {
+          "darkShade": 500,
+          "darkColorStripId": "accent",
+          "colorStripId": "accent",
+          "shade": 500
         },
-        "id" : "69F0C539-4A8F-47D4-B75D-7F855C47CEC3",
-        "linkColorHover" : {
-          "darkShade" : 300,
-          "darkColorStripId" : "accent",
-          "colorStripId" : "accent",
-          "shade" : 700
+        "id": "69F0C539-4A8F-47D4-B75D-7F855C47CEC3",
+        "linkColorHover": {
+          "darkShade": 300,
+          "darkColorStripId": "accent",
+          "colorStripId": "accent",
+          "shade": 700
         },
-        "linkColorVisited" : {
-          "darkShade" : 300,
-          "darkColorStripId" : "accent",
-          "colorStripId" : "accent",
-          "shade" : 700
+        "linkColorVisited": {
+          "darkShade": 300,
+          "darkColorStripId": "accent",
+          "colorStripId": "accent",
+          "shade": 700
         },
-        "fontFamily" : "quote",
-        "italic" : true,
-        "fontSize" : "xl",
-        "margin" : {
-          "left" : 0,
-          "linkVertical" : false,
-          "rightSpacingId" : "0",
-          "linkHorizontal" : false,
-          "bottomSpacingId" : "0",
-          "right" : 0,
-          "top" : 0,
-          "useCustomSpacing" : false,
-          "leftSpacingId" : "0",
-          "topSpacingId" : "0",
-          "bottom" : 0
+        "fontFamily": "quote",
+        "italic": true,
+        "fontSize": "xl",
+        "margin": {
+          "left": 0,
+          "linkVertical": false,
+          "rightSpacingId": "0",
+          "linkHorizontal": false,
+          "bottomSpacingId": "0",
+          "right": 0,
+          "top": 0,
+          "useCustomSpacing": false,
+          "leftSpacingId": "0",
+          "topSpacingId": "0",
+          "bottom": 0
         },
-        "alignment" : "center"
+        "alignment": "center"
       },
-      "h4" : {
-        "margin" : {
-          "left" : 0,
-          "linkVertical" : false,
-          "rightSpacingId" : "0",
-          "linkHorizontal" : false,
-          "bottomSpacingId" : "0",
-          "right" : 0,
-          "top" : 0,
-          "useCustomSpacing" : false,
-          "leftSpacingId" : "0",
-          "topSpacingId" : "0",
-          "bottom" : 0
+      "h4": {
+        "margin": {
+          "left": 0,
+          "linkVertical": false,
+          "rightSpacingId": "0",
+          "linkHorizontal": false,
+          "bottomSpacingId": "0",
+          "right": 0,
+          "top": 0,
+          "useCustomSpacing": false,
+          "leftSpacingId": "0",
+          "topSpacingId": "0",
+          "bottom": 0
         },
-        "id" : "3F18DF83-BBF0-46EA-92B1-56AA14E6704B",
-        "fontSize" : "3xl",
-        "fontFamily" : "heading",
-        "fontWeight" : 500,
-        "linkColorHover" : {
-          "shade" : 700,
-          "colorStripId" : "accent",
-          "darkShade" : 300,
-          "darkColorStripId" : "accent"
+        "id": "3F18DF83-BBF0-46EA-92B1-56AA14E6704B",
+        "fontSize": "3xl",
+        "fontFamily": "heading",
+        "fontWeight": 500,
+        "linkColorHover": {
+          "shade": 700,
+          "colorStripId": "accent",
+          "darkShade": 300,
+          "darkColorStripId": "accent"
         },
-        "linkColorVisited" : {
-          "shade" : 700,
-          "colorStripId" : "accent",
-          "darkShade" : 300,
-          "darkColorStripId" : "accent"
+        "linkColorVisited": {
+          "shade": 700,
+          "colorStripId": "accent",
+          "darkShade": 300,
+          "darkColorStripId": "accent"
         },
-        "color" : {
-          "darkColorStripId" : "text",
-          "shade" : 100,
-          "darkShade" : 800,
-          "colorStripId" : "text"
+        "color": {
+          "darkColorStripId": "text",
+          "shade": 100,
+          "darkShade": 800,
+          "colorStripId": "text"
         },
-        "linkColor" : {
-          "shade" : 500,
-          "colorStripId" : "accent",
-          "darkShade" : 500,
-          "darkColorStripId" : "accent"
+        "linkColor": {
+          "shade": 500,
+          "colorStripId": "accent",
+          "darkShade": 500,
+          "darkColorStripId": "accent"
         },
-        "lineHeight" : 1.1,
-        "alignment" : "left",
-        "letterSpacing" : 0.05
+        "lineHeight": 1.1,
+        "alignment": "left",
+        "letterSpacing": 0.05
       },
-      "h1" : {
-        "linkColor" : {
-          "shade" : 500,
-          "colorStripId" : "accent",
-          "darkShade" : 500,
-          "darkColorStripId" : "accent"
+      "h1": {
+        "linkColor": {
+          "shade": 500,
+          "colorStripId": "accent",
+          "darkShade": 500,
+          "darkColorStripId": "accent"
         },
-        "fontFamily" : "heading",
-        "alignment" : "left",
-        "underline" : false,
-        "linkColorVisited" : {
-          "shade" : 700,
-          "colorStripId" : "accent",
-          "darkShade" : 300,
-          "darkColorStripId" : "accent"
+        "fontFamily": "heading",
+        "alignment": "left",
+        "underline": false,
+        "linkColorVisited": {
+          "shade": 700,
+          "colorStripId": "accent",
+          "darkShade": 300,
+          "darkColorStripId": "accent"
         },
-        "id" : "26618E05-1F06-4148-9E6B-ED3DD2AF8CF9",
-        "color" : {
-          "darkColorStripId" : "text",
-          "shade" : 100,
-          "darkShade" : 950,
-          "colorStripId" : "text"
+        "id": "26618E05-1F06-4148-9E6B-ED3DD2AF8CF9",
+        "color": {
+          "darkColorStripId": "text",
+          "shade": 100,
+          "darkShade": 950,
+          "colorStripId": "text"
         },
-        "fontWeight" : 600,
-        "letterSpacing" : 0.1,
-        "margin" : {
-          "left" : 0,
-          "linkVertical" : false,
-          "rightSpacingId" : "0",
-          "linkHorizontal" : false,
-          "bottomSpacingId" : "0",
-          "right" : 0,
-          "top" : 0,
-          "useCustomSpacing" : false,
-          "leftSpacingId" : "0",
-          "topSpacingId" : "0",
-          "bottom" : 0
+        "fontWeight": 600,
+        "letterSpacing": 0.1,
+        "margin": {
+          "left": 0,
+          "linkVertical": false,
+          "rightSpacingId": "0",
+          "linkHorizontal": false,
+          "bottomSpacingId": "0",
+          "right": 0,
+          "top": 0,
+          "useCustomSpacing": false,
+          "leftSpacingId": "0",
+          "topSpacingId": "0",
+          "bottom": 0
         },
-        "fontSize" : "6xl",
-        "lineHeight" : 1.2000000000000002,
-        "linkColorHover" : {
-          "shade" : 700,
-          "colorStripId" : "accent",
-          "darkShade" : 300,
-          "darkColorStripId" : "accent"
+        "fontSize": "6xl",
+        "lineHeight": 1.2000000000000002,
+        "linkColorHover": {
+          "shade": 700,
+          "colorStripId": "accent",
+          "darkShade": 300,
+          "darkColorStripId": "accent"
         }
       },
-      "h5" : {
-        "lineHeight" : 1.1,
-        "alignment" : "left",
-        "id" : "9A558331-B6EA-4380-A9D1-94FA4CC63257",
-        "linkColor" : {
-          "darkShade" : 500,
-          "darkColorStripId" : "accent",
-          "colorStripId" : "accent",
-          "shade" : 500
+      "h5": {
+        "lineHeight": 1.1,
+        "alignment": "left",
+        "id": "9A558331-B6EA-4380-A9D1-94FA4CC63257",
+        "linkColor": {
+          "darkShade": 500,
+          "darkColorStripId": "accent",
+          "colorStripId": "accent",
+          "shade": 500
         },
-        "linkColorHover" : {
-          "darkShade" : 300,
-          "darkColorStripId" : "accent",
-          "colorStripId" : "accent",
-          "shade" : 700
+        "linkColorHover": {
+          "darkShade": 300,
+          "darkColorStripId": "accent",
+          "colorStripId": "accent",
+          "shade": 700
         },
-        "fontFamily" : "heading",
-        "linkColorVisited" : {
-          "darkShade" : 300,
-          "darkColorStripId" : "accent",
-          "colorStripId" : "accent",
-          "shade" : 700
+        "fontFamily": "heading",
+        "linkColorVisited": {
+          "darkShade": 300,
+          "darkColorStripId": "accent",
+          "colorStripId": "accent",
+          "shade": 700
         },
-        "letterSpacing" : 0.1,
-        "fontWeight" : 500,
-        "fontSize" : "2xl",
-        "margin" : {
-          "useCustomSpacing" : false,
-          "linkHorizontal" : false,
-          "bottomSpacingId" : "0",
-          "right" : 0,
-          "rightSpacingId" : "0",
-          "bottom" : 0,
-          "top" : 0,
-          "topSpacingId" : "0",
-          "leftSpacingId" : "0",
-          "linkVertical" : false,
-          "left" : 0
+        "letterSpacing": 0.1,
+        "fontWeight": 500,
+        "fontSize": "2xl",
+        "margin": {
+          "useCustomSpacing": false,
+          "linkHorizontal": false,
+          "bottomSpacingId": "0",
+          "right": 0,
+          "rightSpacingId": "0",
+          "bottom": 0,
+          "top": 0,
+          "topSpacingId": "0",
+          "leftSpacingId": "0",
+          "linkVertical": false,
+          "left": 0
         },
-        "color" : {
-          "shade" : 100,
-          "colorStripId" : "text",
-          "darkShade" : 800,
-          "darkColorStripId" : "text"
+        "color": {
+          "shade": 100,
+          "colorStripId": "text",
+          "darkShade": 800,
+          "darkColorStripId": "text"
         }
       },
-      "list" : {
-        "id" : "4C41E50E-8233-4277-8081-2C038B9947D3",
-        "orderedType" : "decimal",
-        "markerPosition" : "outside",
-        "unorderedType" : "disc",
-        "itemSpacing" : {
-          "left" : 0,
-          "linkVertical" : true,
-          "rightSpacingId" : "0",
-          "linkHorizontal" : false,
-          "bottomSpacingId" : "2",
-          "right" : 0,
-          "top" : 0,
-          "useCustomSpacing" : false,
-          "leftSpacingId" : "0",
-          "topSpacingId" : "2",
-          "bottom" : 0
+      "list": {
+        "id": "4C41E50E-8233-4277-8081-2C038B9947D3",
+        "orderedType": "decimal",
+        "markerPosition": "outside",
+        "unorderedType": "disc",
+        "itemSpacing": {
+          "left": 0,
+          "linkVertical": true,
+          "rightSpacingId": "0",
+          "linkHorizontal": false,
+          "bottomSpacingId": "2",
+          "right": 0,
+          "top": 0,
+          "useCustomSpacing": false,
+          "leftSpacingId": "0",
+          "topSpacingId": "2",
+          "bottom": 0
         },
-        "indent" : {
-          "left" : 0,
-          "linkVertical" : false,
-          "rightSpacingId" : "0",
-          "linkHorizontal" : false,
-          "bottomSpacingId" : "0",
-          "right" : 0,
-          "top" : 0,
-          "useCustomSpacing" : false,
-          "leftSpacingId" : "6",
-          "topSpacingId" : "0",
-          "bottom" : 0
+        "indent": {
+          "left": 0,
+          "linkVertical": false,
+          "rightSpacingId": "0",
+          "linkHorizontal": false,
+          "bottomSpacingId": "0",
+          "right": 0,
+          "top": 0,
+          "useCustomSpacing": false,
+          "leftSpacingId": "6",
+          "topSpacingId": "0",
+          "bottom": 0
         }
       },
-      "body" : {
-        "linkColor" : {
-          "shade" : 500,
-          "colorStripId" : "accent",
-          "darkShade" : 500,
-          "darkColorStripId" : "accent"
+      "body": {
+        "linkColor": {
+          "shade": 500,
+          "colorStripId": "accent",
+          "darkShade": 500,
+          "darkColorStripId": "accent"
         },
-        "linkUnderlineVisited" : true,
-        "alignment" : "left",
-        "underline" : false,
-        "fontFamily" : "body",
-        "linkUnderlineHover" : true,
-        "italic" : false,
-        "linkUnderline" : true,
-        "linkColorVisited" : {
-          "shade" : 700,
-          "colorStripId" : "accent",
-          "darkShade" : 300,
-          "darkColorStripId" : "accent"
+        "linkUnderlineVisited": true,
+        "alignment": "left",
+        "underline": false,
+        "fontFamily": "body",
+        "linkUnderlineHover": true,
+        "italic": false,
+        "linkUnderline": true,
+        "linkColorVisited": {
+          "shade": 700,
+          "colorStripId": "accent",
+          "darkShade": 300,
+          "darkColorStripId": "accent"
         },
-        "id" : "6CCC0527-6640-4CA2-96DA-C48A0E4EFF59",
-        "color" : {
-          "darkColorStripId" : "text",
-          "shade" : 300,
-          "darkShade" : 600,
-          "colorStripId" : "text"
+        "id": "6CCC0527-6640-4CA2-96DA-C48A0E4EFF59",
+        "color": {
+          "darkColorStripId": "text",
+          "shade": 300,
+          "darkShade": 600,
+          "colorStripId": "text"
         },
-        "margin" : {
-          "leftSpacingId" : "0",
-          "bottom" : 0,
-          "top" : 0,
-          "left" : 0,
-          "topSpacingId" : "0",
-          "rightSpacingId" : "0",
-          "useCustomSpacing" : false,
-          "linkVertical" : false,
-          "right" : 0,
-          "linkHorizontal" : false,
-          "bottomSpacingId" : "3"
+        "margin": {
+          "leftSpacingId": "0",
+          "bottom": 0,
+          "top": 0,
+          "left": 0,
+          "topSpacingId": "0",
+          "rightSpacingId": "0",
+          "useCustomSpacing": false,
+          "linkVertical": false,
+          "right": 0,
+          "linkHorizontal": false,
+          "bottomSpacingId": "3"
         },
-        "fontSize" : "base",
-        "lineHeight" : 1.3,
-        "linkColorHover" : {
-          "shade" : 700,
-          "colorStripId" : "accent",
-          "darkShade" : 300,
-          "darkColorStripId" : "accent"
+        "fontSize": "base",
+        "lineHeight": 1.3,
+        "linkColorHover": {
+          "shade": 700,
+          "colorStripId": "accent",
+          "darkShade": 300,
+          "darkColorStripId": "accent"
         }
       },
-      "h6" : {
-        "alignment" : "left",
-        "id" : "DD57D211-482D-4626-9939-59207C3F2BC0",
-        "lineHeight" : 1.1,
-        "linkColorVisited" : {
-          "darkShade" : 300,
-          "darkColorStripId" : "accent",
-          "colorStripId" : "accent",
-          "shade" : 700
+      "h6": {
+        "alignment": "left",
+        "id": "DD57D211-482D-4626-9939-59207C3F2BC0",
+        "lineHeight": 1.1,
+        "linkColorVisited": {
+          "darkShade": 300,
+          "darkColorStripId": "accent",
+          "colorStripId": "accent",
+          "shade": 700
         },
-        "fontWeight" : 500,
-        "fontSize" : "xl",
-        "color" : {
-          "shade" : 100,
-          "colorStripId" : "text",
-          "darkShade" : 800,
-          "darkColorStripId" : "text"
+        "fontWeight": 500,
+        "fontSize": "xl",
+        "color": {
+          "shade": 100,
+          "colorStripId": "text",
+          "darkShade": 800,
+          "darkColorStripId": "text"
         },
-        "margin" : {
-          "left" : 0,
-          "linkVertical" : false,
-          "rightSpacingId" : "0",
-          "linkHorizontal" : false,
-          "bottomSpacingId" : "0",
-          "right" : 0,
-          "top" : 0,
-          "useCustomSpacing" : false,
-          "leftSpacingId" : "0",
-          "topSpacingId" : "0",
-          "bottom" : 0
+        "margin": {
+          "left": 0,
+          "linkVertical": false,
+          "rightSpacingId": "0",
+          "linkHorizontal": false,
+          "bottomSpacingId": "0",
+          "right": 0,
+          "top": 0,
+          "useCustomSpacing": false,
+          "leftSpacingId": "0",
+          "topSpacingId": "0",
+          "bottom": 0
         },
-        "linkColor" : {
-          "darkShade" : 500,
-          "darkColorStripId" : "accent",
-          "colorStripId" : "accent",
-          "shade" : 500
+        "linkColor": {
+          "darkShade": 500,
+          "darkColorStripId": "accent",
+          "colorStripId": "accent",
+          "shade": 500
         },
-        "linkColorHover" : {
-          "darkShade" : 300,
-          "darkColorStripId" : "accent",
-          "colorStripId" : "accent",
-          "shade" : 700
+        "linkColorHover": {
+          "darkShade": 300,
+          "darkColorStripId": "accent",
+          "colorStripId": "accent",
+          "shade": 700
         },
-        "letterSpacing" : 0.05,
-        "fontFamily" : "heading"
+        "letterSpacing": 0.05,
+        "fontFamily": "heading"
       },
-      "code" : {
-        "color" : {
-          "shade" : 400,
-          "colorStripId" : "brand",
-          "darkShade" : 400,
-          "darkColorStripId" : "brand"
+      "code": {
+        "color": {
+          "shade": 400,
+          "colorStripId": "brand",
+          "darkShade": 400,
+          "darkColorStripId": "brand"
         },
-        "linkColor" : {
-          "shade" : 500,
-          "colorStripId" : "accent",
-          "darkShade" : 500,
-          "darkColorStripId" : "accent"
+        "linkColor": {
+          "shade": 500,
+          "colorStripId": "accent",
+          "darkShade": 500,
+          "darkColorStripId": "accent"
         },
-        "id" : "FFB6EB82-0492-4BB4-9B72-514A6503FADD",
-        "linkColorHover" : {
-          "darkShade" : 300,
-          "darkColorStripId" : "accent",
-          "colorStripId" : "accent",
-          "shade" : 700
+        "id": "FFB6EB82-0492-4BB4-9B72-514A6503FADD",
+        "linkColorHover": {
+          "darkShade": 300,
+          "darkColorStripId": "accent",
+          "colorStripId": "accent",
+          "shade": 700
         },
-        "linkColorVisited" : {
-          "darkShade" : 300,
-          "darkColorStripId" : "accent",
-          "colorStripId" : "accent",
-          "shade" : 700
+        "linkColorVisited": {
+          "darkShade": 300,
+          "darkColorStripId": "accent",
+          "colorStripId": "accent",
+          "shade": 700
         },
-        "fontFamily" : "code",
-        "fontSize" : "lg",
-        "margin" : {
-          "topSpacingNegated" : false,
-          "leftSpacingNegated" : false,
-          "linkHorizontal" : false,
-          "top" : 0,
-          "right" : 0,
-          "bottomSpacingId" : "0",
-          "linkVertical" : false,
-          "useCustomSpacing" : false,
-          "topSpacingId" : "0",
-          "left" : 0,
-          "rightSpacingId" : "0",
-          "bottom" : 0,
-          "leftSpacingId" : "0"
+        "fontFamily": "code",
+        "fontSize": "lg",
+        "margin": {
+          "topSpacingNegated": false,
+          "leftSpacingNegated": false,
+          "linkHorizontal": false,
+          "top": 0,
+          "right": 0,
+          "bottomSpacingId": "0",
+          "linkVertical": false,
+          "useCustomSpacing": false,
+          "topSpacingId": "0",
+          "left": 0,
+          "rightSpacingId": "0",
+          "bottom": 0,
+          "leftSpacingId": "0"
         },
-        "alignment" : "left"
+        "alignment": "left"
       },
-      "h3" : {
-        "margin" : {
-          "left" : 0,
-          "linkVertical" : false,
-          "rightSpacingId" : "0",
-          "linkHorizontal" : false,
-          "bottomSpacingId" : "0",
-          "right" : 0,
-          "top" : 0,
-          "useCustomSpacing" : false,
-          "leftSpacingId" : "0",
-          "topSpacingId" : "0",
-          "bottom" : 0
+      "h3": {
+        "margin": {
+          "left": 0,
+          "linkVertical": false,
+          "rightSpacingId": "0",
+          "linkHorizontal": false,
+          "bottomSpacingId": "0",
+          "right": 0,
+          "top": 0,
+          "useCustomSpacing": false,
+          "leftSpacingId": "0",
+          "topSpacingId": "0",
+          "bottom": 0
         },
-        "id" : "CF531C96-2795-4739-B680-B66746EC4579",
-        "fontSize" : "4xl",
-        "fontFamily" : "heading",
-        "fontWeight" : 600,
-        "linkColorHover" : {
-          "shade" : 700,
-          "colorStripId" : "accent",
-          "darkShade" : 300,
-          "darkColorStripId" : "accent"
+        "id": "CF531C96-2795-4739-B680-B66746EC4579",
+        "fontSize": "4xl",
+        "fontFamily": "heading",
+        "fontWeight": 600,
+        "linkColorHover": {
+          "shade": 700,
+          "colorStripId": "accent",
+          "darkShade": 300,
+          "darkColorStripId": "accent"
         },
-        "linkColorVisited" : {
-          "shade" : 700,
-          "colorStripId" : "accent",
-          "darkShade" : 300,
-          "darkColorStripId" : "accent"
+        "linkColorVisited": {
+          "shade": 700,
+          "colorStripId": "accent",
+          "darkShade": 300,
+          "darkColorStripId": "accent"
         },
-        "color" : {
-          "darkColorStripId" : "text",
-          "shade" : 100,
-          "darkShade" : 800,
-          "colorStripId" : "text"
+        "color": {
+          "darkColorStripId": "text",
+          "shade": 100,
+          "darkShade": 800,
+          "colorStripId": "text"
         },
-        "linkColor" : {
-          "shade" : 500,
-          "colorStripId" : "accent",
-          "darkShade" : 500,
-          "darkColorStripId" : "accent"
+        "linkColor": {
+          "shade": 500,
+          "colorStripId": "accent",
+          "darkShade": 500,
+          "darkColorStripId": "accent"
         },
-        "lineHeight" : 1.2000000000000002,
-        "alignment" : "left",
-        "letterSpacing" : 0.05
+        "lineHeight": 1.2000000000000002,
+        "alignment": "left",
+        "letterSpacing": 0.05
       }
     }
   ]
