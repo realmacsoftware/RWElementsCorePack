@@ -33,9 +33,6 @@ const maskClasses = (rw) => {
         maskRadialPosition,
         maskRadialFrom,
         maskRadialTo,
-        maskConicAngle,
-        maskConicFrom,
-        maskConicTo,
     } = rw.props;
 
     switch (maskType) {
@@ -68,12 +65,6 @@ const maskClasses = (rw) => {
                 maskRadialPosition,
                 `mask-radial-from-[${asPercent(maskRadialFrom)}]`,
                 `mask-radial-to-[${asPercent(maskRadialTo)}]`,
-            ];
-        case "conic":
-            return [
-                `mask-conic-[${asDegrees(maskConicAngle)}]`,
-                `mask-conic-from-[${asPercent(maskConicFrom)}]`,
-                `mask-conic-to-[${asPercent(maskConicTo)}]`,
             ];
         case "none":
         default:

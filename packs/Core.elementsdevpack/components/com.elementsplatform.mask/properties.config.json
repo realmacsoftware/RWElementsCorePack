@@ -30,10 +30,6 @@
               {
                 "title": "Radial",
                 "value": "radial"
-              },
-              {
-                "title": "Conic",
-                "value": "conic"
               }
             ]
           }
@@ -376,41 +372,6 @@
           "id": "maskRadialTo",
           "slider": {
             "default": 100,
-            "min": 0,
-            "max": 100,
-            "round": true,
-            "snap": true,
-            "units": "%"
-          }
-        },
-        {
-          "visible": "maskType == 'conic'",
-          "title": "Angle",
-          "id": "maskConicAngle",
-          "number": {
-            "default": 0,
-            "subtitle": "in degrees"
-          }
-        },
-        {
-          "visible": "maskType == 'conic'",
-          "title": "From",
-          "id": "maskConicFrom",
-          "slider": {
-            "default": 75,
-            "min": 0,
-            "max": 100,
-            "round": true,
-            "snap": true,
-            "units": "%"
-          }
-        },
-        {
-          "visible": "maskType == 'conic'",
-          "title": "To",
-          "id": "maskConicTo",
-          "slider": {
-            "default": 75,
             "min": 0,
             "max": 100,
             "round": true,
