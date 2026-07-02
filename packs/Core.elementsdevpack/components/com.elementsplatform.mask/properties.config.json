@@ -8,7 +8,7 @@
           "title": "Type",
           "id": "maskType",
           "responsive": false,
-          "segmented": {
+          "select": {
             "default": "none",
             "items": [
               {

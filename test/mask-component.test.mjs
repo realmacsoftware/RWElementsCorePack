@@ -92,7 +92,7 @@ test("mask type none leaves wrapper unmasked", () => {
     assert.doesNotMatch(rw.computedProps.classes.mask, /mask-b-from/);
 });
 
-test("svg mask emits Tailwind v4 image, mode, size, position, and repeat utilities", () => {
+test("svg mask inlines the encoded image data and emits mode, size, position, and repeat utilities", () => {
     const rw = renderMask({
         maskType: "svg",
         maskResource: { image: "<svg viewBox=\"0 0 1 1\"><path d=\"M0 0h1v1H0z\"/></svg>" },
@@ -111,6 +111,7 @@ test("edge mask emits side from and to utilities", () => {
 
     assert.match(rw.computedProps.classes.mask, /mask-b-from-\[75%\]/);
     assert.match(rw.computedProps.classes.mask, /mask-b-to-\[100%\]/);
+    assert.doesNotMatch(rw.computedProps.classes.mask, /,/);
 });
 
 test("linear mask emits angle from and to utilities", () => {

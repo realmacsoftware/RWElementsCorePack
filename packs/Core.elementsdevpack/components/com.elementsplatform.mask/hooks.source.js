@@ -97,7 +97,7 @@ const transformHook = (rw) => {
         mask: classnames([
             "block w-full h-full",
             globalTransitions(rw),
-            maskClasses(rw),
+            ...maskClasses(rw),
         ]).toString(),
     };
 
