@@ -199,7 +199,7 @@
                     "visible": "wantsLightbox == true",
                     "title": "Color",
                     "id": "imageLightboxColor",
-                    "format": "bg-{{value}}",
+                    "format": "bg-{{value}}/(--lightbox-bg-opacity)",
                     "themeColor": {
                         "default": {
                             "name": "black",
@@ -211,7 +211,7 @@
                     "visible": "wantsLightbox == true",
                     "title": "Opacity",
                     "id": "imageLightboxColorOpacity",
-                    "format": "bg-opacity-[{{value}}%]",
+                    "format": "[--lightbox-bg-opacity:{{value}}%]",
                     "responsive": false,
                     "slider": {
                         "default": "50",

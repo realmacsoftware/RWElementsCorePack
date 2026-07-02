@@ -97,7 +97,7 @@
           "visible": "wantsLightbox == true",
           "title": "Color",
           "id": "videoLightboxColor",
-          "format": "bg-{{value}}",
+          "format": "bg-{{value}}/(--lightbox-bg-opacity)",
           "themeColor": {
             "default": {
               "name": "black",
@@ -109,7 +109,7 @@
           "visible": "wantsLightbox == true",
           "title": "Opacity",
           "id": "videoLightboxColorOpacity",
-          "format": "bg-opacity-[{{value}}%]",
+          "format": "[--lightbox-bg-opacity:{{value}}%]",
           "responsive": false,
           "slider": {
             "default": "50",
@@ -142,7 +142,7 @@
         {
           "title": "Color",
           "id": "overlayColor",
-          "format": "bg-{{value}}",
+          "format": "bg-{{value}}/(--overlay-bg-opacity)",
           "themeColor": {
             "default": {
               "name": "surface",
@@ -153,7 +153,7 @@
         {
           "title": "Opacity",
           "id": "overlayOpacity",
-          "format": "bg-opacity-[{{value}}%] dark:bg-opacity-[{{value}}%]",
+          "format": "[--overlay-bg-opacity:{{value}}%]",
           "slider": {
             "default": 50,
             "use": "Slider",
