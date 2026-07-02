@@ -320,7 +320,7 @@
                     "visible": "topLevelState == 'normal'",
                     "title": "Background",
                     "id": "topLevelBgColor",
-                    "format": "bg-{{value}}",
+                    "format": "bg-{{value}}/(--top-level-bg-opacity)",
                     "themeColor": {
                         "default": {
                             "name": "surface",
@@ -332,7 +332,7 @@
                     "visible": "topLevelState == 'normal'",
                     "title": "Opacity",
                     "id": "topLevelBgColorOpacity",
-                    "format": "bg-opacity-[{{value}}%]",
+                    "format": "[--top-level-bg-opacity:{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "default": 100,
@@ -355,7 +355,7 @@
                     "visible": "topLevelState == 'hover'",
                     "title": "Background",
                     "id": "topLevelBgColorHover",
-                    "format": "hover:bg-{{value}} aria-[current=page]:bg-{{value}}",
+                    "format": "hover:bg-{{value}}/(--top-level-bg-opacity) aria-[current=page]:bg-{{value}}/(--top-level-bg-opacity)",
                     "themeColor": {
                         "default": {
                             "name": "surface",
@@ -367,7 +367,7 @@
                     "visible": "topLevelState == 'hover'",
                     "title": "Opacity",
                     "id": "topLevelBgColorOpacityHover",
-                    "format": "hover:bg-opacity-[{{value}}%] aria-[current=page]:bg-opacity-[{{value}}%]",
+                    "format": "hover:[--top-level-bg-opacity:{{value}}%] aria-[current=page]:[--top-level-bg-opacity:{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "default": 100,
@@ -428,7 +428,7 @@
                 {
                     "title": "Color",
                     "id": "subMenuBorderColor",
-                    "format": "border-{{value}}",
+                    "format": "border-{{value}}/(--sub-menu-border-opacity)",
                     "themeColor": {
                         "default": {
                             "name": "surface",
@@ -439,7 +439,7 @@
                 {
                     "title": "Opacity",
                     "id": "subMenuBorderColorOpacity",
-                    "format": "border-opacity-[{{value}}%]",
+                    "format": "[--sub-menu-border-opacity:{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "default": 100,
@@ -570,7 +570,7 @@
                     "visible": "subMenuItemState == 'normal'",
                     "title": "Background",
                     "id": "subMenuItemBgColor",
-                    "format": "bg-{{value}}",
+                    "format": "bg-{{value}}/(--sub-menu-item-bg-opacity)",
                     "themeColor": {
                         "default": {
                             "name": "surface",
@@ -582,7 +582,7 @@
                     "visible": "subMenuItemState == 'normal'",
                     "title": "Opacity",
                     "id": "subMenuItemBgColorOpacity",
-                    "format": "bg-opacity-[{{value}}%]",
+                    "format": "[--sub-menu-item-bg-opacity:{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "default": 0,
@@ -605,7 +605,7 @@
                     "visible": "subMenuItemState == 'hover'",
                     "title": "Background",
                     "id": "subMenuItemBgColorHover",
-                    "format": "hover:bg-{{value}} aria-[current=page]:bg-{{value}}",
+                    "format": "hover:bg-{{value}}/(--sub-menu-item-bg-opacity) aria-[current=page]:bg-{{value}}/(--sub-menu-item-bg-opacity)",
                     "themeColor": {
                         "default": {
                             "name": "surface",
@@ -617,7 +617,7 @@
                     "visible": "subMenuItemState == 'hover'",
                     "title": "Opacity",
                     "id": "subMenuItemBgColorOpacityHover",
-                    "format": "hover:bg-opacity-[{{value}}%] aria-[current=page]:bg-opacity-[{{value}}%]",
+                    "format": "hover:[--sub-menu-item-bg-opacity:{{value}}%] aria-[current=page]:[--sub-menu-item-bg-opacity:{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "default": 0,
@@ -678,7 +678,7 @@
                 {
                     "title": "Color",
                     "id": "thirdLevelBorderColor",
-                    "format": "border-{{value}}",
+                    "format": "border-{{value}}/(--third-level-border-opacity)",
                     "themeColor": {
                         "default": {
                             "name": "surface",
@@ -689,7 +689,7 @@
                 {
                     "title": "Opacity",
                     "id": "thirdLevelBorderColorOpacity",
-                    "format": "border-opacity-[{{value}}%]",
+                    "format": "[--third-level-border-opacity:{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "default": 100,
@@ -820,7 +820,7 @@
                     "visible": "thirdLevelItemState == 'normal'",
                     "title": "Background",
                     "id": "thirdLevelItemBgColor",
-                    "format": "bg-{{value}}",
+                    "format": "bg-{{value}}/(--third-level-item-bg-opacity)",
                     "themeColor": {
                         "default": {
                             "name": "surface",
@@ -832,7 +832,7 @@
                     "visible": "thirdLevelItemState == 'normal'",
                     "title": "Opacity",
                     "id": "thirdLevelItemBgColorOpacity",
-                    "format": "bg-opacity-[{{value}}%]",
+                    "format": "[--third-level-item-bg-opacity:{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "default": 100,
@@ -855,7 +855,7 @@
                     "visible": "thirdLevelItemState == 'hover'",
                     "title": "Background",
                     "id": "thirdLevelItemBgColorHover",
-                    "format": "hover:bg-{{value}} aria-[current=page]:bg-{{value}}",
+                    "format": "hover:bg-{{value}}/(--third-level-item-bg-opacity) aria-[current=page]:bg-{{value}}/(--third-level-item-bg-opacity)",
                     "themeColor": {
                         "default": {
                             "name": "surface",
@@ -867,7 +867,7 @@
                     "visible": "thirdLevelItemState == 'hover'",
                     "title": "Opacity",
                     "id": "thirdLevelItemBgColorOpacityHover",
-                    "format": "hover:bg-opacity-[{{value}}%] aria-[current=page]:bg-opacity-[{{value}}%]",
+                    "format": "hover:[--third-level-item-bg-opacity:{{value}}%] aria-[current=page]:[--third-level-item-bg-opacity:{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "default": 100,

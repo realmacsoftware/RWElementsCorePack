@@ -756,7 +756,7 @@
                     "visible": "showIcon == true && tabIconState == 'inactive'",
                     "title": "Color",
                     "id": "iconFillColor",
-                    "format": "[&_svg]:fill-{{value}}/[--iconFillOpacity] [&_svg]:text-{{value}}/[--iconFillOpacity]",
+                    "format": "[&_svg]:fill-{{value}}/(--iconFillOpacity) [&_svg]:text-{{value}}/(--iconFillOpacity)",
                     "themeColor": {
                         "default": {
                             "name": "text",
@@ -768,7 +768,7 @@
                     "visible": "showIcon == true && tabIconState == 'inactive'",
                     "title": "Opacity",
                     "id": "iconFillOpacity",
-                    "format": "[--iconFillOpacity:_{{value}}%]",
+                    "format": "[--iconFillOpacity:{{value}}%]",
                     "responsive": false,
                     "slider": {
                         "use": "Slider",
@@ -780,7 +780,7 @@
                     "visible": "showIcon == true && tabIconState == 'active'",
                     "title": "Color",
                     "id": "iconFillColorActive",
-                    "format": "[&_svg]:fill-{{value}}/[--iconFillOpacityActive] [&_svg]:text-{{value}}/[--iconFillOpacityActive]",
+                    "format": "[&_svg]:fill-{{value}}/(--iconFillOpacityActive) [&_svg]:text-{{value}}/(--iconFillOpacityActive)",
                     "themeColor": {
                         "default": {
                             "name": "surface",
@@ -792,7 +792,7 @@
                     "visible": "showIcon == true && tabIconState == 'active'",
                     "title": "Opacity",
                     "id": "iconFillOpacityActive",
-                    "format": "[--iconFillOpacityActive:_{{value}}%]",
+                    "format": "[--iconFillOpacityActive:{{value}}%]",
                     "responsive": false,
                     "slider": {
                         "use": "Slider",
@@ -804,7 +804,7 @@
                     "visible": "showIcon == true && tabIconState == 'hover'",
                     "title": "Color",
                     "id": "iconFillColorHover",
-                    "format": "group-hover/tab-button:[&_svg]:fill-{{value}}/[--iconFillOpacityHover] group-hover/tab-button:[&_svg]:text-{{value}}/[--iconFillOpacityHover]",
+                    "format": "group-hover/tab-button:[&_svg]:fill-{{value}}/(--iconFillOpacityHover) group-hover/tab-button:[&_svg]:text-{{value}}/(--iconFillOpacityHover)",
                     "themeColor": {
                         "default": {
                             "name": "text",
@@ -837,7 +837,7 @@
                     "visible": "showIcon == true && tabIconState == 'inactive'",
                     "title": "Color",
                     "id": "iconStrokeColor",
-                    "format": "[&_svg]:stroke-{{value}}/[--iconStrokeOpacity]",
+                    "format": "[&_svg]:stroke-{{value}}/(--iconStrokeOpacity)",
                     "themeColor": {
                         "default": {
                             "name": "none",
@@ -871,7 +871,7 @@
                     "visible": "showIcon == true && tabIconState == 'active'",
                     "title": "Color",
                     "id": "iconStrokeColorActive",
-                    "format": "[&_svg]:stroke-{{value}}/[--iconStrokeOpacityActive]",
+                    "format": "[&_svg]:stroke-{{value}}/(--iconStrokeOpacityActive)",
                     "themeColor": {
                         "default": {
                             "name": "none",
@@ -905,7 +905,7 @@
                     "visible": "showIcon == true && tabIconState == 'hover'",
                     "title": "Color",
                     "id": "iconStrokeColorHover",
-                    "format": "group-hover/tab-button:[&_svg]:stroke-{{value}}/[--iconStrokeOpacityHover]",
+                    "format": "group-hover/tab-button:[&_svg]:stroke-{{value}}/(--iconStrokeOpacityHover)",
                     "themeColor": {
                         "default": {
                             "name": "none",

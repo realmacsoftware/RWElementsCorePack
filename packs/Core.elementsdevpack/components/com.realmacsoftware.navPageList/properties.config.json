@@ -346,7 +346,7 @@
           "visible": "globalMenuItemState == 'default'",
           "title": "Color",
           "id": "globalMenuItemColor",
-          "format": "text-{{value}}/[var(--text-opacity)]",
+          "format": "text-{{value}}/(--text-opacity)",
           "themeColor": {
             "default": {
               "name": "text",
@@ -396,7 +396,7 @@
           "visible": "globalMenuItemState == 'hover'",
           "title": "Color",
           "id": "globalMenuItemHoverColor",
-          "format": "hover:text-{{value}}/[var(--text-opacity)] aria-[current=page]:text-{{value}}/[var(--text-opacity)]",
+          "format": "hover:text-{{value}}/(--text-opacity) aria-[current=page]:text-{{value}}/(--text-opacity)",
           "themeColor": {
             "hover": {
               "name": "brand",

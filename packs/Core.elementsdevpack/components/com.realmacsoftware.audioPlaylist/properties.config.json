@@ -391,7 +391,7 @@
                     "visible": "trackState == 'normal'",
                     "title": "Background",
                     "id": "trackBg",
-                    "format": "bg-{{value}}",
+                    "format": "bg-{{value}}/(--track-bg-opacity)",
                     "themeColor": {
                         "default": {
                             "name": "white",
@@ -403,7 +403,7 @@
                     "visible": "trackState == 'normal'",
                     "title": "Opacity",
                     "id": "trackBgOpacity",
-                    "format": "bg-opacity-[{{value}}%]",
+                    "format": "[--track-bg-opacity:{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "units": "%",
@@ -438,7 +438,7 @@
                     "visible": "trackState == 'hover'",
                     "title": "Background",
                     "id": "trackBgHover",
-                    "format": "hover:bg-{{value}}",
+                    "format": "hover:bg-{{value}}/(--track-bg-opacity)",
                     "themeColor": {
                         "default": {
                             "name": "white",
@@ -450,7 +450,7 @@
                     "visible": "trackState == 'hover'",
                     "title": "Opacity",
                     "id": "trackBgOpacityHover",
-                    "format": "hover:bg-opacity-[{{value}}%]",
+                    "format": "hover:[--track-bg-opacity:{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "units": "%",

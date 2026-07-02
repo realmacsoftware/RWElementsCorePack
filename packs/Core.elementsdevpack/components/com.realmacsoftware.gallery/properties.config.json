@@ -318,7 +318,7 @@
         {
           "title": "Color",
           "id": "overlayColor",
-          "format": "bg-{{value}}",
+          "format": "bg-{{value}}/(--overlay-bg-opacity)",
           "themeColor": {
             "mode": "single",
             "default": {
@@ -330,7 +330,7 @@
         {
           "title": "Opacity",
           "id": "overlayOpacity",
-          "format": "bg-opacity-[{{value}}%] dark:bg-opacity-[{{value}}%]",
+          "format": "[--overlay-bg-opacity:{{value}}%]",
           "slider": {
             "use": "Slider",
             "default": 20,
