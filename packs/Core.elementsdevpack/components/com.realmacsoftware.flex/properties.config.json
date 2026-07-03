@@ -154,7 +154,7 @@
     },
     {
       "title": "Transitions",
-      "icon": "wand.and.stars.inverse",
+      "icon": "timer",
       "properties": [
         {
           "globalControl": "Transitions"
