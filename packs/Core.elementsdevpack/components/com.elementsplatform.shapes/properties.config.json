@@ -1,0 +1,356 @@
+{
+  "groups": [
+    {
+      "title": "Shape",
+      "icon": "hexagon",
+      "properties": [
+        {
+          "title": "Type",
+          "id": "shapeType",
+          "responsive": false,
+          "select": {
+            "default": "none",
+            "items": [
+              {
+                "title": "None",
+                "value": "none"
+              },
+              {
+                "title": "Preset",
+                "value": "preset"
+              },
+              {
+                "title": "Circle",
+                "value": "circle"
+              },
+              {
+                "title": "Ellipse",
+                "value": "ellipse"
+              },
+              {
+                "title": "Inset",
+                "value": "inset"
+              },
+              {
+                "title": "Custom",
+                "value": "custom"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "shapeType == 'preset'",
+          "title": "Shape",
+          "id": "shapePreset",
+          "select": {
+            "default": "triangle",
+            "items": [
+              {
+                "title": "Triangle",
+                "value": "triangle"
+              },
+              {
+                "title": "Triangle Down",
+                "value": "triangle-down"
+              },
+              {
+                "title": "Trapezoid",
+                "value": "trapezoid"
+              },
+              {
+                "title": "Parallelogram",
+                "value": "parallelogram"
+              },
+              {
+                "title": "Rhombus",
+                "value": "rhombus"
+              },
+              {
+                "title": "Pentagon",
+                "value": "pentagon"
+              },
+              {
+                "title": "Hexagon",
+                "value": "hexagon"
+              },
+              {
+                "title": "Octagon",
+                "value": "octagon"
+              },
+              {
+                "title": "Star",
+                "value": "star"
+              },
+              {
+                "title": "Arrow Left",
+                "value": "arrow-left"
+              },
+              {
+                "title": "Arrow Right",
+                "value": "arrow-right"
+              },
+              {
+                "title": "Chevron",
+                "value": "chevron"
+              },
+              {
+                "title": "Message",
+                "value": "message"
+              },
+              {
+                "title": "Frame",
+                "value": "frame"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "shapeType == 'circle'",
+          "title": "Radius",
+          "id": "shapeCircleRadius",
+          "slider": {
+            "default": 50,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "shapeType == 'circle'",
+          "title": "Position",
+          "id": "shapeCirclePosition",
+          "select": {
+            "default": "center",
+            "items": [
+              {
+                "title": "Top Left",
+                "value": "top left"
+              },
+              {
+                "title": "Top",
+                "value": "top"
+              },
+              {
+                "title": "Top Right",
+                "value": "top right"
+              },
+              {
+                "title": "Left",
+                "value": "left"
+              },
+              {
+                "title": "Center",
+                "value": "center"
+              },
+              {
+                "title": "Right",
+                "value": "right"
+              },
+              {
+                "title": "Bottom Left",
+                "value": "bottom left"
+              },
+              {
+                "title": "Bottom",
+                "value": "bottom"
+              },
+              {
+                "title": "Bottom Right",
+                "value": "bottom right"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "shapeType == 'ellipse'",
+          "title": "Radius X",
+          "id": "shapeEllipseRadiusX",
+          "slider": {
+            "default": 50,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "shapeType == 'ellipse'",
+          "title": "Radius Y",
+          "id": "shapeEllipseRadiusY",
+          "slider": {
+            "default": 50,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "shapeType == 'ellipse'",
+          "title": "Position",
+          "id": "shapeEllipsePosition",
+          "select": {
+            "default": "center",
+            "items": [
+              {
+                "title": "Top Left",
+                "value": "top left"
+              },
+              {
+                "title": "Top",
+                "value": "top"
+              },
+              {
+                "title": "Top Right",
+                "value": "top right"
+              },
+              {
+                "title": "Left",
+                "value": "left"
+              },
+              {
+                "title": "Center",
+                "value": "center"
+              },
+              {
+                "title": "Right",
+                "value": "right"
+              },
+              {
+                "title": "Bottom Left",
+                "value": "bottom left"
+              },
+              {
+                "title": "Bottom",
+                "value": "bottom"
+              },
+              {
+                "title": "Bottom Right",
+                "value": "bottom right"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "shapeType == 'inset'",
+          "title": "Top",
+          "id": "shapeInsetTop",
+          "slider": {
+            "default": 10,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "shapeType == 'inset'",
+          "title": "Right",
+          "id": "shapeInsetRight",
+          "slider": {
+            "default": 10,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "shapeType == 'inset'",
+          "title": "Bottom",
+          "id": "shapeInsetBottom",
+          "slider": {
+            "default": 10,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "shapeType == 'inset'",
+          "title": "Left",
+          "id": "shapeInsetLeft",
+          "slider": {
+            "default": 10,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "shapeType == 'inset'",
+          "title": "Corner Radius",
+          "id": "shapeInsetRadius",
+          "slider": {
+            "default": 0,
+            "min": 0,
+            "max": 50,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "shapeType == 'custom'",
+          "title": "Clip Path",
+          "id": "shapeCustom",
+          "text": {
+            "default": "polygon(50% 0%,100% 100%,0% 100%)",
+            "subtitle": "Any CSS clip-path value such as polygon(...), circle(...), ellipse(...) or inset(...). Spaces are converted automatically."
+          }
+        },
+        {
+          "visible": "shapeType != 'none'",
+          "information": {},
+          "title": "Content outside the shape is clipped and cannot be clicked."
+        }
+      ]
+    },
+    {
+      "title": "Layout",
+      "icon": "square.split.bottomrightquarter",
+      "properties": [
+        {
+          "globalControl": "Layout"
+        }
+      ]
+    },
+    {
+      "title": "Sizing",
+      "icon": "arrow.down.backward.and.arrow.up.forward.square",
+      "properties": [
+        {
+          "globalControl": "Sizing"
+        }
+      ]
+    },
+    {
+      "title": "Spacing",
+      "icon": "squareshape.squareshape.dotted",
+      "properties": [
+        {
+          "globalControl": "Spacing"
+        }
+      ]
+    },
+    {
+      "title": "Transitions",
+      "icon": "wand.and.stars.inverse",
+      "properties": [
+        {
+          "globalControl": "Transitions"
+        }
+      ]
+    }
+  ]
+}
