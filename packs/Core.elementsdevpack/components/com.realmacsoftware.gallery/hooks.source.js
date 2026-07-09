@@ -31,6 +31,20 @@ const transformHook = (rw) => {
         lightboxMediaGlobalBordersRadius: lightboxMediaBorderRadius,
         lightboxMediaGlobalBoxShadow: lightboxMediaShadow,
 
+        lightboxMetaAlignment,
+        lightboxMetaMargin,
+        lightboxMetaSpacing,
+
+        lightboxShowCaption,
+        lightboxCaptionColor,
+        lightboxCaptionFont,
+        lightboxCaptionFontSize,
+
+        lightboxShowAuthor,
+        lightboxAuthorColor,
+        lightboxAuthorFont,
+        lightboxAuthorFontSize,
+
         navigationRadius,
         navigationPadding,
         navigationSize,
@@ -150,12 +164,30 @@ const transformHook = (rw) => {
             `scrollbar-hide relative w-full h-screen flex items-center snap-x snap-mandatory overflow-x-auto`,
         ]).toString(),
         lightboxItem: classnames([
-            `snap-center shrink-0 w-screen h-screen p-3 md:p-20 flex justify-center items-center`,
+            `snap-center shrink-0 w-screen h-screen p-3 md:p-20 flex flex-col justify-center items-center`,
         ]).toString(),
         lightboxItemMedia: classnames([
-            `max-w-full max-h-full object-contain`,
+            `max-w-full max-h-full min-h-0 object-contain`,
             lightboxMediaBorderRadius,
             lightboxMediaShadow,
+        ]).toString(),
+        lightboxMeta: classnames([
+            `flex flex-col shrink-0`,
+            lightboxMetaAlignment,
+            lightboxMetaMargin,
+            lightboxMetaSpacing,
+        ]).toString(),
+        lightboxCaption: classnames([
+            lightboxMetaAlignment,
+            lightboxCaptionColor,
+            lightboxCaptionFont,
+            lightboxCaptionFontSize,
+        ]).toString(),
+        lightboxAuthor: classnames([
+            lightboxMetaAlignment,
+            lightboxAuthorColor,
+            lightboxAuthorFont,
+            lightboxAuthorFontSize,
         ]).toString(),
         lightboxCloseButton: classnames([
             `cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed`,
@@ -210,6 +242,9 @@ const transformHook = (rw) => {
         thumbnailShowCaption: thumbnailShowCaption,
         thumbnailShowAuthor: thumbnailShowAuthor,
         thumbnailWantsMeta: thumbnailShowCaption || thumbnailShowAuthor,
+        lightboxShowCaption: lightboxShowCaption,
+        lightboxShowAuthor: lightboxShowAuthor,
+        lightboxWantsMeta: lightboxShowCaption || lightboxShowAuthor,
         resources: resources?.resources,
         edit: rw.project.mode === "edit",
         includeLightbox: lightboxPreview || rw.project.mode !== "edit",
