@@ -121,6 +121,14 @@
                         class="{{classes.lightboxItemMedia}} aspect-[{{item.aspect}}]"
                         @click.stop
                     />
+                    @endif @if(lightboxWantsMeta)
+                    <div class="{{classes.lightboxMeta}}" @click.stop>
+                        @if (lightboxShowCaption)
+                        <div class="{{classes.lightboxCaption}}">{{item.caption}}</div>
+                        @endif @if (lightboxShowAuthor)
+                        <div class="{{classes.lightboxAuthor}}">{{item.author}}</div>
+                        @endif
+                    </div>
                     @endif
                 </li>
                 @endeach

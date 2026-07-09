@@ -308,6 +308,157 @@
           "title": "Shadow",
           "id": "lightboxMedia{{value}}",
           "globalControl": "BoxShadow"
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Meta Data",
+          "heading": {}
+        },
+        {
+          "title": "Alignment",
+          "id": "lightboxMetaAlignment",
+          "format": "text-{{value}}",
+          "segmented": {
+            "default": "center",
+            "items": [
+              {
+                "title": "Left",
+                "value": "left"
+              },
+              {
+                "title": "Center",
+                "value": "center"
+              },
+              {
+                "title": "Right",
+                "value": "right"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Margin",
+          "id": "lightboxMetaMargin",
+          "format": "mt-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "3"
+              }
+            }
+          }
+        },
+        {
+          "title": "Spacing",
+          "id": "lightboxMetaSpacing",
+          "format": "gap-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "0"
+              }
+            }
+          }
+        },
+        {
+          "title": "Caption",
+          "heading": {}
+        },
+        {
+          "title": "Show",
+          "id": "lightboxShowCaption",
+          "responsive": false,
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "enable": "lightboxShowCaption == true",
+          "title": "Color",
+          "id": "lightboxCaptionColor",
+          "format": "text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "text",
+              "brightness": 50
+            }
+          }
+        },
+        {
+          "enable": "lightboxShowCaption == true",
+          "title": "Font",
+          "id": "lightboxCaptionFont",
+          "themeFont": {
+            "default": {
+              "base": {
+                "name": "heading"
+              }
+            }
+          }
+        },
+        {
+          "enable": "lightboxShowCaption == true",
+          "title": "Size",
+          "id": "lightboxCaptionFontSize",
+          "themeTextStyle": {
+            "default": {
+              "base": {
+                "value": "sm"
+              }
+            }
+          }
+        },
+        {
+          "title": "Author",
+          "heading": {}
+        },
+        {
+          "title": "Show",
+          "id": "lightboxShowAuthor",
+          "responsive": false,
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "enable": "lightboxShowAuthor == true",
+          "title": "Color",
+          "id": "lightboxAuthorColor",
+          "format": "text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "text",
+              "brightness": 50
+            }
+          }
+        },
+        {
+          "enable": "lightboxShowAuthor == true",
+          "title": "Font",
+          "id": "lightboxAuthorFont",
+          "themeFont": {
+            "default": {
+              "base": {
+                "name": "heading"
+              }
+            }
+          }
+        },
+        {
+          "enable": "lightboxShowAuthor == true",
+          "title": "Size",
+          "id": "lightboxAuthorFontSize",
+          "themeTextStyle": {
+            "default": {
+              "base": {
+                "value": "sm"
+              }
+            }
+          }
         }
       ]
     },
