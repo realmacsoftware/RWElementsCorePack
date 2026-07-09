@@ -1,1 +1,32 @@
-<div class="{{classes.shape}}">@dropzone(name: "content", title: "Shapes")</div>
+<div class="{{classes.shape}}">
+    @if(hasMedia)
+        @if(isImage)
+            <img src="{{mediaSrc}}" alt="{{mediaAlt}}" class="{{classes.media}}" style="{{mediaStyle}}" />
+        @elseif(isMP4)
+            <video class="{{classes.media}}" controls playsinline muted>
+                <source src="{{mediaSrc}}" type="video/mp4" />
+            </video>
+        @elseif(isEmbed)
+            <div class="{{classes.embedFrame}}">
+                <iframe
+                    src="{{embedUrl}}"
+                    class="w-full h-full"
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+            </div>
+        @endif
+    @endif
+    @if(edit)
+        @if(!hasMedia)
+        <div
+            rwResourceDropZone="media"
+            class="float-left w-2/5 h-48 mr-4 mb-2 flex flex-col items-center justify-center border-2 border-dashed border-gray-300 rounded-xl bg-gray-50 text-center px-4 py-6"
+        >
+            <p class="text-lg font-medium text-gray-700">Drop an image, SVG or video</p>
+            <p class="text-sm text-gray-400">Text will wrap around its shape</p>
+        </div>
+        @endif
+    @endif
+    @dropzone(name: "content", title: "Content")
+</div>

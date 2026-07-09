@@ -5,8 +5,6 @@ const asPercent = (value) => {
 
 const arbitraryValue = (value, fallback) => `${value || fallback}`.trim().replace(/\s+/g, "_");
 
-const clipPathClass = (value) => `[clip-path:${arbitraryValue(value, "none")}]`;
-
 const shapePresets = {
     "triangle": "polygon(50% 0%,0% 100%,100% 100%)",
     "triangle-down": "polygon(0% 0%,100% 0%,50% 100%)",
@@ -24,54 +22,72 @@ const shapePresets = {
     "frame": "polygon(0% 0%,0% 100%,25% 100%,25% 25%,75% 25%,75% 75%,25% 75%,25% 100%,100% 100%,100% 0%)",
 };
 
-const shapeClasses = (rw) => {
+const shapeValueFor = (rw) => {
     const {
-        shapeType,
+        shapeSource,
         shapePreset,
         shapeCircleRadius,
         shapeCirclePosition,
         shapeEllipseRadiusX,
         shapeEllipseRadiusY,
         shapeEllipsePosition,
-        shapeInsetTop,
-        shapeInsetRight,
-        shapeInsetBottom,
-        shapeInsetLeft,
-        shapeInsetRadius,
         shapeCustom,
     } = rw.props;
 
-    switch (shapeType) {
+    switch (shapeSource) {
         case "preset":
-            return [clipPathClass(shapePresets[shapePreset] || shapePresets.triangle)];
+            return shapePresets[shapePreset] || shapePresets.triangle;
         case "circle":
-            return [
-                clipPathClass(`circle(${asPercent(shapeCircleRadius)} at ${shapeCirclePosition || "center"})`),
-            ];
+            return `circle(${asPercent(shapeCircleRadius)} at ${shapeCirclePosition || "center"})`;
         case "ellipse":
-            return [
-                clipPathClass(
-                    `ellipse(${asPercent(shapeEllipseRadiusX)} ${asPercent(shapeEllipseRadiusY)} at ${shapeEllipsePosition || "center"})`
-                ),
-            ];
-        case "inset": {
-            const edges = [shapeInsetTop, shapeInsetRight, shapeInsetBottom, shapeInsetLeft]
-                .map(asPercent)
-                .join(" ");
-            const radius = Number(shapeInsetRadius) > 0 ? ` round ${asPercent(shapeInsetRadius)}` : "";
-            return [clipPathClass(`inset(${edges}${radius})`)];
-        }
+            return `ellipse(${asPercent(shapeEllipseRadiusX)} ${asPercent(shapeEllipseRadiusY)} at ${shapeEllipsePosition || "center"})`;
         case "custom":
-            return [clipPathClass(shapeCustom)];
+            return `${shapeCustom || ""}`.trim() || null;
+        case "auto":
         case "none":
         default:
-            return [];
+            return null;
     }
 };
 
 const transformHook = (rw) => {
-    const { globalID } = rw.props;
+    const {
+        globalID,
+        media,
+        mediaAlt,
+        mediaFloat,
+        mediaWidth,
+        shapeMargin,
+        shapeSource,
+        shapeImageThreshold,
+        clipMedia,
+    } = rw.props;
     const { id } = rw.node;
+
+    const hasMedia = !!media;
+    const isYouTube = media?.format === "youtube";
+    const isVimeo = media?.format === "vimeo";
+    const isMP4 = media?.format === "mp4";
+    const isEmbed = isYouTube || isVimeo;
+    const isImage = hasMedia && !isMP4 && !isEmbed;
+
+    // Auto needs image transparency; videos degrade to a plain rectangular wrap
+    const effectiveSource = shapeSource === "auto" && !isImage ? "none" : shapeSource;
+
+    // url() values are unsafe as Tailwind class names, so auto mode uses an inline style
+    const mediaStyle = effectiveSource === "auto" && media?.image
+        ? `shape-outside: url('${media.image}'); shape-image-threshold: ${(Number(shapeImageThreshold) || 0) / 100};`
+        : "";
+
+    const shapeValue = shapeValueFor(rw);
+    const shapeClasses = shapeValue
+        ? [
+            `[shape-outside:${arbitraryValue(shapeValue)}]`,
+            clipMedia && `[clip-path:${arbitraryValue(shapeValue)}]`,
+        ]
+        : [];
+
+    const floatClasses = [mediaFloat, mediaWidth, shapeMargin];
 
     const classes = {
         wrapper: classnames([
@@ -83,23 +99,52 @@ const transformHook = (rw) => {
             advancedClasses(rw),
         ]).toString(),
         shape: classnames([
-            "block w-full h-full",
+            "block w-full flow-root",
             globalTransitions(rw),
-            ...shapeClasses(rw),
+        ]).toString(),
+        media: classnames([
+            ...floatClasses,
+            "h-auto max-w-full",
+            ...shapeClasses,
+        ]).toString(),
+        embedFrame: classnames([
+            ...floatClasses,
+            "aspect-video",
+            ...shapeClasses,
         ]).toString(),
     };
+
+    const embedUrl = isYouTube
+        ? `https://www.youtube.com/embed/${media?.videoId}`
+        : isVimeo
+            ? `https://player.vimeo.com/video/${media?.videoId}`
+            : "";
 
     rw.setRootElement({
         as: "div",
         class: classes.wrapper,
-        args: { id: globalID },
+        args: {
+            id: globalID,
+            rwResourceDropZone: "media",
+        },
     });
 
     if ((globalID || "").length > 0) {
         rw.addAnchor(globalID);
     }
 
-    rw.setProps({ classes });
+    rw.setProps({
+        classes,
+        hasMedia,
+        isImage,
+        isMP4,
+        isEmbed,
+        embedUrl,
+        mediaSrc: isMP4 ? media?.path : media?.image,
+        mediaAlt: media?.alt || mediaAlt || "",
+        mediaStyle,
+        edit: rw.project.mode === "edit",
+    });
 };
 
 exports.transformHook = transformHook;
