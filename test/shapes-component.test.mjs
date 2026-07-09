@@ -40,27 +40,30 @@ function loadTransformHook() {
     return sandbox.exports.transformHook;
 }
 
-function renderShapes(overrides = {}) {
+function renderShapes(overrides = {}, mode = "preview") {
     const transformHook = loadTransformHook();
     const rw = {
         props: {
             globalID: "",
-            shapeType: "none",
+            media: null,
+            mediaAlt: "",
+            mediaFloat: "float-left",
+            mediaWidth: "w-[40%]",
+            shapeMargin: "[shape-margin:16px]",
+            shapeSource: "auto",
+            shapeImageThreshold: 50,
+            clipMedia: true,
             shapePreset: "triangle",
             shapeCircleRadius: 50,
             shapeCirclePosition: "center",
             shapeEllipseRadiusX: 50,
             shapeEllipseRadiusY: 50,
             shapeEllipsePosition: "center",
-            shapeInsetTop: 10,
-            shapeInsetRight: 10,
-            shapeInsetBottom: 10,
-            shapeInsetLeft: 10,
-            shapeInsetRadius: 0,
             shapeCustom: "polygon(50% 0%,100% 100%,0% 100%)",
             ...overrides,
         },
         node: { id: "node-1" },
+        project: { mode },
         setRootElement(root) {
             this.root = root;
         },
@@ -76,58 +79,144 @@ function renderShapes(overrides = {}) {
     return rw;
 }
 
-test("shape type none leaves wrapper unclipped", () => {
+const image = { format: "png", image: "https://example.com/cutout.png", alt: "A cutout" };
+
+test("root element accepts dropped resources and keeps group classes", () => {
     const rw = renderShapes();
 
     assert.equal(rw.root.as, "div");
     assert.match(rw.root.class, /group\/shapes/);
-    assert.doesNotMatch(rw.computedProps.classes.shape, /clip-path/);
+    assert.equal(rw.root.args.rwResourceDropZone, "media");
+    assert.equal(rw.computedProps.hasMedia, false);
 });
 
-test("preset shape emits a polygon clip-path with spaces converted to underscores", () => {
-    const rw = renderShapes({ shapeType: "preset", shapePreset: "star" });
+test("shape wrapper contains the float with flow-root", () => {
+    const rw = renderShapes();
 
-    assert.match(rw.computedProps.classes.shape, /\[clip-path:polygon\(50%_0%,61%_35%/);
+    assert.match(rw.computedProps.classes.shape, /flow-root/);
 });
 
-test("unknown preset falls back to the triangle", () => {
-    const rw = renderShapes({ shapeType: "preset", shapePreset: "does-not-exist" });
+test("auto shape emits an inline shape-outside url style with threshold", () => {
+    const rw = renderShapes({ media: image, shapeImageThreshold: 75 });
 
-    assert.match(rw.computedProps.classes.shape, /\[clip-path:polygon\(50%_0%,0%_100%,100%_100%\)\]/);
+    assert.equal(
+        rw.computedProps.mediaStyle,
+        "shape-outside: url('https://example.com/cutout.png'); shape-image-threshold: 0.75;"
+    );
+    assert.doesNotMatch(rw.computedProps.classes.media, /shape-outside/);
+    assert.equal(rw.computedProps.isImage, true);
 });
 
-test("circle shape emits radius and position", () => {
-    const rw = renderShapes({ shapeType: "circle", shapeCircleRadius: 40, shapeCirclePosition: "top left" });
+test("float, width and margin classes pass through to the media", () => {
+    const rw = renderShapes({
+        media: image,
+        mediaFloat: "float-none md:float-right",
+        mediaWidth: "w-[50%]",
+        shapeMargin: "[shape-margin:24px]",
+    });
 
-    assert.match(rw.computedProps.classes.shape, /\[clip-path:circle\(40%_at_top_left\)\]/);
+    assert.match(rw.computedProps.classes.media, /float-none md:float-right/);
+    assert.match(rw.computedProps.classes.media, /w-\[50%\]/);
+    assert.match(rw.computedProps.classes.media, /\[shape-margin:24px\]/);
+});
+
+test("auto shape degrades to a plain rectangle for video", () => {
+    const rw = renderShapes({ media: { format: "mp4", path: "https://example.com/v.mp4" } });
+
+    assert.equal(rw.computedProps.isMP4, true);
+    assert.equal(rw.computedProps.mediaSrc, "https://example.com/v.mp4");
+    assert.equal(rw.computedProps.mediaStyle, "");
+    assert.doesNotMatch(rw.computedProps.classes.media, /shape-outside/);
+});
+
+test("youtube and vimeo resources render as embeds with the shape on the frame", () => {
+    const rw = renderShapes({
+        media: { format: "youtube", videoId: "abc123" },
+        shapeSource: "circle",
+        shapeCircleRadius: 40,
+    });
+
+    assert.equal(rw.computedProps.isEmbed, true);
+    assert.equal(rw.computedProps.embedUrl, "https://www.youtube.com/embed/abc123");
+    assert.match(rw.computedProps.classes.embedFrame, /aspect-video/);
+    assert.match(rw.computedProps.classes.embedFrame, /\[shape-outside:circle\(40%_at_center\)\]/);
+});
+
+test("circle shape emits matching shape-outside and clip-path classes", () => {
+    const rw = renderShapes({
+        media: image,
+        shapeSource: "circle",
+        shapeCircleRadius: 40,
+        shapeCirclePosition: "top left",
+    });
+
+    assert.match(rw.computedProps.classes.media, /\[shape-outside:circle\(40%_at_top_left\)\]/);
+    assert.match(rw.computedProps.classes.media, /\[clip-path:circle\(40%_at_top_left\)\]/);
+});
+
+test("clip toggle off keeps shape-outside but drops clip-path", () => {
+    const rw = renderShapes({ media: image, shapeSource: "circle", clipMedia: false });
+
+    assert.match(rw.computedProps.classes.media, /\[shape-outside:circle\(50%_at_center\)\]/);
+    assert.doesNotMatch(rw.computedProps.classes.media, /clip-path/);
 });
 
 test("ellipse shape emits both radii and position", () => {
-    const rw = renderShapes({ shapeType: "ellipse", shapeEllipseRadiusX: 60, shapeEllipseRadiusY: 30 });
+    const rw = renderShapes({
+        media: image,
+        shapeSource: "ellipse",
+        shapeEllipseRadiusX: 60,
+        shapeEllipseRadiusY: 30,
+    });
 
-    assert.match(rw.computedProps.classes.shape, /\[clip-path:ellipse\(60%_30%_at_center\)\]/);
+    assert.match(rw.computedProps.classes.media, /\[shape-outside:ellipse\(60%_30%_at_center\)\]/);
 });
 
-test("inset shape emits four edges and omits round when radius is zero", () => {
-    const rw = renderShapes({ shapeType: "inset" });
+test("preset shape emits a polygon with spaces converted to underscores", () => {
+    const rw = renderShapes({ media: image, shapeSource: "preset", shapePreset: "star" });
 
-    assert.match(rw.computedProps.classes.shape, /\[clip-path:inset\(10%_10%_10%_10%\)\]/);
+    assert.match(rw.computedProps.classes.media, /\[shape-outside:polygon\(50%_0%,61%_35%/);
 });
 
-test("inset shape appends round when radius is set", () => {
-    const rw = renderShapes({ shapeType: "inset", shapeInsetRadius: 8 });
+test("unknown preset falls back to the triangle", () => {
+    const rw = renderShapes({ media: image, shapeSource: "preset", shapePreset: "does-not-exist" });
 
-    assert.match(rw.computedProps.classes.shape, /\[clip-path:inset\(10%_10%_10%_10%_round_8%\)\]/);
+    assert.match(rw.computedProps.classes.media, /\[shape-outside:polygon\(50%_0%,0%_100%,100%_100%\)\]/);
 });
 
 test("custom shape passes the raw value through with spaces converted", () => {
-    const rw = renderShapes({ shapeType: "custom", shapeCustom: "polygon(0 0, 100% 0, 50% 100%)" });
+    const rw = renderShapes({
+        media: image,
+        shapeSource: "custom",
+        shapeCustom: "polygon(0 0, 100% 0, 50% 100%)",
+    });
 
-    assert.match(rw.computedProps.classes.shape, /\[clip-path:polygon\(0_0,_100%_0,_50%_100%\)\]/);
+    assert.match(rw.computedProps.classes.media, /\[shape-outside:polygon\(0_0,_100%_0,_50%_100%\)\]/);
 });
 
-test("empty custom shape falls back to none", () => {
-    const rw = renderShapes({ shapeType: "custom", shapeCustom: "" });
+test("empty custom shape emits no shape classes", () => {
+    const rw = renderShapes({ media: image, shapeSource: "custom", shapeCustom: "" });
 
-    assert.match(rw.computedProps.classes.shape, /\[clip-path:none\]/);
+    assert.doesNotMatch(rw.computedProps.classes.media, /shape-outside/);
+    assert.doesNotMatch(rw.computedProps.classes.media, /clip-path/);
+});
+
+test("shape source none wraps as a plain rectangle", () => {
+    const rw = renderShapes({ media: image, shapeSource: "none" });
+
+    assert.equal(rw.computedProps.mediaStyle, "");
+    assert.doesNotMatch(rw.computedProps.classes.media, /shape-outside/);
+});
+
+test("resource alt wins over the alt text property", () => {
+    const withResourceAlt = renderShapes({ media: image, mediaAlt: "fallback" });
+    assert.equal(withResourceAlt.computedProps.mediaAlt, "A cutout");
+
+    const withoutResourceAlt = renderShapes({ media: { format: "png", image: "x.png" }, mediaAlt: "fallback" });
+    assert.equal(withoutResourceAlt.computedProps.mediaAlt, "fallback");
+});
+
+test("edit flag reflects the project mode", () => {
+    assert.equal(renderShapes({}, "edit").computedProps.edit, true);
+    assert.equal(renderShapes({}, "preview").computedProps.edit, false);
 });

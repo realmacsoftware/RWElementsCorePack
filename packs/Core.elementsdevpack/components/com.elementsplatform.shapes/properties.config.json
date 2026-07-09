@@ -1,23 +1,93 @@
 {
   "groups": [
     {
-      "title": "Shape",
-      "icon": "hexagon",
+      "title": "Media",
+      "icon": "photo",
       "properties": [
         {
-          "title": "Type",
-          "id": "shapeType",
+          "title": "Resource",
+          "id": "media",
+          "resource": {}
+        },
+        {
+          "title": "Alt Text",
+          "id": "mediaAlt",
           "responsive": false,
-          "select": {
-            "default": "none",
+          "text": {
+            "default": ""
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Float",
+          "id": "mediaFloat",
+          "format": "float-{{value}}",
+          "segmented": {
+            "default": "left",
             "items": [
               {
                 "title": "None",
                 "value": "none"
               },
               {
-                "title": "Preset",
-                "value": "preset"
+                "title": "Left",
+                "value": "left"
+              },
+              {
+                "title": "Right",
+                "value": "right"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Width",
+          "id": "mediaWidth",
+          "format": "w-[{{value}}%]",
+          "slider": {
+            "default": 40,
+            "min": 10,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "title": "Margin",
+          "id": "shapeMargin",
+          "format": "[shape-margin:{{value}}px]",
+          "slider": {
+            "default": 16,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "px"
+          }
+        },
+        {
+          "information": {},
+          "title": "Margin controls the gap between the shape and the wrapping text. Use Spacing for regular margins around the media."
+        }
+      ]
+    },
+    {
+      "title": "Shape",
+      "icon": "hexagon",
+      "properties": [
+        {
+          "title": "Source",
+          "id": "shapeSource",
+          "responsive": false,
+          "select": {
+            "default": "auto",
+            "items": [
+              {
+                "title": "Auto (From Image)",
+                "value": "auto"
               },
               {
                 "title": "Circle",
@@ -28,18 +98,41 @@
                 "value": "ellipse"
               },
               {
-                "title": "Inset",
-                "value": "inset"
+                "title": "Preset",
+                "value": "preset"
               },
               {
                 "title": "Custom",
                 "value": "custom"
+              },
+              {
+                "title": "None",
+                "value": "none"
               }
             ]
           }
         },
         {
-          "visible": "shapeType == 'preset'",
+          "visible": "shapeSource == 'auto'",
+          "title": "Threshold",
+          "id": "shapeImageThreshold",
+          "responsive": false,
+          "slider": {
+            "default": 50,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "shapeSource == 'auto'",
+          "information": {},
+          "title": "Auto uses the image's transparency (PNG, WebP, SVG). It has no effect on videos, which wrap as a rectangle."
+        },
+        {
+          "visible": "shapeSource == 'preset'",
           "title": "Shape",
           "id": "shapePreset",
           "select": {
@@ -105,7 +198,7 @@
           }
         },
         {
-          "visible": "shapeType == 'circle'",
+          "visible": "shapeSource == 'circle'",
           "title": "Radius",
           "id": "shapeCircleRadius",
           "slider": {
@@ -118,7 +211,7 @@
           }
         },
         {
-          "visible": "shapeType == 'circle'",
+          "visible": "shapeSource == 'circle'",
           "title": "Position",
           "id": "shapeCirclePosition",
           "select": {
@@ -164,7 +257,7 @@
           }
         },
         {
-          "visible": "shapeType == 'ellipse'",
+          "visible": "shapeSource == 'ellipse'",
           "title": "Radius X",
           "id": "shapeEllipseRadiusX",
           "slider": {
@@ -177,7 +270,7 @@
           }
         },
         {
-          "visible": "shapeType == 'ellipse'",
+          "visible": "shapeSource == 'ellipse'",
           "title": "Radius Y",
           "id": "shapeEllipseRadiusY",
           "slider": {
@@ -190,7 +283,7 @@
           }
         },
         {
-          "visible": "shapeType == 'ellipse'",
+          "visible": "shapeSource == 'ellipse'",
           "title": "Position",
           "id": "shapeEllipsePosition",
           "select": {
@@ -236,83 +329,22 @@
           }
         },
         {
-          "visible": "shapeType == 'inset'",
-          "title": "Top",
-          "id": "shapeInsetTop",
-          "slider": {
-            "default": 10,
-            "min": 0,
-            "max": 100,
-            "round": true,
-            "snap": true,
-            "units": "%"
-          }
-        },
-        {
-          "visible": "shapeType == 'inset'",
-          "title": "Right",
-          "id": "shapeInsetRight",
-          "slider": {
-            "default": 10,
-            "min": 0,
-            "max": 100,
-            "round": true,
-            "snap": true,
-            "units": "%"
-          }
-        },
-        {
-          "visible": "shapeType == 'inset'",
-          "title": "Bottom",
-          "id": "shapeInsetBottom",
-          "slider": {
-            "default": 10,
-            "min": 0,
-            "max": 100,
-            "round": true,
-            "snap": true,
-            "units": "%"
-          }
-        },
-        {
-          "visible": "shapeType == 'inset'",
-          "title": "Left",
-          "id": "shapeInsetLeft",
-          "slider": {
-            "default": 10,
-            "min": 0,
-            "max": 100,
-            "round": true,
-            "snap": true,
-            "units": "%"
-          }
-        },
-        {
-          "visible": "shapeType == 'inset'",
-          "title": "Corner Radius",
-          "id": "shapeInsetRadius",
-          "slider": {
-            "default": 0,
-            "min": 0,
-            "max": 50,
-            "round": true,
-            "snap": true,
-            "units": "%"
-          }
-        },
-        {
-          "visible": "shapeType == 'custom'",
-          "title": "Clip Path",
+          "visible": "shapeSource == 'custom'",
+          "title": "Shape",
           "id": "shapeCustom",
           "text": {
             "default": "polygon(50% 0%,100% 100%,0% 100%)",
-            "subtitle": "Any CSS clip-path value such as polygon(...), circle(...), ellipse(...) or inset(...). Spaces are converted automatically."
+            "subtitle": "Any CSS basic shape such as polygon(...), circle(...), ellipse(...) or inset(...). Spaces are converted automatically."
           }
         },
         {
-          "visible": "shapeType != 'none'",
-          "information": {},
-          "title": "Content outside the shape is clipped and cannot be clicked."
+          "visible": "shapeSource != 'auto' && shapeSource != 'none'",
+          "title": "Clip Media to Shape",
+          "id": "clipMedia",
+          "responsive": false,
+          "switch": {
+            "default": true
+          }
         }
       ]
     },
