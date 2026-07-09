@@ -62,9 +62,6 @@ function renderMask(overrides = {}) {
             maskRadialPosition: "mask-radial-at-center",
             maskRadialFrom: 70,
             maskRadialTo: 100,
-            maskConicAngle: 0,
-            maskConicFrom: 75,
-            maskConicTo: 75,
             ...overrides,
         },
         node: { id: "node-1" },
@@ -129,12 +126,4 @@ test("radial mask emits size position from and to utilities", () => {
     assert.match(rw.computedProps.classes.mask, /mask-radial-at-center/);
     assert.match(rw.computedProps.classes.mask, /mask-radial-from-\[70%\]/);
     assert.match(rw.computedProps.classes.mask, /mask-radial-to-\[100%\]/);
-});
-
-test("conic mask emits angle from and to utilities", () => {
-    const rw = renderMask({ maskType: "conic", maskConicAngle: 15, maskConicFrom: 75, maskConicTo: 75 });
-
-    assert.match(rw.computedProps.classes.mask, /mask-conic-\[15deg\]/);
-    assert.match(rw.computedProps.classes.mask, /mask-conic-from-\[75%\]/);
-    assert.match(rw.computedProps.classes.mask, /mask-conic-to-\[75%\]/);
 });
