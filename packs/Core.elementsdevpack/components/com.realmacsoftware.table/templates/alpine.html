@@ -1,0 +1,135 @@
+@portal(bodyEnd, id: "com.realmacsoftware.table.alpine", includeOnce: true)
+<script>
+    document.addEventListener("alpine:init", () => {
+        Alpine.data("elementsTable", (id, config) => ({
+            search: "",
+            sortCol: null,
+            sortDir: "asc",
+            page: 1,
+            config: typeof config === "string" ? JSON.parse(config.replace(/'/g, '"')) : config,
+            allRows: [],
+            filteredIndices: [],
+
+            init() {
+                const tbody = this.$el.querySelector("tbody");
+                if (!tbody) return;
+
+                this.allRows = Array.from(tbody.querySelectorAll("tr"));
+                this.filteredIndices = this.allRows.map((_, i) => i);
+                this.updateVisibility();
+            },
+
+            get totalVisible() {
+                return this.filteredIndices.length;
+            },
+
+            get totalPages() {
+                if (!this.config.pagination) return 1;
+                return Math.max(1, Math.ceil(this.totalVisible / this.config.rowsPerPage));
+            },
+
+            onSearchInput() {
+                this.page = 1;
+                this.filterRows();
+                this.updateVisibility();
+            },
+
+            filterRows() {
+                const query = this.search.toLowerCase().trim();
+                if (!query) {
+                    this.filteredIndices = this.allRows.map((_, i) => i);
+                    return;
+                }
+
+                this.filteredIndices = [];
+                this.allRows.forEach((row, i) => {
+                    const text = row.innerText.toLowerCase();
+                    if (text.includes(query)) {
+                        this.filteredIndices.push(i);
+                    }
+                });
+            },
+
+            sort(colIdx) {
+                if (this.sortCol === colIdx) {
+                    this.sortDir = this.sortDir === "asc" ? "desc" : "asc";
+                } else {
+                    this.sortCol = colIdx;
+                    this.sortDir = "asc";
+                }
+
+                // Use document.getElementById(id) instead of this.$el, because
+                // this.$el resolves to the element that triggered the event (the <th>),
+                // not the component root element.
+                const wrapper = document.getElementById(id);
+                const tbody = wrapper ? wrapper.querySelector("tbody") : null;
+                if (!tbody) return;
+
+                const dir = this.sortDir === "asc" ? 1 : -1;
+
+                // Extract text values upfront to avoid any proxy/DOM issues during sort
+                const rowData = [];
+                tbody.querySelectorAll(":scope > tr").forEach((tr) => {
+                    const cell = tr.cells[colIdx];
+                    rowData.push({
+                        el: tr,
+                        text: cell ? cell.innerText.trim() : "",
+                    });
+                });
+
+                rowData.sort((a, b) => {
+                    const numA = parseFloat(a.text);
+                    const numB = parseFloat(b.text);
+                    if (!isNaN(numA) && !isNaN(numB)) {
+                        return (numA - numB) * dir;
+                    }
+                    return a.text.localeCompare(b.text, undefined, { numeric: true, sensitivity: "base" }) * dir;
+                });
+
+                // Reorder DOM
+                const sortedEls = rowData.map((r) => r.el);
+                sortedEls.forEach((row) => tbody.appendChild(row));
+
+                // Update the reactive tracked array to match the new sort order
+                this.allRows = sortedEls;
+
+                // Re-filter after sort
+                this.filterRows();
+                this.updateVisibility();
+            },
+
+            isRowVisible(el) {
+                const idx = this.allRows.indexOf(el);
+                if (idx === -1) return true;
+
+                // Check if row passes filter
+                const filteredPos = this.filteredIndices.indexOf(idx);
+                if (filteredPos === -1) return false;
+
+                // Check pagination
+                if (!this.config.pagination) return true;
+                const start = (this.page - 1) * this.config.rowsPerPage;
+                const end = start + this.config.rowsPerPage;
+                return filteredPos >= start && filteredPos < end;
+            },
+
+            updateVisibility() {
+                // Trigger Alpine reactivity by touching page
+                this.page = this.page;
+            },
+
+            prevPage() {
+                if (this.page > 1) {
+                    this.page--;
+                }
+            },
+
+            nextPage() {
+                if (this.page < this.totalPages) {
+                    this.page++;
+                }
+            },
+        }));
+    });
+</script>
+@endportal

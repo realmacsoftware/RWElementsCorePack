@@ -4,6 +4,27 @@
             "title": "Column",
             "properties": [
                 {
+                    "title": "Cell Mode",
+                    "property": "cellMode",
+                    "responsive": false,
+                    "segmented": {
+                        "default": "text",
+                        "items": [
+                            {
+                                "title": "Text",
+                                "value": "text"
+                            },
+                            {
+                                "title": "Dropzone",
+                                "value": "dropzone"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
                     "title": "Width",
                     "property": "columnWidth",
                     "format": "w-{{value}}",
@@ -15,6 +36,49 @@
                                 "value": "auto"
                             }
                         }
+                    }
+                },
+                {
+                    "title": "Alignment",
+                    "property": "columnAlignment",
+                    "segmented": {
+                        "default": "",
+                        "items": [
+                            {
+                                "title": "Default",
+                                "value": ""
+                            },
+                            {
+                                "icon": "text.alignleft",
+                                "value": "text-left"
+                            },
+                            {
+                                "icon": "text.aligncenter",
+                                "value": "text-center"
+                            },
+                            {
+                                "icon": "text.alignright",
+                                "value": "text-right"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Sortable",
+                    "property": "columnSortable",
+                    "responsive": false,
+                    "switch": {
+                        "default": false
+                    }
+                },
+                {
+                    "title": "Hidden",
+                    "property": "columnHidden",
+                    "switch": {
+                        "default": false
                     }
                 }
             ]
