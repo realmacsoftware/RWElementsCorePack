@@ -97,6 +97,10 @@
                 {
                     "title": "Enable",
                     "id": "imageLazyLoading",
+                    "ai": {
+                        "name": "lazyLoading",
+                        "description": "Adds the loading='lazy' attribute to the image."
+                    },
                     "responsive": false,
                     "switch": {}
                 },
@@ -114,6 +118,10 @@
                 {
                     "title": "Value",
                     "id": "imageFetchPriority",
+                    "ai": {
+                        "name": "fetchPriority",
+                        "description": "Adds the fetchpriority attribute to the image: 'auto', 'high', or 'low'."
+                    },
                     "responsive": false,
                     "segmented": {
                         "default": "auto",
@@ -187,6 +195,10 @@
                 {
                     "title": "Enable",
                     "id": "wantsLightbox",
+                    "ai": {
+                        "name": "lightbox",
+                        "description": "Open the image full-screen in a lightbox when clicked."
+                    },
                     "responsive": true,
                     "switch": {}
                 },
@@ -199,6 +211,10 @@
                     "visible": "wantsLightbox == true",
                     "title": "Color",
                     "id": "imageLightboxColor",
+                    "ai": {
+                        "name": "lightboxColor",
+                        "description": "Lightbox backdrop theme color."
+                    },
                     "format": "bg-{{value}}/(--lightbox-bg-opacity)",
                     "themeColor": {
                         "default": {
@@ -211,6 +227,10 @@
                     "visible": "wantsLightbox == true",
                     "title": "Opacity",
                     "id": "imageLightboxColorOpacity",
+                    "ai": {
+                        "name": "lightboxOpacity",
+                        "description": "Lightbox backdrop opacity, 0-100."
+                    },
                     "format": "[--lightbox-bg-opacity:{{value}}%]",
                     "responsive": false,
                     "slider": {
