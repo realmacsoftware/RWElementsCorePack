@@ -58,14 +58,14 @@
         {
           "title": "Margin",
           "id": "shapeMargin",
-          "format": "[shape-margin:{{value}}px]",
-          "slider": {
-            "default": 16,
-            "min": 0,
-            "max": 100,
-            "round": true,
-            "snap": true,
-            "units": "px"
+          "format": "[shape-margin:{{value}}]",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "4"
+              }
+            }
           }
         },
         {
@@ -338,8 +338,12 @@
           }
         },
         {
-          "visible": "shapeSource != 'auto' && shapeSource != 'none'",
           "title": "Clip Media to Shape",
+          "heading": {}
+        },
+        {
+          "visible": "shapeSource != 'auto' && shapeSource != 'none'",
+          "title": "Enable",
           "id": "clipMedia",
           "responsive": false,
           "switch": {

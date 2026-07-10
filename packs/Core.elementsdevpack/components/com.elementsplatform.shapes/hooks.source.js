@@ -3,8 +3,6 @@ const asPercent = (value) => {
     return formattedValue.endsWith("%") ? formattedValue : `${formattedValue}%`;
 };
 
-const arbitraryValue = (value, fallback) => `${value || fallback}`.trim().replace(/\s+/g, "_");
-
 const shapePresets = {
     "triangle": "polygon(50% 0%,0% 100%,100% 100%)",
     "triangle-down": "polygon(0% 0%,100% 0%,50% 100%)",
@@ -20,6 +18,97 @@ const shapePresets = {
     "chevron": "polygon(75% 0%,100% 50%,75% 100%,0% 100%,25% 50%,0% 0%)",
     "message": "polygon(0% 0%,100% 0%,100% 75%,75% 75%,75% 100%,50% 75%,0% 75%)",
     "frame": "polygon(0% 0%,0% 100%,25% 100%,25% 25%,75% 25%,75% 75%,25% 75%,25% 100%,100% 100%,100% 0%)",
+};
+
+const shapeMarginLength = (formatted) => {
+    const value = `${formatted || ""}`.match(/\[shape-margin:(.+?)\]/)?.[1]?.trim();
+    if (!value) {
+        return null;
+    }
+
+    if (value === "0") {
+        return "0";
+    }
+
+    if (value === "px") {
+        return "1px";
+    }
+
+    if (/[a-z%]$/i.test(value)) {
+        return value;
+    }
+
+    const token = Number(value);
+    if (!Number.isNaN(token)) {
+        return `${token * 0.25}rem`;
+    }
+
+    return value;
+};
+
+const isInlineSvgMarkup = (value) => {
+    return typeof value === "string" && value.includes("<svg");
+};
+
+const prepareSvgForShape = (svgString) => {
+    if (!isInlineSvgMarkup(svgString)) {
+        return svgString || "";
+    }
+
+    let cleaned = svgString.trim();
+
+    if (!/\sxmlns=/.test(cleaned)) {
+        cleaned = cleaned.replace(/<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
+    }
+
+    const viewBoxMatch = cleaned.match(/viewBox="([^"]+)"/);
+    const hasWidth = /\swidth="/.test(cleaned);
+    const hasHeight = /\sheight="/.test(cleaned);
+
+    if (viewBoxMatch && (!hasWidth || !hasHeight)) {
+        const [, , , width, height] = viewBoxMatch[1].trim().split(/\s+/);
+
+        if (!hasWidth && width) {
+            cleaned = cleaned.replace(/<svg/, `<svg width="${width}"`);
+        }
+
+        if (!hasHeight && height) {
+            cleaned = cleaned.replace(/<svg/, `<svg height="${height}"`);
+        }
+    }
+
+    return cleaned;
+};
+
+const svgShapeUrl = (image) => {
+    if (!image) {
+        return "";
+    }
+
+    if (!isInlineSvgMarkup(image)) {
+        return image;
+    }
+
+    return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(prepareSvgForShape(image))}`;
+};
+
+const prepareSvgMarkup = (svgString) => {
+    if (!isInlineSvgMarkup(svgString)) {
+        return svgString || "";
+    }
+
+    const sizingClasses = "w-full h-auto";
+    let cleaned = svgString
+        .replace(/(?<!stroke-)width="[^"]*"/g, "")
+        .replace(/\bheight="[^"]*"/g, "");
+
+    if (cleaned.includes('class="')) {
+        cleaned = cleaned.replace(/class="[^"]*"/, `class="${sizingClasses}"`);
+    } else {
+        cleaned = cleaned.replace(/<svg/, `<svg class="${sizingClasses}"`);
+    }
+
+    return cleaned;
 };
 
 const shapeValueFor = (rw) => {
@@ -69,25 +158,39 @@ const transformHook = (rw) => {
     const isVimeo = media?.format === "vimeo";
     const isMP4 = media?.format === "mp4";
     const isEmbed = isYouTube || isVimeo;
-    const isImage = hasMedia && !isMP4 && !isEmbed;
+    const isSvg = media?.format === "svg";
+    const isRasterImage = hasMedia && !isMP4 && !isEmbed && !isSvg;
+    const isImage = isRasterImage || isSvg;
 
     // Auto needs image transparency; videos degrade to a plain rectangular wrap
     const effectiveSource = shapeSource === "auto" && !isImage ? "none" : shapeSource;
+    const svgAsImage = effectiveSource === "auto" && isSvg && !!media?.image;
+    const svgImageUrl = svgAsImage ? svgShapeUrl(media.image) : "";
 
-    // url() values are unsafe as Tailwind class names, so auto mode uses an inline style
-    const mediaStyle = effectiveSource === "auto" && media?.image
-        ? `shape-outside: url('${media.image}'); shape-image-threshold: ${(Number(shapeImageThreshold) || 0) / 100};`
-        : "";
-
+    // Shape values (url(), polygon(), etc.) are unsafe as Tailwind class names
+    // and won't exist in the compiled CSS, so all shape CSS goes inline
     const shapeValue = shapeValueFor(rw);
-    const shapeClasses = shapeValue
-        ? [
-            `[shape-outside:${arbitraryValue(shapeValue)}]`,
-            clipMedia && `[clip-path:${arbitraryValue(shapeValue)}]`,
-        ]
-        : [];
+    const styles = [];
 
-    const floatClasses = [mediaFloat, mediaWidth, shapeMargin];
+    if (effectiveSource === "auto" && media?.image) {
+        const shapeOutsideUrl = isSvg ? svgImageUrl : media.image;
+        styles.push(`shape-outside: url('${shapeOutsideUrl}')`);
+        styles.push(`shape-image-threshold: ${(Number(shapeImageThreshold) || 0) / 100}`);
+    } else if (shapeValue) {
+        styles.push(`shape-outside: ${shapeValue}`);
+        if (clipMedia) {
+            styles.push(`clip-path: ${shapeValue}`);
+        }
+    }
+
+    const shapeMarginValue = shapeMarginLength(shapeMargin);
+    if (styles.length > 0 && shapeMarginValue) {
+        styles.push(`shape-margin: ${shapeMarginValue}`);
+    }
+
+    const mediaStyle = styles.length > 0 ? `${styles.join("; ")};` : "";
+
+    const floatClasses = [mediaFloat, mediaWidth];
 
     const classes = {
         wrapper: classnames([
@@ -105,12 +208,10 @@ const transformHook = (rw) => {
         media: classnames([
             ...floatClasses,
             "h-auto max-w-full",
-            ...shapeClasses,
         ]).toString(),
         embedFrame: classnames([
             ...floatClasses,
             "aspect-video",
-            ...shapeClasses,
         ]).toString(),
     };
 
@@ -137,10 +238,15 @@ const transformHook = (rw) => {
         classes,
         hasMedia,
         isImage,
+        isRasterImage,
+        isSvg,
         isMP4,
         isEmbed,
         embedUrl,
-        mediaSrc: isMP4 ? media?.path : media?.image,
+        mediaSrc: isMP4 ? media?.path : isRasterImage ? media?.image : "",
+        mediaSvg: isSvg && !svgAsImage ? prepareSvgMarkup(media?.image) : "",
+        svgAsImage,
+        svgImageUrl,
         mediaAlt: media?.alt || mediaAlt || "",
         mediaStyle,
         edit: rw.project.mode === "edit",

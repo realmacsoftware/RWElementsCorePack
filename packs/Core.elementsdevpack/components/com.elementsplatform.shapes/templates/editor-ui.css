@@ -1,0 +1,8 @@
+@if (edit)
+/* Slate renders editable text as an inline-block (inline style), an atomic
+   box that drops below the float instead of wrapping line-by-line */
+.group\/shapes [data-slate-editor="true"] {
+    display: block !important;
+    width: auto !important;
+}
+@endif

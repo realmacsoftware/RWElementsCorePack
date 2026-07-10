@@ -1,13 +1,21 @@
 <div class="{{classes.shape}}">
     @if(hasMedia)
-        @if(isImage)
+        @if(isSvg)
+            @if(svgAsImage)
+            <img src="{{svgImageUrl}}" alt="{{mediaAlt}}" class="{{classes.media}}" style="{{mediaStyle}}" />
+            @else
+            <div class="{{classes.media}}" style="{{mediaStyle}}" role="img" aria-label="{{mediaAlt}}">
+                {{mediaSvg}}
+            </div>
+            @endif
+        @elseif(isRasterImage)
             <img src="{{mediaSrc}}" alt="{{mediaAlt}}" class="{{classes.media}}" style="{{mediaStyle}}" />
         @elseif(isMP4)
-            <video class="{{classes.media}}" controls playsinline muted>
+            <video class="{{classes.media}}" style="{{mediaStyle}}" controls playsinline muted>
                 <source src="{{mediaSrc}}" type="video/mp4" />
             </video>
         @elseif(isEmbed)
-            <div class="{{classes.embedFrame}}">
+            <div class="{{classes.embedFrame}}" style="{{mediaStyle}}">
                 <iframe
                     src="{{embedUrl}}"
                     class="w-full h-full"
