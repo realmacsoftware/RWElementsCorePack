@@ -36,6 +36,7 @@
         {
           "title": "Wrap Items",
           "id": "wrap",
+          "ai": { "name": "wrap", "description": "Flex item wrapping." },
           "format": "flex-{{value}}",
           "select": {
             "default": "nowrap",
@@ -65,6 +66,7 @@
         {
           "title": "Horizontal",
           "id": "gapX",
+          "ai": { "name": "gapX", "description": "Horizontal gap between flex items, theme-size token." },
           "format": "gap-x-{{value}}",
           "themeSpacing": {
             "mode": "single",
@@ -78,6 +80,7 @@
         {
           "title": "Vertical",
           "id": "gapY",
+          "ai": { "name": "gapY", "description": "Vertical gap between flex items, theme-size token." },
           "format": "gap-y-{{value}}",
           "themeSpacing": {
             "mode": "single",

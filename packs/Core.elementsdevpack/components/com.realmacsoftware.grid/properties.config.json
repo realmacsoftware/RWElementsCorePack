@@ -47,6 +47,7 @@
         {
           "title": "Horizontal",
           "id": "gapX",
+          "ai": { "name": "gapX", "description": "Horizontal gap between grid items, theme-size token." },
           "format": "gap-x-{{value}}",
           "themeSpacing": {
             "mode": "single",
@@ -58,6 +59,7 @@
         {
           "title": "Vertical",
           "id": "gapY",
+          "ai": { "name": "gapY", "description": "Vertical gap between grid items, theme-size token." },
           "format": "gap-y-{{value}}",
           "themeSpacing": {
             "mode": "single",
@@ -72,6 +74,7 @@
         {
           "title": "Columns",
           "id": "columns",
+          "ai": { "name": "cols", "description": "Number of grid columns." },
           "format": "grid-cols-{{value}}",
           "slider": {
             "default": "4",
@@ -130,6 +133,7 @@
         {
           "title": "Rows",
           "id": "rows",
+          "ai": { "name": "rows", "description": "Number of grid rows." },
           "format": "grid-rows-{{value}}",
           "slider": {
             "default": "auto",

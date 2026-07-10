@@ -51,6 +51,7 @@
                 {
                     "title": "Width",
                     "id": "contentWidthType",
+                    "ai": { "name": "contentWidth", "description": "Content width mode: auto, full, screen, container (breakpoint), or theme." },
                     "responsive": false,
                     "select": {
                         "default": "container",
@@ -96,6 +97,7 @@
                 {
                     "title": "Height",
                     "id": "contentHeightType",
+                    "ai": { "name": "contentHeight", "description": "Content height mode: auto, full, screen, container (breakpoint), or theme." },
                     "responsive": false,
                     "select": {
                         "default": "auto",
@@ -148,6 +150,7 @@
                 {
                     "title": "Align",
                     "id": "contentAlignSelf",
+                    "ai": { "name": "align", "description": "Content alignment on the cross axis." },
                     "format": "self-{{value}}",
                     "select": {
                         "default": "center",
@@ -178,6 +181,7 @@
                 {
                     "title": "Justify",
                     "id": "contentJustifySelf",
+                    "ai": { "name": "justify", "description": "Content justification on the main axis." },
                     "format": "justify-self-{{value}}",
                     "select": {
                         "default": "center",

@@ -7,6 +7,7 @@
         {
           "title": "Tag",
           "id": "tag",
+          "ai": { "name": "tag", "description": "HTML tag used to render this text." },
           "responsive": false,
           "select": {
             "default": "p",
@@ -72,6 +73,7 @@
         {
           "title": "Text Align",
           "id": "headingTextAlign",
+          "ai": { "name": "align", "description": "Text alignment." },
           "segmented": {
             "use": "TextAlign"
           }
