@@ -4,6 +4,7 @@
             "title": "Column",
             "properties": [
                 {
+                    "visible": "dataSource == 'manual'",
                     "title": "Cell Mode",
                     "property": "cellMode",
                     "responsive": false,
@@ -22,6 +23,7 @@
                     }
                 },
                 {
+                    "visible": "dataSource == 'manual'",
                     "divider": {}
                 },
                 {

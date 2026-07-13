@@ -128,7 +128,8 @@ test("columns default to text cells that are not sortable or hidden", () => {
     assert.equal(col.isText, true);
     assert.equal(col.isSortable, false);
     assert.equal(col.hiddenClass, "");
-    assert.equal(col.alignmentClass, "");
+    assert.equal(col.headerAlignmentClass, "");
+    assert.equal(col.bodyAlignmentClass, "");
 });
 
 test("column options map to dropzone, sortable, hidden, and alignment", () => {
@@ -142,7 +143,30 @@ test("column options map to dropzone, sortable, hidden, and alignment", () => {
     assert.equal(col.isDropzone, true);
     assert.equal(col.isSortable, true);
     assert.equal(col.hiddenClass, "hidden");
-    assert.equal(col.alignmentClass, "text-center");
+    assert.equal(col.headerAlignmentClass, "text-center");
+    assert.equal(col.bodyAlignmentClass, "text-center");
+});
+
+test("global text alignment applies per column when column alignment is unset", () => {
+    const rw = renderTable({
+        props: { headerTextAlignment: "text-left", bodyTextAlignment: "text-right" },
+        columns: [{ columnWidth: "" }],
+    });
+
+    assert.doesNotMatch(rw.computedProps.classes.th, /text-(left|center|right)/);
+    assert.doesNotMatch(rw.computedProps.classes.td, /text-(left|center|right)/);
+    assert.equal(rw.computedProps.columns[0].headerAlignmentClass, "text-left");
+    assert.equal(rw.computedProps.columns[0].bodyAlignmentClass, "text-right");
+});
+
+test("column alignment overrides global text alignment", () => {
+    const rw = renderTable({
+        props: { headerTextAlignment: "text-left", bodyTextAlignment: "text-left" },
+        columns: [{ columnAlignment: "text-center" }],
+    });
+
+    assert.equal(rw.computedProps.columns[0].headerAlignmentClass, "text-center");
+    assert.equal(rw.computedProps.columns[0].bodyAlignmentClass, "text-center");
 });
 
 test("sortable columns are disabled in edit mode", () => {
@@ -174,6 +198,7 @@ test("alpine config reflects search, pagination, and sortability", () => {
 test("csv url mode passes the source through and stays sortable", () => {
     const rw = renderTable({
         props: { dataSource: "csvUrl", csvUrl: "https://example.com/data.csv" },
+        columns: [{ columnSortable: true }],
     });
     const p = rw.computedProps;
 
@@ -182,6 +207,52 @@ test("csv url mode passes the source through and stays sortable", () => {
     assert.equal(p.csvSource, "https://example.com/data.csv");
     const config = JSON.parse(p.alpineConfig.replace(/'/g, '"'));
     assert.equal(config.sortable, true);
+});
+
+test("csv mode emits csvColumnMeta with per-column settings", () => {
+    const rw = renderTable({
+        props: { dataSource: "csvFile", csvFile: { path: "/data.csv" } },
+        columns: [
+            { columnWidth: "w-[100px]", columnAlignment: "text-center", columnSortable: true },
+            { columnHidden: true },
+        ],
+    });
+    const meta = JSON.parse(rw.computedProps.csvColumnMeta);
+
+    assert.equal(meta.length, 2);
+    assert.equal(meta[0].widthClass, "w-[100px]");
+    assert.equal(meta[0].headerAlignmentClass, "text-center");
+    assert.equal(meta[0].bodyAlignmentClass, "text-center");
+    assert.equal(meta[0].isSortable, true);
+    assert.equal(meta[1].hiddenClass, "hidden");
+    assert.equal(meta[1].isSortable, false);
+});
+
+test("csv mode sortable flag follows collection when no columns are sortable", () => {
+    const rw = renderTable({
+        props: { dataSource: "csvUrl", csvUrl: "https://example.com/data.csv" },
+    });
+    const config = JSON.parse(rw.computedProps.alpineConfig.replace(/'/g, '"'));
+
+    assert.equal(config.sortable, false);
+});
+
+test("csv edit preview generates placeholder data for every column", () => {
+    const rw = renderTable({
+        props: {
+            dataSource: "csvFile",
+            csvFile: { path: "/data.csv" },
+            csvFirstRowIsHeader: true,
+            showHeader: true,
+        },
+        columns: Array.from({ length: 5 }, () => ({ columnWidth: "" })),
+    });
+    const p = rw.computedProps;
+
+    assert.equal(p.examplePreviewHeaders.length, 5);
+    assert.equal(p.examplePreviewHeaders[4].label, "column_e");
+    assert.equal(p.examplePreviewRows[0].cells[4].value, "row 1, cell 5");
+    assert.equal(p.examplePreviewRows[4].cells[4].value, "row 5, cell 5");
 });
 
 test("custom global id wins for the root element and alpine lookup id", () => {

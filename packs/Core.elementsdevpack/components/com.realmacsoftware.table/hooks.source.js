@@ -113,6 +113,8 @@ const transformHook = (rw) => {
     const perPage = Math.max(1, parseInt(rowsPerPage) || 10);
 
     // Process columns to include per-column classes (respects collection order)
+    const resolveColumnAlignment = (columnAlignment, fallback) => columnAlignment || fallback || "";
+
     const processedColumns = columns?.map((col, index) => {
         const isDropzone = col.cellMode === "dropzone";
         const isSortable = col.columnSortable === true || col.columnSortable === "true";
@@ -125,7 +127,9 @@ const transformHook = (rw) => {
             isText: !isDropzone,
             isSortable: isSortable && !edit,
             widthClass: col.columnWidth || "",
-            alignmentClass: col.columnAlignment || "",
+            headerAlignmentClass: resolveColumnAlignment(col.columnAlignment, headerTextAlignment),
+            bodyAlignmentClass: resolveColumnAlignment(col.columnAlignment, bodyTextAlignment),
+            footerAlignmentClass: resolveColumnAlignment(col.columnAlignment, footerTextAlignment),
             hiddenClass: isHidden ? "hidden" : "",
             extraClasses: col.cssClasses || "",
         };
@@ -139,6 +143,15 @@ const transformHook = (rw) => {
 
     // Check if any column is sortable
     const hasSortableColumns = processedColumns.some((col) => col.isSortable);
+
+    const csvColumnMeta = processedColumns.map((col) => ({
+        widthClass: col.widthClass,
+        headerAlignmentClass: col.headerAlignmentClass,
+        bodyAlignmentClass: col.bodyAlignmentClass,
+        hiddenClass: col.hiddenClass,
+        extraClasses: col.extraClasses,
+        isSortable: col.isSortable,
+    }));
 
     // Row background classes
     const wantsStripes = stripedRows === true || stripedRows === "true";
@@ -173,7 +186,6 @@ const transformHook = (rw) => {
             headerCellBorderStyle,
             headerCellBorderWidth,
             headerCellBorderColor,
-            headerTextAlignment,
             headerTextFont,
             headerTextColor,
             headerTextSize,
@@ -192,7 +204,6 @@ const transformHook = (rw) => {
             bodyCellBorderStyle,
             bodyCellBorderWidth,
             bodyCellBorderColor,
-            bodyTextAlignment,
             bodyTextFont,
             bodyTextColor,
             bodyTextSize,
@@ -208,7 +219,6 @@ const transformHook = (rw) => {
             footerCellBorderStyle,
             footerCellBorderWidth,
             footerCellBorderColor,
-            footerTextAlignment,
             footerTextFont,
             footerTextColor,
             footerTextSize,
@@ -255,7 +265,7 @@ const transformHook = (rw) => {
         pagination: wantsPagination,
         rowsPerPage: perPage,
         totalRows: isCSVMode ? 0 : count,
-        sortable: isCSVMode ? true : hasSortableColumns,
+        sortable: hasSortableColumns,
     };
 
     rw.setRootElement({
@@ -271,26 +281,56 @@ const transformHook = (rw) => {
     }
 
     // Example data for edit mode preview when using CSV sources
-    const headerRow = [
-        { label: "column_a" },
-        { label: "column_b" },
-        { label: "column_c" },
-        { label: "column_d" },
-    ];
+    const previewColumnCount = Math.max(processedColumns.length, 1);
+    const previewColumnLabel = (index) => {
+        if (index < 26) {
+            return `column_${String.fromCharCode(97 + index)}`;
+        }
+        return `column_${index + 1}`;
+    };
+
+    const headerRow = Array.from({ length: previewColumnCount }, (_, index) => ({
+        label: previewColumnLabel(index),
+    }));
     const headerAsCells = { cells: headerRow.map((h) => ({ value: h.label })) };
-    const bodyRows = [
-        { cells: [{ value: "row 1, cell 1" }, { value: "row 1, cell 2" }, { value: "row 1, cell 3" }, { value: "row 1, cell 4" }] },
-        { cells: [{ value: "row 2, cell 1" }, { value: "row 2, cell 2" }, { value: "row 2, cell 3" }, { value: "row 2, cell 4" }] },
-        { cells: [{ value: "row 3, cell 1" }, { value: "row 3, cell 2" }, { value: "row 3, cell 3" }, { value: "row 3, cell 4" }] },
-        { cells: [{ value: "row 4, cell 1" }, { value: "row 4, cell 2" }, { value: "row 4, cell 3" }, { value: "row 4, cell 4" }] },
-        { cells: [{ value: "row 5, cell 1" }, { value: "row 5, cell 2" }, { value: "row 5, cell 3" }, { value: "row 5, cell 4" }] },
-    ];
+    const bodyRows = Array.from({ length: 5 }, (_, rowIndex) => ({
+        cells: Array.from({ length: previewColumnCount }, (_, colIndex) => ({
+            value: `row ${rowIndex + 1}, cell ${colIndex + 1}`,
+        })),
+    }));
+
+    const mapHeaderColumnClasses = (col) => ({
+        widthClass: col.widthClass,
+        alignmentClass: col.headerAlignmentClass,
+        hiddenClass: col.hiddenClass,
+        extraClasses: col.extraClasses,
+    });
+
+    const mapBodyColumnClasses = (col) => ({
+        widthClass: col.widthClass,
+        alignmentClass: col.bodyAlignmentClass,
+        hiddenClass: col.hiddenClass,
+        extraClasses: col.extraClasses,
+    });
+
+    const buildPreviewCells = (sourceCells) => processedColumns.map((col, index) => ({
+        value: sourceCells[index]?.value || "",
+        ...mapBodyColumnClasses(col),
+    }));
 
     // When first row is header: show header labels in thead, data in tbody
     // When it's not: header labels become the first body row (no thead)
     const exampleShowHeader = csvFirstRowHeader && wantsHeader;
-    const exampleHeaders = csvFirstRowHeader ? headerRow : [];
-    const exampleRows = csvFirstRowHeader ? bodyRows : [headerAsCells, ...bodyRows];
+    const examplePreviewHeaders = exampleShowHeader
+        ? processedColumns.map((col, index) => ({
+            label: headerRow[index]?.label || previewColumnLabel(index),
+            ...mapHeaderColumnClasses(col),
+        }))
+        : [];
+    const rawExampleRows = csvFirstRowHeader ? bodyRows : [headerAsCells, ...bodyRows];
+    const examplePreviewRows = rawExampleRows.map((row) => ({
+        cells: buildPreviewCells(row.cells),
+    }));
 
     rw.setProps({
         // Alpine's sort() looks the wrapper up by id, so this must match the
@@ -306,6 +346,7 @@ const transformHook = (rw) => {
         searchPlaceholder: searchPlaceholder || "Search...",
         edit,
         alpineConfig: JSON.stringify(alpineConfig).replace(/"/g, "'"),
+        csvColumnMeta: JSON.stringify(csvColumnMeta),
         // CSV mode
         isCSVMode,
         isCSVFile: dataSource === "csvFile",
@@ -314,8 +355,8 @@ const transformHook = (rw) => {
         csvFirstRowIsHeader: csvFirstRowHeader ? "true" : "false",
         // Example data for edit mode
         exampleShowHeader,
-        exampleHeaders,
-        exampleRows,
+        examplePreviewHeaders,
+        examplePreviewRows,
     });
 };
 

@@ -8,17 +8,21 @@
         @if(exampleShowHeader)
         <thead>
             <tr class="{{classes.theadRow}}">
-                @each(header in exampleHeaders)
-                <th class="{{classes.th}}">{{header.label}}</th>
+                @each(header in examplePreviewHeaders)
+                <th class="{{classes.th}} {{header.widthClass}} {{header.alignmentClass}} {{header.hiddenClass}} {{header.extraClasses}}">
+                    {{header.label}}
+                </th>
                 @endeach
             </tr>
         </thead>
         @endif
         <tbody>
-            @each(row in exampleRows)
+            @each(row in examplePreviewRows)
             <tr class="{{classes.tr}}">
                 @each(cell in row.cells)
-                <td class="{{classes.td}}">{{cell.value}}</td>
+                <td class="{{classes.td}} {{cell.widthClass}} {{cell.alignmentClass}} {{cell.hiddenClass}} {{cell.extraClasses}}">
+                    {{cell.value}}
+                </td>
                 @endeach
             </tr>
             @endeach
@@ -55,6 +59,25 @@
     $firstRowIsHeader = in_array($rawFirstRow, ['true', '1', 'yes'], true);
     $rawShowHeader = '{{showHeader}}';
     $showHeader = in_array($rawShowHeader, ['true', '1', 'yes'], true);
+
+    function tableGetColumnMeta($columnMeta, $idx) {
+        return $columnMeta[$idx] ?? [
+            'widthClass' => '',
+            'headerAlignmentClass' => '',
+            'bodyAlignmentClass' => '',
+            'hiddenClass' => '',
+            'extraClasses' => '',
+            'isSortable' => false,
+        ];
+    }
+
+    $columnMetaJson = <<<COLUMNMETA
+{{csvColumnMeta}}
+COLUMNMETA;
+    $columnMeta = json_decode($columnMetaJson, true);
+    if (!is_array($columnMeta)) {
+        $columnMeta = [];
+    }
 
     // Auto-detect Google Sheets URLs and convert to CSV export URL
     // Skip if URL already returns CSV (published CSV or export URL)
@@ -140,8 +163,18 @@
         <?php if ($firstRowIsHeader && $showHeader && !empty($csvHeaders)): ?>
         <thead>
             <tr class="{{classes.theadRow}}">
-                <?php foreach ($csvHeaders as $colIdx => $header): ?>
-                <th class="{{classes.th}}"
+                <?php foreach ($csvHeaders as $colIdx => $header):
+                    $meta = tableGetColumnMeta($columnMeta, $colIdx);
+                    $colClass = trim(implode(' ', array_filter([
+                        '{{classes.th}}',
+                        $meta['widthClass'],
+                        $meta['headerAlignmentClass'],
+                        $meta['hiddenClass'],
+                        $meta['extraClasses'],
+                    ])));
+                ?>
+                <?php if ($meta['isSortable']): ?>
+                <th class="<?php echo htmlspecialchars($colClass); ?>"
                     @click="sort(<?php echo $colIdx; ?>)"
                     style="cursor: pointer; user-select: none;"
                 >
@@ -154,6 +187,11 @@
                         ></span>
                     </span>
                 </th>
+                <?php else: ?>
+                <th class="<?php echo htmlspecialchars($colClass); ?>">
+                    <?php echo htmlspecialchars($header); ?>
+                </th>
+                <?php endif; ?>
                 <?php endforeach; ?>
             </tr>
         </thead>
@@ -165,8 +203,17 @@
                 x-ref="row<?php echo $rowIdx; ?>"
                 x-show="isRowVisible($el)"
             >
-                <?php foreach ($row as $cell): ?>
-                <td class="{{classes.td}}"><?php echo htmlspecialchars($cell); ?></td>
+                <?php foreach ($row as $cellIdx => $cell):
+                    $meta = tableGetColumnMeta($columnMeta, $cellIdx);
+                    $colClass = trim(implode(' ', array_filter([
+                        '{{classes.td}}',
+                        $meta['widthClass'],
+                        $meta['bodyAlignmentClass'],
+                        $meta['hiddenClass'],
+                        $meta['extraClasses'],
+                    ])));
+                ?>
+                <td class="<?php echo htmlspecialchars($colClass); ?>"><?php echo htmlspecialchars($cell); ?></td>
                 <?php endforeach; ?>
             </tr>
             <?php endforeach; ?>
@@ -234,7 +281,7 @@
             <tr class="{{classes.theadRow}}">
                 @each(column in columns)
                 @if(column.isSortable)
-                <th class="{{classes.th}} {{column.widthClass}} {{column.alignmentClass}} {{column.hiddenClass}} {{column.extraClasses}}"
+                <th class="{{classes.th}} {{column.widthClass}} {{column.headerAlignmentClass}} {{column.hiddenClass}} {{column.extraClasses}}"
                     @click="sort({{column.index}})"
                     style="cursor: pointer; user-select: none;"
                 >
@@ -248,7 +295,7 @@
                     </span>
                 </th>
                 @else
-                <th class="{{classes.th}} {{column.widthClass}} {{column.alignmentClass}} {{column.hiddenClass}} {{column.extraClasses}}">
+                <th class="{{classes.th}} {{column.widthClass}} {{column.headerAlignmentClass}} {{column.hiddenClass}} {{column.extraClasses}}">
                     @text("column", default: "Column")
                 </th>
                 @endif
@@ -266,7 +313,7 @@
                 @endif
             >
                 @each(column in columns)
-                <td class="{{classes.td}} {{column.widthClass}} {{column.alignmentClass}} {{column.hiddenClass}} {{column.extraClasses}}">
+                <td class="{{classes.td}} {{column.widthClass}} {{column.bodyAlignmentClass}} {{column.hiddenClass}} {{column.extraClasses}}">
                     @if(column.isDropzone)
                         @dropzone("cell", title: "Cell")
                     @else
@@ -282,7 +329,7 @@
         <tfoot>
             <tr class="{{classes.tfootRow}}">
                 @each(column in columns)
-                <td class="{{classes.tfoot}} {{column.widthClass}} {{column.alignmentClass}} {{column.hiddenClass}} {{column.extraClasses}}">
+                <td class="{{classes.tfoot}} {{column.widthClass}} {{column.footerAlignmentClass}} {{column.hiddenClass}} {{column.extraClasses}}">
                     @if(column.isDropzone)
                         @dropzone("footerCell", title: "Footer")
                     @else

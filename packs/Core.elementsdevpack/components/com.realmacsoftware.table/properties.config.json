@@ -71,6 +71,11 @@
                     }
                 },
                 {
+                    "visible": "dataSource != 'manual'",
+                    "title": "Each column item controls the matching CSV column by position (1st item → 1st column).",
+                    "description": {}
+                },
+                {
                     "visible": "dataSource == 'manual'",
                     "divider": {}
                 },
@@ -105,7 +110,7 @@
                 },
                 {
                     "visible": "dataSource != 'manual'",
-                    "title": "All columns are sortable in CSV mode.",
+                    "title": "Enable sorting per column in the Columns collection.",
                     "description": {}
                 },
                 {
@@ -116,7 +121,7 @@
                     "heading": {}
                 },
                 {
-                    "title": "Show Search",
+                    "title": "Enable",
                     "id": "showSearch",
                     "responsive": false,
                     "switch": {
@@ -140,7 +145,7 @@
                     "heading": {}
                 },
                 {
-                    "title": "Show Pagination",
+                    "title": "Enable",
                     "id": "showPagination",
                     "responsive": false,
                     "switch": {
