@@ -1,6 +1,7 @@
 const transformHook = (rw) => {
     const { globalID } = rw.props;
     const { id } = rw.node;
+    const isEdit = rw.project.mode == "edit";
 
     const classes = {
         wrapper: classnames([
@@ -20,7 +21,7 @@ const transformHook = (rw) => {
     rw.setRootElement({
         as: "div",
         class: classes.wrapper,
-        args: { id: globalID },
+        args: { id: globalID, ...(isEdit ? {} : globalMouse3D(rw)) },
     });
 
     if (globalID.length > 0) {
