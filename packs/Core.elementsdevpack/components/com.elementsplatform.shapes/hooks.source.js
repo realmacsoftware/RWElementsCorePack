@@ -26,6 +26,10 @@ const shapeMarginLength = (formatted) => {
     return value;
 };
 
+const extensionOf = (url) => {
+    return `${url || ""}`.split(/[?#]/)[0].match(/\.([a-z0-9]+)$/i)?.[1] || "";
+};
+
 const isOpaqueRaster = (media, isRasterImage) => {
     if (!isRasterImage) {
         return false;
@@ -207,6 +211,9 @@ const transformHook = (rw) => {
     const {
         globalID,
         media,
+        mediaType,
+        mediaCustomSource,
+        mediaCmsField,
         mediaAlt,
         mediaFloat,
         mediaWidth,
@@ -214,16 +221,38 @@ const transformHook = (rw) => {
         shapeImageThreshold,
     } = rw.props;
     const { id } = rw.node;
+    const { sharedAssetPath } = rw.component;
 
-    const hasMedia = !!media;
-    const isYouTube = media?.format === "youtube";
-    const isVimeo = media?.format === "vimeo";
-    const isMP4 = media?.format === "mp4";
+    const edit = rw.project.mode === "edit";
+
+    const type = mediaType || "resource";
+    const isResourceMedia = type === "resource";
+    const isCustomMedia = type === "custom";
+    const isCmsMedia = type === "cms";
+
+    // CMS field tokens can't resolve in edit mode, so show a placeholder there
+    const cmsPlaceholder = `${sharedAssetPath}/images/image-square.png`;
+    const externalSrc = isCustomMedia
+        ? `${mediaCustomSource || ""}`.trim()
+        : isCmsMedia
+            ? (edit ? cmsPlaceholder : `${mediaCmsField || ""}`.trim())
+            : "";
+
+    const hasMedia = isResourceMedia ? !!media : !!externalSrc;
+    const isYouTube = isResourceMedia && media?.format === "youtube";
+    const isVimeo = isResourceMedia && media?.format === "vimeo";
+    const isMP4 = isResourceMedia && media?.format === "mp4";
     const isEmbed = isYouTube || isVimeo;
-    const isSvg = media?.format === "svg";
+    const isSvg = isResourceMedia && media?.format === "svg";
     const isRasterImage = hasMedia && !isMP4 && !isEmbed && !isSvg;
     const isImage = isRasterImage || isSvg;
-    const opaqueRaster = isOpaqueRaster(media, isRasterImage);
+    const opaqueRaster = isResourceMedia
+        ? isOpaqueRaster(media, isRasterImage)
+        : isCustomMedia
+            ? OPAQUE_RASTER_FORMATS.has(extensionOf(externalSrc).toLowerCase())
+            // the edit-mode CMS placeholder is an opaque square, so shape-margin
+            // would be clipped away — use real margin classes instead
+            : isCmsMedia && edit;
 
     const svgImageUrl = isSvg && media?.image ? svgShapeUrl(media.image) : "";
 
@@ -231,9 +260,12 @@ const transformHook = (rw) => {
     // and won't exist in the compiled CSS, so all shape CSS goes inline
     const styles = [];
 
-    if (isImage && media?.image && !opaqueRaster) {
-        const shapeOutsideUrl = isSvg ? svgImageUrl : media.image;
-        styles.push(`shape-outside: url('${shapeOutsideUrl}')`);
+    const shapeSourceUrl = isResourceMedia
+        ? (isSvg ? svgImageUrl : media?.image)
+        : externalSrc;
+
+    if (isImage && shapeSourceUrl && !opaqueRaster) {
+        styles.push(`shape-outside: url('${shapeSourceUrl}')`);
         styles.push(`shape-image-threshold: ${(Number(shapeImageThreshold) || 0) / 100}`);
     }
 
@@ -287,7 +319,7 @@ const transformHook = (rw) => {
         class: classes.wrapper,
         args: {
             id: globalID,
-            rwResourceDropZone: "media",
+            ...(isResourceMedia ? { rwResourceDropZone: "media" } : {}),
         },
     });
 
@@ -304,11 +336,16 @@ const transformHook = (rw) => {
         isMP4,
         isEmbed,
         embedUrl,
-        mediaSrc: isMP4 ? media?.path : isRasterImage ? media?.image : "",
+        mediaSrc: isMP4
+            ? media?.path
+            : isRasterImage
+                ? (isResourceMedia ? media?.image : externalSrc)
+                : "",
         svgImageUrl,
         mediaAlt: media?.alt || mediaAlt || "",
         mediaStyle,
-        edit: rw.project.mode === "edit",
+        edit,
+        showDropZone: edit && isResourceMedia && !hasMedia,
     });
 };
 

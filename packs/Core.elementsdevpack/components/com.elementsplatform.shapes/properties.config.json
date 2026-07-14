@@ -5,9 +5,53 @@
       "icon": "photo",
       "properties": [
         {
+          "title": "Type",
+          "id": "mediaType",
+          "ai": {
+            "name": "mediaType",
+            "description": "Media source mode: 'resource' (picked asset), 'custom' (URL/path string), or 'cms' (CMS field binding)."
+          },
+          "segmented": {
+            "default": "resource",
+            "items": [
+              {
+                "title": "Resource",
+                "value": "resource"
+              },
+              {
+                "title": "Custom",
+                "value": "custom"
+              },
+              {
+                "title": "CMS",
+                "value": "cms"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "mediaType == 'resource'",
           "title": "Resource",
           "id": "media",
           "resource": {}
+        },
+        {
+          "visible": "mediaType == 'custom'",
+          "title": "Source",
+          "id": "mediaCustomSource",
+          "responsive": false,
+          "text": {
+            "default": ""
+          }
+        },
+        {
+          "visible": "mediaType == 'cms'",
+          "title": "Field",
+          "id": "mediaCmsField",
+          "responsive": false,
+          "text": {
+            "default": "{{item.image.src}}"
+          }
         },
         {
           "title": "Alt Text",
