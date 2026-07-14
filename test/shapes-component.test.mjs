@@ -41,7 +41,7 @@ function loadTransformHook() {
     return sandbox.exports.transformHook;
 }
 
-function renderShapes(overrides = {}, mode = "preview") {
+function renderShapes(overrides = {}, mode = "preview", options = {}) {
     const transformHook = loadTransformHook();
     const rw = {
         props: {
@@ -53,6 +53,18 @@ function renderShapes(overrides = {}, mode = "preview") {
             shapeMargin: "[shape-margin:4]",
             shapeImageThreshold: 50,
             ...overrides,
+        },
+        // Mirrors the app: themeSpacing raw values arrive as empty objects,
+        // segmented controls as plain strings
+        responsiveProps: options.responsiveProps || {
+            mediaFloat: { base: "left" },
+            shapeMargin: { base: {} },
+        },
+        theme: {
+            breakpoints: {
+                names: options.breakpointNames || ["sm", "md", "lg", "xl", "2xl"],
+                screens: {},
+            },
         },
         node: { id: "node-1" },
         project: { mode },
@@ -72,6 +84,7 @@ function renderShapes(overrides = {}, mode = "preview") {
 }
 
 const image = { format: "png", image: "https://example.com/cutout.png", alt: "A cutout" };
+const jpeg = { format: "jpeg", image: "https://example.com/photo.jpg", alt: "A photo" };
 const svg = {
     format: "svg",
     image: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40"/></svg>',
@@ -165,6 +178,113 @@ test("shape margin accepts custom css lengths from theme spacing", () => {
     });
 
     assert.match(rw.computedProps.mediaStyle, /shape-margin: 24px;/);
+});
+
+test("opaque jpeg uses responsive tailwind margins instead of shape-outside", () => {
+    const rw = renderShapes({ media: jpeg });
+
+    assert.equal(rw.computedProps.mediaStyle, "");
+    assert.match(rw.computedProps.classes.media, /\bmr-4\b/);
+    assert.match(rw.computedProps.classes.media, /\bmb-4\b/);
+    assert.doesNotMatch(rw.computedProps.classes.media, /shape-outside/);
+});
+
+test("jpg margins come from the formatted shape margin even though responsiveProps serializes themeSpacing as empty objects", () => {
+    // Exact data observed in the app: format "jpg", raw shapeMargin {base: {}}
+    const rw = renderShapes(
+        {
+            media: { format: "jpg", image: "/rwResource/photo.jpg", alt: "A photo" },
+            shapeMargin: "[shape-margin:8]",
+        },
+        "preview",
+        {
+            responsiveProps: {
+                mediaFloat: { base: "left" },
+                shapeMargin: { base: {} },
+            },
+        }
+    );
+
+    assert.match(rw.computedProps.classes.media, /\bmr-8\b/);
+    assert.match(rw.computedProps.classes.media, /\bmb-8\b/);
+});
+
+test("opaque jpeg switches float margin side at responsive breakpoints", () => {
+    const rw = renderShapes(
+        {
+            media: jpeg,
+            mediaFloat: "float-none md:float-right",
+        },
+        "preview",
+        {
+            responsiveProps: {
+                mediaFloat: { base: "none", md: "right" },
+                shapeMargin: { base: {} },
+            },
+            breakpointNames: ["sm", "md", "lg", "xl", "2xl"],
+        }
+    );
+
+    assert.match(rw.computedProps.classes.media, /\bmb-4\b/);
+    assert.match(rw.computedProps.classes.media, /\bmd:ml-4\b/);
+    assert.match(rw.computedProps.classes.media, /\bmd:mb-4\b/);
+    assert.doesNotMatch(rw.computedProps.classes.media, /\bmr-4\b/);
+    assert.equal(rw.computedProps.mediaStyle, "");
+});
+
+test("opaque jpeg resets opposite horizontal margin when float direction changes", () => {
+    const rw = renderShapes(
+        {
+            media: jpeg,
+            mediaFloat: "float-left md:float-right",
+        },
+        "preview",
+        {
+            responsiveProps: {
+                mediaFloat: { base: "left", md: "right" },
+                shapeMargin: { base: {} },
+            },
+            breakpointNames: ["sm", "md", "lg", "xl", "2xl"],
+        }
+    );
+
+    assert.match(rw.computedProps.classes.media, /\bmr-4\b/);
+    assert.match(rw.computedProps.classes.media, /\bmb-4\b/);
+    assert.match(rw.computedProps.classes.media, /\bmd:mr-0\b/);
+    assert.match(rw.computedProps.classes.media, /\bmd:ml-4\b/);
+    assert.match(rw.computedProps.classes.media, /\bmd:mb-4\b/);
+});
+
+test("opaque jpeg applies responsive margin values with float-right", () => {
+    const rw = renderShapes(
+        {
+            media: jpeg,
+            mediaFloat: "float-right md:float-right",
+            shapeMargin: "[shape-margin:4] md:[shape-margin:6]",
+        },
+        "preview",
+        {
+            responsiveProps: {
+                mediaFloat: { base: "right", md: "right" },
+                shapeMargin: { base: {}, md: {} },
+            },
+            breakpointNames: ["sm", "md", "lg", "xl", "2xl"],
+        }
+    );
+
+    assert.match(rw.computedProps.classes.media, /\bml-4\b/);
+    assert.match(rw.computedProps.classes.media, /\bmb-4\b/);
+    assert.match(rw.computedProps.classes.media, /\bmd:ml-6\b/);
+    assert.match(rw.computedProps.classes.media, /\bmd:mb-6\b/);
+});
+
+test("png keeps shape-outside margin inline and does not add tailwind float margins", () => {
+    const rw = renderShapes({ media: image, shapeImageThreshold: 75 });
+
+    assert.match(rw.computedProps.mediaStyle, /shape-outside: url\('https:\/\/example.com\/cutout.png'\)/);
+    assert.match(rw.computedProps.mediaStyle, /shape-margin: 1rem;/);
+    assert.doesNotMatch(rw.computedProps.classes.media, /\bmr-4\b/);
+    assert.doesNotMatch(rw.computedProps.classes.media, /\bml-4\b/);
 });
 
 test("auto shape degrades to a plain rectangle for video", () => {

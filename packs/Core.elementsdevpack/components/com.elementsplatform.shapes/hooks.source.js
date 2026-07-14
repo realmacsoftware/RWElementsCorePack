@@ -1,3 +1,5 @@
+const OPAQUE_RASTER_FORMATS = new Set(["jpeg", "jpg", "bmp"]);
+
 const shapeMarginLength = (formatted) => {
     const value = `${formatted || ""}`.match(/\[shape-margin:(.+?)\]/)?.[1]?.trim();
     if (!value) {
@@ -22,6 +24,137 @@ const shapeMarginLength = (formatted) => {
     }
 
     return value;
+};
+
+const isOpaqueRaster = (media, isRasterImage) => {
+    if (!isRasterImage) {
+        return false;
+    }
+
+    return OPAQUE_RASTER_FORMATS.has(`${media?.format || ""}`.toLowerCase());
+};
+
+const marginRawToken = (raw) => {
+    if (raw == null || raw === "") {
+        return null;
+    }
+
+    return `${raw}`.trim();
+};
+
+const marginTokenToClass = (side, rawValue) => {
+    const value = marginRawToken(rawValue);
+    if (!value) {
+        return null;
+    }
+
+    if (value === "0") {
+        return `${side}-0`;
+    }
+
+    if (value === "px") {
+        return `${side}-[1px]`;
+    }
+
+    if (/[a-z%]$/i.test(value)) {
+        return `${side}-[${value}]`;
+    }
+
+    const token = Number(value);
+    if (!Number.isNaN(token)) {
+        return `${side}-${value}`;
+    }
+
+    return `${side}-[${value}]`;
+};
+
+const resolveResponsiveValue = (breakpoints, values, bp, fallback) => {
+    const index = breakpoints.indexOf(bp);
+
+    for (let i = index; i >= 0; i--) {
+        const value = values[breakpoints[i]];
+        if (value !== undefined && value !== null) {
+            return value;
+        }
+    }
+
+    return fallback;
+};
+
+const withBreakpointPrefix = (breakpoint, className) => {
+    if (!className) {
+        return "";
+    }
+
+    return breakpoint === "base" ? className : `${breakpoint}:${className}`;
+};
+
+const getOpaqueFloatMarginClasses = (floatByBp, marginByBp, breakpointNames) => {
+    const breakpoints = ["base", ...breakpointNames];
+    const classes = [];
+    let prevFloat = null;
+    let prevMarginToken = null;
+
+    const resolveFloat = (bp) => resolveResponsiveValue(breakpoints, floatByBp, bp, "left");
+    const resolveMargin = (bp) => resolveResponsiveValue(breakpoints, marginByBp, bp, "4");
+
+    for (const bp of breakpoints) {
+        const float = resolveFloat(bp);
+        const margin = resolveMargin(bp);
+        const marginToken = marginRawToken(margin);
+
+        if (bp !== "base" && float === prevFloat && marginToken === prevMarginToken) {
+            continue;
+        }
+
+        const mbClass = marginTokenToClass("mb", margin);
+        if (mbClass) {
+            classes.push(withBreakpointPrefix(bp, mbClass));
+        }
+
+        if (float === "left") {
+            const mrClass = marginTokenToClass("mr", margin);
+            if (mrClass) {
+                classes.push(withBreakpointPrefix(bp, mrClass));
+            }
+            if (prevFloat === "right") {
+                classes.push(withBreakpointPrefix(bp, "ml-0"));
+            }
+        } else if (float === "right") {
+            const mlClass = marginTokenToClass("ml", margin);
+            if (mlClass) {
+                classes.push(withBreakpointPrefix(bp, mlClass));
+            }
+            if (prevFloat === "left") {
+                classes.push(withBreakpointPrefix(bp, "mr-0"));
+            }
+        } else {
+            if (prevFloat === "left") {
+                classes.push(withBreakpointPrefix(bp, "mr-0"));
+            }
+            if (prevFloat === "right") {
+                classes.push(withBreakpointPrefix(bp, "ml-0"));
+            }
+        }
+
+        prevFloat = float;
+        prevMarginToken = marginToken;
+    }
+
+    return classes.filter(Boolean).join(" ");
+};
+
+// themeSpacing raw values arrive as empty objects in rw.responsiveProps, so the
+// formatted prop string (e.g. "[shape-margin:8] md:[shape-margin:6]") is the
+// only source of the per-breakpoint margin values
+const marginByBreakpointFromFormatted = (formatted) => {
+    const values = {};
+
+    for (const [, bp, value] of `${formatted || ""}`.matchAll(/(?:([a-z0-9]+):)?\[shape-margin:([^\]]+)\]/g)) {
+        values[bp || "base"] = value.trim();
+    }
+
+    return values;
 };
 
 const isInlineSvgMarkup = (value) => {
@@ -90,6 +223,7 @@ const transformHook = (rw) => {
     const isSvg = media?.format === "svg";
     const isRasterImage = hasMedia && !isMP4 && !isEmbed && !isSvg;
     const isImage = isRasterImage || isSvg;
+    const opaqueRaster = isOpaqueRaster(media, isRasterImage);
 
     const svgImageUrl = isSvg && media?.image ? svgShapeUrl(media.image) : "";
 
@@ -97,7 +231,7 @@ const transformHook = (rw) => {
     // and won't exist in the compiled CSS, so all shape CSS goes inline
     const styles = [];
 
-    if (isImage && media?.image) {
+    if (isImage && media?.image && !opaqueRaster) {
         const shapeOutsideUrl = isSvg ? svgImageUrl : media.image;
         styles.push(`shape-outside: url('${shapeOutsideUrl}')`);
         styles.push(`shape-image-threshold: ${(Number(shapeImageThreshold) || 0) / 100}`);
@@ -111,6 +245,12 @@ const transformHook = (rw) => {
     const mediaStyle = styles.length > 0 ? `${styles.join("; ")};` : "";
 
     const floatClasses = [mediaFloat, mediaWidth];
+
+    const { mediaFloat: floatByBp } = rw.responsiveProps || {};
+    const { names: breakpointNames = [] } = rw.theme?.breakpoints || {};
+    const opaqueMarginClasses = opaqueRaster
+        ? getOpaqueFloatMarginClasses(floatByBp || {}, marginByBreakpointFromFormatted(shapeMargin), breakpointNames)
+        : "";
 
     const classes = {
         wrapper: classnames([
@@ -127,6 +267,7 @@ const transformHook = (rw) => {
         ]).toString(),
         media: classnames([
             ...floatClasses,
+            opaqueMarginClasses,
             "h-auto max-w-full",
         ]).toString(),
         embedFrame: classnames([
