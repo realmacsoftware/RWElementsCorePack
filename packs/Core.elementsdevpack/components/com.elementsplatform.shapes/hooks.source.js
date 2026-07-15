@@ -93,7 +93,7 @@ const withBreakpointPrefix = (breakpoint, className) => {
     return breakpoint === "base" ? className : `${breakpoint}:${className}`;
 };
 
-const getOpaqueFloatMarginClasses = (floatByBp, marginByBp, breakpointNames) => {
+const getFloatMarginClasses = (floatByBp, marginByBp, breakpointNames) => {
     const breakpoints = ["base", ...breakpointNames];
     const classes = [];
     let prevFloat = null;
@@ -250,8 +250,8 @@ const transformHook = (rw) => {
         ? isOpaqueRaster(media, isRasterImage)
         : isCustomMedia
             ? OPAQUE_RASTER_FORMATS.has(extensionOf(externalSrc).toLowerCase())
-            // the edit-mode CMS placeholder is an opaque square, so shape-margin
-            // would be clipped away — use real margin classes instead
+            // the edit-mode CMS placeholder is an opaque square, so extracting
+            // a wrap shape from it would be pointless
             : isCmsMedia && edit;
 
     const svgImageUrl = isSvg && media?.image ? svgShapeUrl(media.image) : "";
@@ -284,9 +284,14 @@ const transformHook = (rw) => {
 
     const { mediaFloat: floatByBp } = rw.responsiveProps || {};
     const { names: breakpointNames = [] } = rw.theme?.breakpoints || {};
-    const opaqueMarginClasses = opaqueRaster
-        ? getOpaqueFloatMarginClasses(floatByBp || {}, marginByBreakpointFromFormatted(shapeMargin), breakpointNames)
-        : "";
+    // The shape-outside float area is clipped to the margin box, so shape-margin
+    // needs real margins to expand into; for opaque images (e.g. a PNG with no
+    // transparency) and video the margin classes are the entire mechanism
+    const floatMarginClasses = getFloatMarginClasses(
+        floatByBp || {},
+        marginByBreakpointFromFormatted(shapeMargin),
+        breakpointNames
+    );
 
     const classes = {
         wrapper: classnames([
@@ -303,11 +308,12 @@ const transformHook = (rw) => {
         ]).toString(),
         media: classnames([
             ...floatClasses,
-            opaqueMarginClasses,
+            floatMarginClasses,
             "h-auto max-w-full",
         ]).toString(),
         embedFrame: classnames([
             ...floatClasses,
+            floatMarginClasses,
             "aspect-video",
         ]).toString(),
     };
