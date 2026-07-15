@@ -265,8 +265,12 @@ const transformHook = (rw) => {
         : externalSrc;
 
     if (isImage && shapeSourceUrl && !opaqueRaster) {
-        styles.push(`shape-outside: url('${shapeSourceUrl}')`);
-        styles.push(`shape-image-threshold: ${(Number(shapeImageThreshold) || 0) / 100}`);
+        const threshold = (Number(shapeImageThreshold) || 0) / 100;
+        // WebKit caches the extracted wrap shape by the shape-outside value and
+        // won't recompute it on a threshold-only change, so vary the URL fragment
+        const cacheKey = shapeSourceUrl.includes("#") ? `-rwt${threshold}` : `#rwt=${threshold}`;
+        styles.push(`shape-outside: url('${shapeSourceUrl}${cacheKey}')`);
+        styles.push(`shape-image-threshold: ${threshold}`);
     }
 
     const shapeMarginValue = shapeMarginLength(shapeMargin);
