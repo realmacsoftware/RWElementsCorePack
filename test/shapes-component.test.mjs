@@ -67,6 +67,7 @@ function renderShapes(overrides = {}, mode = "preview", options = {}) {
             },
         },
         node: { id: "node-1" },
+        component: { sharedAssetPath: "/shared-assets" },
         project: { mode },
         setRootElement(root) {
             this.root = root;
@@ -105,7 +106,7 @@ test("auto svg with a resource path uses the path for img src and shape-outside"
     });
 
     assert.equal(rw.computedProps.svgImageUrl, "/rwResource/foo.svg");
-    assert.match(rw.computedProps.mediaStyle, /shape-outside: url\('\/rwResource\/foo\.svg'\)/);
+    assert.match(rw.computedProps.mediaStyle, /shape-outside: url\('\/rwResource\/foo\.svg#rwt=0\.5'\)/);
 });
 
 test("raster image keeps a url src and no inline svg markup", () => {
@@ -151,7 +152,7 @@ test("auto shape emits an inline shape-outside url style with threshold", () => 
 
     assert.equal(
         rw.computedProps.mediaStyle,
-        "shape-outside: url('https://example.com/cutout.png'); shape-image-threshold: 0.75; shape-margin: 1rem;"
+        "shape-outside: url('https://example.com/cutout.png#rwt=0.75'); shape-image-threshold: 0.75; shape-margin: 1rem;"
     );
     assert.doesNotMatch(rw.computedProps.classes.media, /shape-outside/);
     assert.equal(rw.computedProps.isImage, true);
@@ -278,25 +279,43 @@ test("opaque jpeg applies responsive margin values with float-right", () => {
     assert.match(rw.computedProps.classes.media, /\bmd:mb-6\b/);
 });
 
-test("png keeps shape-outside margin inline and does not add tailwind float margins", () => {
+// The shape-outside float area is clipped to the margin box, so the real margin
+// classes must accompany shape-margin — an opaque PNG (full-box shape) gets its
+// visible margin from the classes, a transparent one still wraps at silhouette
+// + shape-margin without doubling the gap
+test("png keeps inline shape styles and gains real float margins", () => {
     const rw = renderShapes({ media: image, shapeImageThreshold: 75 });
 
-    assert.match(rw.computedProps.mediaStyle, /shape-outside: url\('https:\/\/example.com\/cutout.png'\)/);
+    assert.match(rw.computedProps.mediaStyle, /shape-outside: url\('https:\/\/example.com\/cutout.png#rwt=0\.75'\)/);
     assert.match(rw.computedProps.mediaStyle, /shape-margin: 1rem;/);
-    assert.doesNotMatch(rw.computedProps.classes.media, /\bmr-4\b/);
-    assert.doesNotMatch(rw.computedProps.classes.media, /\bml-4\b/);
+    assert.match(rw.computedProps.classes.media, /\bmr-4\b/);
+    assert.match(rw.computedProps.classes.media, /\bmb-4\b/);
 });
 
-test("auto shape degrades to a plain rectangle for video", () => {
+test("custom url png gets both inline shape styles and float margins", () => {
+    const rw = renderShapes({
+        mediaType: "custom",
+        mediaCustomSource: "https://example.com/cutout.png",
+    });
+
+    assert.match(rw.computedProps.mediaStyle, /shape-outside: url\('https:\/\/example.com\/cutout.png/);
+    assert.match(rw.computedProps.mediaStyle, /shape-margin: 1rem;/);
+    assert.match(rw.computedProps.classes.media, /\bmr-4\b/);
+    assert.match(rw.computedProps.classes.media, /\bmb-4\b/);
+});
+
+test("auto shape degrades to a plain rectangle with float margins for video", () => {
     const rw = renderShapes({ media: { format: "mp4", path: "https://example.com/v.mp4" } });
 
     assert.equal(rw.computedProps.isMP4, true);
     assert.equal(rw.computedProps.mediaSrc, "https://example.com/v.mp4");
     assert.equal(rw.computedProps.mediaStyle, "");
     assert.doesNotMatch(rw.computedProps.classes.media, /shape-outside/);
+    assert.match(rw.computedProps.classes.media, /\bmr-4\b/);
+    assert.match(rw.computedProps.classes.media, /\bmb-4\b/);
 });
 
-test("youtube and vimeo resources render as embeds without shape styles", () => {
+test("youtube and vimeo resources render as embeds with float margins and no shape styles", () => {
     const rw = renderShapes({
         media: { format: "youtube", videoId: "abc123" },
     });
@@ -304,6 +323,8 @@ test("youtube and vimeo resources render as embeds without shape styles", () => 
     assert.equal(rw.computedProps.isEmbed, true);
     assert.equal(rw.computedProps.embedUrl, "https://www.youtube.com/embed/abc123");
     assert.match(rw.computedProps.classes.embedFrame, /aspect-video/);
+    assert.match(rw.computedProps.classes.embedFrame, /\bmr-4\b/);
+    assert.match(rw.computedProps.classes.embedFrame, /\bmb-4\b/);
     assert.equal(rw.computedProps.mediaStyle, "");
 });
 
