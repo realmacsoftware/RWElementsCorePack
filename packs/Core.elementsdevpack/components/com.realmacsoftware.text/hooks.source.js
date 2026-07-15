@@ -29,7 +29,7 @@ const transformHook = (rw) => {
         linkUnderline,
         linkFontWeight,
     })
-        .map(([, value]) => `[&_a]:${value}`)
+        .map(([, value]) => injectPrefixOnDarkModeColors("[&_a]", `[&_a]:${value}`))
         .join(" ");
 
     const linkModifiersHover = Object.entries({
@@ -37,7 +37,9 @@ const transformHook = (rw) => {
         linkUnderlineHover,
         linkFontWeightHover,
     })
-        .map(([, value]) => `[&_a:hover]:${value}`)
+        .map(([, value]) =>
+            injectPrefixOnDarkModeColors("[&_a:hover]", `[&_a:hover]:${value}`)
+        )
         .join(" ");
 
     const linkModifiersVisited = Object.entries({
@@ -45,7 +47,9 @@ const transformHook = (rw) => {
         linkUnderlineVisited,
         linkFontWeightVisited,
     })
-        .map(([, value]) => `[&_a:visited]:${value}`)
+        .map(([, value]) =>
+            injectPrefixOnDarkModeColors("[&_a:visited]", `[&_a:visited]:${value}`)
+        )
         .join(" ");
 
     const classes = classnames([
