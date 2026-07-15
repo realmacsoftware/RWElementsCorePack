@@ -60,7 +60,9 @@
     $rawShowHeader = '{{showHeader}}';
     $showHeader = in_array($rawShowHeader, ['true', '1', 'yes'], true);
 
-    function tableGetColumnMeta($columnMeta, $idx) {
+    // A closure (not a named function) so multiple table instances on the
+    // same page don't trigger "Cannot redeclare function" fatal errors.
+    $tableGetColumnMeta = function ($columnMeta, $idx) {
         return $columnMeta[$idx] ?? [
             'widthClass' => '',
             'headerAlignmentClass' => '',
@@ -69,7 +71,7 @@
             'extraClasses' => '',
             'isSortable' => false,
         ];
-    }
+    };
 
     $columnMetaJson = <<<COLUMNMETA
 {{csvColumnMeta}}
@@ -87,10 +89,14 @@ COLUMNMETA;
     if ($isGoogleSheets && !$alreadyCSV) {
         // Published URL: /d/e/{PUBLISHED_ID}/pubhtml → pub?output=csv
         if (preg_match('#/spreadsheets/d/e/([a-zA-Z0-9_-]+)/#', $csvSource, $pm)) {
-            $csvSource = "https://docs.google.com/spreadsheets/d/e/{$pm[1]}/pub?output=csv";
-            // Preserve gid if present
+            // Preserve gid from the original URL (must be read before rewriting)
+            $gid = null;
             if (preg_match('#gid=(\d+)#', $csvSource, $gm)) {
-                $csvSource .= "&gid={$gm[1]}";
+                $gid = $gm[1];
+            }
+            $csvSource = "https://docs.google.com/spreadsheets/d/e/{$pm[1]}/pub?output=csv";
+            if ($gid !== null) {
+                $csvSource .= "&gid={$gid}";
             }
         }
         // Standard edit/share URL: /d/{SHEET_ID}/edit → export?format=csv
@@ -164,7 +170,7 @@ COLUMNMETA;
         <thead>
             <tr class="{{classes.theadRow}}">
                 <?php foreach ($csvHeaders as $colIdx => $header):
-                    $meta = tableGetColumnMeta($columnMeta, $colIdx);
+                    $meta = $tableGetColumnMeta($columnMeta, $colIdx);
                     $colClass = trim(implode(' ', array_filter([
                         '{{classes.th}}',
                         $meta['widthClass'],
@@ -204,7 +210,7 @@ COLUMNMETA;
                 x-show="isRowVisible($el)"
             >
                 <?php foreach ($row as $cellIdx => $cell):
-                    $meta = tableGetColumnMeta($columnMeta, $cellIdx);
+                    $meta = $tableGetColumnMeta($columnMeta, $cellIdx);
                     $colClass = trim(implode(' ', array_filter([
                         '{{classes.td}}',
                         $meta['widthClass'],
