@@ -5,6 +5,9 @@
         @if(page.isActive)
         aria-current="page"
         @endif
+        @if(page.hasActiveChild)
+        data-active-child
+        @endif
     >
         @if(page.isFolder)
         <button

@@ -7,6 +7,9 @@
         @if(subPage.isActive)
         aria-current="page"
         @endif
+        @if(subPage.hasActiveChild)
+        data-active-child
+        @endif
     >
         {{subPage.title}} @includeIf(subPage.hasPages, template:
         "desktop_submenu_indicator")
@@ -21,6 +24,9 @@
         role="menuitem"
         @if(subPage.isActive)
         aria-current="page"
+        @endif
+        @if(subPage.hasActiveChild)
+        data-active-child
         @endif
     >
         {{subPage.title}} @includeIf(subPage.hasPages, template:
@@ -38,6 +44,9 @@
                     href="{{child.url}}"
                     class="{{classes.desktop.dropdownItem}}"
                     role="menuitem"
+                    @if(child.isActive)
+                    aria-current="page"
+                    @endif
                 >
                     {{child.title}}
                 </a>

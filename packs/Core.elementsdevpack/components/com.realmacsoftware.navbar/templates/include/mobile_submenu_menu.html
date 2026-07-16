@@ -5,6 +5,9 @@
             class="{{classes.mobile.item}} block"
             href="{{page.url}}"
             @click.stop
+            @if(page.isActive)
+            aria-current="page"
+            @endif
             @if(page.openInNewWindow)
             target="_blank"
             @endif

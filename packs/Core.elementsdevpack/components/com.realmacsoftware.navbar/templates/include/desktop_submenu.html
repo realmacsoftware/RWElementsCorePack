@@ -22,6 +22,9 @@
                 href="{{subPage.url}}"
                 class="{{classes.desktop.dropdownItem}}"
                 role="menuitem"
+                @if(subPage.isActive)
+                aria-current="page"
+                @endif
             >
                 {{subPage.title}}
             </a>

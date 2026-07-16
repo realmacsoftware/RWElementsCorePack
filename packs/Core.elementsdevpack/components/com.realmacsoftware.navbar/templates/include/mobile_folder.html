@@ -5,6 +5,9 @@
         @if(page.isActive)
         aria-current="page"
         @endif
+        @if(page.hasActiveChild)
+        data-active-child
+        @endif
     >
         <span class="">{{page.title}}</span>
         @includeIf(page.hasPages, template: "mobile_submenu_indicator")
