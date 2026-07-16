@@ -407,7 +407,7 @@
                     "visible": "globlaNavItemsState == 'hover'",
                     "title": "Color",
                     "id": "globalNavItemsTextColorHover",
-                    "format": "hover:text-{{value}}/(--nav-item-text-opacity) aria-[current=page]:text-{{value}}/(--nav-item-text-opacity)",
+                    "format": "hover:text-{{value}}/(--nav-item-text-opacity) aria-[current=page]:text-{{value}}/(--nav-item-text-opacity) data-[active-child]:text-{{value}}/(--nav-item-text-opacity)",
                     "themeColor": {
                         "default": {
                             "name": "text",
@@ -419,7 +419,7 @@
                     "visible": "globlaNavItemsState == 'hover'",
                     "title": "Opacity",
                     "id": "globalNavItemsTextColorOpacityHover",
-                    "format": "hover:[--nav-item-text-opacity:{{value}}%] aria-[current=page]:[--nav-item-text-opacity:{{value}}%]",
+                    "format": "hover:[--nav-item-text-opacity:{{value}}%] aria-[current=page]:[--nav-item-text-opacity:{{value}}%] data-[active-child]:[--nav-item-text-opacity:{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "default": 100,
@@ -443,7 +443,7 @@
                     "visible": "globlaNavItemsState == 'hover'",
                     "title": "Text Shadow",
                     "id": "globalNavItemsTextShadowHover",
-                    "format": "hover:{{value}} aria-[current=page]:{{value}}",
+                    "format": "hover:{{value}} aria-[current=page]:{{value}} data-[active-child]:{{value}}",
                     "themeShadow": {
                         "mode": "text",
                         "default": {
@@ -467,7 +467,7 @@
                     "visible": "globlaNavItemsState == 'hover'",
                     "title": "Underline",
                     "id": "globalNavItemsUnderlineHover",
-                    "format": "hover:{{value}} aria-[current=page]:{{value}}",
+                    "format": "hover:{{value}} aria-[current=page]:{{value}} data-[active-child]:{{value}}",
                     "switch": {
                         "default": false,
                         "trueValue": "underline",
@@ -561,7 +561,7 @@
                     "visible": "globalNavItemsBackgroundState == 'hover' && globalNavItemsBackgroundTypeHover == 'color'",
                     "title": "Color",
                     "id": "globalNavItemsBackgroundColorHover",
-                    "format": "hover:bg-{{value}}/(--nav-item-bg-opacity) aria-[current=page]:bg-{{value}}/(--nav-item-bg-opacity)",
+                    "format": "hover:bg-{{value}}/(--nav-item-bg-opacity) aria-[current=page]:bg-{{value}}/(--nav-item-bg-opacity) data-[active-child]:bg-{{value}}/(--nav-item-bg-opacity)",
                     "themeColor": {
                         "default": {
                             "name": "surface",
@@ -573,7 +573,7 @@
                     "visible": "globalNavItemsBackgroundState == 'hover' && globalNavItemsBackgroundTypeHover == 'color'",
                     "title": "Opacity",
                     "id": "globalNavItemsBackgroundOpacityHover",
-                    "format": "hover:[--nav-item-bg-opacity:{{value}}%] aria-[current=page]:[--nav-item-bg-opacity:{{value}}%]",
+                    "format": "hover:[--nav-item-bg-opacity:{{value}}%] aria-[current=page]:[--nav-item-bg-opacity:{{value}}%] data-[active-child]:[--nav-item-bg-opacity:{{value}}%]",
                     "slider": {
                         "use": "Slider",
                         "default": 100,

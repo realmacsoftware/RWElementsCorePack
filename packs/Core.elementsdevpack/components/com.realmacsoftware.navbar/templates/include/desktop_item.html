@@ -51,6 +51,9 @@ includeOnce: true)
         @if(page.isActive)
         aria-current="page"
         @endif
+        @if(page.hasActiveChild)
+        data-active-child
+        @endif
     >
         {{page.title}} @includeIf(page.hasPages, template:
         "desktop_submenu_indicator")

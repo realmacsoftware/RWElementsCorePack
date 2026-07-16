@@ -67,6 +67,13 @@ const transformHook = (rw) => {
 
     const hasLogoLink = logoLink.href.length > 0;
 
+    // Checks the raw page tree so an active page hidden from the menu
+    // (displayInMenu == false) still highlights its ancestor folders
+    const hasActiveDescendant = (page) =>
+        (page.pages || []).some(
+            (child) => child.isActive || hasActiveDescendant(child)
+        );
+
     // Recursive function to filter pages
     const filterPages = (pages) => {
         return pages
@@ -79,6 +86,7 @@ const transformHook = (rw) => {
                     ...page,
                     pages: filteredPages,
                     hasPages: filteredPages ? filteredPages.length > 0 : false,
+                    hasActiveChild: hasActiveDescendant(page),
                 };
             });
     };
