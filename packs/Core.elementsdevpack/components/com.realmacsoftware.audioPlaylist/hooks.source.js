@@ -112,11 +112,14 @@ const transformHook = (rw) => {
                 nowPlayingArtistTextColor,
                 nowPlayingArtistFontSize,
             ]).toString(),
+            progressRow: classnames([
+                "flex items-center gap-3 w-full",
+            ]).toString(),
             progressBar: {
                 wrapper: classnames([
                     nowPlayingProgressBarSize,
                     nowPlayingProgressBarBgColor,
-                    `relative overflow-hidden w-full mx-auto rounded-full cursor-pointer select-none`,
+                    `relative overflow-hidden flex-1 min-w-0 rounded-full cursor-pointer select-none`,
                 ]).toString(),
                 foreground: classnames([
                     "absolute top-0 left-0 rounded-full",
@@ -131,7 +134,7 @@ const transformHook = (rw) => {
             },
             volume: {
                 wrapper: classnames([
-                    "flex items-center justify-center gap-2 w-full",
+                    "flex items-center gap-2 shrink-0",
                 ]).toString(),
                 muteButton: classnames([
                     iconVolumeColor,

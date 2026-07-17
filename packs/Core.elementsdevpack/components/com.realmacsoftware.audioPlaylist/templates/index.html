@@ -79,65 +79,67 @@
         </div>
     </div>
 
-    <div
-        x-ref="progressBar"
-        class="{{classes.nowPlaying.progressBar.wrapper}}"
-        @mousedown="startScrubbing"
-        @touchstart.prevent="startScrubbing"
-    >
-        <!-- Filled portion -->
+    <div class="{{classes.nowPlaying.progressRow}}">
         <div
-            class="{{classes.nowPlaying.progressBar.foreground}}"
-            @if(edit)
-            style="width: calc(50%)"
-            @endif
-            :style="{ width: ((isScrubbing ? scrubTime : currentTime) / duration * 100) + '%' }"
-        ></div>
-
-        <!-- Draggable thumb -->
-        <div
-            class="{{classes.nowPlaying.progressBar.thumb}}"
-            @if(edit)
-            style="display: none"
-            @endif
-            :style="{ left: `calc(${((isScrubbing ? scrubTime : currentTime) / duration) * 100}%) - $el.clientWidth` }"
-            x-show="duration"
-        ></div>
-    </div>
-
-    @if(enableVolumeControls)
-    <!-- Volume -->
-    <div class="{{classes.nowPlaying.volume.wrapper}}">
-        <button
-            @click="toggleMute"
-            class="{{classes.nowPlaying.volume.muteButton}}"
-            aria-label="Mute or unmute"
+            x-ref="progressBar"
+            class="{{classes.nowPlaying.progressBar.wrapper}}"
+            @mousedown="startScrubbing"
+            @touchstart.prevent="startScrubbing"
         >
-            <div x-show="!isMuted && volume > 0">{{ iconVolume }}</div>
-            <div x-cloak x-show="isMuted || volume === 0">{{ iconMuted }}</div>
-        </button>
-        <div
-            x-ref="volumeBar"
-            class="{{classes.nowPlaying.volume.bar}}"
-            @mousedown="startVolumeScrub"
-            @touchstart.prevent="startVolumeScrub"
-            x-show="volumeAdjustable"
-            role="slider"
-            aria-label="Volume"
-            aria-valuemin="0"
-            aria-valuemax="100"
-            :aria-valuenow="Math.round(volume * 100)"
-        >
+            <!-- Filled portion -->
             <div
-                class="{{classes.nowPlaying.volume.fill}}"
+                class="{{classes.nowPlaying.progressBar.foreground}}"
                 @if(edit)
-                style="width: {{initialVolume}}%"
+                style="width: calc(50%)"
                 @endif
-                :style="{ width: (isMuted ? 0 : volume * 100) + '%' }"
+                :style="{ width: ((isScrubbing ? scrubTime : currentTime) / duration * 100) + '%' }"
+            ></div>
+
+            <!-- Draggable thumb -->
+            <div
+                class="{{classes.nowPlaying.progressBar.thumb}}"
+                @if(edit)
+                style="display: none"
+                @endif
+                :style="{ left: `calc(${((isScrubbing ? scrubTime : currentTime) / duration) * 100}%) - $el.clientWidth` }"
+                x-show="duration"
             ></div>
         </div>
+
+        @if(enableVolumeControls)
+        <!-- Volume -->
+        <div class="{{classes.nowPlaying.volume.wrapper}}">
+            <button
+                @click="toggleMute"
+                class="{{classes.nowPlaying.volume.muteButton}}"
+                aria-label="Mute or unmute"
+            >
+                <div x-show="!isMuted && volume > 0">{{ iconVolume }}</div>
+                <div x-cloak x-show="isMuted || volume === 0">{{ iconMuted }}</div>
+            </button>
+            <div
+                x-ref="volumeBar"
+                class="{{classes.nowPlaying.volume.bar}}"
+                @mousedown="startVolumeScrub"
+                @touchstart.prevent="startVolumeScrub"
+                x-show="volumeAdjustable"
+                role="slider"
+                aria-label="Volume"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                :aria-valuenow="Math.round(volume * 100)"
+            >
+                <div
+                    class="{{classes.nowPlaying.volume.fill}}"
+                    @if(edit)
+                    style="width: {{initialVolume}}%"
+                    @endif
+                    :style="{ width: (isMuted ? 0 : volume * 100) + '%' }"
+                ></div>
+            </div>
+        </div>
+        @endif
     </div>
-    @endif
 </div>
 
 <ul class="{{classes.list}}">
