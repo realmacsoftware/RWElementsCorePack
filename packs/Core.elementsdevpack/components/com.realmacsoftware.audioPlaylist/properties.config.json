@@ -686,6 +686,149 @@
             ]
         },
         {
+            "title": "Volume",
+            "icon": "speaker.wave.2.fill",
+            "properties": [
+                {
+                    "title": "Initial Volume",
+                    "property": "initialVolume",
+                    "responsive": false,
+                    "slider": {
+                        "use": "Slider",
+                        "default": 100,
+                        "min": 0,
+                        "max": 100,
+                        "units": "%",
+                        "round": true
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Visitor Controls",
+                    "heading": {}
+                },
+                {
+                    "title": "Enable",
+                    "property": "enableVolumeControls",
+                    "responsive": false,
+                    "switch": {
+                        "default": false
+                    }
+                },
+                {
+                    "enable": "enableVolumeControls == true",
+                    "title": "Background",
+                    "id": "volumeBarBgColor",
+                    "format": "bg-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 100
+                        }
+                    }
+                },
+                {
+                    "enable": "enableVolumeControls == true",
+                    "title": "Foreground",
+                    "id": "volumeBarFgColor",
+                    "format": "bg-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 300
+                        }
+                    }
+                },
+                {
+                    "enable": "enableVolumeControls == true",
+                    "title": "Size",
+                    "id": "volumeBarSize",
+                    "format": "h-{{value}}",
+                    "themeSpacing": {
+                        "mode": "single",
+                        "default": {
+                            "base": {
+                                "value": "1.5"
+                            }
+                        }
+                    }
+                },
+                {
+                    "enable": "enableVolumeControls == true",
+                    "title": "Width",
+                    "id": "volumeBarWidth",
+                    "format": "w-{{value}}",
+                    "themeSpacing": {
+                        "mode": "single",
+                        "default": {
+                            "base": {
+                                "value": "24"
+                            }
+                        }
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Mute Button",
+                    "heading": {}
+                },
+                {
+                    "enable": "enableVolumeControls == true",
+                    "title": "Color",
+                    "id": "iconVolumeColor",
+                    "format": "text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 500
+                        }
+                    }
+                },
+                {
+                    "enable": "enableVolumeControls == true",
+                    "title": "Hover",
+                    "id": "iconVolumeColorHover",
+                    "format": "hover:text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "surface",
+                            "brightness": 600
+                        }
+                    }
+                },
+                {
+                    "enable": "enableVolumeControls == true",
+                    "title": "Size",
+                    "id": "iconVolumeSize",
+                    "format": "size-{{value}}",
+                    "themeSpacing": {
+                        "mode": "single",
+                        "default": {
+                            "base": {
+                                "value": "5"
+                            }
+                        }
+                    }
+                },
+                {
+                    "enable": "enableVolumeControls == true",
+                    "title": "Volume",
+                    "property": "iconVolume",
+                    "resource": {}
+                },
+                {
+                    "enable": "enableVolumeControls == true",
+                    "title": "Muted",
+                    "property": "iconMuted",
+                    "resource": {}
+                }
+            ]
+        },
+        {
             "title": "Layout",
             "icon": "square.split.bottomrightquarter",
             "properties": [

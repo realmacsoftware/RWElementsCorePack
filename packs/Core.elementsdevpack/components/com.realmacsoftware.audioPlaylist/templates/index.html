@@ -104,6 +104,40 @@
             x-show="duration"
         ></div>
     </div>
+
+    @if(enableVolumeControls)
+    <!-- Volume -->
+    <div class="{{classes.nowPlaying.volume.wrapper}}">
+        <button
+            @click="toggleMute"
+            class="{{classes.nowPlaying.volume.muteButton}}"
+            aria-label="Mute or unmute"
+        >
+            <div x-show="!isMuted && volume > 0">{{ iconVolume }}</div>
+            <div x-cloak x-show="isMuted || volume === 0">{{ iconMuted }}</div>
+        </button>
+        <div
+            x-ref="volumeBar"
+            class="{{classes.nowPlaying.volume.bar}}"
+            @mousedown="startVolumeScrub"
+            @touchstart.prevent="startVolumeScrub"
+            x-show="volumeAdjustable"
+            role="slider"
+            aria-label="Volume"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            :aria-valuenow="Math.round(volume * 100)"
+        >
+            <div
+                class="{{classes.nowPlaying.volume.fill}}"
+                @if(edit)
+                style="width: {{initialVolume}}%"
+                @endif
+                :style="{ width: (isMuted ? 0 : volume * 100) + '%' }"
+            ></div>
+        </div>
+    </div>
+    @endif
 </div>
 
 <ul class="{{classes.list}}">
@@ -141,6 +175,7 @@
 <!-- Hidden audio -->
 <audio
     x-ref="audio"
+    data-initial-volume="{{initialVolume}}"
     @ended="nextTrack"
     @timeupdate="updateTime"
     @loadedmetadata="updateDuration"
@@ -158,6 +193,10 @@
             isScrubbing: false,
             scrubTime: 0,
             _lastTimeUpdate: 0,
+            volume: 1,
+            isMuted: false,
+            volumeAdjustable: true,
+            _lastVolume: 1,
 
             get currentTrack() {
                 return this.tracks[this.currentTrackIndex] || {};
@@ -179,6 +218,24 @@
                 if (this.tracks.length > 0) {
                     this.$refs.audio.src = this.tracks[0].url;
                 }
+
+                // Volume: feature-detect (iOS Safari ignores volume writes),
+                // then apply the configured initial volume.
+                const audio = this.$refs.audio;
+                audio.volume = 0.499;
+                this.volumeAdjustable = Math.abs(audio.volume - 0.499) < 0.01;
+                const initial =
+                    Math.min(
+                        Math.max(
+                            0,
+                            parseFloat(audio.dataset.initialVolume ?? "100") ||
+                                0
+                        ),
+                        100
+                    ) / 100;
+                audio.volume = initial;
+                this.volume = this.volumeAdjustable ? initial : 1;
+                this._lastVolume = this.volume || 1;
 
                 // Ensure only one playlist plays at a time across the page
                 this.$refs.audio.addEventListener("play", () => {
@@ -302,6 +359,55 @@
                     1
                 );
                 this.scrubTime = percent * this.duration;
+            },
+
+            setVolume(value) {
+                const audio = this.$refs.audio;
+                this.volume = Math.min(1, Math.max(0, value));
+                audio.volume = this.volume;
+                if (this.volume > 0) {
+                    this._lastVolume = this.volume;
+                    if (this.isMuted) {
+                        audio.muted = false;
+                        this.isMuted = false;
+                    }
+                }
+            },
+
+            toggleMute() {
+                const audio = this.$refs.audio;
+                if (this.isMuted || this.volume === 0) {
+                    audio.muted = false;
+                    this.isMuted = false;
+                    if (this.volume === 0) this.setVolume(this._lastVolume);
+                } else {
+                    audio.muted = true;
+                    this.isMuted = true;
+                }
+            },
+
+            startVolumeScrub(event) {
+                this.volumeScrubTo(event);
+
+                // Listen for drag and release
+                const moveHandler = (e) => this.volumeScrubTo(e);
+                const upHandler = () => {
+                    window.removeEventListener("mousemove", moveHandler);
+                    window.removeEventListener("mouseup", upHandler);
+                    window.removeEventListener("touchmove", moveHandler);
+                    window.removeEventListener("touchend", upHandler);
+                };
+
+                window.addEventListener("mousemove", moveHandler);
+                window.addEventListener("mouseup", upHandler);
+                window.addEventListener("touchmove", moveHandler);
+                window.addEventListener("touchend", upHandler);
+            },
+
+            volumeScrubTo(event) {
+                const rect = this.$refs.volumeBar.getBoundingClientRect();
+                const clientX = event.touches?.[0]?.clientX ?? event.clientX;
+                this.setVolume((clientX - rect.left) / rect.width);
             },
 
             formatTime(seconds) {
