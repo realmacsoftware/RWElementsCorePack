@@ -48,6 +48,16 @@ const transformHook = (rw) => {
         nowPlayingProgressBarBgColor,
         nowPlayingProgressBarForegroundColor,
         nowPlayingProgressBarSize,
+        initialVolume,
+        volumeBarBgColor,
+        volumeBarFgColor,
+        volumeBarSize,
+        volumeBarWidth,
+        iconVolumeColor,
+        iconVolumeColorHover,
+        iconVolumeSize,
+        iconVolume,
+        iconMuted,
     } = rw.props;
 
     const { mode } = rw.project;
@@ -119,6 +129,27 @@ const transformHook = (rw) => {
                     "absolute top-0 aspect-square rounded-full transition duration-[0ms]",
                 ]).toString(),
             },
+            volume: {
+                wrapper: classnames([
+                    "flex items-center justify-center gap-2 w-full",
+                ]).toString(),
+                muteButton: classnames([
+                    iconVolumeColor,
+                    iconVolumeColorHover,
+                    iconVolumeSize,
+                    "focus:outline-none transition [&_svg]:size-full",
+                ]).toString(),
+                bar: classnames([
+                    volumeBarSize,
+                    volumeBarWidth,
+                    volumeBarBgColor,
+                    "relative overflow-hidden rounded-full cursor-pointer select-none",
+                ]).toString(),
+                fill: classnames([
+                    "absolute top-0 left-0 h-full rounded-full",
+                    volumeBarFgColor,
+                ]).toString(),
+            },
         },
         list: classnames([
             `flex flex-col overflow-y-auto`,
@@ -181,6 +212,9 @@ const transformHook = (rw) => {
         firstTrack,
         classes,
         hasMultipleTracks,
+        initialVolume: Math.min(100, Math.max(0, parseFloat(initialVolume ?? 100) || 0)),
+        iconVolume: iconVolume || `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"></path></svg>`,
+        iconMuted: iconMuted || `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"></path></svg>`,
         iconPlay: iconPlay || `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"></path></svg>`,
         iconPause: iconPause || `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M8 19c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2s-2 .9-2 2v10c0 1.1.9 2 2 2zm6-12v10c0 1.1.9 2 2 2s2-.9 2-2V7c0-1.1-.9-2-2-2s-2 .9-2 2z"></path></svg>`,
         iconNext: iconNext || `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.58 16.89l5.77-4.07c.56-.4.56-1.24 0-1.63L7.58 7.11C6.91 6.65 6 7.12 6 7.93v8.14c0 .81.91 1.28 1.58.82zM16 7v10c0 .55.45 1 1 1s1-.45 1-1V7c0-.55-.45-1-1-1s-1 .45-1 1z"></path></svg>`,
