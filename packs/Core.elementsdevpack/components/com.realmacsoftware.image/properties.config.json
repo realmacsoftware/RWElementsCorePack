@@ -243,6 +243,7 @@
                     "visible": "wantsLightbox == true",
                     "title": "Blur",
                     "id": "imageLightbox{{value}}",
+                    "ai": { "name": "lightboxBlur", "description": "Lightbox backdrop blur, in pixels." },
                     "globalControl": "BackdropBlur"
                 }
             ]
