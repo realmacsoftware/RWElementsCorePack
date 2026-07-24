@@ -26,6 +26,7 @@
                 {
                     "title": "Use",
                     "id": "wantedPages",
+                    "ai": { "name": "pagesSource", "description": "Which pages populate the tree: all, children of the active page, or children of sourcePage (manual)." },
                     "responsive": false,
                     "select": {
                         "default": "all",
@@ -40,6 +41,7 @@
                     "visible": "wantedPages == 'manual'",
                     "title": "Page",
                     "id": "wantedPagesPageLink",
+                    "ai": { "name": "sourcePage", "description": "Page whose child pages populate the tree. Page link only; applies when the pages source is 'manual'." },
                     "link": {}
                 },
                 {

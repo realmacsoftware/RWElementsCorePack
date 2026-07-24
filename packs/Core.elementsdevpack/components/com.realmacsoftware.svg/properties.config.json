@@ -187,7 +187,12 @@
       "properties": [
         {
           "globalControl": "ControlType",
-          "id": "{{value}}SVGStroke"
+          "id": "{{value}}SVGStroke",
+          "ai": {
+            "name": "stroke",
+            "description": "Enable/disable SVG stroke color control.",
+            "values": ["none", "static", "hover"]
+          }
         },
         {
           "visible": "globalControlTypeSVGStroke == 'hover'",

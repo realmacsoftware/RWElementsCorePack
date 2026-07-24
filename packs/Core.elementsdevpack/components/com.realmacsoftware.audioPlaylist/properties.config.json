@@ -84,6 +84,7 @@
                 {
                     "title": "Shadow",
                     "id": "nowPlayingArtworkShadow",
+                    "ai": { "name": "nowPlayingArtworkShadow", "description": "Now Playing artwork shadow theme token." },
                     "themeShadow": {
                         "default": {
                             "base": {
@@ -283,6 +284,7 @@
                 {
                     "title": "Shadow",
                     "id": "trackListArtworkShadow",
+                    "ai": { "name": "trackListArtworkShadow", "description": "Track list artwork shadow theme token." },
                     "themeShadow": {
                         "default": {
                             "base": {
