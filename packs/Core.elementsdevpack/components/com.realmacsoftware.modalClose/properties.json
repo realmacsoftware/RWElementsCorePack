@@ -1,1 +1,53 @@
-{"groups":[{"title":"Cursor","icon":"rectangle.and.hand.point.up.left.filled","properties":[{"title":"Cursor","id":"closeCursor","format":"cursor-{{value}}","select":{"default":"default","items":[{"title":"Default","value":"default"},{"title":"Pointer","value":"pointer"},{"title":"Zoom Out","value":"zoom-out"}]}}]},{"title":"Advanced","icon":"gearshape","properties":[{"title":"Classes","id":"cssClasses","textArea":{"default":""}},{"title":"ID","id":"globalID","responsive":false,"text":{"default":""}}]}]}
+{
+  "groups": [
+    {
+      "title": "Cursor",
+      "icon": "rectangle.and.hand.point.up.left.filled",
+      "properties": [
+        {
+          "title": "Cursor",
+          "id": "closeCursor",
+          "format": "cursor-{{value}}",
+          "select": {
+            "default": "default",
+            "items": [
+              {
+                "title": "Default",
+                "value": "default"
+              },
+              {
+                "title": "Pointer",
+                "value": "pointer"
+              },
+              {
+                "title": "Zoom Out",
+                "value": "zoom-out"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "Advanced",
+      "icon": "gearshape",
+      "properties": [
+        {
+          "title": "Classes",
+          "id": "cssClasses",
+          "textArea": {
+            "default": ""
+          }
+        },
+        {
+          "title": "ID",
+          "id": "globalID",
+          "responsive": false,
+          "text": {
+            "default": ""
+          }
+        }
+      ]
+    }
+  ]
+}

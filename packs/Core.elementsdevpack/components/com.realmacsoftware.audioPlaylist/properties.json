@@ -1,1 +1,4031 @@
-{"groups":[{"title":"Tracks","icon":"music.note","properties":[{"title":"Tracks","id":"tracks","collection":{"identifier":"com.realmacsoftware.audioPlaylist.collections.tracks"}}]},{"title":"Now Playing","icon":"play.square.stack.fill","properties":[{"title":"Layout","id":"nowPlayingLayout","responsive":false,"segmented":{"default":"flex-col text-center","items":[{"title":"Vertical","value":"flex-col text-center"},{"title":"Horizontal","value":"flex-row text-left"}]}},{"title":"Gap","id":"nowPlayingGap","format":"gap-{{value}}","themeSpacing":{"mode":"single","default":{"base":"5"}}},{"title":"Padding","id":"nowPlayingPadding","themeSpacing":{"mode":"padding","default":{"base":{"top":"5","right":"5","bottom":"5","left":"5"}}}},{"divider":{}},{"title":"Artwork","heading":{}},{"title":"Size","id":"nowPlayingArtworkSize","format":"size-{{value}}","themeSpacing":{"mode":"single","default":{"base":{"value":"48"}}}},{"title":"Shadow","id":"nowPlayingArtworkShadow","ai":{"name":"nowPlayingArtworkShadow","description":"Now Playing artwork shadow theme token."},"themeShadow":{"default":{"base":{"name":"none"}}}},{"title":"Radius","id":"nowPlayingArtworkBorderRadius","themeBorderRadius":{"default":{"base":{"topLeft":"Default","topRight":"Default","bottomLeft":"Default","bottomRight":"Default"}}}},{"divider":{}},{"title":"Title","heading":{}},{"title":"Color","id":"nowPlayingTitleTextColor","format":"text-{{value}}","themeColor":{"default":{"name":"text","brightness":600}}},{"title":"Size","id":"nowPlayingTitleFontSize","themeTextStyle":{"default":{"base":"lg"}}},{"title":"Artist","heading":{}},{"title":"Color","id":"nowPlayingArtistTextColor","format":"text-{{value}}","themeColor":{"default":{"name":"text","brightness":600}}},{"title":"Size","id":"nowPlayingArtistFontSize","themeTextStyle":{"default":{"base":"sm"}}}]},{"title":"Progress Bar","icon":"timer.circle.fill","properties":[{"title":"Progress Bar","heading":{}},{"title":"Background","id":"nowPlayingProgressBarBgColor","format":"bg-{{value}}","themeColor":{"default":{"name":"surface","brightness":100}}},{"title":"Foreground","id":"nowPlayingProgressBarForegroundColor","format":"bg-{{value}}","themeColor":{"default":{"name":"surface","brightness":300}}},{"title":"Size","id":"nowPlayingProgressBarSize","format":"h-{{value}}","themeSpacing":{"mode":"single","default":{"base":{"value":"1.5"}}}}]},{"title":"Track List","icon":"list.bullet","properties":[{"title":"Max Height","id":"trackListMaxHeight","format":"max-h-{{value}}","themeSpacing":{"mode":"single","default":{"base":{"value":"72"}}}},{"title":"Padding","id":"trackListPadding","themeSpacing":{"mode":"padding","default":{"base":{"value":"0"}}}},{"title":"Gap","id":"trackListGap","format":"gap-{{value}}","themeSpacing":{"mode":"single","default":{"base":{"value":"2"}}}},{"title":"Radius","id":"trackItemBorderRadius","themeBorderRadius":{"default":{"base":{"topLeft":"Default","topRight":"Default","bottomLeft":"Default","bottomRight":"Default"}}}},{"divider":{}},{"title":"Artwork","heading":{}},{"title":"Size","id":"trackListArtworkSize","format":"size-{{value}}","themeSpacing":{"mode":"single","default":{"base":{"value":"12"}}}},{"title":"Shadow","id":"trackListArtworkShadow","ai":{"name":"trackListArtworkShadow","description":"Track list artwork shadow theme token."},"themeShadow":{"default":{"base":{"name":"none"}}}},{"title":"Radius","id":"trackListArtworkBorderRadius","themeBorderRadius":{"default":{"base":{"topLeft":"Default","topRight":"Default","bottomLeft":"Default","bottomRight":"Default"}}}},{"divider":{}},{"title":"Dividers","heading":{}},{"title":"Dividers","id":"trackDividersColor","format":"divide-{{value}}","themeColor":{"default":{"name":"surface","brightness":800}}},{"title":"Thickness","id":"trackDividersThickness","format":"divide-y-[{{value}}px]","slider":{"default":0,"min":0,"max":10,"round":true,"snap":true,"units":"px"}},{"divider":{}},{"title":"Text Size","heading":{}},{"title":"Title","id":"trackListTitleFontSize","themeTextStyle":{"default":{"base":{"name":"lg"}}}},{"title":"Artist","id":"trackListArtistFontSize","themeTextStyle":{"default":{"base":{"name":"base"}}}},{"divider":{}},{"title":"Colors","heading":{}},{"title":"State","id":"trackState","segmented":{"default":"normal","items":[{"title":"Normal","value":"normal"},{"title":"Hover","value":"hover"}]}},{"visible":"trackState == 'normal'","title":"Background","id":"trackBg","format":"bg-{{value}}/(--track-bg-opacity)","themeColor":{"default":{"name":"white","brightness":50}}},{"visible":"trackState == 'normal'","title":"Opacity","id":"trackBgOpacity","format":"[--track-bg-opacity:{{value}}%]","slider":{"default":"100","min":0,"max":100,"round":true,"snap":true,"units":"%"}},{"visible":"trackState == 'normal'","title":"Title","id":"trackTitleTextColor","format":"text-{{value}}","themeColor":{"default":{"name":"text","brightness":600}}},{"visible":"trackState == 'normal'","title":"Artist","id":"trackArtistTextColor","format":"text-{{value}}","themeColor":{"default":{"name":"text","brightness":600}}},{"visible":"trackState == 'hover'","title":"Background","id":"trackBgHover","format":"hover:bg-{{value}}/(--track-bg-opacity)","themeColor":{"default":{"name":"white","brightness":50}}},{"visible":"trackState == 'hover'","title":"Opacity","id":"trackBgOpacityHover","format":"hover:[--track-bg-opacity:{{value}}%]","slider":{"default":"100","min":0,"max":100,"round":true,"snap":true,"units":"%"}},{"visible":"trackState == 'hover'","title":"Title","id":"trackTitleTextColorHover","format":"group-hover/track:text-{{value}}","themeColor":{"default":{"name":"text","brightness":600}}},{"visible":"trackState == 'hover'","title":"Artist","id":"trackArtistTextColorHover","format":"group-hover/track:text-{{value}}","themeColor":{"default":{"name":"text","brightness":600}}}]},{"title":"Icons","icon":"playpause.fill","properties":[{"title":"Spacing","id":"iconSpacing","format":"gap-{{value}}","themeSpacing":{"mode":"single","default":{"base":{"value":"6"}}}},{"divider":{}},{"title":"Play and Pause","heading":{}},{"title":"Color","id":"iconPlayPauseColor","format":"text-{{value}}","themeColor":{"default":{"name":"surface","brightness":500}}},{"title":"Hover","id":"iconPlayPauseColorHover","format":"hover:text-{{value}}","themeColor":{"default":{"name":"surface","brightness":600}}},{"title":"Size","id":"iconPlayPauseSize","format":"size-{{value}}","themeSpacing":{"mode":"single","default":{"base":{"value":"12"}}}},{"title":"Play","property":"iconPlay","resource":{}},{"title":"Pause","property":"iconPause","resource":{}},{"divider":{}},{"title":"Next and Previous","heading":{}},{"title":"Enable","property":"enableNextAndPrevious","responsive":false,"switch":{"default":true}},{"enable":"enableNextAndPrevious == true","title":"Color","id":"iconNextPrevColor","format":"text-{{value}}","themeColor":{"default":{"name":"surface","brightness":500}}},{"enable":"enableNextAndPrevious == true","title":"Hover","id":"iconNextPrevColorHover","format":"hover:text-{{value}}","themeColor":{"default":{"name":"surface","brightness":600}}},{"enable":"enableNextAndPrevious == true","title":"Size","id":"iconNextPrevSize","format":"size-{{value}}","themeSpacing":{"mode":"single","default":{"base":{"value":"6"}}}},{"enable":"enableNextAndPrevious == true","title":"Next","property":"iconNext","resource":{}},{"enable":"enableNextAndPrevious == true","title":"Previous","property":"iconPrevious","resource":{}},{"divider":{}},{"title":"Skip Back and Forward","heading":{}},{"title":"Enable","property":"enableSkipBackAndForward","responsive":false,"switch":{"default":false}},{"enable":"enableSkipBackAndForward == true","title":"Color","id":"iconSkipColor","format":"text-{{value}}","themeColor":{"default":{"name":"surface","brightness":500}}},{"enable":"enableSkipBackAndForward == true","title":"Hover","id":"iconSkipColorHover","format":"hover:text-{{value}}","themeColor":{"default":{"name":"surface","brightness":600}}},{"enable":"enableSkipBackAndForward == true","title":"Size","id":"iconSkipSize","format":"size-{{value}}","themeSpacing":{"mode":"single","default":{"base":{"value":"6"}}}},{"enable":"enableSkipBackAndForward == true","title":"Skip Back","property":"iconSkipBack","resource":{}},{"enable":"enableSkipBackAndForward == true","title":"Skip Forward","property":"iconSkipForward","resource":{}}]},{"title":"Volume","icon":"speaker.wave.2.fill","properties":[{"title":"Initial Volume","property":"initialVolume","responsive":false,"slider":{"default":100,"min":0,"max":100,"round":true,"snap":true,"units":"%"}},{"divider":{}},{"title":"Visitor Controls","heading":{}},{"title":"Enable","property":"enableVolumeControls","responsive":false,"switch":{"default":false}},{"enable":"enableVolumeControls == true","title":"Background","id":"volumeBarBgColor","format":"bg-{{value}}","themeColor":{"default":{"name":"surface","brightness":100}}},{"enable":"enableVolumeControls == true","title":"Foreground","id":"volumeBarFgColor","format":"bg-{{value}}","themeColor":{"default":{"name":"surface","brightness":300}}},{"enable":"enableVolumeControls == true","title":"Size","id":"volumeBarSize","format":"h-{{value}}","themeSpacing":{"mode":"single","default":{"base":{"value":"1.5"}}}},{"enable":"enableVolumeControls == true","title":"Width","id":"volumeBarWidth","format":"w-{{value}}","themeSpacing":{"mode":"single","default":{"base":{"value":"24"}}}},{"divider":{}},{"title":"Mute Button","heading":{}},{"enable":"enableVolumeControls == true","title":"Color","id":"iconVolumeColor","format":"text-{{value}}","themeColor":{"default":{"name":"surface","brightness":500}}},{"enable":"enableVolumeControls == true","title":"Hover","id":"iconVolumeColorHover","format":"hover:text-{{value}}","themeColor":{"default":{"name":"surface","brightness":600}}},{"enable":"enableVolumeControls == true","title":"Size","id":"iconVolumeSize","format":"size-{{value}}","themeSpacing":{"mode":"single","default":{"base":{"value":"5"}}}},{"enable":"enableVolumeControls == true","title":"Volume","property":"iconVolume","resource":{}},{"enable":"enableVolumeControls == true","title":"Muted","property":"iconMuted","resource":{}}]},{"title":"Layout","icon":"square.split.bottomrightquarter","properties":[{"title":"General","heading":{}},{"title":"Position","id":"globalLayoutPosition","ai":{"name":"position","description":"CSS position: '' (none), static, relative, absolute, fixed, or sticky."},"select":{"default":"","items":[{"title":"None","value":""},{"title":"Static","value":"static"},{"title":"Relative","value":"relative"},{"title":"Absolute","value":"absolute"},{"title":"Fixed","value":"fixed"},{"title":"Sticky","value":"sticky"}]}},{"title":"Z-Index","id":"globalLayoutZIndexType","ai":{"name":"zIndexType","description":"Z-index mode: '' (none), z-auto, or custom (use zIndex)."},"responsive":false,"segmented":{"default":"","items":[{"title":"None","value":""},{"title":"Auto","value":"z-auto"},{"title":"Custom","value":"custom"}]}},{"visible":"globalLayoutZIndexType == 'custom'","title":"","id":"globalLayoutZIndex","ai":{"name":"zIndex","description":"Custom z-index value, can be positive or negative.","visible":"zIndexType == 'custom'"},"format":"z-[{{value}}]","number":{"default":0,"subtitle":"Can be positive or negative."}},{"title":"Top / Right / Bottom / Left","heading":{}},{"title":"Type","id":"globalLayoutTopRightBottomLeftType","ai":{"name":"insetType","description":"Top/right/bottom/left mode: none, uniform (use inset), or individual (use top/right/bottom/left)."},"segmented":{"default":"none","items":[{"title":"None","value":"none"},{"title":"Uniform","value":"uniform"},{"title":"Individual","value":"individual"}]}},{"title":"Inset","id":"globalLayoutInset","ai":{"name":"inset","description":"Uniform top/right/bottom/left inset theme spacing value.","visible":"insetType == 'uniform'"},"format":"inset-{{value}}","themeSpacing":{"mode":"single","default":{"base":"0"}},"visible":"globalLayoutTopRightBottomLeftType == 'uniform'"},{"visible":"globalLayoutTopRightBottomLeftType == 'individual'","title":"Top","id":"globalLayoutTop","ai":{"name":"top","description":"Top inset theme spacing value.","visible":"insetType == 'individual'"},"format":"top-{{value}}","themeSpacing":{"mode":"single","default":{"base":{"value":0}}}},{"visible":"globalLayoutTopRightBottomLeftType == 'individual'","title":"Right","id":"globalLayoutRight","ai":{"name":"right","description":"Right inset theme spacing value.","visible":"insetType == 'individual'"},"format":"right-{{value}}","themeSpacing":{"mode":"single","default":{"base":{"value":0}}}},{"visible":"globalLayoutTopRightBottomLeftType == 'individual'","title":"Bottom","id":"globalLayoutBottom","ai":{"name":"bottom","description":"Bottom inset theme spacing value.","visible":"insetType == 'individual'"},"format":"bottom-{{value}}","themeSpacing":{"mode":"single","default":{"base":{"value":0}}}},{"visible":"globalLayoutTopRightBottomLeftType == 'individual'","title":"Left","id":"globalLayoutLeft","ai":{"name":"left","description":"Left inset theme spacing value.","visible":"insetType == 'individual'"},"format":"left-{{value}}","themeSpacing":{"mode":"single","default":{"base":{"value":0}}}},{"heading":{},"title":"Display"},{"title":"Hidden","id":"globalLayoutHidden","ai":{"name":"hidden","description":"Whether the element is hidden."},"switch":{"default":false}},{"title":"Visibility","id":"globalLayoutVisibility","ai":{"name":"visibility","description":"CSS visibility: '' (auto), visible, or invisible."},"select":{"default":"","items":[{"title":"Auto","value":""},{"title":"Visible","value":"visible"},{"title":"Invisible","value":"invisible"}]}},{"heading":{},"title":"Advanced"},{"title":"Overflow","id":"globalLayoutOverflow","ai":{"name":"overflow","description":"CSS overflow: '' (none), overflow-visible, overflow-hidden, overflow-scroll, or overflow-auto."},"select":{"default":"","items":[{"title":"None","value":""},{"title":"Visible","value":"overflow-visible"},{"title":"Hidden","value":"overflow-hidden"},{"title":"Scroll","value":"overflow-scroll"},{"title":"Auto","value":"overflow-auto"}]}},{"title":"Isolation","id":"globalLayoutIsolation","ai":{"name":"isolation","description":"CSS isolation: '' (none), isolate, or isolate-auto."},"segmented":{"default":"","items":[{"title":"None","value":""},{"title":"Isolate","value":"isolate"},{"title":"Auto","value":"isolate-auto"}]}}]},{"title":"Sizing","icon":"arrow.down.backward.and.arrow.up.forward.square","properties":[{"title":"Size","heading":{}},{"title":"Width","id":"globalWidth","ai":{"name":"widthSize","description":"Width theme-size token."},"format":"w-{{value}}","themeSpacing":{"mode":"single","default":{"base":{"custom":false,"value":"auto"}}}},{"title":"Height","id":"globalHeight","ai":{"name":"heightSize","description":"Height theme-size token."},"format":"h-{{value}}","themeSpacing":{"mode":"single","default":{"base":{"custom":false,"value":"auto"}}}},{"divider":{}},{"title":"Min & Max Settings","heading":{}},{"information":{},"title":"Enable this to set both min and max height and width settings."},{"title":"Enable","id":"globalSizingMinMaxEnabled","ai":{"name":"minMaxEnabled","description":"Enable explicit min/max width and height constraints."},"switch":{"default":false}},{"visible":"globalSizingMinMaxEnabled == true","title":"Width","heading":{}},{"title":"Min","id":"globalMinWidth","ai":{"name":"minWidth","description":"Minimum width theme-size token."},"format":"min-w-{{value}}","themeSpacing":{"mode":"single","default":{"base":{"custom":false,"value":"0"}}},"visible":"globalSizingMinMaxEnabled == true"},{"title":"Max","id":"globalMaxWidth","ai":{"name":"maxWidth","description":"Maximum width theme-size token."},"format":"max-w-{{value}}","themeSpacing":{"mode":"single","default":{"base":{"custom":false,"value":"auto"}}},"visible":"globalSizingMinMaxEnabled == true"},{"visible":"globalSizingMinMaxEnabled == true","divider":{}},{"visible":"globalSizingMinMaxEnabled == true","title":"Height","heading":{}},{"title":"Min","id":"globalMinHeight","ai":{"name":"minHeight","description":"Minimum height theme-size token."},"format":"min-h-{{value}}","themeSpacing":{"mode":"single","default":{"base":{"custom":false,"value":"0"}}},"visible":"globalSizingMinMaxEnabled == true"},{"title":"Max","id":"globalMaxHeight","ai":{"name":"maxHeight","description":"Maximum height theme-size token."},"format":"max-h-{{value}}","themeSpacing":{"mode":"single","default":{"base":{"custom":false,"value":"auto"}}},"visible":"globalSizingMinMaxEnabled == true"}]},{"title":"Spacing","icon":"squareshape.squareshape.dotted","properties":[{"title":"Margin & Padding","heading":{}},{"title":"Enable","id":"globalSpacingEnabled","ai":{"name":"spacingEnabled","description":"Enable custom margin and padding for this element."},"switch":{"default":false}},{"title":"Margin","id":"globalMargin","ai":{"name":"margin","description":"Margin (outer spacing) — theme spacing token per side."},"themeSpacing":{"mode":"margin","default":{"base":{"top":"0","right":"0","bottom":"0","left":"0"}}},"visible":"globalSpacingEnabled == true"},{"title":"Padding","id":"globalPadding","ai":{"name":"padding","description":"Padding (inner spacing) — theme spacing token per side."},"themeSpacing":{"mode":"padding","default":{"base":{"top":"0","right":"0","bottom":"0","left":"0"}}},"visible":"globalSpacingEnabled == true"}]},{"title":"Transitions","icon":"circle.dotted.and.circle","properties":[{"title":"Apply to","id":"globalTransitionsProperty","ai":{"name":"transitionProperty","description":"CSS properties to transition: none, all, default (most common), colors, opacity, shadow, or transform."},"format":"transition-{{value}}","select":{"default":"all","items":[{"title":"None","value":"none"},{"title":"All","value":"all"},{"title":"Most Common","value":"default"},{"title":"Colors","value":"colors"},{"title":"Opacity","value":"opacity"},{"title":"Shadows","value":"shadow"},{"title":"Transforms","value":"transform"}]}},{"visible":"globalTransitionsProperty != 'none'","title":"Function","id":"globalTransitionsTimingFunction","ai":{"name":"timingFunction","description":"Transition timing function: custom (use timingFunctionCustom), linear, ease-in, ease-out, or ease-in-out."},"select":{"default":"ease-in-out","items":[{"title":"Custom","value":"custom"},{"title":"Linear","value":"linear"},{"title":"Ease-in","value":"ease-in"},{"title":"Ease-out","value":"ease-out"},{"title":"Ease-in-out","value":"ease-in-out"}]}},{"visible":"globalTransitionsTimingFunction == 'custom'","title":"Cubic Bezier","id":"globalTransitionsTimingFunctionCustom","ai":{"name":"timingFunctionCustom","description":"Custom cubic-bezier value as 'x1,y1,x2,y2'.","visible":"timingFunction == 'custom'"},"format":"ease-[cubic-bezier({{value}})]","input":{"default":"0.95,0.05,0.795,0.035","subtitle":"x1, y1, x2, y2"}},{"heading":{},"title":"Timing"},{"visible":"globalTransitionsProperty != 'none'","title":"Duration","id":"globalTransitionsDuration","ai":{"name":"transitionDuration","description":"Transition duration in milliseconds.","visible":"transitionProperty != 'none'"},"format":"duration-[{{value}}ms]","number":{"default":300}},{"visible":"globalTransitionsProperty != 'none'","title":"Delay","id":"globalTransitionsDelay","ai":{"name":"transitionDelay","description":"Transition delay in milliseconds.","visible":"transitionProperty != 'none'"},"format":"delay-[{{value}}ms]","number":{"default":0}}]},{"title":"Effects","icon":"dial.medium","properties":[{"title":"Type","id":"globalControlTypeEffects","ai":{"name":"effects","description":"Enable/disable effects.","values":["none","static","hover"]},"responsive":false,"segmented":{"default":"none","items":[{"title":"None","value":"none"},{"title":"Static","value":"static"},{"title":"Hover","value":"hover"}]}},{"title":"Over","id":"globalHoverGroupEffects","responsive":false,"select":{"default":"self","items":[{"title":"Self","value":"self"},{"title":"Parent","value":"parent"},{"title":"Container","value":"container"},{"title":"Grid","value":"grid"},{"title":"Flex","value":"flex"},{"title":"Custom ID","value":"custom"}]},"visible":"globalControlTypeEffects == 'hover'"},{"visible":"globalControlTypeEffects == 'hover' && globalHoverGroupEffects == 'custom'","title":"ID","id":"globalHoverGroupCustomIdEffects","text":{"default":""}},{"visible":"globalHoverGroupEffects == 'custom'","title":"The ID of the parent element to trigger the effects.","information":{}},{"visible":"globalControlTypeEffects != 'none' && globalControlTypeEffects != 'static'","title":"State","id":"globalEffectsState","responsive":false,"segmented":{"default":"start","items":[{"title":"Start","value":"start"},{"title":"End","value":"end"}]}},{"visible":"globalControlTypeEffects != 'none'","divider":{}},{"visible":"globalControlTypeEffects != 'none'","title":"Box Shadow","heading":{}},{"title":"Size","id":"globalBoxShadow","ai":{"name":"boxShadow","description":"Box shadow size, a theme shadow token. Pair with boxShadowColor and boxShadowOpacity.","visible":"effects == 'static'"},"responsive":false,"themeShadow":{"default":{"base":{"name":"Default"}}},"visible":"globalControlTypeEffects == 'static' || (globalControlTypeEffects == 'hover' && globalEffectsState == 'start')"},{"title":"Color","id":"globalBoxShadowColor","ai":{"name":"boxShadowColor","description":"Box shadow theme color.","visible":"effects == 'static'"},"format":"shadow-{{value}}/(--box-shadow-opacity)","themeColor":{"default":{"name":"none","brightness":500}},"visible":"globalControlTypeEffects == 'static' || (globalControlTypeEffects == 'hover' && globalEffectsState == 'start')"},{"title":"Opacity","id":"globalBoxShadowOpacity","ai":{"name":"boxShadowOpacity","description":"Box shadow opacity, 0-100.","visible":"effects == 'static'"},"format":"[--box-shadow-opacity:{{value}}%]","responsive":false,"slider":{"default":100,"min":0,"max":100,"round":true,"snap":true,"units":"%"},"visible":"globalControlTypeEffects == 'static' || (globalControlTypeEffects == 'hover' && globalEffectsState == 'start')"},{"title":"Size","id":"globalBoxShadowEnd","ai":{"name":"boxShadowHover","description":"Box shadow size, a theme shadow token. Pair with boxShadowColor and boxShadowOpacity.","visible":"effects == 'hover'"},"responsive":false,"themeShadow":{"default":{"base":{"name":"Default"}}},"visible":"(globalControlTypeEffects == 'hover' && globalEffectsState == 'end')"},{"title":"Color","id":"globalBoxShadowColorEnd","ai":{"name":"boxShadowColorHover","description":"Box shadow theme color.","visible":"effects == 'hover'"},"format":"hover:shadow-{{value}}/(--box-shadow-opacity)","themeColor":{"default":{"name":"none","brightness":500}},"visible":"(globalControlTypeEffects == 'hover' && globalEffectsState == 'end')"},{"title":"Opacity","id":"globalBoxShadowOpacityEnd","ai":{"name":"boxShadowOpacityHover","description":"Box shadow opacity, 0-100.","visible":"effects == 'hover'"},"format":"hover:[--box-shadow-opacity:{{value}}%]","responsive":false,"slider":{"default":100,"min":0,"max":100,"round":true,"snap":true,"units":"%"},"visible":"(globalControlTypeEffects == 'hover' && globalEffectsState == 'end')"},{"visible":"globalControlTypeEffects != 'none'","divider":{}},{"title":"Opacity","id":"globalOpacity","ai":{"name":"opacity","description":"Element opacity, 0-100.","visible":"effects == 'static'"},"format":"opacity-[{{value}}%]","slider":{"default":100,"min":0,"max":100,"round":true,"snap":true,"units":"%"},"visible":"globalControlTypeEffects == 'static' || (globalControlTypeEffects == 'hover' && globalEffectsState == 'start')"},{"title":"Opacity","id":"globalOpacityEnd","ai":{"name":"opacityHover","description":"Element opacity, 0-100.","visible":"effects == 'hover'"},"format":"hover:opacity-[{{value}}%]","slider":{"default":100,"min":0,"max":100,"round":true,"snap":true,"units":"%"},"visible":"(globalControlTypeEffects == 'hover' && globalEffectsState == 'end')"}]},{"title":"Filters","icon":"camera.filters","properties":[{"title":"Type","id":"globalControlTypeFilters","ai":{"name":"filters","description":"Enable/disable filters.","values":["none","static","hover"]},"responsive":false,"segmented":{"default":"none","items":[{"title":"None","value":"none"},{"title":"Static","value":"static"},{"title":"Hover","value":"hover"}]}},{"title":"Over","id":"globalHoverGroupFilters","responsive":false,"select":{"default":"self","items":[{"title":"Self","value":"self"},{"title":"Parent","value":"parent"},{"title":"Container","value":"container"},{"title":"Grid","value":"grid"},{"title":"Flex","value":"flex"},{"title":"Custom ID","value":"custom"}]},"visible":"globalControlTypeFilters == 'hover'"},{"visible":"globalControlTypeFilters == 'hover' && globalHoverGroupFilters == 'custom'","title":"ID","id":"globalHoverGroupCustomIdFilters","text":{"default":""}},{"visible":"globalHoverGroupFilters == 'custom'","title":"The ID of the parent element to trigger the filters.","information":{}},{"visible":"globalControlTypeFilters != 'none' && globalControlTypeFilters != 'static'","title":"State","id":"globalFiltersState","responsive":false,"segmented":{"default":"start","items":[{"title":"Start","value":"start"},{"title":"End","value":"end"}]}},{"visible":"globalControlTypeFilters != 'none'","divider":{}},{"visible":"globalControlTypeFilters != 'none'","title":"Filters","heading":{}},{"title":"Blur","id":"globalFiltersBlur","ai":{"name":"blur","description":"Blur filter, in pixels.","visible":"filters == 'static'"},"format":"blur-[{{value}}px]","number":{"default":0,"subtitle":"In pixels"},"visible":"globalControlTypeFilters == 'static' || (globalControlTypeFilters == 'hover' && globalFiltersState == 'start')"},{"title":"Brightness","id":"globalFiltersBrightness","ai":{"name":"brightness","description":"Brightness filter, in percent.","visible":"filters == 'static'"},"format":"brightness-[{{value}}%]","number":{"default":100,"subtitle":"In percent"},"visible":"globalControlTypeFilters == 'static' || (globalControlTypeFilters == 'hover' && globalFiltersState == 'start')"},{"title":"Saturate","id":"globalFiltersSaturate","ai":{"name":"saturate","description":"Saturation filter, in percent.","visible":"filters == 'static'"},"format":"saturate-[{{value}}%]","number":{"default":100,"subtitle":"In percent"},"visible":"globalControlTypeFilters == 'static' || (globalControlTypeFilters == 'hover' && globalFiltersState == 'start')"},{"title":"Drop Shadow","id":"globalFiltersDropShadow","ai":{"name":"dropShadow","description":"Drop-shadow filter, a theme shadow token. Follows the rendered shape (respects transparency), unlike boxShadow.","visible":"filters == 'static'"},"themeShadow":{"mode":"drop","default":{"base":{"name":"none"}}},"visible":"globalControlTypeFilters == 'static' || (globalControlTypeFilters == 'hover' && globalFiltersState == 'start')"},{"title":"Blur","id":"globalFiltersBlurEnd","ai":{"name":"blurHover","description":"Blur filter, in pixels.","visible":"filters == 'hover'"},"format":"blur-[{{value}}px]","number":{"default":0,"subtitle":"In pixels"},"visible":"(globalControlTypeFilters == 'hover' && globalFiltersState == 'end')"},{"title":"Brightness","id":"globalFiltersBrightnessEnd","ai":{"name":"brightnessHover","description":"Brightness filter, in percent.","visible":"filters == 'hover'"},"format":"brightness-[{{value}}%]","number":{"default":100,"subtitle":"In percent"},"visible":"(globalControlTypeFilters == 'hover' && globalFiltersState == 'end')"},{"title":"Saturate","id":"globalFiltersSaturateEnd","ai":{"name":"saturateHover","description":"Saturation filter, in percent.","visible":"filters == 'hover'"},"format":"saturate-[{{value}}%]","number":{"default":100,"subtitle":"In percent"},"visible":"(globalControlTypeFilters == 'hover' && globalFiltersState == 'end')"},{"title":"Drop Shadow","id":"globalFiltersDropShadowEnd","ai":{"name":"dropShadowHover","description":"Drop-shadow filter, a theme shadow token. Follows the rendered shape (respects transparency), unlike boxShadow.","visible":"filters == 'hover'"},"themeShadow":{"mode":"drop","default":{"base":{"name":"none"}}},"visible":"(globalControlTypeFilters == 'hover' && globalFiltersState == 'end')"},{"visible":"globalControlTypeFilters != 'none'","title":"Backdrop Filters","heading":{}},{"title":"Blur","id":"globalFiltersBackdropBlur","ai":{"name":"backdropBlur","description":"Backdrop blur filter, in pixels.","visible":"filters == 'static'"},"format":"backdrop-blur-[{{value}}px]","number":{"default":0,"subtitle":"In pixels"},"visible":"globalControlTypeFilters == 'static' || (globalControlTypeFilters == 'hover' && globalFiltersState == 'start')"},{"title":"Blur","id":"globalFiltersBackdropBlurEnd","ai":{"name":"backdropBlurHover","description":"Backdrop blur filter, in pixels.","visible":"filters == 'hover'"},"format":"backdrop-blur-[{{value}}px]","number":{"default":0,"subtitle":"In pixels"},"visible":"(globalControlTypeFilters == 'hover' && globalFiltersState == 'end')"}]},{"title":"Transforms","icon":"skew","properties":[{"title":"Type","id":"globalControlTypeTransforms","ai":{"name":"transforms","description":"Enable/disable transforms.","values":["none","static","hover"]},"responsive":false,"segmented":{"default":"none","items":[{"title":"None","value":"none"},{"title":"Static","value":"static"},{"title":"Hover","value":"hover"}]}},{"title":"Over","id":"globalHoverGroupTransforms","responsive":false,"select":{"default":"self","items":[{"title":"Self","value":"self"},{"title":"Parent","value":"parent"},{"title":"Container","value":"container"},{"title":"Grid","value":"grid"},{"title":"Flex","value":"flex"},{"title":"Custom ID","value":"custom"}]},"ai":{"name":"transformsHoverTrigger","description":"Which element's hover triggers the transforms.","values":["self","parent","container","grid","flex","custom"],"visible":"transforms == 'hover'"},"visible":"globalControlTypeTransforms == 'hover'"},{"visible":"globalControlTypeTransforms == 'hover' && globalHoverGroupTransforms == 'custom'","ai":{"name":"transformsHoverTriggerId","description":"ID of the element that triggers the hover transforms (when trigger is 'custom').","visible":"transforms == 'hover' && transformsHoverTrigger == 'custom'"},"title":"ID","id":"globalHoverGroupCustomIdTransforms","text":{"default":""}},{"visible":"globalHoverGroupTransforms == 'custom'","title":"The ID of the parent element to trigger the transforms.","information":{}},{"visible":"globalControlTypeTransforms != 'none' && globalControlTypeTransforms != 'static'","ai":{"exclude":true},"title":"State","id":"globalTransformsState","responsive":false,"segmented":{"default":"start","items":[{"title":"Start","value":"start"},{"title":"End","value":"end"}]}},{"visible":"globalControlTypeTransforms != 'none'","divider":{}},{"title":"Origin","id":"globalTransformOrigin","format":"origin-{{value}}","select":{"default":"center","items":[{"value":"center","title":"Center"},{"value":"top","title":"Top"},{"value":"top-right","title":"Top Right"},{"value":"right","title":"Right"},{"value":"bottom-right","title":"Bottom Right"},{"value":"bottom","title":"Bottom"},{"value":"bottom-left","title":"Bottom Left"},{"value":"left","title":"Left"},{"value":"top-left","title":"Top Left"}]},"visible":"globalControlTypeTransforms != 'none'"},{"title":"Scale","id":"globalTransformScale","ai":{"name":"scale","description":"Scale, in percent (100 = no change).","visible":"transforms == 'static'"},"format":"scale-x-[{{value}}%] scale-y-[{{value}}%]","number":{"default":100,"subtitle":"%"},"visible":"globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"},{"title":"Rotate","id":"globalTransformRotate","ai":{"name":"rotate","description":"Rotation, in degrees.","visible":"transforms == 'static'"},"format":"rotate-[{{value}}deg]","number":{"default":0,"subtitle":"in degrees"},"visible":"globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"},{"title":"Translate","heading":{},"ai":{"visible":"transforms == 'static'"},"visible":"globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"},{"title":"Horizontal","id":"globalTransformTranslateX","ai":{"name":"translateX","description":"Horizontal offset. CSS length (e.g. 10px, 50%, 10vw).","visible":"transforms == 'static'"},"format":"translate-x-[{{value}}]","text":{"default":"0px","base":"0px"},"visible":"globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"},{"title":"Vertical","id":"globalTransformTranslateY","ai":{"name":"translateY","description":"Vertical offset. CSS length (e.g. 10px, 50%, 10vw).","visible":"transforms == 'static'"},"format":"translate-y-[{{value}}]","text":{"default":"0px","subtitle":"Use valid CSS values. 10px, 50%, 10vw."},"visible":"globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"},{"title":"Skew","heading":{},"ai":{"visible":"transforms == 'static'"},"visible":"globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"},{"title":"Horizontal","id":"globalTransformSkewX","ai":{"name":"skewX","description":"Horizontal skew, in degrees.","visible":"transforms == 'static'"},"format":"skew-x-[{{value}}deg]","number":{"default":0},"visible":"globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"},{"title":"Vertical","id":"globalTransformSkewY","ai":{"name":"skewY","description":"Vertical skew, in degrees.","visible":"transforms == 'static'"},"format":"skew-y-[{{value}}deg]","number":{"default":0,"subtitle":"in degrees"},"visible":"globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"},{"title":"Scale","id":"globalTransformScaleEnd","ai":{"name":"scaleHover","description":"Scale, in percent (100 = no change).","visible":"transforms == 'hover'"},"format":"scale-x-[{{value}}%] scale-y-[{{value}}%]","number":{"default":100,"subtitle":"%"},"visible":"(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"},{"title":"Rotate","id":"globalTransformRotateEnd","ai":{"name":"rotateHover","description":"Rotation, in degrees.","visible":"transforms == 'hover'"},"format":"rotate-[{{value}}deg]","number":{"default":0,"subtitle":"in degrees"},"visible":"(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"},{"title":"Translate","heading":{},"ai":{"exclude":true},"visible":"(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"},{"title":"Horizontal","id":"globalTransformTranslateXEnd","ai":{"name":"translateXHover","description":"Horizontal offset. CSS length (e.g. 10px, 50%, 10vw).","visible":"transforms == 'hover'"},"format":"translate-x-[{{value}}]","text":{"default":"0px","base":"0px"},"visible":"(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"},{"title":"Vertical","id":"globalTransformTranslateYEnd","ai":{"name":"translateYHover","description":"Vertical offset. CSS length (e.g. 10px, 50%, 10vw).","visible":"transforms == 'hover'"},"format":"translate-y-[{{value}}]","text":{"default":"0px","subtitle":"Use valid CSS values. 10px, 50%, 10vw."},"visible":"(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"},{"title":"Skew","heading":{},"ai":{"exclude":true},"visible":"(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"},{"title":"Horizontal","id":"globalTransformSkewXEnd","ai":{"name":"skewXHover","description":"Horizontal skew, in degrees.","visible":"transforms == 'hover'"},"format":"skew-x-[{{value}}deg]","number":{"default":0},"visible":"(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"},{"title":"Vertical","id":"globalTransformSkewYEnd","ai":{"name":"skewYHover","description":"Vertical skew, in degrees.","visible":"transforms == 'hover'"},"format":"skew-y-[{{value}}deg]","number":{"default":0,"subtitle":"in degrees"},"visible":"(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"}]},{"title":"Background","icon":"paintbrush.fill","properties":[{"title":"Type","id":"globalControlTypeBg","ai":{"name":"bg","description":"Enable/disable background.","values":["none","static","hover"]},"responsive":false,"segmented":{"default":"static","items":[{"title":"None","value":"none"},{"title":"Static","value":"static"},{"title":"Hover","value":"hover"}]}},{"visible":"globalControlTypeBg != 'none'","ai":{"name":"bgStyle","description":"Background style: color, image, or gradient."},"title":"Style","id":"globalBgType","responsive":false,"segmented":{"default":"color","items":[{"icon":"paintbrush","value":"color"},{"icon":"photo","value":"image"},{"icon":"swatchpalette","value":"gradient"}]}},{"visible":"globalControlTypeBg != 'none' && globalControlTypeBg != 'static'","ai":{"exclude":true},"title":"State","id":"globalBgState","responsive":false,"segmented":{"default":"start","items":[{"title":"Start","value":"start"},{"title":"End","value":"end"}]}},{"visible":"globalControlTypeBg != 'none'","divider":{}},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'color' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'color')","ai":{"name":"bgColor","description":"Background theme color.","visible":"bg == 'static' && bgStyle == 'color'"},"title":"Color","id":"globalBgColor","format":"bg-{{value}}/(--bgColorOpacity)","themeColor":{"default":{"name":"surface","brightness":50}}},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'color' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'color')","ai":{"name":"bgColorOpacity","description":"Background color opacity, 0-100.","visible":"bg == 'static' && bgStyle == 'color'"},"title":"Opacity","id":"globalBgColorOpacity","format":"[--bgColorOpacity:{{value}}%]","responsive":false,"slider":{"default":100,"min":0,"max":100,"round":true,"snap":true,"units":"%"}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'color')","ai":{"name":"bgColorHover","description":"Background hover-state theme color.","visible":"bg == 'hover' && bgStyle == 'color'"},"title":"Color","id":"globalBgColorEnd","format":"hover:bg-{{value}}/(--bgColorOpacityEnd)","themeColor":{"default":{"name":"surface","brightness":50}}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'color')","ai":{"name":"bgColorOpacityHover","description":"Background hover-state color opacity, 0-100.","visible":"bg == 'hover' && bgStyle == 'color'"},"title":"Opacity","id":"globalBgColorOpacityEnd","format":"hover:[--bgColorOpacityEnd:{{value}}%]","responsive":false,"slider":{"default":100,"min":0,"max":100,"round":true,"snap":true,"units":"%"}},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')","ai":{"name":"bgGradientType","description":"Gradient type: linear, radial, or conic.","values":["linear","radial","conic"],"visible":"bg == 'static' && bgStyle == 'gradient'"},"title":"Type","id":"globalBgGradientType","responsive":false,"segmented":{"default":"linear","items":[{"value":"linear","title":"Linear"},{"value":"radial","title":"Radial"},{"value":"conic","title":"Conic"}]}},{"visible":"((globalControlTypeBg == 'static' && globalBgType == 'gradient') || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')) && globalBgGradientType == 'linear'","ai":{"name":"bgGradientDirection","description":"Linear gradient direction.","visible":"bg == 'static' && bgStyle == 'gradient' && bgGradientType == 'linear'"},"title":"Direction","id":"globalBgGradientDirection","responsive":false,"select":{"default":"bg-linear-to-b","items":[{"value":"bg-linear-to-t","title":"To Top"},{"value":"bg-linear-to-tr","title":"To Top Right"},{"value":"bg-linear-to-r","title":"To Right"},{"value":"bg-linear-to-br","title":"To Bottom Right"},{"value":"bg-linear-to-b","title":"To Bottom"},{"value":"bg-linear-to-bl","title":"To Bottom Left"},{"value":"bg-linear-to-l","title":"To Left"},{"value":"bg-linear-to-tl","title":"To Top Left"},{"value":"bg-linear-45","title":"45 Degrees"},{"value":"bg-linear-90","title":"90 Degrees"},{"value":"bg-linear-135","title":"135 Degrees"},{"value":"bg-linear-180","title":"180 Degrees"}]}},{"visible":"((globalControlTypeBg == 'static' && globalBgType == 'gradient') || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')) && globalBgGradientType == 'radial'","ai":{"name":"bgGradientRadialPosition","description":"Radial gradient center position.","visible":"bg == 'static' && bgStyle == 'gradient' && bgGradientType == 'radial'"},"title":"Position","id":"globalBgGradientRadialPosition","responsive":false,"select":{"default":"bg-radial","items":[{"value":"bg-radial","title":"Center"},{"value":"bg-radial-[at_top]","title":"Top"},{"value":"bg-radial-[at_top_right]","title":"Top Right"},{"value":"bg-radial-[at_right]","title":"Right"},{"value":"bg-radial-[at_bottom_right]","title":"Bottom Right"},{"value":"bg-radial-[at_bottom]","title":"Bottom"},{"value":"bg-radial-[at_bottom_left]","title":"Bottom Left"},{"value":"bg-radial-[at_left]","title":"Left"},{"value":"bg-radial-[at_top_left]","title":"Top Left"}]}},{"visible":"((globalControlTypeBg == 'static' && globalBgType == 'gradient') || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')) && globalBgGradientType == 'conic'","ai":{"name":"bgGradientConicAngle","description":"Conic gradient start angle.","visible":"bg == 'static' && bgStyle == 'gradient' && bgGradientType == 'conic'"},"title":"Angle","id":"globalBgGradientConicAngle","responsive":false,"select":{"default":"bg-conic","items":[{"value":"bg-conic","title":"Default"},{"value":"bg-conic-0","title":"0 Degrees"},{"value":"bg-conic-90","title":"90 Degrees"},{"value":"bg-conic-180","title":"180 Degrees"},{"value":"bg-conic-270","title":"270 Degrees"}]}},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')","ai":{"name":"bgGradientInterpolation","description":"Gradient color interpolation mode.","visible":"bg == 'static' && bgStyle == 'gradient'"},"title":"Interpolation","id":"globalBgGradientInterpolation","responsive":false,"select":{"default":"","items":[{"value":"","title":"Default"},{"value":"srgb","title":"sRGB"},{"value":"hsl","title":"HSL"},{"value":"oklab","title":"OKLab"},{"value":"oklch","title":"OKLCH"},{"value":"longer","title":"Longer"},{"value":"shorter","title":"Shorter"},{"value":"increasing","title":"Increasing"},{"value":"decreasing","title":"Decreasing"}]}},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')","heading":{},"title":"From"},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')","ai":{"name":"bgGradientFrom","description":"Gradient start theme color.","visible":"bg == 'static' && bgStyle == 'gradient'"},"title":"Color","id":"globalBgGradientFromColor","format":"from-{{value}}/(--bgGradientFromOpacity)","themeColor":{"default":{"name":"brand","brightness":200}}},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')","ai":{"name":"bgGradientFromOpacity","description":"Gradient start color opacity, 0-100.","visible":"bg == 'static' && bgStyle == 'gradient'"},"title":"Opacity","id":"globalBgGradientFromOpacity","format":"[--bgGradientFromOpacity:{{value}}%]","responsive":false,"slider":{"default":100,"min":0,"max":100,"round":true,"snap":true,"units":"%"}},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')","ai":{"name":"bgGradientFromPosition","description":"Gradient start stop position, 0-100.","visible":"bg == 'static' && bgStyle == 'gradient'"},"title":"Position","id":"globalBgGradientFromPosition","format":"from-{{value}}%","responsive":false,"slider":{"default":0,"min":0,"max":100,"round":true,"snap":true,"units":"%"}},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')","divider":{}},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')","ai":{"name":"bgGradientViaEnabled","description":"Add a mid-stop (via) color to the gradient.","visible":"bg == 'static' && bgStyle == 'gradient'"},"title":"Add Via","id":"globalBgGradientViaEnabled","switch":{"default":false}},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient') && globalBgGradientViaEnabled == true","heading":{},"title":"Via"},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient') && globalBgGradientViaEnabled == true","ai":{"name":"bgGradientVia","description":"Gradient mid-stop theme color.","visible":"bg == 'static' && bgStyle == 'gradient' && bgGradientViaEnabled == true"},"title":"Color","id":"globalBgGradientViaColor","format":"via-{{value}}/(--bgGradientViaOpacity)","themeColor":{"default":{"name":"brand","brightness":400}}},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient') && globalBgGradientViaEnabled == true","ai":{"name":"bgGradientViaOpacity","description":"Gradient mid-stop color opacity, 0-100.","visible":"bg == 'static' && bgStyle == 'gradient' && bgGradientViaEnabled == true"},"title":"Opacity","id":"globalBgGradientViaOpacity","format":"[--bgGradientViaOpacity:{{value}}%]","responsive":false,"slider":{"default":100,"min":0,"max":100,"round":true,"snap":true,"units":"%"}},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient') && globalBgGradientViaEnabled == true","ai":{"name":"bgGradientViaPosition","description":"Gradient mid-stop position, 0-100.","visible":"bg == 'static' && bgStyle == 'gradient' && bgGradientViaEnabled == true"},"title":"Position","id":"globalBgGradientViaPosition","format":"via-{{value}}%","responsive":false,"slider":{"default":50,"min":0,"max":100,"round":true,"snap":true,"units":"%"}},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')","divider":{}},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')","heading":{},"title":"To"},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')","ai":{"name":"bgGradientTo","description":"Gradient end theme color.","visible":"bg == 'static' && bgStyle == 'gradient'"},"title":"Color","id":"globalBgGradientToColor","format":"to-{{value}}/(--bgGradientToOpacity)","themeColor":{"default":{"name":"brand","brightness":500}}},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')","ai":{"name":"bgGradientToOpacity","description":"Gradient end color opacity, 0-100.","visible":"bg == 'static' && bgStyle == 'gradient'"},"title":"Opacity","id":"globalBgGradientToOpacity","format":"[--bgGradientToOpacity:{{value}}%]","responsive":false,"slider":{"default":100,"min":0,"max":100,"round":true,"snap":true,"units":"%"}},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')","ai":{"name":"bgGradientToPosition","description":"Gradient end stop position, 0-100.","visible":"bg == 'static' && bgStyle == 'gradient'"},"title":"Position","id":"globalBgGradientToPosition","format":"to-{{value}}%","responsive":false,"slider":{"default":100,"min":0,"max":100,"round":true,"snap":true,"units":"%"}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient')","ai":{"name":"bgGradientTypeHover","description":"Hover-state gradient type: linear, radial, or conic.","values":["linear","radial","conic"],"visible":"bg == 'hover' && bgStyle == 'gradient'"},"title":"Type","id":"globalBgGradientTypeEnd","responsive":false,"segmented":{"default":"linear","items":[{"value":"linear","title":"Linear"},{"value":"radial","title":"Radial"},{"value":"conic","title":"Conic"}]}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient') && globalBgGradientTypeEnd == 'linear'","ai":{"name":"bgGradientDirectionHover","description":"Hover-state linear gradient direction.","visible":"bg == 'hover' && bgStyle == 'gradient' && bgGradientTypeHover == 'linear'"},"title":"Direction","id":"globalBgGradientDirectionEnd","responsive":false,"format":"hover:{{value}}","select":{"default":"bg-linear-to-b","items":[{"value":"bg-linear-to-t","title":"To Top"},{"value":"bg-linear-to-tr","title":"To Top Right"},{"value":"bg-linear-to-r","title":"To Right"},{"value":"bg-linear-to-br","title":"To Bottom Right"},{"value":"bg-linear-to-b","title":"To Bottom"},{"value":"bg-linear-to-bl","title":"To Bottom Left"},{"value":"bg-linear-to-l","title":"To Left"},{"value":"bg-linear-to-tl","title":"To Top Left"},{"value":"bg-linear-45","title":"45 Degrees"},{"value":"bg-linear-90","title":"90 Degrees"},{"value":"bg-linear-135","title":"135 Degrees"},{"value":"bg-linear-180","title":"180 Degrees"}]}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient') && globalBgGradientTypeEnd == 'radial'","ai":{"name":"bgGradientRadialPositionHover","description":"Hover-state radial gradient center position.","visible":"bg == 'hover' && bgStyle == 'gradient' && bgGradientTypeHover == 'radial'"},"title":"Position","id":"globalBgGradientRadialPositionEnd","responsive":false,"format":"hover:{{value}}","select":{"default":"bg-radial","items":[{"value":"bg-radial","title":"Center"},{"value":"bg-radial-[at_top]","title":"Top"},{"value":"bg-radial-[at_top_right]","title":"Top Right"},{"value":"bg-radial-[at_right]","title":"Right"},{"value":"bg-radial-[at_bottom_right]","title":"Bottom Right"},{"value":"bg-radial-[at_bottom]","title":"Bottom"},{"value":"bg-radial-[at_bottom_left]","title":"Bottom Left"},{"value":"bg-radial-[at_left]","title":"Left"},{"value":"bg-radial-[at_top_left]","title":"Top Left"}]}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient') && globalBgGradientTypeEnd == 'conic'","ai":{"name":"bgGradientConicAngleHover","description":"Hover-state conic gradient start angle.","visible":"bg == 'hover' && bgStyle == 'gradient' && bgGradientTypeHover == 'conic'"},"title":"Angle","id":"globalBgGradientConicAngleEnd","responsive":false,"format":"hover:{{value}}","select":{"default":"bg-conic","items":[{"value":"bg-conic","title":"Default"},{"value":"bg-conic-0","title":"0 Degrees"},{"value":"bg-conic-90","title":"90 Degrees"},{"value":"bg-conic-180","title":"180 Degrees"},{"value":"bg-conic-270","title":"270 Degrees"}]}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient')","ai":{"name":"bgGradientInterpolationHover","description":"Hover-state gradient color interpolation mode.","visible":"bg == 'hover' && bgStyle == 'gradient'"},"title":"Interpolation","id":"globalBgGradientInterpolationEnd","responsive":false,"select":{"default":"","items":[{"value":"","title":"Default"},{"value":"srgb","title":"sRGB"},{"value":"hsl","title":"HSL"},{"value":"oklab","title":"OKLab"},{"value":"oklch","title":"OKLCH"},{"value":"longer","title":"Longer"},{"value":"shorter","title":"Shorter"},{"value":"increasing","title":"Increasing"},{"value":"decreasing","title":"Decreasing"}]}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient')","title":"From","heading":{}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient')","ai":{"name":"bgGradientFromHover","description":"Hover-state gradient start theme color.","visible":"bg == 'hover' && bgStyle == 'gradient'"},"title":"Color","id":"globalBgGradientFromColorEnd","format":"hover:from-{{value}}/(--bgGradientFromOpacityEnd)","themeColor":{"default":{"name":"brand","brightness":200}}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient')","ai":{"name":"bgGradientFromOpacityHover","description":"Hover-state gradient start color opacity, 0-100.","visible":"bg == 'hover' && bgStyle == 'gradient'"},"title":"Opacity","id":"globalBgGradientFromOpacityEnd","format":"hover:[--bgGradientFromOpacityEnd:{{value}}%]","responsive":false,"slider":{"default":100,"min":0,"max":100,"round":true,"snap":true,"units":"%"}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient')","divider":{}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient')","ai":{"name":"bgGradientViaEnabledHover","description":"Add a mid-stop (via) color to the hover-state gradient.","visible":"bg == 'hover' && bgStyle == 'gradient'"},"title":"Add Via","id":"globalBgGradientViaEnabledEnd","switch":{"default":false}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient') && globalBgGradientViaEnabledEnd == true","heading":{},"title":"Via"},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient') && globalBgGradientViaEnabledEnd == true","ai":{"name":"bgGradientViaHover","description":"Hover-state gradient mid-stop theme color.","visible":"bg == 'hover' && bgStyle == 'gradient' && bgGradientViaEnabledHover == true"},"title":"Color","id":"globalBgGradientViaColorEnd","format":"hover:via-{{value}}/(--bgGradientViaOpacityEnd)","themeColor":{"default":{"name":"brand","brightness":400}}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient') && globalBgGradientViaEnabledEnd == true","ai":{"name":"bgGradientViaOpacityHover","description":"Hover-state gradient mid-stop color opacity, 0-100.","visible":"bg == 'hover' && bgStyle == 'gradient' && bgGradientViaEnabledHover == true"},"title":"Opacity","id":"globalBgGradientViaOpacityEnd","format":"hover:[--bgGradientViaOpacityEnd:{{value}}%]","responsive":false,"slider":{"default":100,"min":0,"max":100,"round":true,"snap":true,"units":"%"}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient')","divider":{}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient')","heading":{},"title":"To"},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient')","ai":{"name":"bgGradientToHover","description":"Hover-state gradient end theme color.","visible":"bg == 'hover' && bgStyle == 'gradient'"},"title":"Color","id":"globalBgGradientToColorEnd","format":"hover:to-{{value}}/(--bgGradientToOpacityEnd)","themeColor":{"default":{"name":"brand","brightness":500}}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient')","ai":{"name":"bgGradientToOpacityHover","description":"Hover-state gradient end color opacity, 0-100.","visible":"bg == 'hover' && bgStyle == 'gradient'"},"title":"Opacity","id":"globalBgGradientToOpacityEnd","format":"hover:[--bgGradientToOpacityEnd:{{value}}%]","responsive":false,"slider":{"default":100,"min":0,"max":100,"round":true,"snap":true,"units":"%"}},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'image' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'image')","ai":{"name":"bgImage","description":"Background image resource ID.","visible":"bg == 'static' && bgStyle == 'image'"},"title":"Image","id":"globalBgImageResource","resource":{"accepts":"image/*","excludes":".svg"}},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'image' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'image')","ai":{"name":"bgImagePosition","description":"Background image position.","visible":"bg == 'static' && bgStyle == 'image'"},"title":"Position","id":"globalBgImagePosition","format":"bg-{{value}}","select":{"default":"center","items":[{"value":"bottom","title":"Bottom"},{"value":"center","title":"Center"},{"value":"left","title":"Left"},{"value":"left-bottom","title":"Left Bottom"},{"value":"left-top","title":"Left Top"},{"value":"right","title":"Right"},{"value":"right-bottom","title":"Right Bottom"},{"value":"right-top","title":"Right Top"},{"value":"top","title":"Top"}]}},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'image' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'image')","title":"Sizing","heading":{}},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'image' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'image')","ai":{"name":"bgImageSize","description":"Background image size (auto/cover/contain).","visible":"bg == 'static' && bgStyle == 'image'"},"title":"Size","id":"globalBgImageSize","format":"bg-{{value}}","select":{"default":"cover","items":[{"title":"Auto","value":"auto"},{"title":"Cover","value":"cover"},{"title":"Contain","value":"contain"}]}},{"visible":"globalControlTypeBg == 'static' && globalBgType == 'image' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'image')","ai":{"name":"bgImageRepeat","description":"Background image repeat mode.","visible":"bg == 'static' && bgStyle == 'image'"},"title":"Repeat","id":"globalBgImageRepeat","format":"bg-{{value}}","select":{"default":"no-repeat","items":[{"title":"No Repeat","value":"no-repeat"},{"title":"Repeat","value":"repeat"},{"title":"Repeat Horizontal","value":"repeat-x"},{"title":"Repeat Vertical","value":"repeat-y"}]}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'image')","ai":{"name":"bgImageHover","description":"Hover-state background image resource ID.","visible":"bg == 'hover' && bgStyle == 'image'"},"title":"Image","id":"globalBgImageResourceEnd","resource":{"accepts":"image/*","excludes":".svg"}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'image')","title":"Position","heading":{}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'image')","ai":{"name":"bgImagePositionHover","description":"Hover-state background image position.","visible":"bg == 'hover' && bgStyle == 'image'"},"title":"Position","id":"globalBgImagePositionEnd","format":"hover:bg-{{value}}","select":{"default":"center","items":[{"value":"bottom","title":"Bottom"},{"value":"center","title":"Center"},{"value":"left","title":"Left"},{"value":"left-bottom","title":"Left Bottom"},{"value":"left-top","title":"Left Top"},{"value":"right","title":"Right"},{"value":"right-bottom","title":"Right Bottom"},{"value":"right-top","title":"Right Top"},{"value":"top","title":"Top"}]}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'image')","title":"Sizing","heading":{}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'image')","ai":{"name":"bgImageSizeHover","description":"Hover-state background image size (auto/cover/contain).","visible":"bg == 'hover' && bgStyle == 'image'"},"title":"Size","id":"globalBgImageSizeEnd","format":"hover:bg-{{value}}","select":{"default":"cover","items":[{"title":"Auto","value":"auto"},{"title":"Cover","value":"cover"},{"title":"Contain","value":"contain"}]}},{"visible":"(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'image')","ai":{"name":"bgImageRepeatHover","description":"Hover-state background image repeat mode.","visible":"bg == 'hover' && bgStyle == 'image'"},"title":"Repeat","id":"globalBgImageRepeatEnd","format":"hover:bg-{{value}}","select":{"default":"no-repeat","items":[{"title":"No Repeat","value":"no-repeat"},{"title":"Repeat","value":"repeat"},{"title":"Repeat Horizontal","value":"repeat-x"},{"title":"Repeat Vertical","value":"repeat-y"}]}},{"visible":"globalBgType == 'image'","divider":{}},{"visible":"globalBgType == 'image'","title":"Fetch Priority","heading":{}},{"visible":"globalBgType == 'image'","ai":{"name":"bgImageFetchPriority","description":"Image fetch priority: auto, high, or low.","visible":"bgStyle == 'image'"},"title":"Value","id":"globalBgImageFetchPriority","responsive":false,"segmented":{"default":"auto","items":[{"title":"Auto","value":"auto"},{"title":"High","value":"high"},{"title":"Low","value":"low"}]}}]},{"title":"Borders","icon":"square.dashed","properties":[{"title":"Type","id":"globalControlTypeBorders","ai":{"name":"border","description":"Enable/disable borders.","values":["none","static","hover"]},"responsive":false,"segmented":{"default":"none","items":[{"title":"None","value":"none"},{"title":"Static","value":"static"},{"title":"Hover","value":"hover"}]}},{"visible":"globalControlTypeBorders == 'hover'","ai":{"exclude":true},"title":"State","id":"globalBordersState","responsive":false,"segmented":{"default":"start","items":[{"title":"Start","value":"start"},{"title":"End","value":"end"}]}},{"divider":{},"visible":"globalControlTypeBorders != 'none'"},{"title":"Style","id":"globalBordersStyle","ai":{"name":"borderStyle","description":"Border line style.","visible":"border == 'static'"},"format":"border-{{value}}","segmented":{"default":"solid","items":[{"icon":"square","value":"solid"},{"icon":"square.dashed","value":"dashed"},{"icon":"square.dotted","value":"dotted"}]},"visible":"globalControlTypeBorders == 'static' || (globalControlTypeBorders == 'hover' && globalBordersState == 'start')"},{"title":"Color","id":"globalBordersColor","ai":{"name":"borderColor","description":"Border theme color.","visible":"border == 'static'"},"format":"border-{{value}}","themeColor":{"default":{"name":"surface","brightness":500}},"visible":"globalControlTypeBorders == 'static' || (globalControlTypeBorders == 'hover' && globalBordersState == 'start')"},{"title":"Opacity","id":"globalBordersColorOpacity","ai":{"name":"borderColorOpacity","description":"Border color opacity, 0-100.","visible":"border == 'static'"},"format":"[{{value}}%]","slider":{"default":100,"min":0,"max":100,"round":true,"snap":true,"units":"%"},"visible":"globalControlTypeBorders == 'static' || (globalControlTypeBorders == 'hover' && globalBordersState == 'start')"},{"title":"Width","id":"globalBordersWidth","ai":{"name":"borderWidth","description":"Border width theme token per side.","visible":"border == 'static'"},"themeBorderWidth":{"default":{"base":{"top":"0","right":"0","bottom":"0","left":"0","linkHorizontal":true,"linkVertical":true}}},"visible":"globalControlTypeBorders == 'static' || (globalControlTypeBorders == 'hover' && globalBordersState == 'start')"},{"title":"Radius","id":"globalBordersRadius","ai":{"name":"borderRadius","description":"Border radius theme token per corner.","visible":"border == 'static'"},"format":"{{value}}","themeBorderRadius":{"default":{"base":{"topLeft":"Default","topRight":"Default","bottomLeft":"Default","bottomRight":"Default"}}},"visible":"globalControlTypeBorders == 'static' || (globalControlTypeBorders == 'hover' && globalBordersState == 'start')"},{"title":"Style","id":"globalBordersStyleEnd","ai":{"name":"borderStyleHover","description":"Border line style.","visible":"border == 'hover'"},"format":"border-{{value}}","segmented":{"default":"solid","items":[{"icon":"square","value":"solid"},{"icon":"square.dashed","value":"dashed"},{"icon":"square.dotted","value":"dotted"}]},"visible":"(globalControlTypeBorders == 'hover' && globalBordersState == 'end')"},{"title":"Color","id":"globalBordersColorEnd","ai":{"name":"borderColorHover","description":"Border theme color.","visible":"border == 'hover'"},"format":"border-{{value}}","themeColor":{"default":{"name":"surface","brightness":500}},"visible":"(globalControlTypeBorders == 'hover' && globalBordersState == 'end')"},{"title":"Opacity","id":"globalBordersColorOpacityEnd","ai":{"name":"borderColorOpacityHover","description":"Border color opacity, 0-100.","visible":"border == 'hover'"},"format":"[{{value}}%]","slider":{"default":100,"min":0,"max":100,"round":true,"snap":true,"units":"%"},"visible":"(globalControlTypeBorders == 'hover' && globalBordersState == 'end')"},{"title":"Width","id":"globalBordersWidthEnd","ai":{"name":"borderWidthHover","description":"Border width theme token per side.","visible":"border == 'hover'"},"themeBorderWidth":{"default":{"base":{"top":"0","right":"0","bottom":"0","left":"0","linkHorizontal":true,"linkVertical":true}}},"visible":"(globalControlTypeBorders == 'hover' && globalBordersState == 'end')"},{"title":"Radius","id":"globalBordersRadiusEnd","ai":{"name":"borderRadiusHover","description":"Border radius theme token per corner.","visible":"border == 'hover'"},"format":"hover:{{value}}","themeBorderRadius":{"default":{"base":{"topLeft":"Default","topRight":"Default","bottomLeft":"Default","bottomRight":"Default"}}},"visible":"(globalControlTypeBorders == 'hover' && globalBordersState == 'end')"}]},{"title":"Advanced","icon":"gearshape","properties":[{"title":"Classes","id":"cssClasses","textArea":{"default":""}},{"title":"ID","id":"globalID","responsive":false,"text":{"default":""}}]}]}
+{
+  "groups": [
+    {
+      "title": "Tracks",
+      "icon": "music.note",
+      "properties": [
+        {
+          "title": "Tracks",
+          "id": "tracks",
+          "collection": {
+            "identifier": "com.realmacsoftware.audioPlaylist.collections.tracks"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Now Playing",
+      "icon": "play.square.stack.fill",
+      "properties": [
+        {
+          "title": "Layout",
+          "id": "nowPlayingLayout",
+          "responsive": false,
+          "segmented": {
+            "default": "flex-col text-center",
+            "items": [
+              {
+                "title": "Vertical",
+                "value": "flex-col text-center"
+              },
+              {
+                "title": "Horizontal",
+                "value": "flex-row text-left"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Gap",
+          "id": "nowPlayingGap",
+          "format": "gap-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": "5"
+            }
+          }
+        },
+        {
+          "title": "Padding",
+          "id": "nowPlayingPadding",
+          "themeSpacing": {
+            "mode": "padding",
+            "default": {
+              "base": {
+                "top": "5",
+                "right": "5",
+                "bottom": "5",
+                "left": "5"
+              }
+            }
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Artwork",
+          "heading": {}
+        },
+        {
+          "title": "Size",
+          "id": "nowPlayingArtworkSize",
+          "format": "size-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "48"
+              }
+            }
+          }
+        },
+        {
+          "title": "Shadow",
+          "id": "nowPlayingArtworkShadow",
+          "ai": {
+            "name": "nowPlayingArtworkShadow",
+            "description": "Now Playing artwork shadow theme token."
+          },
+          "themeShadow": {
+            "default": {
+              "base": {
+                "name": "none"
+              }
+            }
+          }
+        },
+        {
+          "title": "Radius",
+          "id": "nowPlayingArtworkBorderRadius",
+          "themeBorderRadius": {
+            "default": {
+              "base": {
+                "topLeft": "Default",
+                "topRight": "Default",
+                "bottomLeft": "Default",
+                "bottomRight": "Default"
+              }
+            }
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Title",
+          "heading": {}
+        },
+        {
+          "title": "Color",
+          "id": "nowPlayingTitleTextColor",
+          "format": "text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "text",
+              "brightness": 600
+            }
+          }
+        },
+        {
+          "title": "Size",
+          "id": "nowPlayingTitleFontSize",
+          "themeTextStyle": {
+            "default": {
+              "base": "lg"
+            }
+          }
+        },
+        {
+          "title": "Artist",
+          "heading": {}
+        },
+        {
+          "title": "Color",
+          "id": "nowPlayingArtistTextColor",
+          "format": "text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "text",
+              "brightness": 600
+            }
+          }
+        },
+        {
+          "title": "Size",
+          "id": "nowPlayingArtistFontSize",
+          "themeTextStyle": {
+            "default": {
+              "base": "sm"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Progress Bar",
+      "icon": "timer.circle.fill",
+      "properties": [
+        {
+          "title": "Progress Bar",
+          "heading": {}
+        },
+        {
+          "title": "Background",
+          "id": "nowPlayingProgressBarBgColor",
+          "format": "bg-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 100
+            }
+          }
+        },
+        {
+          "title": "Foreground",
+          "id": "nowPlayingProgressBarForegroundColor",
+          "format": "bg-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 300
+            }
+          }
+        },
+        {
+          "title": "Size",
+          "id": "nowPlayingProgressBarSize",
+          "format": "h-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "1.5"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Track List",
+      "icon": "list.bullet",
+      "properties": [
+        {
+          "title": "Max Height",
+          "id": "trackListMaxHeight",
+          "format": "max-h-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "72"
+              }
+            }
+          }
+        },
+        {
+          "title": "Padding",
+          "id": "trackListPadding",
+          "themeSpacing": {
+            "mode": "padding",
+            "default": {
+              "base": {
+                "value": "0"
+              }
+            }
+          }
+        },
+        {
+          "title": "Gap",
+          "id": "trackListGap",
+          "format": "gap-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "2"
+              }
+            }
+          }
+        },
+        {
+          "title": "Radius",
+          "id": "trackItemBorderRadius",
+          "themeBorderRadius": {
+            "default": {
+              "base": {
+                "topLeft": "Default",
+                "topRight": "Default",
+                "bottomLeft": "Default",
+                "bottomRight": "Default"
+              }
+            }
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Artwork",
+          "heading": {}
+        },
+        {
+          "title": "Size",
+          "id": "trackListArtworkSize",
+          "format": "size-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "12"
+              }
+            }
+          }
+        },
+        {
+          "title": "Shadow",
+          "id": "trackListArtworkShadow",
+          "ai": {
+            "name": "trackListArtworkShadow",
+            "description": "Track list artwork shadow theme token."
+          },
+          "themeShadow": {
+            "default": {
+              "base": {
+                "name": "none"
+              }
+            }
+          }
+        },
+        {
+          "title": "Radius",
+          "id": "trackListArtworkBorderRadius",
+          "themeBorderRadius": {
+            "default": {
+              "base": {
+                "topLeft": "Default",
+                "topRight": "Default",
+                "bottomLeft": "Default",
+                "bottomRight": "Default"
+              }
+            }
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Dividers",
+          "heading": {}
+        },
+        {
+          "title": "Dividers",
+          "id": "trackDividersColor",
+          "format": "divide-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 800
+            }
+          }
+        },
+        {
+          "title": "Thickness",
+          "id": "trackDividersThickness",
+          "format": "divide-y-[{{value}}px]",
+          "slider": {
+            "default": 0,
+            "min": 0,
+            "max": 10,
+            "round": true,
+            "snap": true,
+            "units": "px"
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Text Size",
+          "heading": {}
+        },
+        {
+          "title": "Title",
+          "id": "trackListTitleFontSize",
+          "themeTextStyle": {
+            "default": {
+              "base": {
+                "name": "lg"
+              }
+            }
+          }
+        },
+        {
+          "title": "Artist",
+          "id": "trackListArtistFontSize",
+          "themeTextStyle": {
+            "default": {
+              "base": {
+                "name": "base"
+              }
+            }
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Colors",
+          "heading": {}
+        },
+        {
+          "title": "State",
+          "id": "trackState",
+          "segmented": {
+            "default": "normal",
+            "items": [
+              {
+                "title": "Normal",
+                "value": "normal"
+              },
+              {
+                "title": "Hover",
+                "value": "hover"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "trackState == 'normal'",
+          "title": "Background",
+          "id": "trackBg",
+          "format": "bg-{{value}}/(--track-bg-opacity)",
+          "themeColor": {
+            "default": {
+              "name": "white",
+              "brightness": 50
+            }
+          }
+        },
+        {
+          "visible": "trackState == 'normal'",
+          "title": "Opacity",
+          "id": "trackBgOpacity",
+          "format": "[--track-bg-opacity:{{value}}%]",
+          "slider": {
+            "default": "100",
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "trackState == 'normal'",
+          "title": "Title",
+          "id": "trackTitleTextColor",
+          "format": "text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "text",
+              "brightness": 600
+            }
+          }
+        },
+        {
+          "visible": "trackState == 'normal'",
+          "title": "Artist",
+          "id": "trackArtistTextColor",
+          "format": "text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "text",
+              "brightness": 600
+            }
+          }
+        },
+        {
+          "visible": "trackState == 'hover'",
+          "title": "Background",
+          "id": "trackBgHover",
+          "format": "hover:bg-{{value}}/(--track-bg-opacity)",
+          "themeColor": {
+            "default": {
+              "name": "white",
+              "brightness": 50
+            }
+          }
+        },
+        {
+          "visible": "trackState == 'hover'",
+          "title": "Opacity",
+          "id": "trackBgOpacityHover",
+          "format": "hover:[--track-bg-opacity:{{value}}%]",
+          "slider": {
+            "default": "100",
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "trackState == 'hover'",
+          "title": "Title",
+          "id": "trackTitleTextColorHover",
+          "format": "group-hover/track:text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "text",
+              "brightness": 600
+            }
+          }
+        },
+        {
+          "visible": "trackState == 'hover'",
+          "title": "Artist",
+          "id": "trackArtistTextColorHover",
+          "format": "group-hover/track:text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "text",
+              "brightness": 600
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Icons",
+      "icon": "playpause.fill",
+      "properties": [
+        {
+          "title": "Spacing",
+          "id": "iconSpacing",
+          "format": "gap-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "6"
+              }
+            }
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Play and Pause",
+          "heading": {}
+        },
+        {
+          "title": "Color",
+          "id": "iconPlayPauseColor",
+          "format": "text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 500
+            }
+          }
+        },
+        {
+          "title": "Hover",
+          "id": "iconPlayPauseColorHover",
+          "format": "hover:text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 600
+            }
+          }
+        },
+        {
+          "title": "Size",
+          "id": "iconPlayPauseSize",
+          "format": "size-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "12"
+              }
+            }
+          }
+        },
+        {
+          "title": "Play",
+          "property": "iconPlay",
+          "resource": {}
+        },
+        {
+          "title": "Pause",
+          "property": "iconPause",
+          "resource": {}
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Next and Previous",
+          "heading": {}
+        },
+        {
+          "title": "Enable",
+          "property": "enableNextAndPrevious",
+          "responsive": false,
+          "switch": {
+            "default": true
+          }
+        },
+        {
+          "enable": "enableNextAndPrevious == true",
+          "title": "Color",
+          "id": "iconNextPrevColor",
+          "format": "text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 500
+            }
+          }
+        },
+        {
+          "enable": "enableNextAndPrevious == true",
+          "title": "Hover",
+          "id": "iconNextPrevColorHover",
+          "format": "hover:text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 600
+            }
+          }
+        },
+        {
+          "enable": "enableNextAndPrevious == true",
+          "title": "Size",
+          "id": "iconNextPrevSize",
+          "format": "size-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "6"
+              }
+            }
+          }
+        },
+        {
+          "enable": "enableNextAndPrevious == true",
+          "title": "Next",
+          "property": "iconNext",
+          "resource": {}
+        },
+        {
+          "enable": "enableNextAndPrevious == true",
+          "title": "Previous",
+          "property": "iconPrevious",
+          "resource": {}
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Skip Back and Forward",
+          "heading": {}
+        },
+        {
+          "title": "Enable",
+          "property": "enableSkipBackAndForward",
+          "responsive": false,
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "enable": "enableSkipBackAndForward == true",
+          "title": "Color",
+          "id": "iconSkipColor",
+          "format": "text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 500
+            }
+          }
+        },
+        {
+          "enable": "enableSkipBackAndForward == true",
+          "title": "Hover",
+          "id": "iconSkipColorHover",
+          "format": "hover:text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 600
+            }
+          }
+        },
+        {
+          "enable": "enableSkipBackAndForward == true",
+          "title": "Size",
+          "id": "iconSkipSize",
+          "format": "size-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "6"
+              }
+            }
+          }
+        },
+        {
+          "enable": "enableSkipBackAndForward == true",
+          "title": "Skip Back",
+          "property": "iconSkipBack",
+          "resource": {}
+        },
+        {
+          "enable": "enableSkipBackAndForward == true",
+          "title": "Skip Forward",
+          "property": "iconSkipForward",
+          "resource": {}
+        }
+      ]
+    },
+    {
+      "title": "Volume",
+      "icon": "speaker.wave.2.fill",
+      "properties": [
+        {
+          "title": "Initial Volume",
+          "property": "initialVolume",
+          "responsive": false,
+          "slider": {
+            "default": 100,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Visitor Controls",
+          "heading": {}
+        },
+        {
+          "title": "Enable",
+          "property": "enableVolumeControls",
+          "responsive": false,
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "enable": "enableVolumeControls == true",
+          "title": "Background",
+          "id": "volumeBarBgColor",
+          "format": "bg-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 100
+            }
+          }
+        },
+        {
+          "enable": "enableVolumeControls == true",
+          "title": "Foreground",
+          "id": "volumeBarFgColor",
+          "format": "bg-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 300
+            }
+          }
+        },
+        {
+          "enable": "enableVolumeControls == true",
+          "title": "Size",
+          "id": "volumeBarSize",
+          "format": "h-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "1.5"
+              }
+            }
+          }
+        },
+        {
+          "enable": "enableVolumeControls == true",
+          "title": "Width",
+          "id": "volumeBarWidth",
+          "format": "w-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "24"
+              }
+            }
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Mute Button",
+          "heading": {}
+        },
+        {
+          "enable": "enableVolumeControls == true",
+          "title": "Color",
+          "id": "iconVolumeColor",
+          "format": "text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 500
+            }
+          }
+        },
+        {
+          "enable": "enableVolumeControls == true",
+          "title": "Hover",
+          "id": "iconVolumeColorHover",
+          "format": "hover:text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 600
+            }
+          }
+        },
+        {
+          "enable": "enableVolumeControls == true",
+          "title": "Size",
+          "id": "iconVolumeSize",
+          "format": "size-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "5"
+              }
+            }
+          }
+        },
+        {
+          "enable": "enableVolumeControls == true",
+          "title": "Volume",
+          "property": "iconVolume",
+          "resource": {}
+        },
+        {
+          "enable": "enableVolumeControls == true",
+          "title": "Muted",
+          "property": "iconMuted",
+          "resource": {}
+        }
+      ]
+    },
+    {
+      "title": "Layout",
+      "icon": "square.split.bottomrightquarter",
+      "properties": [
+        {
+          "title": "General",
+          "heading": {}
+        },
+        {
+          "title": "Position",
+          "id": "globalLayoutPosition",
+          "ai": {
+            "name": "position",
+            "description": "CSS position: '' (none), static, relative, absolute, fixed, or sticky."
+          },
+          "select": {
+            "default": "",
+            "items": [
+              {
+                "title": "None",
+                "value": ""
+              },
+              {
+                "title": "Static",
+                "value": "static"
+              },
+              {
+                "title": "Relative",
+                "value": "relative"
+              },
+              {
+                "title": "Absolute",
+                "value": "absolute"
+              },
+              {
+                "title": "Fixed",
+                "value": "fixed"
+              },
+              {
+                "title": "Sticky",
+                "value": "sticky"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Z-Index",
+          "id": "globalLayoutZIndexType",
+          "ai": {
+            "name": "zIndexType",
+            "description": "Z-index mode: '' (none), z-auto, or custom (use zIndex)."
+          },
+          "responsive": false,
+          "segmented": {
+            "default": "",
+            "items": [
+              {
+                "title": "None",
+                "value": ""
+              },
+              {
+                "title": "Auto",
+                "value": "z-auto"
+              },
+              {
+                "title": "Custom",
+                "value": "custom"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalLayoutZIndexType == 'custom'",
+          "title": "",
+          "id": "globalLayoutZIndex",
+          "ai": {
+            "name": "zIndex",
+            "description": "Custom z-index value, can be positive or negative.",
+            "visible": "zIndexType == 'custom'"
+          },
+          "format": "z-[{{value}}]",
+          "number": {
+            "default": 0,
+            "subtitle": "Can be positive or negative."
+          }
+        },
+        {
+          "title": "Top / Right / Bottom / Left",
+          "heading": {}
+        },
+        {
+          "title": "Type",
+          "id": "globalLayoutTopRightBottomLeftType",
+          "ai": {
+            "name": "insetType",
+            "description": "Top/right/bottom/left mode: none, uniform (use inset), or individual (use top/right/bottom/left)."
+          },
+          "segmented": {
+            "default": "none",
+            "items": [
+              {
+                "title": "None",
+                "value": "none"
+              },
+              {
+                "title": "Uniform",
+                "value": "uniform"
+              },
+              {
+                "title": "Individual",
+                "value": "individual"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Inset",
+          "id": "globalLayoutInset",
+          "ai": {
+            "name": "inset",
+            "description": "Uniform top/right/bottom/left inset theme spacing value.",
+            "visible": "insetType == 'uniform'"
+          },
+          "format": "inset-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": "0"
+            }
+          },
+          "visible": "globalLayoutTopRightBottomLeftType == 'uniform'"
+        },
+        {
+          "visible": "globalLayoutTopRightBottomLeftType == 'individual'",
+          "title": "Top",
+          "id": "globalLayoutTop",
+          "ai": {
+            "name": "top",
+            "description": "Top inset theme spacing value.",
+            "visible": "insetType == 'individual'"
+          },
+          "format": "top-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": 0
+              }
+            }
+          }
+        },
+        {
+          "visible": "globalLayoutTopRightBottomLeftType == 'individual'",
+          "title": "Right",
+          "id": "globalLayoutRight",
+          "ai": {
+            "name": "right",
+            "description": "Right inset theme spacing value.",
+            "visible": "insetType == 'individual'"
+          },
+          "format": "right-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": 0
+              }
+            }
+          }
+        },
+        {
+          "visible": "globalLayoutTopRightBottomLeftType == 'individual'",
+          "title": "Bottom",
+          "id": "globalLayoutBottom",
+          "ai": {
+            "name": "bottom",
+            "description": "Bottom inset theme spacing value.",
+            "visible": "insetType == 'individual'"
+          },
+          "format": "bottom-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": 0
+              }
+            }
+          }
+        },
+        {
+          "visible": "globalLayoutTopRightBottomLeftType == 'individual'",
+          "title": "Left",
+          "id": "globalLayoutLeft",
+          "ai": {
+            "name": "left",
+            "description": "Left inset theme spacing value.",
+            "visible": "insetType == 'individual'"
+          },
+          "format": "left-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": 0
+              }
+            }
+          }
+        },
+        {
+          "heading": {},
+          "title": "Display"
+        },
+        {
+          "title": "Hidden",
+          "id": "globalLayoutHidden",
+          "ai": {
+            "name": "hidden",
+            "description": "Whether the element is hidden."
+          },
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "title": "Visibility",
+          "id": "globalLayoutVisibility",
+          "ai": {
+            "name": "visibility",
+            "description": "CSS visibility: '' (auto), visible, or invisible."
+          },
+          "select": {
+            "default": "",
+            "items": [
+              {
+                "title": "Auto",
+                "value": ""
+              },
+              {
+                "title": "Visible",
+                "value": "visible"
+              },
+              {
+                "title": "Invisible",
+                "value": "invisible"
+              }
+            ]
+          }
+        },
+        {
+          "heading": {},
+          "title": "Advanced"
+        },
+        {
+          "title": "Overflow",
+          "id": "globalLayoutOverflow",
+          "ai": {
+            "name": "overflow",
+            "description": "CSS overflow: '' (none), overflow-visible, overflow-hidden, overflow-scroll, or overflow-auto."
+          },
+          "select": {
+            "default": "",
+            "items": [
+              {
+                "title": "None",
+                "value": ""
+              },
+              {
+                "title": "Visible",
+                "value": "overflow-visible"
+              },
+              {
+                "title": "Hidden",
+                "value": "overflow-hidden"
+              },
+              {
+                "title": "Scroll",
+                "value": "overflow-scroll"
+              },
+              {
+                "title": "Auto",
+                "value": "overflow-auto"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Isolation",
+          "id": "globalLayoutIsolation",
+          "ai": {
+            "name": "isolation",
+            "description": "CSS isolation: '' (none), isolate, or isolate-auto."
+          },
+          "segmented": {
+            "default": "",
+            "items": [
+              {
+                "title": "None",
+                "value": ""
+              },
+              {
+                "title": "Isolate",
+                "value": "isolate"
+              },
+              {
+                "title": "Auto",
+                "value": "isolate-auto"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "Sizing",
+      "icon": "arrow.down.backward.and.arrow.up.forward.square",
+      "properties": [
+        {
+          "title": "Size",
+          "heading": {}
+        },
+        {
+          "title": "Width",
+          "id": "globalWidth",
+          "ai": {
+            "name": "widthSize",
+            "description": "Width theme-size token."
+          },
+          "format": "w-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "custom": false,
+                "value": "auto"
+              }
+            }
+          }
+        },
+        {
+          "title": "Height",
+          "id": "globalHeight",
+          "ai": {
+            "name": "heightSize",
+            "description": "Height theme-size token."
+          },
+          "format": "h-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "custom": false,
+                "value": "auto"
+              }
+            }
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Min & Max Settings",
+          "heading": {}
+        },
+        {
+          "information": {},
+          "title": "Enable this to set both min and max height and width settings."
+        },
+        {
+          "title": "Enable",
+          "id": "globalSizingMinMaxEnabled",
+          "ai": {
+            "name": "minMaxEnabled",
+            "description": "Enable explicit min/max width and height constraints."
+          },
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "visible": "globalSizingMinMaxEnabled == true",
+          "title": "Width",
+          "heading": {}
+        },
+        {
+          "title": "Min",
+          "id": "globalMinWidth",
+          "ai": {
+            "name": "minWidth",
+            "description": "Minimum width theme-size token."
+          },
+          "format": "min-w-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "custom": false,
+                "value": "0"
+              }
+            }
+          },
+          "visible": "globalSizingMinMaxEnabled == true"
+        },
+        {
+          "title": "Max",
+          "id": "globalMaxWidth",
+          "ai": {
+            "name": "maxWidth",
+            "description": "Maximum width theme-size token."
+          },
+          "format": "max-w-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "custom": false,
+                "value": "auto"
+              }
+            }
+          },
+          "visible": "globalSizingMinMaxEnabled == true"
+        },
+        {
+          "visible": "globalSizingMinMaxEnabled == true",
+          "divider": {}
+        },
+        {
+          "visible": "globalSizingMinMaxEnabled == true",
+          "title": "Height",
+          "heading": {}
+        },
+        {
+          "title": "Min",
+          "id": "globalMinHeight",
+          "ai": {
+            "name": "minHeight",
+            "description": "Minimum height theme-size token."
+          },
+          "format": "min-h-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "custom": false,
+                "value": "0"
+              }
+            }
+          },
+          "visible": "globalSizingMinMaxEnabled == true"
+        },
+        {
+          "title": "Max",
+          "id": "globalMaxHeight",
+          "ai": {
+            "name": "maxHeight",
+            "description": "Maximum height theme-size token."
+          },
+          "format": "max-h-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "custom": false,
+                "value": "auto"
+              }
+            }
+          },
+          "visible": "globalSizingMinMaxEnabled == true"
+        }
+      ]
+    },
+    {
+      "title": "Spacing",
+      "icon": "squareshape.squareshape.dotted",
+      "properties": [
+        {
+          "title": "Margin & Padding",
+          "heading": {}
+        },
+        {
+          "title": "Enable",
+          "id": "globalSpacingEnabled",
+          "ai": {
+            "name": "spacingEnabled",
+            "description": "Enable custom margin and padding for this element."
+          },
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "title": "Margin",
+          "id": "globalMargin",
+          "ai": {
+            "name": "margin",
+            "description": "Margin (outer spacing) — theme spacing token per side."
+          },
+          "themeSpacing": {
+            "mode": "margin",
+            "default": {
+              "base": {
+                "top": "0",
+                "right": "0",
+                "bottom": "0",
+                "left": "0"
+              }
+            }
+          },
+          "visible": "globalSpacingEnabled == true"
+        },
+        {
+          "title": "Padding",
+          "id": "globalPadding",
+          "ai": {
+            "name": "padding",
+            "description": "Padding (inner spacing) — theme spacing token per side."
+          },
+          "themeSpacing": {
+            "mode": "padding",
+            "default": {
+              "base": {
+                "top": "0",
+                "right": "0",
+                "bottom": "0",
+                "left": "0"
+              }
+            }
+          },
+          "visible": "globalSpacingEnabled == true"
+        }
+      ]
+    },
+    {
+      "title": "Transitions",
+      "icon": "circle.dotted.and.circle",
+      "properties": [
+        {
+          "title": "Apply to",
+          "id": "globalTransitionsProperty",
+          "ai": {
+            "name": "transitionProperty",
+            "description": "CSS properties to transition: none, all, default (most common), colors, opacity, shadow, or transform."
+          },
+          "format": "transition-{{value}}",
+          "select": {
+            "default": "all",
+            "items": [
+              {
+                "title": "None",
+                "value": "none"
+              },
+              {
+                "title": "All",
+                "value": "all"
+              },
+              {
+                "title": "Most Common",
+                "value": "default"
+              },
+              {
+                "title": "Colors",
+                "value": "colors"
+              },
+              {
+                "title": "Opacity",
+                "value": "opacity"
+              },
+              {
+                "title": "Shadows",
+                "value": "shadow"
+              },
+              {
+                "title": "Transforms",
+                "value": "transform"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalTransitionsProperty != 'none'",
+          "title": "Function",
+          "id": "globalTransitionsTimingFunction",
+          "ai": {
+            "name": "timingFunction",
+            "description": "Transition timing function: custom (use timingFunctionCustom), linear, ease-in, ease-out, or ease-in-out."
+          },
+          "select": {
+            "default": "ease-in-out",
+            "items": [
+              {
+                "title": "Custom",
+                "value": "custom"
+              },
+              {
+                "title": "Linear",
+                "value": "linear"
+              },
+              {
+                "title": "Ease-in",
+                "value": "ease-in"
+              },
+              {
+                "title": "Ease-out",
+                "value": "ease-out"
+              },
+              {
+                "title": "Ease-in-out",
+                "value": "ease-in-out"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalTransitionsTimingFunction == 'custom'",
+          "title": "Cubic Bezier",
+          "id": "globalTransitionsTimingFunctionCustom",
+          "ai": {
+            "name": "timingFunctionCustom",
+            "description": "Custom cubic-bezier value as 'x1,y1,x2,y2'.",
+            "visible": "timingFunction == 'custom'"
+          },
+          "format": "ease-[cubic-bezier({{value}})]",
+          "input": {
+            "default": "0.95,0.05,0.795,0.035",
+            "subtitle": "x1, y1, x2, y2"
+          }
+        },
+        {
+          "heading": {},
+          "title": "Timing"
+        },
+        {
+          "visible": "globalTransitionsProperty != 'none'",
+          "title": "Duration",
+          "id": "globalTransitionsDuration",
+          "ai": {
+            "name": "transitionDuration",
+            "description": "Transition duration in milliseconds.",
+            "visible": "transitionProperty != 'none'"
+          },
+          "format": "duration-[{{value}}ms]",
+          "number": {
+            "default": 300
+          }
+        },
+        {
+          "visible": "globalTransitionsProperty != 'none'",
+          "title": "Delay",
+          "id": "globalTransitionsDelay",
+          "ai": {
+            "name": "transitionDelay",
+            "description": "Transition delay in milliseconds.",
+            "visible": "transitionProperty != 'none'"
+          },
+          "format": "delay-[{{value}}ms]",
+          "number": {
+            "default": 0
+          }
+        }
+      ]
+    },
+    {
+      "title": "Effects",
+      "icon": "dial.medium",
+      "properties": [
+        {
+          "title": "Type",
+          "id": "globalControlTypeEffects",
+          "ai": {
+            "name": "effects",
+            "description": "Enable/disable effects.",
+            "values": [
+              "none",
+              "static",
+              "hover"
+            ]
+          },
+          "responsive": false,
+          "segmented": {
+            "default": "none",
+            "items": [
+              {
+                "title": "None",
+                "value": "none"
+              },
+              {
+                "title": "Static",
+                "value": "static"
+              },
+              {
+                "title": "Hover",
+                "value": "hover"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Over",
+          "id": "globalHoverGroupEffects",
+          "responsive": false,
+          "select": {
+            "default": "self",
+            "items": [
+              {
+                "title": "Self",
+                "value": "self"
+              },
+              {
+                "title": "Parent",
+                "value": "parent"
+              },
+              {
+                "title": "Container",
+                "value": "container"
+              },
+              {
+                "title": "Grid",
+                "value": "grid"
+              },
+              {
+                "title": "Flex",
+                "value": "flex"
+              },
+              {
+                "title": "Custom ID",
+                "value": "custom"
+              }
+            ]
+          },
+          "visible": "globalControlTypeEffects == 'hover'"
+        },
+        {
+          "visible": "globalControlTypeEffects == 'hover' && globalHoverGroupEffects == 'custom'",
+          "title": "ID",
+          "id": "globalHoverGroupCustomIdEffects",
+          "text": {
+            "default": ""
+          }
+        },
+        {
+          "visible": "globalHoverGroupEffects == 'custom'",
+          "title": "The ID of the parent element to trigger the effects.",
+          "information": {}
+        },
+        {
+          "visible": "globalControlTypeEffects != 'none' && globalControlTypeEffects != 'static'",
+          "title": "State",
+          "id": "globalEffectsState",
+          "responsive": false,
+          "segmented": {
+            "default": "start",
+            "items": [
+              {
+                "title": "Start",
+                "value": "start"
+              },
+              {
+                "title": "End",
+                "value": "end"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalControlTypeEffects != 'none'",
+          "divider": {}
+        },
+        {
+          "visible": "globalControlTypeEffects != 'none'",
+          "title": "Box Shadow",
+          "heading": {}
+        },
+        {
+          "title": "Size",
+          "id": "globalBoxShadow",
+          "ai": {
+            "name": "boxShadow",
+            "description": "Box shadow size, a theme shadow token. Pair with boxShadowColor and boxShadowOpacity.",
+            "visible": "effects == 'static'"
+          },
+          "responsive": false,
+          "themeShadow": {
+            "default": {
+              "base": {
+                "name": "Default"
+              }
+            }
+          },
+          "visible": "globalControlTypeEffects == 'static' || (globalControlTypeEffects == 'hover' && globalEffectsState == 'start')"
+        },
+        {
+          "title": "Color",
+          "id": "globalBoxShadowColor",
+          "ai": {
+            "name": "boxShadowColor",
+            "description": "Box shadow theme color.",
+            "visible": "effects == 'static'"
+          },
+          "format": "shadow-{{value}}/(--box-shadow-opacity)",
+          "themeColor": {
+            "default": {
+              "name": "none",
+              "brightness": 500
+            }
+          },
+          "visible": "globalControlTypeEffects == 'static' || (globalControlTypeEffects == 'hover' && globalEffectsState == 'start')"
+        },
+        {
+          "title": "Opacity",
+          "id": "globalBoxShadowOpacity",
+          "ai": {
+            "name": "boxShadowOpacity",
+            "description": "Box shadow opacity, 0-100.",
+            "visible": "effects == 'static'"
+          },
+          "format": "[--box-shadow-opacity:{{value}}%]",
+          "responsive": false,
+          "slider": {
+            "default": 100,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          },
+          "visible": "globalControlTypeEffects == 'static' || (globalControlTypeEffects == 'hover' && globalEffectsState == 'start')"
+        },
+        {
+          "title": "Size",
+          "id": "globalBoxShadowEnd",
+          "ai": {
+            "name": "boxShadowHover",
+            "description": "Box shadow size, a theme shadow token. Pair with boxShadowColor and boxShadowOpacity.",
+            "visible": "effects == 'hover'"
+          },
+          "responsive": false,
+          "themeShadow": {
+            "default": {
+              "base": {
+                "name": "Default"
+              }
+            }
+          },
+          "visible": "(globalControlTypeEffects == 'hover' && globalEffectsState == 'end')",
+          "format": "hover:{{value}}"
+        },
+        {
+          "title": "Color",
+          "id": "globalBoxShadowColorEnd",
+          "ai": {
+            "name": "boxShadowColorHover",
+            "description": "Box shadow theme color.",
+            "visible": "effects == 'hover'"
+          },
+          "format": "hover:shadow-{{value}}/(--box-shadow-opacity)",
+          "themeColor": {
+            "default": {
+              "name": "none",
+              "brightness": 500
+            }
+          },
+          "visible": "(globalControlTypeEffects == 'hover' && globalEffectsState == 'end')"
+        },
+        {
+          "title": "Opacity",
+          "id": "globalBoxShadowOpacityEnd",
+          "ai": {
+            "name": "boxShadowOpacityHover",
+            "description": "Box shadow opacity, 0-100.",
+            "visible": "effects == 'hover'"
+          },
+          "format": "hover:[--box-shadow-opacity:{{value}}%]",
+          "responsive": false,
+          "slider": {
+            "default": 100,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          },
+          "visible": "(globalControlTypeEffects == 'hover' && globalEffectsState == 'end')"
+        },
+        {
+          "visible": "globalControlTypeEffects != 'none'",
+          "divider": {}
+        },
+        {
+          "title": "Opacity",
+          "id": "globalOpacity",
+          "ai": {
+            "name": "opacity",
+            "description": "Element opacity, 0-100.",
+            "visible": "effects == 'static'"
+          },
+          "format": "opacity-[{{value}}%]",
+          "slider": {
+            "default": 100,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          },
+          "visible": "globalControlTypeEffects == 'static' || (globalControlTypeEffects == 'hover' && globalEffectsState == 'start')"
+        },
+        {
+          "title": "Opacity",
+          "id": "globalOpacityEnd",
+          "ai": {
+            "name": "opacityHover",
+            "description": "Element opacity, 0-100.",
+            "visible": "effects == 'hover'"
+          },
+          "format": "hover:opacity-[{{value}}%]",
+          "slider": {
+            "default": 100,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          },
+          "visible": "(globalControlTypeEffects == 'hover' && globalEffectsState == 'end')"
+        }
+      ]
+    },
+    {
+      "title": "Filters",
+      "icon": "camera.filters",
+      "properties": [
+        {
+          "title": "Type",
+          "id": "globalControlTypeFilters",
+          "ai": {
+            "name": "filters",
+            "description": "Enable/disable filters.",
+            "values": [
+              "none",
+              "static",
+              "hover"
+            ]
+          },
+          "responsive": false,
+          "segmented": {
+            "default": "none",
+            "items": [
+              {
+                "title": "None",
+                "value": "none"
+              },
+              {
+                "title": "Static",
+                "value": "static"
+              },
+              {
+                "title": "Hover",
+                "value": "hover"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Over",
+          "id": "globalHoverGroupFilters",
+          "responsive": false,
+          "select": {
+            "default": "self",
+            "items": [
+              {
+                "title": "Self",
+                "value": "self"
+              },
+              {
+                "title": "Parent",
+                "value": "parent"
+              },
+              {
+                "title": "Container",
+                "value": "container"
+              },
+              {
+                "title": "Grid",
+                "value": "grid"
+              },
+              {
+                "title": "Flex",
+                "value": "flex"
+              },
+              {
+                "title": "Custom ID",
+                "value": "custom"
+              }
+            ]
+          },
+          "visible": "globalControlTypeFilters == 'hover'"
+        },
+        {
+          "visible": "globalControlTypeFilters == 'hover' && globalHoverGroupFilters == 'custom'",
+          "title": "ID",
+          "id": "globalHoverGroupCustomIdFilters",
+          "text": {
+            "default": ""
+          }
+        },
+        {
+          "visible": "globalHoverGroupFilters == 'custom'",
+          "title": "The ID of the parent element to trigger the filters.",
+          "information": {}
+        },
+        {
+          "visible": "globalControlTypeFilters != 'none' && globalControlTypeFilters != 'static'",
+          "title": "State",
+          "id": "globalFiltersState",
+          "responsive": false,
+          "segmented": {
+            "default": "start",
+            "items": [
+              {
+                "title": "Start",
+                "value": "start"
+              },
+              {
+                "title": "End",
+                "value": "end"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalControlTypeFilters != 'none'",
+          "divider": {}
+        },
+        {
+          "visible": "globalControlTypeFilters != 'none'",
+          "title": "Filters",
+          "heading": {}
+        },
+        {
+          "title": "Blur",
+          "id": "globalFiltersBlur",
+          "ai": {
+            "name": "blur",
+            "description": "Blur filter, in pixels.",
+            "visible": "filters == 'static'"
+          },
+          "format": "blur-[{{value}}px]",
+          "number": {
+            "default": 0,
+            "subtitle": "In pixels"
+          },
+          "visible": "globalControlTypeFilters == 'static' || (globalControlTypeFilters == 'hover' && globalFiltersState == 'start')"
+        },
+        {
+          "title": "Brightness",
+          "id": "globalFiltersBrightness",
+          "ai": {
+            "name": "brightness",
+            "description": "Brightness filter, in percent.",
+            "visible": "filters == 'static'"
+          },
+          "format": "brightness-[{{value}}%]",
+          "number": {
+            "default": 100,
+            "subtitle": "In percent"
+          },
+          "visible": "globalControlTypeFilters == 'static' || (globalControlTypeFilters == 'hover' && globalFiltersState == 'start')"
+        },
+        {
+          "title": "Saturate",
+          "id": "globalFiltersSaturate",
+          "ai": {
+            "name": "saturate",
+            "description": "Saturation filter, in percent.",
+            "visible": "filters == 'static'"
+          },
+          "format": "saturate-[{{value}}%]",
+          "number": {
+            "default": 100,
+            "subtitle": "In percent"
+          },
+          "visible": "globalControlTypeFilters == 'static' || (globalControlTypeFilters == 'hover' && globalFiltersState == 'start')"
+        },
+        {
+          "title": "Drop Shadow",
+          "id": "globalFiltersDropShadow",
+          "ai": {
+            "name": "dropShadow",
+            "description": "Drop-shadow filter, a theme shadow token. Follows the rendered shape (respects transparency), unlike boxShadow.",
+            "visible": "filters == 'static'"
+          },
+          "themeShadow": {
+            "mode": "drop",
+            "default": {
+              "base": {
+                "name": "none"
+              }
+            }
+          },
+          "visible": "globalControlTypeFilters == 'static' || (globalControlTypeFilters == 'hover' && globalFiltersState == 'start')"
+        },
+        {
+          "title": "Blur",
+          "id": "globalFiltersBlurEnd",
+          "ai": {
+            "name": "blurHover",
+            "description": "Blur filter, in pixels.",
+            "visible": "filters == 'hover'"
+          },
+          "format": "blur-[{{value}}px]",
+          "number": {
+            "default": 0,
+            "subtitle": "In pixels"
+          },
+          "visible": "(globalControlTypeFilters == 'hover' && globalFiltersState == 'end')"
+        },
+        {
+          "title": "Brightness",
+          "id": "globalFiltersBrightnessEnd",
+          "ai": {
+            "name": "brightnessHover",
+            "description": "Brightness filter, in percent.",
+            "visible": "filters == 'hover'"
+          },
+          "format": "brightness-[{{value}}%]",
+          "number": {
+            "default": 100,
+            "subtitle": "In percent"
+          },
+          "visible": "(globalControlTypeFilters == 'hover' && globalFiltersState == 'end')"
+        },
+        {
+          "title": "Saturate",
+          "id": "globalFiltersSaturateEnd",
+          "ai": {
+            "name": "saturateHover",
+            "description": "Saturation filter, in percent.",
+            "visible": "filters == 'hover'"
+          },
+          "format": "saturate-[{{value}}%]",
+          "number": {
+            "default": 100,
+            "subtitle": "In percent"
+          },
+          "visible": "(globalControlTypeFilters == 'hover' && globalFiltersState == 'end')"
+        },
+        {
+          "title": "Drop Shadow",
+          "id": "globalFiltersDropShadowEnd",
+          "ai": {
+            "name": "dropShadowHover",
+            "description": "Drop-shadow filter, a theme shadow token. Follows the rendered shape (respects transparency), unlike boxShadow.",
+            "visible": "filters == 'hover'"
+          },
+          "themeShadow": {
+            "mode": "drop",
+            "default": {
+              "base": {
+                "name": "none"
+              }
+            }
+          },
+          "visible": "(globalControlTypeFilters == 'hover' && globalFiltersState == 'end')"
+        },
+        {
+          "visible": "globalControlTypeFilters != 'none'",
+          "title": "Backdrop Filters",
+          "heading": {}
+        },
+        {
+          "title": "Blur",
+          "id": "globalFiltersBackdropBlur",
+          "ai": {
+            "name": "backdropBlur",
+            "description": "Backdrop blur filter, in pixels.",
+            "visible": "filters == 'static'"
+          },
+          "format": "backdrop-blur-[{{value}}px]",
+          "number": {
+            "default": 0,
+            "subtitle": "In pixels"
+          },
+          "visible": "globalControlTypeFilters == 'static' || (globalControlTypeFilters == 'hover' && globalFiltersState == 'start')"
+        },
+        {
+          "title": "Blur",
+          "id": "globalFiltersBackdropBlurEnd",
+          "ai": {
+            "name": "backdropBlurHover",
+            "description": "Backdrop blur filter, in pixels.",
+            "visible": "filters == 'hover'"
+          },
+          "format": "backdrop-blur-[{{value}}px]",
+          "number": {
+            "default": 0,
+            "subtitle": "In pixels"
+          },
+          "visible": "(globalControlTypeFilters == 'hover' && globalFiltersState == 'end')"
+        }
+      ]
+    },
+    {
+      "title": "Transforms",
+      "icon": "skew",
+      "properties": [
+        {
+          "title": "Type",
+          "id": "globalControlTypeTransforms",
+          "ai": {
+            "name": "transforms",
+            "description": "Enable/disable transforms.",
+            "values": [
+              "none",
+              "static",
+              "hover"
+            ]
+          },
+          "responsive": false,
+          "segmented": {
+            "default": "none",
+            "items": [
+              {
+                "title": "None",
+                "value": "none"
+              },
+              {
+                "title": "Static",
+                "value": "static"
+              },
+              {
+                "title": "Hover",
+                "value": "hover"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Over",
+          "id": "globalHoverGroupTransforms",
+          "responsive": false,
+          "select": {
+            "default": "self",
+            "items": [
+              {
+                "title": "Self",
+                "value": "self"
+              },
+              {
+                "title": "Parent",
+                "value": "parent"
+              },
+              {
+                "title": "Container",
+                "value": "container"
+              },
+              {
+                "title": "Grid",
+                "value": "grid"
+              },
+              {
+                "title": "Flex",
+                "value": "flex"
+              },
+              {
+                "title": "Custom ID",
+                "value": "custom"
+              }
+            ]
+          },
+          "ai": {
+            "name": "transformsHoverTrigger",
+            "description": "Which element's hover triggers the transforms.",
+            "values": [
+              "self",
+              "parent",
+              "container",
+              "grid",
+              "flex",
+              "custom"
+            ],
+            "visible": "transforms == 'hover'"
+          },
+          "visible": "globalControlTypeTransforms == 'hover'"
+        },
+        {
+          "visible": "globalControlTypeTransforms == 'hover' && globalHoverGroupTransforms == 'custom'",
+          "ai": {
+            "name": "transformsHoverTriggerId",
+            "description": "ID of the element that triggers the hover transforms (when trigger is 'custom').",
+            "visible": "transforms == 'hover' && transformsHoverTrigger == 'custom'"
+          },
+          "title": "ID",
+          "id": "globalHoverGroupCustomIdTransforms",
+          "text": {
+            "default": ""
+          }
+        },
+        {
+          "visible": "globalHoverGroupTransforms == 'custom'",
+          "title": "The ID of the parent element to trigger the transforms.",
+          "information": {}
+        },
+        {
+          "visible": "globalControlTypeTransforms != 'none' && globalControlTypeTransforms != 'static'",
+          "ai": {
+            "exclude": true
+          },
+          "title": "State",
+          "id": "globalTransformsState",
+          "responsive": false,
+          "segmented": {
+            "default": "start",
+            "items": [
+              {
+                "title": "Start",
+                "value": "start"
+              },
+              {
+                "title": "End",
+                "value": "end"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalControlTypeTransforms != 'none'",
+          "divider": {}
+        },
+        {
+          "title": "Origin",
+          "id": "globalTransformOrigin",
+          "format": "origin-{{value}}",
+          "select": {
+            "default": "center",
+            "items": [
+              {
+                "value": "center",
+                "title": "Center"
+              },
+              {
+                "value": "top",
+                "title": "Top"
+              },
+              {
+                "value": "top-right",
+                "title": "Top Right"
+              },
+              {
+                "value": "right",
+                "title": "Right"
+              },
+              {
+                "value": "bottom-right",
+                "title": "Bottom Right"
+              },
+              {
+                "value": "bottom",
+                "title": "Bottom"
+              },
+              {
+                "value": "bottom-left",
+                "title": "Bottom Left"
+              },
+              {
+                "value": "left",
+                "title": "Left"
+              },
+              {
+                "value": "top-left",
+                "title": "Top Left"
+              }
+            ]
+          },
+          "visible": "globalControlTypeTransforms != 'none'"
+        },
+        {
+          "title": "Scale",
+          "id": "globalTransformScale",
+          "ai": {
+            "name": "scale",
+            "description": "Scale, in percent (100 = no change).",
+            "visible": "transforms == 'static'"
+          },
+          "format": "scale-x-[{{value}}%] scale-y-[{{value}}%]",
+          "number": {
+            "default": 100,
+            "subtitle": "%"
+          },
+          "visible": "globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"
+        },
+        {
+          "title": "Rotate",
+          "id": "globalTransformRotate",
+          "ai": {
+            "name": "rotate",
+            "description": "Rotation, in degrees.",
+            "visible": "transforms == 'static'"
+          },
+          "format": "rotate-[{{value}}deg]",
+          "number": {
+            "default": 0,
+            "subtitle": "in degrees"
+          },
+          "visible": "globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"
+        },
+        {
+          "title": "Translate",
+          "heading": {},
+          "ai": {
+            "visible": "transforms == 'static'"
+          },
+          "visible": "globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"
+        },
+        {
+          "title": "Horizontal",
+          "id": "globalTransformTranslateX",
+          "ai": {
+            "name": "translateX",
+            "description": "Horizontal offset. CSS length (e.g. 10px, 50%, 10vw).",
+            "visible": "transforms == 'static'"
+          },
+          "format": "translate-x-[{{value}}]",
+          "text": {
+            "default": "0px",
+            "base": "0px"
+          },
+          "visible": "globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"
+        },
+        {
+          "title": "Vertical",
+          "id": "globalTransformTranslateY",
+          "ai": {
+            "name": "translateY",
+            "description": "Vertical offset. CSS length (e.g. 10px, 50%, 10vw).",
+            "visible": "transforms == 'static'"
+          },
+          "format": "translate-y-[{{value}}]",
+          "text": {
+            "default": "0px",
+            "subtitle": "Use valid CSS values. 10px, 50%, 10vw."
+          },
+          "visible": "globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"
+        },
+        {
+          "title": "Skew",
+          "heading": {},
+          "ai": {
+            "visible": "transforms == 'static'"
+          },
+          "visible": "globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"
+        },
+        {
+          "title": "Horizontal",
+          "id": "globalTransformSkewX",
+          "ai": {
+            "name": "skewX",
+            "description": "Horizontal skew, in degrees.",
+            "visible": "transforms == 'static'"
+          },
+          "format": "skew-x-[{{value}}deg]",
+          "number": {
+            "default": 0
+          },
+          "visible": "globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"
+        },
+        {
+          "title": "Vertical",
+          "id": "globalTransformSkewY",
+          "ai": {
+            "name": "skewY",
+            "description": "Vertical skew, in degrees.",
+            "visible": "transforms == 'static'"
+          },
+          "format": "skew-y-[{{value}}deg]",
+          "number": {
+            "default": 0,
+            "subtitle": "in degrees"
+          },
+          "visible": "globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"
+        },
+        {
+          "title": "Scale",
+          "id": "globalTransformScaleEnd",
+          "ai": {
+            "name": "scaleHover",
+            "description": "Scale, in percent (100 = no change).",
+            "visible": "transforms == 'hover'"
+          },
+          "format": "scale-x-[{{value}}%] scale-y-[{{value}}%]",
+          "number": {
+            "default": 100,
+            "subtitle": "%"
+          },
+          "visible": "(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"
+        },
+        {
+          "title": "Rotate",
+          "id": "globalTransformRotateEnd",
+          "ai": {
+            "name": "rotateHover",
+            "description": "Rotation, in degrees.",
+            "visible": "transforms == 'hover'"
+          },
+          "format": "rotate-[{{value}}deg]",
+          "number": {
+            "default": 0,
+            "subtitle": "in degrees"
+          },
+          "visible": "(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"
+        },
+        {
+          "title": "Translate",
+          "heading": {},
+          "ai": {
+            "exclude": true
+          },
+          "visible": "(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"
+        },
+        {
+          "title": "Horizontal",
+          "id": "globalTransformTranslateXEnd",
+          "ai": {
+            "name": "translateXHover",
+            "description": "Horizontal offset. CSS length (e.g. 10px, 50%, 10vw).",
+            "visible": "transforms == 'hover'"
+          },
+          "format": "translate-x-[{{value}}]",
+          "text": {
+            "default": "0px",
+            "base": "0px"
+          },
+          "visible": "(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"
+        },
+        {
+          "title": "Vertical",
+          "id": "globalTransformTranslateYEnd",
+          "ai": {
+            "name": "translateYHover",
+            "description": "Vertical offset. CSS length (e.g. 10px, 50%, 10vw).",
+            "visible": "transforms == 'hover'"
+          },
+          "format": "translate-y-[{{value}}]",
+          "text": {
+            "default": "0px",
+            "subtitle": "Use valid CSS values. 10px, 50%, 10vw."
+          },
+          "visible": "(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"
+        },
+        {
+          "title": "Skew",
+          "heading": {},
+          "ai": {
+            "exclude": true
+          },
+          "visible": "(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"
+        },
+        {
+          "title": "Horizontal",
+          "id": "globalTransformSkewXEnd",
+          "ai": {
+            "name": "skewXHover",
+            "description": "Horizontal skew, in degrees.",
+            "visible": "transforms == 'hover'"
+          },
+          "format": "skew-x-[{{value}}deg]",
+          "number": {
+            "default": 0
+          },
+          "visible": "(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"
+        },
+        {
+          "title": "Vertical",
+          "id": "globalTransformSkewYEnd",
+          "ai": {
+            "name": "skewYHover",
+            "description": "Vertical skew, in degrees.",
+            "visible": "transforms == 'hover'"
+          },
+          "format": "skew-y-[{{value}}deg]",
+          "number": {
+            "default": 0,
+            "subtitle": "in degrees"
+          },
+          "visible": "(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"
+        }
+      ]
+    },
+    {
+      "title": "Background",
+      "icon": "paintbrush.fill",
+      "properties": [
+        {
+          "title": "Type",
+          "id": "globalControlTypeBg",
+          "ai": {
+            "name": "bg",
+            "description": "Enable/disable background.",
+            "values": [
+              "none",
+              "static",
+              "hover"
+            ]
+          },
+          "responsive": false,
+          "segmented": {
+            "default": "static",
+            "items": [
+              {
+                "title": "None",
+                "value": "none"
+              },
+              {
+                "title": "Static",
+                "value": "static"
+              },
+              {
+                "title": "Hover",
+                "value": "hover"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalControlTypeBg != 'none'",
+          "ai": {
+            "name": "bgStyle",
+            "description": "Background style: color, image, or gradient."
+          },
+          "title": "Style",
+          "id": "globalBgType",
+          "responsive": false,
+          "segmented": {
+            "default": "color",
+            "items": [
+              {
+                "icon": "paintbrush",
+                "value": "color"
+              },
+              {
+                "icon": "photo",
+                "value": "image"
+              },
+              {
+                "icon": "swatchpalette",
+                "value": "gradient"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalControlTypeBg != 'none' && globalControlTypeBg != 'static'",
+          "ai": {
+            "exclude": true
+          },
+          "title": "State",
+          "id": "globalBgState",
+          "responsive": false,
+          "segmented": {
+            "default": "start",
+            "items": [
+              {
+                "title": "Start",
+                "value": "start"
+              },
+              {
+                "title": "End",
+                "value": "end"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalControlTypeBg != 'none'",
+          "divider": {}
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'color' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'color')",
+          "ai": {
+            "name": "bgColor",
+            "description": "Background theme color.",
+            "visible": "bg == 'static' && bgStyle == 'color'"
+          },
+          "title": "Color",
+          "id": "globalBgColor",
+          "format": "bg-{{value}}/(--bgColorOpacity)",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 50
+            }
+          }
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'color' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'color')",
+          "ai": {
+            "name": "bgColorOpacity",
+            "description": "Background color opacity, 0-100.",
+            "visible": "bg == 'static' && bgStyle == 'color'"
+          },
+          "title": "Opacity",
+          "id": "globalBgColorOpacity",
+          "format": "[--bgColorOpacity:{{value}}%]",
+          "responsive": false,
+          "slider": {
+            "default": 100,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'color')",
+          "ai": {
+            "name": "bgColorHover",
+            "description": "Background hover-state theme color.",
+            "visible": "bg == 'hover' && bgStyle == 'color'"
+          },
+          "title": "Color",
+          "id": "globalBgColorEnd",
+          "format": "hover:bg-{{value}}/(--bgColorOpacityEnd)",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 50
+            }
+          }
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'color')",
+          "ai": {
+            "name": "bgColorOpacityHover",
+            "description": "Background hover-state color opacity, 0-100.",
+            "visible": "bg == 'hover' && bgStyle == 'color'"
+          },
+          "title": "Opacity",
+          "id": "globalBgColorOpacityEnd",
+          "format": "hover:[--bgColorOpacityEnd:{{value}}%]",
+          "responsive": false,
+          "slider": {
+            "default": 100,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')",
+          "ai": {
+            "name": "bgGradientType",
+            "description": "Gradient type: linear, radial, or conic.",
+            "values": [
+              "linear",
+              "radial",
+              "conic"
+            ],
+            "visible": "bg == 'static' && bgStyle == 'gradient'"
+          },
+          "title": "Type",
+          "id": "globalBgGradientType",
+          "responsive": false,
+          "segmented": {
+            "default": "linear",
+            "items": [
+              {
+                "value": "linear",
+                "title": "Linear"
+              },
+              {
+                "value": "radial",
+                "title": "Radial"
+              },
+              {
+                "value": "conic",
+                "title": "Conic"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "((globalControlTypeBg == 'static' && globalBgType == 'gradient') || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')) && globalBgGradientType == 'linear'",
+          "ai": {
+            "name": "bgGradientDirection",
+            "description": "Linear gradient direction.",
+            "visible": "bg == 'static' && bgStyle == 'gradient' && bgGradientType == 'linear'"
+          },
+          "title": "Direction",
+          "id": "globalBgGradientDirection",
+          "responsive": false,
+          "select": {
+            "default": "bg-linear-to-b",
+            "items": [
+              {
+                "value": "bg-linear-to-t",
+                "title": "To Top"
+              },
+              {
+                "value": "bg-linear-to-tr",
+                "title": "To Top Right"
+              },
+              {
+                "value": "bg-linear-to-r",
+                "title": "To Right"
+              },
+              {
+                "value": "bg-linear-to-br",
+                "title": "To Bottom Right"
+              },
+              {
+                "value": "bg-linear-to-b",
+                "title": "To Bottom"
+              },
+              {
+                "value": "bg-linear-to-bl",
+                "title": "To Bottom Left"
+              },
+              {
+                "value": "bg-linear-to-l",
+                "title": "To Left"
+              },
+              {
+                "value": "bg-linear-to-tl",
+                "title": "To Top Left"
+              },
+              {
+                "value": "bg-linear-45",
+                "title": "45 Degrees"
+              },
+              {
+                "value": "bg-linear-90",
+                "title": "90 Degrees"
+              },
+              {
+                "value": "bg-linear-135",
+                "title": "135 Degrees"
+              },
+              {
+                "value": "bg-linear-180",
+                "title": "180 Degrees"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "((globalControlTypeBg == 'static' && globalBgType == 'gradient') || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')) && globalBgGradientType == 'radial'",
+          "ai": {
+            "name": "bgGradientRadialPosition",
+            "description": "Radial gradient center position.",
+            "visible": "bg == 'static' && bgStyle == 'gradient' && bgGradientType == 'radial'"
+          },
+          "title": "Position",
+          "id": "globalBgGradientRadialPosition",
+          "responsive": false,
+          "select": {
+            "default": "bg-radial",
+            "items": [
+              {
+                "value": "bg-radial",
+                "title": "Center"
+              },
+              {
+                "value": "bg-radial-[at_top]",
+                "title": "Top"
+              },
+              {
+                "value": "bg-radial-[at_top_right]",
+                "title": "Top Right"
+              },
+              {
+                "value": "bg-radial-[at_right]",
+                "title": "Right"
+              },
+              {
+                "value": "bg-radial-[at_bottom_right]",
+                "title": "Bottom Right"
+              },
+              {
+                "value": "bg-radial-[at_bottom]",
+                "title": "Bottom"
+              },
+              {
+                "value": "bg-radial-[at_bottom_left]",
+                "title": "Bottom Left"
+              },
+              {
+                "value": "bg-radial-[at_left]",
+                "title": "Left"
+              },
+              {
+                "value": "bg-radial-[at_top_left]",
+                "title": "Top Left"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "((globalControlTypeBg == 'static' && globalBgType == 'gradient') || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')) && globalBgGradientType == 'conic'",
+          "ai": {
+            "name": "bgGradientConicAngle",
+            "description": "Conic gradient start angle.",
+            "visible": "bg == 'static' && bgStyle == 'gradient' && bgGradientType == 'conic'"
+          },
+          "title": "Angle",
+          "id": "globalBgGradientConicAngle",
+          "responsive": false,
+          "select": {
+            "default": "bg-conic",
+            "items": [
+              {
+                "value": "bg-conic",
+                "title": "Default"
+              },
+              {
+                "value": "bg-conic-0",
+                "title": "0 Degrees"
+              },
+              {
+                "value": "bg-conic-90",
+                "title": "90 Degrees"
+              },
+              {
+                "value": "bg-conic-180",
+                "title": "180 Degrees"
+              },
+              {
+                "value": "bg-conic-270",
+                "title": "270 Degrees"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')",
+          "ai": {
+            "name": "bgGradientInterpolation",
+            "description": "Gradient color interpolation mode.",
+            "visible": "bg == 'static' && bgStyle == 'gradient'"
+          },
+          "title": "Interpolation",
+          "id": "globalBgGradientInterpolation",
+          "responsive": false,
+          "select": {
+            "default": "",
+            "items": [
+              {
+                "value": "",
+                "title": "Default"
+              },
+              {
+                "value": "srgb",
+                "title": "sRGB"
+              },
+              {
+                "value": "hsl",
+                "title": "HSL"
+              },
+              {
+                "value": "oklab",
+                "title": "OKLab"
+              },
+              {
+                "value": "oklch",
+                "title": "OKLCH"
+              },
+              {
+                "value": "longer",
+                "title": "Longer"
+              },
+              {
+                "value": "shorter",
+                "title": "Shorter"
+              },
+              {
+                "value": "increasing",
+                "title": "Increasing"
+              },
+              {
+                "value": "decreasing",
+                "title": "Decreasing"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')",
+          "heading": {},
+          "title": "From"
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')",
+          "ai": {
+            "name": "bgGradientFrom",
+            "description": "Gradient start theme color.",
+            "visible": "bg == 'static' && bgStyle == 'gradient'"
+          },
+          "title": "Color",
+          "id": "globalBgGradientFromColor",
+          "format": "from-{{value}}/(--bgGradientFromOpacity)",
+          "themeColor": {
+            "default": {
+              "name": "brand",
+              "brightness": 200
+            }
+          }
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')",
+          "ai": {
+            "name": "bgGradientFromOpacity",
+            "description": "Gradient start color opacity, 0-100.",
+            "visible": "bg == 'static' && bgStyle == 'gradient'"
+          },
+          "title": "Opacity",
+          "id": "globalBgGradientFromOpacity",
+          "format": "[--bgGradientFromOpacity:{{value}}%]",
+          "responsive": false,
+          "slider": {
+            "default": 100,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')",
+          "ai": {
+            "name": "bgGradientFromPosition",
+            "description": "Gradient start stop position, 0-100.",
+            "visible": "bg == 'static' && bgStyle == 'gradient'"
+          },
+          "title": "Position",
+          "id": "globalBgGradientFromPosition",
+          "format": "from-{{value}}%",
+          "responsive": false,
+          "slider": {
+            "default": 0,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')",
+          "divider": {}
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')",
+          "ai": {
+            "name": "bgGradientViaEnabled",
+            "description": "Add a mid-stop (via) color to the gradient.",
+            "visible": "bg == 'static' && bgStyle == 'gradient'"
+          },
+          "title": "Add Via",
+          "id": "globalBgGradientViaEnabled",
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient') && globalBgGradientViaEnabled == true",
+          "heading": {},
+          "title": "Via"
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient') && globalBgGradientViaEnabled == true",
+          "ai": {
+            "name": "bgGradientVia",
+            "description": "Gradient mid-stop theme color.",
+            "visible": "bg == 'static' && bgStyle == 'gradient' && bgGradientViaEnabled == true"
+          },
+          "title": "Color",
+          "id": "globalBgGradientViaColor",
+          "format": "via-{{value}}/(--bgGradientViaOpacity)",
+          "themeColor": {
+            "default": {
+              "name": "brand",
+              "brightness": 400
+            }
+          }
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient') && globalBgGradientViaEnabled == true",
+          "ai": {
+            "name": "bgGradientViaOpacity",
+            "description": "Gradient mid-stop color opacity, 0-100.",
+            "visible": "bg == 'static' && bgStyle == 'gradient' && bgGradientViaEnabled == true"
+          },
+          "title": "Opacity",
+          "id": "globalBgGradientViaOpacity",
+          "format": "[--bgGradientViaOpacity:{{value}}%]",
+          "responsive": false,
+          "slider": {
+            "default": 100,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient') && globalBgGradientViaEnabled == true",
+          "ai": {
+            "name": "bgGradientViaPosition",
+            "description": "Gradient mid-stop position, 0-100.",
+            "visible": "bg == 'static' && bgStyle == 'gradient' && bgGradientViaEnabled == true"
+          },
+          "title": "Position",
+          "id": "globalBgGradientViaPosition",
+          "format": "via-{{value}}%",
+          "responsive": false,
+          "slider": {
+            "default": 50,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')",
+          "divider": {}
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')",
+          "heading": {},
+          "title": "To"
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')",
+          "ai": {
+            "name": "bgGradientTo",
+            "description": "Gradient end theme color.",
+            "visible": "bg == 'static' && bgStyle == 'gradient'"
+          },
+          "title": "Color",
+          "id": "globalBgGradientToColor",
+          "format": "to-{{value}}/(--bgGradientToOpacity)",
+          "themeColor": {
+            "default": {
+              "name": "brand",
+              "brightness": 500
+            }
+          }
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')",
+          "ai": {
+            "name": "bgGradientToOpacity",
+            "description": "Gradient end color opacity, 0-100.",
+            "visible": "bg == 'static' && bgStyle == 'gradient'"
+          },
+          "title": "Opacity",
+          "id": "globalBgGradientToOpacity",
+          "format": "[--bgGradientToOpacity:{{value}}%]",
+          "responsive": false,
+          "slider": {
+            "default": 100,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')",
+          "ai": {
+            "name": "bgGradientToPosition",
+            "description": "Gradient end stop position, 0-100.",
+            "visible": "bg == 'static' && bgStyle == 'gradient'"
+          },
+          "title": "Position",
+          "id": "globalBgGradientToPosition",
+          "format": "to-{{value}}%",
+          "responsive": false,
+          "slider": {
+            "default": 100,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient')",
+          "ai": {
+            "name": "bgGradientTypeHover",
+            "description": "Hover-state gradient type: linear, radial, or conic.",
+            "values": [
+              "linear",
+              "radial",
+              "conic"
+            ],
+            "visible": "bg == 'hover' && bgStyle == 'gradient'"
+          },
+          "title": "Type",
+          "id": "globalBgGradientTypeEnd",
+          "responsive": false,
+          "segmented": {
+            "default": "linear",
+            "items": [
+              {
+                "value": "linear",
+                "title": "Linear"
+              },
+              {
+                "value": "radial",
+                "title": "Radial"
+              },
+              {
+                "value": "conic",
+                "title": "Conic"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient') && globalBgGradientTypeEnd == 'linear'",
+          "ai": {
+            "name": "bgGradientDirectionHover",
+            "description": "Hover-state linear gradient direction.",
+            "visible": "bg == 'hover' && bgStyle == 'gradient' && bgGradientTypeHover == 'linear'"
+          },
+          "title": "Direction",
+          "id": "globalBgGradientDirectionEnd",
+          "responsive": false,
+          "format": "hover:{{value}}",
+          "select": {
+            "default": "bg-linear-to-b",
+            "items": [
+              {
+                "value": "bg-linear-to-t",
+                "title": "To Top"
+              },
+              {
+                "value": "bg-linear-to-tr",
+                "title": "To Top Right"
+              },
+              {
+                "value": "bg-linear-to-r",
+                "title": "To Right"
+              },
+              {
+                "value": "bg-linear-to-br",
+                "title": "To Bottom Right"
+              },
+              {
+                "value": "bg-linear-to-b",
+                "title": "To Bottom"
+              },
+              {
+                "value": "bg-linear-to-bl",
+                "title": "To Bottom Left"
+              },
+              {
+                "value": "bg-linear-to-l",
+                "title": "To Left"
+              },
+              {
+                "value": "bg-linear-to-tl",
+                "title": "To Top Left"
+              },
+              {
+                "value": "bg-linear-45",
+                "title": "45 Degrees"
+              },
+              {
+                "value": "bg-linear-90",
+                "title": "90 Degrees"
+              },
+              {
+                "value": "bg-linear-135",
+                "title": "135 Degrees"
+              },
+              {
+                "value": "bg-linear-180",
+                "title": "180 Degrees"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient') && globalBgGradientTypeEnd == 'radial'",
+          "ai": {
+            "name": "bgGradientRadialPositionHover",
+            "description": "Hover-state radial gradient center position.",
+            "visible": "bg == 'hover' && bgStyle == 'gradient' && bgGradientTypeHover == 'radial'"
+          },
+          "title": "Position",
+          "id": "globalBgGradientRadialPositionEnd",
+          "responsive": false,
+          "format": "hover:{{value}}",
+          "select": {
+            "default": "bg-radial",
+            "items": [
+              {
+                "value": "bg-radial",
+                "title": "Center"
+              },
+              {
+                "value": "bg-radial-[at_top]",
+                "title": "Top"
+              },
+              {
+                "value": "bg-radial-[at_top_right]",
+                "title": "Top Right"
+              },
+              {
+                "value": "bg-radial-[at_right]",
+                "title": "Right"
+              },
+              {
+                "value": "bg-radial-[at_bottom_right]",
+                "title": "Bottom Right"
+              },
+              {
+                "value": "bg-radial-[at_bottom]",
+                "title": "Bottom"
+              },
+              {
+                "value": "bg-radial-[at_bottom_left]",
+                "title": "Bottom Left"
+              },
+              {
+                "value": "bg-radial-[at_left]",
+                "title": "Left"
+              },
+              {
+                "value": "bg-radial-[at_top_left]",
+                "title": "Top Left"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient') && globalBgGradientTypeEnd == 'conic'",
+          "ai": {
+            "name": "bgGradientConicAngleHover",
+            "description": "Hover-state conic gradient start angle.",
+            "visible": "bg == 'hover' && bgStyle == 'gradient' && bgGradientTypeHover == 'conic'"
+          },
+          "title": "Angle",
+          "id": "globalBgGradientConicAngleEnd",
+          "responsive": false,
+          "format": "hover:{{value}}",
+          "select": {
+            "default": "bg-conic",
+            "items": [
+              {
+                "value": "bg-conic",
+                "title": "Default"
+              },
+              {
+                "value": "bg-conic-0",
+                "title": "0 Degrees"
+              },
+              {
+                "value": "bg-conic-90",
+                "title": "90 Degrees"
+              },
+              {
+                "value": "bg-conic-180",
+                "title": "180 Degrees"
+              },
+              {
+                "value": "bg-conic-270",
+                "title": "270 Degrees"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient')",
+          "ai": {
+            "name": "bgGradientInterpolationHover",
+            "description": "Hover-state gradient color interpolation mode.",
+            "visible": "bg == 'hover' && bgStyle == 'gradient'"
+          },
+          "title": "Interpolation",
+          "id": "globalBgGradientInterpolationEnd",
+          "responsive": false,
+          "select": {
+            "default": "",
+            "items": [
+              {
+                "value": "",
+                "title": "Default"
+              },
+              {
+                "value": "srgb",
+                "title": "sRGB"
+              },
+              {
+                "value": "hsl",
+                "title": "HSL"
+              },
+              {
+                "value": "oklab",
+                "title": "OKLab"
+              },
+              {
+                "value": "oklch",
+                "title": "OKLCH"
+              },
+              {
+                "value": "longer",
+                "title": "Longer"
+              },
+              {
+                "value": "shorter",
+                "title": "Shorter"
+              },
+              {
+                "value": "increasing",
+                "title": "Increasing"
+              },
+              {
+                "value": "decreasing",
+                "title": "Decreasing"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient')",
+          "title": "From",
+          "heading": {}
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient')",
+          "ai": {
+            "name": "bgGradientFromHover",
+            "description": "Hover-state gradient start theme color.",
+            "visible": "bg == 'hover' && bgStyle == 'gradient'"
+          },
+          "title": "Color",
+          "id": "globalBgGradientFromColorEnd",
+          "format": "hover:from-{{value}}/(--bgGradientFromOpacityEnd)",
+          "themeColor": {
+            "default": {
+              "name": "brand",
+              "brightness": 200
+            }
+          }
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient')",
+          "ai": {
+            "name": "bgGradientFromOpacityHover",
+            "description": "Hover-state gradient start color opacity, 0-100.",
+            "visible": "bg == 'hover' && bgStyle == 'gradient'"
+          },
+          "title": "Opacity",
+          "id": "globalBgGradientFromOpacityEnd",
+          "format": "hover:[--bgGradientFromOpacityEnd:{{value}}%]",
+          "responsive": false,
+          "slider": {
+            "default": 100,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient')",
+          "divider": {}
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient')",
+          "ai": {
+            "name": "bgGradientViaEnabledHover",
+            "description": "Add a mid-stop (via) color to the hover-state gradient.",
+            "visible": "bg == 'hover' && bgStyle == 'gradient'"
+          },
+          "title": "Add Via",
+          "id": "globalBgGradientViaEnabledEnd",
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient') && globalBgGradientViaEnabledEnd == true",
+          "heading": {},
+          "title": "Via"
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient') && globalBgGradientViaEnabledEnd == true",
+          "ai": {
+            "name": "bgGradientViaHover",
+            "description": "Hover-state gradient mid-stop theme color.",
+            "visible": "bg == 'hover' && bgStyle == 'gradient' && bgGradientViaEnabledHover == true"
+          },
+          "title": "Color",
+          "id": "globalBgGradientViaColorEnd",
+          "format": "hover:via-{{value}}/(--bgGradientViaOpacityEnd)",
+          "themeColor": {
+            "default": {
+              "name": "brand",
+              "brightness": 400
+            }
+          }
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient') && globalBgGradientViaEnabledEnd == true",
+          "ai": {
+            "name": "bgGradientViaOpacityHover",
+            "description": "Hover-state gradient mid-stop color opacity, 0-100.",
+            "visible": "bg == 'hover' && bgStyle == 'gradient' && bgGradientViaEnabledHover == true"
+          },
+          "title": "Opacity",
+          "id": "globalBgGradientViaOpacityEnd",
+          "format": "hover:[--bgGradientViaOpacityEnd:{{value}}%]",
+          "responsive": false,
+          "slider": {
+            "default": 100,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient')",
+          "divider": {}
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient')",
+          "heading": {},
+          "title": "To"
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient')",
+          "ai": {
+            "name": "bgGradientToHover",
+            "description": "Hover-state gradient end theme color.",
+            "visible": "bg == 'hover' && bgStyle == 'gradient'"
+          },
+          "title": "Color",
+          "id": "globalBgGradientToColorEnd",
+          "format": "hover:to-{{value}}/(--bgGradientToOpacityEnd)",
+          "themeColor": {
+            "default": {
+              "name": "brand",
+              "brightness": 500
+            }
+          }
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'gradient')",
+          "ai": {
+            "name": "bgGradientToOpacityHover",
+            "description": "Hover-state gradient end color opacity, 0-100.",
+            "visible": "bg == 'hover' && bgStyle == 'gradient'"
+          },
+          "title": "Opacity",
+          "id": "globalBgGradientToOpacityEnd",
+          "format": "hover:[--bgGradientToOpacityEnd:{{value}}%]",
+          "responsive": false,
+          "slider": {
+            "default": 100,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'image' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'image')",
+          "ai": {
+            "name": "bgImage",
+            "description": "Background image resource ID.",
+            "visible": "bg == 'static' && bgStyle == 'image'"
+          },
+          "title": "Image",
+          "id": "globalBgImageResource",
+          "resource": {
+            "accepts": "image/*",
+            "excludes": ".svg"
+          }
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'image' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'image')",
+          "ai": {
+            "name": "bgImagePosition",
+            "description": "Background image position.",
+            "visible": "bg == 'static' && bgStyle == 'image'"
+          },
+          "title": "Position",
+          "id": "globalBgImagePosition",
+          "format": "bg-{{value}}",
+          "select": {
+            "default": "center",
+            "items": [
+              {
+                "value": "bottom",
+                "title": "Bottom"
+              },
+              {
+                "value": "center",
+                "title": "Center"
+              },
+              {
+                "value": "left",
+                "title": "Left"
+              },
+              {
+                "value": "left-bottom",
+                "title": "Left Bottom"
+              },
+              {
+                "value": "left-top",
+                "title": "Left Top"
+              },
+              {
+                "value": "right",
+                "title": "Right"
+              },
+              {
+                "value": "right-bottom",
+                "title": "Right Bottom"
+              },
+              {
+                "value": "right-top",
+                "title": "Right Top"
+              },
+              {
+                "value": "top",
+                "title": "Top"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'image' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'image')",
+          "title": "Sizing",
+          "heading": {}
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'image' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'image')",
+          "ai": {
+            "name": "bgImageSize",
+            "description": "Background image size (auto/cover/contain).",
+            "visible": "bg == 'static' && bgStyle == 'image'"
+          },
+          "title": "Size",
+          "id": "globalBgImageSize",
+          "format": "bg-{{value}}",
+          "select": {
+            "default": "cover",
+            "items": [
+              {
+                "title": "Auto",
+                "value": "auto"
+              },
+              {
+                "title": "Cover",
+                "value": "cover"
+              },
+              {
+                "title": "Contain",
+                "value": "contain"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalControlTypeBg == 'static' && globalBgType == 'image' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'image')",
+          "ai": {
+            "name": "bgImageRepeat",
+            "description": "Background image repeat mode.",
+            "visible": "bg == 'static' && bgStyle == 'image'"
+          },
+          "title": "Repeat",
+          "id": "globalBgImageRepeat",
+          "format": "bg-{{value}}",
+          "select": {
+            "default": "no-repeat",
+            "items": [
+              {
+                "title": "No Repeat",
+                "value": "no-repeat"
+              },
+              {
+                "title": "Repeat",
+                "value": "repeat"
+              },
+              {
+                "title": "Repeat Horizontal",
+                "value": "repeat-x"
+              },
+              {
+                "title": "Repeat Vertical",
+                "value": "repeat-y"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'image')",
+          "ai": {
+            "name": "bgImageHover",
+            "description": "Hover-state background image resource ID.",
+            "visible": "bg == 'hover' && bgStyle == 'image'"
+          },
+          "title": "Image",
+          "id": "globalBgImageResourceEnd",
+          "resource": {
+            "accepts": "image/*",
+            "excludes": ".svg"
+          }
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'image')",
+          "title": "Position",
+          "heading": {}
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'image')",
+          "ai": {
+            "name": "bgImagePositionHover",
+            "description": "Hover-state background image position.",
+            "visible": "bg == 'hover' && bgStyle == 'image'"
+          },
+          "title": "Position",
+          "id": "globalBgImagePositionEnd",
+          "format": "hover:bg-{{value}}",
+          "select": {
+            "default": "center",
+            "items": [
+              {
+                "value": "bottom",
+                "title": "Bottom"
+              },
+              {
+                "value": "center",
+                "title": "Center"
+              },
+              {
+                "value": "left",
+                "title": "Left"
+              },
+              {
+                "value": "left-bottom",
+                "title": "Left Bottom"
+              },
+              {
+                "value": "left-top",
+                "title": "Left Top"
+              },
+              {
+                "value": "right",
+                "title": "Right"
+              },
+              {
+                "value": "right-bottom",
+                "title": "Right Bottom"
+              },
+              {
+                "value": "right-top",
+                "title": "Right Top"
+              },
+              {
+                "value": "top",
+                "title": "Top"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'image')",
+          "title": "Sizing",
+          "heading": {}
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'image')",
+          "ai": {
+            "name": "bgImageSizeHover",
+            "description": "Hover-state background image size (auto/cover/contain).",
+            "visible": "bg == 'hover' && bgStyle == 'image'"
+          },
+          "title": "Size",
+          "id": "globalBgImageSizeEnd",
+          "format": "hover:bg-{{value}}",
+          "select": {
+            "default": "cover",
+            "items": [
+              {
+                "title": "Auto",
+                "value": "auto"
+              },
+              {
+                "title": "Cover",
+                "value": "cover"
+              },
+              {
+                "title": "Contain",
+                "value": "contain"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "(globalControlTypeBg == 'hover' && globalBgState == 'end' && globalBgType == 'image')",
+          "ai": {
+            "name": "bgImageRepeatHover",
+            "description": "Hover-state background image repeat mode.",
+            "visible": "bg == 'hover' && bgStyle == 'image'"
+          },
+          "title": "Repeat",
+          "id": "globalBgImageRepeatEnd",
+          "format": "hover:bg-{{value}}",
+          "select": {
+            "default": "no-repeat",
+            "items": [
+              {
+                "title": "No Repeat",
+                "value": "no-repeat"
+              },
+              {
+                "title": "Repeat",
+                "value": "repeat"
+              },
+              {
+                "title": "Repeat Horizontal",
+                "value": "repeat-x"
+              },
+              {
+                "title": "Repeat Vertical",
+                "value": "repeat-y"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalBgType == 'image'",
+          "divider": {}
+        },
+        {
+          "visible": "globalBgType == 'image'",
+          "title": "Fetch Priority",
+          "heading": {}
+        },
+        {
+          "visible": "globalBgType == 'image'",
+          "ai": {
+            "name": "bgImageFetchPriority",
+            "description": "Image fetch priority: auto, high, or low.",
+            "visible": "bgStyle == 'image'"
+          },
+          "title": "Value",
+          "id": "globalBgImageFetchPriority",
+          "responsive": false,
+          "segmented": {
+            "default": "auto",
+            "items": [
+              {
+                "title": "Auto",
+                "value": "auto"
+              },
+              {
+                "title": "High",
+                "value": "high"
+              },
+              {
+                "title": "Low",
+                "value": "low"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "Borders",
+      "icon": "square.dashed",
+      "properties": [
+        {
+          "title": "Type",
+          "id": "globalControlTypeBorders",
+          "ai": {
+            "name": "border",
+            "description": "Enable/disable borders.",
+            "values": [
+              "none",
+              "static",
+              "hover"
+            ]
+          },
+          "responsive": false,
+          "segmented": {
+            "default": "none",
+            "items": [
+              {
+                "title": "None",
+                "value": "none"
+              },
+              {
+                "title": "Static",
+                "value": "static"
+              },
+              {
+                "title": "Hover",
+                "value": "hover"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "globalControlTypeBorders == 'hover'",
+          "ai": {
+            "exclude": true
+          },
+          "title": "State",
+          "id": "globalBordersState",
+          "responsive": false,
+          "segmented": {
+            "default": "start",
+            "items": [
+              {
+                "title": "Start",
+                "value": "start"
+              },
+              {
+                "title": "End",
+                "value": "end"
+              }
+            ]
+          }
+        },
+        {
+          "divider": {},
+          "visible": "globalControlTypeBorders != 'none'"
+        },
+        {
+          "title": "Style",
+          "id": "globalBordersStyle",
+          "ai": {
+            "name": "borderStyle",
+            "description": "Border line style.",
+            "visible": "border == 'static'"
+          },
+          "format": "border-{{value}}",
+          "segmented": {
+            "default": "solid",
+            "items": [
+              {
+                "icon": "square",
+                "value": "solid"
+              },
+              {
+                "icon": "square.dashed",
+                "value": "dashed"
+              },
+              {
+                "icon": "square.dotted",
+                "value": "dotted"
+              }
+            ]
+          },
+          "visible": "globalControlTypeBorders == 'static' || (globalControlTypeBorders == 'hover' && globalBordersState == 'start')"
+        },
+        {
+          "title": "Color",
+          "id": "globalBordersColor",
+          "ai": {
+            "name": "borderColor",
+            "description": "Border theme color.",
+            "visible": "border == 'static'"
+          },
+          "format": "border-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 500
+            }
+          },
+          "visible": "globalControlTypeBorders == 'static' || (globalControlTypeBorders == 'hover' && globalBordersState == 'start')"
+        },
+        {
+          "title": "Opacity",
+          "id": "globalBordersColorOpacity",
+          "ai": {
+            "name": "borderColorOpacity",
+            "description": "Border color opacity, 0-100.",
+            "visible": "border == 'static'"
+          },
+          "format": "[{{value}}%]",
+          "slider": {
+            "default": 100,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          },
+          "visible": "globalControlTypeBorders == 'static' || (globalControlTypeBorders == 'hover' && globalBordersState == 'start')"
+        },
+        {
+          "title": "Width",
+          "id": "globalBordersWidth",
+          "ai": {
+            "name": "borderWidth",
+            "description": "Border width theme token per side.",
+            "visible": "border == 'static'"
+          },
+          "themeBorderWidth": {
+            "default": {
+              "base": {
+                "top": "0",
+                "right": "0",
+                "bottom": "0",
+                "left": "0",
+                "linkHorizontal": true,
+                "linkVertical": true
+              }
+            }
+          },
+          "visible": "globalControlTypeBorders == 'static' || (globalControlTypeBorders == 'hover' && globalBordersState == 'start')"
+        },
+        {
+          "title": "Radius",
+          "id": "globalBordersRadius",
+          "ai": {
+            "name": "borderRadius",
+            "description": "Border radius theme token per corner.",
+            "visible": "border == 'static'"
+          },
+          "format": "{{value}}",
+          "themeBorderRadius": {
+            "default": {
+              "base": {
+                "topLeft": "Default",
+                "topRight": "Default",
+                "bottomLeft": "Default",
+                "bottomRight": "Default"
+              }
+            }
+          },
+          "visible": "globalControlTypeBorders == 'static' || (globalControlTypeBorders == 'hover' && globalBordersState == 'start')"
+        },
+        {
+          "title": "Style",
+          "id": "globalBordersStyleEnd",
+          "ai": {
+            "name": "borderStyleHover",
+            "description": "Border line style.",
+            "visible": "border == 'hover'"
+          },
+          "format": "border-{{value}}",
+          "segmented": {
+            "default": "solid",
+            "items": [
+              {
+                "icon": "square",
+                "value": "solid"
+              },
+              {
+                "icon": "square.dashed",
+                "value": "dashed"
+              },
+              {
+                "icon": "square.dotted",
+                "value": "dotted"
+              }
+            ]
+          },
+          "visible": "(globalControlTypeBorders == 'hover' && globalBordersState == 'end')"
+        },
+        {
+          "title": "Color",
+          "id": "globalBordersColorEnd",
+          "ai": {
+            "name": "borderColorHover",
+            "description": "Border theme color.",
+            "visible": "border == 'hover'"
+          },
+          "format": "border-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 500
+            }
+          },
+          "visible": "(globalControlTypeBorders == 'hover' && globalBordersState == 'end')"
+        },
+        {
+          "title": "Opacity",
+          "id": "globalBordersColorOpacityEnd",
+          "ai": {
+            "name": "borderColorOpacityHover",
+            "description": "Border color opacity, 0-100.",
+            "visible": "border == 'hover'"
+          },
+          "format": "[{{value}}%]",
+          "slider": {
+            "default": 100,
+            "min": 0,
+            "max": 100,
+            "round": true,
+            "snap": true,
+            "units": "%"
+          },
+          "visible": "(globalControlTypeBorders == 'hover' && globalBordersState == 'end')"
+        },
+        {
+          "title": "Width",
+          "id": "globalBordersWidthEnd",
+          "ai": {
+            "name": "borderWidthHover",
+            "description": "Border width theme token per side.",
+            "visible": "border == 'hover'"
+          },
+          "themeBorderWidth": {
+            "default": {
+              "base": {
+                "top": "0",
+                "right": "0",
+                "bottom": "0",
+                "left": "0",
+                "linkHorizontal": true,
+                "linkVertical": true
+              }
+            }
+          },
+          "visible": "(globalControlTypeBorders == 'hover' && globalBordersState == 'end')",
+          "format": "hover:{{value}}"
+        },
+        {
+          "title": "Radius",
+          "id": "globalBordersRadiusEnd",
+          "ai": {
+            "name": "borderRadiusHover",
+            "description": "Border radius theme token per corner.",
+            "visible": "border == 'hover'"
+          },
+          "format": "hover:{{value}}",
+          "themeBorderRadius": {
+            "default": {
+              "base": {
+                "topLeft": "Default",
+                "topRight": "Default",
+                "bottomLeft": "Default",
+                "bottomRight": "Default"
+              }
+            }
+          },
+          "visible": "(globalControlTypeBorders == 'hover' && globalBordersState == 'end')"
+        }
+      ]
+    },
+    {
+      "title": "Advanced",
+      "icon": "gearshape",
+      "properties": [
+        {
+          "title": "Classes",
+          "id": "cssClasses",
+          "textArea": {
+            "default": ""
+          }
+        },
+        {
+          "title": "ID",
+          "id": "globalID",
+          "responsive": false,
+          "text": {
+            "default": ""
+          }
+        }
+      ]
+    }
+  ]
+}
