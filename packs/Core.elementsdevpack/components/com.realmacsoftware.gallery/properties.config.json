@@ -120,10 +120,12 @@
         },
         {
           "globalControl": "BorderRadius",
+          "ai": { "name": "thumbnail{{value}}" },
           "id": "thumbnail{{value}}"
         },
         {
           "globalControl": "BoxShadow",
+          "ai": { "name": "thumbnail{{value}}" },
           "title": "Shadow",
           "id": "thumbnail{{value}}"
         },
@@ -302,11 +304,13 @@
         {
           "title": "Radius",
           "id": "lightboxMedia{{value}}",
+          "ai": { "name": "lightboxMedia{{value}}" },
           "globalControl": "BorderRadius"
         },
         {
           "title": "Shadow",
           "id": "lightboxMedia{{value}}",
+          "ai": { "name": "lightboxMedia{{value}}" },
           "globalControl": "BoxShadow"
         },
         {

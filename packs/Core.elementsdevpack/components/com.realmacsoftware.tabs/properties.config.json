@@ -185,6 +185,7 @@
                     "visible": "tabButtonState == 'inactive'",
                     "title": "Shadow",
                     "id": "tabButtonShadow",
+                    "ai": { "name": "tabButtonShadow", "description": "Inactive tab button shadow theme token." },
                     "themeShadow": {
                         "default": {
                             "base": {
@@ -245,6 +246,7 @@
                     "visible": "tabButtonState == 'active'",
                     "title": "Shadow",
                     "id": "tabButtonShadowActive",
+                    "ai": { "name": "tabButtonShadowActive", "description": "Active tab button shadow theme token." },
                     "themeShadow": {
                         "default": {
                             "base": {
@@ -305,6 +307,7 @@
                     "visible": "tabButtonState == 'hover'",
                     "title": "Shadow",
                     "id": "tabButtonShadowHover",
+                    "ai": { "name": "tabButtonShadowHover", "description": "Hovered tab button shadow theme token." },
                     "format": "hover:{{value}}",
                     "themeShadow": {
                         "default": {

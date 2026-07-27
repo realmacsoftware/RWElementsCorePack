@@ -124,6 +124,7 @@
                 {
                     "title": "Link",
                     "id": "logoLink",
+                    "ai": { "name": "logoLink", "description": "Where the logo or site title links to. Defaults to the site homepage when unset." },
                     "link": {}
                 },
                 {
@@ -217,6 +218,7 @@
                     "visible": "logoType == 'title'",
                     "title": "Text Shadow",
                     "id": "globalNavTitleTextShadow",
+                    "ai": { "name": "titleTextShadow", "description": "Site title text shadow theme token (title logo only)." },
                     "themeShadow": {
                         "mode": "text",
                         "default": {
@@ -430,6 +432,7 @@
                     "visible": "globlaNavItemsState == 'default'",
                     "title": "Text Shadow",
                     "id": "globalNavItemsTextShadow",
+                    "ai": { "name": "itemTextShadow", "description": "Nav item text shadow theme token." },
                     "themeShadow": {
                         "mode": "text",
                         "default": {
@@ -443,6 +446,7 @@
                     "visible": "globlaNavItemsState == 'hover'",
                     "title": "Text Shadow",
                     "id": "globalNavItemsTextShadowHover",
+                    "ai": { "name": "itemTextShadowHover", "description": "Nav item hover/active text shadow theme token." },
                     "format": "hover:{{value}} aria-[current=page]:{{value}} data-[active-child]:{{value}}",
                     "themeShadow": {
                         "mode": "text",
@@ -993,6 +997,7 @@
                 {
                     "title": "Shadow",
                     "id": "mobileMenuShadow",
+                    "ai": { "name": "mobileMenuShadow", "description": "Mobile and sub-menu panel shadow theme token." },
                     "themeShadow": {
                         "mode": "box",
                         "default": {

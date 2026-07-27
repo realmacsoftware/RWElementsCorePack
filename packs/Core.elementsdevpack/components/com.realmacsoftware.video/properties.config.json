@@ -121,6 +121,7 @@
           "visible": "wantsLightbox == true",
           "title": "Blur",
           "id": "videoLightbox{{value}}",
+          "ai": { "exclude": true },
           "globalControl": "BackdropBlur"
         }
       ]

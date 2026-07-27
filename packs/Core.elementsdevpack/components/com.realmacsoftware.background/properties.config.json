@@ -217,6 +217,11 @@
                     "visible": "false",
                     "id": "globalControlTypeBg",
                     "title": "Background Type",
+                    "ai": {
+                        "name": "bg",
+                        "description": "Enable/disable background.",
+                        "values": ["static"]
+                    },
                     "input": {
                         "default": "static"
                     }
@@ -224,6 +229,10 @@
                 {
                     "title": "Style",
                     "id": "globalBgType",
+                    "ai": {
+                        "name": "bgStyle",
+                        "description": "Background style: color, image, gradient, or svg."
+                    },
                     "responsive": false,
                     "segmented": {
                         "default": "color",

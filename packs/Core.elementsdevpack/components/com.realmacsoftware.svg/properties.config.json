@@ -7,6 +7,10 @@
         {
           "title": "SVG",
           "id": "svg",
+          "ai": {
+            "name": "svg",
+            "description": "SVG resource ID (from listResources/addResource)."
+          },
           "resource": {
             "accepts": "svg"
           }
@@ -62,7 +66,12 @@
       "properties": [
         {
           "globalControl": "ControlType",
-          "id": "{{value}}SVGFill"
+          "id": "{{value}}SVGFill",
+          "ai": {
+            "name": "fill",
+            "description": "Enable/disable SVG fill color control.",
+            "values": ["none", "static", "hover"]
+          }
         },
         {
           "visible": "globalControlTypeSVGFill == 'hover'",
@@ -104,6 +113,11 @@
         },
         {
           "visible": "globalControlTypeSVGFill == 'static' || (globalControlTypeSVGFill == 'hover' && globalSVGFillState == 'start')",
+          "ai": {
+            "name": "fillColor",
+            "description": "SVG fill theme color.",
+            "visible": "fill == 'static'"
+          },
           "title": "Color",
           "id": "fillColor",
           "format": "fill-{{value}}/(--svgOpacity) text-{{value}}/(--svgOpacity)",
@@ -116,6 +130,11 @@
         },
         {
           "visible": "globalControlTypeSVGFill == 'static' || (globalControlTypeSVGFill == 'hover' && globalSVGFillState == 'start')",
+          "ai": {
+            "name": "fillColorOpacity",
+            "description": "SVG fill color opacity, 0-100.",
+            "visible": "fill == 'static'"
+          },
           "title": "Opacity",
           "id": "fillColorOpacity",
           "format": "[--svgOpacity:{{value}}%]",
@@ -128,6 +147,11 @@
         },
         {
           "visible": "globalControlTypeSVGFill == 'hover' && globalSVGFillState == 'end'",
+          "ai": {
+            "name": "fillColorHover",
+            "description": "SVG fill theme color for the hover end state.",
+            "visible": "fill == 'hover'"
+          },
           "title": "Color",
           "id": "fillColorEnd",
           "format": "hover:fill-{{value}}/(--svgOpacity) hover:text-{{value}}/(--svgOpacity)",
@@ -140,6 +164,11 @@
         },
         {
           "visible": "globalControlTypeSVGFill == 'hover' && globalSVGFillState == 'end'",
+          "ai": {
+            "name": "fillColorOpacityHover",
+            "description": "SVG fill color opacity for the hover end state, 0-100.",
+            "visible": "fill == 'hover'"
+          },
           "title": "Opacity",
           "id": "fillColorOpacityEnd",
           "format": "hover:[--svgOpacity:{{value}}%]",
@@ -158,7 +187,12 @@
       "properties": [
         {
           "globalControl": "ControlType",
-          "id": "{{value}}SVGStroke"
+          "id": "{{value}}SVGStroke",
+          "ai": {
+            "name": "stroke",
+            "description": "Enable/disable SVG stroke color control.",
+            "values": ["none", "static", "hover"]
+          }
         },
         {
           "visible": "globalControlTypeSVGStroke == 'hover'",

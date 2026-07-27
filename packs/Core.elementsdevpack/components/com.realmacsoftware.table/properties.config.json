@@ -8,6 +8,10 @@
                     "title": "Data Source",
                     "id": "dataSource",
                     "responsive": false,
+                    "ai": {
+                        "name": "dataSource",
+                        "description": "Table data source: manual rows/columns, a CSV file resource, or a CSV/Google Sheets URL."
+                    },
                     "select": {
                         "default": "manual",
                         "items": [
@@ -30,13 +34,23 @@
                     "title": "CSV File",
                     "id": "csvFile",
                     "visible": "dataSource == 'csvFile'",
-                    "resource": {}
+                    "ai": {
+                        "name": "csvFile",
+                        "description": "CSV file resource ID bound to the table when dataSource is 'csvFile'."
+                    },
+                    "resource": {
+                        "accepts": ".csv"
+                    }
                 },
                 {
                     "title": "CSV URL",
                     "id": "csvUrl",
                     "visible": "dataSource == 'csvUrl'",
                     "responsive": false,
+                    "ai": {
+                        "name": "csvUrl",
+                        "description": "URL returning CSV data (or a Google Sheets link) used when dataSource is 'csvUrl'."
+                    },
                     "text": {
                         "default": "",
                         "subtitle": "Any URL that returns CSV data, or a Google Sheets link"
@@ -56,6 +70,10 @@
                     "id": "csvFirstRowIsHeader",
                     "visible": "dataSource != 'manual'",
                     "responsive": false,
+                    "ai": {
+                        "name": "csvFirstRowIsHeader",
+                        "description": "Treat the first row of CSV data as the header row."
+                    },
                     "switch": {
                         "default": true
                     }
@@ -89,6 +107,10 @@
                     "title": "Rows",
                     "id": "rowCount",
                     "responsive": false,
+                    "ai": {
+                        "name": "rowCount",
+                        "description": "Number of manual rows to render when dataSource is 'manual'."
+                    },
                     "number": {
                         "default": 3
                     }
@@ -124,6 +146,10 @@
                     "title": "Enable",
                     "id": "showSearch",
                     "responsive": false,
+                    "ai": {
+                        "name": "showSearch",
+                        "description": "Show the search bar above the table."
+                    },
                     "switch": {
                         "default": false
                     }
@@ -133,6 +159,10 @@
                     "title": "Placeholder",
                     "id": "searchPlaceholder",
                     "responsive": false,
+                    "ai": {
+                        "name": "searchPlaceholder",
+                        "description": "Placeholder text shown in the search input."
+                    },
                     "text": {
                         "default": "Search..."
                     }
@@ -148,6 +178,10 @@
                     "title": "Enable",
                     "id": "showPagination",
                     "responsive": false,
+                    "ai": {
+                        "name": "showPagination",
+                        "description": "Show pagination controls below the table."
+                    },
                     "switch": {
                         "default": false
                     }
@@ -157,6 +191,10 @@
                     "title": "Rows Per Page",
                     "id": "rowsPerPage",
                     "responsive": false,
+                    "ai": {
+                        "name": "rowsPerPage",
+                        "description": "Number of rows shown per page when pagination is enabled."
+                    },
                     "number": {
                         "default": 10,
                         "min": 1,
@@ -177,6 +215,10 @@
                     "title": "Show",
                     "id": "showHeader",
                     "responsive": false,
+                    "ai": {
+                        "name": "showHeader",
+                        "description": "Show the table header row."
+                    },
                     "switch": {
                         "default": true
                     }
@@ -588,6 +630,10 @@
                     "title": "Show",
                     "id": "showFooter",
                     "responsive": false,
+                    "ai": {
+                        "name": "showFooter",
+                        "description": "Show the table footer row."
+                    },
                     "switch": {
                         "default": false
                     }
