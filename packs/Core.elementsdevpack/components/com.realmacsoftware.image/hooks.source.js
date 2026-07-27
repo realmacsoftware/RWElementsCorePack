@@ -247,7 +247,7 @@ const transformHook = (rw) => {
         hasImage: lightImage.resource?.image || false,
         imageProtection,
         defaultSrc: image,
-        alt: image?.alt || imageDark?.alt || imageAlt,
+        alt: isResourceImage ? (image?.alt || imageDark?.alt) : imageAlt,
         classes,
         imageWidth: !isResourceImage ? imageIntrinsicWidth : lightImage.resource?.width,
         imageHeight: !isResourceImage ? imageIntrinsicHeight : lightImage.resource?.height,
