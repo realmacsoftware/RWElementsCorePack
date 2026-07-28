@@ -38,6 +38,11 @@
         {
           "title": "Over",
           "id": "globalHoverGroupTransforms",
+          "ai": {
+            "name": "transformsHoverTrigger",
+            "description": "Which element's hover triggers the transforms.",
+            "visible": "transforms == 'hover'"
+          },
           "responsive": false,
           "select": {
             "default": "self",
@@ -68,19 +73,6 @@
               }
             ]
           },
-          "ai": {
-            "name": "transformsHoverTrigger",
-            "description": "Which element's hover triggers the transforms.",
-            "values": [
-              "self",
-              "parent",
-              "container",
-              "grid",
-              "flex",
-              "custom"
-            ],
-            "visible": "transforms == 'hover'"
-          },
           "visible": "globalControlTypeTransforms == 'hover'"
         },
         {
@@ -104,7 +96,8 @@
         {
           "visible": "globalControlTypeTransforms != 'none' && globalControlTypeTransforms != 'static'",
           "ai": {
-            "exclude": true
+            "exclude": true,
+            "reason": "Inspector UI toggle for editing the hover start/end state; the transform values themselves are curated separately for each state."
           },
           "title": "State",
           "id": "globalTransformsState",
@@ -130,6 +123,10 @@
         {
           "title": "Origin",
           "id": "globalTransformOrigin",
+          "ai": {
+            "name": "transformOrigin",
+            "description": "Anchor point that scale, rotate and skew pivot around."
+          },
           "format": "origin-{{value}}",
           "select": {
             "default": "center",
@@ -180,9 +177,9 @@
           "ai": {
             "name": "scale",
             "description": "Scale, in percent (100 = no change).",
-            "visible": "transforms == 'static'"
+            "visible": "transforms != 'none'"
           },
-          "format": "scale-x-[{{value}}%] scale-y-[{{value}}%]",
+          "format": "scale-x-[{{value}}%]",
           "number": {
             "default": 100,
             "subtitle": "%"
@@ -195,7 +192,7 @@
           "ai": {
             "name": "rotate",
             "description": "Rotation, in degrees.",
-            "visible": "transforms == 'static'"
+            "visible": "transforms != 'none'"
           },
           "format": "rotate-[{{value}}deg]",
           "number": {
@@ -208,7 +205,7 @@
           "title": "Translate",
           "heading": {},
           "ai": {
-            "visible": "transforms == 'static'"
+            "visible": "transforms != 'none'"
           },
           "visible": "globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"
         },
@@ -218,7 +215,7 @@
           "ai": {
             "name": "translateX",
             "description": "Horizontal offset. CSS length (e.g. 10px, 50%, 10vw).",
-            "visible": "transforms == 'static'"
+            "visible": "transforms != 'none'"
           },
           "format": "translate-x-[{{value}}]",
           "text": {
@@ -233,7 +230,7 @@
           "ai": {
             "name": "translateY",
             "description": "Vertical offset. CSS length (e.g. 10px, 50%, 10vw).",
-            "visible": "transforms == 'static'"
+            "visible": "transforms != 'none'"
           },
           "format": "translate-y-[{{value}}]",
           "text": {
@@ -246,7 +243,7 @@
           "title": "Skew",
           "heading": {},
           "ai": {
-            "visible": "transforms == 'static'"
+            "visible": "transforms != 'none'"
           },
           "visible": "globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"
         },
@@ -256,7 +253,7 @@
           "ai": {
             "name": "skewX",
             "description": "Horizontal skew, in degrees.",
-            "visible": "transforms == 'static'"
+            "visible": "transforms != 'none'"
           },
           "format": "skew-x-[{{value}}deg]",
           "number": {
@@ -270,7 +267,7 @@
           "ai": {
             "name": "skewY",
             "description": "Vertical skew, in degrees.",
-            "visible": "transforms == 'static'"
+            "visible": "transforms != 'none'"
           },
           "format": "skew-y-[{{value}}deg]",
           "number": {
@@ -287,7 +284,7 @@
             "description": "Scale, in percent (100 = no change).",
             "visible": "transforms == 'hover'"
           },
-          "format": "scale-x-[{{value}}%] scale-y-[{{value}}%]",
+          "format": "scale-x-[{{value}}%]",
           "number": {
             "default": 100,
             "subtitle": "%"
@@ -313,7 +310,8 @@
           "title": "Translate",
           "heading": {},
           "ai": {
-            "exclude": true
+            "exclude": true,
+            "reason": "No base ai.name on this sibling to resolve the '{{value}}Hover' template against."
           },
           "visible": "(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"
         },
@@ -351,7 +349,8 @@
           "title": "Skew",
           "heading": {},
           "ai": {
-            "exclude": true
+            "exclude": true,
+            "reason": "No base ai.name on this sibling to resolve the '{{value}}Hover' template against."
           },
           "visible": "(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"
         },
@@ -429,6 +428,11 @@
         {
           "title": "Over",
           "id": "globalHoverGroup3D",
+          "ai": {
+            "name": "transforms3dHoverTrigger",
+            "description": "Which element's hover or mouse movement triggers the 3D transforms.",
+            "visible": "transforms3d == 'hover' || transforms3d == 'mouse'"
+          },
           "responsive": false,
           "select": {
             "default": "self",
@@ -463,6 +467,11 @@
         },
         {
           "visible": "(globalControlType3D == 'hover' || globalControlType3D == 'mouse') && globalHoverGroup3D == 'custom'",
+          "ai": {
+            "name": "transforms3dHoverTriggerId",
+            "description": "ID of the element that triggers the 3D transforms (when trigger is 'custom').",
+            "visible": "(transforms3d == 'hover' || transforms3d == 'mouse') && transforms3dHoverTrigger == 'custom'"
+          },
           "title": "ID",
           "id": "globalHoverGroupCustomId3D",
           "text": {

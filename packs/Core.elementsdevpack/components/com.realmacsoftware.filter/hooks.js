@@ -416,7 +416,8 @@ const globalOutline = (rw) => {
   return classes.toString();
 };
 function addPrefixToTailwindClasses(classString, prefix) {
-  return classString.split(/\s+/).map((cls) => {
+  if (!classString) return "";
+  return classString.split(/\s+/).filter(Boolean).map((cls) => {
     cls = cls.replace(/hover:/g, "");
     if (cls.includes(`${prefix}:`)) return cls;
     const match = cls.match(/^([a-z0-9]+:)(.+)$/i);
@@ -642,28 +643,29 @@ const globalFilters = (app, args = {}) => {
   ];
   if (type == "hover") {
     classes.push(
-      wantsBlur ? `${prefix}:${blurEnd}` : "",
-      `${prefix}:${brightnessEnd}`,
-      `${prefix}:${dropShadowEnd}`,
-      `${prefix}:${saturateEnd}`,
-      wantsBackdropBlur ? `${prefix}:${backdropBlurEnd}` : ""
+      wantsBlur ? addPrefixToTailwindClasses(blurEnd, prefix) : "",
+      addPrefixToTailwindClasses(brightnessEnd, prefix),
+      addPrefixToTailwindClasses(dropShadowEnd, prefix),
+      addPrefixToTailwindClasses(saturateEnd, prefix),
+      wantsBackdropBlur ? addPrefixToTailwindClasses(backdropBlurEnd, prefix) : ""
     );
     if (wantsActive) {
       classes.push(
-        `data-[active=true]:${blurEnd}`,
-        `data-[active=true]:${brightnessEnd}`,
-        `data-[active=true]:${dropShadowEnd}`,
-        `data-[active=true]:${saturateEnd}`,
-        `data-[active=true]:${backdropBlurEnd}`
+        wantsBlur ? addPrefixToTailwindClasses(blurEnd, "data-[active=true]") : "",
+        addPrefixToTailwindClasses(brightnessEnd, "data-[active=true]"),
+        addPrefixToTailwindClasses(dropShadowEnd, "data-[active=true]"),
+        addPrefixToTailwindClasses(saturateEnd, "data-[active=true]"),
+        wantsBackdropBlur ? addPrefixToTailwindClasses(backdropBlurEnd, "data-[active=true]") : ""
       );
     }
     if (wantsFocus) {
+      const focusPrefix = prefix.replace(/hover/g, "focus");
       classes.push(
-        `${prefix.replace(/hover/g, "focus")}:${blurEnd}`,
-        `${prefix.replace(/hover/g, "focus")}:${brightnessEnd}`,
-        `${prefix.replace(/hover/g, "focus")}:${dropShadowEnd}`,
-        `${prefix.replace(/hover/g, "focus")}:${saturateEnd}`,
-        `${prefix.replace(/hover/g, "focus")}:${backdropBlurEnd}`
+        wantsBlur ? addPrefixToTailwindClasses(blurEnd, focusPrefix) : "",
+        addPrefixToTailwindClasses(brightnessEnd, focusPrefix),
+        addPrefixToTailwindClasses(dropShadowEnd, focusPrefix),
+        addPrefixToTailwindClasses(saturateEnd, focusPrefix),
+        wantsBackdropBlur ? addPrefixToTailwindClasses(backdropBlurEnd, focusPrefix) : ""
       );
     }
   }
@@ -743,6 +745,12 @@ const globalSizing = (app) => {
   }
   return classes.toString();
 };
+function mirrorScaleXToY(classString) {
+  if (!classString) return "";
+  return classString.split(/\s+/).filter(Boolean).map(
+    (cls) => cls.includes("scale-x-") ? `${cls} ${cls.replace("scale-x-", "scale-y-")}` : cls
+  ).join(" ");
+}
 const globalTransforms = (app, args = {}) => {
   const {
     globalControlTypeTransforms: type,
@@ -769,11 +777,13 @@ const globalTransforms = (app, args = {}) => {
   const wantsFocus = args.focus || false;
   const prefix = getHoverPrefix(node, applyTo, hoverGroup, customId);
   const classes = classnames();
+  const scaleMirrored = mirrorScaleXToY(scale);
+  const scaleEndMirrored = mirrorScaleXToY(scaleEnd);
   if (type != "none") {
     classes.add([
       "transform",
       origin,
-      scale,
+      scaleMirrored,
       rotate,
       skewX,
       skewY,
@@ -783,7 +793,7 @@ const globalTransforms = (app, args = {}) => {
   }
   if (type == "hover") {
     classes.add([
-      addPrefixToTailwindClasses(scaleEnd, prefix),
+      addPrefixToTailwindClasses(scaleEndMirrored, prefix),
       addPrefixToTailwindClasses(rotateEnd, prefix),
       addPrefixToTailwindClasses(skewXEnd, prefix),
       addPrefixToTailwindClasses(skewYEnd, prefix),
@@ -792,22 +802,23 @@ const globalTransforms = (app, args = {}) => {
     ]);
     if (wantsActive) {
       classes.add([
-        `data-[active=true]:${scaleEnd}`,
-        `data-[active=true]:${rotateEnd}`,
-        `data-[active=true]:${skewXEnd}`,
-        `data-[active=true]:${skewYEnd}`,
-        `data-[active=true]:${translateXEnd}`,
-        `data-[active=true]:${translateYEnd}`
+        addPrefixToTailwindClasses(scaleEndMirrored, "data-[active=true]"),
+        addPrefixToTailwindClasses(rotateEnd, "data-[active=true]"),
+        addPrefixToTailwindClasses(skewXEnd, "data-[active=true]"),
+        addPrefixToTailwindClasses(skewYEnd, "data-[active=true]"),
+        addPrefixToTailwindClasses(translateXEnd, "data-[active=true]"),
+        addPrefixToTailwindClasses(translateYEnd, "data-[active=true]")
       ]);
     }
     if (wantsFocus) {
+      const focusPrefix = prefix.replace(/hover/g, "focus");
       classes.add([
-        `${prefix.replace(/hover/g, "focus")}:${scaleEnd}`,
-        `${prefix.replace(/hover/g, "focus")}:${rotateEnd}`,
-        `${prefix.replace(/hover/g, "focus")}:${skewXEnd}`,
-        `${prefix.replace(/hover/g, "focus")}:${skewYEnd}`,
-        `${prefix.replace(/hover/g, "focus")}:${translateXEnd}`,
-        `${prefix.replace(/hover/g, "focus")}:${translateYEnd}`
+        addPrefixToTailwindClasses(scaleEndMirrored, focusPrefix),
+        addPrefixToTailwindClasses(rotateEnd, focusPrefix),
+        addPrefixToTailwindClasses(skewXEnd, focusPrefix),
+        addPrefixToTailwindClasses(skewYEnd, focusPrefix),
+        addPrefixToTailwindClasses(translateXEnd, focusPrefix),
+        addPrefixToTailwindClasses(translateYEnd, focusPrefix)
       ]);
     }
   }

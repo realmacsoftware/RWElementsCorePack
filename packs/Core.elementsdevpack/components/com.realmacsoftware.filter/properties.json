@@ -380,7 +380,8 @@
         {
           "visible": "globalControlTypeOutline == 'focus'",
           "ai": {
-            "exclude": true
+            "exclude": true,
+            "reason": "Inspector UI toggle for editing the unfocused/focused state; focused-state values are curated separately (e.g. outlineColorFocus)."
           },
           "title": "State",
           "id": "globalOutlineState",
@@ -1238,6 +1239,11 @@
         {
           "title": "Over",
           "id": "globalHoverGroupEffects",
+          "ai": {
+            "name": "effectsHoverTrigger",
+            "description": "Which element's hover triggers the effects.",
+            "visible": "effects == 'hover'"
+          },
           "responsive": false,
           "select": {
             "default": "self",
@@ -1272,6 +1278,11 @@
         },
         {
           "visible": "globalControlTypeEffects == 'hover' && globalHoverGroupEffects == 'custom'",
+          "ai": {
+            "name": "effectsHoverTriggerId",
+            "description": "ID of the element that triggers the hover effects (when trigger is 'custom').",
+            "visible": "effects == 'hover' && effectsHoverTrigger == 'custom'"
+          },
           "title": "ID",
           "id": "globalHoverGroupCustomIdEffects",
           "text": {
@@ -1285,6 +1296,10 @@
         },
         {
           "visible": "globalControlTypeEffects != 'none' && globalControlTypeEffects != 'static'",
+          "ai": {
+            "exclude": true,
+            "reason": "Inspector UI toggle for editing the hover start/end state; the effect values themselves are curated separately for each state."
+          },
           "title": "State",
           "id": "globalEffectsState",
           "responsive": false,
@@ -1317,7 +1332,7 @@
           "ai": {
             "name": "boxShadow",
             "description": "Box shadow size, a theme shadow token. Pair with boxShadowColor and boxShadowOpacity.",
-            "visible": "effects == 'static'"
+            "visible": "effects != 'none'"
           },
           "responsive": false,
           "themeShadow": {
@@ -1335,7 +1350,7 @@
           "ai": {
             "name": "boxShadowColor",
             "description": "Box shadow theme color.",
-            "visible": "effects == 'static'"
+            "visible": "effects != 'none'"
           },
           "format": "shadow-{{value}}/(--box-shadow-opacity)",
           "themeColor": {
@@ -1352,7 +1367,7 @@
           "ai": {
             "name": "boxShadowOpacity",
             "description": "Box shadow opacity, 0-100.",
-            "visible": "effects == 'static'"
+            "visible": "effects != 'none'"
           },
           "format": "[--box-shadow-opacity:{{value}}%]",
           "responsive": false,
@@ -1432,7 +1447,7 @@
           "ai": {
             "name": "opacity",
             "description": "Element opacity, 0-100.",
-            "visible": "effects == 'static'"
+            "visible": "effects != 'none'"
           },
           "format": "opacity-[{{value}}%]",
           "slider": {
@@ -1504,6 +1519,11 @@
         {
           "title": "Over",
           "id": "globalHoverGroupFilters",
+          "ai": {
+            "name": "filtersHoverTrigger",
+            "description": "Which element's hover triggers the filters.",
+            "visible": "filters == 'hover'"
+          },
           "responsive": false,
           "select": {
             "default": "self",
@@ -1538,6 +1558,11 @@
         },
         {
           "visible": "globalControlTypeFilters == 'hover' && globalHoverGroupFilters == 'custom'",
+          "ai": {
+            "name": "filtersHoverTriggerId",
+            "description": "ID of the element that triggers the hover filters (when trigger is 'custom').",
+            "visible": "filters == 'hover' && filtersHoverTrigger == 'custom'"
+          },
           "title": "ID",
           "id": "globalHoverGroupCustomIdFilters",
           "text": {
@@ -1551,6 +1576,10 @@
         },
         {
           "visible": "globalControlTypeFilters != 'none' && globalControlTypeFilters != 'static'",
+          "ai": {
+            "exclude": true,
+            "reason": "Inspector UI toggle for editing the hover start/end state; the filter values themselves are curated separately for each state."
+          },
           "title": "State",
           "id": "globalFiltersState",
           "responsive": false,
@@ -1583,7 +1612,7 @@
           "ai": {
             "name": "blur",
             "description": "Blur filter, in pixels.",
-            "visible": "filters == 'static'"
+            "visible": "filters != 'none'"
           },
           "format": "blur-[{{value}}px]",
           "number": {
@@ -1598,7 +1627,7 @@
           "ai": {
             "name": "brightness",
             "description": "Brightness filter, in percent.",
-            "visible": "filters == 'static'"
+            "visible": "filters != 'none'"
           },
           "format": "brightness-[{{value}}%]",
           "number": {
@@ -1613,7 +1642,7 @@
           "ai": {
             "name": "saturate",
             "description": "Saturation filter, in percent.",
-            "visible": "filters == 'static'"
+            "visible": "filters != 'none'"
           },
           "format": "saturate-[{{value}}%]",
           "number": {
@@ -1628,7 +1657,7 @@
           "ai": {
             "name": "dropShadow",
             "description": "Drop-shadow filter, a theme shadow token. Follows the rendered shape (respects transparency), unlike boxShadow.",
-            "visible": "filters == 'static'"
+            "visible": "filters != 'none'"
           },
           "themeShadow": {
             "mode": "drop",
@@ -1714,7 +1743,7 @@
           "ai": {
             "name": "backdropBlur",
             "description": "Backdrop blur filter, in pixels.",
-            "visible": "filters == 'static'"
+            "visible": "filters != 'none'"
           },
           "format": "backdrop-blur-[{{value}}px]",
           "number": {
@@ -1778,6 +1807,11 @@
         {
           "title": "Over",
           "id": "globalHoverGroupTransforms",
+          "ai": {
+            "name": "transformsHoverTrigger",
+            "description": "Which element's hover triggers the transforms.",
+            "visible": "transforms == 'hover'"
+          },
           "responsive": false,
           "select": {
             "default": "self",
@@ -1808,19 +1842,6 @@
               }
             ]
           },
-          "ai": {
-            "name": "transformsHoverTrigger",
-            "description": "Which element's hover triggers the transforms.",
-            "values": [
-              "self",
-              "parent",
-              "container",
-              "grid",
-              "flex",
-              "custom"
-            ],
-            "visible": "transforms == 'hover'"
-          },
           "visible": "globalControlTypeTransforms == 'hover'"
         },
         {
@@ -1844,7 +1865,8 @@
         {
           "visible": "globalControlTypeTransforms != 'none' && globalControlTypeTransforms != 'static'",
           "ai": {
-            "exclude": true
+            "exclude": true,
+            "reason": "Inspector UI toggle for editing the hover start/end state; the transform values themselves are curated separately for each state."
           },
           "title": "State",
           "id": "globalTransformsState",
@@ -1870,6 +1892,10 @@
         {
           "title": "Origin",
           "id": "globalTransformOrigin",
+          "ai": {
+            "name": "transformOrigin",
+            "description": "Anchor point that scale, rotate and skew pivot around."
+          },
           "format": "origin-{{value}}",
           "select": {
             "default": "center",
@@ -1920,9 +1946,9 @@
           "ai": {
             "name": "scale",
             "description": "Scale, in percent (100 = no change).",
-            "visible": "transforms == 'static'"
+            "visible": "transforms != 'none'"
           },
-          "format": "scale-x-[{{value}}%] scale-y-[{{value}}%]",
+          "format": "scale-x-[{{value}}%]",
           "number": {
             "default": 100,
             "subtitle": "%"
@@ -1935,7 +1961,7 @@
           "ai": {
             "name": "rotate",
             "description": "Rotation, in degrees.",
-            "visible": "transforms == 'static'"
+            "visible": "transforms != 'none'"
           },
           "format": "rotate-[{{value}}deg]",
           "number": {
@@ -1948,7 +1974,7 @@
           "title": "Translate",
           "heading": {},
           "ai": {
-            "visible": "transforms == 'static'"
+            "visible": "transforms != 'none'"
           },
           "visible": "globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"
         },
@@ -1958,7 +1984,7 @@
           "ai": {
             "name": "translateX",
             "description": "Horizontal offset. CSS length (e.g. 10px, 50%, 10vw).",
-            "visible": "transforms == 'static'"
+            "visible": "transforms != 'none'"
           },
           "format": "translate-x-[{{value}}]",
           "text": {
@@ -1973,7 +1999,7 @@
           "ai": {
             "name": "translateY",
             "description": "Vertical offset. CSS length (e.g. 10px, 50%, 10vw).",
-            "visible": "transforms == 'static'"
+            "visible": "transforms != 'none'"
           },
           "format": "translate-y-[{{value}}]",
           "text": {
@@ -1986,7 +2012,7 @@
           "title": "Skew",
           "heading": {},
           "ai": {
-            "visible": "transforms == 'static'"
+            "visible": "transforms != 'none'"
           },
           "visible": "globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"
         },
@@ -1996,7 +2022,7 @@
           "ai": {
             "name": "skewX",
             "description": "Horizontal skew, in degrees.",
-            "visible": "transforms == 'static'"
+            "visible": "transforms != 'none'"
           },
           "format": "skew-x-[{{value}}deg]",
           "number": {
@@ -2010,7 +2036,7 @@
           "ai": {
             "name": "skewY",
             "description": "Vertical skew, in degrees.",
-            "visible": "transforms == 'static'"
+            "visible": "transforms != 'none'"
           },
           "format": "skew-y-[{{value}}deg]",
           "number": {
@@ -2027,7 +2053,7 @@
             "description": "Scale, in percent (100 = no change).",
             "visible": "transforms == 'hover'"
           },
-          "format": "scale-x-[{{value}}%] scale-y-[{{value}}%]",
+          "format": "scale-x-[{{value}}%]",
           "number": {
             "default": 100,
             "subtitle": "%"
@@ -2053,7 +2079,8 @@
           "title": "Translate",
           "heading": {},
           "ai": {
-            "exclude": true
+            "exclude": true,
+            "reason": "No base ai.name on this sibling to resolve the '{{value}}Hover' template against."
           },
           "visible": "(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"
         },
@@ -2091,7 +2118,8 @@
           "title": "Skew",
           "heading": {},
           "ai": {
-            "exclude": true
+            "exclude": true,
+            "reason": "No base ai.name on this sibling to resolve the '{{value}}Hover' template against."
           },
           "visible": "(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"
         },
@@ -2191,7 +2219,8 @@
         {
           "visible": "globalControlTypeBg != 'none' && globalControlTypeBg != 'static'",
           "ai": {
-            "exclude": true
+            "exclude": true,
+            "reason": "Inspector UI toggle for editing the hover start/end state; the background values themselves are curated separately for each state."
           },
           "title": "State",
           "id": "globalBgState",
@@ -3463,7 +3492,8 @@
         {
           "visible": "globalControlTypeBorders == 'hover'",
           "ai": {
-            "exclude": true
+            "exclude": true,
+            "reason": "Inspector UI toggle for editing the hover start/end state; the border values themselves are curated separately for each state."
           },
           "title": "State",
           "id": "globalBordersState",
