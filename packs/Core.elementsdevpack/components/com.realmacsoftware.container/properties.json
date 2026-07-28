@@ -433,6 +433,11 @@
         {
           "visible": "globalGridOrFlexDisplayAs == 'grid'",
           "id": "globalGridItemRowSpan",
+          "ai": {
+            "name": "rowSpan",
+            "description": "Grid rows to span (auto or 1-12).",
+            "visible": "actAs == 'grid'"
+          },
           "title": "Rows",
           "format": "row-span-{{value}}",
           "slider": {
@@ -497,6 +502,11 @@
         },
         {
           "id": "globalGridItemRowStart",
+          "ai": {
+            "name": "rowStart",
+            "description": "Grid row start line (auto or 1-12).",
+            "visible": "actAs == 'grid'"
+          },
           "format": "row-start-{{value}}",
           "title": "Start",
           "slider": {
@@ -562,6 +572,11 @@
         },
         {
           "id": "globalGridItemRowEnd",
+          "ai": {
+            "name": "rowEnd",
+            "description": "Grid row end line (auto or 1-13).",
+            "visible": "actAs == 'grid'"
+          },
           "format": "row-end-{{value}}",
           "title": "End",
           "slider": {
