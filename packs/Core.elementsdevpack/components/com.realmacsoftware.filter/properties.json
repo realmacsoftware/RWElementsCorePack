@@ -42,6 +42,10 @@
         {
           "title": "Color",
           "id": "globalInputFontAndTextStylesColor",
+          "ai": {
+            "name": "textColor",
+            "description": "Input field text theme color."
+          },
           "format": "text-{{value}}/(--inputFontAndTextStylesColorOpacity)",
           "themeColor": {
             "default": {
@@ -53,6 +57,10 @@
         {
           "title": "Opacity",
           "id": "globalInputFontAndTextStylesColorOpacity",
+          "ai": {
+            "name": "textColorOpacity",
+            "description": "Input field text color opacity, 0-100."
+          },
           "format": "[--inputFontAndTextStylesColorOpacity:{{value}}%]",
           "slider": {
             "default": 100,
@@ -89,6 +97,15 @@
         {
           "title": "Align",
           "id": "globalInputFontAndTextStylesTextAlign",
+          "ai": {
+            "name": "align",
+            "description": "Text alignment inside the input field.",
+            "values": [
+              "start",
+              "center",
+              "end"
+            ]
+          },
           "format": "text-{{value}}",
           "segmented": {
             "default": "start",
@@ -111,6 +128,10 @@
         {
           "title": "Family",
           "id": "globalInputFontAndTextStylesFont",
+          "ai": {
+            "name": "family",
+            "description": "Font family theme token."
+          },
           "themeFont": {
             "default": {
               "base": "body"
@@ -120,6 +141,10 @@
         {
           "title": "Size",
           "id": "globalInputFontAndTextStylesFontSize",
+          "ai": {
+            "name": "size",
+            "description": "Font size theme text-style token."
+          },
           "themeTextStyle": {
             "default": {
               "base": {
@@ -135,6 +160,10 @@
         {
           "title": "Weight",
           "id": "globalInputFontAndTextStylesFontWeight",
+          "ai": {
+            "name": "weight",
+            "description": "Font weight, 100-900."
+          },
           "format": "font-[{{value}}]",
           "slider": {
             "default": "400",
@@ -181,6 +210,10 @@
         {
           "title": "Line Height",
           "id": "globalInputFontAndTextStylesLineHeight",
+          "ai": {
+            "name": "lineHeight",
+            "description": "Line height (leading) token."
+          },
           "format": "leading-{{value}}",
           "slider": {
             "default": "normal",
@@ -215,6 +248,10 @@
         {
           "title": "Letter Spacing",
           "id": "globalInputFontAndTextStylesLetterSpacing",
+          "ai": {
+            "name": "letterSpacing",
+            "description": "Letter spacing (tracking) token."
+          },
           "format": "tracking-{{value}}",
           "slider": {
             "default": "normal",
@@ -249,6 +286,10 @@
         {
           "title": "Case",
           "id": "globalInputFontAndTextStylesTextTransform",
+          "ai": {
+            "name": "case",
+            "description": "Text case transform."
+          },
           "select": {
             "default": "normal-case",
             "items": [
@@ -274,6 +315,10 @@
         {
           "title": "Italic",
           "id": "globalInputFontAndTextStylesItalic",
+          "ai": {
+            "name": "italic",
+            "description": "Italicize the input text."
+          },
           "switch": {
             "default": false,
             "trueValue": "italic",
@@ -283,6 +328,10 @@
         {
           "title": "Underline",
           "id": "globalInputFontAndTextStylesUnderline",
+          "ai": {
+            "name": "underline",
+            "description": "Underline the input text."
+          },
           "switch": {
             "default": false,
             "trueValue": "underline",

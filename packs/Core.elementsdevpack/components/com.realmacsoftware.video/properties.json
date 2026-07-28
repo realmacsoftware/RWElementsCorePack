@@ -126,7 +126,8 @@
           "ai": {
             "name": "backdropBlur",
             "description": "Backdrop blur filter, in pixels.",
-            "exclude": true
+            "exclude": true,
+            "reason": "Avoids an alias collision: this component's own Filters backdrop blur already curates as 'backdropBlur', so the lightbox's BackdropBlur instance must opt out."
           },
           "format": "backdrop-blur-[{{value}}px]",
           "number": {

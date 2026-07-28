@@ -121,7 +121,7 @@
           "visible": "wantsLightbox == true",
           "title": "Blur",
           "id": "videoLightbox{{value}}",
-          "ai": { "exclude": true },
+          "ai": { "exclude": true, "reason": "Avoids an alias collision: this component's own Filters backdrop blur already curates as 'backdropBlur', so the lightbox's BackdropBlur instance must opt out." },
           "globalControl": "BackdropBlur"
         }
       ]

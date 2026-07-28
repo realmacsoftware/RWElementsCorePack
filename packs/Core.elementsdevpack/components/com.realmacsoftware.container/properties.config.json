@@ -274,6 +274,10 @@
                 {
                     "title": "To",
                     "id": "globalEffectsApplyTo",
+                    "ai": {
+                        "name": "effectsApplyTo",
+                        "description": "Which part of the container the effects apply to."
+                    },
                     "select": {
                         "default": "everything",
                         "items": [
@@ -311,6 +315,10 @@
                 {
                     "title": "To",
                     "id": "globalFiltersApplyTo",
+                    "ai": {
+                        "name": "filtersApplyTo",
+                        "description": "Which part of the container the filters apply to."
+                    },
                     "select": {
                         "default": "everything",
                         "items": [

@@ -7,6 +7,10 @@
         {
           "title": "Mode",
           "id": "revealScrub",
+          "ai": {
+            "name": "scrub",
+            "description": "Playback mode. 'false' plays the animation once triggered; 'true' scrubs it to scroll position between triggerStart and triggerEnd. Values are the strings 'false' and 'true'."
+          },
           "responsive": false,
           "segmented": {
             "default": false,
@@ -25,6 +29,10 @@
         {
           "title": "Animation",
           "id": "revealAnimationName",
+          "ai": {
+            "name": "animation",
+            "description": "Reveal animation: fade, slide, zoom, lightSpeed, or rotate."
+          },
           "responsive": false,
           "select": {
             "default": "fade",
@@ -55,6 +63,10 @@
         {
           "title": "Direction",
           "id": "revealAnimationDirection",
+          "ai": {
+            "name": "direction",
+            "description": "Direction the reveal animation travels: up, down, left, or right."
+          },
           "responsive": false,
           "segmented": {
             "default": "up",
@@ -81,6 +93,10 @@
         {
           "title": "Distance",
           "id": "revealDistance",
+          "ai": {
+            "name": "distance",
+            "description": "How far the element travels during the animation, as a CSS length (e.g. '200px')."
+          },
           "responsive": false,
           "text": {
             "default": "200px"
@@ -90,6 +106,10 @@
           "visible": "revealAnimationName == 'rotate'",
           "title": "Degrees",
           "id": "revealDegrees",
+          "ai": {
+            "name": "degrees",
+            "description": "Rotation amount in degrees. Only used by the 'rotate' animation."
+          },
           "responsive": false,
           "number": {
             "default": "90"
@@ -105,6 +125,10 @@
         {
           "title": "Play",
           "id": "revealPlay",
+          "ai": {
+            "name": "play",
+            "description": "When the animation plays: 'enter-once' the first time it enters the viewport, 'enter-always' every time it enters, 'enter-exit' on enter and reversed on exit."
+          },
           "responsive": false,
           "select": {
             "default": "enter-exit",
@@ -127,6 +151,10 @@
         {
           "title": "Start",
           "id": "revealStart",
+          "ai": {
+            "name": "triggerStart",
+            "description": "Scroll position where the reveal starts: 'entering-screen' as the element enters the viewport, 'middle-of-screen' at the viewport centre, 'exiting-screen' as it leaves the top."
+          },
           "responsive": false,
           "segmented": {
             "default": "entering-screen",
@@ -149,6 +177,10 @@
         {
           "title": "End",
           "id": "revealEnd",
+          "ai": {
+            "name": "triggerEnd",
+            "description": "Scroll position where the reveal ends: 'entering-screen' as the element enters the viewport, 'middle-of-screen' at the viewport centre, 'exiting-screen' as it leaves the top."
+          },
           "responsive": false,
           "segmented": {
             "default": "exiting-screen",
@@ -178,6 +210,10 @@
         {
           "title": "Easing",
           "id": "revealEasing",
+          "ai": {
+            "name": "easing",
+            "description": "Easing curve: linear, power0-power4, sine.out, circ.out, expo.out, back.out, elastic.out, or bounce.out."
+          },
           "responsive": false,
           "select": {
             "default": "power1",
@@ -237,6 +273,10 @@
           "visible": "revealScrub == false",
           "title": "Duration",
           "id": "revealDuration",
+          "ai": {
+            "name": "duration",
+            "description": "Animation duration in milliseconds. Ignored when scrub is 'true'."
+          },
           "responsive": false,
           "number": {
             "default": 500
@@ -246,6 +286,10 @@
           "visible": "revealScrub == false",
           "title": "Delay",
           "id": "revealDelay",
+          "ai": {
+            "name": "delay",
+            "description": "Delay before the animation starts, in milliseconds. Ignored when scrub is 'true'."
+          },
           "responsive": false,
           "number": {
             "default": 0,
@@ -262,6 +306,10 @@
         {
           "title": "Markers",
           "id": "revealDebug",
+          "ai": {
+            "name": "debugMarkers",
+            "description": "Show scroll trigger start/end markers for debugging. Leave off for published sites."
+          },
           "responsive": false,
           "switch": {
             "default": false
@@ -786,6 +834,11 @@
           "heading": {}
         },
         {
+          "ai": {
+            "name": "alignSelf",
+            "description": "Alignment of this item on the parent's cross axis, overriding the parent's align-items.",
+            "visible": "actAs != 'default'"
+          },
           "title": "Align",
           "id": "globalGridOrFlexItemAlignSelf",
           "format": "self-{{value}}",
@@ -817,6 +870,11 @@
           "visible": "globalGridOrFlexDisplayAs == 'grid' && globalGridOrFlexItemSettings == 'advanced'"
         },
         {
+          "ai": {
+            "name": "justifySelf",
+            "description": "Alignment of this item on the parent's inline axis, overriding the parent's justify-items.",
+            "visible": "actAs != 'default'"
+          },
           "title": "Justify Self",
           "id": "globalGridOrFlexItemJustifySelf",
           "format": "justify-self-{{value}}",
@@ -853,6 +911,13 @@
           "visible": "globalGridOrFlexDisplayAs == 'flex'"
         },
         {
+          "ai": {
+            "name": "alignSelf",
+            "description": "Alignment of this item on the parent's cross axis, overriding the parent's align-items.",
+            "visible": "actAs != 'default'",
+            "exclude": true,
+            "reason": "ActAsGridOrFlexItem embeds AlignSelf on both the grid and flex paths for the same property id; the grid-path declaration already curates 'alignSelf', whose ai.visible covers both modes."
+          },
           "title": "Align",
           "id": "globalGridOrFlexItemAlignSelf",
           "format": "self-{{value}}",
@@ -884,6 +949,13 @@
           "visible": "globalGridOrFlexDisplayAs == 'flex'"
         },
         {
+          "ai": {
+            "name": "justifySelf",
+            "description": "Alignment of this item on the parent's inline axis, overriding the parent's justify-items.",
+            "visible": "actAs != 'default'",
+            "exclude": true,
+            "reason": "ActAsGridOrFlexItem embeds JustifySelf on both the grid and flex paths for the same property id; the grid-path declaration already curates 'justifySelf', whose ai.visible covers both modes."
+          },
           "title": "Justify Self",
           "id": "globalGridOrFlexItemJustifySelf",
           "format": "justify-self-{{value}}",
