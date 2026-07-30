@@ -222,6 +222,10 @@
           "title": "Content",
           "format": "content-{{value}}",
           "id": "alignContent",
+          "ai": {
+            "name": "alignContent",
+            "description": "Distribute rows along the cross axis when the container has extra space. Requires wrap to be enabled on flex containers."
+          },
           "select": {
             "default": "normal",
             "items": [
@@ -359,6 +363,10 @@
           "title": "Items",
           "format": "justify-items-{{value}}",
           "id": "justifyItems",
+          "ai": {
+            "name": "justifyItems",
+            "description": "Default inline-axis alignment of each item within its own grid cell. Grid only; CSS ignores it on flex containers."
+          },
           "select": {
             "default": "normal",
             "items": [

@@ -490,6 +490,10 @@
         },
         {
           "visible": "globalControlType3D != 'none' && globalControlType3D != 'static'",
+          "ai": {
+            "exclude": true,
+            "reason": "Inspector UI toggle for editing the hover/mouse start and end state; the 3D transform values themselves are curated separately for each state."
+          },
           "title": "State",
           "id": "globalTransforms3DState",
           "responsive": false,
@@ -519,6 +523,10 @@
         {
           "title": "Distance",
           "id": "globalTransformPerspective",
+          "ai": {
+            "name": "perspective",
+            "description": "How much depth 3D transforms appear to have: dramatic (100px) is the most exaggerated, then near (300px), normal (500px), midrange (800px), distant (1200px) the most subtle. 'none' flattens the 3D effect."
+          },
           "format": "perspective-{{value}}",
           "select": {
             "default": "normal",
@@ -554,6 +562,10 @@
         {
           "title": "Origin",
           "id": "globalTransformPerspectiveOrigin",
+          "ai": {
+            "name": "perspectiveOrigin",
+            "description": "Vanishing point the 3D scene is viewed from. Different from transformOrigin, which is the point the element pivots around."
+          },
           "format": "perspective-origin-{{value}}",
           "select": {
             "default": "center",
@@ -604,6 +616,10 @@
           "heading": {}
         },
         {
+          "ai": {
+            "name": "hideBackface",
+            "description": "Hide the element's reverse side when it is rotated away from the viewer (backface-visibility)."
+          },
           "title": "Hide",
           "id": "globalTransformBackface",
           "switch": {
@@ -616,11 +632,19 @@
         {
           "title": "Rotate",
           "heading": {},
+          "ai": {
+            "visible": "transforms3d != 'none'"
+          },
           "visible": "globalControlType3D == 'static' || ((globalControlType3D == 'hover' || globalControlType3D == 'mouse') && globalTransforms3DState == 'start')"
         },
         {
           "title": "X",
           "id": "globalTransformRotateX",
+          "ai": {
+            "name": "rotateX",
+            "description": "3D rotation about the X axis, in degrees: tilts the top and bottom edges toward or away from the viewer. In hover and mouse modes rotateX is the start value and rotateXEnd the end value.",
+            "visible": "transforms3d != 'none'"
+          },
           "format": "rotate-x-[{{value}}deg]",
           "number": {
             "default": 0,
@@ -631,6 +655,11 @@
         {
           "title": "Y",
           "id": "globalTransformRotateY",
+          "ai": {
+            "name": "rotateY",
+            "description": "3D rotation about the Y axis, in degrees: swings the left and right edges toward or away from the viewer. In hover and mouse modes rotateY is the start value and rotateYEnd the end value.",
+            "visible": "transforms3d != 'none'"
+          },
           "format": "rotate-y-[{{value}}deg]",
           "number": {
             "default": 0,
@@ -641,6 +670,11 @@
         {
           "title": "Scale Z",
           "id": "globalTransformScaleZ",
+          "ai": {
+            "name": "scaleZ",
+            "description": "Depth scale along the Z axis, in percent (100 = no change). Only has a visible effect combined with rotateX or rotateY. In hover and mouse modes scaleZ is the start value and scaleZEnd the end value.",
+            "visible": "transforms3d != 'none'"
+          },
           "format": "scale-z-[{{value}}%]",
           "number": {
             "default": 100,
@@ -651,6 +685,11 @@
         {
           "title": "Depth",
           "id": "globalTransformTranslateZ",
+          "ai": {
+            "name": "translateZ",
+            "description": "Offset along the Z axis, moving the element toward the viewer (positive) or away (negative). A CSS length, no percentages, e.g. 20px or 2rem. In hover and mouse modes translateZ is the start value and translateZEnd the end value.",
+            "visible": "transforms3d != 'none'"
+          },
           "format": "translate-z-[{{value}}]",
           "text": {
             "default": "0px",
@@ -661,11 +700,20 @@
         {
           "title": "Rotate",
           "heading": {},
+          "ai": {
+            "exclude": true,
+            "reason": "No base ai.name on this sibling to resolve the '{{value}}End' template against."
+          },
           "visible": "((globalControlType3D == 'hover' || globalControlType3D == 'mouse') && globalTransforms3DState == 'end')"
         },
         {
           "title": "X",
           "id": "globalTransformRotateXEnd",
+          "ai": {
+            "name": "rotateXEnd",
+            "description": "3D rotation about the X axis, in degrees: tilts the top and bottom edges toward or away from the viewer. In hover and mouse modes rotateX is the start value and rotateXEnd the end value.",
+            "visible": "transforms3d == 'hover' || transforms3d == 'mouse'"
+          },
           "format": "rotate-x-[{{value}}deg]",
           "number": {
             "default": 0,
@@ -676,6 +724,11 @@
         {
           "title": "Y",
           "id": "globalTransformRotateYEnd",
+          "ai": {
+            "name": "rotateYEnd",
+            "description": "3D rotation about the Y axis, in degrees: swings the left and right edges toward or away from the viewer. In hover and mouse modes rotateY is the start value and rotateYEnd the end value.",
+            "visible": "transforms3d == 'hover' || transforms3d == 'mouse'"
+          },
           "format": "rotate-y-[{{value}}deg]",
           "number": {
             "default": 0,
@@ -686,6 +739,11 @@
         {
           "title": "Scale Z",
           "id": "globalTransformScaleZEnd",
+          "ai": {
+            "name": "scaleZEnd",
+            "description": "Depth scale along the Z axis, in percent (100 = no change). Only has a visible effect combined with rotateX or rotateY. In hover and mouse modes scaleZ is the start value and scaleZEnd the end value.",
+            "visible": "transforms3d == 'hover' || transforms3d == 'mouse'"
+          },
           "format": "scale-z-[{{value}}%]",
           "number": {
             "default": 100,
@@ -696,6 +754,11 @@
         {
           "title": "Depth",
           "id": "globalTransformTranslateZEnd",
+          "ai": {
+            "name": "translateZEnd",
+            "description": "Offset along the Z axis, moving the element toward the viewer (positive) or away (negative). A CSS length, no percentages, e.g. 20px or 2rem. In hover and mouse modes translateZ is the start value and translateZEnd the end value.",
+            "visible": "transforms3d == 'hover' || transforms3d == 'mouse'"
+          },
           "format": "translate-z-[{{value}}]",
           "text": {
             "default": "0px",
