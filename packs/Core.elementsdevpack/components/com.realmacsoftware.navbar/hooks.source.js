@@ -257,6 +257,14 @@ const transformHook = (rw) => {
                 mobileMenuPositionType == "uniform" && mobileMenuInset,
                 mobileMenuPositionType == "individual" &&
                     `${mobileMenuPositionTop} ${mobileMenuPositionRight} ${mobileMenuPositionBottom} ${mobileMenuPositionLeft}`,
+                // With bottom at "auto" the fixed panel sizes to its content
+                // and can extend past the viewport, where the body scroll
+                // lock makes items unreachable — clamp the height so
+                // overflow-y-auto engages (3rem ≈ the default top-6 offset
+                // plus matching breathing room below)
+                mobileMenuPositionType == "individual" &&
+                    mobileMenuPositionBottom.includes("bottom-auto") &&
+                    `max-h-[calc(100dvh-3rem)]`,
             ]).toString(),
         },
     };
