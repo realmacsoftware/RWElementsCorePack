@@ -136,12 +136,53 @@ COLUMNMETA;
     $csvHeaders = [];
     $csvRows = [];
 
+    // EU-locale Numbers/Excel exports separate fields with semicolons (and
+    // TSVs with tabs), so sniff the delimiter instead of assuming commas.
+    // A candidate wins outright when it splits every sampled row into the
+    // same number of fields (more than one). Semicolon and tab are checked
+    // before comma: a file that consistently splits on them is never a plain
+    // comma CSV, while EU decimal commas ("10,5") can fake a comma split.
+    $tableDetectDelimiter = function ($lines) {
+        $sample = [];
+        foreach ($lines as $line) {
+            if (trim($line) !== '') {
+                $sample[] = $line;
+                if (count($sample) === 10) {
+                    break;
+                }
+            }
+        }
+        $fallback = ',';
+        $fallbackFields = 0;
+        foreach ([';', "\t", ','] as $candidate) {
+            $counts = [];
+            foreach ($sample as $line) {
+                $counts[] = count(str_getcsv($line, $candidate, '"', '\\'));
+            }
+            if (!empty($counts) && $counts[0] > 1 && count(array_unique($counts)) === 1) {
+                return $candidate;
+            }
+            if (array_sum($counts) > $fallbackFields) {
+                $fallbackFields = array_sum($counts);
+                $fallback = $candidate;
+            }
+        }
+        return $fallback;
+    };
+
     if (!$csvError) {
+        // Excel's "CSV UTF-8" export prepends a BOM that would otherwise
+        // leak into the first header cell
+        if (strncmp($csvContent, "\xEF\xBB\xBF", 3) === 0) {
+            $csvContent = substr($csvContent, 3);
+        }
+
         // Parse CSV content
         $allRows = [];
-        $lines = str_getcsv($csvContent, "\n");
+        $lines = preg_split('/\r\n|\r|\n/', $csvContent);
+        $delimiter = $tableDetectDelimiter($lines);
         foreach ($lines as $line) {
-            $parsed = str_getcsv($line);
+            $parsed = str_getcsv($line, $delimiter, '"', '\\');
             if ($parsed !== [null]) {
                 $allRows[] = $parsed;
             }
