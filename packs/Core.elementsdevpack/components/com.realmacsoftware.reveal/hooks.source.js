@@ -22,6 +22,7 @@ const transformHook = (rw) => {
   rw.setProps({
     isEdit: rw.project.mode == 'edit',
     id,
+    componentAssetPath: rw.component.assetPath,
   });
 };
 
