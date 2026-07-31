@@ -10,6 +10,21 @@
                     "collection": {
                         "identifier": "com.realmacsoftware.audioPlaylist.collections.tracks"
                     }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Playback",
+                    "heading": {}
+                },
+                {
+                    "title": "Pause When Off Screen",
+                    "property": "pauseWhenOutOfView",
+                    "responsive": false,
+                    "switch": {
+                        "default": false
+                    }
                 }
             ]
         },
@@ -18,6 +33,25 @@
             "icon": "play.square.stack.fill",
             "properties": [
                 {
+                    "title": "Appearance",
+                    "id": "appearance",
+                    "responsive": false,
+                    "select": {
+                        "default": "standard",
+                        "items": [
+                            {
+                                "title": "Standard",
+                                "value": "standard"
+                            },
+                            {
+                                "title": "Compact",
+                                "value": "compact"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "visible": "appearance == 'standard'",
                     "title": "Layout",
                     "id": "nowPlayingLayout",
                     "responsive": false,
@@ -69,6 +103,7 @@
                     "heading": {}
                 },
                 {
+                    "visible": "appearance == 'standard'",
                     "title": "Size",
                     "id": "nowPlayingArtworkSize",
                     "format": "size-{{value}}",
@@ -202,6 +237,43 @@
                             }
                         }
                     }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Time",
+                    "heading": {}
+                },
+                {
+                    "title": "Show Time",
+                    "property": "showPlaybackTime",
+                    "responsive": false,
+                    "switch": {
+                        "default": false
+                    }
+                },
+                {
+                    "enable": "showPlaybackTime == true",
+                    "title": "Color",
+                    "id": "playbackTimeColor",
+                    "format": "text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "text",
+                            "brightness": 600
+                        }
+                    }
+                },
+                {
+                    "enable": "showPlaybackTime == true",
+                    "title": "Size",
+                    "id": "playbackTimeSize",
+                    "themeTextStyle": {
+                        "default": {
+                            "base": "sm"
+                        }
+                    }
                 }
             ]
         },
@@ -243,6 +315,41 @@
                         "default": {
                             "base": {
                                 "value": "2"
+                            }
+                        }
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Rows",
+                    "heading": {}
+                },
+                {
+                    "title": "Padding",
+                    "id": "trackItemPadding",
+                    "themeSpacing": {
+                        "mode": "padding",
+                        "default": {
+                            "base": {
+                                "top": "3",
+                                "right": "4",
+                                "bottom": "3",
+                                "left": "4"
+                            }
+                        }
+                    }
+                },
+                {
+                    "title": "Gap",
+                    "id": "trackItemGap",
+                    "format": "gap-{{value}}",
+                    "themeSpacing": {
+                        "mode": "single",
+                        "default": {
+                            "base": {
+                                "value": "4"
                             }
                         }
                     }
@@ -362,6 +469,43 @@
                             "base": {
                                 "name": "base"
                             }
+                        }
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
+                    "title": "Durations",
+                    "heading": {}
+                },
+                {
+                    "title": "Show Durations",
+                    "property": "showTrackDurations",
+                    "responsive": false,
+                    "switch": {
+                        "default": false
+                    }
+                },
+                {
+                    "enable": "showTrackDurations == true",
+                    "title": "Color",
+                    "id": "trackDurationColor",
+                    "format": "text-{{value}}",
+                    "themeColor": {
+                        "default": {
+                            "name": "text",
+                            "brightness": 600
+                        }
+                    }
+                },
+                {
+                    "enable": "showTrackDurations == true",
+                    "title": "Size",
+                    "id": "trackDurationSize",
+                    "themeTextStyle": {
+                        "default": {
+                            "base": "sm"
                         }
                     }
                 },

@@ -7,7 +7,7 @@
         alt="cover"
     />
     <div class="{{classes.nowPlaying.content}}">
-        <div class="mb-4">
+        <div class="{{classes.nowPlaying.meta}}">
             <h3
                 class="{{classes.nowPlaying.title}}"
                 x-text="currentTrack.title"
@@ -80,6 +80,13 @@
     </div>
 
     <div class="{{classes.nowPlaying.progressRow}}">
+        @if(showPlaybackTime)
+        <span
+            class="{{classes.nowPlaying.time}}"
+            x-text="formatTime(isScrubbing ? scrubTime : currentTime)"
+            >0:00</span
+        >
+        @endif
         <div
             x-ref="progressBar"
             class="{{classes.nowPlaying.progressBar.wrapper}}"
@@ -101,12 +108,18 @@
                 @if(edit)
                 style="display: none"
                 @endif
-                :style="{ left: `calc(${((isScrubbing ? scrubTime : currentTime) / duration) * 100}%) - $el.clientWidth` }"
+                :style="{ left: thumbLeft($el) }"
                 x-show="duration"
             ></div>
         </div>
 
-        @if(enableVolumeControls)
+        @if(showPlaybackTime)
+        <span
+            class="{{classes.nowPlaying.time}}"
+            x-text="duration ? formatTime(duration) : '–:–'"
+            >–:–</span
+        >
+        @endif @if(enableVolumeControls)
         <!-- Volume -->
         <div class="{{classes.nowPlaying.volume.wrapper}}">
             <button
@@ -161,6 +174,14 @@
             <h4 class="{{classes.track.title}}">{{ track.title }}</h4>
             <p class="{{classes.track.artist}}">{{ track.artist }}</p>
         </div>
+        @if(showTrackDurations)
+        <span
+            data-duration
+            class="{{classes.track.duration}}"
+            x-text="trackDurations[{{ track::index }}] != null ? formatTime(trackDurations[{{ track::index }}]) : '–:–'"
+            >–:–</span
+        >
+        @endif
         <div
             x-cloak
             class="[&_svg]:size-4 [&_svg]:{{trackTitleTextColor}}"
@@ -188,6 +209,7 @@
     function elementsAudioPlaylist() {
         return {
             tracks: [],
+            trackDurations: [],
             currentTrackIndex: 0,
             isPlaying: false,
             currentTime: 0,
@@ -202,6 +224,15 @@
 
             get currentTrack() {
                 return this.tracks[this.currentTrackIndex] || {};
+            },
+
+            pauseWhenHidden: {
+                "x-intersect:leave"() {
+                    if (this.isPlaying) {
+                        this.$refs.audio.pause();
+                        this.isPlaying = false;
+                    }
+                },
             },
 
             init() {
@@ -257,6 +288,38 @@
                         }
                     }
                 );
+
+                this.prefetchDurations();
+            },
+
+            prefetchDurations() {
+                // Duration cells only exist in the DOM when "Show
+                // Durations" is on, so their presence gates the prefetch.
+                if (!this.$el.querySelector("[data-duration]")) return;
+                this.trackDurations = this.tracks.map(() => null);
+                this.tracks.forEach((track, index) => {
+                    if (!track.url) return;
+                    let probe = new Audio();
+                    probe.preload = "metadata";
+                    const cleanup = () => {
+                        if (!probe) return;
+                        probe.removeAttribute("src");
+                        probe.load();
+                        probe = null;
+                    };
+                    probe.addEventListener(
+                        "loadedmetadata",
+                        () => {
+                            if (probe && Number.isFinite(probe.duration)) {
+                                this.trackDurations[index] = probe.duration;
+                            }
+                            cleanup();
+                        },
+                        { once: true }
+                    );
+                    probe.addEventListener("error", cleanup, { once: true });
+                    probe.src = track.url;
+                });
             },
 
             togglePlay() {
@@ -416,6 +479,16 @@
                 const mins = Math.floor(seconds / 60) || 0;
                 const secs = Math.floor(seconds % 60) || 0;
                 return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
+            },
+
+            thumbLeft(el) {
+                const progress = this.duration
+                    ? (this.isScrubbing ? this.scrubTime : this.currentTime) /
+                      this.duration
+                    : 0;
+                return `calc(${progress * 100}% - ${
+                    el.clientWidth * progress
+                }px)`;
             },
         };
     }
