@@ -19,6 +19,8 @@ const transformHook = (rw) => {
         trackListMaxHeight,
         trackListPadding,
         trackListGap,
+        trackItemPadding,
+        trackItemGap,
         trackItemBorderRadius,
         trackListArtworkSize,
         trackListArtworkShadow,
@@ -35,6 +37,10 @@ const transformHook = (rw) => {
         trackBgOpacityHover,
         trackDividersColor,
         trackDividersThickness,
+        showTrackDurations,
+        trackDurationColor,
+        trackDurationSize,
+        appearance,
         nowPlayingLayout,
         nowPlayingPadding,
         nowPlayingGap,
@@ -48,6 +54,10 @@ const transformHook = (rw) => {
         nowPlayingProgressBarBgColor,
         nowPlayingProgressBarForegroundColor,
         nowPlayingProgressBarSize,
+        showPlaybackTime,
+        playbackTimeColor,
+        playbackTimeSize,
+        pauseWhenOutOfView,
         initialVolume,
         volumeBarBgColor,
         volumeBarFgColor,
@@ -68,11 +78,16 @@ const transformHook = (rw) => {
         title: "Placeholder Title",
         artist: "Placeholder Artist",
         coverImage: `${sharedAssetPath}/images/image-square.jpg`,
-        audioSource:
-            "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+        audioSource: {
+            path: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+        },
     };
 
     const hasMultipleTracks = tracks?.length > 1;
+
+    const isCompact = appearance === "compact";
+    const pauseOutOfView =
+        pauseWhenOutOfView === true || pauseWhenOutOfView === "true";
 
     const classes = {
         wrapper: classnames([
@@ -92,25 +107,36 @@ const transformHook = (rw) => {
         nowPlaying: {
             wrapper: classnames([
                 `flex items-center flex-wrap`,
-                nowPlayingLayout,
+                isCompact ? "flex-row text-left" : nowPlayingLayout,
                 nowPlayingGap,
                 nowPlayingPadding,
             ]).toString(),
             artwork: classnames([
                 "object-cover",
-                nowPlayingArtworkSize,
+                isCompact ? "size-14 shrink-0" : nowPlayingArtworkSize,
                 nowPlayingArtworkShadow,
                 nowPlayingArtworkBorderRadius,
             ]).toString(),
+            content: isCompact
+                ? "flex flex-1 min-w-0 items-center justify-between gap-4"
+                : "",
+            meta: isCompact ? "min-w-0" : "mb-4",
             title: classnames([
                 `font-semibold font-body`,
                 nowPlayingTitleTextColor,
                 nowPlayingTitleFontSize,
+                isCompact && "truncate",
             ]).toString(),
             artist: classnames([
                 `font-body`,
                 nowPlayingArtistTextColor,
                 nowPlayingArtistFontSize,
+                isCompact && "truncate",
+            ]).toString(),
+            time: classnames([
+                "font-body tabular-nums shrink-0",
+                playbackTimeColor,
+                playbackTimeSize,
             ]).toString(),
             progressRow: classnames([
                 "flex items-center gap-3 w-full",
@@ -165,7 +191,9 @@ const transformHook = (rw) => {
         ]).toString(),
         track: {
             wrapper: classnames([
-                "group/track flex items-center gap-4 px-4 py-3 cursor-pointer transition",
+                "group/track flex items-center cursor-pointer transition",
+                trackItemGap,
+                trackItemPadding,
                 trackItemBorderRadius,
                 trackBg,
                 trackBgOpacity,
@@ -189,6 +217,11 @@ const transformHook = (rw) => {
                 trackArtistTextColorHover,
                 trackListArtistFontSize,
             ]).toString(),
+            duration: classnames([
+                "font-body tabular-nums shrink-0",
+                trackDurationColor,
+                trackDurationSize,
+            ]).toString(),
         },
         icons: {
             wrapper: `flex items-center justify-center ${iconSpacing}`,
@@ -199,13 +232,19 @@ const transformHook = (rw) => {
         },
     };
 
+    const rootArgs = {
+        "x-data": "elementsAudioPlaylist()",
+        "x-init": "init",
+    };
+
+    if (pauseOutOfView) {
+        rootArgs["x-bind"] = "pauseWhenHidden";
+    }
+
     rw.setRootElement({
         as: "div",
         class: classes.wrapper,
-        args: {
-            "x-data": "elementsAudioPlaylist()",
-            "x-init": "init",
-        },
+        args: rootArgs,
     });
 
     rw.setProps({
@@ -215,6 +254,11 @@ const transformHook = (rw) => {
         firstTrack,
         classes,
         hasMultipleTracks,
+        showPlaybackTime:
+            showPlaybackTime === true || showPlaybackTime === "true",
+        showTrackDurations:
+            showTrackDurations === true || showTrackDurations === "true",
+        pauseWhenOutOfView: pauseOutOfView,
         initialVolume: Math.min(100, Math.max(0, parseFloat(initialVolume ?? 100) || 0)),
         iconVolume: iconVolume || `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"></path></svg>`,
         iconMuted: iconMuted || `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"></path></svg>`,

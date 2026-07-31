@@ -134,3 +134,103 @@ test("root element keeps the alpine bindings", () => {
     assert.equal(rw.root.args["x-data"], "elementsAudioPlaylist()");
     assert.equal(rw.root.args["x-init"], "init");
 });
+
+test("track row uses the density controls instead of hardcoded padding", () => {
+    const wrapper = renderAudioPlaylist({
+        props: {
+            trackItemPadding: "pt-3 pr-4 pb-3 pl-4",
+            trackItemGap: "gap-4",
+        },
+    }).computedProps.classes.track.wrapper;
+
+    assert.match(wrapper, /pt-3/);
+    assert.match(wrapper, /pr-4/);
+    assert.match(wrapper, /pb-3/);
+    assert.match(wrapper, /pl-4/);
+    assert.match(wrapper, /gap-4/);
+
+    const bare = renderAudioPlaylist().computedProps.classes.track.wrapper;
+    assert.match(bare, /group\/track/);
+    assert.match(bare, /cursor-pointer/);
+    assert.doesNotMatch(bare, /px-4/);
+    assert.doesNotMatch(bare, /py-3/);
+});
+
+test("time display classes pick up the configured styling props", () => {
+    const classes = renderAudioPlaylist({
+        props: {
+            playbackTimeColor: "text-text-600",
+            playbackTimeSize: "text-sm",
+            trackDurationColor: "text-text-500",
+            trackDurationSize: "text-xs",
+        },
+    }).computedProps.classes;
+
+    assert.match(classes.nowPlaying.time, /tabular-nums/);
+    assert.match(classes.nowPlaying.time, /text-text-600/);
+    assert.match(classes.nowPlaying.time, /text-sm/);
+    assert.match(classes.track.duration, /tabular-nums/);
+    assert.match(classes.track.duration, /text-text-500/);
+    assert.match(classes.track.duration, /text-xs/);
+});
+
+test("time and pause switches normalize to booleans", () => {
+    const on = renderAudioPlaylist({
+        props: {
+            showPlaybackTime: "true",
+            showTrackDurations: true,
+            pauseWhenOutOfView: "true",
+        },
+    }).computedProps;
+    assert.equal(on.showPlaybackTime, true);
+    assert.equal(on.showTrackDurations, true);
+    assert.equal(on.pauseWhenOutOfView, true);
+
+    const off = renderAudioPlaylist({
+        props: { showPlaybackTime: "false", showTrackDurations: false },
+    }).computedProps;
+    assert.equal(off.showPlaybackTime, false);
+    assert.equal(off.showTrackDurations, false);
+    assert.equal(off.pauseWhenOutOfView, false);
+});
+
+test("pause when off screen wires the intersect binding on the root", () => {
+    const on = renderAudioPlaylist({ props: { pauseWhenOutOfView: true } });
+    assert.equal(on.root.args["x-bind"], "pauseWhenHidden");
+    assert.equal(on.root.args["x-data"], "elementsAudioPlaylist()");
+    assert.equal(on.root.args["x-init"], "init");
+
+    const off = renderAudioPlaylist();
+    assert.ok(!("x-bind" in off.root.args));
+});
+
+test("compact appearance restyles the now playing block", () => {
+    const classes = renderAudioPlaylist({
+        props: {
+            appearance: "compact",
+            nowPlayingLayout: "flex-col text-center",
+            nowPlayingArtworkSize: "size-48",
+        },
+    }).computedProps.classes.nowPlaying;
+
+    assert.match(classes.wrapper, /flex-row/);
+    assert.doesNotMatch(classes.wrapper, /flex-col/);
+    assert.match(classes.artwork, /size-14/);
+    assert.doesNotMatch(classes.artwork, /size-48/);
+    assert.match(classes.content, /justify-between/);
+    assert.equal(classes.meta, "min-w-0");
+    assert.match(classes.title, /truncate/);
+    assert.match(classes.artist, /truncate/);
+});
+
+test("standard appearance keeps today's markup classes", () => {
+    const classes = renderAudioPlaylist({
+        props: { nowPlayingLayout: "flex-col text-center" },
+    }).computedProps.classes.nowPlaying;
+
+    assert.equal(classes.content, "");
+    assert.equal(classes.meta, "mb-4");
+    assert.match(classes.wrapper, /flex-col text-center/);
+    assert.doesNotMatch(classes.title, /truncate/);
+    assert.doesNotMatch(classes.artist, /truncate/);
+});
