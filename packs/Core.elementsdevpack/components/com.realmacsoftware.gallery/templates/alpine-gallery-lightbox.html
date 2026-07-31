@@ -9,6 +9,7 @@ includeOnce: true)
             atEnd: false,
             show: false,
             scrollTarget: null,
+            remoteImages: [],
 
             init() {
                 this.setupKeyboardControls();
@@ -52,6 +53,12 @@ includeOnce: true)
                     }
                 });
 
+                window.addEventListener("gallery-remote-images", (event) => {
+                    if (this.id === event.detail.id) {
+                        this.remoteImages = event.detail.images;
+                    }
+                });
+
                 this.$watch("show", (value) => {
                     if (value && this.scrollTarget !== null) {
                         this.scrollToTarget();
@@ -61,8 +68,14 @@ includeOnce: true)
 
             scrollToTarget() {
                 const slider = this.$refs.slider;
+                // Count only slides — an x-for <template> is also a child
+                const slides = slider.querySelectorAll(":scope > li");
+                if (slides.length < 2) {
+                    this.scrollTarget = null;
+                    return;
+                }
                 const totalScrollable = slider.scrollWidth - slider.clientWidth;
-                const numberOfIntervals = slider.children.length - 1;
+                const numberOfIntervals = slides.length - 1;
                 const scrollInterval = totalScrollable / numberOfIntervals;
 
                 slider.scrollLeft = scrollInterval * this.scrollTarget;
@@ -83,9 +96,12 @@ includeOnce: true)
 
             to(strategy) {
                 const slider = this.$refs.slider;
+                const firstSlide = slider.querySelector(":scope > li");
+                if (!firstSlide) {
+                    return;
+                }
                 const current = slider.scrollLeft;
-                const offset =
-                    slider.firstElementChild.getBoundingClientRect().width;
+                const offset = firstSlide.getBoundingClientRect().width;
 
                 slider.scrollTo({
                     left: strategy(current, offset),

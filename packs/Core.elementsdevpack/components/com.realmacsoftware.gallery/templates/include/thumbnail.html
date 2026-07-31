@@ -9,13 +9,19 @@
         alt="{{image.alt}}"
         class="{{classes.thumbnailImage}}"
     />
+    @else @if(isRemote)
+    <img
+        src="{{image.image}}"
+        alt="{{image.alt}}"
+        class="{{classes.thumbnailImage}}"
+    />
     @else
     <img
         src="{{image}}"
         alt="{{image.alt}}"
         class="{{classes.thumbnailImage}}"
     />
-    @endif @if(thumbnailWantsMeta)
+    @endif @endif @if(thumbnailWantsMeta)
     <div class="{{classes.thumbnailMeta}}">
         @if (thumbnailShowCaption)
         <div class="{{classes.thumbnailCaption}}">{{image.caption}}</div>

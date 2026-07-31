@@ -1,4 +1,29 @@
-@if(!hasResources)
+@if(!hasResources) @if(isRemote)
+<div
+    class="col-span-full w-full h-64 flex flex-col items-center justify-center border-2 border-dashed border-gray-300 rounded-xl bg-gray-50 text-center px-4 py-6"
+>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-10 h-10 text-gray-700 mb-2"
+    >
+        <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
+        />
+    </svg>
+    <p class="text-lg font-medium text-gray-700">
+        Enter a Folder URL in the inspector
+    </p>
+    <p class="text-sm text-gray-400">
+        The folder must be on the same server as your published site
+    </p>
+</div>
+@else
 <div
     rwResourceDropZone="resources"
     class="col-span-full w-full h-64 flex flex-col items-center justify-center border-2 border-dashed border-gray-300 rounded-xl bg-gray-50 hover:bg-gray-100 transition cursor-pointer text-center px-4 py-6"
@@ -22,8 +47,33 @@
     </p>
     <p class="text-sm text-gray-400">or add them via the component inspector</p>
 </div>
-@else
+@endif @else
 <div class="{{classes.wrapper}}" x-data>
-    @each(image in resources) @include("thumbnail") @endeach
+    @each(image in resources) @include("thumbnail") @endeach @if(remotePublished)
+    <template x-for="(item, index) in remoteImages" :key="item.src">
+        <div
+            @mouseenter="$dispatch('gallery-lightbox-scroll-to', {id: '{{id}}', index: index})"
+            @click="$dispatch('gallery-lightbox-show', {id: '{{id}}', slide: index})"
+            class="{{classes.thumbnail}}"
+        >
+            <img
+                :src="item.thumb"
+                :alt="item.alt"
+                class="{{classes.thumbnailImage}}"
+                loading="lazy"
+            />
+            @if(thumbnailWantsMeta)
+            <div class="{{classes.thumbnailMeta}}">
+                @if (thumbnailShowCaption)
+                <div
+                    class="{{classes.thumbnailCaption}}"
+                    x-text="item.caption"
+                ></div>
+                @endif
+            </div>
+            @endif
+        </div>
+    </template>
+    @endif
 </div>
 @endif @includeIf(includeLightbox, template: "lightbox")

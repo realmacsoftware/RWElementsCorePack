@@ -1,7 +1,9 @@
 const transformHook = (rw) => {
     const {
         globalID,
+        sourceType,
         resources,
+        remoteFolderURL,
 
         columns,
         gap,
@@ -65,52 +67,87 @@ const transformHook = (rw) => {
     } = rw.props;
 
     const { screens } = rw.theme.breakpoints;
-    const { id } = rw.node;
+    const { id, backendPath } = rw.node;
 
-    const hasResources = resources?.resources?.length > 0;
+    const edit = rw.project.mode === "edit";
+    const isRemote = sourceType === "remote";
+    const remotePublished = isRemote && !edit;
+
+    // Baked into a single-quoted PHP string and a single-quoted x-data
+    // attribute, so quotes, backslashes and whitespace must not survive.
+    const remoteFolder = (remoteFolderURL || "")
+        .trim()
+        .replace(/['"\\\s]/g, "")
+        .replace(/\/+$/, "");
+
+    let galleryResources = resources?.resources;
+    let hasResources = galleryResources?.length > 0;
 
     // const thumbnails = galleryHelpers.thumbnails(rw);
 
-    resources?.resources?.forEach((resource) => {
-        resource.srcset = "";
-        resource.thumbnail = rw.resizeResource(resource, 400);
-        resource.alt = resource.alt || resource.caption || resource.author || "";
-
-        // check if this is a video
-        resource.isVideo =
-            resource.format === "youtube" ||
-            resource.format === "vimeo" ||
-            resource.format === "mp4";
-
-        // if it is a video, set booleans for isYoutube and isVimeo and isMP4
-        if (resource.isVideo) {
-            resource.isYouTube = resource.format === "youtube" ? true : false;
-            resource.isVimeo = resource.format === "vimeo" ? true : false;
-            resource.isMP4 = resource.format === "mp4" ? true : false;
-            resource.options = {};
-
-            resource.caption = resource.name;
-            resource.author = resources.name;
-
-            if (resource.isYouTube) {
-                resource.options = {
-                    autoplay: 0,
-                    loop: 0,
-                    muted: 0,
-                    controls: 1,
-                };
-            }
-
-            if (resource.isVimeo) {
-                resource.options = {
-                    autoplay: "false",
-                    loop: "false",
-                    muted: "false",
-                    controls: "true",
-                };
-            }
+    if (isRemote) {
+        if (edit) {
+            const placeholder = `${rw.component.sharedAssetPath}/images/image-square.png`;
+            galleryResources = remoteFolder
+                ? Array.from({ length: 6 }, (_, index) => ({
+                      image: placeholder,
+                      alt: `Remote image ${index + 1}`,
+                      caption: `Image ${index + 1}`,
+                      author: "",
+                      isVideo: false,
+                  }))
+                : [];
+            hasResources = galleryResources.length > 0;
+        } else {
+            // Published: Alpine fetches the folder listing from the backend
+            // endpoint and renders the grid client-side.
+            galleryResources = [];
+            hasResources = true;
         }
-    });
+    } else {
+        resources?.resources?.forEach((resource) => {
+            resource.srcset = "";
+            resource.thumbnail = rw.resizeResource(resource, 400);
+            resource.alt =
+                resource.alt || resource.caption || resource.author || "";
+
+            // check if this is a video
+            resource.isVideo =
+                resource.format === "youtube" ||
+                resource.format === "vimeo" ||
+                resource.format === "mp4";
+
+            // if it is a video, set booleans for isYoutube and isVimeo and isMP4
+            if (resource.isVideo) {
+                resource.isYouTube =
+                    resource.format === "youtube" ? true : false;
+                resource.isVimeo = resource.format === "vimeo" ? true : false;
+                resource.isMP4 = resource.format === "mp4" ? true : false;
+                resource.options = {};
+
+                resource.caption = resource.name;
+                resource.author = resources.name;
+
+                if (resource.isYouTube) {
+                    resource.options = {
+                        autoplay: 0,
+                        loop: 0,
+                        muted: 0,
+                        controls: 1,
+                    };
+                }
+
+                if (resource.isVimeo) {
+                    resource.options = {
+                        autoplay: "false",
+                        loop: "false",
+                        muted: "false",
+                        controls: "true",
+                    };
+                }
+            }
+        });
+    }
 
     const classes = {
         wrapper: classnames([
@@ -222,12 +259,19 @@ const transformHook = (rw) => {
         ]).toString(),
     };
 
+    const backendBase = String(backendPath || "").replace(/\/+$/, "");
+    const remoteOptions = JSON.stringify({
+        endpoint: `${backendBase}/gallery.php`,
+    }).replace(/"/g, `'`);
+
     rw.setRootElement({
         as: globalHTMLTag(rw, "div"),
         class: classes,
         args: {
             id: globalID,
-            "x-data": `gallery('${id}')`,
+            "x-data": remotePublished
+                ? `gallery('${id}', ${remoteOptions})`
+                : `gallery('${id}')`,
         },
     });
 
@@ -245,9 +289,12 @@ const transformHook = (rw) => {
         lightboxShowCaption: lightboxShowCaption,
         lightboxShowAuthor: lightboxShowAuthor,
         lightboxWantsMeta: lightboxShowCaption || lightboxShowAuthor,
-        resources: resources?.resources,
-        edit: rw.project.mode === "edit",
-        includeLightbox: lightboxPreview || rw.project.mode !== "edit",
+        resources: galleryResources,
+        isRemote,
+        remotePublished,
+        remoteFolder,
+        edit,
+        includeLightbox: lightboxPreview || !edit,
         id: rw.node.id,
     });
 };

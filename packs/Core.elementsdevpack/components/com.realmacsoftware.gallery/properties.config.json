@@ -5,9 +5,42 @@
       "icon": "photo.stack",
       "properties": [
         {
+          "title": "Source",
+          "id": "sourceType",
+          "responsive": false,
+          "segmented": {
+            "default": "resource",
+            "items": [
+              {
+                "title": "Resources",
+                "value": "resource"
+              },
+              {
+                "title": "Remote Folder",
+                "value": "remote"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "sourceType == 'resource'",
           "title": "Resources",
           "id": "resources",
           "resource": {}
+        },
+        {
+          "visible": "sourceType == 'remote'",
+          "title": "Folder URL",
+          "id": "remoteFolderURL",
+          "responsive": false,
+          "text": {
+            "default": ""
+          }
+        },
+        {
+          "visible": "sourceType == 'remote'",
+          "information": {},
+          "title": "The folder must be on the same server as your published site (PHP required). Name a file photo_thumb.jpg to use it as the grid thumbnail for photo.jpg."
         }
       ]
     },

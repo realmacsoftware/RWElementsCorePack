@@ -1,9 +1,10 @@
 @portal("bodyEnd", id: "com.realmacsoftware.alpine.gallery", includeOnce: true)
 <script>
     document.addEventListener("alpine:init", () => {
-        Alpine.data("gallery", (id = null) => ({
+        Alpine.data("gallery", (id = null, options = {}) => ({
             id,
             open: false,
+            remoteImages: [],
 
             init() {
                 window.addEventListener("gallery-close", (e) => {
@@ -30,6 +31,36 @@
                         this.close();
                     }
                 });
+
+                if (options.endpoint) {
+                    this.loadRemoteImages(options);
+                }
+            },
+
+            async loadRemoteImages({ endpoint }) {
+                try {
+                    const response = await fetch(endpoint);
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+                    const data = await response.json();
+                    const images = (data.images || []).map((item) => ({
+                        src: item.src,
+                        thumb: item.thumb || item.src,
+                        caption: item.caption || "",
+                        alt: item.caption || "",
+                    }));
+                    this.remoteImages = images;
+                    this.$dispatch("gallery-remote-images", {
+                        id: this.id,
+                        images,
+                    });
+                } catch (error) {
+                    console.warn(
+                        "Gallery: unable to load remote folder listing",
+                        error
+                    );
+                }
             },
 
             next() {
