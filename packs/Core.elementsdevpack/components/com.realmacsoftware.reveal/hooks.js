@@ -310,7 +310,8 @@ const transformHook = (rw) => {
   });
   rw.setProps({
     isEdit: rw.project.mode == "edit",
-    id
+    id,
+    componentAssetPath: rw.component.assetPath
   });
 };
 exports.transformHook = transformHook;

@@ -1,3 +1,7 @@
+@portal(bodyEnd, id: "com.realmacsoftware.reveal.gsap", includeOnce: true)
+<script src="{{componentAssetPath}}/gsap.min.js"></script>
+<script src="{{componentAssetPath}}/ScrollTrigger.min.js"></script>
+<script src="{{componentAssetPath}}/gsap-effects.js"></script>
 <script>
     gsap.registerPlugin(ScrollTrigger);
     document.addEventListener("DOMContentLoaded", () => {
@@ -31,9 +35,9 @@
             const delayNumber = parseFloat(delay);
             const degreesNumber = parseFloat(degrees);
             const degreesNumberOut = degreesNumber * -1;
-            
+
             let triggeredOnce = false;
-            
+
             const config = {
                 duration: durationNumber,
                 ease: easing,
@@ -105,3 +109,4 @@
         });
     });
 </script>
+@endportal
