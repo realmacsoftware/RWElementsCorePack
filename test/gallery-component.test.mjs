@@ -41,7 +41,7 @@ function loadTransformHook() {
     return sandbox.exports.transformHook;
 }
 
-function renderGallery(overrides = {}, mode = "preview") {
+function renderGallery(overrides = {}, mode = "preview", nodeId = "node-1") {
     const transformHook = loadTransformHook();
     const resizeCalls = [];
     const rw = {
@@ -60,7 +60,7 @@ function renderGallery(overrides = {}, mode = "preview") {
         theme: {
             breakpoints: { screens: {} },
         },
-        node: { id: "node-1", backendPath: "backend/rwNODE" },
+        node: { id: nodeId },
         component: { sharedAssetPath: "/shared-assets" },
         project: { mode },
         resizeResource(resource, width) {
@@ -142,7 +142,7 @@ test("remote mode in edit without a folder shows the instructional state", () =>
     assert.equal(rw.computedProps.resources.length, 0);
 });
 
-test("remote mode published passes the backend endpoint to Alpine", () => {
+test("remote mode published defers the grid to the PHP templates", () => {
     const rw = renderGallery({
         sourceType: "remote",
         remoteFolderURL: " https://example.com/photos/ ",
@@ -152,10 +152,25 @@ test("remote mode published passes the backend endpoint to Alpine", () => {
     assert.equal(rw.computedProps.hasResources, true);
     assert.equal(rw.computedProps.resources.length, 0);
     assert.equal(rw.computedProps.remoteFolder, "https://example.com/photos");
-    assert.equal(
-        rw.root.args["x-data"],
-        "gallery('node-1', {'endpoint':'backend/rwNODE/gallery.php'})"
+    // No client-side fetch config — the PHP templates render the images
+    assert.equal(rw.root.args["x-data"], "gallery('node-1')");
+});
+
+test("phpId is safe to use as a PHP variable suffix", () => {
+    const plain = renderGallery(
+        { sourceType: "remote", remoteFolderURL: "/photos" },
+        "preview"
     );
+    assert.equal(plain.computedProps.phpId, "node_1");
+
+    // Real node ids carry punctuation that can't appear in a PHP variable name
+    const punctuated = renderGallery(
+        { sourceType: "remote", remoteFolderURL: "/photos" },
+        "preview",
+        "29BB9A86-0D4A-4E46.9BF5"
+    );
+    assert.equal(punctuated.computedProps.phpId, "29BB9A86_0D4A_4E46_9BF5");
+    assert.match(punctuated.computedProps.phpId, /^[a-zA-Z0-9_]+$/);
 });
 
 test("remote folder value is sanitised for PHP and x-data embedding", () => {
@@ -167,8 +182,29 @@ test("remote folder value is sanitised for PHP and x-data embedding", () => {
     assert.equal(rw.computedProps.remoteFolder, "/photos");
 });
 
+test("remote mode ships the PHP templates it depends on", () => {
+    const info = JSON.parse(fs.readFileSync(`${componentDir}/info.json`, "utf8"));
+    // Without this the page publishes as .html and the PHP never executes
+    assert.equal(info.requiresPhp, true);
+
+    for (const partial of ["remote-scan", "remote-grid", "remote-slides"]) {
+        assert.ok(
+            fs.existsSync(`${componentDir}/templates/include/${partial}.php`),
+            `missing templates/include/${partial}.php`
+        );
+    }
+
+    const index = fs.readFileSync(`${componentDir}/templates/index.html`, "utf8");
+    const lightbox = fs.readFileSync(
+        `${componentDir}/templates/include/lightbox.html`,
+        "utf8"
+    );
+    assert.match(index, /@includeIf\(remotePublished, template: "remote-grid"\)/);
+    assert.match(lightbox, /@includeIf\(remotePublished, template: "remote-slides"\)/);
+});
+
 test("compiled files mirror the source changes", () => {
-    const markers = ["sourceType", "remoteFolderURL", "remotePublished"];
+    const markers = ["sourceType", "remoteFolderURL", "remotePublished", "phpId"];
 
     const hooksSource = fs.readFileSync(hookPath, "utf8");
     const hooksCompiled = fs.readFileSync(`${componentDir}/hooks.js`, "utf8");

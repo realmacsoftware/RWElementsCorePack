@@ -143,10 +143,11 @@ const transformHook = (rw) => {
     navigationNextPreviousButtonOpacityHover
   } = rw.props;
   const { screens } = rw.theme.breakpoints;
-  const { id, backendPath } = rw.node;
+  const { id } = rw.node;
   const edit = rw.project.mode === "edit";
   const isRemote = sourceType === "remote";
   const remotePublished = isRemote && !edit;
+  const phpId = String(id).replace(/[^a-zA-Z0-9]/g, "_");
   const remoteFolder = (remoteFolderURL || "").trim().replace(/['"\\\s]/g, "").replace(/\/+$/, "");
   let galleryResources = resources == null ? void 0 : resources.resources;
   let hasResources = (galleryResources == null ? void 0 : galleryResources.length) > 0;
@@ -306,16 +307,12 @@ const transformHook = (rw) => {
       navigationSize
     ]).toString()
   };
-  const backendBase = String(backendPath || "").replace(/\/+$/, "");
-  const remoteOptions = JSON.stringify({
-    endpoint: `${backendBase}/gallery.php`
-  }).replace(/"/g, `'`);
   rw.setRootElement({
     as: globalHTMLTag(rw, "div"),
     class: classes,
     args: {
       id: globalID,
-      "x-data": remotePublished ? `gallery('${id}', ${remoteOptions})` : `gallery('${id}')`
+      "x-data": `gallery('${id}')`
     }
   });
   if (globalID.length > 0) {
@@ -335,6 +332,7 @@ const transformHook = (rw) => {
     isRemote,
     remotePublished,
     remoteFolder,
+    phpId,
     edit,
     includeLightbox: lightboxPreview || !edit,
     id: rw.node.id

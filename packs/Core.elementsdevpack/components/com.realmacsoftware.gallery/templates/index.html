@@ -49,31 +49,11 @@
 </div>
 @endif @else
 <div class="{{classes.wrapper}}" x-data>
-    @each(image in resources) @include("thumbnail") @endeach @if(remotePublished)
-    <template x-for="(item, index) in remoteImages" :key="item.src">
-        <div
-            @mouseenter="$dispatch('gallery-lightbox-scroll-to', {id: '{{id}}', index: index})"
-            @click="$dispatch('gallery-lightbox-show', {id: '{{id}}', slide: index})"
-            class="{{classes.thumbnail}}"
-        >
-            <img
-                :src="item.thumb"
-                :alt="item.alt"
-                class="{{classes.thumbnailImage}}"
-                loading="lazy"
-            />
-            @if(thumbnailWantsMeta)
-            <div class="{{classes.thumbnailMeta}}">
-                @if (thumbnailShowCaption)
-                <div
-                    class="{{classes.thumbnailCaption}}"
-                    x-text="item.caption"
-                ></div>
-                @endif
-            </div>
-            @endif
-        </div>
-    </template>
-    @endif
+    @each(image in resources) @include("thumbnail") @endeach
+    @includeIf(remotePublished, template: "remote-grid")
 </div>
-@endif @includeIf(includeLightbox, template: "lightbox")
+@if(isRemote) @if(edit)
+<p style="opacity: 0.35; font-size: 0.85em; margin-top: 0.5rem; text-align: center;">
+    Example images &mdash; the server folder will be read on the published site.
+</p>
+@endif @endif @endif @includeIf(includeLightbox, template: "lightbox")

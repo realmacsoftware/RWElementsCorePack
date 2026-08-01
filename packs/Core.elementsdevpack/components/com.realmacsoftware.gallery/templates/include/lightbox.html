@@ -131,32 +131,7 @@
                     </div>
                     @endif
                 </li>
-                @endeach @if(remotePublished)
-                <template x-for="(item, index) in remoteImages" :key="item.src">
-                    <li
-                        class="{{classes.lightboxItem}}"
-                        @click="show = false"
-                        role="option"
-                    >
-                        <img
-                            :src="item.src"
-                            :alt="item.alt"
-                            class="{{classes.lightboxItemMedia}}"
-                            @click.stop
-                        />
-                        @if(lightboxWantsMeta)
-                        <div class="{{classes.lightboxMeta}}" @click.stop>
-                            @if (lightboxShowCaption)
-                            <div
-                                class="{{classes.lightboxCaption}}"
-                                x-text="item.caption"
-                            ></div>
-                            @endif
-                        </div>
-                        @endif
-                    </li>
-                </template>
-                @endif
+                @endeach @includeIf(remotePublished, template: "remote-slides")
             </ul>
 
             <!-- Next Button -->

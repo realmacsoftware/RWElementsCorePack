@@ -67,14 +67,18 @@ const transformHook = (rw) => {
     } = rw.props;
 
     const { screens } = rw.theme.breakpoints;
-    const { id, backendPath } = rw.node;
+    const { id } = rw.node;
 
     const edit = rw.project.mode === "edit";
     const isRemote = sourceType === "remote";
     const remotePublished = isRemote && !edit;
 
-    // Baked into a single-quoted PHP string and a single-quoted x-data
-    // attribute, so quotes, backslashes and whitespace must not survive.
+    // Suffix for the PHP variables in the remote templates, so two galleries
+    // on the same page don't share state.
+    const phpId = String(id).replace(/[^a-zA-Z0-9]/g, "_");
+
+    // Baked into a single-quoted PHP string, so quotes, backslashes and
+    // whitespace must not survive.
     const remoteFolder = (remoteFolderURL || "")
         .trim()
         .replace(/['"\\\s]/g, "")
@@ -259,19 +263,12 @@ const transformHook = (rw) => {
         ]).toString(),
     };
 
-    const backendBase = String(backendPath || "").replace(/\/+$/, "");
-    const remoteOptions = JSON.stringify({
-        endpoint: `${backendBase}/gallery.php`,
-    }).replace(/"/g, `'`);
-
     rw.setRootElement({
         as: globalHTMLTag(rw, "div"),
         class: classes,
         args: {
             id: globalID,
-            "x-data": remotePublished
-                ? `gallery('${id}', ${remoteOptions})`
-                : `gallery('${id}')`,
+            "x-data": `gallery('${id}')`,
         },
     });
 
@@ -293,6 +290,7 @@ const transformHook = (rw) => {
         isRemote,
         remotePublished,
         remoteFolder,
+        phpId,
         edit,
         includeLightbox: lightboxPreview || !edit,
         id: rw.node.id,
