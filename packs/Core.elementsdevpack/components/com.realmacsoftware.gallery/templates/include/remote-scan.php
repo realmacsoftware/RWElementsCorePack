@@ -86,6 +86,20 @@ if (!isset($rwGalleryImages_{{phpId}})) {
             $rwGalleryFiles_{{phpId}} = [];
             $rwGalleryThumbs_{{phpId}} = [];
 
+            // A companion thumbnail is any file whose name ends in a "thumb"
+            // marker: photo_thumb.jpg, photo-thumb.jpg, photo.thumb.jpg,
+            // "photo thumb.jpg", _thumbnail, and @2x / -1 suffixes on the end.
+            // Whatever the spelling, these are never gallery items themselves.
+            $rwGalleryMarker_{{phpId}} = '/[-_. ]thumb(?:nail)?(?:@[0-9]+x)?(?:-[0-9]+)?$/i';
+
+            // Closure (not a named function) so two galleries on one page
+            // can't redeclare it. Tolerates a stray double extension and
+            // trailing spaces, which otherwise hide the marker.
+            $rwGalleryStemOf_{{phpId}} = function ($file) {
+                $stem = rtrim(pathinfo($file, PATHINFO_FILENAME));
+                return preg_replace('/\.(jpe?g|png|gif|webp|avif)$/i', '', $stem);
+            };
+
             foreach (scandir($rwGalleryDir_{{phpId}}) as $rwGalleryEntry_{{phpId}}) {
                 if (
                     $rwGalleryEntry_{{phpId}}[0] === '.' ||
@@ -99,10 +113,14 @@ if (!isset($rwGalleryImages_{{phpId}})) {
                 if (!in_array($rwGalleryExt_{{phpId}}, $rwGalleryAllowed_{{phpId}}, true)) {
                     continue;
                 }
-                $rwGalleryStem_{{phpId}} = pathinfo($rwGalleryEntry_{{phpId}}, PATHINFO_FILENAME);
-                if (preg_match('/_thumb$/i', $rwGalleryStem_{{phpId}})) {
+                $rwGalleryStem_{{phpId}} = $rwGalleryStemOf_{{phpId}}($rwGalleryEntry_{{phpId}});
+                if (preg_match($rwGalleryMarker_{{phpId}}, $rwGalleryStem_{{phpId}})) {
                     $rwGalleryThumbs_{{phpId}}[
-                        strtolower(preg_replace('/_thumb$/i', '', $rwGalleryStem_{{phpId}}))
+                        strtolower(trim(preg_replace(
+                            $rwGalleryMarker_{{phpId}},
+                            '',
+                            $rwGalleryStem_{{phpId}}
+                        )))
                     ] = $rwGalleryEntry_{{phpId}};
                 } else {
                     $rwGalleryFiles_{{phpId}}[] = $rwGalleryEntry_{{phpId}};
@@ -125,9 +143,9 @@ if (!isset($rwGalleryImages_{{phpId}})) {
             );
 
             foreach ($rwGalleryFiles_{{phpId}} as $rwGalleryFile_{{phpId}}) {
-                $rwGalleryStem_{{phpId}} = pathinfo($rwGalleryFile_{{phpId}}, PATHINFO_FILENAME);
+                $rwGalleryStem_{{phpId}} = $rwGalleryStemOf_{{phpId}}($rwGalleryFile_{{phpId}});
                 $rwGallerySrc_{{phpId}} = $rwGalleryBase_{{phpId}} . '/' . rawurlencode($rwGalleryFile_{{phpId}});
-                $rwGalleryKey_{{phpId}} = strtolower($rwGalleryStem_{{phpId}});
+                $rwGalleryKey_{{phpId}} = strtolower(trim($rwGalleryStem_{{phpId}}));
                 $rwGalleryCaption_{{phpId}} = trim(preg_replace('/[-_]+/', ' ', $rwGalleryStem_{{phpId}}));
 
                 $rwGalleryImages_{{phpId}}[] = [

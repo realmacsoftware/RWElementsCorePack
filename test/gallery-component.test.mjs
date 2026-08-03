@@ -222,6 +222,77 @@ test("the page's path back to the site root reaches the templates", () => {
     assert.equal(root.computedProps.pageDocRoot, "");
 });
 
+// Reads the thumbnail-matching rule out of remote-scan.php and exercises it
+// here, so weakening the pattern fails the suite. PCRE and JS agree on this
+// syntax, so the pattern under test is the one that actually ships.
+function thumbnailRuleFromTemplate() {
+    const php = fs.readFileSync(
+        `${componentDir}/templates/include/remote-scan.php`,
+        "utf8"
+    );
+    const marker = php.match(/\$rwGalleryMarker_\{\{phpId\}\} = '\/(.+?)\/i';/);
+    assert.ok(marker, "could not find the thumbnail marker pattern");
+    const markerRe = new RegExp(marker[1], "i");
+
+    const doubleExt = php.match(/preg_replace\('\/\\\.\((.+?)\)\$\/i'/);
+    assert.ok(doubleExt, "could not find the double-extension strip");
+    const extRe = new RegExp(`\\.(${doubleExt[1]})$`, "i");
+
+    return (filename) => {
+        const stem = filename
+            .replace(/\.[^.]+$/, "")
+            .replace(/\s+$/, "")
+            .replace(extRe, "");
+        return markerRe.test(stem)
+            ? { isThumb: true, pairsWith: stem.replace(markerRe, "").trim().toLowerCase() }
+            : { isThumb: false };
+    };
+}
+
+test("companion thumbnails are paired, never listed as gallery items", () => {
+    const classify = thumbnailRuleFromTemplate();
+
+    // Every spelling here must pair with steps-with-laptop.jpg
+    const companions = [
+        "steps-with-laptop_thumb.jpg",
+        "steps-with-laptop-thumb.jpg",
+        "steps-with-laptop.thumb.jpg",
+        "steps-with-laptop thumb.jpg",
+        "steps-with-laptop_Thumb.jpg",
+        "steps-with-laptop_THUMB.JPG",
+        "steps-with-laptop_thumbnail.jpg",
+        "steps-with-laptop_thumb@2x.jpg",
+        "steps-with-laptop_thumb-1.jpg",
+        "steps-with-laptop_thumb.jpg.jpg",
+        "steps-with-laptop_thumb .jpg",
+    ];
+    for (const file of companions) {
+        const result = classify(file);
+        assert.equal(result.isThumb, true, `${file} should be a thumbnail`);
+        assert.equal(
+            result.pairsWith,
+            "steps-with-laptop",
+            `${file} should pair with steps-with-laptop`
+        );
+    }
+
+    // Ordinary photos must never be swallowed as thumbnails
+    for (const file of [
+        "steps-with-laptop.jpg",
+        "green-thumb-garden.jpg",
+        "thumbelina.jpg",
+        "my-thumbprint.jpg",
+        "thumb.jpg",
+        "Sunset.JPEG",
+    ]) {
+        assert.equal(
+            classify(file).isThumb,
+            false,
+            `${file} should stay a gallery item`
+        );
+    }
+});
+
 test("remote mode ships the PHP templates it depends on", () => {
     const info = JSON.parse(fs.readFileSync(`${componentDir}/info.json`, "utf8"));
     // Without this the page publishes as .html and the PHP never executes
