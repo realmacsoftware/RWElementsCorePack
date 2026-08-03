@@ -18,17 +18,23 @@ const transformHook = (rw) => {
         ]).toString(),
     };
 
+    const mouse3d = isEdit ? {} : globalMouse3D(rw);
+
     rw.setRootElement({
         as: "div",
         class: classes.wrapper,
-        args: { id: globalID, ...(isEdit ? {} : globalMouse3D(rw)) },
+        args: { id: globalID, ...mouse3d },
     });
 
     if (globalID.length > 0) {
         rw.addAnchor(globalID);
     }
 
-    rw.setProps({ classes });
+    rw.setProps({
+        classes,
+        wantsMouse3d: Object.keys(mouse3d).length > 0,
+        componentAssetPath: rw.component.assetPath,
+    });
 };
 
 exports.transformHook = transformHook;
