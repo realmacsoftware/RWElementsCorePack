@@ -4,39 +4,84 @@
  * remote grid and lightbox slides. Runs once per gallery instance — the
  * variables are suffixed with the node id so two galleries on one page
  * don't share state.
+ *
+ * The folder can be written relative to the page ("resources/Instagram"),
+ * relative to the site root ("/resources/Instagram") or as a full URL on this
+ * site. Each candidate location is tried against the filesystem and the first
+ * one that exists wins, so the same setting works under local preview, in a
+ * site published into a subdirectory, and on the live server.
  */
 if (!isset($rwGalleryImages_{{phpId}})) {
     $rwGalleryImages_{{phpId}} = [];
     $rwGalleryFolder_{{phpId}} = '{{remoteFolder}}';
 
     if ($rwGalleryFolder_{{phpId}} !== '') {
-        // Accept a full URL on this server or a root-relative path.
+        // A full URL on this site is treated as the path it points at.
         $rwGalleryPath_{{phpId}} = $rwGalleryFolder_{{phpId}};
         if (preg_match('#^https?://#i', $rwGalleryPath_{{phpId}})) {
             $rwGalleryParts_{{phpId}} = parse_url($rwGalleryPath_{{phpId}});
             $rwGalleryPath_{{phpId}} = isset($rwGalleryParts_{{phpId}}['path'])
-                ? $rwGalleryParts_{{phpId}}['path']
+                ? '/' . ltrim($rwGalleryParts_{{phpId}}['path'], '/')
                 : '';
         }
-        $rwGalleryPath_{{phpId}} = '/' . trim($rwGalleryPath_{{phpId}}, '/');
 
-        $rwGalleryRoot_{{phpId}} = realpath(rtrim(
-            isset($_SERVER['DOCUMENT_ROOT']) ? $_SERVER['DOCUMENT_ROOT'] : '',
-            '/'
-        ));
-        $rwGalleryDir_{{phpId}} = $rwGalleryRoot_{{phpId}} === false
-            ? false
-            : realpath($rwGalleryRoot_{{phpId}} . $rwGalleryPath_{{phpId}});
+        // A leading slash means "from the site root", anything else is
+        // relative to this page.
+        $rwGalleryFromRoot_{{phpId}} = strpos($rwGalleryPath_{{phpId}}, '/') === 0;
+        $rwGalleryRel_{{phpId}} = trim($rwGalleryPath_{{phpId}}, '/');
 
-        // Keep the resolved folder inside the document root.
-        $rwGalleryValid_{{phpId}} = $rwGalleryDir_{{phpId}} !== false
-            && is_dir($rwGalleryDir_{{phpId}})
-            && strpos(
-                $rwGalleryDir_{{phpId}} . DIRECTORY_SEPARATOR,
-                $rwGalleryRoot_{{phpId}} . DIRECTORY_SEPARATOR
-            ) === 0;
+        // Relative path from this page back to the site root, e.g. "" or "../".
+        $rwGalleryUp_{{phpId}} = trim('{{pageDocRoot}}', '/');
+        $rwGallerySiteDir_{{phpId}} = $rwGalleryUp_{{phpId}} === ''
+            ? __DIR__
+            : __DIR__ . '/' . $rwGalleryUp_{{phpId}};
+        $rwGallerySiteUrl_{{phpId}} = $rwGalleryUp_{{phpId}} === ''
+            ? ''
+            : $rwGalleryUp_{{phpId}} . '/';
 
-        if ($rwGalleryValid_{{phpId}}) {
+        // [filesystem base, URL prefix] pairs, most likely first.
+        $rwGalleryPageBase_{{phpId}} = [__DIR__, ''];
+        $rwGallerySiteBase_{{phpId}} = [$rwGallerySiteDir_{{phpId}}, $rwGallerySiteUrl_{{phpId}}];
+        $rwGalleryDocBase_{{phpId}} = [
+            rtrim(isset($_SERVER['DOCUMENT_ROOT']) ? $_SERVER['DOCUMENT_ROOT'] : '', '/'),
+            '/',
+        ];
+
+        $rwGalleryCandidates_{{phpId}} = $rwGalleryFromRoot_{{phpId}}
+            ? [$rwGallerySiteBase_{{phpId}}, $rwGalleryDocBase_{{phpId}}, $rwGalleryPageBase_{{phpId}}]
+            : [$rwGalleryPageBase_{{phpId}}, $rwGallerySiteBase_{{phpId}}, $rwGalleryDocBase_{{phpId}}];
+
+        $rwGalleryDir_{{phpId}} = false;
+        $rwGalleryUrlBase_{{phpId}} = '';
+
+        foreach ($rwGalleryCandidates_{{phpId}} as $rwGalleryCandidate_{{phpId}}) {
+            list($rwGalleryBaseDir_{{phpId}}, $rwGalleryBaseUrl_{{phpId}}) = $rwGalleryCandidate_{{phpId}};
+            if ($rwGalleryBaseDir_{{phpId}} === '') {
+                continue;
+            }
+            $rwGalleryBaseReal_{{phpId}} = realpath($rwGalleryBaseDir_{{phpId}});
+            if ($rwGalleryBaseReal_{{phpId}} === false) {
+                continue;
+            }
+            $rwGalleryTry_{{phpId}} = realpath(
+                $rwGalleryBaseReal_{{phpId}} . '/' . $rwGalleryRel_{{phpId}}
+            );
+            // Keep the resolved folder inside the base it was resolved against.
+            if (
+                $rwGalleryTry_{{phpId}} !== false
+                && is_dir($rwGalleryTry_{{phpId}})
+                && strpos(
+                    $rwGalleryTry_{{phpId}} . DIRECTORY_SEPARATOR,
+                    $rwGalleryBaseReal_{{phpId}} . DIRECTORY_SEPARATOR
+                ) === 0
+            ) {
+                $rwGalleryDir_{{phpId}} = $rwGalleryTry_{{phpId}};
+                $rwGalleryUrlBase_{{phpId}} = $rwGalleryBaseUrl_{{phpId}};
+                break;
+            }
+        }
+
+        if ($rwGalleryDir_{{phpId}} !== false) {
             $rwGalleryAllowed_{{phpId}} = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'avif'];
             $rwGalleryFiles_{{phpId}} = [];
             $rwGalleryThumbs_{{phpId}} = [];
@@ -66,13 +111,16 @@ if (!isset($rwGalleryImages_{{phpId}})) {
 
             natcasesort($rwGalleryFiles_{{phpId}});
 
-            // Root-relative base URL for the folder, encoded per path segment.
+            // Base URL for the folder, built on whichever location matched so
+            // the links stay valid in preview and in a subdirectory install.
+            // Encoded per path segment.
             $rwGallerySegments_{{phpId}} = array_filter(
-                explode('/', trim($rwGalleryPath_{{phpId}}, '/')),
+                explode('/', $rwGalleryRel_{{phpId}}),
                 'strlen'
             );
             $rwGalleryBase_{{phpId}} = rtrim(
-                '/' . implode('/', array_map('rawurlencode', $rwGallerySegments_{{phpId}})),
+                $rwGalleryUrlBase_{{phpId}}
+                    . implode('/', array_map('rawurlencode', $rwGallerySegments_{{phpId}})),
                 '/'
             );
 

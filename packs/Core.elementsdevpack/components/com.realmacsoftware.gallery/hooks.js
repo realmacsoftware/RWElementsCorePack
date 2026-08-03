@@ -86,7 +86,7 @@ const globalHTMLTag = (app, fallback = "div") => {
   return globalHTMLTag2 || fallback;
 };
 const transformHook = (rw) => {
-  var _a;
+  var _a, _b;
   const {
     globalID,
     sourceType,
@@ -148,7 +148,9 @@ const transformHook = (rw) => {
   const isRemote = sourceType === "remote";
   const remotePublished = isRemote && !edit;
   const phpId = String(id).replace(/[^a-zA-Z0-9]/g, "_");
-  const remoteFolder = (remoteFolderURL || "").trim().replace(/['"\\\s]/g, "").replace(/\/+$/, "");
+  const sanitiseForPhp = (value) => String(value || "").trim().replace(/['"\\\r\n\t]/g, "");
+  const remoteFolder = sanitiseForPhp(remoteFolderURL).replace(/\/+$/, "");
+  const pageDocRoot = sanitiseForPhp((_b = rw.page) == null ? void 0 : _b.docRootPath);
   let galleryResources = resources == null ? void 0 : resources.resources;
   let hasResources = (galleryResources == null ? void 0 : galleryResources.length) > 0;
   if (isRemote) {
@@ -332,6 +334,7 @@ const transformHook = (rw) => {
     isRemote,
     remotePublished,
     remoteFolder,
+    pageDocRoot,
     phpId,
     edit,
     includeLightbox: lightboxPreview || !edit,

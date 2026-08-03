@@ -77,12 +77,22 @@ const transformHook = (rw) => {
     // on the same page don't share state.
     const phpId = String(id).replace(/[^a-zA-Z0-9]/g, "_");
 
-    // Baked into a single-quoted PHP string, so quotes, backslashes and
-    // whitespace must not survive.
-    const remoteFolder = (remoteFolderURL || "")
-        .trim()
-        .replace(/['"\\\s]/g, "")
-        .replace(/\/+$/, "");
+    // Baked into single-quoted PHP strings, so quotes, backslashes and line
+    // breaks must not survive. Spaces inside a folder name are kept.
+    const sanitiseForPhp = (value) =>
+        String(value || "")
+            .trim()
+            .replace(/['"\\\r\n\t]/g, "");
+
+    // The folder can be a path relative to the page ("resources/Instagram"),
+    // relative to the site root ("/resources/Instagram") or a full URL on this
+    // site — the remote templates resolve whichever it turns out to be.
+    const remoteFolder = sanitiseForPhp(remoteFolderURL).replace(/\/+$/, "");
+
+    // Relative path from this page back to the site root ("", "../", …), so
+    // the templates can find the site root without relying on DOCUMENT_ROOT
+    // (which differs under local preview).
+    const pageDocRoot = sanitiseForPhp(rw.page?.docRootPath);
 
     let galleryResources = resources?.resources;
     let hasResources = galleryResources?.length > 0;
@@ -290,6 +300,7 @@ const transformHook = (rw) => {
         isRemote,
         remotePublished,
         remoteFolder,
+        pageDocRoot,
         phpId,
         edit,
         includeLightbox: lightboxPreview || !edit,

@@ -41,7 +41,7 @@ function loadTransformHook() {
     return sandbox.exports.transformHook;
 }
 
-function renderGallery(overrides = {}, mode = "preview", nodeId = "node-1") {
+function renderGallery(overrides = {}, mode = "preview", nodeId = "node-1", options = {}) {
     const transformHook = loadTransformHook();
     const resizeCalls = [];
     const rw = {
@@ -61,6 +61,7 @@ function renderGallery(overrides = {}, mode = "preview", nodeId = "node-1") {
             breakpoints: { screens: {} },
         },
         node: { id: nodeId },
+        page: { docRootPath: options.docRootPath ?? "" },
         component: { sharedAssetPath: "/shared-assets" },
         project: { mode },
         resizeResource(resource, width) {
@@ -173,13 +174,52 @@ test("phpId is safe to use as a PHP variable suffix", () => {
     assert.match(punctuated.computedProps.phpId, /^[a-zA-Z0-9_]+$/);
 });
 
-test("remote folder value is sanitised for PHP and x-data embedding", () => {
+test("remote folder value is sanitised for embedding in PHP", () => {
     const rw = renderGallery({
         sourceType: "remote",
         remoteFolderURL: "/pho'to\\s/",
     });
 
     assert.equal(rw.computedProps.remoteFolder, "/photos");
+});
+
+test("relative folder paths are passed through unchanged", () => {
+    // Relative to the page — must not gain a leading slash
+    const relative = renderGallery({
+        sourceType: "remote",
+        remoteFolderURL: "resources/Instagram",
+    });
+    assert.equal(relative.computedProps.remoteFolder, "resources/Instagram");
+
+    // Relative to the site root — the leading slash is meaningful
+    const fromRoot = renderGallery({
+        sourceType: "remote",
+        remoteFolderURL: "/resources/Instagram/",
+    });
+    assert.equal(fromRoot.computedProps.remoteFolder, "/resources/Instagram");
+
+    // Folder names containing spaces survive
+    const spaced = renderGallery({
+        sourceType: "remote",
+        remoteFolderURL: "  /resources/Holiday Photos  ",
+    });
+    assert.equal(spaced.computedProps.remoteFolder, "/resources/Holiday Photos");
+});
+
+test("the page's path back to the site root reaches the templates", () => {
+    const nested = renderGallery(
+        { sourceType: "remote", remoteFolderURL: "/resources/Instagram" },
+        "preview",
+        "node-1",
+        { docRootPath: "../../" }
+    );
+    assert.equal(nested.computedProps.pageDocRoot, "../../");
+
+    const root = renderGallery({
+        sourceType: "remote",
+        remoteFolderURL: "/resources/Instagram",
+    });
+    assert.equal(root.computedProps.pageDocRoot, "");
 });
 
 test("remote mode ships the PHP templates it depends on", () => {
