@@ -155,7 +155,7 @@ const transformHook = (rw) => {
                 thumb: classnames([
                     nowPlayingProgressBarSize,
                     nowPlayingProgressBarForegroundColor,
-                    "absolute top-0 aspect-square rounded-full transition duration-[0ms]",
+                    "absolute top-0 aspect-square rounded-full",
                 ]).toString(),
             },
             volume: {
