@@ -89,7 +89,9 @@ const transformHook = (rw) => {
   var _a, _b;
   const {
     globalID,
+    sourceType,
     resources,
+    remoteFolderURL,
     columns,
     gap,
     thumbnailAlignment,
@@ -142,37 +144,62 @@ const transformHook = (rw) => {
   } = rw.props;
   const { screens } = rw.theme.breakpoints;
   const { id } = rw.node;
-  const hasResources = ((_a = resources == null ? void 0 : resources.resources) == null ? void 0 : _a.length) > 0;
-  (_b = resources == null ? void 0 : resources.resources) == null ? void 0 : _b.forEach((resource) => {
-    resource.srcset = "";
-    resource.thumbnail = rw.resizeResource(resource, 400);
-    resource.alt = resource.alt || resource.caption || resource.author || "";
-    resource.isVideo = resource.format === "youtube" || resource.format === "vimeo" || resource.format === "mp4";
-    if (resource.isVideo) {
-      resource.isYouTube = resource.format === "youtube" ? true : false;
-      resource.isVimeo = resource.format === "vimeo" ? true : false;
-      resource.isMP4 = resource.format === "mp4" ? true : false;
-      resource.options = {};
-      resource.caption = resource.name;
-      resource.author = resources.name;
-      if (resource.isYouTube) {
-        resource.options = {
-          autoplay: 0,
-          loop: 0,
-          muted: 0,
-          controls: 1
-        };
-      }
-      if (resource.isVimeo) {
-        resource.options = {
-          autoplay: "false",
-          loop: "false",
-          muted: "false",
-          controls: "true"
-        };
-      }
+  const edit = rw.project.mode === "edit";
+  const isRemote = sourceType === "remote";
+  const remotePublished = isRemote && !edit;
+  const phpId = String(id).replace(/[^a-zA-Z0-9]/g, "_");
+  const sanitiseForPhp = (value) => String(value || "").trim().replace(/['"\\\r\n\t]/g, "");
+  const remoteFolder = sanitiseForPhp(remoteFolderURL).replace(/\/+$/, "");
+  const pageDocRoot = sanitiseForPhp((_b = rw.page) == null ? void 0 : _b.docRootPath);
+  let galleryResources = resources == null ? void 0 : resources.resources;
+  let hasResources = (galleryResources == null ? void 0 : galleryResources.length) > 0;
+  if (isRemote) {
+    if (edit) {
+      const placeholder = `${rw.component.sharedAssetPath}/images/image-square.png`;
+      galleryResources = remoteFolder ? Array.from({ length: 6 }, (_, index) => ({
+        image: placeholder,
+        alt: `Remote image ${index + 1}`,
+        caption: `Image ${index + 1}`,
+        author: "",
+        isVideo: false
+      })) : [];
+      hasResources = galleryResources.length > 0;
+    } else {
+      galleryResources = [];
+      hasResources = true;
     }
-  });
+  } else {
+    (_a = resources == null ? void 0 : resources.resources) == null ? void 0 : _a.forEach((resource) => {
+      resource.srcset = "";
+      resource.thumbnail = rw.resizeResource(resource, 400);
+      resource.alt = resource.alt || resource.caption || resource.author || "";
+      resource.isVideo = resource.format === "youtube" || resource.format === "vimeo" || resource.format === "mp4";
+      if (resource.isVideo) {
+        resource.isYouTube = resource.format === "youtube" ? true : false;
+        resource.isVimeo = resource.format === "vimeo" ? true : false;
+        resource.isMP4 = resource.format === "mp4" ? true : false;
+        resource.options = {};
+        resource.caption = resource.name;
+        resource.author = resources.name;
+        if (resource.isYouTube) {
+          resource.options = {
+            autoplay: 0,
+            loop: 0,
+            muted: 0,
+            controls: 1
+          };
+        }
+        if (resource.isVimeo) {
+          resource.options = {
+            autoplay: "false",
+            loop: "false",
+            muted: "false",
+            controls: "true"
+          };
+        }
+      }
+    });
+  }
   const classes = {
     wrapper: classnames([
       `grid place-items-start`,
@@ -303,9 +330,14 @@ const transformHook = (rw) => {
     lightboxShowCaption,
     lightboxShowAuthor,
     lightboxWantsMeta: lightboxShowCaption || lightboxShowAuthor,
-    resources: resources == null ? void 0 : resources.resources,
-    edit: rw.project.mode === "edit",
-    includeLightbox: lightboxPreview || rw.project.mode !== "edit",
+    resources: galleryResources,
+    isRemote,
+    remotePublished,
+    remoteFolder,
+    pageDocRoot,
+    phpId,
+    edit,
+    includeLightbox: lightboxPreview || !edit,
     id: rw.node.id
   });
 };

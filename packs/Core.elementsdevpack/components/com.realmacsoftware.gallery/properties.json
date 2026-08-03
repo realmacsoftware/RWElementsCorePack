@@ -5,9 +5,43 @@
       "icon": "photo.stack",
       "properties": [
         {
+          "title": "Source",
+          "id": "sourceType",
+          "responsive": false,
+          "segmented": {
+            "default": "resource",
+            "items": [
+              {
+                "title": "Resources",
+                "value": "resource"
+              },
+              {
+                "title": "Remote Folder",
+                "value": "remote"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "sourceType == 'resource'",
           "title": "Resources",
           "id": "resources",
           "resource": {}
+        },
+        {
+          "visible": "sourceType == 'remote'",
+          "title": "Folder",
+          "id": "remoteFolderURL",
+          "responsive": false,
+          "text": {
+            "subtitle": "A folder on your site, e.g. /resources/Instagram",
+            "default": ""
+          }
+        },
+        {
+          "visible": "sourceType == 'remote'",
+          "information": {},
+          "title": "The folder must be on the same server as your published site."
         }
       ]
     },
