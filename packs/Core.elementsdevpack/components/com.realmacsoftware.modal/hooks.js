@@ -246,7 +246,8 @@ const transformHook = (rw) => {
   rw.setProps({
     classes,
     id,
-    transitionAttributes
+    transitionAttributes,
+    componentAssetPath: rw.component.assetPath
   });
 };
 exports.transformHook = transformHook;

@@ -92,6 +92,7 @@ const transformHook = (rw) => {
         classes,
         id,
         transitionAttributes,
+        componentAssetPath: rw.component.assetPath,
     });
 };
 
