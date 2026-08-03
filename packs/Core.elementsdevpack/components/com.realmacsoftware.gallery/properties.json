@@ -41,7 +41,7 @@
         {
           "visible": "sourceType == 'remote'",
           "information": {},
-          "title": "The folder is read on your server when the page loads, so it must be part of your published site (PHP hosting required). Name a file photo_thumb.jpg to use it as the grid thumbnail for photo.jpg."
+          "title": "The folder must be on the same server as your published site."
         }
       ]
     },
