@@ -4691,7 +4691,7 @@
           },
           "title": "Color",
           "id": "globalOverlayGradientFromColor",
-          "format": "from-{{value}}",
+          "format": "from-{{value}}/(--overlayGradientFromOpacity)",
           "themeColor": {
             "default": {
               "name": "brand",
@@ -4708,7 +4708,7 @@
           },
           "title": "Opacity",
           "id": "globalOverlayGradientFromOpacity",
-          "format": "[{{value}}%]",
+          "format": "[--overlayGradientFromOpacity:{{value}}%]",
           "responsive": false,
           "slider": {
             "default": 100,
@@ -4770,7 +4770,7 @@
           },
           "title": "Color",
           "id": "globalOverlayGradientViaColor",
-          "format": "via-{{value}}",
+          "format": "via-{{value}}/(--overlayGradientViaOpacity)",
           "themeColor": {
             "default": {
               "name": "brand",
@@ -4787,7 +4787,7 @@
           },
           "title": "Opacity",
           "id": "globalOverlayGradientViaOpacity",
-          "format": "[{{value}}%]",
+          "format": "[--overlayGradientViaOpacity:{{value}}%]",
           "responsive": false,
           "slider": {
             "default": 100,
@@ -4836,7 +4836,7 @@
           },
           "title": "Color",
           "id": "globalOverlayGradientToColor",
-          "format": "to-{{value}}",
+          "format": "to-{{value}}/(--overlayGradientToOpacity)",
           "themeColor": {
             "default": {
               "name": "brand",
@@ -4853,7 +4853,7 @@
           },
           "title": "Opacity",
           "id": "globalOverlayGradientToOpacity",
-          "format": "[{{value}}%]",
+          "format": "[--overlayGradientToOpacity:{{value}}%]",
           "responsive": false,
           "slider": {
             "default": 100,
@@ -5135,7 +5135,7 @@
           },
           "title": "Color",
           "id": "globalOverlayGradientFromColorEnd",
-          "format": "from-{{value}}",
+          "format": "from-{{value}}/(--overlayGradientFromOpacityEnd)",
           "themeColor": {
             "default": {
               "name": "brand",
@@ -5152,7 +5152,7 @@
           },
           "title": "Opacity",
           "id": "globalOverlayGradientFromOpacityEnd",
-          "format": "[{{value}}%]",
+          "format": "[--overlayGradientFromOpacityEnd:{{value}}%]",
           "responsive": false,
           "slider": {
             "default": 100,
@@ -5214,7 +5214,7 @@
           },
           "title": "Color",
           "id": "globalOverlayGradientViaColorEnd",
-          "format": "via-{{value}}",
+          "format": "via-{{value}}/(--overlayGradientViaOpacityEnd)",
           "themeColor": {
             "default": {
               "name": "brand",
@@ -5231,7 +5231,7 @@
           },
           "title": "Opacity",
           "id": "globalOverlayGradientViaOpacityEnd",
-          "format": "[{{value}}%]",
+          "format": "[--overlayGradientViaOpacityEnd:{{value}}%]",
           "responsive": false,
           "slider": {
             "default": 100,
@@ -5280,7 +5280,7 @@
           },
           "title": "Color",
           "id": "globalOverlayGradientToColorEnd",
-          "format": "to-{{value}}",
+          "format": "to-{{value}}/(--overlayGradientToOpacityEnd)",
           "themeColor": {
             "default": {
               "name": "brand",
@@ -5297,7 +5297,7 @@
           },
           "title": "Opacity",
           "id": "globalOverlayGradientToOpacityEnd",
-          "format": "[{{value}}%]",
+          "format": "[--overlayGradientToOpacityEnd:{{value}}%]",
           "responsive": false,
           "slider": {
             "default": 100,

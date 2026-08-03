@@ -717,28 +717,34 @@ const globalOverlayGradient = (app, prefix) => {
   );
   const classes = classnames([
     directionClass,
-    `${fromColor}/${fromOpacity}`,
+    fromColor,
+    fromOpacity,
     fromPosition,
-    `${toColor}/${toOpacity}`,
+    toColor,
+    toOpacity,
     toPosition
   ]);
   if (viaEnabled == "true") {
     classes.add([
-      `${viaColor}/${viaOpacity}`,
+      viaColor,
+      viaOpacity,
       viaPosition
     ]);
   }
   if (controlType == "hover") {
     classes.add([
       `${prefix}:${directionEndClass}`,
-      `${prefix}:${fromColorEnd}/${fromOpacityEnd}`,
+      injectPrefixOnDarkModeColors(prefix, `${prefix}:${fromColorEnd}`),
+      `${prefix}:${fromOpacityEnd}`,
       `${prefix}:${fromPositionEnd}`,
-      `${prefix}:${toColorEnd}/${toOpacityEnd}`,
+      injectPrefixOnDarkModeColors(prefix, `${prefix}:${toColorEnd}`),
+      `${prefix}:${toOpacityEnd}`,
       `${prefix}:${toPositionEnd}`
     ]);
     if (viaEnabledEnd == "true") {
       classes.add([
-        `${prefix}:${viaColorEnd}/${viaOpacityEnd}`,
+        injectPrefixOnDarkModeColors(prefix, `${prefix}:${viaColorEnd}`),
+        `${prefix}:${viaOpacityEnd}`,
         `${prefix}:${viaPositionEnd}`
       ]);
     }
