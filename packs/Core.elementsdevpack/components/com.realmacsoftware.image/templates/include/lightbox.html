@@ -1,3 +1,7 @@
+@portal(bodyEnd, id: "com.realmacsoftware.image.lightbox.js", includeOnce: true)
+<script src="{{assetPath}}/image-lightbox.js"></script>
+@endportal
+
 @portal(bodyEnd)
 <div x-cloak x-data="imageLightbox('{{id}}')">
     <div x-show="open" class="fixed inset-0 z-50 grid place-items-center">
