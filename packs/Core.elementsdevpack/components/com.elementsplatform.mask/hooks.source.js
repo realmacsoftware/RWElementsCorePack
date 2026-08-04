@@ -39,7 +39,11 @@ const maskClasses = (rw) => {
         case "svg": {
             if (!maskResource?.image) return ["mask-none"];
 
-            const encodedSvg = encodeURIComponent(maskResource.image);
+            // encodeURIComponent leaves ' ( ) raw; an unencoded ' terminates the surrounding url('…')
+            const encodedSvg = encodeURIComponent(maskResource.image)
+                .replace(/'/g, "%27")
+                .replace(/\(/g, "%28")
+                .replace(/\)/g, "%29");
             return [
                 `mask-[url('data:image/svg+xml,${encodedSvg}')]`,
                 maskMode,

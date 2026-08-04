@@ -537,7 +537,6 @@ const transformHook = (rw) => {
   const wantsFetchPriority = imageFetchPriority != "auto";
   const isEditMode = mode == "edit";
   const isCMSImage = imageType == "cms";
-  const isCustomImage = imageType == "custom";
   const isResourceImage = imageType == "resource";
   const wantsLightboxAtAnyBreakpoint = Object.values(wantsLightbox).some((v) => v === true);
   const lightboxCursorClasses = Object.entries(wantsLightbox).map(([breakpoint, enabled]) => {
@@ -629,13 +628,14 @@ const transformHook = (rw) => {
   const maskClasses = [];
   if (wantsMask) {
     const svgContent = imageMaskResource.image;
-    const encodedSvg = encodeURIComponent(svgContent);
+    const encodedSvg = encodeURIComponent(svgContent).replace(/'/g, "%27").replace(/\(/g, "%28").replace(/\)/g, "%29");
     const maskUrl = `url('data:image/svg+xml,${encodedSvg}')`;
+    const maskSize = `${imageMaskSize}`.trim().replace(/\s+/g, "_");
     maskClasses.push(
       `[-webkit-mask-image:${maskUrl}]`,
       `[mask-image:${maskUrl}]`,
-      `[-webkit-mask-size:${imageMaskSize}]`,
-      `[mask-size:${imageMaskSize}]`,
+      `[-webkit-mask-size:${maskSize}]`,
+      `[mask-size:${maskSize}]`,
       `[-webkit-mask-repeat:no-repeat]`,
       `[mask-repeat:no-repeat]`,
       `[-webkit-mask-position:center]`,
@@ -654,7 +654,7 @@ const transformHook = (rw) => {
       "block"
     ]).toString(),
     img: classnames([
-      wantsLightboxAtAnyBreakpoint && lightboxCursorClasses,
+      wantsLightboxAtAnyBreakpoint && !isEditMode && lightboxCursorClasses,
       `max-w-[100%] w-full`,
       globalTransitions(rw),
       globalEffects(rw),
@@ -663,7 +663,7 @@ const transformHook = (rw) => {
       globalBorders(rw),
       // displaySize(),
       objectClasses(rw),
-      rw.props.aspectRatio == "aspect-[auto]" ? `aspect-[${image == null ? void 0 : image.aspect}]` : aspectRatioClasses(rw),
+      rw.props.aspectRatio == "aspect-[auto]" ? isResourceImage && (image == null ? void 0 : image.aspect) ? `aspect-[${image.aspect}]` : null : aspectRatioClasses(rw),
       ...maskClasses
     ]).toString(),
     lightbox: {
@@ -689,15 +689,12 @@ const transformHook = (rw) => {
   }
   rw.setProps({
     isCMSImage,
-    isCustomImage,
     isResourceImage,
-    isEditMode,
     lightImage,
     hasDarkImage: ((_a = darkImage.resource) == null ? void 0 : _a.image) || false,
     darkImage,
     hasImage: ((_b = lightImage.resource) == null ? void 0 : _b.image) || false,
     imageProtection,
-    defaultSrc: image,
     alt: isResourceImage ? (image == null ? void 0 : image.alt) || (imageDark == null ? void 0 : imageDark.alt) : imageAlt,
     classes,
     imageWidth: !isResourceImage ? imageIntrinsicWidth : (_c = lightImage.resource) == null ? void 0 : _c.width,
