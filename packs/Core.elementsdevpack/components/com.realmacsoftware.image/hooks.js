@@ -537,7 +537,6 @@ const transformHook = (rw) => {
   const wantsFetchPriority = imageFetchPriority != "auto";
   const isEditMode = mode == "edit";
   const isCMSImage = imageType == "cms";
-  const isCustomImage = imageType == "custom";
   const isResourceImage = imageType == "resource";
   const wantsLightboxAtAnyBreakpoint = Object.values(wantsLightbox).some((v) => v === true);
   const lightboxCursorClasses = Object.entries(wantsLightbox).map(([breakpoint, enabled]) => {
@@ -690,15 +689,12 @@ const transformHook = (rw) => {
   }
   rw.setProps({
     isCMSImage,
-    isCustomImage,
     isResourceImage,
-    isEditMode,
     lightImage,
     hasDarkImage: ((_a = darkImage.resource) == null ? void 0 : _a.image) || false,
     darkImage,
     hasImage: ((_b = lightImage.resource) == null ? void 0 : _b.image) || false,
     imageProtection,
-    defaultSrc: image,
     alt: isResourceImage ? (image == null ? void 0 : image.alt) || (imageDark == null ? void 0 : imageDark.alt) : imageAlt,
     classes,
     imageWidth: !isResourceImage ? imageIntrinsicWidth : (_c = lightImage.resource) == null ? void 0 : _c.width,

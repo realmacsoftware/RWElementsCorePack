@@ -37,7 +37,6 @@ const transformHook = (rw) => {
     const wantsFetchPriority = imageFetchPriority != "auto";
     const isEditMode = mode == "edit";
     const isCMSImage = imageType == "cms";
-    const isCustomImage = imageType == "custom";
     const isResourceImage = imageType == "resource";
 
     const wantsLightboxAtAnyBreakpoint = Object.values(wantsLightbox).some(v => v === true);
@@ -240,15 +239,12 @@ const transformHook = (rw) => {
 
     rw.setProps({
         isCMSImage,
-        isCustomImage,
         isResourceImage,
-        isEditMode,
         lightImage,
         hasDarkImage: darkImage.resource?.image || false,
         darkImage,
         hasImage: lightImage.resource?.image || false,
         imageProtection,
-        defaultSrc: image,
         alt: isResourceImage ? (image?.alt || imageDark?.alt) : imageAlt,
         classes,
         imageWidth: !isResourceImage ? imageIntrinsicWidth : lightImage.resource?.width,
