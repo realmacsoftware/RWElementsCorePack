@@ -34,14 +34,13 @@
           "id": "remoteFolderURL",
           "responsive": false,
           "text": {
-            "subtitle": "A folder on your site, e.g. /resources/Instagram",
             "default": ""
           }
         },
         {
           "visible": "sourceType == 'remote'",
           "information": {},
-          "title": "The folder must be on the same server as your published site."
+          "title": "Full URL or relative path. Must be on the same server as your published site."
         }
       ]
     },

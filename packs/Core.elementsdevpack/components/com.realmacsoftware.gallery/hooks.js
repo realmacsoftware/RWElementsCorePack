@@ -150,7 +150,7 @@ const transformHook = (rw) => {
   const phpId = String(id).replace(/[^a-zA-Z0-9]/g, "_");
   const sanitiseForPhp = (value) => String(value || "").trim().replace(/['"\\\r\n\t]/g, "");
   const remoteFolder = sanitiseForPhp(remoteFolderURL).replace(/\/+$/, "");
-  const pageDocRoot = sanitiseForPhp((_b = rw.page) == null ? void 0 : _b.docRootPath);
+  const pageDocRoot = sanitiseForPhp((_a = rw.page) == null ? void 0 : _a.docRootPath);
   let galleryResources = resources == null ? void 0 : resources.resources;
   let hasResources = (galleryResources == null ? void 0 : galleryResources.length) > 0;
   if (isRemote) {
@@ -169,7 +169,7 @@ const transformHook = (rw) => {
       hasResources = true;
     }
   } else {
-    (_a = resources == null ? void 0 : resources.resources) == null ? void 0 : _a.forEach((resource) => {
+    (_b = resources == null ? void 0 : resources.resources) == null ? void 0 : _b.forEach((resource) => {
       resource.srcset = "";
       resource.thumbnail = rw.resizeResource(resource, 400);
       resource.alt = resource.alt || resource.caption || resource.author || "";
