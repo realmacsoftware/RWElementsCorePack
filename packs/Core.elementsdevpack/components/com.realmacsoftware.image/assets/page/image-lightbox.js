@@ -6,6 +6,7 @@ document.addEventListener("alpine:init", () => {
         srcDark: null,
         alt: "",
         init() {
+            this.listenerController = new AbortController();
             const handlers = {
                 keydown: (e) => e.key === "Escape" && (this.open = false),
                 "image-lightbox-toggle": () => (this.open = !this.open),
@@ -25,9 +26,13 @@ document.addEventListener("alpine:init", () => {
                         if (event === "keydown" || e.detail.id === this.id) {
                             handler(e);
                         }
-                    }
+                    },
+                    { signal: this.listenerController.signal }
                 );
             });
+        },
+        destroy() {
+            this.listenerController.abort();
         },
     }));
 });
