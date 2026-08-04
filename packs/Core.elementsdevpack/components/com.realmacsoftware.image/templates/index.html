@@ -68,6 +68,7 @@
                 let enabled = false;
                 bps.forEach(bp => { if (window.innerWidth >= bp.minWidth) enabled = bp.enabled; });
                 if (!enabled) return;
+                $event.preventDefault();
                 const pic = $el.closest('picture');
                 const light = pic && pic.querySelector('source[data-lightbox-role=&quot;light&quot;]');
                 const dark = pic && pic.querySelector('source[data-lightbox-role=&quot;dark&quot;]');
