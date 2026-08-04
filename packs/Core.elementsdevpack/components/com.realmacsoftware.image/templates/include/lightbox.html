@@ -4,7 +4,7 @@
 
 @portal(bodyEnd)
 <div x-cloak x-data="imageLightbox('{{id}}')">
-    <div x-show="open" class="fixed inset-0 z-50 grid place-items-center">
+    <div x-show="open" x-transition:leave="duration-200" class="fixed inset-0 z-50 grid place-items-center">
         <div
             @click="$dispatch('image-lightbox-close', { id: '{{id}}' })"
             class="{{classes.lightbox.overlay}}"
