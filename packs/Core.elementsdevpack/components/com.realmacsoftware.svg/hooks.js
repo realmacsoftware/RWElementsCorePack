@@ -283,7 +283,7 @@ const globalSizing = (app) => {
     globalMaxHeight: maxHeight
   } = app.props;
   const classes = classnames([width, height]);
-  if (minMaxEnabled == "true") {
+  if (minMaxEnabled === true) {
     classes.add([minWidth, minHeight, maxWidth, maxHeight]);
   }
   return classes.toString();
@@ -294,7 +294,7 @@ const globalSpacing = (app) => {
     globalMargin: margin,
     globalPadding: padding
   } = app.props;
-  if (enabled == "false") {
+  if (enabled === false) {
     return false;
   }
   return classnames([margin, padding]).toString();
@@ -416,7 +416,6 @@ const globalTransitions = (app, alwaysWantsHover = false) => {
     });
   };
   return aControlWantsHover() ? classnames([
-    // `transform-gpu will-change-transform`,
     property === "transition-default" ? "transition" : property,
     duration,
     delay,

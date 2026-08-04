@@ -361,7 +361,6 @@ const globalTransitions = (app, alwaysWantsHover = false) => {
     });
   };
   return aControlWantsHover() ? classnames([
-    // `transform-gpu will-change-transform`,
     property === "transition-default" ? "transition" : property,
     duration,
     delay,

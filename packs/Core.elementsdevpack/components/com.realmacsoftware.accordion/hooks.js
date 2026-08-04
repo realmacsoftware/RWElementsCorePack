@@ -95,7 +95,7 @@ const globalBgGradient = (app, args) => {
     toOpacity,
     toPosition
   ]);
-  if (viaEnabled == "true") {
+  if (viaEnabled === true) {
     classes.add([viaColor, viaOpacity, viaPosition]);
   }
   if (controlType == "hover") {
@@ -154,7 +154,7 @@ const globalBgGradient = (app, args) => {
         toOpacityEnd.replace(/hover:/g, "focus:")
       ]);
     }
-    if (viaEnabledEnd == "true") {
+    if (viaEnabledEnd === true) {
       if (wantsPeer) {
         classes.add([
           viaColorEnd.replace(/hover:/g, "peer-hover:"),
@@ -214,8 +214,10 @@ const globalBgImage = (app, args) => {
   const hasPrefix = (args == null ? void 0 : args.prefix) && (args == null ? void 0 : args.prefixCallback) || false;
   const prefixCallback = (args == null ? void 0 : args.prefixCallback) || (() => {
   });
+  const hasImage = Boolean(resource == null ? void 0 : resource.image);
+  const hasImageEnd = Boolean(resourceEnd == null ? void 0 : resourceEnd.image);
   const classes = classnames().add([
-    `bg-[url(${resource == null ? void 0 : resource.image})]`,
+    hasImage ? `bg-[url(${resource.image})]` : "",
     size,
     repeat,
     position
@@ -223,21 +225,21 @@ const globalBgImage = (app, args) => {
   if (controlType == "hover") {
     if (wantsPeer) {
       classes.add([
-        `peer-hover:bg-[url(${resourceEnd == null ? void 0 : resourceEnd.image})]`,
+        hasImageEnd ? `peer-hover:bg-[url(${resourceEnd.image})]` : "",
         sizeEnd.replace(/hover:/g, "peer-hover:"),
         repeatEnd.replace(/hover:/g, "peer-hover:"),
         positionEnd.replace(/hover:/g, "peer-hover:")
       ]);
     } else if (hasPrefix) {
       classes.add([
-        prefixCallback(`bg-[url(${resourceEnd == null ? void 0 : resourceEnd.image})]`, args.prefix),
+        hasImageEnd ? prefixCallback(`bg-[url(${resourceEnd.image})]`, args.prefix) : "",
         prefixCallback(sizeEnd.replace(/hover:/g, ""), args.prefix),
         prefixCallback(repeatEnd.replace(/hover:/g, ""), args.prefix),
         prefixCallback(positionEnd.replace(/hover:/g, ""), args.prefix)
       ]);
     } else {
       classes.add([
-        `hover:bg-[url(${resourceEnd == null ? void 0 : resourceEnd.image})]`,
+        hasImageEnd ? `hover:bg-[url(${resourceEnd.image})]` : "",
         sizeEnd,
         repeatEnd,
         positionEnd
@@ -245,7 +247,7 @@ const globalBgImage = (app, args) => {
     }
     if (wantsActive) {
       classes.add([
-        `data-[active=true]:bg-[url(${resourceEnd == null ? void 0 : resourceEnd.image})]`,
+        hasImageEnd ? `data-[active=true]:bg-[url(${resourceEnd.image})]` : "",
         sizeEnd.replace(/hover:/g, "data-[active=true]:"),
         repeatEnd.replace(/hover:/g, "data-[active=true]:"),
         positionEnd.replace(/hover:/g, "data-[active=true]:")
@@ -253,7 +255,7 @@ const globalBgImage = (app, args) => {
     }
     if (wantsFocus) {
       classes.add([
-        `focus:bg-[url(${resourceEnd == null ? void 0 : resourceEnd.image})]`,
+        hasImageEnd ? `focus:bg-[url(${resourceEnd.image})]` : "",
         sizeEnd.replace(/hover:/g, "focus:"),
         repeatEnd.replace(/hover:/g, "focus:"),
         positionEnd.replace(/hover:/g, "focus:")
@@ -289,28 +291,30 @@ const globalBackground = (app, args = {}) => {
       return "";
   }
 };
+const escapeBgImageFetchPriorityAttribute = (value) => String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/'/g, "&#39;");
 const globalBgImageFetchPriority = (rw) => {
   const {
+    globalControlTypeBg,
     globalBgImageFetchPriority: globalBgImageFetchPriority2,
     globalBgType,
     globalBgImageResource,
     globalBgImageResourceEnd
   } = rw.props;
-  if (globalBgType != "image") {
+  if (globalControlTypeBg == "none" || globalBgType != "image") {
     return {
-      wantsFetchPriority: false,
-      linkElement: "",
-      linkElementEnd: ""
+      globalBgImageFetchPriorityEnabled: false,
+      globalBgImageFetchPriorityLinkElement: "",
+      globalBgImageFetchPriorityLinkElementEnd: ""
     };
   }
   const globalBgImageFetchPriorityEnabled = globalBgImageFetchPriority2 != "auto";
   let globalBgImageFetchPriorityLinkElement = "";
   if (globalBgImageResource == null ? void 0 : globalBgImageResource.image) {
-    globalBgImageFetchPriorityLinkElement = `<link rel='preload' href='${globalBgImageResource == null ? void 0 : globalBgImageResource.image}' as='image' fetchpriority='${globalBgImageFetchPriority2}' />`;
+    globalBgImageFetchPriorityLinkElement = `<link rel='preload' href='${escapeBgImageFetchPriorityAttribute(globalBgImageResource.image)}' as='image' fetchpriority='${escapeBgImageFetchPriorityAttribute(globalBgImageFetchPriority2)}' />`;
   }
   let globalBgImageFetchPriorityLinkElementEnd = "";
-  if (globalBgImageResourceEnd == null ? void 0 : globalBgImageResourceEnd.image) {
-    globalBgImageFetchPriorityLinkElementEnd = `<link rel='preload' href='${globalBgImageResourceEnd == null ? void 0 : globalBgImageResourceEnd.image}' as='image' fetchpriority='${globalBgImageFetchPriority2}' />`;
+  if (globalControlTypeBg == "hover" && (globalBgImageResourceEnd == null ? void 0 : globalBgImageResourceEnd.image)) {
+    globalBgImageFetchPriorityLinkElementEnd = `<link rel='preload' href='${escapeBgImageFetchPriorityAttribute(globalBgImageResourceEnd.image)}' as='image' fetchpriority='${escapeBgImageFetchPriorityAttribute(globalBgImageFetchPriority2)}' />`;
   }
   return {
     globalBgImageFetchPriorityEnabled,
@@ -709,7 +713,7 @@ const globalSizing = (app) => {
     globalMaxHeight: maxHeight
   } = app.props;
   const classes = classnames([width, height]);
-  if (minMaxEnabled == "true") {
+  if (minMaxEnabled === true) {
     classes.add([minWidth, minHeight, maxWidth, maxHeight]);
   }
   return classes.toString();
@@ -720,7 +724,7 @@ const globalSpacing = (app) => {
     globalMargin: margin,
     globalPadding: padding
   } = app.props;
-  if (enabled == "false") {
+  if (enabled === false) {
     return false;
   }
   return classnames([margin, padding]).toString();
@@ -842,7 +846,6 @@ const globalTransitions = (app, alwaysWantsHover = false) => {
     });
   };
   return aControlWantsHover() ? classnames([
-    // `transform-gpu will-change-transform`,
     property === "transition-default" ? "transition" : property,
     duration,
     delay,

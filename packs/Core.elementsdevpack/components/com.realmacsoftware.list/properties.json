@@ -943,6 +943,7 @@
         {
           "title": "Enable",
           "id": "globalSizingMinMaxEnabled",
+          "responsive": false,
           "ai": {
             "name": "minMaxEnabled",
             "description": "Enable explicit min/max width and height constraints."
@@ -1054,6 +1055,7 @@
         {
           "title": "Enable",
           "id": "globalSpacingEnabled",
+          "responsive": false,
           "ai": {
             "name": "spacingEnabled",
             "description": "Enable custom margin and padding for this element."
@@ -1167,7 +1169,7 @@
               },
               {
                 "title": "Linear",
-                "value": "linear"
+                "value": "ease-linear"
               },
               {
                 "title": "Ease-in",
@@ -2627,17 +2629,18 @@
           },
           "title": "Add Via",
           "id": "globalBgGradientViaEnabled",
+          "responsive": false,
           "switch": {
             "default": false
           }
         },
         {
-          "visible": "globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient') && globalBgGradientViaEnabled == true",
+          "visible": "((globalControlTypeBg == 'static' && globalBgType == 'gradient') || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')) && globalBgGradientViaEnabled == true",
           "heading": {},
           "title": "Via"
         },
         {
-          "visible": "globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient') && globalBgGradientViaEnabled == true",
+          "visible": "((globalControlTypeBg == 'static' && globalBgType == 'gradient') || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')) && globalBgGradientViaEnabled == true",
           "ai": {
             "name": "bgGradientVia",
             "description": "Gradient mid-stop theme color.",
@@ -2654,7 +2657,7 @@
           }
         },
         {
-          "visible": "globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient') && globalBgGradientViaEnabled == true",
+          "visible": "((globalControlTypeBg == 'static' && globalBgType == 'gradient') || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')) && globalBgGradientViaEnabled == true",
           "ai": {
             "name": "bgGradientViaOpacity",
             "description": "Gradient mid-stop color opacity, 0-100.",
@@ -2674,7 +2677,7 @@
           }
         },
         {
-          "visible": "globalControlTypeBg == 'static' && globalBgType == 'gradient' || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient') && globalBgGradientViaEnabled == true",
+          "visible": "((globalControlTypeBg == 'static' && globalBgType == 'gradient') || (globalControlTypeBg == 'hover' && globalBgState == 'start' && globalBgType == 'gradient')) && globalBgGradientViaEnabled == true",
           "ai": {
             "name": "bgGradientViaPosition",
             "description": "Gradient mid-stop position, 0-100.",
@@ -3049,6 +3052,7 @@
           },
           "title": "Add Via",
           "id": "globalBgGradientViaEnabledEnd",
+          "responsive": false,
           "switch": {
             "default": false
           }
@@ -3409,16 +3413,16 @@
           }
         },
         {
-          "visible": "globalBgType == 'image'",
+          "visible": "globalControlTypeBg != 'none' && globalBgType == 'image'",
           "divider": {}
         },
         {
-          "visible": "globalBgType == 'image'",
+          "visible": "globalControlTypeBg != 'none' && globalBgType == 'image'",
           "title": "Fetch Priority",
           "heading": {}
         },
         {
-          "visible": "globalBgType == 'image'",
+          "visible": "globalControlTypeBg != 'none' && globalBgType == 'image'",
           "ai": {
             "name": "bgImageFetchPriority",
             "description": "Image fetch priority: auto, high, or low."
