@@ -203,7 +203,7 @@ const transformHook = (rw) => {
             'block',
         ]).toString(),
         img: classnames([
-            wantsLightboxAtAnyBreakpoint && lightboxCursorClasses,
+            wantsLightboxAtAnyBreakpoint && !isEditMode && lightboxCursorClasses,
             `max-w-[100%] w-full`,
             globalTransitions(rw),
             globalEffects(rw),
