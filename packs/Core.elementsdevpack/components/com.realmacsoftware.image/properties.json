@@ -179,7 +179,7 @@
           "id": "imageSizingType",
           "responsive": false,
           "segmented": {
-            "default": "devices",
+            "default": "none",
             "items": [
               {
                 "title": "Original",
