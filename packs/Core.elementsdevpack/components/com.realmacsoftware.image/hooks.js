@@ -664,7 +664,7 @@ const transformHook = (rw) => {
       globalBorders(rw),
       // displaySize(),
       objectClasses(rw),
-      rw.props.aspectRatio == "aspect-[auto]" ? `aspect-[${image == null ? void 0 : image.aspect}]` : aspectRatioClasses(rw),
+      rw.props.aspectRatio == "aspect-[auto]" ? isResourceImage && (image == null ? void 0 : image.aspect) ? `aspect-[${image.aspect}]` : null : aspectRatioClasses(rw),
       ...maskClasses
     ]).toString(),
     lightbox: {

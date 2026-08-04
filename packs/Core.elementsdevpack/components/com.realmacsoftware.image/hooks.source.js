@@ -210,7 +210,7 @@ const transformHook = (rw) => {
             // displaySize(),
             objectClasses(rw),
             rw.props.aspectRatio == "aspect-[auto]"
-                ? `aspect-[${image?.aspect}]`
+                ? (isResourceImage && image?.aspect ? `aspect-[${image.aspect}]` : null)
                 : aspectRatioClasses(rw),
             ...maskClasses,
         ]).toString(),
