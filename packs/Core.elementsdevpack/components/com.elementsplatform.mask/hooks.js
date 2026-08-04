@@ -221,7 +221,7 @@ const maskClasses = (rw) => {
   switch (maskType) {
     case "svg": {
       if (!(maskResource == null ? void 0 : maskResource.image)) return ["mask-none"];
-      const encodedSvg = encodeURIComponent(maskResource.image);
+      const encodedSvg = encodeURIComponent(maskResource.image).replace(/'/g, "%27").replace(/\(/g, "%28").replace(/\)/g, "%29");
       return [
         `mask-[url('data:image/svg+xml,${encodedSvg}')]`,
         maskMode,

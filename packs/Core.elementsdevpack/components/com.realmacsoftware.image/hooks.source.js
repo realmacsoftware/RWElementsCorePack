@@ -170,7 +170,11 @@ const transformHook = (rw) => {
     const maskClasses = [];
     if (wantsMask) {
         const svgContent = imageMaskResource.image;
-        const encodedSvg = encodeURIComponent(svgContent);
+        // encodeURIComponent leaves ' ( ) raw; an unencoded ' terminates the surrounding url('…')
+        const encodedSvg = encodeURIComponent(svgContent)
+            .replace(/'/g, "%27")
+            .replace(/\(/g, "%28")
+            .replace(/\)/g, "%29");
         const maskUrl = `url('data:image/svg+xml,${encodedSvg}')`;
         // Arbitrary-value classes must be a single token: "100% 100%" (Fill) -> "100%_100%"
         const maskSize = `${imageMaskSize}`.trim().replace(/\s+/g, "_");
