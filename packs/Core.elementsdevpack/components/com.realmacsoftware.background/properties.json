@@ -226,11 +226,8 @@
           "id": "globalControlTypeBg",
           "title": "Background Type",
           "ai": {
-            "name": "bg",
-            "description": "Enable/disable background.",
-            "values": [
-              "static"
-            ]
+            "exclude": true,
+            "reason": "Hidden, locked to static; Background always has a background. Not a model-settable control."
           },
           "input": {
             "default": "static"
@@ -344,8 +341,7 @@
           "visible": "globalBgType == 'image'",
           "ai": {
             "name": "bgImageSource",
-            "description": "Where the background image comes from: a project resource or a CMS field.",
-            "visible": "bgStyle == 'image'"
+            "description": "Where the background image comes from: a project resource or a CMS field."
           },
           "title": "Type",
           "id": "globalBgImageType",
@@ -669,8 +665,7 @@
           "visible": "globalBgType == 'image'",
           "ai": {
             "name": "bgImageFetchPriority",
-            "description": "Image fetch priority: auto, high, or low.",
-            "visible": "bgStyle == 'image'"
+            "description": "Image fetch priority: auto, high, or low."
           },
           "title": "Value",
           "id": "globalBgImageFetchPriority",
@@ -698,11 +693,6 @@
           "ai": {
             "name": "bgGradientType",
             "description": "Gradient type: linear, radial, or conic.",
-            "values": [
-              "linear",
-              "radial",
-              "conic"
-            ],
             "visible": "bg == 'static' && bgStyle == 'gradient'"
           },
           "title": "Type",
@@ -1142,11 +1132,6 @@
           "ai": {
             "name": "bgGradientTypeHover",
             "description": "Hover-state gradient type: linear, radial, or conic.",
-            "values": [
-              "linear",
-              "radial",
-              "conic"
-            ],
             "visible": "bg == 'hover' && bgStyle == 'gradient'"
           },
           "title": "Type",
@@ -1554,8 +1539,7 @@
           "visible": "globalBgType == 'svg'",
           "ai": {
             "name": "bgSvgColor",
-            "description": "SVG fill theme color.",
-            "visible": "bgStyle == 'svg'"
+            "description": "SVG fill theme color."
           },
           "title": "Color",
           "id": "globalBgSVGColor",
@@ -1571,8 +1555,7 @@
           "visible": "globalBgType == 'svg'",
           "ai": {
             "name": "bgSvgOpacity",
-            "description": "SVG opacity, 0-100.",
-            "visible": "bgStyle == 'svg'"
+            "description": "SVG opacity, 0-100."
           },
           "title": "Opacity",
           "id": "globalBgSVGOpacity",
@@ -1595,8 +1578,7 @@
           "visible": "globalBgType == 'svg'",
           "ai": {
             "name": "bgSvgWidth",
-            "description": "SVG fixed width theme-size token.",
-            "visible": "bgStyle == 'svg'"
+            "description": "SVG fixed width theme-size token."
           },
           "title": "Fixed",
           "id": "globalBgSVGFixedWidth",
@@ -1615,8 +1597,7 @@
           "visible": "globalBgType == 'svg'",
           "ai": {
             "name": "bgSvgMaxWidth",
-            "description": "SVG max width theme-size token.",
-            "visible": "bgStyle == 'svg'"
+            "description": "SVG max width theme-size token."
           },
           "title": "Max",
           "id": "globalBgSVGMaxWidth",
@@ -1635,8 +1616,7 @@
           "visible": "globalBgType == 'svg'",
           "ai": {
             "name": "bgSvgMinWidth",
-            "description": "SVG min width theme-size token.",
-            "visible": "bgStyle == 'svg'"
+            "description": "SVG min width theme-size token."
           },
           "title": "Min",
           "id": "globalBgSVGMinWidth",
@@ -1659,8 +1639,7 @@
           "visible": "globalBgType == 'svg'",
           "ai": {
             "name": "bgSvgHeight",
-            "description": "SVG fixed height theme-size token.",
-            "visible": "bgStyle == 'svg'"
+            "description": "SVG fixed height theme-size token."
           },
           "title": "Fixed",
           "id": "globalBgSVGFixedHeight",
@@ -1678,8 +1657,7 @@
           "visible": "globalBgType == 'svg'",
           "ai": {
             "name": "bgSvgMaxHeight",
-            "description": "SVG max height theme-size token.",
-            "visible": "bgStyle == 'svg'"
+            "description": "SVG max height theme-size token."
           },
           "title": "Max",
           "id": "globalBgSVGMaxHeight",
@@ -1697,8 +1675,7 @@
           "visible": "globalBgType == 'svg'",
           "ai": {
             "name": "bgSvgMinHeight",
-            "description": "SVG min height theme-size token.",
-            "visible": "bgStyle == 'svg'"
+            "description": "SVG min height theme-size token."
           },
           "title": "Min",
           "id": "globalBgSVGMinHeight",
@@ -1725,8 +1702,7 @@
           "visible": "globalBgType == 'svg'",
           "ai": {
             "name": "bgSvgTop",
-            "description": "SVG offset from top.",
-            "visible": "bgStyle == 'svg'"
+            "description": "SVG offset from top."
           },
           "title": "Top",
           "id": "globalBgSVGPositionTop",
@@ -1744,8 +1720,7 @@
           "visible": "globalBgType == 'svg'",
           "ai": {
             "name": "bgSvgRight",
-            "description": "SVG offset from right.",
-            "visible": "bgStyle == 'svg'"
+            "description": "SVG offset from right."
           },
           "title": "Right",
           "id": "globalBgSVGPositionRight",
@@ -1763,8 +1738,7 @@
           "visible": "globalBgType == 'svg'",
           "ai": {
             "name": "bgSvgBottom",
-            "description": "SVG offset from bottom.",
-            "visible": "bgStyle == 'svg'"
+            "description": "SVG offset from bottom."
           },
           "title": "Bottom",
           "id": "globalBgSVGPositionBottom",
@@ -1782,8 +1756,7 @@
           "visible": "globalBgType == 'svg'",
           "ai": {
             "name": "bgSvgLeft",
-            "description": "SVG offset from left.",
-            "visible": "bgStyle == 'svg'"
+            "description": "SVG offset from left."
           },
           "title": "Left",
           "id": "globalBgSVGPositionLeft",
@@ -1806,8 +1779,7 @@
           "visible": "globalBgType == 'svg'",
           "ai": {
             "name": "bgSvgTranslateX",
-            "description": "SVG horizontal translate offset.",
-            "visible": "bgStyle == 'svg'"
+            "description": "SVG horizontal translate offset."
           },
           "title": "X",
           "id": "globalBgSVGTranslateX",
@@ -1825,8 +1797,7 @@
           "visible": "globalBgType == 'svg'",
           "ai": {
             "name": "bgSvgTranslateY",
-            "description": "SVG vertical translate offset.",
-            "visible": "bgStyle == 'svg'"
+            "description": "SVG vertical translate offset."
           },
           "title": "Y",
           "id": "globalBgSVGTranslateY",
@@ -1919,8 +1890,7 @@
           "id": "globalLayoutZIndex",
           "ai": {
             "name": "zIndex",
-            "description": "Custom z-index value, can be positive or negative.",
-            "visible": "zIndexType == 'custom'"
+            "description": "Custom z-index value, can be positive or negative."
           },
           "format": "z-[{{value}}]",
           "number": {
@@ -1962,8 +1932,7 @@
           "id": "globalLayoutInset",
           "ai": {
             "name": "inset",
-            "description": "Uniform top/right/bottom/left inset theme spacing value.",
-            "visible": "insetType == 'uniform'"
+            "description": "Uniform top/right/bottom/left inset theme spacing value."
           },
           "format": "inset-{{value}}",
           "themeSpacing": {
@@ -1980,8 +1949,7 @@
           "id": "globalLayoutTop",
           "ai": {
             "name": "top",
-            "description": "Top inset theme spacing value.",
-            "visible": "insetType == 'individual'"
+            "description": "Top inset theme spacing value."
           },
           "format": "top-{{value}}",
           "themeSpacing": {
@@ -1999,8 +1967,7 @@
           "id": "globalLayoutRight",
           "ai": {
             "name": "right",
-            "description": "Right inset theme spacing value.",
-            "visible": "insetType == 'individual'"
+            "description": "Right inset theme spacing value."
           },
           "format": "right-{{value}}",
           "themeSpacing": {
@@ -2018,8 +1985,7 @@
           "id": "globalLayoutBottom",
           "ai": {
             "name": "bottom",
-            "description": "Bottom inset theme spacing value.",
-            "visible": "insetType == 'individual'"
+            "description": "Bottom inset theme spacing value."
           },
           "format": "bottom-{{value}}",
           "themeSpacing": {
@@ -2037,8 +2003,7 @@
           "id": "globalLayoutLeft",
           "ai": {
             "name": "left",
-            "description": "Left inset theme spacing value.",
-            "visible": "insetType == 'individual'"
+            "description": "Left inset theme spacing value."
           },
           "format": "left-{{value}}",
           "themeSpacing": {
@@ -2201,7 +2166,7 @@
           "id": "globalWidth",
           "ai": {
             "name": "widthSize",
-            "description": "Width theme-size token, used when widthMode is 'theme'."
+            "description": "Width theme-size token."
           },
           "format": "w-{{value}}",
           "themeSpacing": {
@@ -2250,7 +2215,7 @@
           "id": "globalHeight",
           "ai": {
             "name": "heightSize",
-            "description": "Height theme-size token, used when heightMode is 'theme'."
+            "description": "Height theme-size token."
           },
           "format": "h-{{value}}",
           "themeSpacing": {

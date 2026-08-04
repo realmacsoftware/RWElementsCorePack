@@ -300,7 +300,10 @@
           "globalControl": "JustifyContent"
         },
         {
-          "globalControl": "JustifyItems"
+          "globalControl": "JustifyItems",
+          "ai": {
+            "description": "Default inline-axis alignment of each item within its grid cell (CSS justify-items)."
+          }
         },
         {
           "divider": {}
@@ -310,7 +313,10 @@
           "heading": {}
         },
         {
-          "globalControl": "AlignContent"
+          "globalControl": "AlignContent",
+          "ai": {
+            "description": "Distribute rows along the block axis when the grid container has extra space (CSS align-content)."
+          }
         },
         {
           "globalControl": "AlignItems"

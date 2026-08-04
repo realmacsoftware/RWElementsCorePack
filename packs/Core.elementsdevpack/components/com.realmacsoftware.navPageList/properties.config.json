@@ -11,7 +11,10 @@
         {
           "title": "Show",
           "id": "show",
-          "ai": { "name": "show", "description": "Which pages to list: all top-level pages, or the contents of the folder link." },
+          "ai": {
+            "name": "show",
+            "description": "Which pages to list: all top-level pages, or the contents of the folder link."
+          },
           "select": {
             "default": "all",
             "items": [
@@ -30,7 +33,10 @@
           "visible": "show == 'folder'",
           "title": "Folder",
           "id": "folderLink",
-          "ai": { "name": "folder", "description": "Folder whose pages are listed. Page link to a folder; applies when show is 'folder'." },
+          "ai": {
+            "name": "folder",
+            "description": "Folder whose pages are listed. Page link to a folder."
+          },
           "link": {}
         },
         {
@@ -375,7 +381,10 @@
           "visible": "globalMenuItemState == 'default'",
           "title": "Shadow",
           "id": "globalMenuItemTextShadow",
-          "ai": { "name": "itemTextShadow", "description": "Menu item text shadow theme token." },
+          "ai": {
+            "name": "itemTextShadow",
+            "description": "Menu item text shadow theme token."
+          },
           "themeShadow": {
             "mode": "text",
             "default": {
@@ -426,7 +435,10 @@
           "visible": "globalMenuItemState == 'hover'",
           "title": "Shadow",
           "id": "globalMenuItemHoverTextShadow",
-          "ai": { "name": "itemTextShadowHover", "description": "Menu item hover-state text shadow theme token." },
+          "ai": {
+            "name": "itemTextShadowHover",
+            "description": "Menu item hover-state text shadow theme token."
+          },
           "format": "hover:{{value}} aria-[current=page]:{{value}}",
           "themeShadow": {
             "mode": "text",

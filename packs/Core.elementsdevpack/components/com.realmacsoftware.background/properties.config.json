@@ -1,305 +1,304 @@
 {
-    "groups": [
+  "groups": [
+    {
+      "title": "Dropzone",
+      "icon": "square.and.arrow.down",
+      "properties": [
         {
-            "title": "Dropzone",
-            "icon": "square.and.arrow.down",
-            "properties": [
-                {
-                    "title": "Enabled",
-                    "id": "dropzoneEnabled",
-                    "responsive": false,
-                    "switch": {
-                        "default": true
-                    }
-                }
-            ]
-        },
-        {
-            "title": "Angle",
-            "icon": "angle",
-            "properties": [
-                {
-                    "title": "Enable",
-                    "id": "enableAngle",
-                    "responsive": false,
-                    "switch": {
-                        "default": false
-                    }
-                },
-                {
-                    "visible": "enableAngle == true",
-                    "divider": {}
-                },
-                {
-                    "visible": "enableAngle == true",
-                    "enable": "enableAngle == true",
-                    "title": "Mode",
-                    "id": "angleMode",
-                    "responsive": false,
-                    "segmented": {
-                        "default": "vertical",
-                        "items": [
-                            {
-                                "icon": "arrow.left.and.right",
-                                "value": "vertical",
-                                "title": "Vertical"
-                            },
-                            {
-                                "icon": "arrow.up.and.down",
-                                "value": "horizontal",
-                                "title": "Horizontal"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "visible": "enableAngle == true && angleMode == 'vertical'",
-                    "enable": "enableAngle == true && angleMode == 'vertical'",
-                    "title": "Top",
-                    "heading": {}
-                },
-                {
-                    "visible": "enableAngle == true && angleMode == 'vertical'",
-                    "enable": "enableAngle == true && angleMode == 'vertical'",
-                    "title": "Left",
-                    "id": "angleTopLeft",
-                    "responsive": false,
-                    "slider": {
-                        "use": "Slider",
-                        "min": 0,
-                        "max": 100,
-                        "step": 1,
-                        "default": 100,
-                        "units": "%"
-                    }
-                },
-                {
-                    "visible": "enableAngle == true && angleMode == 'vertical'",
-                    "enable": "enableAngle == true && angleMode == 'vertical'",
-                    "title": "Right",
-                    "id": "angleTopRight",
-                    "responsive": false,
-                    "slider": {
-                        "use": "Slider",
-                        "min": 0,
-                        "max": 100,
-                        "step": 1,
-                        "default": 80,
-                        "units": "%"
-                    }
-                },
-                {
-                    "visible": "enableAngle == true && angleMode == 'vertical'",
-                    "enable": "enableAngle == true && angleMode == 'vertical'",
-                    "title": "Bottom",
-                    "heading": {}
-                },
-                {
-                    "visible": "enableAngle == true && angleMode == 'vertical'",
-                    "enable": "enableAngle == true && angleMode == 'vertical'",
-                    "title": "Left",
-                    "id": "angleBottomLeft",
-                    "responsive": false,
-                    "slider": {
-                        "use": "Slider",
-                        "min": 0,
-                        "max": 100,
-                        "default": 0,
-                        "units": "%"
-                    }
-                },
-                {
-                    "visible": "enableAngle == true && angleMode == 'vertical'",
-                    "enable": "enableAngle == true && angleMode == 'vertical'",
-                    "title": "Right",
-                    "id": "angleBottomRight",
-                    "responsive": false,
-                    "slider": {
-                        "use": "Slider",
-                        "min": 0,
-                        "max": 100,
-                        "default": 0,
-                        "units": "%"
-                    }
-                },
-                {
-                    "visible": "enableAngle == true && angleMode == 'horizontal'",
-                    "enable": "enableAngle == true && angleMode == 'horizontal'",
-                    "title": "Left",
-                    "heading": {}
-                },
-                {
-                    "visible": "enableAngle == true && angleMode == 'horizontal'",
-                    "enable": "enableAngle == true && angleMode == 'horizontal'",
-                    "title": "Top",
-                    "id": "angleLeftTop",
-                    "responsive": false,
-                    "slider": {
-                        "use": "Slider",
-                        "min": 0,
-                        "max": 100,
-                        "step": 1,
-                        "default": 100,
-                        "units": "%"
-                    }
-                },
-                {
-                    "visible": "enableAngle == true && angleMode == 'horizontal'",
-                    "enable": "enableAngle == true && angleMode == 'horizontal'",
-                    "title": "Bottom",
-                    "id": "angleLeftBottom",
-                    "responsive": false,
-                    "slider": {
-                        "use": "Slider",
-                        "min": 0,
-                        "max": 100,
-                        "default": 100,
-                        "units": "%"
-                    }
-                },
-                {
-                    "visible": "enableAngle == true && angleMode == 'horizontal'",
-                    "enable": "enableAngle == true && angleMode == 'horizontal'",
-                    "title": "Right",
-                    "heading": {}
-                },
-                {
-                    "visible": "enableAngle == true && angleMode == 'horizontal'",
-                    "enable": "enableAngle == true && angleMode == 'horizontal'",
-                    "title": "Top",
-                    "id": "angleRightTop",
-                    "responsive": false,
-                    "slider": {
-                        "use": "Slider",
-                        "min": 0,
-                        "max": 100,
-                        "step": 1,
-                        "default": 60,
-                        "units": "%"
-                    }
-                },
-                {
-                    "visible": "enableAngle == true && angleMode == 'horizontal'",
-                    "enable": "enableAngle == true && angleMode == 'horizontal'",
-                    "title": "Bottom",
-                    "id": "angleRightBottom",
-                    "responsive": false,
-                    "slider": {
-                        "use": "Slider",
-                        "min": 0,
-                        "max": 100,
-                        "default": 30,
-                        "units": "%"
-                    }
-                }
-            ]
-        },
-        {
-            "title": "Background",
-            "icon": "paintpalette",
-            "properties": [
-                {
-                    "title": "Fixed",
-                    "heading": {}
-                },
-                {
-                    "title": "Enabled",
-                    "id": "bgFixed",
-                    "responsive": false,
-                    "switch": {
-                        "default": false
-                    }
-                },
-                {
-                    "divider": {}
-                },
-                {
-                    "visible": "false",
-                    "id": "globalControlTypeBg",
-                    "title": "Background Type",
-                    "ai": {
-                        "name": "bg",
-                        "description": "Enable/disable background.",
-                        "values": ["static"]
-                    },
-                    "input": {
-                        "default": "static"
-                    }
-                },
-                {
-                    "title": "Style",
-                    "id": "globalBgType",
-                    "ai": {
-                        "name": "bgStyle",
-                        "description": "Background style: color, image, gradient, or svg."
-                    },
-                    "responsive": false,
-                    "segmented": {
-                        "default": "color",
-                        "items": [
-                            {
-                                "icon": "paintbrush",
-                                "value": "color"
-                            },
-                            {
-                                "icon": "photo",
-                                "value": "image"
-                            },
-                            {
-                                "value": "gradient",
-                                "icon": "swatchpalette"
-                            },
-                            {
-                                "value": "svg",
-                                "title": "SVG"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "globalControl": "Background_Color",
-                    "default": {
-                        "name": "brand",
-                        "brightness": 500
-                    }
-                },
-                {
-                    "globalControl": "Background_Image_CMS"
-                },
-                {
-                    "globalControl": "Background_Gradient"
-                },
-                {
-                    "globalControl": "Background_SVG"
-                }
-            ]
-        },
-        {
-            "title": "Layout",
-            "icon": "square.split.bottomrightquarter",
-            "properties": [
-                {
-                    "globalControl": "Layout"
-                }
-            ]
-        },
-        {
-            "title": "Sizing",
-            "icon": "arrow.down.backward.and.arrow.up.forward.square",
-            "properties": [
-                {
-                    "globalControl": "SizingContainer"
-                }
-            ]
-        },
-        {
-            "title": "Spacing",
-            "icon": "squareshape.squareshape.dotted",
-            "properties": [
-                {
-                    "globalControl": "SpacingContainer"
-                }
-            ]
+          "title": "Enabled",
+          "id": "dropzoneEnabled",
+          "responsive": false,
+          "switch": {
+            "default": true
+          }
         }
-    ]
+      ]
+    },
+    {
+      "title": "Angle",
+      "icon": "angle",
+      "properties": [
+        {
+          "title": "Enable",
+          "id": "enableAngle",
+          "responsive": false,
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "visible": "enableAngle == true",
+          "divider": {}
+        },
+        {
+          "visible": "enableAngle == true",
+          "enable": "enableAngle == true",
+          "title": "Mode",
+          "id": "angleMode",
+          "responsive": false,
+          "segmented": {
+            "default": "vertical",
+            "items": [
+              {
+                "icon": "arrow.left.and.right",
+                "value": "vertical",
+                "title": "Vertical"
+              },
+              {
+                "icon": "arrow.up.and.down",
+                "value": "horizontal",
+                "title": "Horizontal"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "enableAngle == true && angleMode == 'vertical'",
+          "enable": "enableAngle == true && angleMode == 'vertical'",
+          "title": "Top",
+          "heading": {}
+        },
+        {
+          "visible": "enableAngle == true && angleMode == 'vertical'",
+          "enable": "enableAngle == true && angleMode == 'vertical'",
+          "title": "Left",
+          "id": "angleTopLeft",
+          "responsive": false,
+          "slider": {
+            "use": "Slider",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "default": 100,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "enableAngle == true && angleMode == 'vertical'",
+          "enable": "enableAngle == true && angleMode == 'vertical'",
+          "title": "Right",
+          "id": "angleTopRight",
+          "responsive": false,
+          "slider": {
+            "use": "Slider",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "default": 80,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "enableAngle == true && angleMode == 'vertical'",
+          "enable": "enableAngle == true && angleMode == 'vertical'",
+          "title": "Bottom",
+          "heading": {}
+        },
+        {
+          "visible": "enableAngle == true && angleMode == 'vertical'",
+          "enable": "enableAngle == true && angleMode == 'vertical'",
+          "title": "Left",
+          "id": "angleBottomLeft",
+          "responsive": false,
+          "slider": {
+            "use": "Slider",
+            "min": 0,
+            "max": 100,
+            "default": 0,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "enableAngle == true && angleMode == 'vertical'",
+          "enable": "enableAngle == true && angleMode == 'vertical'",
+          "title": "Right",
+          "id": "angleBottomRight",
+          "responsive": false,
+          "slider": {
+            "use": "Slider",
+            "min": 0,
+            "max": 100,
+            "default": 0,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "enableAngle == true && angleMode == 'horizontal'",
+          "enable": "enableAngle == true && angleMode == 'horizontal'",
+          "title": "Left",
+          "heading": {}
+        },
+        {
+          "visible": "enableAngle == true && angleMode == 'horizontal'",
+          "enable": "enableAngle == true && angleMode == 'horizontal'",
+          "title": "Top",
+          "id": "angleLeftTop",
+          "responsive": false,
+          "slider": {
+            "use": "Slider",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "default": 100,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "enableAngle == true && angleMode == 'horizontal'",
+          "enable": "enableAngle == true && angleMode == 'horizontal'",
+          "title": "Bottom",
+          "id": "angleLeftBottom",
+          "responsive": false,
+          "slider": {
+            "use": "Slider",
+            "min": 0,
+            "max": 100,
+            "default": 100,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "enableAngle == true && angleMode == 'horizontal'",
+          "enable": "enableAngle == true && angleMode == 'horizontal'",
+          "title": "Right",
+          "heading": {}
+        },
+        {
+          "visible": "enableAngle == true && angleMode == 'horizontal'",
+          "enable": "enableAngle == true && angleMode == 'horizontal'",
+          "title": "Top",
+          "id": "angleRightTop",
+          "responsive": false,
+          "slider": {
+            "use": "Slider",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "default": 60,
+            "units": "%"
+          }
+        },
+        {
+          "visible": "enableAngle == true && angleMode == 'horizontal'",
+          "enable": "enableAngle == true && angleMode == 'horizontal'",
+          "title": "Bottom",
+          "id": "angleRightBottom",
+          "responsive": false,
+          "slider": {
+            "use": "Slider",
+            "min": 0,
+            "max": 100,
+            "default": 30,
+            "units": "%"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Background",
+      "icon": "paintpalette",
+      "properties": [
+        {
+          "title": "Fixed",
+          "heading": {}
+        },
+        {
+          "title": "Enabled",
+          "id": "bgFixed",
+          "responsive": false,
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "visible": "false",
+          "id": "globalControlTypeBg",
+          "title": "Background Type",
+          "ai": {
+            "exclude": true,
+            "reason": "Hidden, locked to static; Background always has a background. Not a model-settable control."
+          },
+          "input": {
+            "default": "static"
+          }
+        },
+        {
+          "title": "Style",
+          "id": "globalBgType",
+          "ai": {
+            "name": "bgStyle",
+            "description": "Background style: color, image, gradient, or svg."
+          },
+          "responsive": false,
+          "segmented": {
+            "default": "color",
+            "items": [
+              {
+                "icon": "paintbrush",
+                "value": "color"
+              },
+              {
+                "icon": "photo",
+                "value": "image"
+              },
+              {
+                "value": "gradient",
+                "icon": "swatchpalette"
+              },
+              {
+                "value": "svg",
+                "title": "SVG"
+              }
+            ]
+          }
+        },
+        {
+          "globalControl": "Background_Color",
+          "default": {
+            "name": "brand",
+            "brightness": 500
+          }
+        },
+        {
+          "globalControl": "Background_Image_CMS"
+        },
+        {
+          "globalControl": "Background_Gradient"
+        },
+        {
+          "globalControl": "Background_SVG"
+        }
+      ]
+    },
+    {
+      "title": "Layout",
+      "icon": "square.split.bottomrightquarter",
+      "properties": [
+        {
+          "globalControl": "Layout"
+        }
+      ]
+    },
+    {
+      "title": "Sizing",
+      "icon": "arrow.down.backward.and.arrow.up.forward.square",
+      "properties": [
+        {
+          "globalControl": "SizingContainer"
+        }
+      ]
+    },
+    {
+      "title": "Spacing",
+      "icon": "squareshape.squareshape.dotted",
+      "properties": [
+        {
+          "globalControl": "SpacingContainer"
+        }
+      ]
+    }
+  ]
 }

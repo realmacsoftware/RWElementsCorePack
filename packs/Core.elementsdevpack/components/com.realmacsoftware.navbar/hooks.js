@@ -702,6 +702,7 @@ const globalNavItems = (rw, isActive = false) => {
     globalNavItemsTextShadowHover: textShadowHover,
     globalNavItemsUnderlineHover: underlineHover
   } = rw.props;
+  console.log({ fontWeight });
   const inactiveStyles = {
     textColor,
     textColorOpacity,

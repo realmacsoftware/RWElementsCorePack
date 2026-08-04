@@ -175,7 +175,7 @@
           "id": "thumbnailGlobalBoxShadow",
           "ai": {
             "name": "thumbnailBoxShadow",
-            "description": "Box shadow size, a theme shadow token. Pair with boxShadowColor and boxShadowOpacity."
+            "description": "Thumbnail box shadow size, a theme shadow token. Pair with thumbnailBoxShadowColor and thumbnailBoxShadowOpacity."
           },
           "responsive": false,
           "themeShadow": {
@@ -415,7 +415,7 @@
           "id": "lightboxMediaGlobalBoxShadow",
           "ai": {
             "name": "lightboxMediaBoxShadow",
-            "description": "Box shadow size, a theme shadow token. Pair with boxShadowColor and boxShadowOpacity."
+            "description": "Lightbox media box shadow size, a theme shadow token. Pair with lightboxMediaBoxShadowColor and lightboxMediaBoxShadowOpacity."
           },
           "responsive": false,
           "themeShadow": {

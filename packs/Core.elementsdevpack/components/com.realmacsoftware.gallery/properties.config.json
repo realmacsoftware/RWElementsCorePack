@@ -161,7 +161,8 @@
         {
           "globalControl": "BoxShadow",
           "ai": {
-            "name": "thumbnail{{value}}"
+            "name": "thumbnail{{value}}",
+            "description": "Thumbnail box shadow size, a theme shadow token. Pair with thumbnailBoxShadowColor and thumbnailBoxShadowOpacity."
           },
           "title": "Shadow",
           "id": "thumbnail{{value}}"
@@ -350,7 +351,8 @@
           "title": "Shadow",
           "id": "lightboxMedia{{value}}",
           "ai": {
-            "name": "lightboxMedia{{value}}"
+            "name": "lightboxMedia{{value}}",
+            "description": "Lightbox media box shadow size, a theme shadow token. Pair with lightboxMediaBoxShadowColor and lightboxMediaBoxShadowOpacity."
           },
           "globalControl": "BoxShadow"
         },

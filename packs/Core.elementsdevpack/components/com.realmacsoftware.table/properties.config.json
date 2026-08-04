@@ -1,1145 +1,1145 @@
 {
-    "groups": [
+  "groups": [
+    {
+      "title": "Settings",
+      "icon": "gearshape",
+      "properties": [
         {
-            "title": "Settings",
-            "icon": "gearshape",
-            "properties": [
-                {
-                    "title": "Data Source",
-                    "id": "dataSource",
-                    "responsive": false,
-                    "ai": {
-                        "name": "dataSource",
-                        "description": "Table data source: manual rows/columns, a CSV file resource, or a CSV/Google Sheets URL."
-                    },
-                    "select": {
-                        "default": "manual",
-                        "items": [
-                            {
-                                "title": "Manual",
-                                "value": "manual"
-                            },
-                            {
-                                "title": "CSV File",
-                                "value": "csvFile"
-                            },
-                            {
-                                "title": "CSV URL",
-                                "value": "csvUrl"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "title": "CSV File",
-                    "id": "csvFile",
-                    "visible": "dataSource == 'csvFile'",
-                    "ai": {
-                        "name": "csvFile",
-                        "description": "CSV file resource ID bound to the table when dataSource is 'csvFile'."
-                    },
-                    "resource": {
-                        "accepts": ".csv"
-                    }
-                },
-                {
-                    "title": "CSV URL",
-                    "id": "csvUrl",
-                    "visible": "dataSource == 'csvUrl'",
-                    "responsive": false,
-                    "ai": {
-                        "name": "csvUrl",
-                        "description": "URL returning CSV data (or a Google Sheets link) used when dataSource is 'csvUrl'."
-                    },
-                    "text": {
-                        "default": "",
-                        "subtitle": "Any URL that returns CSV data, or a Google Sheets link"
-                    }
-                },
-                {
-                    "visible": "dataSource != 'manual'",
-                    "divider": {}
-                },
-                {
-                    "visible": "dataSource != 'manual'",
-                    "title": "First Row is Header",
-                    "heading": {}
-                },
-                {
-                    "title": "Enable",
-                    "id": "csvFirstRowIsHeader",
-                    "visible": "dataSource != 'manual'",
-                    "responsive": false,
-                    "ai": {
-                        "name": "csvFirstRowIsHeader",
-                        "description": "Treat the first row of CSV data as the header row."
-                    },
-                    "switch": {
-                        "default": true
-                    }
-                },
-                {
-                    "divider": {}
-                },
-                {
-                    "title": "Columns",
-                    "id": "columns",
-                    "collection": {
-                        "identifier": "com.realmacsoftware.table.collections.columns"
-                    }
-                },
-                {
-                    "visible": "dataSource != 'manual'",
-                    "title": "Each column item controls the matching CSV column by position (1st item → 1st column).",
-                    "description": {}
-                },
-                {
-                    "visible": "dataSource == 'manual'",
-                    "divider": {}
-                },
-                {
-                    "visible": "dataSource == 'manual'",
-                    "title": "Table Settings",
-                    "heading": {}
-                },
-                {
-                    "visible": "dataSource == 'manual'",
-                    "title": "Rows",
-                    "id": "rowCount",
-                    "responsive": false,
-                    "ai": {
-                        "name": "rowCount",
-                        "description": "Number of manual rows to render when dataSource is 'manual'."
-                    },
-                    "number": {
-                        "default": 3
-                    }
-                }
+          "title": "Data Source",
+          "id": "dataSource",
+          "responsive": false,
+          "ai": {
+            "name": "dataSource",
+            "description": "Table data source: manual rows/columns, a CSV file resource, or a CSV/Google Sheets URL."
+          },
+          "select": {
+            "default": "manual",
+            "items": [
+              {
+                "title": "Manual",
+                "value": "manual"
+              },
+              {
+                "title": "CSV File",
+                "value": "csvFile"
+              },
+              {
+                "title": "CSV URL",
+                "value": "csvUrl"
+              }
             ]
+          }
         },
         {
-            "title": "Interactive",
-            "icon": "hand.tap",
-            "properties": [
-                {
-                    "title": "Sorting",
-                    "heading": {}
-                },
-                {
-                    "visible": "dataSource == 'manual'",
-                    "title": "Enable sorting per column in the Columns collection.",
-                    "description": {}
-                },
-                {
-                    "visible": "dataSource != 'manual'",
-                    "title": "Enable sorting per column in the Columns collection.",
-                    "description": {}
-                },
-                {
-                    "divider": {}
-                },
-                {
-                    "title": "Search",
-                    "heading": {}
-                },
-                {
-                    "title": "Enable",
-                    "id": "showSearch",
-                    "responsive": false,
-                    "ai": {
-                        "name": "showSearch",
-                        "description": "Show the search bar above the table."
-                    },
-                    "switch": {
-                        "default": false
-                    }
-                },
-                {
-                    "enable": "showSearch == true",
-                    "title": "Placeholder",
-                    "id": "searchPlaceholder",
-                    "responsive": false,
-                    "ai": {
-                        "name": "searchPlaceholder",
-                        "description": "Placeholder text shown in the search input."
-                    },
-                    "text": {
-                        "default": "Search..."
-                    }
-                },
-                {
-                    "divider": {}
-                },
-                {
-                    "title": "Pagination",
-                    "heading": {}
-                },
-                {
-                    "title": "Enable",
-                    "id": "showPagination",
-                    "responsive": false,
-                    "ai": {
-                        "name": "showPagination",
-                        "description": "Show pagination controls below the table."
-                    },
-                    "switch": {
-                        "default": false
-                    }
-                },
-                {
-                    "enable": "showPagination == true",
-                    "title": "Rows Per Page",
-                    "id": "rowsPerPage",
-                    "responsive": false,
-                    "ai": {
-                        "name": "rowsPerPage",
-                        "description": "Number of rows shown per page when pagination is enabled."
-                    },
-                    "number": {
-                        "default": 10,
-                        "min": 1,
-                        "max": 100
-                    }
-                }
-            ]
+          "title": "CSV File",
+          "id": "csvFile",
+          "visible": "dataSource == 'csvFile'",
+          "ai": {
+            "name": "csvFile",
+            "description": "CSV file resource ID bound to the table when dataSource is 'csvFile'."
+          },
+          "resource": {
+            "accepts": ".csv"
+          }
         },
         {
-            "title": "Header Cells",
-            "icon": "rectangle.topthird.inset.filled",
-            "properties": [
-                {
-                    "title": "Header Cells",
-                    "heading": {}
-                },
-                {
-                    "title": "Show",
-                    "id": "showHeader",
-                    "responsive": false,
-                    "ai": {
-                        "name": "showHeader",
-                        "description": "Show the table header row."
-                    },
-                    "switch": {
-                        "default": true
-                    }
-                },
-                {
-                    "visible": "showHeader == true",
-                    "divider": {}
-                },
-                {
-                    "visible": "showHeader == true",
-                    "title": "Padding",
-                    "id": "headerCellPadding",
-                    "themeSpacing": {
-                        "mode": "padding",
-                        "default": {
-                            "base": {
-                                "top": "2",
-                                "right": "2",
-                                "bottom": "2",
-                                "left": "2"
-                            }
-                        }
-                    }
-                },
-                {
-                    "visible": "showHeader == true",
-                    "title": "Align",
-                    "id": "headerVerticalAlignment",
-                    "segmented": {
-                        "default": "align-top",
-                        "items": [
-                            {
-                                "title": "Top",
-                                "value": "align-top"
-                            },
-                            {
-                                "title": "Middle",
-                                "value": "align-middle"
-                            },
-                            {
-                                "title": "Bottom",
-                                "value": "align-bottom"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "visible": "showHeader == true",
-                    "title": "Background",
-                    "id": "headerBackground",
-                    "format": "bg-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "surface",
-                            "brightness": 50
-                        }
-                    }
-                },
-                {
-                    "visible": "showHeader == true",
-                    "title": "Borders",
-                    "heading": {}
-                },
-                {
-                    "visible": "showHeader == true",
-                    "title": "Style",
-                    "id": "headerCellBorderStyle",
-                    "format": "border-{{value}}",
-                    "segmented": {
-                        "default": "solid",
-                        "items": [
-                            {
-                                "icon": "square",
-                                "value": "solid"
-                            },
-                            {
-                                "icon": "square.dashed",
-                                "value": "dashed"
-                            },
-                            {
-                                "icon": "square.dotted",
-                                "value": "dotted"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "visible": "showHeader == true",
-                    "title": "Width",
-                    "id": "headerCellBorderWidth",
-                    "themeBorderWidth": {
-                        "default": {
-                            "base": {
-                                "top": "Default",
-                                "right": "Default",
-                                "bottom": "Default",
-                                "left": "Default"
-                            }
-                        }
-                    }
-                },
-                {
-                    "visible": "showHeader == true",
-                    "title": "Color",
-                    "id": "headerCellBorderColor",
-                    "format": "border-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "surface",
-                            "brightness": 200
-                        }
-                    }
-                }
-            ]
+          "title": "CSV URL",
+          "id": "csvUrl",
+          "visible": "dataSource == 'csvUrl'",
+          "responsive": false,
+          "ai": {
+            "name": "csvUrl",
+            "description": "URL returning CSV data (or a Google Sheets link)."
+          },
+          "text": {
+            "default": "",
+            "subtitle": "Any URL that returns CSV data, or a Google Sheets link"
+          }
         },
         {
-            "title": "Header Text",
-            "icon": "textformat",
-            "visible": "showHeader == true",
-            "properties": [
-                {
-                    "title": "Alignment",
-                    "id": "headerTextAlignment",
-                    "segmented": {
-                        "use": "TextAlign"
-                    }
-                },
-                {
-                    "title": "Font",
-                    "id": "headerTextFont",
-                    "themeFont": {
-                        "default": {
-                            "name": "heading"
-                        }
-                    }
-                },
-                {
-                    "title": "Color",
-                    "id": "headerTextColor",
-                    "format": "text-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "text",
-                            "brightness": 50
-                        }
-                    }
-                },
-                {
-                    "title": "Size",
-                    "id": "headerTextSize",
-                    "themeTextStyle": {
-                        "default": {
-                            "base": {
-                                "name": "base"
-                            }
-                        }
-                    }
-                },
-                {
-                    "title": "Weight",
-                    "id": "headerTextWeight",
-                    "format": "font-[{{value}}]",
-                    "slider": {
-                        "use": "FontWeight",
-                        "default": 600
-                    }
-                },
-                {
-                    "title": "Spacing",
-                    "id": "headerTextLetterSpacing",
-                    "format": "tracking-{{value}}",
-                    "slider": {
-                        "use": "LetterSpacing"
-                    }
-                }
-            ]
+          "visible": "dataSource != 'manual'",
+          "divider": {}
         },
         {
-            "title": "Body Cells",
-            "icon": "tablecells",
-            "properties": [
-                {
-                    "title": "Padding",
-                    "id": "bodyCellPadding",
-                    "themeSpacing": {
-                        "mode": "padding",
-                        "default": {
-                            "base": {
-                                "top": "2",
-                                "right": "2",
-                                "bottom": "2",
-                                "left": "2"
-                            }
-                        }
-                    }
-                },
-                {
-                    "title": "Align",
-                    "id": "bodyVerticalAlignment",
-                    "segmented": {
-                        "default": "align-top",
-                        "items": [
-                            {
-                                "title": "Top",
-                                "value": "align-top"
-                            },
-                            {
-                                "title": "Middle",
-                                "value": "align-middle"
-                            },
-                            {
-                                "title": "Bottom",
-                                "value": "align-bottom"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "divider": {}
-                },
-                {
-                    "title": "Background",
-                    "heading": {}
-                },
-                {
-                    "title": "Color",
-                    "id": "oddRowBackground",
-                    "format": "odd:bg-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "surface",
-                            "brightness": 50
-                        }
-                    }
-                },
-                {
-                    "title": "Striped",
-                    "id": "stripedRows",
-                    "responsive": false,
-                    "switch": {
-                        "default": false
-                    }
-                },
-                {
-                    "visible": "stripedRows == true",
-                    "title": "Even",
-                    "id": "evenRowBackground",
-                    "format": "even:bg-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "surface",
-                            "brightness": 100
-                        }
-                    }
-                },
-                {
-                    "divider": {}
-                },
-                {
-                    "title": "Hover",
-                    "heading": {}
-                },
-                {
-                    "title": "Enable Hover",
-                    "id": "enableRowHover",
-                    "responsive": false,
-                    "switch": {
-                        "default": false
-                    }
-                },
-                {
-                    "visible": "enableRowHover == true",
-                    "title": "Hover Color",
-                    "id": "rowHoverBackground",
-                    "format": "hover:bg-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "surface",
-                            "brightness": 200
-                        }
-                    }
-                },
-                {
-                    "divider": {}
-                },
-                {
-                    "title": "Borders",
-                    "heading": {}
-                },
-                {
-                    "title": "Style",
-                    "id": "bodyCellBorderStyle",
-                    "format": "border-{{value}}",
-                    "segmented": {
-                        "default": "solid",
-                        "items": [
-                            {
-                                "icon": "square",
-                                "value": "solid"
-                            },
-                            {
-                                "icon": "square.dashed",
-                                "value": "dashed"
-                            },
-                            {
-                                "icon": "square.dotted",
-                                "value": "dotted"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "title": "Width",
-                    "id": "bodyCellBorderWidth",
-                    "themeBorderWidth": {
-                        "default": {
-                            "base": {
-                                "top": "Default",
-                                "right": "Default",
-                                "bottom": "Default",
-                                "left": "Default"
-                            }
-                        }
-                    }
-                },
-                {
-                    "title": "Color",
-                    "id": "bodyCellBorderColor",
-                    "format": "border-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "surface",
-                            "brightness": 200
-                        }
-                    }
-                }
-            ]
+          "visible": "dataSource != 'manual'",
+          "title": "First Row is Header",
+          "heading": {}
         },
         {
-            "title": "Body Text",
-            "icon": "textformat",
-            "properties": [
-                {
-                    "title": "Alignment",
-                    "id": "bodyTextAlignment",
-                    "segmented": {
-                        "use": "TextAlign"
-                    }
-                },
-                {
-                    "title": "Font",
-                    "id": "bodyTextFont",
-                    "themeFont": {
-                        "default": {
-                            "name": "body"
-                        }
-                    }
-                },
-                {
-                    "title": "Color",
-                    "id": "bodyTextColor",
-                    "format": "text-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "text",
-                            "brightness": 50
-                        }
-                    }
-                },
-                {
-                    "title": "Size",
-                    "id": "bodyTextSize",
-                    "themeTextStyle": {
-                        "default": {
-                            "base": {
-                                "name": "base"
-                            }
-                        }
-                    }
-                },
-                {
-                    "title": "Weight",
-                    "id": "bodyTextWeight",
-                    "format": "font-[{{value}}]",
-                    "slider": {
-                        "use": "FontWeight",
-                        "default": 400
-                    }
-                },
-                {
-                    "title": "Spacing",
-                    "id": "bodyTextLetterSpacing",
-                    "format": "tracking-{{value}}",
-                    "slider": {
-                        "use": "LetterSpacing"
-                    }
-                }
-            ]
+          "title": "Enable",
+          "id": "csvFirstRowIsHeader",
+          "visible": "dataSource != 'manual'",
+          "responsive": false,
+          "ai": {
+            "name": "csvFirstRowIsHeader",
+            "description": "Treat the first row of CSV data as the header row."
+          },
+          "switch": {
+            "default": true
+          }
         },
         {
-            "title": "Footer Cells",
-            "icon": "rectangle.bottomthird.inset.filled",
-            "properties": [
-                {
-                    "title": "Footer Cells",
-                    "heading": {}
-                },
-                {
-                    "title": "Show",
-                    "id": "showFooter",
-                    "responsive": false,
-                    "ai": {
-                        "name": "showFooter",
-                        "description": "Show the table footer row."
-                    },
-                    "switch": {
-                        "default": false
-                    }
-                },
-                {
-                    "visible": "showFooter == true",
-                    "divider": {}
-                },
-                {
-                    "visible": "showFooter == true",
-                    "title": "Padding",
-                    "id": "footerCellPadding",
-                    "themeSpacing": {
-                        "mode": "padding",
-                        "default": {
-                            "base": {
-                                "top": "2",
-                                "right": "2",
-                                "bottom": "2",
-                                "left": "2"
-                            }
-                        }
-                    }
-                },
-                {
-                    "visible": "showFooter == true",
-                    "title": "Align",
-                    "id": "footerVerticalAlignment",
-                    "segmented": {
-                        "default": "align-top",
-                        "items": [
-                            {
-                                "title": "Top",
-                                "value": "align-top"
-                            },
-                            {
-                                "title": "Middle",
-                                "value": "align-middle"
-                            },
-                            {
-                                "title": "Bottom",
-                                "value": "align-bottom"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "visible": "showFooter == true",
-                    "title": "Background",
-                    "id": "footerBackground",
-                    "format": "bg-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "surface",
-                            "brightness": 100
-                        }
-                    }
-                },
-                {
-                    "visible": "showFooter == true",
-                    "title": "Borders",
-                    "heading": {}
-                },
-                {
-                    "visible": "showFooter == true",
-                    "title": "Style",
-                    "id": "footerCellBorderStyle",
-                    "format": "border-{{value}}",
-                    "segmented": {
-                        "default": "solid",
-                        "items": [
-                            {
-                                "icon": "square",
-                                "value": "solid"
-                            },
-                            {
-                                "icon": "square.dashed",
-                                "value": "dashed"
-                            },
-                            {
-                                "icon": "square.dotted",
-                                "value": "dotted"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "visible": "showFooter == true",
-                    "title": "Width",
-                    "id": "footerCellBorderWidth",
-                    "themeBorderWidth": {
-                        "default": {
-                            "base": {
-                                "top": "Default",
-                                "right": "Default",
-                                "bottom": "Default",
-                                "left": "Default"
-                            }
-                        }
-                    }
-                },
-                {
-                    "visible": "showFooter == true",
-                    "title": "Color",
-                    "id": "footerCellBorderColor",
-                    "format": "border-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "surface",
-                            "brightness": 200
-                        }
-                    }
-                }
-            ]
+          "divider": {}
         },
         {
-            "title": "Footer Text",
-            "icon": "textformat",
-            "visible": "showFooter == true",
-            "properties": [
-                {
-                    "title": "Alignment",
-                    "id": "footerTextAlignment",
-                    "segmented": {
-                        "use": "TextAlign"
-                    }
-                },
-                {
-                    "title": "Font",
-                    "id": "footerTextFont",
-                    "themeFont": {
-                        "default": {
-                            "name": "body"
-                        }
-                    }
-                },
-                {
-                    "title": "Color",
-                    "id": "footerTextColor",
-                    "format": "text-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "text",
-                            "brightness": 50
-                        }
-                    }
-                },
-                {
-                    "title": "Size",
-                    "id": "footerTextSize",
-                    "themeTextStyle": {
-                        "default": {
-                            "base": {
-                                "name": "base"
-                            }
-                        }
-                    }
-                },
-                {
-                    "title": "Weight",
-                    "id": "footerTextWeight",
-                    "format": "font-[{{value}}]",
-                    "slider": {
-                        "use": "FontWeight",
-                        "default": 600
-                    }
-                },
-                {
-                    "title": "Spacing",
-                    "id": "footerTextLetterSpacing",
-                    "format": "tracking-{{value}}",
-                    "slider": {
-                        "use": "LetterSpacing"
-                    }
-                }
-            ]
+          "title": "Columns",
+          "id": "columns",
+          "collection": {
+            "identifier": "com.realmacsoftware.table.collections.columns"
+          }
         },
         {
-            "title": "Search Bar",
-            "icon": "magnifyingglass",
-            "visible": "showSearch == true",
-            "properties": [
-                {
-                    "title": "Padding",
-                    "id": "searchPadding",
-                    "themeSpacing": {
-                        "mode": "padding",
-                        "default": {
-                            "base": {
-                                "top": "2",
-                                "right": "3",
-                                "bottom": "2",
-                                "left": "3"
-                            }
-                        }
-                    }
-                },
-                {
-                    "title": "Margin Bottom",
-                    "id": "searchMarginBottom",
-                    "format": "mb-{{value}}",
-                    "themeSpacing": {
-                        "mode": "single",
-                        "default": {
-                            "base": {
-                                "value": "4"
-                            }
-                        }
-                    }
-                },
-                {
-                    "divider": {}
-                },
-                {
-                    "title": "Font",
-                    "id": "searchFont",
-                    "themeFont": {
-                        "default": {
-                            "name": "body"
-                        }
-                    }
-                },
-                {
-                    "title": "Text Color",
-                    "id": "searchTextColor",
-                    "format": "text-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "text",
-                            "brightness": 50
-                        }
-                    }
-                },
-                {
-                    "title": "Size",
-                    "id": "searchTextSize",
-                    "themeTextStyle": {
-                        "default": {
-                            "base": {
-                                "name": "base"
-                            }
-                        }
-                    }
-                },
-                {
-                    "title": "Placeholder Color",
-                    "id": "searchPlaceholderColor",
-                    "format": "placeholder:text-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "text",
-                            "brightness": 300
-                        }
-                    }
-                },
-                {
-                    "divider": {}
-                },
-                {
-                    "title": "Background",
-                    "id": "searchBackground",
-                    "format": "bg-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "surface",
-                            "brightness": 50
-                        }
-                    }
-                },
-                {
-                    "divider": {}
-                },
-                {
-                    "title": "Border",
-                    "heading": {}
-                },
-                {
-                    "title": "Style",
-                    "id": "searchBorderStyle",
-                    "format": "border-{{value}}",
-                    "segmented": {
-                        "default": "solid",
-                        "items": [
-                            {
-                                "icon": "square",
-                                "value": "solid"
-                            },
-                            {
-                                "icon": "square.dashed",
-                                "value": "dashed"
-                            },
-                            {
-                                "icon": "square.dotted",
-                                "value": "dotted"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "title": "Width",
-                    "id": "searchBorderWidth",
-                    "themeBorderWidth": {
-                        "default": {
-                            "base": {
-                                "top": "Default",
-                                "right": "Default",
-                                "bottom": "Default",
-                                "left": "Default"
-                            }
-                        }
-                    }
-                },
-                {
-                    "title": "Color",
-                    "id": "searchBorderColor",
-                    "format": "border-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "surface",
-                            "brightness": 200
-                        }
-                    }
-                },
-                {
-                    "title": "Radius",
-                    "id": "searchBorderRadius",
-                    "themeBorderRadius": {
-                        "default": {
-                            "base": {
-                                "value": "md"
-                            }
-                        }
-                    }
-                }
-            ]
+          "visible": "dataSource != 'manual'",
+          "title": "Each column item controls the matching CSV column by position (1st item \u2192 1st column).",
+          "description": {}
         },
         {
-            "title": "Pagination Bar",
-            "icon": "arrow.left.arrow.right",
-            "visible": "showPagination == true",
-            "properties": [
-                {
-                    "title": "Margin Top",
-                    "id": "paginationMarginTop",
-                    "format": "mt-{{value}}",
-                    "themeSpacing": {
-                        "mode": "single",
-                        "default": {
-                            "base": {
-                                "value": "4"
-                            }
-                        }
-                    }
-                },
-                {
-                    "title": "Alignment",
-                    "id": "paginationAlignment",
-                    "segmented": {
-                        "default": "justify-between",
-                        "items": [
-                            {
-                                "title": "Between",
-                                "value": "justify-between"
-                            },
-                            {
-                                "title": "Center",
-                                "value": "justify-center"
-                            },
-                            {
-                                "title": "End",
-                                "value": "justify-end"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "divider": {}
-                },
-                {
-                    "title": "Buttons",
-                    "heading": {}
-                },
-                {
-                    "title": "Font",
-                    "id": "paginationFont",
-                    "themeFont": {
-                        "default": {
-                            "name": "body"
-                        }
-                    }
-                },
-                {
-                    "title": "Size",
-                    "id": "paginationTextSize",
-                    "themeTextStyle": {
-                        "default": {
-                            "base": {
-                                "name": "sm"
-                            }
-                        }
-                    }
-                },
-                {
-                    "title": "Text Color",
-                    "id": "paginationTextColor",
-                    "format": "text-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "text",
-                            "brightness": 50
-                        }
-                    }
-                },
-                {
-                    "title": "Disabled Color",
-                    "id": "paginationDisabledColor",
-                    "format": "text-{{value}}",
-                    "themeColor": {
-                        "default": {
-                            "name": "text",
-                            "brightness": 300
-                        }
-                    }
-                }
-            ]
+          "visible": "dataSource == 'manual'",
+          "divider": {}
         },
         {
-            "title": "Layout",
-            "icon": "square.split.bottomrightquarter",
-            "properties": [
-                {
-                    "globalControl": "Layout"
-                }
-            ]
+          "visible": "dataSource == 'manual'",
+          "title": "Table Settings",
+          "heading": {}
         },
         {
-            "title": "Sizing",
-            "icon": "square.resize",
-            "properties": [
-                {
-                    "globalControl": "Sizing"
-                }
-            ]
-        },
-        {
-            "title": "Spacing",
-            "icon": "squareshape.squareshape.dotted",
-            "properties": [
-                {
-                    "globalControl": "Spacing"
-                }
-            ]
-        },
-        {
-            "title": "Transitions",
-            "icon": "timer",
-            "properties": [
-                {
-                    "globalControl": "Transitions"
-                }
-            ]
-        },
-        {
-            "title": "Effects",
-            "icon": "wand.and.stars.inverse",
-            "properties": [
-                {
-                    "globalControl": "Effects"
-                }
-            ]
-        },
-        {
-            "title": "Filters",
-            "icon": "camera.filters",
-            "properties": [
-                {
-                    "globalControl": "Filters"
-                }
-            ]
-        },
-        {
-            "title": "Transforms",
-            "icon": "skew",
-            "properties": [
-                {
-                    "globalControl": "Transforms"
-                }
-            ]
-        },
-        {
-            "title": "Background",
-            "icon": "paintbrush.fill",
-            "properties": [
-                {
-                    "globalControl": "BackgroundTransparent"
-                }
-            ]
-        },
-        {
-            "title": "Border",
-            "icon": "square.dashed",
-            "properties": [
-                {
-                    "globalControl": "BordersTable"
-                }
-            ]
+          "visible": "dataSource == 'manual'",
+          "title": "Rows",
+          "id": "rowCount",
+          "responsive": false,
+          "ai": {
+            "name": "rowCount",
+            "description": "Number of manual rows to render when dataSource is 'manual'."
+          },
+          "number": {
+            "default": 3
+          }
         }
-    ]
+      ]
+    },
+    {
+      "title": "Interactive",
+      "icon": "hand.tap",
+      "properties": [
+        {
+          "title": "Sorting",
+          "heading": {}
+        },
+        {
+          "visible": "dataSource == 'manual'",
+          "title": "Enable sorting per column in the Columns collection.",
+          "description": {}
+        },
+        {
+          "visible": "dataSource != 'manual'",
+          "title": "Enable sorting per column in the Columns collection.",
+          "description": {}
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Search",
+          "heading": {}
+        },
+        {
+          "title": "Enable",
+          "id": "showSearch",
+          "responsive": false,
+          "ai": {
+            "name": "showSearch",
+            "description": "Show the search bar above the table."
+          },
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "enable": "showSearch == true",
+          "title": "Placeholder",
+          "id": "searchPlaceholder",
+          "responsive": false,
+          "ai": {
+            "name": "searchPlaceholder",
+            "description": "Placeholder text shown in the search input."
+          },
+          "text": {
+            "default": "Search..."
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Pagination",
+          "heading": {}
+        },
+        {
+          "title": "Enable",
+          "id": "showPagination",
+          "responsive": false,
+          "ai": {
+            "name": "showPagination",
+            "description": "Show pagination controls below the table."
+          },
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "enable": "showPagination == true",
+          "title": "Rows Per Page",
+          "id": "rowsPerPage",
+          "responsive": false,
+          "ai": {
+            "name": "rowsPerPage",
+            "description": "Number of rows shown per page when pagination is enabled."
+          },
+          "number": {
+            "default": 10,
+            "min": 1,
+            "max": 100
+          }
+        }
+      ]
+    },
+    {
+      "title": "Header Cells",
+      "icon": "rectangle.topthird.inset.filled",
+      "properties": [
+        {
+          "title": "Header Cells",
+          "heading": {}
+        },
+        {
+          "title": "Show",
+          "id": "showHeader",
+          "responsive": false,
+          "ai": {
+            "name": "showHeader",
+            "description": "Show the table header row."
+          },
+          "switch": {
+            "default": true
+          }
+        },
+        {
+          "visible": "showHeader == true",
+          "divider": {}
+        },
+        {
+          "visible": "showHeader == true",
+          "title": "Padding",
+          "id": "headerCellPadding",
+          "themeSpacing": {
+            "mode": "padding",
+            "default": {
+              "base": {
+                "top": "2",
+                "right": "2",
+                "bottom": "2",
+                "left": "2"
+              }
+            }
+          }
+        },
+        {
+          "visible": "showHeader == true",
+          "title": "Align",
+          "id": "headerVerticalAlignment",
+          "segmented": {
+            "default": "align-top",
+            "items": [
+              {
+                "title": "Top",
+                "value": "align-top"
+              },
+              {
+                "title": "Middle",
+                "value": "align-middle"
+              },
+              {
+                "title": "Bottom",
+                "value": "align-bottom"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "showHeader == true",
+          "title": "Background",
+          "id": "headerBackground",
+          "format": "bg-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 50
+            }
+          }
+        },
+        {
+          "visible": "showHeader == true",
+          "title": "Borders",
+          "heading": {}
+        },
+        {
+          "visible": "showHeader == true",
+          "title": "Style",
+          "id": "headerCellBorderStyle",
+          "format": "border-{{value}}",
+          "segmented": {
+            "default": "solid",
+            "items": [
+              {
+                "icon": "square",
+                "value": "solid"
+              },
+              {
+                "icon": "square.dashed",
+                "value": "dashed"
+              },
+              {
+                "icon": "square.dotted",
+                "value": "dotted"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "showHeader == true",
+          "title": "Width",
+          "id": "headerCellBorderWidth",
+          "themeBorderWidth": {
+            "default": {
+              "base": {
+                "top": "Default",
+                "right": "Default",
+                "bottom": "Default",
+                "left": "Default"
+              }
+            }
+          }
+        },
+        {
+          "visible": "showHeader == true",
+          "title": "Color",
+          "id": "headerCellBorderColor",
+          "format": "border-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 200
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Header Text",
+      "icon": "textformat",
+      "visible": "showHeader == true",
+      "properties": [
+        {
+          "title": "Alignment",
+          "id": "headerTextAlignment",
+          "segmented": {
+            "use": "TextAlign"
+          }
+        },
+        {
+          "title": "Font",
+          "id": "headerTextFont",
+          "themeFont": {
+            "default": {
+              "name": "heading"
+            }
+          }
+        },
+        {
+          "title": "Color",
+          "id": "headerTextColor",
+          "format": "text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "text",
+              "brightness": 50
+            }
+          }
+        },
+        {
+          "title": "Size",
+          "id": "headerTextSize",
+          "themeTextStyle": {
+            "default": {
+              "base": {
+                "name": "base"
+              }
+            }
+          }
+        },
+        {
+          "title": "Weight",
+          "id": "headerTextWeight",
+          "format": "font-[{{value}}]",
+          "slider": {
+            "use": "FontWeight",
+            "default": 600
+          }
+        },
+        {
+          "title": "Spacing",
+          "id": "headerTextLetterSpacing",
+          "format": "tracking-{{value}}",
+          "slider": {
+            "use": "LetterSpacing"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Body Cells",
+      "icon": "tablecells",
+      "properties": [
+        {
+          "title": "Padding",
+          "id": "bodyCellPadding",
+          "themeSpacing": {
+            "mode": "padding",
+            "default": {
+              "base": {
+                "top": "2",
+                "right": "2",
+                "bottom": "2",
+                "left": "2"
+              }
+            }
+          }
+        },
+        {
+          "title": "Align",
+          "id": "bodyVerticalAlignment",
+          "segmented": {
+            "default": "align-top",
+            "items": [
+              {
+                "title": "Top",
+                "value": "align-top"
+              },
+              {
+                "title": "Middle",
+                "value": "align-middle"
+              },
+              {
+                "title": "Bottom",
+                "value": "align-bottom"
+              }
+            ]
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Background",
+          "heading": {}
+        },
+        {
+          "title": "Color",
+          "id": "oddRowBackground",
+          "format": "odd:bg-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 50
+            }
+          }
+        },
+        {
+          "title": "Striped",
+          "id": "stripedRows",
+          "responsive": false,
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "visible": "stripedRows == true",
+          "title": "Even",
+          "id": "evenRowBackground",
+          "format": "even:bg-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 100
+            }
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Hover",
+          "heading": {}
+        },
+        {
+          "title": "Enable Hover",
+          "id": "enableRowHover",
+          "responsive": false,
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "visible": "enableRowHover == true",
+          "title": "Hover Color",
+          "id": "rowHoverBackground",
+          "format": "hover:bg-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 200
+            }
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Borders",
+          "heading": {}
+        },
+        {
+          "title": "Style",
+          "id": "bodyCellBorderStyle",
+          "format": "border-{{value}}",
+          "segmented": {
+            "default": "solid",
+            "items": [
+              {
+                "icon": "square",
+                "value": "solid"
+              },
+              {
+                "icon": "square.dashed",
+                "value": "dashed"
+              },
+              {
+                "icon": "square.dotted",
+                "value": "dotted"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Width",
+          "id": "bodyCellBorderWidth",
+          "themeBorderWidth": {
+            "default": {
+              "base": {
+                "top": "Default",
+                "right": "Default",
+                "bottom": "Default",
+                "left": "Default"
+              }
+            }
+          }
+        },
+        {
+          "title": "Color",
+          "id": "bodyCellBorderColor",
+          "format": "border-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 200
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Body Text",
+      "icon": "textformat",
+      "properties": [
+        {
+          "title": "Alignment",
+          "id": "bodyTextAlignment",
+          "segmented": {
+            "use": "TextAlign"
+          }
+        },
+        {
+          "title": "Font",
+          "id": "bodyTextFont",
+          "themeFont": {
+            "default": {
+              "name": "body"
+            }
+          }
+        },
+        {
+          "title": "Color",
+          "id": "bodyTextColor",
+          "format": "text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "text",
+              "brightness": 50
+            }
+          }
+        },
+        {
+          "title": "Size",
+          "id": "bodyTextSize",
+          "themeTextStyle": {
+            "default": {
+              "base": {
+                "name": "base"
+              }
+            }
+          }
+        },
+        {
+          "title": "Weight",
+          "id": "bodyTextWeight",
+          "format": "font-[{{value}}]",
+          "slider": {
+            "use": "FontWeight",
+            "default": 400
+          }
+        },
+        {
+          "title": "Spacing",
+          "id": "bodyTextLetterSpacing",
+          "format": "tracking-{{value}}",
+          "slider": {
+            "use": "LetterSpacing"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Footer Cells",
+      "icon": "rectangle.bottomthird.inset.filled",
+      "properties": [
+        {
+          "title": "Footer Cells",
+          "heading": {}
+        },
+        {
+          "title": "Show",
+          "id": "showFooter",
+          "responsive": false,
+          "ai": {
+            "name": "showFooter",
+            "description": "Show the table footer row."
+          },
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "visible": "showFooter == true",
+          "divider": {}
+        },
+        {
+          "visible": "showFooter == true",
+          "title": "Padding",
+          "id": "footerCellPadding",
+          "themeSpacing": {
+            "mode": "padding",
+            "default": {
+              "base": {
+                "top": "2",
+                "right": "2",
+                "bottom": "2",
+                "left": "2"
+              }
+            }
+          }
+        },
+        {
+          "visible": "showFooter == true",
+          "title": "Align",
+          "id": "footerVerticalAlignment",
+          "segmented": {
+            "default": "align-top",
+            "items": [
+              {
+                "title": "Top",
+                "value": "align-top"
+              },
+              {
+                "title": "Middle",
+                "value": "align-middle"
+              },
+              {
+                "title": "Bottom",
+                "value": "align-bottom"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "showFooter == true",
+          "title": "Background",
+          "id": "footerBackground",
+          "format": "bg-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 100
+            }
+          }
+        },
+        {
+          "visible": "showFooter == true",
+          "title": "Borders",
+          "heading": {}
+        },
+        {
+          "visible": "showFooter == true",
+          "title": "Style",
+          "id": "footerCellBorderStyle",
+          "format": "border-{{value}}",
+          "segmented": {
+            "default": "solid",
+            "items": [
+              {
+                "icon": "square",
+                "value": "solid"
+              },
+              {
+                "icon": "square.dashed",
+                "value": "dashed"
+              },
+              {
+                "icon": "square.dotted",
+                "value": "dotted"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "showFooter == true",
+          "title": "Width",
+          "id": "footerCellBorderWidth",
+          "themeBorderWidth": {
+            "default": {
+              "base": {
+                "top": "Default",
+                "right": "Default",
+                "bottom": "Default",
+                "left": "Default"
+              }
+            }
+          }
+        },
+        {
+          "visible": "showFooter == true",
+          "title": "Color",
+          "id": "footerCellBorderColor",
+          "format": "border-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 200
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Footer Text",
+      "icon": "textformat",
+      "visible": "showFooter == true",
+      "properties": [
+        {
+          "title": "Alignment",
+          "id": "footerTextAlignment",
+          "segmented": {
+            "use": "TextAlign"
+          }
+        },
+        {
+          "title": "Font",
+          "id": "footerTextFont",
+          "themeFont": {
+            "default": {
+              "name": "body"
+            }
+          }
+        },
+        {
+          "title": "Color",
+          "id": "footerTextColor",
+          "format": "text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "text",
+              "brightness": 50
+            }
+          }
+        },
+        {
+          "title": "Size",
+          "id": "footerTextSize",
+          "themeTextStyle": {
+            "default": {
+              "base": {
+                "name": "base"
+              }
+            }
+          }
+        },
+        {
+          "title": "Weight",
+          "id": "footerTextWeight",
+          "format": "font-[{{value}}]",
+          "slider": {
+            "use": "FontWeight",
+            "default": 600
+          }
+        },
+        {
+          "title": "Spacing",
+          "id": "footerTextLetterSpacing",
+          "format": "tracking-{{value}}",
+          "slider": {
+            "use": "LetterSpacing"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Search Bar",
+      "icon": "magnifyingglass",
+      "visible": "showSearch == true",
+      "properties": [
+        {
+          "title": "Padding",
+          "id": "searchPadding",
+          "themeSpacing": {
+            "mode": "padding",
+            "default": {
+              "base": {
+                "top": "2",
+                "right": "3",
+                "bottom": "2",
+                "left": "3"
+              }
+            }
+          }
+        },
+        {
+          "title": "Margin Bottom",
+          "id": "searchMarginBottom",
+          "format": "mb-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "4"
+              }
+            }
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Font",
+          "id": "searchFont",
+          "themeFont": {
+            "default": {
+              "name": "body"
+            }
+          }
+        },
+        {
+          "title": "Text Color",
+          "id": "searchTextColor",
+          "format": "text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "text",
+              "brightness": 50
+            }
+          }
+        },
+        {
+          "title": "Size",
+          "id": "searchTextSize",
+          "themeTextStyle": {
+            "default": {
+              "base": {
+                "name": "base"
+              }
+            }
+          }
+        },
+        {
+          "title": "Placeholder Color",
+          "id": "searchPlaceholderColor",
+          "format": "placeholder:text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "text",
+              "brightness": 300
+            }
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Background",
+          "id": "searchBackground",
+          "format": "bg-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 50
+            }
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Border",
+          "heading": {}
+        },
+        {
+          "title": "Style",
+          "id": "searchBorderStyle",
+          "format": "border-{{value}}",
+          "segmented": {
+            "default": "solid",
+            "items": [
+              {
+                "icon": "square",
+                "value": "solid"
+              },
+              {
+                "icon": "square.dashed",
+                "value": "dashed"
+              },
+              {
+                "icon": "square.dotted",
+                "value": "dotted"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Width",
+          "id": "searchBorderWidth",
+          "themeBorderWidth": {
+            "default": {
+              "base": {
+                "top": "Default",
+                "right": "Default",
+                "bottom": "Default",
+                "left": "Default"
+              }
+            }
+          }
+        },
+        {
+          "title": "Color",
+          "id": "searchBorderColor",
+          "format": "border-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 200
+            }
+          }
+        },
+        {
+          "title": "Radius",
+          "id": "searchBorderRadius",
+          "themeBorderRadius": {
+            "default": {
+              "base": {
+                "value": "md"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Pagination Bar",
+      "icon": "arrow.left.arrow.right",
+      "visible": "showPagination == true",
+      "properties": [
+        {
+          "title": "Margin Top",
+          "id": "paginationMarginTop",
+          "format": "mt-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "4"
+              }
+            }
+          }
+        },
+        {
+          "title": "Alignment",
+          "id": "paginationAlignment",
+          "segmented": {
+            "default": "justify-between",
+            "items": [
+              {
+                "title": "Between",
+                "value": "justify-between"
+              },
+              {
+                "title": "Center",
+                "value": "justify-center"
+              },
+              {
+                "title": "End",
+                "value": "justify-end"
+              }
+            ]
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Buttons",
+          "heading": {}
+        },
+        {
+          "title": "Font",
+          "id": "paginationFont",
+          "themeFont": {
+            "default": {
+              "name": "body"
+            }
+          }
+        },
+        {
+          "title": "Size",
+          "id": "paginationTextSize",
+          "themeTextStyle": {
+            "default": {
+              "base": {
+                "name": "sm"
+              }
+            }
+          }
+        },
+        {
+          "title": "Text Color",
+          "id": "paginationTextColor",
+          "format": "text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "text",
+              "brightness": 50
+            }
+          }
+        },
+        {
+          "title": "Disabled Color",
+          "id": "paginationDisabledColor",
+          "format": "text-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "text",
+              "brightness": 300
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Layout",
+      "icon": "square.split.bottomrightquarter",
+      "properties": [
+        {
+          "globalControl": "Layout"
+        }
+      ]
+    },
+    {
+      "title": "Sizing",
+      "icon": "square.resize",
+      "properties": [
+        {
+          "globalControl": "Sizing"
+        }
+      ]
+    },
+    {
+      "title": "Spacing",
+      "icon": "squareshape.squareshape.dotted",
+      "properties": [
+        {
+          "globalControl": "Spacing"
+        }
+      ]
+    },
+    {
+      "title": "Transitions",
+      "icon": "timer",
+      "properties": [
+        {
+          "globalControl": "Transitions"
+        }
+      ]
+    },
+    {
+      "title": "Effects",
+      "icon": "wand.and.stars.inverse",
+      "properties": [
+        {
+          "globalControl": "Effects"
+        }
+      ]
+    },
+    {
+      "title": "Filters",
+      "icon": "camera.filters",
+      "properties": [
+        {
+          "globalControl": "Filters"
+        }
+      ]
+    },
+    {
+      "title": "Transforms",
+      "icon": "skew",
+      "properties": [
+        {
+          "globalControl": "Transforms"
+        }
+      ]
+    },
+    {
+      "title": "Background",
+      "icon": "paintbrush.fill",
+      "properties": [
+        {
+          "globalControl": "BackgroundTransparent"
+        }
+      ]
+    },
+    {
+      "title": "Border",
+      "icon": "square.dashed",
+      "properties": [
+        {
+          "globalControl": "BordersTable"
+        }
+      ]
+    }
+  ]
 }

@@ -254,12 +254,7 @@
           "id": "globalButtonFontAndTextStylesTextAlign",
           "ai": {
             "name": "align",
-            "description": "Label alignment within the button.",
-            "values": [
-              "start",
-              "center",
-              "end"
-            ]
+            "description": "Label alignment within the button."
           },
           "format": "justify-{{value}}",
           "segmented": {
@@ -572,8 +567,7 @@
           "id": "globalLayoutZIndex",
           "ai": {
             "name": "zIndex",
-            "description": "Custom z-index value, can be positive or negative.",
-            "visible": "zIndexType == 'custom'"
+            "description": "Custom z-index value, can be positive or negative."
           },
           "format": "z-[{{value}}]",
           "number": {
@@ -615,8 +609,7 @@
           "id": "globalLayoutInset",
           "ai": {
             "name": "inset",
-            "description": "Uniform top/right/bottom/left inset theme spacing value.",
-            "visible": "insetType == 'uniform'"
+            "description": "Uniform top/right/bottom/left inset theme spacing value."
           },
           "format": "inset-{{value}}",
           "themeSpacing": {
@@ -633,8 +626,7 @@
           "id": "globalLayoutTop",
           "ai": {
             "name": "top",
-            "description": "Top inset theme spacing value.",
-            "visible": "insetType == 'individual'"
+            "description": "Top inset theme spacing value."
           },
           "format": "top-{{value}}",
           "themeSpacing": {
@@ -652,8 +644,7 @@
           "id": "globalLayoutRight",
           "ai": {
             "name": "right",
-            "description": "Right inset theme spacing value.",
-            "visible": "insetType == 'individual'"
+            "description": "Right inset theme spacing value."
           },
           "format": "right-{{value}}",
           "themeSpacing": {
@@ -671,8 +662,7 @@
           "id": "globalLayoutBottom",
           "ai": {
             "name": "bottom",
-            "description": "Bottom inset theme spacing value.",
-            "visible": "insetType == 'individual'"
+            "description": "Bottom inset theme spacing value."
           },
           "format": "bottom-{{value}}",
           "themeSpacing": {
@@ -690,8 +680,7 @@
           "id": "globalLayoutLeft",
           "ai": {
             "name": "left",
-            "description": "Left inset theme spacing value.",
-            "visible": "insetType == 'individual'"
+            "description": "Left inset theme spacing value."
           },
           "format": "left-{{value}}",
           "themeSpacing": {
@@ -1115,8 +1104,7 @@
           "id": "globalTransitionsTimingFunctionCustom",
           "ai": {
             "name": "timingFunctionCustom",
-            "description": "Custom cubic-bezier value as 'x1,y1,x2,y2'.",
-            "visible": "timingFunction == 'custom'"
+            "description": "Custom cubic-bezier value as 'x1,y1,x2,y2'."
           },
           "format": "ease-[cubic-bezier({{value}})]",
           "input": {
@@ -1134,8 +1122,7 @@
           "id": "globalTransitionsDuration",
           "ai": {
             "name": "transitionDuration",
-            "description": "Transition duration in milliseconds.",
-            "visible": "transitionProperty != 'none'"
+            "description": "Transition duration in milliseconds."
           },
           "format": "duration-[{{value}}ms]",
           "number": {
@@ -1148,8 +1135,7 @@
           "id": "globalTransitionsDelay",
           "ai": {
             "name": "transitionDelay",
-            "description": "Transition delay in milliseconds.",
-            "visible": "transitionProperty != 'none'"
+            "description": "Transition delay in milliseconds."
           },
           "format": "delay-[{{value}}ms]",
           "number": {
@@ -1167,12 +1153,7 @@
           "id": "globalControlTypeEffects",
           "ai": {
             "name": "effects",
-            "description": "Enable/disable effects.",
-            "values": [
-              "none",
-              "static",
-              "hover"
-            ]
+            "description": "Enable/disable effects."
           },
           "responsive": false,
           "segmented": {
@@ -1198,8 +1179,7 @@
           "id": "globalHoverGroupEffects",
           "ai": {
             "name": "effectsHoverTrigger",
-            "description": "Which element's hover triggers the effects.",
-            "visible": "effects == 'hover'"
+            "description": "Which element's hover triggers the effects."
           },
           "responsive": false,
           "select": {
@@ -1237,8 +1217,7 @@
           "visible": "globalControlTypeEffects == 'hover' && globalHoverGroupEffects == 'custom'",
           "ai": {
             "name": "effectsHoverTriggerId",
-            "description": "ID of the element that triggers the hover effects (when trigger is 'custom').",
-            "visible": "effects == 'hover' && effectsHoverTrigger == 'custom'"
+            "description": "ID of the element that triggers the hover effects."
           },
           "title": "ID",
           "id": "globalHoverGroupCustomIdEffects",
@@ -1447,12 +1426,7 @@
           "id": "globalControlTypeFilters",
           "ai": {
             "name": "filters",
-            "description": "Enable/disable filters.",
-            "values": [
-              "none",
-              "static",
-              "hover"
-            ]
+            "description": "Enable/disable filters."
           },
           "responsive": false,
           "segmented": {
@@ -1478,8 +1452,7 @@
           "id": "globalHoverGroupFilters",
           "ai": {
             "name": "filtersHoverTrigger",
-            "description": "Which element's hover triggers the filters.",
-            "visible": "filters == 'hover'"
+            "description": "Which element's hover triggers the filters."
           },
           "responsive": false,
           "select": {
@@ -1517,8 +1490,7 @@
           "visible": "globalControlTypeFilters == 'hover' && globalHoverGroupFilters == 'custom'",
           "ai": {
             "name": "filtersHoverTriggerId",
-            "description": "ID of the element that triggers the hover filters (when trigger is 'custom').",
-            "visible": "filters == 'hover' && filtersHoverTrigger == 'custom'"
+            "description": "ID of the element that triggers the hover filters."
           },
           "title": "ID",
           "id": "globalHoverGroupCustomIdFilters",
@@ -1735,12 +1707,7 @@
           "id": "globalControlTypeTransforms",
           "ai": {
             "name": "transforms",
-            "description": "Enable/disable transforms.",
-            "values": [
-              "none",
-              "static",
-              "hover"
-            ]
+            "description": "Enable/disable transforms."
           },
           "responsive": false,
           "segmented": {
@@ -1766,8 +1733,7 @@
           "id": "globalHoverGroupTransforms",
           "ai": {
             "name": "transformsHoverTrigger",
-            "description": "Which element's hover triggers the transforms.",
-            "visible": "transforms == 'hover'"
+            "description": "Which element's hover triggers the transforms."
           },
           "responsive": false,
           "select": {
@@ -1805,8 +1771,7 @@
           "visible": "globalControlTypeTransforms == 'hover' && globalHoverGroupTransforms == 'custom'",
           "ai": {
             "name": "transformsHoverTriggerId",
-            "description": "ID of the element that triggers the hover transforms (when trigger is 'custom').",
-            "visible": "transforms == 'hover' && transformsHoverTrigger == 'custom'"
+            "description": "ID of the element that triggers the hover transforms."
           },
           "title": "ID",
           "id": "globalHoverGroupCustomIdTransforms",
@@ -2120,12 +2085,7 @@
           "id": "globalControlTypeBg",
           "ai": {
             "name": "bg",
-            "description": "Enable/disable background.",
-            "values": [
-              "none",
-              "static",
-              "hover"
-            ]
+            "description": "Enable/disable background."
           },
           "responsive": false,
           "segmented": {
@@ -2278,11 +2238,6 @@
           "ai": {
             "name": "bgGradientType",
             "description": "Gradient type: linear, radial, or conic.",
-            "values": [
-              "linear",
-              "radial",
-              "conic"
-            ],
             "visible": "bg == 'static' && bgStyle == 'gradient'"
           },
           "title": "Type",
@@ -2722,11 +2677,6 @@
           "ai": {
             "name": "bgGradientTypeHover",
             "description": "Hover-state gradient type: linear, radial, or conic.",
-            "values": [
-              "linear",
-              "radial",
-              "conic"
-            ],
             "visible": "bg == 'hover' && bgStyle == 'gradient'"
           },
           "title": "Type",
@@ -3384,8 +3334,7 @@
           "visible": "globalBgType == 'image'",
           "ai": {
             "name": "bgImageFetchPriority",
-            "description": "Image fetch priority: auto, high, or low.",
-            "visible": "bgStyle == 'image'"
+            "description": "Image fetch priority: auto, high, or low."
           },
           "title": "Value",
           "id": "globalBgImageFetchPriority",
@@ -3419,12 +3368,7 @@
           "id": "globalControlTypeBorders",
           "ai": {
             "name": "border",
-            "description": "Enable/disable borders.",
-            "values": [
-              "none",
-              "static",
-              "hover"
-            ]
+            "description": "Enable/disable borders."
           },
           "responsive": false,
           "segmented": {

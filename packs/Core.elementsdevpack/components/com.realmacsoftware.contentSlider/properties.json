@@ -543,12 +543,7 @@
           "id": "globalControlTypeBg",
           "ai": {
             "name": "bg",
-            "description": "Enable/disable background.",
-            "values": [
-              "none",
-              "static",
-              "hover"
-            ]
+            "description": "Enable/disable background."
           },
           "responsive": false,
           "segmented": {
@@ -702,11 +697,6 @@
           "ai": {
             "name": "bgGradientType",
             "description": "Gradient type: linear, radial, or conic.",
-            "values": [
-              "linear",
-              "radial",
-              "conic"
-            ],
             "visible": "bg == 'static' && bgStyle == 'gradient'"
           },
           "title": "Type",
@@ -1146,11 +1136,6 @@
           "ai": {
             "name": "bgGradientTypeHover",
             "description": "Hover-state gradient type: linear, radial, or conic.",
-            "values": [
-              "linear",
-              "radial",
-              "conic"
-            ],
             "visible": "bg == 'hover' && bgStyle == 'gradient'"
           },
           "title": "Type",
@@ -1808,8 +1793,7 @@
           "visible": "globalBgType == 'image'",
           "ai": {
             "name": "bgImageFetchPriority",
-            "description": "Image fetch priority: auto, high, or low.",
-            "visible": "bgStyle == 'image'"
+            "description": "Image fetch priority: auto, high, or low."
           },
           "title": "Value",
           "id": "globalBgImageFetchPriority",
@@ -1843,12 +1827,7 @@
           "id": "globalControlTypeBorders",
           "ai": {
             "name": "border",
-            "description": "Enable/disable borders.",
-            "values": [
-              "none",
-              "static",
-              "hover"
-            ]
+            "description": "Enable/disable borders."
           },
           "responsive": false,
           "segmented": {

@@ -69,8 +69,7 @@
           "id": "{{value}}SVGFill",
           "ai": {
             "name": "fill",
-            "description": "Enable/disable SVG fill color control.",
-            "values": ["none", "static", "hover"]
+            "description": "Enable/disable SVG fill color control."
           }
         },
         {
@@ -190,8 +189,7 @@
           "id": "{{value}}SVGStroke",
           "ai": {
             "name": "stroke",
-            "description": "Enable/disable SVG stroke color control.",
-            "values": ["none", "static", "hover"]
+            "description": "Enable/disable SVG stroke color control."
           }
         },
         {

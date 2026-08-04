@@ -458,8 +458,7 @@
           "id": "globalLayoutZIndex",
           "ai": {
             "name": "zIndex",
-            "description": "Custom z-index value, can be positive or negative.",
-            "visible": "zIndexType == 'custom'"
+            "description": "Custom z-index value, can be positive or negative."
           },
           "format": "z-[{{value}}]",
           "number": {
@@ -501,8 +500,7 @@
           "id": "globalLayoutInset",
           "ai": {
             "name": "inset",
-            "description": "Uniform top/right/bottom/left inset theme spacing value.",
-            "visible": "insetType == 'uniform'"
+            "description": "Uniform top/right/bottom/left inset theme spacing value."
           },
           "format": "inset-{{value}}",
           "themeSpacing": {
@@ -519,8 +517,7 @@
           "id": "globalLayoutTop",
           "ai": {
             "name": "top",
-            "description": "Top inset theme spacing value.",
-            "visible": "insetType == 'individual'"
+            "description": "Top inset theme spacing value."
           },
           "format": "top-{{value}}",
           "themeSpacing": {
@@ -538,8 +535,7 @@
           "id": "globalLayoutRight",
           "ai": {
             "name": "right",
-            "description": "Right inset theme spacing value.",
-            "visible": "insetType == 'individual'"
+            "description": "Right inset theme spacing value."
           },
           "format": "right-{{value}}",
           "themeSpacing": {
@@ -557,8 +553,7 @@
           "id": "globalLayoutBottom",
           "ai": {
             "name": "bottom",
-            "description": "Bottom inset theme spacing value.",
-            "visible": "insetType == 'individual'"
+            "description": "Bottom inset theme spacing value."
           },
           "format": "bottom-{{value}}",
           "themeSpacing": {
@@ -576,8 +571,7 @@
           "id": "globalLayoutLeft",
           "ai": {
             "name": "left",
-            "description": "Left inset theme spacing value.",
-            "visible": "insetType == 'individual'"
+            "description": "Left inset theme spacing value."
           },
           "format": "left-{{value}}",
           "themeSpacing": {
@@ -998,8 +992,7 @@
           "id": "globalTransitionsTimingFunctionCustom",
           "ai": {
             "name": "timingFunctionCustom",
-            "description": "Custom cubic-bezier value as 'x1,y1,x2,y2'.",
-            "visible": "timingFunction == 'custom'"
+            "description": "Custom cubic-bezier value as 'x1,y1,x2,y2'."
           },
           "format": "ease-[cubic-bezier({{value}})]",
           "input": {
@@ -1017,8 +1010,7 @@
           "id": "globalTransitionsDuration",
           "ai": {
             "name": "transitionDuration",
-            "description": "Transition duration in milliseconds.",
-            "visible": "transitionProperty != 'none'"
+            "description": "Transition duration in milliseconds."
           },
           "format": "duration-[{{value}}ms]",
           "number": {
@@ -1031,8 +1023,7 @@
           "id": "globalTransitionsDelay",
           "ai": {
             "name": "transitionDelay",
-            "description": "Transition delay in milliseconds.",
-            "visible": "transitionProperty != 'none'"
+            "description": "Transition delay in milliseconds."
           },
           "format": "delay-[{{value}}ms]",
           "number": {

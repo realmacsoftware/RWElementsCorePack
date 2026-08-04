@@ -131,7 +131,7 @@
       "icon": "photo",
       "properties": [
         {
-          "globalControl": "Image"
+          "globalControl": "PosterImage"
         },
         {
           "divider": {}
@@ -168,7 +168,7 @@
       "icon": "aspectratio",
       "properties": [
         {
-          "globalControl": "AspectRatio"
+          "globalControl": "AspectRatioVideo"
         }
       ]
     },

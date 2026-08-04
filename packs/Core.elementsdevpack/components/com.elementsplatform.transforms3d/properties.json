@@ -9,12 +9,7 @@
           "id": "globalControlTypeTransforms",
           "ai": {
             "name": "transforms",
-            "description": "Enable/disable transforms.",
-            "values": [
-              "none",
-              "static",
-              "hover"
-            ]
+            "description": "Enable/disable transforms."
           },
           "responsive": false,
           "segmented": {
@@ -40,8 +35,7 @@
           "id": "globalHoverGroupTransforms",
           "ai": {
             "name": "transformsHoverTrigger",
-            "description": "Which element's hover triggers the transforms.",
-            "visible": "transforms == 'hover'"
+            "description": "Which element's hover triggers the transforms."
           },
           "responsive": false,
           "select": {
@@ -79,8 +73,7 @@
           "visible": "globalControlTypeTransforms == 'hover' && globalHoverGroupTransforms == 'custom'",
           "ai": {
             "name": "transformsHoverTriggerId",
-            "description": "ID of the element that triggers the hover transforms (when trigger is 'custom').",
-            "visible": "transforms == 'hover' && transformsHoverTrigger == 'custom'"
+            "description": "ID of the element that triggers the hover transforms."
           },
           "title": "ID",
           "id": "globalHoverGroupCustomIdTransforms",
@@ -394,13 +387,7 @@
           "id": "globalControlType3D",
           "ai": {
             "name": "transforms3d",
-            "description": "Enable/disable 3D transforms.",
-            "values": [
-              "none",
-              "static",
-              "hover",
-              "mouse"
-            ]
+            "description": "Enable/disable 3D transforms."
           },
           "responsive": false,
           "segmented": {
@@ -430,8 +417,7 @@
           "id": "globalHoverGroup3D",
           "ai": {
             "name": "transforms3dHoverTrigger",
-            "description": "Which element's hover or mouse movement triggers the 3D transforms.",
-            "visible": "transforms3d == 'hover' || transforms3d == 'mouse'"
+            "description": "Which element's hover or mouse movement triggers the 3D transforms."
           },
           "responsive": false,
           "select": {
@@ -469,8 +455,7 @@
           "visible": "(globalControlType3D == 'hover' || globalControlType3D == 'mouse') && globalHoverGroup3D == 'custom'",
           "ai": {
             "name": "transforms3dHoverTriggerId",
-            "description": "ID of the element that triggers the 3D transforms (when trigger is 'custom').",
-            "visible": "(transforms3d == 'hover' || transforms3d == 'mouse') && transforms3dHoverTrigger == 'custom'"
+            "description": "ID of the element that triggers the 3D transforms."
           },
           "title": "ID",
           "id": "globalHoverGroupCustomId3D",
@@ -642,7 +627,7 @@
           "id": "globalTransformRotateX",
           "ai": {
             "name": "rotateX",
-            "description": "3D rotation about the X axis, in degrees: tilts the top and bottom edges toward or away from the viewer. In hover and mouse modes rotateX is the start value and rotateXEnd the end value.",
+            "description": "3D rotation about the X axis, in degrees: tilts the top and bottom edges toward or away from the viewer.",
             "visible": "transforms3d != 'none'"
           },
           "format": "rotate-x-[{{value}}deg]",
@@ -657,7 +642,7 @@
           "id": "globalTransformRotateY",
           "ai": {
             "name": "rotateY",
-            "description": "3D rotation about the Y axis, in degrees: swings the left and right edges toward or away from the viewer. In hover and mouse modes rotateY is the start value and rotateYEnd the end value.",
+            "description": "3D rotation about the Y axis, in degrees: swings the left and right edges toward or away from the viewer.",
             "visible": "transforms3d != 'none'"
           },
           "format": "rotate-y-[{{value}}deg]",
@@ -672,7 +657,7 @@
           "id": "globalTransformScaleZ",
           "ai": {
             "name": "scaleZ",
-            "description": "Depth scale along the Z axis, in percent (100 = no change). Only has a visible effect combined with rotateX or rotateY. In hover and mouse modes scaleZ is the start value and scaleZEnd the end value.",
+            "description": "Depth scale along the Z axis, in percent (100 = no change). Only has a visible effect combined with rotateX or rotateY.",
             "visible": "transforms3d != 'none'"
           },
           "format": "scale-z-[{{value}}%]",
@@ -687,7 +672,7 @@
           "id": "globalTransformTranslateZ",
           "ai": {
             "name": "translateZ",
-            "description": "Offset along the Z axis, moving the element toward the viewer (positive) or away (negative). A CSS length, no percentages, e.g. 20px or 2rem. In hover and mouse modes translateZ is the start value and translateZEnd the end value.",
+            "description": "Offset along the Z axis, moving the element toward the viewer (positive) or away (negative). A CSS length, no percentages, e.g. 20px or 2rem.",
             "visible": "transforms3d != 'none'"
           },
           "format": "translate-z-[{{value}}]",
@@ -711,7 +696,7 @@
           "id": "globalTransformRotateXEnd",
           "ai": {
             "name": "rotateXEnd",
-            "description": "3D rotation about the X axis, in degrees: tilts the top and bottom edges toward or away from the viewer. In hover and mouse modes rotateX is the start value and rotateXEnd the end value.",
+            "description": "3D rotation about the X axis, in degrees: tilts the top and bottom edges toward or away from the viewer.",
             "visible": "transforms3d == 'hover' || transforms3d == 'mouse'"
           },
           "format": "rotate-x-[{{value}}deg]",
@@ -726,7 +711,7 @@
           "id": "globalTransformRotateYEnd",
           "ai": {
             "name": "rotateYEnd",
-            "description": "3D rotation about the Y axis, in degrees: swings the left and right edges toward or away from the viewer. In hover and mouse modes rotateY is the start value and rotateYEnd the end value.",
+            "description": "3D rotation about the Y axis, in degrees: swings the left and right edges toward or away from the viewer.",
             "visible": "transforms3d == 'hover' || transforms3d == 'mouse'"
           },
           "format": "rotate-y-[{{value}}deg]",
@@ -741,7 +726,7 @@
           "id": "globalTransformScaleZEnd",
           "ai": {
             "name": "scaleZEnd",
-            "description": "Depth scale along the Z axis, in percent (100 = no change). Only has a visible effect combined with rotateX or rotateY. In hover and mouse modes scaleZ is the start value and scaleZEnd the end value.",
+            "description": "Depth scale along the Z axis, in percent (100 = no change). Only has a visible effect combined with rotateX or rotateY.",
             "visible": "transforms3d == 'hover' || transforms3d == 'mouse'"
           },
           "format": "scale-z-[{{value}}%]",
@@ -756,7 +741,7 @@
           "id": "globalTransformTranslateZEnd",
           "ai": {
             "name": "translateZEnd",
-            "description": "Offset along the Z axis, moving the element toward the viewer (positive) or away (negative). A CSS length, no percentages, e.g. 20px or 2rem. In hover and mouse modes translateZ is the start value and translateZEnd the end value.",
+            "description": "Offset along the Z axis, moving the element toward the viewer (positive) or away (negative). A CSS length, no percentages, e.g. 20px or 2rem.",
             "visible": "transforms3d == 'hover' || transforms3d == 'mouse'"
           },
           "format": "translate-z-[{{value}}]",
@@ -854,8 +839,7 @@
           "id": "globalTransitionsTimingFunctionCustom",
           "ai": {
             "name": "timingFunctionCustom",
-            "description": "Custom cubic-bezier value as 'x1,y1,x2,y2'.",
-            "visible": "timingFunction == 'custom'"
+            "description": "Custom cubic-bezier value as 'x1,y1,x2,y2'."
           },
           "format": "ease-[cubic-bezier({{value}})]",
           "input": {
@@ -873,8 +857,7 @@
           "id": "globalTransitionsDuration",
           "ai": {
             "name": "transitionDuration",
-            "description": "Transition duration in milliseconds.",
-            "visible": "transitionProperty != 'none'"
+            "description": "Transition duration in milliseconds."
           },
           "format": "duration-[{{value}}ms]",
           "number": {
@@ -887,8 +870,7 @@
           "id": "globalTransitionsDelay",
           "ai": {
             "name": "transitionDelay",
-            "description": "Transition delay in milliseconds.",
-            "visible": "transitionProperty != 'none'"
+            "description": "Transition delay in milliseconds."
           },
           "format": "delay-[{{value}}ms]",
           "number": {
