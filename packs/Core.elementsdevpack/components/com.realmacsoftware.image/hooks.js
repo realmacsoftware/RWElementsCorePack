@@ -631,11 +631,12 @@ const transformHook = (rw) => {
     const svgContent = imageMaskResource.image;
     const encodedSvg = encodeURIComponent(svgContent);
     const maskUrl = `url('data:image/svg+xml,${encodedSvg}')`;
+    const maskSize = `${imageMaskSize}`.trim().replace(/\s+/g, "_");
     maskClasses.push(
       `[-webkit-mask-image:${maskUrl}]`,
       `[mask-image:${maskUrl}]`,
-      `[-webkit-mask-size:${imageMaskSize}]`,
-      `[mask-size:${imageMaskSize}]`,
+      `[-webkit-mask-size:${maskSize}]`,
+      `[mask-size:${maskSize}]`,
       `[-webkit-mask-repeat:no-repeat]`,
       `[mask-repeat:no-repeat]`,
       `[-webkit-mask-position:center]`,
