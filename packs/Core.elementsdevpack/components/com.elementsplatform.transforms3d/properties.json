@@ -198,7 +198,8 @@
           "title": "Translate",
           "heading": {},
           "ai": {
-            "visible": "transforms != 'none'"
+            "exclude": true,
+            "reason": "Inspector-only heading; not a settable property."
           },
           "visible": "globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"
         },
@@ -236,7 +237,8 @@
           "title": "Skew",
           "heading": {},
           "ai": {
-            "visible": "transforms != 'none'"
+            "exclude": true,
+            "reason": "Inspector-only heading; not a settable property."
           },
           "visible": "globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"
         },
@@ -304,7 +306,7 @@
           "heading": {},
           "ai": {
             "exclude": true,
-            "reason": "No base ai.name on this sibling to resolve the '{{value}}Hover' template against."
+            "reason": "Inspector-only heading; not a settable property."
           },
           "visible": "(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"
         },
@@ -343,7 +345,7 @@
           "heading": {},
           "ai": {
             "exclude": true,
-            "reason": "No base ai.name on this sibling to resolve the '{{value}}Hover' template against."
+            "reason": "Inspector-only heading; not a settable property."
           },
           "visible": "(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"
         },
@@ -618,7 +620,8 @@
           "title": "Rotate",
           "heading": {},
           "ai": {
-            "visible": "transforms3d != 'none'"
+            "exclude": true,
+            "reason": "Inspector-only heading; not a settable property."
           },
           "visible": "globalControlType3D == 'static' || ((globalControlType3D == 'hover' || globalControlType3D == 'mouse') && globalTransforms3DState == 'start')"
         },
@@ -687,7 +690,7 @@
           "heading": {},
           "ai": {
             "exclude": true,
-            "reason": "No base ai.name on this sibling to resolve the '{{value}}End' template against."
+            "reason": "Inspector-only heading; not a settable property."
           },
           "visible": "((globalControlType3D == 'hover' || globalControlType3D == 'mouse') && globalTransforms3DState == 'end')"
         },

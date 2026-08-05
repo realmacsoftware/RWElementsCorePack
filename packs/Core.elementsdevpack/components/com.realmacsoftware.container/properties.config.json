@@ -150,7 +150,7 @@
                 {
                     "title": "Align",
                     "id": "contentAlignSelf",
-                    "ai": { "name": "align", "description": "Block-axis alignment of the content box (CSS align-self)." },
+                    "ai": { "name": "contentAlign", "description": "Block-axis alignment of the content box (CSS align-self)." },
                     "format": "self-{{value}}",
                     "select": {
                         "default": "center",
@@ -181,7 +181,7 @@
                 {
                     "title": "Justify",
                     "id": "contentJustifySelf",
-                    "ai": { "name": "justify", "description": "Inline-axis alignment of the content box (CSS justify-self)." },
+                    "ai": { "name": "contentJustify", "description": "Inline-axis alignment of the content box (CSS justify-self)." },
                     "format": "justify-self-{{value}}",
                     "select": {
                         "default": "center",

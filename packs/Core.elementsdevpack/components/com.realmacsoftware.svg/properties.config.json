@@ -115,7 +115,7 @@
           "ai": {
             "name": "fillColor",
             "description": "SVG fill theme color.",
-            "visible": "fill == 'static'"
+            "visible": "fill != 'none'"
           },
           "title": "Color",
           "id": "fillColor",
@@ -132,7 +132,7 @@
           "ai": {
             "name": "fillColorOpacity",
             "description": "SVG fill color opacity, 0-100.",
-            "visible": "fill == 'static'"
+            "visible": "fill != 'none'"
           },
           "title": "Opacity",
           "id": "fillColorOpacity",

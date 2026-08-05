@@ -164,8 +164,8 @@
         {
           "visible": "globalGridOrFlexDisplayAs != 'default'",
           "ai": {
-            "exclude": true,
-            "reason": "Inspector UI mode toggle (Standard/Advanced); the grid/flex item properties it reveals are curated directly."
+            "name": "itemSettings",
+            "description": "Grid/flex item controls: 'basic' (span only on grid) or 'advanced' (placement lines, flex grow/shrink/basis, order, self-alignment on grid)."
           },
           "title": "Settings",
           "id": "globalGridOrFlexItemSettings",
@@ -267,7 +267,7 @@
           "ai": {
             "name": "colStart",
             "description": "Grid column start line (auto or 1-12).",
-            "visible": "actAs == 'grid'"
+            "visible": "actAs == 'grid' && itemSettings == 'advanced'"
           },
           "format": "col-start-{{value}}",
           "title": "Start",
@@ -337,7 +337,7 @@
           "ai": {
             "name": "colEnd",
             "description": "Grid column end line (auto or 1-13).",
-            "visible": "actAs == 'grid'"
+            "visible": "actAs == 'grid' && itemSettings == 'advanced'"
           },
           "format": "col-end-{{value}}",
           "title": "End",
@@ -489,7 +489,7 @@
           "ai": {
             "name": "rowStart",
             "description": "Grid row start line (auto or 1-12).",
-            "visible": "actAs == 'grid'"
+            "visible": "actAs == 'grid' && itemSettings == 'advanced'"
           },
           "format": "row-start-{{value}}",
           "title": "Start",
@@ -559,7 +559,7 @@
           "ai": {
             "name": "rowEnd",
             "description": "Grid row end line (auto or 1-13).",
-            "visible": "actAs == 'grid'"
+            "visible": "actAs == 'grid' && itemSettings == 'advanced'"
           },
           "format": "row-end-{{value}}",
           "title": "End",
@@ -640,8 +640,8 @@
         {
           "ai": {
             "name": "alignSelf",
-            "description": "Alignment of this item on the parent's cross axis, overriding the parent's align-items.",
-            "visible": "actAs != 'default'"
+            "description": "Alignment of this item on the parent's block axis (grid) or cross axis (flex), overriding the parent's align-items.",
+            "visible": "actAs == 'flex' || (actAs == 'grid' && itemSettings == 'advanced')"
           },
           "title": "Align",
           "id": "globalGridOrFlexItemAlignSelf",
@@ -677,7 +677,7 @@
           "ai": {
             "name": "justifySelf",
             "description": "Alignment of this item on the parent's inline axis, overriding the parent's justify-items.",
-            "visible": "actAs != 'default'"
+            "visible": "actAs == 'flex' || (actAs == 'grid' && itemSettings == 'advanced')"
           },
           "title": "Justify Self",
           "id": "globalGridOrFlexItemJustifySelf",
@@ -716,9 +716,6 @@
         },
         {
           "ai": {
-            "name": "alignSelf",
-            "description": "Alignment of this item on the parent's cross axis, overriding the parent's align-items.",
-            "visible": "actAs != 'default'",
             "exclude": true,
             "reason": "ActAsGridOrFlexItem embeds AlignSelf on both the grid and flex paths for the same property id; the grid-path declaration already curates 'alignSelf', whose ai.visible covers both modes."
           },
@@ -754,9 +751,6 @@
         },
         {
           "ai": {
-            "name": "justifySelf",
-            "description": "Alignment of this item on the parent's inline axis, overriding the parent's justify-items.",
-            "visible": "actAs != 'default'",
             "exclude": true,
             "reason": "ActAsGridOrFlexItem embeds JustifySelf on both the grid and flex paths for the same property id; the grid-path declaration already curates 'justifySelf', whose ai.visible covers both modes."
           },
@@ -795,7 +789,7 @@
           "ai": {
             "name": "order",
             "description": "Position of this item among its siblings: 'none' (source order), 'first', 'last', or 'custom' (use orderCustom).",
-            "visible": "actAs != 'default'"
+            "visible": "actAs != 'default' && itemSettings == 'advanced'"
           },
           "title": "Order",
           "id": "globalGridOrFlexItemOrder",
@@ -827,7 +821,7 @@
           "ai": {
             "name": "orderCustom",
             "description": "Explicit CSS order value. Lower numbers come first; sibling items must also set an order for it to have an effect.",
-            "visible": "actAs != 'default' && order == 'custom'"
+            "visible": "actAs != 'default' && itemSettings == 'advanced' && order == 'custom'"
           },
           "title": "Custom",
           "id": "globalGridOrFlexItemOrderCustom",
@@ -849,9 +843,9 @@
         {
           "visible": "globalGridOrFlexDisplayAs == 'flex' && globalGridOrFlexItemSettings == 'advanced'",
           "ai": {
-            "name": "flex",
+            "name": "flexShorthand",
             "description": "CSS flex shorthand: auto, none, 1, or initial.",
-            "visible": "actAs == 'flex'"
+            "visible": "actAs == 'flex' && itemSettings == 'advanced'"
           },
           "title": "Flex",
           "id": "globalFlexItemFlex",
@@ -883,7 +877,7 @@
           "ai": {
             "name": "flexGrow",
             "description": "Whether the item grows to fill free space.",
-            "visible": "actAs == 'flex'"
+            "visible": "actAs == 'flex' && itemSettings == 'advanced'"
           },
           "title": "Grow",
           "id": "globalFlexItemGrow",
@@ -910,7 +904,7 @@
           "ai": {
             "name": "flexShrink",
             "description": "Whether the item can shrink below its basis.",
-            "visible": "actAs == 'flex'"
+            "visible": "actAs == 'flex' && itemSettings == 'advanced'"
           },
           "title": "Shrink",
           "id": "globalFlexItemShrink",
@@ -937,7 +931,7 @@
           "ai": {
             "name": "flexBasis",
             "description": "Initial main-axis size (flex-basis), theme-size token.",
-            "visible": "actAs == 'flex'"
+            "visible": "actAs == 'flex' && itemSettings == 'advanced'"
           },
           "title": "Basis",
           "id": "globalFlexItemBasis",
@@ -1070,7 +1064,7 @@
           "title": "Align",
           "id": "contentAlignSelf",
           "ai": {
-            "name": "align",
+            "name": "contentAlign",
             "description": "Block-axis alignment of the content box (CSS align-self)."
           },
           "format": "self-{{value}}",
@@ -1104,7 +1098,7 @@
           "title": "Justify",
           "id": "contentJustifySelf",
           "ai": {
-            "name": "justify",
+            "name": "contentJustify",
             "description": "Inline-axis alignment of the content box (CSS justify-self)."
           },
           "format": "justify-self-{{value}}",
@@ -2712,7 +2706,8 @@
           "title": "Translate",
           "heading": {},
           "ai": {
-            "visible": "transforms != 'none'"
+            "exclude": true,
+            "reason": "Inspector-only heading; not a settable property."
           },
           "visible": "globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"
         },
@@ -2750,7 +2745,8 @@
           "title": "Skew",
           "heading": {},
           "ai": {
-            "visible": "transforms != 'none'"
+            "exclude": true,
+            "reason": "Inspector-only heading; not a settable property."
           },
           "visible": "globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"
         },
@@ -2818,7 +2814,7 @@
           "heading": {},
           "ai": {
             "exclude": true,
-            "reason": "No base ai.name on this sibling to resolve the '{{value}}Hover' template against."
+            "reason": "Inspector-only heading; not a settable property."
           },
           "visible": "(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"
         },
@@ -2857,7 +2853,7 @@
           "heading": {},
           "ai": {
             "exclude": true,
-            "reason": "No base ai.name on this sibling to resolve the '{{value}}Hover' template against."
+            "reason": "Inspector-only heading; not a settable property."
           },
           "visible": "(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"
         },
@@ -2985,7 +2981,7 @@
           "ai": {
             "name": "bgColor",
             "description": "Background theme color.",
-            "visible": "bg == 'static' && bgStyle == 'color'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'color'"
           },
           "title": "Color",
           "id": "globalBgColor",
@@ -3002,7 +2998,7 @@
           "ai": {
             "name": "bgColorOpacity",
             "description": "Background color opacity, 0-100.",
-            "visible": "bg == 'static' && bgStyle == 'color'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'color'"
           },
           "title": "Opacity",
           "id": "globalBgColorOpacity",
@@ -3059,7 +3055,7 @@
           "ai": {
             "name": "bgGradientType",
             "description": "Gradient type: linear, radial, or conic.",
-            "visible": "bg == 'static' && bgStyle == 'gradient'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient'"
           },
           "title": "Type",
           "id": "globalBgGradientType",
@@ -3087,7 +3083,7 @@
           "ai": {
             "name": "bgGradientDirection",
             "description": "Linear gradient direction.",
-            "visible": "bg == 'static' && bgStyle == 'gradient'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient' && bgGradientType == 'linear'"
           },
           "title": "Direction",
           "id": "globalBgGradientDirection",
@@ -3151,7 +3147,7 @@
           "ai": {
             "name": "bgGradientRadialPosition",
             "description": "Radial gradient center position.",
-            "visible": "bg == 'static' && bgStyle == 'gradient' && bgGradientType == 'radial'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient' && bgGradientType == 'radial'"
           },
           "title": "Position",
           "id": "globalBgGradientRadialPosition",
@@ -3203,7 +3199,7 @@
           "ai": {
             "name": "bgGradientConicAngle",
             "description": "Conic gradient start angle.",
-            "visible": "bg == 'static' && bgStyle == 'gradient' && bgGradientType == 'conic'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient' && bgGradientType == 'conic'"
           },
           "title": "Angle",
           "id": "globalBgGradientConicAngle",
@@ -3239,7 +3235,7 @@
           "ai": {
             "name": "bgGradientInterpolation",
             "description": "Gradient color interpolation mode.",
-            "visible": "bg == 'static' && bgStyle == 'gradient'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient'"
           },
           "title": "Interpolation",
           "id": "globalBgGradientInterpolation",
@@ -3296,7 +3292,7 @@
           "ai": {
             "name": "bgGradientFrom",
             "description": "Gradient start theme color.",
-            "visible": "bg == 'static' && bgStyle == 'gradient'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient'"
           },
           "title": "Color",
           "id": "globalBgGradientFromColor",
@@ -3313,7 +3309,7 @@
           "ai": {
             "name": "bgGradientFromOpacity",
             "description": "Gradient start color opacity, 0-100.",
-            "visible": "bg == 'static' && bgStyle == 'gradient'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient'"
           },
           "title": "Opacity",
           "id": "globalBgGradientFromOpacity",
@@ -3333,7 +3329,7 @@
           "ai": {
             "name": "bgGradientFromPosition",
             "description": "Gradient start stop position, 0-100.",
-            "visible": "bg == 'static' && bgStyle == 'gradient'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient'"
           },
           "title": "Position",
           "id": "globalBgGradientFromPosition",
@@ -3357,7 +3353,7 @@
           "ai": {
             "name": "bgGradientViaEnabled",
             "description": "Add a mid-stop (via) color to the gradient.",
-            "visible": "bg == 'static' && bgStyle == 'gradient'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient'"
           },
           "title": "Add Via",
           "id": "globalBgGradientViaEnabled",
@@ -3376,7 +3372,7 @@
           "ai": {
             "name": "bgGradientVia",
             "description": "Gradient mid-stop theme color.",
-            "visible": "bg == 'static' && bgStyle == 'gradient' && bgGradientViaEnabled == true"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient' && bgGradientViaEnabled == true"
           },
           "title": "Color",
           "id": "globalBgGradientViaColor",
@@ -3393,7 +3389,7 @@
           "ai": {
             "name": "bgGradientViaOpacity",
             "description": "Gradient mid-stop color opacity, 0-100.",
-            "visible": "bg == 'static' && bgStyle == 'gradient' && bgGradientViaEnabled == true"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient' && bgGradientViaEnabled == true"
           },
           "title": "Opacity",
           "id": "globalBgGradientViaOpacity",
@@ -3413,7 +3409,7 @@
           "ai": {
             "name": "bgGradientViaPosition",
             "description": "Gradient mid-stop position, 0-100.",
-            "visible": "bg == 'static' && bgStyle == 'gradient' && bgGradientViaEnabled == true"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient' && bgGradientViaEnabled == true"
           },
           "title": "Position",
           "id": "globalBgGradientViaPosition",
@@ -3442,7 +3438,7 @@
           "ai": {
             "name": "bgGradientTo",
             "description": "Gradient end theme color.",
-            "visible": "bg == 'static' && bgStyle == 'gradient'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient'"
           },
           "title": "Color",
           "id": "globalBgGradientToColor",
@@ -3459,7 +3455,7 @@
           "ai": {
             "name": "bgGradientToOpacity",
             "description": "Gradient end color opacity, 0-100.",
-            "visible": "bg == 'static' && bgStyle == 'gradient'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient'"
           },
           "title": "Opacity",
           "id": "globalBgGradientToOpacity",
@@ -3479,7 +3475,7 @@
           "ai": {
             "name": "bgGradientToPosition",
             "description": "Gradient end stop position, 0-100.",
-            "visible": "bg == 'static' && bgStyle == 'gradient'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient'"
           },
           "title": "Position",
           "id": "globalBgGradientToPosition",
@@ -3527,7 +3523,7 @@
           "ai": {
             "name": "bgGradientDirectionHover",
             "description": "Hover-state linear gradient direction.",
-            "visible": "bg == 'hover' && bgStyle == 'gradient'"
+            "visible": "bg == 'hover' && bgStyle == 'gradient' && bgGradientTypeHover == 'linear'"
           },
           "title": "Direction",
           "id": "globalBgGradientDirectionEnd",
@@ -3882,7 +3878,7 @@
           "ai": {
             "name": "bgImage",
             "description": "Background image resource ID.",
-            "visible": "bg == 'static' && bgStyle == 'image'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'image'"
           },
           "title": "Image",
           "id": "globalBgImageResource",
@@ -3896,7 +3892,7 @@
           "ai": {
             "name": "bgImagePosition",
             "description": "Background image position.",
-            "visible": "bg == 'static' && bgStyle == 'image'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'image'"
           },
           "title": "Position",
           "id": "globalBgImagePosition",
@@ -3953,7 +3949,7 @@
           "ai": {
             "name": "bgImageSize",
             "description": "Background image size (auto/cover/contain).",
-            "visible": "bg == 'static' && bgStyle == 'image'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'image'"
           },
           "title": "Size",
           "id": "globalBgImageSize",
@@ -3981,7 +3977,7 @@
           "ai": {
             "name": "bgImageRepeat",
             "description": "Background image repeat mode.",
-            "visible": "bg == 'static' && bgStyle == 'image'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'image'"
           },
           "title": "Repeat",
           "id": "globalBgImageRepeat",
@@ -4306,7 +4302,7 @@
           "ai": {
             "name": "overlayColor",
             "description": "Overlay theme color.",
-            "visible": "overlay == 'static' && overlayStyle == 'color'"
+            "visible": "(overlay == 'static' || overlay == 'hover') && overlayStyle == 'color'"
           },
           "title": "Color",
           "id": "globalOverlayColor",
@@ -4323,7 +4319,7 @@
           "ai": {
             "name": "overlayColorOpacity",
             "description": "Overlay color opacity, 0-100.",
-            "visible": "overlay == 'static' && overlayStyle == 'color'"
+            "visible": "(overlay == 'static' || overlay == 'hover') && overlayStyle == 'color'"
           },
           "title": "Opacity",
           "id": "globalOverlayColorOpacity",
@@ -4380,7 +4376,7 @@
           "ai": {
             "name": "overlayGradientType",
             "description": "Gradient type: linear, radial, or conic.",
-            "visible": "overlay == 'static' && overlayStyle == 'gradient'"
+            "visible": "(overlay == 'static' || overlay == 'hover') && overlayStyle == 'gradient'"
           },
           "title": "Type",
           "id": "globalOverlayGradientType",
@@ -4408,7 +4404,7 @@
           "ai": {
             "name": "overlayGradientDirection",
             "description": "Linear gradient direction.",
-            "visible": "overlay == 'static' && overlayStyle == 'gradient'"
+            "visible": "(overlay == 'static' || overlay == 'hover') && overlayStyle == 'gradient' && overlayGradientType == 'linear'"
           },
           "title": "Direction",
           "id": "globalOverlayGradientDirection",
@@ -4472,7 +4468,7 @@
           "ai": {
             "name": "overlayGradientRadialPosition",
             "description": "Radial gradient center position.",
-            "visible": "overlay == 'static' && overlayStyle == 'gradient' && overlayGradientType == 'radial'"
+            "visible": "(overlay == 'static' || overlay == 'hover') && overlayStyle == 'gradient' && overlayGradientType == 'radial'"
           },
           "title": "Position",
           "id": "globalOverlayGradientRadialPosition",
@@ -4524,7 +4520,7 @@
           "ai": {
             "name": "overlayGradientConicAngle",
             "description": "Conic gradient start angle.",
-            "visible": "overlay == 'static' && overlayStyle == 'gradient' && overlayGradientType == 'conic'"
+            "visible": "(overlay == 'static' || overlay == 'hover') && overlayStyle == 'gradient' && overlayGradientType == 'conic'"
           },
           "title": "Angle",
           "id": "globalOverlayGradientConicAngle",
@@ -4560,7 +4556,7 @@
           "ai": {
             "name": "overlayGradientInterpolation",
             "description": "Gradient color interpolation mode.",
-            "visible": "overlay == 'static' && overlayStyle == 'gradient'"
+            "visible": "(overlay == 'static' || overlay == 'hover') && overlayStyle == 'gradient'"
           },
           "title": "Interpolation",
           "id": "globalOverlayGradientInterpolation",
@@ -4617,7 +4613,7 @@
           "ai": {
             "name": "overlayGradientFrom",
             "description": "Gradient start theme color.",
-            "visible": "overlay == 'static' && overlayStyle == 'gradient'"
+            "visible": "(overlay == 'static' || overlay == 'hover') && overlayStyle == 'gradient'"
           },
           "title": "Color",
           "id": "globalOverlayGradientFromColor",
@@ -4634,7 +4630,7 @@
           "ai": {
             "name": "overlayGradientFromOpacity",
             "description": "Gradient start color opacity, 0-100.",
-            "visible": "overlay == 'static' && overlayStyle == 'gradient'"
+            "visible": "(overlay == 'static' || overlay == 'hover') && overlayStyle == 'gradient'"
           },
           "title": "Opacity",
           "id": "globalOverlayGradientFromOpacity",
@@ -4654,7 +4650,7 @@
           "ai": {
             "name": "overlayGradientFromPosition",
             "description": "Gradient start stop position, 0-100.",
-            "visible": "overlay == 'static' && overlayStyle == 'gradient'"
+            "visible": "(overlay == 'static' || overlay == 'hover') && overlayStyle == 'gradient'"
           },
           "title": "Position",
           "id": "globalOverlayGradientFromPosition",
@@ -4678,7 +4674,7 @@
           "ai": {
             "name": "overlayGradientViaEnabled",
             "description": "Add a mid-stop (via) color to the gradient.",
-            "visible": "overlay == 'static' && overlayStyle == 'gradient'"
+            "visible": "(overlay == 'static' || overlay == 'hover') && overlayStyle == 'gradient'"
           },
           "title": "Add Via",
           "id": "globalOverlayGradientViaEnabled",
@@ -4696,7 +4692,7 @@
           "ai": {
             "name": "overlayGradientVia",
             "description": "Gradient mid-stop theme color.",
-            "visible": "overlay == 'static' && overlayStyle == 'gradient' && overlayGradientViaEnabled == true"
+            "visible": "(overlay == 'static' || overlay == 'hover') && overlayStyle == 'gradient' && overlayGradientViaEnabled == true"
           },
           "title": "Color",
           "id": "globalOverlayGradientViaColor",
@@ -4713,7 +4709,7 @@
           "ai": {
             "name": "overlayGradientViaOpacity",
             "description": "Gradient mid-stop color opacity, 0-100.",
-            "visible": "overlay == 'static' && overlayStyle == 'gradient' && overlayGradientViaEnabled == true"
+            "visible": "(overlay == 'static' || overlay == 'hover') && overlayStyle == 'gradient' && overlayGradientViaEnabled == true"
           },
           "title": "Opacity",
           "id": "globalOverlayGradientViaOpacity",
@@ -4733,7 +4729,7 @@
           "ai": {
             "name": "overlayGradientViaPosition",
             "description": "Gradient mid-stop position, 0-100.",
-            "visible": "overlay == 'static' && overlayStyle == 'gradient' && overlayGradientViaEnabled == true"
+            "visible": "(overlay == 'static' || overlay == 'hover') && overlayStyle == 'gradient' && overlayGradientViaEnabled == true"
           },
           "title": "Position",
           "id": "globalOverlayGradientViaPosition",
@@ -4762,7 +4758,7 @@
           "ai": {
             "name": "overlayGradientTo",
             "description": "Gradient end theme color.",
-            "visible": "overlay == 'static' && overlayStyle == 'gradient'"
+            "visible": "(overlay == 'static' || overlay == 'hover') && overlayStyle == 'gradient'"
           },
           "title": "Color",
           "id": "globalOverlayGradientToColor",
@@ -4779,7 +4775,7 @@
           "ai": {
             "name": "overlayGradientToOpacity",
             "description": "Gradient end color opacity, 0-100.",
-            "visible": "overlay == 'static' && overlayStyle == 'gradient'"
+            "visible": "(overlay == 'static' || overlay == 'hover') && overlayStyle == 'gradient'"
           },
           "title": "Opacity",
           "id": "globalOverlayGradientToOpacity",
@@ -4799,7 +4795,7 @@
           "ai": {
             "name": "overlayGradientToPosition",
             "description": "Gradient end stop position, 0-100.",
-            "visible": "overlay == 'static' && overlayStyle == 'gradient'"
+            "visible": "(overlay == 'static' || overlay == 'hover') && overlayStyle == 'gradient'"
           },
           "title": "Position",
           "id": "globalOverlayGradientToPosition",
@@ -5258,7 +5254,7 @@
           "ai": {
             "name": "overlayImage",
             "description": "Overlay image resource ID.",
-            "visible": "overlay == 'static' && overlayStyle == 'image'"
+            "visible": "(overlay == 'static' || overlay == 'hover') && overlayStyle == 'image'"
           },
           "title": "Image",
           "id": "globalOverlayImageResource",
@@ -5277,7 +5273,7 @@
           "ai": {
             "name": "overlayImagePositionX",
             "description": "Overlay image horizontal position.",
-            "visible": "overlay == 'static' && overlayStyle == 'image'"
+            "visible": "(overlay == 'static' || overlay == 'hover') && overlayStyle == 'image'"
           },
           "title": "Horizontal",
           "id": "globalOverlayImagePositionX",
@@ -5304,7 +5300,7 @@
           "ai": {
             "name": "overlayImagePositionY",
             "description": "Overlay image vertical position.",
-            "visible": "overlay == 'static' && overlayStyle == 'image'"
+            "visible": "(overlay == 'static' || overlay == 'hover') && overlayStyle == 'image'"
           },
           "title": "Vertical",
           "id": "globalOverlayImagePositionY",
@@ -5337,7 +5333,7 @@
           "ai": {
             "name": "overlayImageSize",
             "description": "Overlay image size (auto/cover/contain).",
-            "visible": "overlay == 'static' && overlayStyle == 'image'"
+            "visible": "(overlay == 'static' || overlay == 'hover') && overlayStyle == 'image'"
           },
           "title": "Size",
           "id": "globalOverlayImageSize",
@@ -5365,7 +5361,7 @@
           "ai": {
             "name": "overlayImageRepeat",
             "description": "Overlay image repeat mode.",
-            "visible": "overlay == 'static' && overlayStyle == 'image'"
+            "visible": "(overlay == 'static' || overlay == 'hover') && overlayStyle == 'image'"
           },
           "title": "Repeat",
           "id": "globalOverlayImageRepeat",
@@ -5596,7 +5592,7 @@
           "ai": {
             "name": "borderStyle",
             "description": "Border line style.",
-            "visible": "border == 'static'"
+            "visible": "(border == 'static' || border == 'hover')"
           },
           "format": "border-{{value}}",
           "segmented": {
@@ -5624,7 +5620,7 @@
           "ai": {
             "name": "borderColor",
             "description": "Border theme color.",
-            "visible": "border == 'static'"
+            "visible": "(border == 'static' || border == 'hover')"
           },
           "format": "border-{{value}}",
           "themeColor": {
@@ -5641,7 +5637,7 @@
           "ai": {
             "name": "borderColorOpacity",
             "description": "Border color opacity, 0-100.",
-            "visible": "border == 'static'"
+            "visible": "(border == 'static' || border == 'hover')"
           },
           "format": "[{{value}}%]",
           "slider": {
@@ -5660,7 +5656,7 @@
           "ai": {
             "name": "borderWidth",
             "description": "Border width theme token per side.",
-            "visible": "border == 'static'"
+            "visible": "(border == 'static' || border == 'hover')"
           },
           "themeBorderWidth": {
             "default": {
@@ -5681,7 +5677,7 @@
           "ai": {
             "name": "borderRadius",
             "description": "Border radius theme token per corner.",
-            "visible": "border == 'static'"
+            "visible": "(border == 'static' || border == 'hover')"
           },
           "title": "Radius",
           "id": "globalBordersRadius",
@@ -5900,7 +5896,7 @@
           "id": "globalHTMLTagCustom",
           "ai": {
             "name": "tagCustom",
-            "description": "Custom HTML tag name, without brackets, e.g. 'figure'. Only applies when tag is 'custom'."
+            "description": "Custom HTML tag name, without brackets, e.g. 'figure'."
           },
           "responsive": false,
           "text": {

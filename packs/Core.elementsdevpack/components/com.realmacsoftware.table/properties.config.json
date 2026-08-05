@@ -36,7 +36,7 @@
           "visible": "dataSource == 'csvFile'",
           "ai": {
             "name": "csvFile",
-            "description": "CSV file resource ID bound to the table when dataSource is 'csvFile'."
+            "description": "CSV file resource ID bound to the table."
           },
           "resource": {
             "accepts": ".csv"
@@ -109,7 +109,7 @@
           "responsive": false,
           "ai": {
             "name": "rowCount",
-            "description": "Number of manual rows to render when dataSource is 'manual'."
+            "description": "Number of manual body rows to render."
           },
           "number": {
             "default": 3

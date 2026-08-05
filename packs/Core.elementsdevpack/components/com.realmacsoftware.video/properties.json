@@ -124,8 +124,6 @@
           "title": "Blur",
           "id": "videoLightboxGlobalFiltersBackdropBlur",
           "ai": {
-            "name": "backdropBlur",
-            "description": "Backdrop blur filter, in pixels.",
             "exclude": true,
             "reason": "Avoids an alias collision: this component's own Filters backdrop blur already curates as 'backdropBlur', so the lightbox's BackdropBlur instance must opt out."
           },
@@ -1589,7 +1587,8 @@
           "title": "Translate",
           "heading": {},
           "ai": {
-            "visible": "transforms != 'none'"
+            "exclude": true,
+            "reason": "Inspector-only heading; not a settable property."
           },
           "visible": "globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"
         },
@@ -1627,7 +1626,8 @@
           "title": "Skew",
           "heading": {},
           "ai": {
-            "visible": "transforms != 'none'"
+            "exclude": true,
+            "reason": "Inspector-only heading; not a settable property."
           },
           "visible": "globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"
         },
@@ -1695,7 +1695,7 @@
           "heading": {},
           "ai": {
             "exclude": true,
-            "reason": "No base ai.name on this sibling to resolve the '{{value}}Hover' template against."
+            "reason": "Inspector-only heading; not a settable property."
           },
           "visible": "(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"
         },
@@ -1734,7 +1734,7 @@
           "heading": {},
           "ai": {
             "exclude": true,
-            "reason": "No base ai.name on this sibling to resolve the '{{value}}Hover' template against."
+            "reason": "Inspector-only heading; not a settable property."
           },
           "visible": "(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"
         },
@@ -2113,7 +2113,7 @@
           "ai": {
             "name": "borderStyle",
             "description": "Border line style.",
-            "visible": "border == 'static'"
+            "visible": "(border == 'static' || border == 'hover')"
           },
           "format": "border-{{value}}",
           "segmented": {
@@ -2141,7 +2141,7 @@
           "ai": {
             "name": "borderColor",
             "description": "Border theme color.",
-            "visible": "border == 'static'"
+            "visible": "(border == 'static' || border == 'hover')"
           },
           "format": "border-{{value}}",
           "themeColor": {
@@ -2158,7 +2158,7 @@
           "ai": {
             "name": "borderColorOpacity",
             "description": "Border color opacity, 0-100.",
-            "visible": "border == 'static'"
+            "visible": "(border == 'static' || border == 'hover')"
           },
           "format": "[{{value}}%]",
           "slider": {
@@ -2177,7 +2177,7 @@
           "ai": {
             "name": "borderWidth",
             "description": "Border width theme token per side.",
-            "visible": "border == 'static'"
+            "visible": "(border == 'static' || border == 'hover')"
           },
           "themeBorderWidth": {
             "default": {
@@ -2199,7 +2199,7 @@
           "ai": {
             "name": "borderRadius",
             "description": "Border radius theme token per corner.",
-            "visible": "border == 'static'"
+            "visible": "(border == 'static' || border == 'hover')"
           },
           "format": "{{value}}",
           "themeBorderRadius": {

@@ -2770,7 +2770,8 @@
           "title": "Translate",
           "heading": {},
           "ai": {
-            "visible": "transforms != 'none'"
+            "exclude": true,
+            "reason": "Inspector-only heading; not a settable property."
           },
           "visible": "globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"
         },
@@ -2808,7 +2809,8 @@
           "title": "Skew",
           "heading": {},
           "ai": {
-            "visible": "transforms != 'none'"
+            "exclude": true,
+            "reason": "Inspector-only heading; not a settable property."
           },
           "visible": "globalControlTypeTransforms == 'static' || (globalControlTypeTransforms == 'hover' && globalTransformsState == 'start')"
         },
@@ -2876,7 +2878,7 @@
           "heading": {},
           "ai": {
             "exclude": true,
-            "reason": "No base ai.name on this sibling to resolve the '{{value}}Hover' template against."
+            "reason": "Inspector-only heading; not a settable property."
           },
           "visible": "(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"
         },
@@ -2915,7 +2917,7 @@
           "heading": {},
           "ai": {
             "exclude": true,
-            "reason": "No base ai.name on this sibling to resolve the '{{value}}Hover' template against."
+            "reason": "Inspector-only heading; not a settable property."
           },
           "visible": "(globalControlTypeTransforms == 'hover' && globalTransformsState == 'end')"
         },
@@ -3039,7 +3041,7 @@
           "ai": {
             "name": "bgColor",
             "description": "Background theme color.",
-            "visible": "bg == 'static' && bgStyle == 'color'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'color'"
           },
           "title": "Color",
           "id": "globalBgColor",
@@ -3056,7 +3058,7 @@
           "ai": {
             "name": "bgColorOpacity",
             "description": "Background color opacity, 0-100.",
-            "visible": "bg == 'static' && bgStyle == 'color'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'color'"
           },
           "title": "Opacity",
           "id": "globalBgColorOpacity",
@@ -3113,7 +3115,7 @@
           "ai": {
             "name": "bgGradientType",
             "description": "Gradient type: linear, radial, or conic.",
-            "visible": "bg == 'static' && bgStyle == 'gradient'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient'"
           },
           "title": "Type",
           "id": "globalBgGradientType",
@@ -3141,7 +3143,7 @@
           "ai": {
             "name": "bgGradientDirection",
             "description": "Linear gradient direction.",
-            "visible": "bg == 'static' && bgStyle == 'gradient' && bgGradientType == 'linear'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient' && bgGradientType == 'linear'"
           },
           "title": "Direction",
           "id": "globalBgGradientDirection",
@@ -3205,7 +3207,7 @@
           "ai": {
             "name": "bgGradientRadialPosition",
             "description": "Radial gradient center position.",
-            "visible": "bg == 'static' && bgStyle == 'gradient' && bgGradientType == 'radial'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient' && bgGradientType == 'radial'"
           },
           "title": "Position",
           "id": "globalBgGradientRadialPosition",
@@ -3257,7 +3259,7 @@
           "ai": {
             "name": "bgGradientConicAngle",
             "description": "Conic gradient start angle.",
-            "visible": "bg == 'static' && bgStyle == 'gradient' && bgGradientType == 'conic'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient' && bgGradientType == 'conic'"
           },
           "title": "Angle",
           "id": "globalBgGradientConicAngle",
@@ -3293,7 +3295,7 @@
           "ai": {
             "name": "bgGradientInterpolation",
             "description": "Gradient color interpolation mode.",
-            "visible": "bg == 'static' && bgStyle == 'gradient'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient'"
           },
           "title": "Interpolation",
           "id": "globalBgGradientInterpolation",
@@ -3350,7 +3352,7 @@
           "ai": {
             "name": "bgGradientFrom",
             "description": "Gradient start theme color.",
-            "visible": "bg == 'static' && bgStyle == 'gradient'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient'"
           },
           "title": "Color",
           "id": "globalBgGradientFromColor",
@@ -3367,7 +3369,7 @@
           "ai": {
             "name": "bgGradientFromOpacity",
             "description": "Gradient start color opacity, 0-100.",
-            "visible": "bg == 'static' && bgStyle == 'gradient'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient'"
           },
           "title": "Opacity",
           "id": "globalBgGradientFromOpacity",
@@ -3387,7 +3389,7 @@
           "ai": {
             "name": "bgGradientFromPosition",
             "description": "Gradient start stop position, 0-100.",
-            "visible": "bg == 'static' && bgStyle == 'gradient'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient'"
           },
           "title": "Position",
           "id": "globalBgGradientFromPosition",
@@ -3411,7 +3413,7 @@
           "ai": {
             "name": "bgGradientViaEnabled",
             "description": "Add a mid-stop (via) color to the gradient.",
-            "visible": "bg == 'static' && bgStyle == 'gradient'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient'"
           },
           "title": "Add Via",
           "id": "globalBgGradientViaEnabled",
@@ -3430,7 +3432,7 @@
           "ai": {
             "name": "bgGradientVia",
             "description": "Gradient mid-stop theme color.",
-            "visible": "bg == 'static' && bgStyle == 'gradient' && bgGradientViaEnabled == true"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient' && bgGradientViaEnabled == true"
           },
           "title": "Color",
           "id": "globalBgGradientViaColor",
@@ -3447,7 +3449,7 @@
           "ai": {
             "name": "bgGradientViaOpacity",
             "description": "Gradient mid-stop color opacity, 0-100.",
-            "visible": "bg == 'static' && bgStyle == 'gradient' && bgGradientViaEnabled == true"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient' && bgGradientViaEnabled == true"
           },
           "title": "Opacity",
           "id": "globalBgGradientViaOpacity",
@@ -3467,7 +3469,7 @@
           "ai": {
             "name": "bgGradientViaPosition",
             "description": "Gradient mid-stop position, 0-100.",
-            "visible": "bg == 'static' && bgStyle == 'gradient' && bgGradientViaEnabled == true"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient' && bgGradientViaEnabled == true"
           },
           "title": "Position",
           "id": "globalBgGradientViaPosition",
@@ -3496,7 +3498,7 @@
           "ai": {
             "name": "bgGradientTo",
             "description": "Gradient end theme color.",
-            "visible": "bg == 'static' && bgStyle == 'gradient'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient'"
           },
           "title": "Color",
           "id": "globalBgGradientToColor",
@@ -3513,7 +3515,7 @@
           "ai": {
             "name": "bgGradientToOpacity",
             "description": "Gradient end color opacity, 0-100.",
-            "visible": "bg == 'static' && bgStyle == 'gradient'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient'"
           },
           "title": "Opacity",
           "id": "globalBgGradientToOpacity",
@@ -3533,7 +3535,7 @@
           "ai": {
             "name": "bgGradientToPosition",
             "description": "Gradient end stop position, 0-100.",
-            "visible": "bg == 'static' && bgStyle == 'gradient'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'gradient'"
           },
           "title": "Position",
           "id": "globalBgGradientToPosition",
@@ -3936,7 +3938,7 @@
           "ai": {
             "name": "bgImage",
             "description": "Background image resource ID.",
-            "visible": "bg == 'static' && bgStyle == 'image'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'image'"
           },
           "title": "Image",
           "id": "globalBgImageResource",
@@ -3950,7 +3952,7 @@
           "ai": {
             "name": "bgImagePosition",
             "description": "Background image position.",
-            "visible": "bg == 'static' && bgStyle == 'image'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'image'"
           },
           "title": "Position",
           "id": "globalBgImagePosition",
@@ -4007,7 +4009,7 @@
           "ai": {
             "name": "bgImageSize",
             "description": "Background image size (auto/cover/contain).",
-            "visible": "bg == 'static' && bgStyle == 'image'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'image'"
           },
           "title": "Size",
           "id": "globalBgImageSize",
@@ -4035,7 +4037,7 @@
           "ai": {
             "name": "bgImageRepeat",
             "description": "Background image repeat mode.",
-            "visible": "bg == 'static' && bgStyle == 'image'"
+            "visible": "(bg == 'static' || bg == 'hover') && bgStyle == 'image'"
           },
           "title": "Repeat",
           "id": "globalBgImageRepeat",
@@ -4299,7 +4301,7 @@
           "ai": {
             "name": "borderStyle",
             "description": "Border line style.",
-            "visible": "border == 'static'"
+            "visible": "(border == 'static' || border == 'hover')"
           },
           "format": "border-{{value}}",
           "segmented": {
@@ -4327,7 +4329,7 @@
           "ai": {
             "name": "borderColor",
             "description": "Border theme color.",
-            "visible": "border == 'static'"
+            "visible": "(border == 'static' || border == 'hover')"
           },
           "format": "border-{{value}}",
           "themeColor": {
@@ -4344,7 +4346,7 @@
           "ai": {
             "name": "borderColorOpacity",
             "description": "Border color opacity, 0-100.",
-            "visible": "border == 'static'"
+            "visible": "(border == 'static' || border == 'hover')"
           },
           "format": "[{{value}}%]",
           "slider": {
@@ -4363,7 +4365,7 @@
           "ai": {
             "name": "borderWidth",
             "description": "Border width theme token per side.",
-            "visible": "border == 'static'"
+            "visible": "(border == 'static' || border == 'hover')"
           },
           "themeBorderWidth": {
             "default": {
@@ -4385,7 +4387,7 @@
           "ai": {
             "name": "borderRadius",
             "description": "Border radius theme token per corner.",
-            "visible": "border == 'static'"
+            "visible": "(border == 'static' || border == 'hover')"
           },
           "format": "{{value}}",
           "themeBorderRadius": {

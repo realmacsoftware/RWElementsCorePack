@@ -368,8 +368,8 @@
         {
           "visible": "globalGridOrFlexDisplayAs != 'default'",
           "ai": {
-            "exclude": true,
-            "reason": "Inspector UI mode toggle (Standard/Advanced); the grid/flex item properties it reveals are curated directly."
+            "name": "itemSettings",
+            "description": "Grid/flex item controls: 'basic' (span only on grid) or 'advanced' (placement lines, flex grow/shrink/basis, order, self-alignment on grid)."
           },
           "title": "Settings",
           "id": "globalGridOrFlexItemSettings",
@@ -471,7 +471,7 @@
           "ai": {
             "name": "colStart",
             "description": "Grid column start line (auto or 1-12).",
-            "visible": "actAs == 'grid'"
+            "visible": "actAs == 'grid' && itemSettings == 'advanced'"
           },
           "format": "col-start-{{value}}",
           "title": "Start",
@@ -541,7 +541,7 @@
           "ai": {
             "name": "colEnd",
             "description": "Grid column end line (auto or 1-13).",
-            "visible": "actAs == 'grid'"
+            "visible": "actAs == 'grid' && itemSettings == 'advanced'"
           },
           "format": "col-end-{{value}}",
           "title": "End",
@@ -693,7 +693,7 @@
           "ai": {
             "name": "rowStart",
             "description": "Grid row start line (auto or 1-12).",
-            "visible": "actAs == 'grid'"
+            "visible": "actAs == 'grid' && itemSettings == 'advanced'"
           },
           "format": "row-start-{{value}}",
           "title": "Start",
@@ -763,7 +763,7 @@
           "ai": {
             "name": "rowEnd",
             "description": "Grid row end line (auto or 1-13).",
-            "visible": "actAs == 'grid'"
+            "visible": "actAs == 'grid' && itemSettings == 'advanced'"
           },
           "format": "row-end-{{value}}",
           "title": "End",
@@ -844,8 +844,8 @@
         {
           "ai": {
             "name": "alignSelf",
-            "description": "Alignment of this item on the parent's cross axis, overriding the parent's align-items.",
-            "visible": "actAs != 'default'"
+            "description": "Alignment of this item on the parent's block axis (grid) or cross axis (flex), overriding the parent's align-items.",
+            "visible": "actAs == 'flex' || (actAs == 'grid' && itemSettings == 'advanced')"
           },
           "title": "Align",
           "id": "globalGridOrFlexItemAlignSelf",
@@ -881,7 +881,7 @@
           "ai": {
             "name": "justifySelf",
             "description": "Alignment of this item on the parent's inline axis, overriding the parent's justify-items.",
-            "visible": "actAs != 'default'"
+            "visible": "actAs == 'flex' || (actAs == 'grid' && itemSettings == 'advanced')"
           },
           "title": "Justify Self",
           "id": "globalGridOrFlexItemJustifySelf",
@@ -920,9 +920,6 @@
         },
         {
           "ai": {
-            "name": "alignSelf",
-            "description": "Alignment of this item on the parent's cross axis, overriding the parent's align-items.",
-            "visible": "actAs != 'default'",
             "exclude": true,
             "reason": "ActAsGridOrFlexItem embeds AlignSelf on both the grid and flex paths for the same property id; the grid-path declaration already curates 'alignSelf', whose ai.visible covers both modes."
           },
@@ -958,9 +955,6 @@
         },
         {
           "ai": {
-            "name": "justifySelf",
-            "description": "Alignment of this item on the parent's inline axis, overriding the parent's justify-items.",
-            "visible": "actAs != 'default'",
             "exclude": true,
             "reason": "ActAsGridOrFlexItem embeds JustifySelf on both the grid and flex paths for the same property id; the grid-path declaration already curates 'justifySelf', whose ai.visible covers both modes."
           },
@@ -999,7 +993,7 @@
           "ai": {
             "name": "order",
             "description": "Position of this item among its siblings: 'none' (source order), 'first', 'last', or 'custom' (use orderCustom).",
-            "visible": "actAs != 'default'"
+            "visible": "actAs != 'default' && itemSettings == 'advanced'"
           },
           "title": "Order",
           "id": "globalGridOrFlexItemOrder",
@@ -1031,7 +1025,7 @@
           "ai": {
             "name": "orderCustom",
             "description": "Explicit CSS order value. Lower numbers come first; sibling items must also set an order for it to have an effect.",
-            "visible": "actAs != 'default' && order == 'custom'"
+            "visible": "actAs != 'default' && itemSettings == 'advanced' && order == 'custom'"
           },
           "title": "Custom",
           "id": "globalGridOrFlexItemOrderCustom",
@@ -1053,9 +1047,9 @@
         {
           "visible": "globalGridOrFlexDisplayAs == 'flex' && globalGridOrFlexItemSettings == 'advanced'",
           "ai": {
-            "name": "flex",
+            "name": "flexShorthand",
             "description": "CSS flex shorthand: auto, none, 1, or initial.",
-            "visible": "actAs == 'flex'"
+            "visible": "actAs == 'flex' && itemSettings == 'advanced'"
           },
           "title": "Flex",
           "id": "globalFlexItemFlex",
@@ -1087,7 +1081,7 @@
           "ai": {
             "name": "flexGrow",
             "description": "Whether the item grows to fill free space.",
-            "visible": "actAs == 'flex'"
+            "visible": "actAs == 'flex' && itemSettings == 'advanced'"
           },
           "title": "Grow",
           "id": "globalFlexItemGrow",
@@ -1114,7 +1108,7 @@
           "ai": {
             "name": "flexShrink",
             "description": "Whether the item can shrink below its basis.",
-            "visible": "actAs == 'flex'"
+            "visible": "actAs == 'flex' && itemSettings == 'advanced'"
           },
           "title": "Shrink",
           "id": "globalFlexItemShrink",
@@ -1141,7 +1135,7 @@
           "ai": {
             "name": "flexBasis",
             "description": "Initial main-axis size (flex-basis), theme-size token.",
-            "visible": "actAs == 'flex'"
+            "visible": "actAs == 'flex' && itemSettings == 'advanced'"
           },
           "title": "Basis",
           "id": "globalFlexItemBasis",
