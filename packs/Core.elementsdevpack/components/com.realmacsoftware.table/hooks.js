@@ -868,6 +868,12 @@ const transformHook = (rw) => {
     searchPlaceholder,
     showPagination,
     rowsPerPage,
+    showFirstLast,
+    paginationPrevLabel,
+    paginationNextLabel,
+    paginationFirstLabel,
+    paginationLastLabel,
+    paginationPageText,
     // Search bar styling
     searchPadding,
     searchMarginBottom,
@@ -906,8 +912,10 @@ const transformHook = (rw) => {
   const wantsFooter = showFooter === true || showFooter === "true";
   const wantsSearch = showSearch === true || showSearch === "true";
   const wantsPagination = showPagination === true || showPagination === "true";
+  const wantsFirstLast = showFirstLast === true || showFirstLast === "true";
   const wantsRowHover = enableRowHover === true || enableRowHover === "true";
   const perPage = Math.max(1, parseInt(rowsPerPage) || 10);
+  const pageTextFormat = paginationPageText || "Page {page} of {total}";
   const resolveColumnAlignment = (columnAlignment, fallback) => columnAlignment || fallback || "";
   const processedColumns = (columns == null ? void 0 : columns.map((col, index) => {
     const isDropzone = col.cellMode === "dropzone";
@@ -1115,7 +1123,15 @@ const transformHook = (rw) => {
     showFooter: wantsFooter,
     showSearch: wantsSearch,
     showPagination: wantsPagination,
+    showFirstLast: wantsFirstLast,
     searchPlaceholder: searchPlaceholder || "Search...",
+    paginationPrevLabel: paginationPrevLabel || "Previous",
+    paginationNextLabel: paginationNextLabel || "Next",
+    paginationFirstLabel: paginationFirstLabel || "First",
+    paginationLastLabel: paginationLastLabel || "Last",
+    paginationPageText: pageTextFormat,
+    // Pre-substituted variant for the static edit-mode pagination mock
+    paginationPageTextStatic: pageTextFormat.replace("{page}", "1").replace("{total}", "1"),
     edit,
     alpineConfig: JSON.stringify(alpineConfig).replace(/"/g, "'"),
     csvColumnMeta: JSON.stringify(csvColumnMeta),
