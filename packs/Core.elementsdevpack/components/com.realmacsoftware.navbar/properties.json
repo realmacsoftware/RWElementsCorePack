@@ -2196,7 +2196,7 @@
           "id": "globalBoxShadowEnd",
           "ai": {
             "name": "boxShadowHover",
-            "description": "Box shadow size, a theme shadow token. Pair with boxShadowColor and boxShadowOpacity.",
+            "description": "Hover-state box shadow size, a theme shadow token. Pair with boxShadowColorHover and boxShadowOpacityHover.",
             "visible": "effects == 'hover'"
           },
           "responsive": false,
