@@ -95,6 +95,17 @@ const getHoverPrefix = (node = {}, applyTo = "", hoverGroup = "self", customId =
     return `group-hover/${node.id}`;
   return hoverGroup === "self" ? needsPeerPrefix ? `peer-hover` : "hover" : `group-hover/${hoverGroup}`;
 };
+const switchToBool = (value) => {
+  if (value === true || value === false) {
+    return value;
+  }
+  if (typeof value === "string") {
+    const base = value.trim().split(/\s+/)[0];
+    if (base === "true") return true;
+    if (base === "false") return false;
+  }
+  return void 0;
+};
 const globalEffects = (app, args = {}) => {
   const {
     globalEffectsApplyTo: applyTo,
@@ -283,7 +294,7 @@ const globalSizing = (app) => {
     globalMaxHeight: maxHeight
   } = app.props;
   const classes = classnames([width, height]);
-  if (minMaxEnabled === true) {
+  if (switchToBool(minMaxEnabled) === true) {
     classes.add([minWidth, minHeight, maxWidth, maxHeight]);
   }
   return classes.toString();
@@ -294,7 +305,7 @@ const globalSpacing = (app) => {
     globalMargin: margin,
     globalPadding: padding
   } = app.props;
-  if (enabled === false) {
+  if (switchToBool(enabled) === false) {
     return false;
   }
   return classnames([margin, padding]).toString();

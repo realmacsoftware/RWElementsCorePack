@@ -127,6 +127,17 @@ const globalHTMLTag = (app, fallback = "div") => {
   }
   return globalHTMLTag2 || fallback;
 };
+const switchToBool = (value) => {
+  if (value === true || value === false) {
+    return value;
+  }
+  if (typeof value === "string") {
+    const base = value.trim().split(/\s+/)[0];
+    if (base === "true") return true;
+    if (base === "false") return false;
+  }
+  return void 0;
+};
 const getOrderClasses = (orderByBreakpoint = {}, orderCustomByBreakpoint = {}, breakpointNames = []) => {
   const allBreakpoints = ["base", ...breakpointNames];
   const getCustomValue = (currentBreakpoint) => {
@@ -274,7 +285,7 @@ const globalSizingContainer = (app) => {
     widthClasses[widthType],
     heightClasses[heightType]
   ]);
-  if (minMaxEnabled === true) {
+  if (switchToBool(minMaxEnabled) === true) {
     classes.add([minWidth, minHeight, maxWidth, maxHeight]);
   }
   return classes.toString();
@@ -285,7 +296,7 @@ const globalSpacing = (app) => {
     globalMargin: margin,
     globalPadding: padding
   } = app.props;
-  if (enabled === false) {
+  if (switchToBool(enabled) === false) {
     return false;
   }
   return classnames([margin, padding]).toString();

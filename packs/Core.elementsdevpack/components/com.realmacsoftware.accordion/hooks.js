@@ -95,7 +95,7 @@ const globalBgGradient = (app, args) => {
     toOpacity,
     toPosition
   ]);
-  if (viaEnabled === true) {
+  if (switchToBool(viaEnabled) === true) {
     classes.add([viaColor, viaOpacity, viaPosition]);
   }
   if (controlType == "hover") {
@@ -154,7 +154,7 @@ const globalBgGradient = (app, args) => {
         toOpacityEnd.replace(/hover:/g, "focus:")
       ]);
     }
-    if (viaEnabledEnd === true) {
+    if (switchToBool(viaEnabledEnd) === true) {
       if (wantsPeer) {
         classes.add([
           viaColorEnd.replace(/hover:/g, "peer-hover:"),
@@ -525,6 +525,17 @@ const resolveGradientImageClass = (type, linearDirection, radialPosition, conicA
 const injectPrefixOnDarkModeColors = (prefix, classes) => {
   return classes.replace(/dark:(.*)/g, `dark:${prefix}:$1`);
 };
+const switchToBool = (value) => {
+  if (value === true || value === false) {
+    return value;
+  }
+  if (typeof value === "string") {
+    const base = value.trim().split(/\s+/)[0];
+    if (base === "true") return true;
+    if (base === "false") return false;
+  }
+  return void 0;
+};
 const globalEffects = (app, args = {}) => {
   const {
     globalEffectsApplyTo: applyTo,
@@ -713,7 +724,7 @@ const globalSizing = (app) => {
     globalMaxHeight: maxHeight
   } = app.props;
   const classes = classnames([width, height]);
-  if (minMaxEnabled === true) {
+  if (switchToBool(minMaxEnabled) === true) {
     classes.add([minWidth, minHeight, maxWidth, maxHeight]);
   }
   return classes.toString();
@@ -724,7 +735,7 @@ const globalSpacing = (app) => {
     globalMargin: margin,
     globalPadding: padding
   } = app.props;
-  if (enabled === false) {
+  if (switchToBool(enabled) === false) {
     return false;
   }
   return classnames([margin, padding]).toString();

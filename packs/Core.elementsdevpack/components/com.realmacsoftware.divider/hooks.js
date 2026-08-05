@@ -95,7 +95,7 @@ const globalBgGradient = (app, args) => {
     toOpacity,
     toPosition
   ]);
-  if (viaEnabled === true) {
+  if (switchToBool(viaEnabled) === true) {
     classes.add([viaColor, viaOpacity, viaPosition]);
   }
   if (controlType == "hover") {
@@ -154,7 +154,7 @@ const globalBgGradient = (app, args) => {
         toOpacityEnd.replace(/hover:/g, "focus:")
       ]);
     }
-    if (viaEnabledEnd === true) {
+    if (switchToBool(viaEnabledEnd) === true) {
       if (wantsPeer) {
         classes.add([
           viaColorEnd.replace(/hover:/g, "peer-hover:"),
@@ -520,13 +520,24 @@ const resolveGradientImageClass = (type, linearDirection, radialPosition, conicA
   }
   return normalizeGradientImageClass(selectedDirection, interpolation);
 };
+const switchToBool = (value) => {
+  if (value === true || value === false) {
+    return value;
+  }
+  if (typeof value === "string") {
+    const base = value.trim().split(/\s+/)[0];
+    if (base === "true") return true;
+    if (base === "false") return false;
+  }
+  return void 0;
+};
 const globalSpacing = (app) => {
   const {
     globalSpacingEnabled: enabled,
     globalMargin: margin,
     globalPadding: padding
   } = app.props;
-  if (enabled === false) {
+  if (switchToBool(enabled) === false) {
     return false;
   }
   return classnames([margin, padding]).toString();

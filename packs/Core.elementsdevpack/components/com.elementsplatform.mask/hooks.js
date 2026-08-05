@@ -75,6 +75,17 @@ const classnames = (initialClasses = "") => {
     }
   };
 };
+const switchToBool = (value) => {
+  if (value === true || value === false) {
+    return value;
+  }
+  if (typeof value === "string") {
+    const base = value.trim().split(/\s+/)[0];
+    if (base === "true") return true;
+    if (base === "false") return false;
+  }
+  return void 0;
+};
 const getHiddenClasses = (hidden = {}, defaultDisplay = "block") => {
   if (Object.keys(hidden).length === 0) {
     return defaultDisplay;
@@ -125,7 +136,7 @@ const globalSizing = (app) => {
     globalMaxHeight: maxHeight
   } = app.props;
   const classes = classnames([width, height]);
-  if (minMaxEnabled === true) {
+  if (switchToBool(minMaxEnabled) === true) {
     classes.add([minWidth, minHeight, maxWidth, maxHeight]);
   }
   return classes.toString();
@@ -136,7 +147,7 @@ const globalSpacing = (app) => {
     globalMargin: margin,
     globalPadding: padding
   } = app.props;
-  if (enabled === false) {
+  if (switchToBool(enabled) === false) {
     return false;
   }
   return classnames([margin, padding]).toString();
