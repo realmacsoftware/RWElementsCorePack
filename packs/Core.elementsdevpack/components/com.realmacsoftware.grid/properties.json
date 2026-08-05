@@ -389,7 +389,7 @@
           "id": "justifyContent",
           "ai": {
             "name": "justify",
-            "description": "Justify content on the main axis."
+            "description": "Distribute columns along the inline axis when the grid has extra space (CSS justify-content)."
           },
           "select": {
             "default": "normal",
@@ -524,7 +524,7 @@
           "id": "alignItems",
           "ai": {
             "name": "alignItems",
-            "description": "Align items on the cross axis."
+            "description": "Align items on the block axis within their grid area (CSS align-items)."
           },
           "format": "items-{{value}}",
           "title": "Items",

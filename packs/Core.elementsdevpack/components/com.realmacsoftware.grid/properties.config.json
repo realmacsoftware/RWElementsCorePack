@@ -297,7 +297,10 @@
           "heading": {}
         },
         {
-          "globalControl": "JustifyContent"
+          "globalControl": "JustifyContent",
+          "ai": {
+            "description": "Distribute columns along the inline axis when the grid has extra space (CSS justify-content)."
+          }
         },
         {
           "globalControl": "JustifyItems",
@@ -319,7 +322,10 @@
           }
         },
         {
-          "globalControl": "AlignItems"
+          "globalControl": "AlignItems",
+          "ai": {
+            "description": "Align items on the block axis within their grid area (CSS align-items)."
+          }
         }
       ]
     },
