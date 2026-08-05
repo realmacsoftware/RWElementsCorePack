@@ -216,8 +216,8 @@
           "id": "showHeader",
           "responsive": false,
           "ai": {
-            "name": "showHeader",
-            "description": "Show the table header row."
+            "name": "headerEnabled",
+            "description": "Show the table header row. Turning off hides authored column header text from output."
           },
           "switch": {
             "default": true
@@ -631,8 +631,8 @@
           "id": "showFooter",
           "responsive": false,
           "ai": {
-            "name": "showFooter",
-            "description": "Show the table footer row."
+            "name": "footerEnabled",
+            "description": "Show the table footer row. Turning off removes footer dropzones and hides authored footer content."
           },
           "switch": {
             "default": false
