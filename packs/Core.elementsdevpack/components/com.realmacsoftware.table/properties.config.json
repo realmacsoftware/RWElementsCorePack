@@ -200,6 +200,88 @@
             "min": 1,
             "max": 100
           }
+        },
+        {
+          "enable": "showPagination == true",
+          "title": "First & Last Buttons",
+          "id": "showFirstLast",
+          "responsive": false,
+          "ai": {
+            "name": "showFirstLast",
+            "description": "Show First and Last buttons for jumping to the first or last page."
+          },
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "enable": "showPagination == true",
+          "title": "Previous Label",
+          "id": "paginationPrevLabel",
+          "responsive": false,
+          "ai": {
+            "name": "paginationPrevLabel",
+            "description": "Text for the previous page button, useful for localization."
+          },
+          "text": {
+            "default": "Previous"
+          }
+        },
+        {
+          "enable": "showPagination == true",
+          "title": "Next Label",
+          "id": "paginationNextLabel",
+          "responsive": false,
+          "ai": {
+            "name": "paginationNextLabel",
+            "description": "Text for the next page button, useful for localization."
+          },
+          "text": {
+            "default": "Next"
+          }
+        },
+        {
+          "enable": "showPagination == true && showFirstLast == true",
+          "title": "First Label",
+          "id": "paginationFirstLabel",
+          "responsive": false,
+          "ai": {
+            "name": "paginationFirstLabel",
+            "description": "Text for the first page button, useful for localization."
+          },
+          "text": {
+            "default": "First"
+          }
+        },
+        {
+          "enable": "showPagination == true && showFirstLast == true",
+          "title": "Last Label",
+          "id": "paginationLastLabel",
+          "responsive": false,
+          "ai": {
+            "name": "paginationLastLabel",
+            "description": "Text for the last page button, useful for localization."
+          },
+          "text": {
+            "default": "Last"
+          }
+        },
+        {
+          "enable": "showPagination == true",
+          "title": "Page Text",
+          "id": "paginationPageText",
+          "responsive": false,
+          "ai": {
+            "name": "paginationPageText",
+            "description": "Format for the page counter between the pagination buttons. Use {{page}} and {{total}} as placeholders, e.g. \"Page {{page}} of {{total}}\"."
+          },
+          "text": {
+            "default": "Page {{page}} of {{total}}"
+          }
+        },
+        {
+          "title": "Page Text uses {{page}} and {{total}} as placeholders for the current page and page count.",
+          "description": {}
         }
       ]
     },

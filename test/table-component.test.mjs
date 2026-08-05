@@ -195,6 +195,57 @@ test("alpine config reflects search, pagination, and sortability", () => {
     });
 });
 
+test("pagination labels fall back to English defaults", () => {
+    const rw = renderTable();
+    const p = rw.computedProps;
+
+    assert.equal(p.showFirstLast, false);
+    assert.equal(p.paginationPrevLabel, "Previous");
+    assert.equal(p.paginationNextLabel, "Next");
+    assert.equal(p.paginationFirstLabel, "First");
+    assert.equal(p.paginationLastLabel, "Last");
+    assert.equal(p.paginationPageText, "Page {{page}} of {{total}}");
+    assert.equal(p.paginationPageTextStatic, "Page 1 of 1");
+});
+
+test("custom pagination labels pass through for localization", () => {
+    const rw = renderTable({
+        props: {
+            showPagination: true,
+            showFirstLast: true,
+            paginationPrevLabel: "Vorige",
+            paginationNextLabel: "Volgende",
+            paginationFirstLabel: "Eerste",
+            paginationLastLabel: "Laatste",
+            paginationPageText: "Pagina {{page}} van {{total}}",
+        },
+    });
+    const p = rw.computedProps;
+
+    assert.equal(p.showFirstLast, true);
+    assert.equal(p.paginationPrevLabel, "Vorige");
+    assert.equal(p.paginationNextLabel, "Volgende");
+    assert.equal(p.paginationFirstLabel, "Eerste");
+    assert.equal(p.paginationLastLabel, "Laatste");
+    assert.equal(p.paginationPageText, "Pagina {{page}} van {{total}}");
+    assert.equal(p.paginationPageTextStatic, "Pagina 1 van 1");
+});
+
+test("showFirstLast accepts the string form of the switch value", () => {
+    const rw = renderTable({ props: { showPagination: true, showFirstLast: "true" } });
+
+    assert.equal(rw.computedProps.showFirstLast, true);
+});
+
+test("new pagination props stay out of the alpine config", () => {
+    const rw = renderTable({
+        props: { showPagination: true, showFirstLast: true, paginationPageText: "Pagina {{page}} van {{total}}" },
+    });
+    const config = JSON.parse(rw.computedProps.alpineConfig.replace(/'/g, '"'));
+
+    assert.deepEqual(Object.keys(config).sort(), ["pagination", "rowsPerPage", "search", "sortable", "totalRows"]);
+});
+
 test("csv url mode passes the source through and stays sortable", () => {
     const rw = renderTable({
         props: { dataSource: "csvUrl", csvUrl: "https://example.com/data.csv" },

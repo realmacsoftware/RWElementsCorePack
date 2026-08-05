@@ -93,6 +93,10 @@
                 // Update the reactive tracked array to match the new sort order
                 this.allRows = sortedEls;
 
+                // A new sort order makes the current page position meaningless,
+                // so jump back to the first page (same as onSearchInput)
+                this.page = 1;
+
                 // Re-filter after sort
                 this.filterRows();
                 this.updateVisibility();
@@ -128,6 +132,23 @@
                 if (this.page < this.totalPages) {
                     this.page++;
                 }
+            },
+
+            firstPage() {
+                if (this.page > 1) {
+                    this.page = 1;
+                }
+            },
+
+            lastPage() {
+                if (this.page < this.totalPages) {
+                    this.page = this.totalPages;
+                }
+            },
+
+            pageText() {
+                const fmt = this.$root.dataset.pageText || "Page {{page}} of {{total}}";
+                return fmt.replace("{{page}}", this.page).replace("{{total}}", this.totalPages);
             },
         }));
     });

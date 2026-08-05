@@ -39,7 +39,7 @@
 
 @else
 
-<div x-data="elementsTable('{{id}}', {{alpineConfig}})">
+<div x-data="elementsTable('{{id}}', {{alpineConfig}})" data-page-text="{{paginationPageText}}">
 
     @if(showSearch)
     <div>
@@ -270,23 +270,43 @@ COLUMNMETA;
 
     @if(showPagination)
     <div class="{{classes.pagination}}">
+        @if(showFirstLast)
+        <button
+            class="{{classes.paginationButton}}"
+            :class="page <= 1 ? '{{classes.paginationButtonDisabled}}' : '{{classes.paginationButton}}'"
+            :disabled="page <= 1"
+            @click="firstPage()"
+        >
+            &laquo; {{paginationFirstLabel}}
+        </button>
+        @endif
         <button
             class="{{classes.paginationButton}}"
             :class="page <= 1 ? '{{classes.paginationButtonDisabled}}' : '{{classes.paginationButton}}'"
             :disabled="page <= 1"
             @click="prevPage()"
         >
-            &larr; Previous
+            &larr; {{paginationPrevLabel}}
         </button>
-        <span class="{{classes.paginationText}}" x-text="'Page ' + page + ' of ' + totalPages"></span>
+        <span class="{{classes.paginationText}}" x-text="pageText()"></span>
         <button
             class="{{classes.paginationButton}}"
             :class="page >= totalPages ? '{{classes.paginationButtonDisabled}}' : '{{classes.paginationButton}}'"
             :disabled="page >= totalPages"
             @click="nextPage()"
         >
-            Next &rarr;
+            {{paginationNextLabel}} &rarr;
         </button>
+        @if(showFirstLast)
+        <button
+            class="{{classes.paginationButton}}"
+            :class="page >= totalPages ? '{{classes.paginationButtonDisabled}}' : '{{classes.paginationButton}}'"
+            :disabled="page >= totalPages"
+            @click="lastPage()"
+        >
+            {{paginationLastLabel}} &raquo;
+        </button>
+        @endif
     </div>
     @endif
 
@@ -299,6 +319,7 @@ COLUMNMETA;
 <div
     @if(!edit)
     x-data="elementsTable('{{id}}', {{alpineConfig}})"
+    data-page-text="{{paginationPageText}}"
     @endif
 >
     @if(showSearch)
@@ -392,29 +413,55 @@ COLUMNMETA;
     @if(showPagination)
     @if(!edit)
     <div class="{{classes.pagination}}">
+        @if(showFirstLast)
+        <button
+            class="{{classes.paginationButton}}"
+            :class="page <= 1 ? '{{classes.paginationButtonDisabled}}' : '{{classes.paginationButton}}'"
+            :disabled="page <= 1"
+            @click="firstPage()"
+        >
+            &laquo; {{paginationFirstLabel}}
+        </button>
+        @endif
         <button
             class="{{classes.paginationButton}}"
             :class="page <= 1 ? '{{classes.paginationButtonDisabled}}' : '{{classes.paginationButton}}'"
             :disabled="page <= 1"
             @click="prevPage()"
         >
-            &larr; Previous
+            &larr; {{paginationPrevLabel}}
         </button>
-        <span class="{{classes.paginationText}}" x-text="'Page ' + page + ' of ' + totalPages"></span>
+        <span class="{{classes.paginationText}}" x-text="pageText()"></span>
         <button
             class="{{classes.paginationButton}}"
             :class="page >= totalPages ? '{{classes.paginationButtonDisabled}}' : '{{classes.paginationButton}}'"
             :disabled="page >= totalPages"
             @click="nextPage()"
         >
-            Next &rarr;
+            {{paginationNextLabel}} &rarr;
         </button>
+        @if(showFirstLast)
+        <button
+            class="{{classes.paginationButton}}"
+            :class="page >= totalPages ? '{{classes.paginationButtonDisabled}}' : '{{classes.paginationButton}}'"
+            :disabled="page >= totalPages"
+            @click="lastPage()"
+        >
+            {{paginationLastLabel}} &raquo;
+        </button>
+        @endif
     </div>
     @else
     <div class="{{classes.pagination}}">
-        <span class="{{classes.paginationText}}">&larr; Previous</span>
-        <span class="{{classes.paginationText}}">Page 1 of 1</span>
-        <span class="{{classes.paginationText}}">Next &rarr;</span>
+        @if(showFirstLast)
+        <span class="{{classes.paginationText}}">&laquo; {{paginationFirstLabel}}</span>
+        @endif
+        <span class="{{classes.paginationText}}">&larr; {{paginationPrevLabel}}</span>
+        <span class="{{classes.paginationText}}">{{paginationPageTextStatic}}</span>
+        <span class="{{classes.paginationText}}">{{paginationNextLabel}} &rarr;</span>
+        @if(showFirstLast)
+        <span class="{{classes.paginationText}}">{{paginationLastLabel}} &raquo;</span>
+        @endif
     </div>
     @endif
     @endif
