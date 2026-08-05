@@ -76,9 +76,8 @@ const classnames = (initialClasses = "") => {
   };
 };
 const switchToBool = (value) => {
-  if (value === true || value === false) {
-    return value;
-  }
+  if (value === true || value === 1) return true;
+  if (value === false || value === 0) return false;
   if (typeof value === "string") {
     const base = value.trim().split(/\s+/)[0];
     if (base === "true") return true;

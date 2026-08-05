@@ -26,6 +26,8 @@ const transformHook = (rw) => {
         globalControlTypeOverlay,
     } = rw.props;
 
+    console.log(spacingEnabled, typeof spacingEnabled);
+
     const { mode } = rw.project;
     const { id } = rw.node;
     const { tags, attributes } = rw.collections;
@@ -84,7 +86,7 @@ const transformHook = (rw) => {
             globalTransforms(rw, { isContainer: true }),
             globalFiltersApplyTo === "everything" &&
             globalFilters(rw, { isContainer: true }),
-            spacingEnabled == "true" && margin,
+            switchToBool(spacingEnabled) && margin,
             globalControlTypeBorders != "none" && globalBordersRadius,
             advancedClasses(rw),
             globalBgType == "video" &&
@@ -119,7 +121,7 @@ const transformHook = (rw) => {
             contentAlignSelf,
             contentJustifySelf,
             contentGap,
-            spacingEnabled == "true" && padding,
+            switchToBool(spacingEnabled) && padding,
         ]).toString(),
         overlay: `relative z-20 ${globalControlTypeBorders != "none" && globalBordersRadius
             } ${globalTransitions(rw)} ${globalOverlay(rw, { isContainer: true })}`,

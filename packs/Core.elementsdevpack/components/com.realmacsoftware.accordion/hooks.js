@@ -526,9 +526,8 @@ const injectPrefixOnDarkModeColors = (prefix, classes) => {
   return classes.replace(/dark:(.*)/g, `dark:${prefix}:$1`);
 };
 const switchToBool = (value) => {
-  if (value === true || value === false) {
-    return value;
-  }
+  if (value === true || value === 1) return true;
+  if (value === false || value === 0) return false;
   if (typeof value === "string") {
     const base = value.trim().split(/\s+/)[0];
     if (base === "true") return true;

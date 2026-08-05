@@ -65,7 +65,7 @@ const transformHook = (rw) => {
         globalBgImageFetchPriorityLinkElementEnd,
     } = globalBgImageFetchPriority(rw);
 
-    const hasLogoLink = logoLink.href.length > 0;
+    const hasLogoLink = logoLink?.href?.length > 0;
 
     // Checks the raw page tree so an active page hidden from the menu
     // (displayInMenu == false) still highlights its ancestor folders
@@ -128,9 +128,9 @@ const transformHook = (rw) => {
         globalNavItemsBackgroundType == "color" && globalNavItemsBackgroundColor,
         globalNavItemsBackgroundType == "color" && globalNavItemsBackgroundOpacity,
         globalNavItemsBackgroundTypeHover == "color" &&
-            globalNavItemsBackgroundColorHover,
+        globalNavItemsBackgroundColorHover,
         globalNavItemsBackgroundTypeHover == "color" &&
-            globalNavItemsBackgroundOpacityHover,
+        globalNavItemsBackgroundOpacityHover,
         globalNavItemsBackgroundPadding,
         globalNavItemsBackgroundRadius,
     ]).toString();
@@ -152,9 +152,9 @@ const transformHook = (rw) => {
         logoWrapper: classnames([
             `flex`,
             mobileTriggerPosition == "first" &&
-                `order-last ${deviceModifierForMobileTrigger}order-first`,
+            `order-last ${deviceModifierForMobileTrigger}order-first`,
             itemsAlignment != "start" &&
-                `${deviceModifierForMobileTrigger}flex-1`,
+            `${deviceModifierForMobileTrigger}flex-1`,
             logoMargin,
         ]).toString(),
         logo: `${logoWidth} h-auto`,
@@ -179,7 +179,7 @@ const transformHook = (rw) => {
             rightItems: classnames([
                 `hidden ${deviceModifierForMobileTrigger}flex ${deviceModifierForMobileTrigger}justify-end`,
                 itemsAlignment != "end" &&
-                    `${deviceModifierForMobileTrigger}flex-1`,
+                `${deviceModifierForMobileTrigger}flex-1`,
             ]).toString(),
             subMenu: classnames([
                 `w-max`,
@@ -219,7 +219,7 @@ const transformHook = (rw) => {
                 mobileTriggerColor,
                 mobileTriggerColorHover,
                 mobileTriggerPosition == "first" &&
-                    `order-first ${deviceModifierForMobileTrigger}order-last`,
+                `order-first ${deviceModifierForMobileTrigger}order-last`,
                 mobileCloseTop,
                 mobileCloseRight,
                 mobileCloseLeft,
@@ -256,15 +256,15 @@ const transformHook = (rw) => {
                 mobileMenuBorderColor,
                 mobileMenuPositionType == "uniform" && mobileMenuInset,
                 mobileMenuPositionType == "individual" &&
-                    `${mobileMenuPositionTop} ${mobileMenuPositionRight} ${mobileMenuPositionBottom} ${mobileMenuPositionLeft}`,
+                `${mobileMenuPositionTop} ${mobileMenuPositionRight} ${mobileMenuPositionBottom} ${mobileMenuPositionLeft}`,
                 // With bottom at "auto" the fixed panel sizes to its content
                 // and can extend past the viewport, where the body scroll
                 // lock makes items unreachable — clamp the height so
                 // overflow-y-auto engages (3rem ≈ the default top-6 offset
                 // plus matching breathing room below)
                 mobileMenuPositionType == "individual" &&
-                    mobileMenuPositionBottom.includes("bottom-auto") &&
-                    `max-h-[calc(100dvh-3rem)]`,
+                mobileMenuPositionBottom.includes("bottom-auto") &&
+                `max-h-[calc(100dvh-3rem)]`,
             ]).toString(),
         },
     };

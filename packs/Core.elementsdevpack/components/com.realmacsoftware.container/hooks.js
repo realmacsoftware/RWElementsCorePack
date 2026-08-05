@@ -536,9 +536,8 @@ const injectPrefixOnDarkModeColors = (prefix, classes) => {
   return classes.replace(/dark:(.*)/g, `dark:${prefix}:$1`);
 };
 const switchToBool = (value) => {
-  if (value === true || value === false) {
-    return value;
-  }
+  if (value === true || value === 1) return true;
+  if (value === false || value === 0) return false;
   if (typeof value === "string") {
     const base = value.trim().split(/\s+/)[0];
     if (base === "true") return true;
@@ -1165,6 +1164,7 @@ const transformHook = (rw) => {
     contentGap,
     globalControlTypeOverlay
   } = rw.props;
+  console.log(spacingEnabled, typeof spacingEnabled);
   const { mode } = rw.project;
   const { id } = rw.node;
   const { tags, attributes } = rw.collections;
@@ -1213,7 +1213,7 @@ const transformHook = (rw) => {
       globalEffectsApplyTo === "everything" && globalEffects(rw, { isContainer: true }),
       globalTransformsApplyTo === "everything" && globalTransforms(rw, { isContainer: true }),
       globalFiltersApplyTo === "everything" && globalFilters(rw, { isContainer: true }),
-      spacingEnabled == "true" && margin,
+      switchToBool(spacingEnabled) && margin,
       globalControlTypeBorders != "none" && globalBordersRadius,
       advancedClasses(rw),
       globalBgType == "video" && globalBgVideo && globalBgVideoAspectRatio && "aspect-video"
@@ -1239,7 +1239,7 @@ const transformHook = (rw) => {
       contentAlignSelf,
       contentJustifySelf,
       contentGap,
-      spacingEnabled == "true" && padding
+      switchToBool(spacingEnabled) && padding
     ]).toString(),
     overlay: `relative z-20 ${globalControlTypeBorders != "none" && globalBordersRadius} ${globalTransitions(rw)} ${globalOverlay(rw, { isContainer: true })}`
   };

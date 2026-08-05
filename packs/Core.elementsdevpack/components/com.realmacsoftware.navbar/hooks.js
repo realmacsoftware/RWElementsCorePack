@@ -533,9 +533,8 @@ const resolveGradientImageClass = (type, linearDirection, radialPosition, conicA
   return normalizeGradientImageClass(selectedDirection, interpolation);
 };
 const switchToBool = (value) => {
-  if (value === true || value === false) {
-    return value;
-  }
+  if (value === true || value === 1) return true;
+  if (value === false || value === 0) return false;
   if (typeof value === "string") {
     const base = value.trim().split(/\s+/)[0];
     if (base === "true") return true;
@@ -1149,6 +1148,7 @@ const globalTransitions = (app, alwaysWantsHover = false) => {
   ]).toString() : "";
 };
 const transformHook = (rw) => {
+  var _a;
   const {
     globalID,
     logoType,
@@ -1208,7 +1208,7 @@ const transformHook = (rw) => {
     globalBgImageFetchPriorityLinkElement,
     globalBgImageFetchPriorityLinkElementEnd
   } = globalBgImageFetchPriority(rw);
-  const hasLogoLink = logoLink.href.length > 0;
+  const hasLogoLink = ((_a = logoLink == null ? void 0 : logoLink.href) == null ? void 0 : _a.length) > 0;
   const hasActiveDescendant = (page) => (page.pages || []).some(
     (child) => child.isActive || hasActiveDescendant(child)
   );
