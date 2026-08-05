@@ -273,14 +273,14 @@
           "responsive": false,
           "ai": {
             "name": "paginationPageText",
-            "description": "Format for the page counter between the pagination buttons. Use {page} and {total} as placeholders, e.g. \"Page {page} of {total}\"."
+            "description": "Format for the page counter between the pagination buttons. Use {{page}} and {{total}} as placeholders, e.g. \"Page {{page}} of {{total}}\"."
           },
           "text": {
-            "default": "Page {page} of {total}"
+            "default": "Page {{page}} of {{total}}"
           }
         },
         {
-          "title": "Page Text uses {page} and {total} as placeholders for the current page and page count.",
+          "title": "Page Text uses {{page}} and {{total}} as placeholders for the current page and page count.",
           "description": {}
         }
       ]

@@ -204,7 +204,7 @@ test("pagination labels fall back to English defaults", () => {
     assert.equal(p.paginationNextLabel, "Next");
     assert.equal(p.paginationFirstLabel, "First");
     assert.equal(p.paginationLastLabel, "Last");
-    assert.equal(p.paginationPageText, "Page {page} of {total}");
+    assert.equal(p.paginationPageText, "Page {{page}} of {{total}}");
     assert.equal(p.paginationPageTextStatic, "Page 1 of 1");
 });
 
@@ -217,7 +217,7 @@ test("custom pagination labels pass through for localization", () => {
             paginationNextLabel: "Volgende",
             paginationFirstLabel: "Eerste",
             paginationLastLabel: "Laatste",
-            paginationPageText: "Pagina {page} van {total}",
+            paginationPageText: "Pagina {{page}} van {{total}}",
         },
     });
     const p = rw.computedProps;
@@ -227,7 +227,7 @@ test("custom pagination labels pass through for localization", () => {
     assert.equal(p.paginationNextLabel, "Volgende");
     assert.equal(p.paginationFirstLabel, "Eerste");
     assert.equal(p.paginationLastLabel, "Laatste");
-    assert.equal(p.paginationPageText, "Pagina {page} van {total}");
+    assert.equal(p.paginationPageText, "Pagina {{page}} van {{total}}");
     assert.equal(p.paginationPageTextStatic, "Pagina 1 van 1");
 });
 
@@ -239,7 +239,7 @@ test("showFirstLast accepts the string form of the switch value", () => {
 
 test("new pagination props stay out of the alpine config", () => {
     const rw = renderTable({
-        props: { showPagination: true, showFirstLast: true, paginationPageText: "Pagina {page} van {total}" },
+        props: { showPagination: true, showFirstLast: true, paginationPageText: "Pagina {{page}} van {{total}}" },
     });
     const config = JSON.parse(rw.computedProps.alpineConfig.replace(/'/g, '"'));
 

@@ -147,8 +147,8 @@
             },
 
             pageText() {
-                const fmt = this.$root.dataset.pageText || "Page {page} of {total}";
-                return fmt.replace("{page}", this.page).replace("{total}", this.totalPages);
+                const fmt = this.$root.dataset.pageText || "Page {{page}} of {{total}}";
+                return fmt.replace("{{page}}", this.page).replace("{{total}}", this.totalPages);
             },
         }));
     });
