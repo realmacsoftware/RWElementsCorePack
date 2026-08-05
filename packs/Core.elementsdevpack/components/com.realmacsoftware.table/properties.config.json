@@ -94,6 +94,10 @@
           "description": {}
         },
         {
+          "title": "Enable sorting per column in the Columns collection.",
+          "description": {}
+        },
+        {
           "visible": "dataSource == 'manual'",
           "divider": {}
         },
@@ -114,174 +118,6 @@
           "number": {
             "default": 3
           }
-        }
-      ]
-    },
-    {
-      "title": "Interactive",
-      "icon": "hand.tap",
-      "properties": [
-        {
-          "title": "Sorting",
-          "heading": {}
-        },
-        {
-          "visible": "dataSource == 'manual'",
-          "title": "Enable sorting per column in the Columns collection.",
-          "description": {}
-        },
-        {
-          "visible": "dataSource != 'manual'",
-          "title": "Enable sorting per column in the Columns collection.",
-          "description": {}
-        },
-        {
-          "divider": {}
-        },
-        {
-          "title": "Search",
-          "heading": {}
-        },
-        {
-          "title": "Enable",
-          "id": "showSearch",
-          "responsive": false,
-          "ai": {
-            "name": "showSearch",
-            "description": "Show the search bar above the table."
-          },
-          "switch": {
-            "default": false
-          }
-        },
-        {
-          "enable": "showSearch == true",
-          "title": "Placeholder",
-          "id": "searchPlaceholder",
-          "responsive": false,
-          "ai": {
-            "name": "searchPlaceholder",
-            "description": "Placeholder text shown in the search input."
-          },
-          "text": {
-            "default": "Search..."
-          }
-        },
-        {
-          "divider": {}
-        },
-        {
-          "title": "Pagination",
-          "heading": {}
-        },
-        {
-          "title": "Enable",
-          "id": "showPagination",
-          "responsive": false,
-          "ai": {
-            "name": "showPagination",
-            "description": "Show pagination controls below the table."
-          },
-          "switch": {
-            "default": false
-          }
-        },
-        {
-          "enable": "showPagination == true",
-          "title": "Rows Per Page",
-          "id": "rowsPerPage",
-          "responsive": false,
-          "ai": {
-            "name": "rowsPerPage",
-            "description": "Number of rows shown per page when pagination is enabled."
-          },
-          "number": {
-            "default": 10,
-            "min": 1,
-            "max": 100
-          }
-        },
-        {
-          "enable": "showPagination == true",
-          "title": "First & Last Buttons",
-          "id": "showFirstLast",
-          "responsive": false,
-          "ai": {
-            "name": "showFirstLast",
-            "description": "Show First and Last buttons for jumping to the first or last page."
-          },
-          "switch": {
-            "default": false
-          }
-        },
-        {
-          "enable": "showPagination == true",
-          "title": "Previous Label",
-          "id": "paginationPrevLabel",
-          "responsive": false,
-          "ai": {
-            "name": "paginationPrevLabel",
-            "description": "Text for the previous page button, useful for localization."
-          },
-          "text": {
-            "default": "Previous"
-          }
-        },
-        {
-          "enable": "showPagination == true",
-          "title": "Next Label",
-          "id": "paginationNextLabel",
-          "responsive": false,
-          "ai": {
-            "name": "paginationNextLabel",
-            "description": "Text for the next page button, useful for localization."
-          },
-          "text": {
-            "default": "Next"
-          }
-        },
-        {
-          "enable": "showPagination == true && showFirstLast == true",
-          "title": "First Label",
-          "id": "paginationFirstLabel",
-          "responsive": false,
-          "ai": {
-            "name": "paginationFirstLabel",
-            "description": "Text for the first page button, useful for localization."
-          },
-          "text": {
-            "default": "First"
-          }
-        },
-        {
-          "enable": "showPagination == true && showFirstLast == true",
-          "title": "Last Label",
-          "id": "paginationLastLabel",
-          "responsive": false,
-          "ai": {
-            "name": "paginationLastLabel",
-            "description": "Text for the last page button, useful for localization."
-          },
-          "text": {
-            "default": "Last"
-          }
-        },
-        {
-          "enable": "showPagination == true",
-          "title": "Page Text",
-          "id": "paginationPageText",
-          "responsive": false,
-          "ai": {
-            "name": "paginationPageText",
-            "description": "Format for the page counter between the pagination buttons. Use {{page}} and {{total}} as placeholders, e.g. \"Page {{page}} of {{total}}\"."
-          },
-          "text": {
-            "default": "Page {{page}} of {{total}}"
-          }
-        },
-        {
-          "title": "Page Text uses {{page}} and {{total}} as placeholders for the current page and page count.",
-          "description": {}
         }
       ]
     },
@@ -896,9 +732,42 @@
     {
       "title": "Search Bar",
       "icon": "magnifyingglass",
-      "visible": "showSearch == true",
       "properties": [
         {
+          "title": "Search",
+          "heading": {}
+        },
+        {
+          "title": "Enable",
+          "id": "showSearch",
+          "responsive": false,
+          "ai": {
+            "name": "showSearch",
+            "description": "Show the search bar above the table."
+          },
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "visible": "showSearch == true",
+          "title": "Placeholder",
+          "id": "searchPlaceholder",
+          "responsive": false,
+          "ai": {
+            "name": "searchPlaceholder",
+            "description": "Placeholder text shown in the search input."
+          },
+          "text": {
+            "default": "Search..."
+          }
+        },
+        {
+          "visible": "showSearch == true",
+          "divider": {}
+        },
+        {
+          "visible": "showSearch == true",
           "title": "Padding",
           "id": "searchPadding",
           "themeSpacing": {
@@ -914,6 +783,7 @@
           }
         },
         {
+          "visible": "showSearch == true",
           "title": "Margin Bottom",
           "id": "searchMarginBottom",
           "format": "mb-{{value}}",
@@ -927,9 +797,11 @@
           }
         },
         {
+          "visible": "showSearch == true",
           "divider": {}
         },
         {
+          "visible": "showSearch == true",
           "title": "Font",
           "id": "searchFont",
           "themeFont": {
@@ -939,6 +811,7 @@
           }
         },
         {
+          "visible": "showSearch == true",
           "title": "Text Color",
           "id": "searchTextColor",
           "format": "text-{{value}}",
@@ -950,6 +823,7 @@
           }
         },
         {
+          "visible": "showSearch == true",
           "title": "Size",
           "id": "searchTextSize",
           "themeTextStyle": {
@@ -961,6 +835,7 @@
           }
         },
         {
+          "visible": "showSearch == true",
           "title": "Placeholder Color",
           "id": "searchPlaceholderColor",
           "format": "placeholder:text-{{value}}",
@@ -972,9 +847,11 @@
           }
         },
         {
+          "visible": "showSearch == true",
           "divider": {}
         },
         {
+          "visible": "showSearch == true",
           "title": "Background",
           "id": "searchBackground",
           "format": "bg-{{value}}",
@@ -986,13 +863,16 @@
           }
         },
         {
+          "visible": "showSearch == true",
           "divider": {}
         },
         {
+          "visible": "showSearch == true",
           "title": "Border",
           "heading": {}
         },
         {
+          "visible": "showSearch == true",
           "title": "Style",
           "id": "searchBorderStyle",
           "format": "border-{{value}}",
@@ -1015,6 +895,7 @@
           }
         },
         {
+          "visible": "showSearch == true",
           "title": "Width",
           "id": "searchBorderWidth",
           "themeBorderWidth": {
@@ -1029,6 +910,7 @@
           }
         },
         {
+          "visible": "showSearch == true",
           "title": "Color",
           "id": "searchBorderColor",
           "format": "border-{{value}}",
@@ -1040,6 +922,7 @@
           }
         },
         {
+          "visible": "showSearch == true",
           "title": "Radius",
           "id": "searchBorderRadius",
           "themeBorderRadius": {
@@ -1055,9 +938,40 @@
     {
       "title": "Pagination Bar",
       "icon": "arrow.left.arrow.right",
-      "visible": "showPagination == true",
       "properties": [
         {
+          "title": "Pagination",
+          "heading": {}
+        },
+        {
+          "title": "Enable",
+          "id": "showPagination",
+          "responsive": false,
+          "ai": {
+            "name": "showPagination",
+            "description": "Show pagination controls below the table."
+          },
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "visible": "showPagination == true",
+          "title": "Rows Per Page",
+          "id": "rowsPerPage",
+          "responsive": false,
+          "ai": {
+            "name": "rowsPerPage",
+            "description": "Number of rows shown per page when pagination is enabled."
+          },
+          "number": {
+            "default": 10,
+            "min": 1,
+            "max": 100
+          }
+        },
+        {
+          "visible": "showPagination == true",
           "title": "Margin Top",
           "id": "paginationMarginTop",
           "format": "mt-{{value}}",
@@ -1071,6 +985,7 @@
           }
         },
         {
+          "visible": "showPagination == true",
           "title": "Alignment",
           "id": "paginationAlignment",
           "segmented": {
@@ -1092,13 +1007,119 @@
           }
         },
         {
+          "visible": "showPagination == true",
           "divider": {}
         },
         {
+          "visible": "showPagination == true",
+          "title": "Labels",
+          "heading": {}
+        },
+        {
+          "visible": "showPagination == true",
+          "title": "Previous Label",
+          "id": "paginationPrevLabel",
+          "responsive": false,
+          "ai": {
+            "name": "paginationPrevLabel",
+            "description": "Text for the previous page button, useful for localization."
+          },
+          "text": {
+            "default": "Previous"
+          }
+        },
+        {
+          "visible": "showPagination == true",
+          "title": "Next Label",
+          "id": "paginationNextLabel",
+          "responsive": false,
+          "ai": {
+            "name": "paginationNextLabel",
+            "description": "Text for the next page button, useful for localization."
+          },
+          "text": {
+            "default": "Next"
+          }
+        },
+        {
+          "visible": "showPagination == true",
+          "title": "Page Text",
+          "id": "paginationPageText",
+          "responsive": false,
+          "ai": {
+            "name": "paginationPageText",
+            "description": "Format for the page counter between the pagination buttons. Use {{page}} and {{total}} as placeholders, e.g. \"Page {{page}} of {{total}}\"."
+          },
+          "text": {
+            "default": "Page {{page}} of {{total}}"
+          }
+        },
+        {
+          "visible": "showPagination == true",
+          "title": "Page Text uses {{page}} and {{total}} as placeholders for the current page and page count.",
+          "description": {}
+        },
+        {
+          "visible": "showPagination == true",
+          "divider": {}
+        },
+        {
+          "visible": "showPagination == true",
+          "title": "First and Last Buttons",
+          "heading": {}
+        },
+        {
+          "visible": "showPagination == true",
+          "title": "Enable",
+          "id": "showFirstLast",
+          "responsive": false,
+          "ai": {
+            "name": "showFirstLast",
+            "description": "Show First and Last buttons for jumping to the first or last page."
+          },
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "visible": "showPagination == true",
+          "enable": "showFirstLast == true",
+          "title": "First Label",
+          "id": "paginationFirstLabel",
+          "responsive": false,
+          "ai": {
+            "name": "paginationFirstLabel",
+            "description": "Text for the first page button, useful for localization."
+          },
+          "text": {
+            "default": "First"
+          }
+        },
+        {
+          "visible": "showPagination == true",
+          "enable": "showFirstLast == true",
+          "title": "Last Label",
+          "id": "paginationLastLabel",
+          "responsive": false,
+          "ai": {
+            "name": "paginationLastLabel",
+            "description": "Text for the last page button, useful for localization."
+          },
+          "text": {
+            "default": "Last"
+          }
+        },
+        {
+          "visible": "showPagination == true",
+          "divider": {}
+        },
+        {
+          "visible": "showPagination == true",
           "title": "Buttons",
           "heading": {}
         },
         {
+          "visible": "showPagination == true",
           "title": "Font",
           "id": "paginationFont",
           "themeFont": {
@@ -1108,6 +1129,7 @@
           }
         },
         {
+          "visible": "showPagination == true",
           "title": "Size",
           "id": "paginationTextSize",
           "themeTextStyle": {
@@ -1119,6 +1141,7 @@
           }
         },
         {
+          "visible": "showPagination == true",
           "title": "Text Color",
           "id": "paginationTextColor",
           "format": "text-{{value}}",
@@ -1130,6 +1153,7 @@
           }
         },
         {
+          "visible": "showPagination == true",
           "title": "Disabled Color",
           "id": "paginationDisabledColor",
           "format": "text-{{value}}",
