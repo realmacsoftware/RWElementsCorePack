@@ -226,7 +226,7 @@
           "id": "globalNavTitleTextShadow",
           "ai": {
             "name": "titleTextShadow",
-            "description": "Site title text shadow theme token (title logo only)."
+            "description": "Site title text shadow theme token."
           },
           "themeShadow": {
             "mode": "text",

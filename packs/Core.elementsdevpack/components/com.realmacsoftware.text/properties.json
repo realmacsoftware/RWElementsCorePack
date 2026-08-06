@@ -550,14 +550,7 @@
           "id": "globalHoverGroupBg",
           "ai": {
             "name": "bgHoverTrigger",
-            "description": "Which element's hover triggers the hover text color.",
-            "values": [
-              "self",
-              "parent",
-              "container",
-              "grid",
-              "flex"
-            ]
+            "description": "Which element's hover triggers the hover text color."
           },
           "responsive": false,
           "select": {
