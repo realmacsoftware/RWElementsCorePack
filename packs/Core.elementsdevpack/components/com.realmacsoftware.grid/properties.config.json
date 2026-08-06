@@ -133,7 +133,7 @@
         {
           "title": "Rows",
           "id": "rows",
-          "ai": { "name": "rows", "description": "Number of grid rows." },
+          "ai": { "name": "rows", "description": "Grid row tracks: 'auto' or a count from 1 to 12." },
           "format": "grid-rows-{{value}}",
           "slider": {
             "default": "auto",
