@@ -23,6 +23,8 @@ const transformHook = (rw) => {
         thumbnailAuthorFontSize,
 
         thumbnailAspectRatio,
+        thumbnailSize,
+        thumbnailLazyLoading,
         thumbnailGlobalBordersRadius: thumbnailBorderRadius,
         thumbnailGlobalBoxShadow: thumbnailShadow,
         lightboxPreview,
@@ -73,6 +75,28 @@ const transformHook = (rw) => {
     const isRemote = sourceType === "remote";
     const remotePublished = isRemote && !edit;
 
+    // Older projects predate the switch and have no value saved, so anything
+    // other than an explicit "off" leaves lazy loading on.
+    const wantsLazyThumbnails = switchToBool(thumbnailLazyLoading) !== false;
+
+    // The first row is above the fold at every breakpoint, so it loads eagerly
+    // and everything below it lazy-loads. columns is responsive, so take the
+    // widest value — the raw numbers only exist on responsiveProps, since
+    // rw.props.columns has already been formatted into "grid-cols-…" classes.
+    const columnCounts = Object.values(rw.responsiveProps?.columns || {})
+        .map((value) => parseInt(value, 10))
+        .filter((value) => Number.isFinite(value));
+    const eagerCount = columnCounts.length ? Math.max(...columnCounts) : 3;
+
+    // Index from which thumbnails become lazy, for the PHP grid to compare
+    // against. -1 disables lazy loading entirely; note that a value of 0 (what
+    // an empty interpolation casts to) makes every thumbnail lazy, so the
+    // failure mode stays on the safe side.
+    const lazyFrom = wantsLazyThumbnails ? eagerCount : -1;
+
+    // Thumbnails are served at 2x so they stay sharp on retina displays.
+    const thumbnailWidth = (Number(thumbnailSize) || 400) * 2;
+
     // Suffix for the PHP variables in the remote templates, so two galleries
     // on the same page don't share state.
     const phpId = String(id).replace(/[^a-zA-Z0-9]/g, "_");
@@ -109,6 +133,7 @@ const transformHook = (rw) => {
                       caption: `Image ${index + 1}`,
                       author: "",
                       isVideo: false,
+                      lazy: wantsLazyThumbnails && index >= eagerCount,
                   }))
                 : [];
             hasResources = galleryResources.length > 0;
@@ -119,11 +144,19 @@ const transformHook = (rw) => {
             hasResources = true;
         }
     } else {
-        resources?.resources?.forEach((resource) => {
-            resource.srcset = "";
-            resource.thumbnail = rw.resizeResource(resource, 400);
+        resources?.resources?.forEach((resource, index) => {
+            resource.thumbnail = rw.resizeResource(resource, thumbnailWidth);
+            resource.lazy = wantsLazyThumbnails && index >= eagerCount;
             resource.alt =
                 resource.alt || resource.caption || resource.author || "";
+
+            // Gives the lightbox slide a box to occupy before its image has
+            // loaded, so lazy slides don't collapse to nothing.
+            resource.aspect =
+                resource.aspect ||
+                (resource.width && resource.height
+                    ? `${resource.width}/${resource.height}`
+                    : "auto");
 
             // check if this is a video
             resource.isVideo =
@@ -297,6 +330,7 @@ const transformHook = (rw) => {
         lightboxShowAuthor: lightboxShowAuthor,
         lightboxWantsMeta: lightboxShowCaption || lightboxShowAuthor,
         resources: galleryResources,
+        lazyFrom,
         isRemote,
         remotePublished,
         remoteFolder,

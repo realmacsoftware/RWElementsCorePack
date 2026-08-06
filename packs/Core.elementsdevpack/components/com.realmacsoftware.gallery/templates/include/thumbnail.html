@@ -8,18 +8,30 @@
         src="{{image.image}}"
         alt="{{image.alt}}"
         class="{{classes.thumbnailImage}}"
+        @if(image.lazy)
+        loading="lazy"
+        @endif
+        decoding="async"
     />
     @else @if(isRemote)
     <img
         src="{{image.image}}"
         alt="{{image.alt}}"
         class="{{classes.thumbnailImage}}"
+        @if(image.lazy)
+        loading="lazy"
+        @endif
+        decoding="async"
     />
     @else
     <img
-        src="{{image}}"
+        src="{{image.thumbnail}}"
         alt="{{image.alt}}"
         class="{{classes.thumbnailImage}}"
+        @if(image.lazy)
+        loading="lazy"
+        @endif
+        decoding="async"
     />
     @endif @endif @if(thumbnailWantsMeta)
     <div class="{{classes.thumbnailMeta}}">

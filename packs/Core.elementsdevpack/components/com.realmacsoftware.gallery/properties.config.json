@@ -152,6 +152,24 @@
           }
         },
         {
+          "title": "Size",
+          "id": "thumbnailSize",
+          "ai": {
+            "name": "thumbnailSize",
+            "description": "Width in pixels that gallery thumbnails are resized to. Served at 2x for retina displays."
+          },
+          "responsive": false,
+          "number": {
+            "default": 400,
+            "round": true,
+            "subtitle": "In pixels"
+          }
+        },
+        {
+          "information": {},
+          "title": "Thumbnails are resized to this width, served at 2x for retina displays."
+        },
+        {
           "globalControl": "BorderRadius",
           "ai": {
             "name": "thumbnail{{value}}"
@@ -316,6 +334,25 @@
                 "value": "sm"
               }
             }
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Lazy Loading",
+          "heading": {}
+        },
+        {
+          "title": "Enable",
+          "id": "thumbnailLazyLoading",
+          "ai": {
+            "name": "thumbnailLazyLoading",
+            "description": "Defers loading thumbnails below the fold until they are scrolled into view."
+          },
+          "responsive": false,
+          "switch": {
+            "default": true
           }
         }
       ]

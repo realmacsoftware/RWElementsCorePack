@@ -6,6 +6,8 @@
         src="<?php echo htmlspecialchars($rwGalleryImage_{{phpId}}['src'], ENT_QUOTES, 'UTF-8'); ?>"
         alt="<?php echo htmlspecialchars($rwGalleryImage_{{phpId}}['caption'], ENT_QUOTES, 'UTF-8'); ?>"
         class="{{classes.lightboxItemMedia}}"
+        loading="lazy"
+        decoding="async"
         @click.stop
     />
     @if(lightboxWantsMeta)
