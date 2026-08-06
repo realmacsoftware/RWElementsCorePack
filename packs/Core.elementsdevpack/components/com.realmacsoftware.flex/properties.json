@@ -1403,7 +1403,7 @@
           "id": "globalControlTypeFilters",
           "ai": {
             "name": "filters",
-            "description": "Enable/disable filters."
+            "description": "Filters mode: 'none' disables, 'static' always applies, 'hover' styles start and hover states separately."
           },
           "responsive": false,
           "segmented": {
