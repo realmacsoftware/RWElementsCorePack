@@ -87,6 +87,13 @@ const classnames = (initialClasses = "") => {
     }
   };
 };
+const escapeArbitraryWhitespace = (classString) => {
+  if (!classString) return classString;
+  return String(classString).replace(
+    /\[[^\]]*\]/g,
+    (segment) => segment.replace(/\s+/g, "_")
+  );
+};
 const getHoverPrefix = (node = {}, applyTo = "", hoverGroup = "self", customId = "") => {
   const needsPeerPrefix = node.isContainer && ["background", "content"].includes(applyTo);
   if (hoverGroup === "parent") return `group-hover/${node.parent.id}`;
@@ -96,8 +103,9 @@ const getHoverPrefix = (node = {}, applyTo = "", hoverGroup = "self", customId =
   return hoverGroup === "self" ? needsPeerPrefix ? `peer-hover` : "hover" : `group-hover/${hoverGroup}`;
 };
 const switchToBool = (value) => {
-  if (value === true || value === 1) return true;
-  if (value === false || value === 0) return false;
+  if (value === true || value === false) {
+    return value;
+  }
   if (typeof value === "string") {
     const base = value.trim().split(/\s+/)[0];
     if (base === "true") return true;
@@ -227,7 +235,7 @@ const globalFilters = (app, args = {}) => {
 const globalLink = (app) => {
   var _a;
   const { globalLink: link = null } = app.props;
-  const hasLink = typeof link === "object" && Object.keys(link).length > 0 && link.href.length > 0;
+  const hasLink = !!link && typeof link === "object" && typeof link.href === "string" && link.href.length > 0;
   let linkAttributes = {
     hasLink,
     args: {}
@@ -343,6 +351,10 @@ const globalTransforms = (app, args = {}) => {
   const classes = classnames();
   const scaleMirrored = mirrorScaleXToY(scale);
   const scaleEndMirrored = mirrorScaleXToY(scaleEnd);
+  const translateXSafe = escapeArbitraryWhitespace(translateX);
+  const translateYSafe = escapeArbitraryWhitespace(translateY);
+  const translateXEndSafe = escapeArbitraryWhitespace(translateXEnd);
+  const translateYEndSafe = escapeArbitraryWhitespace(translateYEnd);
   if (type != "none") {
     classes.add([
       "transform",
@@ -351,8 +363,8 @@ const globalTransforms = (app, args = {}) => {
       rotate,
       skewX,
       skewY,
-      translateX,
-      translateY
+      translateXSafe,
+      translateYSafe
     ]);
   }
   if (type == "hover") {
@@ -361,8 +373,8 @@ const globalTransforms = (app, args = {}) => {
       addPrefixToTailwindClasses(rotateEnd, prefix),
       addPrefixToTailwindClasses(skewXEnd, prefix),
       addPrefixToTailwindClasses(skewYEnd, prefix),
-      addPrefixToTailwindClasses(translateXEnd, prefix),
-      addPrefixToTailwindClasses(translateYEnd, prefix)
+      addPrefixToTailwindClasses(translateXEndSafe, prefix),
+      addPrefixToTailwindClasses(translateYEndSafe, prefix)
     ]);
     if (wantsActive) {
       classes.add([
@@ -370,8 +382,8 @@ const globalTransforms = (app, args = {}) => {
         addPrefixToTailwindClasses(rotateEnd, "data-[active=true]"),
         addPrefixToTailwindClasses(skewXEnd, "data-[active=true]"),
         addPrefixToTailwindClasses(skewYEnd, "data-[active=true]"),
-        addPrefixToTailwindClasses(translateXEnd, "data-[active=true]"),
-        addPrefixToTailwindClasses(translateYEnd, "data-[active=true]")
+        addPrefixToTailwindClasses(translateXEndSafe, "data-[active=true]"),
+        addPrefixToTailwindClasses(translateYEndSafe, "data-[active=true]")
       ]);
     }
     if (wantsFocus) {
@@ -381,8 +393,8 @@ const globalTransforms = (app, args = {}) => {
         addPrefixToTailwindClasses(rotateEnd, focusPrefix),
         addPrefixToTailwindClasses(skewXEnd, focusPrefix),
         addPrefixToTailwindClasses(skewYEnd, focusPrefix),
-        addPrefixToTailwindClasses(translateXEnd, focusPrefix),
-        addPrefixToTailwindClasses(translateYEnd, focusPrefix)
+        addPrefixToTailwindClasses(translateXEndSafe, focusPrefix),
+        addPrefixToTailwindClasses(translateYEndSafe, focusPrefix)
       ]);
     }
   }
@@ -407,7 +419,7 @@ const globalTransitions = (app, alwaysWantsHover = false) => {
     globalTransitionsTimingFunction: timingFunction,
     globalTransitionsTimingFunctionCustom: customTimingFunction
   } = app.props;
-  const customTimingFunctionFormatted = customTimingFunction == null ? void 0 : customTimingFunction.replace(/,\s/g, ",_");
+  const customTimingFunctionFormatted = escapeArbitraryWhitespace(customTimingFunction);
   const aControlWantsHover = () => {
     return alwaysWantsHover || globalFilterEnable || [
       globalControlTypeTransforms,

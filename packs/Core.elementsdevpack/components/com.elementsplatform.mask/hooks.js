@@ -75,9 +75,17 @@ const classnames = (initialClasses = "") => {
     }
   };
 };
+const escapeArbitraryWhitespace = (classString) => {
+  if (!classString) return classString;
+  return String(classString).replace(
+    /\[[^\]]*\]/g,
+    (segment) => segment.replace(/\s+/g, "_")
+  );
+};
 const switchToBool = (value) => {
-  if (value === true || value === 1) return true;
-  if (value === false || value === 0) return false;
+  if (value === true || value === false) {
+    return value;
+  }
   if (typeof value === "string") {
     const base = value.trim().split(/\s+/)[0];
     if (base === "true") return true;
@@ -170,7 +178,7 @@ const globalTransitions = (app, alwaysWantsHover = false) => {
     globalTransitionsTimingFunction: timingFunction,
     globalTransitionsTimingFunctionCustom: customTimingFunction
   } = app.props;
-  const customTimingFunctionFormatted = customTimingFunction == null ? void 0 : customTimingFunction.replace(/,\s/g, ",_");
+  const customTimingFunctionFormatted = escapeArbitraryWhitespace(customTimingFunction);
   const aControlWantsHover = () => {
     return alwaysWantsHover || globalFilterEnable || [
       globalControlTypeTransforms,
