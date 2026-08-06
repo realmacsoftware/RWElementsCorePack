@@ -31,7 +31,7 @@ const transformHook = (rw) => {
 
     const { id } = rw.node;
 
-    const wantsDropzone = dropzoneType != "false";
+    const wantsDropzone = dropzoneType == "left" || dropzoneType == "right";
     const dropzoneSide = dropzoneType == "right" ? "order-last" : "order-first";
 
     const classes = classnames([
@@ -41,7 +41,7 @@ const transformHook = (rw) => {
         globalLayout(rw, { defaultDisplay: "flex" }),
         globalSizing(rw),
         globalSpacing(rw),
-        globalTransitions(rw),
+        globalTransitions(rw, true),
         globalEffects(rw),
         globalFilters(rw),
         globalTransforms(rw),
@@ -49,6 +49,7 @@ const transformHook = (rw) => {
         globalBorders(rw),
 
         globalButtonFontAndTextStylesTextAlign,
+        globalButtonFontAndTextStylesTextAlign.replace(/justify-/g, "text-"),
 
         globalButtonFontAndTextStylesColor,
         globalButtonFontAndTextStylesColorOpacity,
@@ -84,7 +85,7 @@ const transformHook = (rw) => {
     rw.setProps({
         dropzoneSide,
         wantsDropzone,
-        showText: showText == "true",
+        showText: showText === true || showText === "true",
         globalBgImageFetchPriorityEnabled,
         globalBgImageFetchPriorityLinkElement,
         globalBgImageFetchPriorityLinkElementEnd,
