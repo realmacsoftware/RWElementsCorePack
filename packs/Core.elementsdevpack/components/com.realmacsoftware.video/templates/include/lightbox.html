@@ -19,10 +19,6 @@
                     "video-lightbox-open": () => (this.open = true),
                 };
 
-                document.addEventListener("video-lightbox-open", () => {
-                    this.open = true;
-                });
-
                 Object.entries(handlers).forEach(([event, handler]) => {
                     (event === "keydown" ? document : window).addEventListener(
                         event,
