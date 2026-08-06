@@ -2980,7 +2980,7 @@
           "id": "globalControlTypeBg",
           "ai": {
             "name": "bg",
-            "description": "Enable/disable background."
+            "description": "Background mode: 'none' disables, 'static' always applies, 'hover' styles start and hover states separately."
           },
           "responsive": false,
           "segmented": {
