@@ -1205,7 +1205,7 @@
           "responsive": false,
           "ai": {
             "name": "rowsPerPage",
-            "description": "Number of rows shown per page when pagination is enabled."
+            "description": "Number of rows shown per page."
           },
           "number": {
             "default": 10,
