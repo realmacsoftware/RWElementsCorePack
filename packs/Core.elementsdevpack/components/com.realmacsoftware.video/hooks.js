@@ -504,10 +504,12 @@ const globalTransitions = (app, alwaysWantsHover = false) => {
   ]).toString() : "";
 };
 const transformHook = (rw) => {
+  var _a, _b;
   const {
     globalID,
-    image: thumbnail,
-    imageDark: thumbnailDark,
+    imageType,
+    image: thumbnailResource,
+    imageDark: thumbnailResourceDark,
     imageAlt: thumbnailAlt,
     wantsLightbox,
     videoLightboxColor,
@@ -523,8 +525,21 @@ const transformHook = (rw) => {
     startAt,
     globalPadding
   } = rw.props;
+  const {
+    imageCustomSource,
+    imageCustomSourceDark,
+    imageCmsField,
+    imageCmsFieldDark
+  } = rw.responsiveProps;
   const { id } = rw.node;
-  const { assetPath } = rw.component;
+  const { assetPath, sharedAssetPath } = rw.component;
+  const isEditMode = rw.project.mode === "edit";
+  const isCMSThumbnail = imageType == "cms";
+  const isResourceThumbnail = imageType == "resource";
+  const customThumbnailSrc = isEditMode && isCMSThumbnail ? `${sharedAssetPath}/images/image-square.png` : (_a = isCMSThumbnail ? imageCmsField : imageCustomSource) == null ? void 0 : _a.base;
+  const customThumbnailSrcDark = isEditMode && isCMSThumbnail ? `${sharedAssetPath}/images/image-square.png` : (_b = isCMSThumbnail ? imageCmsFieldDark : imageCustomSourceDark) == null ? void 0 : _b.base;
+  const thumbnail = isResourceThumbnail ? thumbnailResource : customThumbnailSrc ? { image: customThumbnailSrc } : null;
+  const thumbnailDark = isResourceThumbnail ? thumbnailResourceDark : customThumbnailSrcDark ? { image: customThumbnailSrcDark } : null;
   const hasThumbnail = thumbnail;
   const hasDarkThumbnail = thumbnailDark;
   const options = {
@@ -595,8 +610,11 @@ const transformHook = (rw) => {
   const getOptions = () => {
     return JSON.stringify(options).replace(/"/g, "'");
   };
+  const jsString = (value) => `'${String(value != null ? value : "").replace(/\\/g, "\\\\").replace(/'/g, "\\'")}'`;
   const getXData = () => {
-    return `videoPlayer('${id}', '${finalVideo.format}', '${finalVideo.videoId}', ${getOptions()})`;
+    return `videoPlayer(${jsString(id)}, ${jsString(finalVideo.format)}, ${jsString(
+      finalVideo.videoId
+    )}, ${getOptions()})`;
   };
   rw.setRootElement({
     as: "div",
@@ -614,19 +632,16 @@ const transformHook = (rw) => {
     video: finalVideo,
     options: getOptions(),
     classes,
-    hasVideo: !!video,
-    isYouTube: (video == null ? void 0 : video.format) == "youtube",
-    isVimeo: (video == null ? void 0 : video.format) == "vimeo",
     isMP4: (video == null ? void 0 : video.format) == "mp4",
     shouldAutoPlay: autoplay != "never",
-    edit: rw.project.mode === "edit",
+    edit: isEditMode,
     id,
     hasThumbnail,
     hasDarkThumbnail,
     thumbnail,
     thumbnailDark,
     thumbnailAlt: (video == null ? void 0 : video.alt) || thumbnailAlt || "",
-    wantsLightbox: wantsLightbox && rw.project.mode != "edit"
+    wantsLightbox: wantsLightbox && !isEditMode
   });
 };
 exports.transformHook = transformHook;
