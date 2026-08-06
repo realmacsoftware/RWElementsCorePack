@@ -112,8 +112,8 @@ test("resource mode processes resources and keeps the plain x-data", () => {
     assert.equal(rw.computedProps.resources.length, 2);
 
     const [image, video] = rw.computedProps.resources;
-    // Default thumbnailSize of 400, requested at 2x for retina
-    assert.equal(image.thumbnail, "https://example.com/photo.jpg?w=800");
+    // Resizing is opt-in, so thumbnails serve the original by default
+    assert.equal(image.thumbnail, "https://example.com/photo.jpg");
     assert.equal(image.alt, "A photo");
     assert.equal(image.isVideo, false);
     assert.equal(video.isVideo, true);
@@ -121,7 +121,7 @@ test("resource mode processes resources and keeps the plain x-data", () => {
     assert.equal(video.caption, "A clip");
     assert.equal(video.author, "Holiday");
 
-    assert.equal(rw.resizeCalls.length, 2);
+    assert.equal(rw.resizeCalls.length, 0);
     assert.equal(rw.root.args["x-data"], "gallery('node-1')");
 });
 
@@ -206,6 +206,7 @@ test("the lazy loading switch accepts string values and defaults to on", () => {
 
 test("thumbnail size is author-controlled and served at 2x", () => {
     const rw = renderGallery({
+        thumbnailResize: true,
         thumbnailSize: 250,
         resources: { name: "Holiday", resources: [{ ...photo }] },
     });
@@ -215,6 +216,42 @@ test("thumbnail size is author-controlled and served at 2x", () => {
         rw.computedProps.resources[0].thumbnail,
         "https://example.com/photo.jpg?w=500"
     );
+});
+
+// Resizing is opt-in: only an explicit "on" resizes. Projects predating the
+// switch have no value saved and must keep serving originals.
+test("thumbnail resizing is opt-in and defaults to off", () => {
+    const original = "https://example.com/photo.jpg";
+
+    for (const thumbnailResize of [undefined, false, "false"]) {
+        const rw = renderGallery({
+            thumbnailResize,
+            resources: { name: "Holiday", resources: [{ ...photo }] },
+        });
+        assert.equal(rw.resizeCalls.length, 0);
+        assert.equal(rw.computedProps.resources[0].thumbnail, original);
+    }
+
+    // Responsive-era projects deliver the switch as a string
+    const rw = renderGallery({
+        thumbnailResize: "true",
+        resources: { name: "Holiday", resources: [{ ...photo }] },
+    });
+    assert.equal(rw.resizeCalls.length, 1);
+    assert.equal(rw.computedProps.resources[0].thumbnail, `${original}?w=800`);
+});
+
+// A thumbnail resized below the column width used to render at its intrinsic
+// size: the grid's place-items-start stops cell items stretching, so the
+// wrapper must claim the full cell width itself.
+test("thumbnails span the full column regardless of image size", () => {
+    const rw = renderGallery({
+        thumbnailSize: 100,
+        resources: { name: "Holiday", resources: [{ ...photo }] },
+    });
+
+    assert.match(rw.computedProps.classes.thumbnail, /\bw-full\b/);
+    assert.match(rw.computedProps.classes.thumbnailImage, /\bw-full\b/);
 });
 
 // A lazy slide has no intrinsic size until it loads, so the aspect class has to

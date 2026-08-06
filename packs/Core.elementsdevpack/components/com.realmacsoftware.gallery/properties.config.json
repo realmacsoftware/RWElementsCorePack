@@ -126,6 +126,56 @@
       "icon": "photo",
       "properties": [
         {
+          "title": "Settings",
+          "heading": {}
+        },
+        {
+          "title": "Resize",
+          "id": "thumbnailResize",
+          "ai": {
+            "name": "thumbnailResize",
+            "description": "Serves gallery thumbnails as resized copies instead of the original images. Off by default."
+          },
+          "responsive": false,
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "visible": "thumbnailResize == true",
+          "title": "Size",
+          "id": "thumbnailSize",
+          "ai": {
+            "name": "thumbnailSize",
+            "description": "Width in pixels that gallery thumbnails are resized to when thumbnailResize is on. Served at 2x for retina displays."
+          },
+          "responsive": false,
+          "number": {
+            "default": 400,
+            "round": true,
+            "subtitle": "In pixels"
+          }
+        },
+        {
+          "title": "Lazy Loading",
+          "id": "thumbnailLazyLoading",
+          "ai": {
+            "name": "thumbnailLazyLoading",
+            "description": "Defers loading thumbnails below the fold until they are scrolled into view."
+          },
+          "responsive": false,
+          "switch": {
+            "default": true
+          }
+        },
+        {
+          "information": {},
+          "title": "Thumbnails load as they scroll into view."
+        },
+        {
+          "divider": {}
+        },
+        {
           "title": "Media",
           "heading": {}
         },
@@ -150,24 +200,6 @@
               }
             ]
           }
-        },
-        {
-          "title": "Size",
-          "id": "thumbnailSize",
-          "ai": {
-            "name": "thumbnailSize",
-            "description": "Width in pixels that gallery thumbnails are resized to. Served at 2x for retina displays."
-          },
-          "responsive": false,
-          "number": {
-            "default": 400,
-            "round": true,
-            "subtitle": "In pixels"
-          }
-        },
-        {
-          "information": {},
-          "title": "Thumbnails are resized to this width, served at 2x for retina displays."
         },
         {
           "globalControl": "BorderRadius",
@@ -334,25 +366,6 @@
                 "value": "sm"
               }
             }
-          }
-        },
-        {
-          "divider": {}
-        },
-        {
-          "title": "Lazy Loading",
-          "heading": {}
-        },
-        {
-          "title": "Enable",
-          "id": "thumbnailLazyLoading",
-          "ai": {
-            "name": "thumbnailLazyLoading",
-            "description": "Defers loading thumbnails below the fold until they are scrolled into view."
-          },
-          "responsive": false,
-          "switch": {
-            "default": true
           }
         }
       ]

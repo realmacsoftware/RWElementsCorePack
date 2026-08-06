@@ -23,6 +23,7 @@ const transformHook = (rw) => {
         thumbnailAuthorFontSize,
 
         thumbnailAspectRatio,
+        thumbnailResize,
         thumbnailSize,
         thumbnailLazyLoading,
         thumbnailGlobalBordersRadius: thumbnailBorderRadius,
@@ -79,6 +80,10 @@ const transformHook = (rw) => {
     // other than an explicit "off" leaves lazy loading on.
     const wantsLazyThumbnails = switchToBool(thumbnailLazyLoading) !== false;
 
+    // Resizing is opt-in: only an explicit "on" resizes, so projects with no
+    // saved value keep serving the originals.
+    const wantsResizedThumbnails = switchToBool(thumbnailResize) === true;
+
     // The first row is above the fold at every breakpoint, so it loads eagerly
     // and everything below it lazy-loads. columns is responsive, so take the
     // widest value — the raw numbers only exist on responsiveProps, since
@@ -94,7 +99,8 @@ const transformHook = (rw) => {
     // failure mode stays on the safe side.
     const lazyFrom = wantsLazyThumbnails ? eagerCount : -1;
 
-    // Thumbnails are served at 2x so they stay sharp on retina displays.
+    // Resized thumbnails are served at 2x so they stay sharp on retina
+    // displays.
     const thumbnailWidth = (Number(thumbnailSize) || 400) * 2;
 
     // Suffix for the PHP variables in the remote templates, so two galleries
@@ -145,7 +151,9 @@ const transformHook = (rw) => {
         }
     } else {
         resources?.resources?.forEach((resource, index) => {
-            resource.thumbnail = rw.resizeResource(resource, thumbnailWidth);
+            resource.thumbnail = wantsResizedThumbnails
+                ? rw.resizeResource(resource, thumbnailWidth)
+                : resource.image;
             resource.lazy = wantsLazyThumbnails && index >= eagerCount;
             resource.alt =
                 resource.alt || resource.caption || resource.author || "";
@@ -204,7 +212,10 @@ const transformHook = (rw) => {
             advancedClasses(rw),
         ]).toString(),
         thumbnail: classnames([
-            `cursor-pointer`,
+            // Full cell width so a thumbnail resized below the column width
+            // still fills it — the grid's place-items-start would otherwise
+            // shrink the cell item to the image's intrinsic size.
+            `w-full cursor-pointer`,
             thumbnailAspectRatio,
             thumbnailBorderRadius,
         ]).toString(),

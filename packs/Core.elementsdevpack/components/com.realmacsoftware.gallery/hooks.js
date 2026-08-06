@@ -116,6 +116,7 @@ const transformHook = (rw) => {
     thumbnailAuthorFont,
     thumbnailAuthorFontSize,
     thumbnailAspectRatio,
+    thumbnailResize,
     thumbnailSize,
     thumbnailLazyLoading,
     thumbnailGlobalBordersRadius: thumbnailBorderRadius,
@@ -160,6 +161,7 @@ const transformHook = (rw) => {
   const isRemote = sourceType === "remote";
   const remotePublished = isRemote && !edit;
   const wantsLazyThumbnails = switchToBool(thumbnailLazyLoading) !== false;
+  const wantsResizedThumbnails = switchToBool(thumbnailResize) === true;
   const columnCounts = Object.values(((_a = rw.responsiveProps) == null ? void 0 : _a.columns) || {}).map((value) => parseInt(value, 10)).filter((value) => Number.isFinite(value));
   const eagerCount = columnCounts.length ? Math.max(...columnCounts) : 3;
   const lazyFrom = wantsLazyThumbnails ? eagerCount : -1;
@@ -188,7 +190,7 @@ const transformHook = (rw) => {
     }
   } else {
     (_c = resources == null ? void 0 : resources.resources) == null ? void 0 : _c.forEach((resource, index) => {
-      resource.thumbnail = rw.resizeResource(resource, thumbnailWidth);
+      resource.thumbnail = wantsResizedThumbnails ? rw.resizeResource(resource, thumbnailWidth) : resource.image;
       resource.lazy = wantsLazyThumbnails && index >= eagerCount;
       resource.alt = resource.alt || resource.caption || resource.author || "";
       resource.aspect = resource.aspect || (resource.width && resource.height ? `${resource.width}/${resource.height}` : "auto");
@@ -227,7 +229,10 @@ const transformHook = (rw) => {
       advancedClasses(rw)
     ]).toString(),
     thumbnail: classnames([
-      `cursor-pointer`,
+      // Full cell width so a thumbnail resized below the column width
+      // still fills it — the grid's place-items-start would otherwise
+      // shrink the cell item to the image's intrinsic size.
+      `w-full cursor-pointer`,
       thumbnailAspectRatio,
       thumbnailBorderRadius
     ]).toString(),
