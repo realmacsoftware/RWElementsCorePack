@@ -24,6 +24,7 @@ const transformHook = (rw) => {
 
         thumbnailAspectRatio,
         thumbnailSize,
+        thumbnailLazyLoading,
         thumbnailGlobalBordersRadius: thumbnailBorderRadius,
         thumbnailGlobalBoxShadow: thumbnailShadow,
         lightboxPreview,
@@ -74,6 +75,10 @@ const transformHook = (rw) => {
     const isRemote = sourceType === "remote";
     const remotePublished = isRemote && !edit;
 
+    // Older projects predate the switch and have no value saved, so anything
+    // other than an explicit "off" leaves lazy loading on.
+    const wantsLazyThumbnails = switchToBool(thumbnailLazyLoading) !== false;
+
     // The first row is above the fold at every breakpoint, so it loads eagerly
     // and everything below it lazy-loads. columns is responsive, so take the
     // widest value — the raw numbers only exist on responsiveProps, since
@@ -82,6 +87,12 @@ const transformHook = (rw) => {
         .map((value) => parseInt(value, 10))
         .filter((value) => Number.isFinite(value));
     const eagerCount = columnCounts.length ? Math.max(...columnCounts) : 3;
+
+    // Index from which thumbnails become lazy, for the PHP grid to compare
+    // against. -1 disables lazy loading entirely; note that a value of 0 (what
+    // an empty interpolation casts to) makes every thumbnail lazy, so the
+    // failure mode stays on the safe side.
+    const lazyFrom = wantsLazyThumbnails ? eagerCount : -1;
 
     // Thumbnails are served at 2x so they stay sharp on retina displays.
     const thumbnailWidth = (Number(thumbnailSize) || 400) * 2;
@@ -122,7 +133,7 @@ const transformHook = (rw) => {
                       caption: `Image ${index + 1}`,
                       author: "",
                       isVideo: false,
-                      lazy: index >= eagerCount,
+                      lazy: wantsLazyThumbnails && index >= eagerCount,
                   }))
                 : [];
             hasResources = galleryResources.length > 0;
@@ -135,7 +146,7 @@ const transformHook = (rw) => {
     } else {
         resources?.resources?.forEach((resource, index) => {
             resource.thumbnail = rw.resizeResource(resource, thumbnailWidth);
-            resource.lazy = index >= eagerCount;
+            resource.lazy = wantsLazyThumbnails && index >= eagerCount;
             resource.alt =
                 resource.alt || resource.caption || resource.author || "";
 
@@ -319,7 +330,7 @@ const transformHook = (rw) => {
         lightboxShowAuthor: lightboxShowAuthor,
         lightboxWantsMeta: lightboxShowCaption || lightboxShowAuthor,
         resources: galleryResources,
-        eagerCount,
+        lazyFrom,
         isRemote,
         remotePublished,
         remoteFolder,

@@ -25,8 +25,13 @@ function classnames(initialClasses = "") {
     };
 }
 
+// The build inlines this into hooks.js rather than importing it, so load the
+// shipping copy into the sandbox — a local reimplementation could drift from
+// the switch-value handling the hook actually relies on.
+const switchToBoolPath =
+    "node_modules/rw-elements-tools/shared-hooks/core/switchToBool.js";
+
 function loadTransformHook() {
-    const source = fs.readFileSync(hookPath, "utf8");
     const sandbox = {
         exports: {},
         JSON,
@@ -36,8 +41,14 @@ function loadTransformHook() {
         advancedClasses: () => "advanced",
         globalHTMLTag: (rw, fallback) => fallback,
     };
+    const context = vm.createContext(sandbox);
 
-    vm.runInNewContext(source, sandbox, { filename: hookPath });
+    for (const file of [switchToBoolPath, hookPath]) {
+        vm.runInContext(fs.readFileSync(file, "utf8"), context, {
+            filename: file,
+        });
+    }
+
     return sandbox.exports.transformHook;
 }
 
@@ -129,7 +140,7 @@ test("only the first row of thumbnails loads eagerly", () => {
         { responsiveProps: { columns: { base: "2", md: "3", lg: "4" } } }
     );
 
-    assert.equal(rw.computedProps.eagerCount, 4);
+    assert.equal(rw.computedProps.lazyFrom, 4);
     assert.deepEqual(
         rw.computedProps.resources.map((resource) => resource.lazy),
         [false, false, false, false, true, true, true, true]
@@ -141,8 +152,56 @@ test("eager count falls back when columns is unset", () => {
         resources: { name: "Holiday", resources: [{ ...photo }] },
     });
 
-    assert.equal(rw.computedProps.eagerCount, 3);
+    assert.equal(rw.computedProps.lazyFrom, 3);
     assert.equal(rw.computedProps.resources[0].lazy, false);
+});
+
+test("lazy loading can be switched off", () => {
+    const six = Array.from({ length: 6 }, (_, index) => ({
+        image: `https://example.com/photo-${index}.jpg`,
+    }));
+    const off = renderGallery({
+        thumbnailLazyLoading: false,
+        resources: { name: "Holiday", resources: six },
+    });
+
+    assert.ok(
+        off.computedProps.resources.every((resource) => resource.lazy === false),
+        "no thumbnail should be lazy when the switch is off"
+    );
+    // Negative threshold tells the PHP grid to skip the attribute entirely
+    assert.equal(off.computedProps.lazyFrom, -1);
+
+    const on = renderGallery({
+        thumbnailLazyLoading: true,
+        resources: { name: "Holiday", resources: six },
+    });
+    assert.equal(on.computedProps.lazyFrom, 3);
+    assert.equal(on.computedProps.resources[5].lazy, true);
+});
+
+// Projects saved while a switch was responsive deliver "true"/"false" strings,
+// and projects predating the switch deliver nothing at all.
+test("the lazy loading switch accepts string values and defaults to on", () => {
+    const cases = [
+        [undefined, 3],
+        [true, 3],
+        ["true", 3],
+        [false, -1],
+        ["false", -1],
+    ];
+
+    for (const [value, expected] of cases) {
+        const rw = renderGallery({
+            thumbnailLazyLoading: value,
+            resources: { name: "Holiday", resources: [{ ...photo }] },
+        });
+        assert.equal(
+            rw.computedProps.lazyFrom,
+            expected,
+            `thumbnailLazyLoading=${JSON.stringify(value)}`
+        );
+    }
 });
 
 test("thumbnail size is author-controlled and served at 2x", () => {
@@ -200,9 +259,10 @@ test("every image the gallery emits is lazy and async-decoded", () => {
     }
 
     // The PHP grid mirrors the first-row-eager rule, degrading to all-lazy
-    // rather than a parse error if eagerCount ever interpolates empty
+    // rather than a parse error if lazyFrom ever interpolates empty
     const grid = read("remote-grid.php");
-    assert.match(grid, /\$rwGalleryEager_\{\{phpId\}\} = \(int\)'\{\{eagerCount\}\}';/);
+    assert.match(grid, /\$rwGalleryLazyFrom_\{\{phpId\}\} = \(int\)'\{\{lazyFrom\}\}';/);
+    assert.match(grid, /\$rwGalleryLazyFrom_\{\{phpId\}\} >= 0 &&/);
     assert.match(grid, /decoding="async"/);
 });
 

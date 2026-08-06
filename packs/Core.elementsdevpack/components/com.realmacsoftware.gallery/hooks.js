@@ -85,6 +85,16 @@ const globalHTMLTag = (app, fallback = "div") => {
   }
   return globalHTMLTag2 || fallback;
 };
+const switchToBool = (value) => {
+  if (value === true || value === 1) return true;
+  if (value === false || value === 0) return false;
+  if (typeof value === "string") {
+    const base = value.trim().split(/\s+/)[0];
+    if (base === "true") return true;
+    if (base === "false") return false;
+  }
+  return void 0;
+};
 const transformHook = (rw) => {
   var _a, _b, _c;
   const {
@@ -107,6 +117,7 @@ const transformHook = (rw) => {
     thumbnailAuthorFontSize,
     thumbnailAspectRatio,
     thumbnailSize,
+    thumbnailLazyLoading,
     thumbnailGlobalBordersRadius: thumbnailBorderRadius,
     thumbnailGlobalBoxShadow: thumbnailShadow,
     lightboxPreview,
@@ -148,8 +159,10 @@ const transformHook = (rw) => {
   const edit = rw.project.mode === "edit";
   const isRemote = sourceType === "remote";
   const remotePublished = isRemote && !edit;
+  const wantsLazyThumbnails = switchToBool(thumbnailLazyLoading) !== false;
   const columnCounts = Object.values(((_a = rw.responsiveProps) == null ? void 0 : _a.columns) || {}).map((value) => parseInt(value, 10)).filter((value) => Number.isFinite(value));
   const eagerCount = columnCounts.length ? Math.max(...columnCounts) : 3;
+  const lazyFrom = wantsLazyThumbnails ? eagerCount : -1;
   const thumbnailWidth = (Number(thumbnailSize) || 400) * 2;
   const phpId = String(id).replace(/[^a-zA-Z0-9]/g, "_");
   const sanitiseForPhp = (value) => String(value || "").trim().replace(/['"\\\r\n\t]/g, "");
@@ -166,7 +179,7 @@ const transformHook = (rw) => {
         caption: `Image ${index + 1}`,
         author: "",
         isVideo: false,
-        lazy: index >= eagerCount
+        lazy: wantsLazyThumbnails && index >= eagerCount
       })) : [];
       hasResources = galleryResources.length > 0;
     } else {
@@ -176,7 +189,7 @@ const transformHook = (rw) => {
   } else {
     (_c = resources == null ? void 0 : resources.resources) == null ? void 0 : _c.forEach((resource, index) => {
       resource.thumbnail = rw.resizeResource(resource, thumbnailWidth);
-      resource.lazy = index >= eagerCount;
+      resource.lazy = wantsLazyThumbnails && index >= eagerCount;
       resource.alt = resource.alt || resource.caption || resource.author || "";
       resource.aspect = resource.aspect || (resource.width && resource.height ? `${resource.width}/${resource.height}` : "auto");
       resource.isVideo = resource.format === "youtube" || resource.format === "vimeo" || resource.format === "mp4";
@@ -337,7 +350,7 @@ const transformHook = (rw) => {
     lightboxShowAuthor,
     lightboxWantsMeta: lightboxShowCaption || lightboxShowAuthor,
     resources: galleryResources,
-    eagerCount,
+    lazyFrom,
     isRemote,
     remotePublished,
     remoteFolder,

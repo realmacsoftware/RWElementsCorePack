@@ -387,6 +387,29 @@
               }
             }
           }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Lazy Loading",
+          "heading": {}
+        },
+        {
+          "title": "Enable",
+          "id": "thumbnailLazyLoading",
+          "ai": {
+            "name": "thumbnailLazyLoading",
+            "description": "Defers loading thumbnails below the fold until they are scrolled into view. On by default. The first row always loads immediately."
+          },
+          "responsive": false,
+          "switch": {
+            "default": true
+          }
+        },
+        {
+          "information": {},
+          "title": "Thumbnails below the first row load as they scroll into view. Turn off to load every thumbnail immediately."
         }
       ]
     },
