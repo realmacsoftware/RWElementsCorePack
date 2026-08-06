@@ -31,7 +31,6 @@ const transformHook = (rw) => {
     }
 
     rw.setProps({
-        classes,
         globalBgImageFetchPriorityEnabled,
         globalBgImageFetchPriorityLinkElement,
         globalBgImageFetchPriorityLinkElementEnd,

@@ -73,7 +73,10 @@
           "themeSpacing": {
             "mode": "single",
             "default": {
-              "value": "auto"
+              "base": {
+                "custom": false,
+                "value": "auto"
+              }
             }
           }
         },
@@ -84,7 +87,10 @@
           "themeSpacing": {
             "mode": "single",
             "default": {
-              "value": "0.5"
+              "base": {
+                "custom": false,
+                "value": "0.5"
+              }
             }
           }
         }
