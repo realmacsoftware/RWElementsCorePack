@@ -389,7 +389,7 @@
           "id": "globalControlType3D",
           "ai": {
             "name": "transforms3d",
-            "description": "Enable/disable 3D transforms."
+            "description": "3D transform mode: 'none', 'static', 'hover', or 'mouse' (follow cursor)."
           },
           "responsive": false,
           "segmented": {
