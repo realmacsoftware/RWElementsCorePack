@@ -1,8 +1,9 @@
 const transformHook = (rw) => {
     const {
         globalID,
-        image: thumbnail,
-        imageDark: thumbnailDark,
+        imageType,
+        image: thumbnailResource,
+        imageDark: thumbnailResourceDark,
         imageAlt: thumbnailAlt,
         wantsLightbox,
         videoLightboxColor,
@@ -19,8 +20,44 @@ const transformHook = (rw) => {
 
         globalPadding,
     } = rw.props;
+
+    const {
+        imageCustomSource,
+        imageCustomSourceDark,
+        imageCmsField,
+        imageCmsFieldDark,
+    } = rw.responsiveProps;
+
     const { id } = rw.node;
-    const { assetPath } = rw.component;
+    const { assetPath, sharedAssetPath } = rw.component;
+    const isEditMode = rw.project.mode === "edit";
+    const isCMSThumbnail = imageType == "cms";
+    const isResourceThumbnail = imageType == "resource";
+
+    // Custom and CMS thumbnails are plain strings rather than resources; take the base
+    // breakpoint value and normalise it to the { image } shape the templates read.
+    const customThumbnailSrc =
+        isEditMode && isCMSThumbnail
+            ? `${sharedAssetPath}/images/image-square.png`
+            : (isCMSThumbnail ? imageCmsField : imageCustomSource)?.base;
+
+    const customThumbnailSrcDark =
+        isEditMode && isCMSThumbnail
+            ? `${sharedAssetPath}/images/image-square.png`
+            : (isCMSThumbnail ? imageCmsFieldDark : imageCustomSourceDark)?.base;
+
+    const thumbnail = isResourceThumbnail
+        ? thumbnailResource
+        : customThumbnailSrc
+            ? { image: customThumbnailSrc }
+            : null;
+
+    const thumbnailDark = isResourceThumbnail
+        ? thumbnailResourceDark
+        : customThumbnailSrcDark
+            ? { image: customThumbnailSrcDark }
+            : null;
+
     const hasThumbnail = thumbnail;
     const hasDarkThumbnail = thumbnailDark;
 
@@ -132,14 +169,14 @@ const transformHook = (rw) => {
         isVimeo: video?.format == "vimeo",
         isMP4: video?.format == "mp4",
         shouldAutoPlay: autoplay != "never",
-        edit: rw.project.mode === "edit",
+        edit: isEditMode,
         id,
         hasThumbnail,
         hasDarkThumbnail,
         thumbnail,
         thumbnailDark,
         thumbnailAlt: video?.alt || thumbnailAlt || "",
-        wantsLightbox: wantsLightbox && rw.project.mode != "edit",
+        wantsLightbox: wantsLightbox && !isEditMode,
     });
 };
 
