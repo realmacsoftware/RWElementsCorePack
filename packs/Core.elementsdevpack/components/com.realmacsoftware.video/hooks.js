@@ -610,8 +610,11 @@ const transformHook = (rw) => {
   const getOptions = () => {
     return JSON.stringify(options).replace(/"/g, "'");
   };
+  const jsString = (value) => `'${String(value != null ? value : "").replace(/\\/g, "\\\\").replace(/'/g, "\\'")}'`;
   const getXData = () => {
-    return `videoPlayer('${id}', '${finalVideo.format}', '${finalVideo.videoId}', ${getOptions()})`;
+    return `videoPlayer(${jsString(id)}, ${jsString(finalVideo.format)}, ${jsString(
+      finalVideo.videoId
+    )}, ${getOptions()})`;
   };
   rw.setRootElement({
     as: "div",

@@ -141,9 +141,17 @@ const transformHook = (rw) => {
         return JSON.stringify(options).replace(/"/g, "'");
     };
 
+    // Single-quoted JS string literal, safe to sit inside a double-quoted HTML attribute.
+    // Matches getOptions()'s convention of keeping double quotes out of the attribute.
+    const jsString = (value) =>
+        `'${String(value ?? "")
+            .replace(/\\/g, "\\\\")
+            .replace(/'/g, "\\'")}'`;
+
     const getXData = () => {
-        return `videoPlayer('${id}', '${finalVideo.format}', '${finalVideo.videoId
-            }', ${getOptions()})`;
+        return `videoPlayer(${jsString(id)}, ${jsString(finalVideo.format)}, ${jsString(
+            finalVideo.videoId
+        )}, ${getOptions()})`;
     };
 
     rw.setRootElement({
