@@ -36,7 +36,7 @@
         {
           "title": "Wrap Items",
           "id": "wrap",
-          "ai": { "name": "wrap", "description": "Flex item wrapping." },
+          "ai": { "name": "wrap", "description": "Flex wrapping: 'nowrap' keeps one line, 'wrap' adds lines when needed, 'wrap-reverse' wraps additional lines in the opposite cross-axis direction." },
           "format": "flex-{{value}}",
           "select": {
             "default": "nowrap",

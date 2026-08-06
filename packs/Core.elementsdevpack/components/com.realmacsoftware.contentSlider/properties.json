@@ -545,7 +545,7 @@
           "id": "globalControlTypeBg",
           "ai": {
             "name": "bg",
-            "description": "Enable/disable background."
+            "description": "Background mode: 'none' disables, 'static' always applies, 'hover' styles start and hover states separately."
           },
           "responsive": false,
           "segmented": {
@@ -1831,7 +1831,7 @@
           "id": "globalControlTypeBorders",
           "ai": {
             "name": "border",
-            "description": "Enable/disable borders."
+            "description": "Border mode: 'none' disables, 'static' always applies, 'hover' styles start and hover states separately."
           },
           "responsive": false,
           "segmented": {

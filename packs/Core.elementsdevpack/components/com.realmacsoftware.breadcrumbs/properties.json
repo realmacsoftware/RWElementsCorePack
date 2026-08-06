@@ -1001,7 +1001,7 @@
           "id": "globalControlTypeEffects",
           "ai": {
             "name": "effects",
-            "description": "Enable/disable effects."
+            "description": "Effects mode: 'none' disables, 'static' always applies, 'hover' styles start and hover states separately."
           },
           "responsive": false,
           "segmented": {
@@ -1274,7 +1274,7 @@
           "id": "globalControlTypeFilters",
           "ai": {
             "name": "filters",
-            "description": "Enable/disable filters."
+            "description": "Filters mode: 'none' disables, 'static' always applies, 'hover' styles start and hover states separately."
           },
           "responsive": false,
           "segmented": {
@@ -1563,7 +1563,7 @@
           "id": "globalControlTypeTransforms",
           "ai": {
             "name": "transforms",
-            "description": "Enable/disable transforms."
+            "description": "Transforms mode: 'none' disables, 'static' always applies, 'hover' styles start and hover states separately."
           },
           "responsive": false,
           "segmented": {
@@ -1943,7 +1943,7 @@
           "id": "globalControlTypeBg",
           "ai": {
             "name": "bg",
-            "description": "Enable/disable background."
+            "description": "Background mode: 'none' disables, 'static' always applies, 'hover' styles start and hover states separately."
           },
           "responsive": false,
           "segmented": {
@@ -3229,7 +3229,7 @@
           "id": "globalControlTypeBorders",
           "ai": {
             "name": "border",
-            "description": "Enable/disable borders."
+            "description": "Border mode: 'none' disables, 'static' always applies, 'hover' styles start and hover states separately."
           },
           "responsive": false,
           "segmented": {

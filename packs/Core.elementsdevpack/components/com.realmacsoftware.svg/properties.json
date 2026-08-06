@@ -361,7 +361,7 @@
           "id": "globalLink",
           "ai": {
             "name": "link",
-            "description": "Destination this element links to; wraps the element in an anchor. Null clears it."
+            "description": "Destination this element links to; wraps the element in an anchor. Null clears it. Avoid when the element contains other interactive controls."
           },
           "link": {}
         }
@@ -1029,7 +1029,7 @@
           "id": "globalControlTypeEffects",
           "ai": {
             "name": "effects",
-            "description": "Enable/disable effects."
+            "description": "Effects mode: 'none' disables, 'static' always applies, 'hover' styles start and hover states separately."
           },
           "responsive": false,
           "segmented": {
@@ -1302,7 +1302,7 @@
           "id": "globalControlTypeTransforms",
           "ai": {
             "name": "transforms",
-            "description": "Enable/disable transforms."
+            "description": "Transforms mode: 'none' disables, 'static' always applies, 'hover' styles start and hover states separately."
           },
           "responsive": false,
           "segmented": {
@@ -1682,7 +1682,7 @@
           "id": "globalControlTypeFilters",
           "ai": {
             "name": "filters",
-            "description": "Enable/disable filters."
+            "description": "Filters mode: 'none' disables, 'static' always applies, 'hover' styles start and hover states separately."
           },
           "responsive": false,
           "segmented": {
