@@ -577,7 +577,6 @@ const transformHook = (rw) => {
     rw.addAnchor(globalID);
   }
   rw.setProps({
-    classes,
     globalBgImageFetchPriorityEnabled,
     globalBgImageFetchPriorityLinkElement,
     globalBgImageFetchPriorityLinkElementEnd
