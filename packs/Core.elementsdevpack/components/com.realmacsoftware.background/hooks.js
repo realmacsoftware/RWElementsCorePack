@@ -190,6 +190,13 @@ const globalBgGradient = (app, args) => {
   }
   return classes.toString();
 };
+const encodeBgImageUrl = (url) => String(url).replace(/[ '"()]/g, (char) => ({
+  " ": "%20",
+  "'": "%27",
+  '"': "%22",
+  "(": "%28",
+  ")": "%29"
+})[char]);
 const globalBgImage = (app, args) => {
   const {
     globalControlTypeBg: controlType,
@@ -217,7 +224,7 @@ const globalBgImage = (app, args) => {
   const hasImage = Boolean(resource == null ? void 0 : resource.image);
   const hasImageEnd = Boolean(resourceEnd == null ? void 0 : resourceEnd.image);
   const classes = classnames().add([
-    hasImage ? `bg-[url(${resource.image})]` : "",
+    hasImage ? `bg-[url(${encodeBgImageUrl(resource.image)})]` : "",
     size,
     repeat,
     position
@@ -225,21 +232,21 @@ const globalBgImage = (app, args) => {
   if (controlType == "hover") {
     if (wantsPeer) {
       classes.add([
-        hasImageEnd ? `peer-hover:bg-[url(${resourceEnd.image})]` : "",
+        hasImageEnd ? `peer-hover:bg-[url(${encodeBgImageUrl(resourceEnd.image)})]` : "",
         sizeEnd.replace(/hover:/g, "peer-hover:"),
         repeatEnd.replace(/hover:/g, "peer-hover:"),
         positionEnd.replace(/hover:/g, "peer-hover:")
       ]);
     } else if (hasPrefix) {
       classes.add([
-        hasImageEnd ? prefixCallback(`bg-[url(${resourceEnd.image})]`, args.prefix) : "",
+        hasImageEnd ? prefixCallback(`bg-[url(${encodeBgImageUrl(resourceEnd.image)})]`, args.prefix) : "",
         prefixCallback(sizeEnd.replace(/hover:/g, ""), args.prefix),
         prefixCallback(repeatEnd.replace(/hover:/g, ""), args.prefix),
         prefixCallback(positionEnd.replace(/hover:/g, ""), args.prefix)
       ]);
     } else {
       classes.add([
-        hasImageEnd ? `hover:bg-[url(${resourceEnd.image})]` : "",
+        hasImageEnd ? `hover:bg-[url(${encodeBgImageUrl(resourceEnd.image)})]` : "",
         sizeEnd,
         repeatEnd,
         positionEnd
@@ -247,7 +254,7 @@ const globalBgImage = (app, args) => {
     }
     if (wantsActive) {
       classes.add([
-        hasImageEnd ? `data-[active=true]:bg-[url(${resourceEnd.image})]` : "",
+        hasImageEnd ? `data-[active=true]:bg-[url(${encodeBgImageUrl(resourceEnd.image)})]` : "",
         sizeEnd.replace(/hover:/g, "data-[active=true]:"),
         repeatEnd.replace(/hover:/g, "data-[active=true]:"),
         positionEnd.replace(/hover:/g, "data-[active=true]:")
@@ -255,7 +262,7 @@ const globalBgImage = (app, args) => {
     }
     if (wantsFocus) {
       classes.add([
-        hasImageEnd ? `focus:bg-[url(${resourceEnd.image})]` : "",
+        hasImageEnd ? `focus:bg-[url(${encodeBgImageUrl(resourceEnd.image)})]` : "",
         sizeEnd.replace(/hover:/g, "focus:"),
         repeatEnd.replace(/hover:/g, "focus:"),
         positionEnd.replace(/hover:/g, "focus:")
@@ -267,7 +274,7 @@ const globalBgImage = (app, args) => {
 const globalBgVideoThumbnail = (app, args) => {
   const { globalBgVideo: video } = app.props;
   return classnames([
-    `bg-[url(${video == null ? void 0 : video.image})] bg-cover bg-center`
+    `bg-[url(${encodeBgImageUrl(video == null ? void 0 : video.image)})] bg-cover bg-center`
   ]).toString();
 };
 const globalBackground = (app, args = {}) => {
@@ -440,8 +447,9 @@ const resolveGradientImageClass = (type, linearDirection, radialPosition, conicA
   return normalizeGradientImageClass(selectedDirection, interpolation);
 };
 const switchToBool = (value) => {
-  if (value === true || value === 1) return true;
-  if (value === false || value === 0) return false;
+  if (value === true || value === false) {
+    return value;
+  }
   if (typeof value === "string") {
     const base = value.trim().split(/\s+/)[0];
     if (base === "true") return true;

@@ -1277,7 +1277,8 @@
           },
           "format": "duration-[{{value}}ms]",
           "number": {
-            "default": 300
+            "default": 300,
+            "min": 0
           }
         },
         {
@@ -1697,6 +1698,7 @@
           "format": "blur-[{{value}}px]",
           "number": {
             "default": 0,
+            "min": 0,
             "subtitle": "In pixels"
           },
           "visible": "globalControlTypeFilters == 'static' || (globalControlTypeFilters == 'hover' && globalFiltersState == 'start')"
@@ -1712,6 +1714,7 @@
           "format": "brightness-[{{value}}%]",
           "number": {
             "default": 100,
+            "min": 0,
             "subtitle": "In percent"
           },
           "visible": "globalControlTypeFilters == 'static' || (globalControlTypeFilters == 'hover' && globalFiltersState == 'start')"
@@ -1727,6 +1730,7 @@
           "format": "saturate-[{{value}}%]",
           "number": {
             "default": 100,
+            "min": 0,
             "subtitle": "In percent"
           },
           "visible": "globalControlTypeFilters == 'static' || (globalControlTypeFilters == 'hover' && globalFiltersState == 'start')"
@@ -1760,6 +1764,7 @@
           "format": "blur-[{{value}}px]",
           "number": {
             "default": 0,
+            "min": 0,
             "subtitle": "In pixels"
           },
           "visible": "(globalControlTypeFilters == 'hover' && globalFiltersState == 'end')"
@@ -1775,6 +1780,7 @@
           "format": "brightness-[{{value}}%]",
           "number": {
             "default": 100,
+            "min": 0,
             "subtitle": "In percent"
           },
           "visible": "(globalControlTypeFilters == 'hover' && globalFiltersState == 'end')"
@@ -1790,6 +1796,7 @@
           "format": "saturate-[{{value}}%]",
           "number": {
             "default": 100,
+            "min": 0,
             "subtitle": "In percent"
           },
           "visible": "(globalControlTypeFilters == 'hover' && globalFiltersState == 'end')"
@@ -1828,6 +1835,7 @@
           "format": "backdrop-blur-[{{value}}px]",
           "number": {
             "default": 0,
+            "min": 0,
             "subtitle": "In pixels"
           },
           "visible": "globalControlTypeFilters == 'static' || (globalControlTypeFilters == 'hover' && globalFiltersState == 'start')"
@@ -1843,6 +1851,7 @@
           "format": "backdrop-blur-[{{value}}px]",
           "number": {
             "default": 0,
+            "min": 0,
             "subtitle": "In pixels"
           },
           "visible": "(globalControlTypeFilters == 'hover' && globalFiltersState == 'end')"

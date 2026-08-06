@@ -86,8 +86,9 @@ const globalHTMLTag = (app, fallback = "div") => {
   return globalHTMLTag2 || fallback;
 };
 const switchToBool = (value) => {
-  if (value === true || value === 1) return true;
-  if (value === false || value === 0) return false;
+  if (value === true || value === false) {
+    return value;
+  }
   if (typeof value === "string") {
     const base = value.trim().split(/\s+/)[0];
     if (base === "true") return true;
