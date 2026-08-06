@@ -86,7 +86,7 @@ const globalHTMLTag = (app, fallback = "div") => {
   return globalHTMLTag2 || fallback;
 };
 const transformHook = (rw) => {
-  var _a, _b;
+  var _a, _b, _c;
   const {
     globalID,
     sourceType,
@@ -106,6 +106,7 @@ const transformHook = (rw) => {
     thumbnailAuthorFont,
     thumbnailAuthorFontSize,
     thumbnailAspectRatio,
+    thumbnailSize,
     thumbnailGlobalBordersRadius: thumbnailBorderRadius,
     thumbnailGlobalBoxShadow: thumbnailShadow,
     lightboxPreview,
@@ -147,10 +148,13 @@ const transformHook = (rw) => {
   const edit = rw.project.mode === "edit";
   const isRemote = sourceType === "remote";
   const remotePublished = isRemote && !edit;
+  const columnCounts = Object.values(((_a = rw.responsiveProps) == null ? void 0 : _a.columns) || {}).map((value) => parseInt(value, 10)).filter((value) => Number.isFinite(value));
+  const eagerCount = columnCounts.length ? Math.max(...columnCounts) : 3;
+  const thumbnailWidth = (Number(thumbnailSize) || 400) * 2;
   const phpId = String(id).replace(/[^a-zA-Z0-9]/g, "_");
   const sanitiseForPhp = (value) => String(value || "").trim().replace(/['"\\\r\n\t]/g, "");
   const remoteFolder = sanitiseForPhp(remoteFolderURL).replace(/\/+$/, "");
-  const pageDocRoot = sanitiseForPhp((_a = rw.page) == null ? void 0 : _a.docRootPath);
+  const pageDocRoot = sanitiseForPhp((_b = rw.page) == null ? void 0 : _b.docRootPath);
   let galleryResources = resources == null ? void 0 : resources.resources;
   let hasResources = (galleryResources == null ? void 0 : galleryResources.length) > 0;
   if (isRemote) {
@@ -161,7 +165,8 @@ const transformHook = (rw) => {
         alt: `Remote image ${index + 1}`,
         caption: `Image ${index + 1}`,
         author: "",
-        isVideo: false
+        isVideo: false,
+        lazy: index >= eagerCount
       })) : [];
       hasResources = galleryResources.length > 0;
     } else {
@@ -169,10 +174,11 @@ const transformHook = (rw) => {
       hasResources = true;
     }
   } else {
-    (_b = resources == null ? void 0 : resources.resources) == null ? void 0 : _b.forEach((resource) => {
-      resource.srcset = "";
-      resource.thumbnail = rw.resizeResource(resource, 400);
+    (_c = resources == null ? void 0 : resources.resources) == null ? void 0 : _c.forEach((resource, index) => {
+      resource.thumbnail = rw.resizeResource(resource, thumbnailWidth);
+      resource.lazy = index >= eagerCount;
       resource.alt = resource.alt || resource.caption || resource.author || "";
+      resource.aspect = resource.aspect || (resource.width && resource.height ? `${resource.width}/${resource.height}` : "auto");
       resource.isVideo = resource.format === "youtube" || resource.format === "vimeo" || resource.format === "mp4";
       if (resource.isVideo) {
         resource.isYouTube = resource.format === "youtube" ? true : false;
@@ -331,6 +337,7 @@ const transformHook = (rw) => {
     lightboxShowAuthor,
     lightboxWantsMeta: lightboxShowCaption || lightboxShowAuthor,
     resources: galleryResources,
+    eagerCount,
     isRemote,
     remotePublished,
     remoteFolder,

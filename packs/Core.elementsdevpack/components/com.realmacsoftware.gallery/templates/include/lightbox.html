@@ -119,6 +119,8 @@
                         src="{{item}}"
                         alt="{{item.alt}}"
                         class="{{classes.lightboxItemMedia}} aspect-[{{item.aspect}}]"
+                        loading="lazy"
+                        decoding="async"
                         @click.stop
                     />
                     @endif @if(lightboxWantsMeta)

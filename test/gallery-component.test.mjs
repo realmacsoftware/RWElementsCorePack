@@ -57,6 +57,9 @@ function renderGallery(overrides = {}, mode = "preview", nodeId = "node-1", opti
             lightboxPreview: false,
             ...overrides,
         },
+        // Raw, unformatted values — rw.props.columns has already been turned
+        // into "grid-cols-…" classes by the time the hook sees it.
+        responsiveProps: options.responsiveProps ?? {},
         theme: {
             breakpoints: { screens: {} },
         },
@@ -98,7 +101,8 @@ test("resource mode processes resources and keeps the plain x-data", () => {
     assert.equal(rw.computedProps.resources.length, 2);
 
     const [image, video] = rw.computedProps.resources;
-    assert.equal(image.thumbnail, "https://example.com/photo.jpg?w=400");
+    // Default thumbnailSize of 400, requested at 2x for retina
+    assert.equal(image.thumbnail, "https://example.com/photo.jpg?w=800");
     assert.equal(image.alt, "A photo");
     assert.equal(image.isVideo, false);
     assert.equal(video.isVideo, true);
@@ -108,6 +112,98 @@ test("resource mode processes resources and keeps the plain x-data", () => {
 
     assert.equal(rw.resizeCalls.length, 2);
     assert.equal(rw.root.args["x-data"], "gallery('node-1')");
+});
+
+// A gallery of a few hundred photos used to request every original twice on
+// page load — once for the grid, once for the eagerly-portalled lightbox.
+test("only the first row of thumbnails loads eagerly", () => {
+    const eight = Array.from({ length: 8 }, (_, index) => ({
+        image: `https://example.com/photo-${index}.jpg`,
+    }));
+
+    // Widest breakpoint wins, so the first row is covered at every size
+    const rw = renderGallery(
+        { resources: { name: "Holiday", resources: eight } },
+        "preview",
+        "node-1",
+        { responsiveProps: { columns: { base: "2", md: "3", lg: "4" } } }
+    );
+
+    assert.equal(rw.computedProps.eagerCount, 4);
+    assert.deepEqual(
+        rw.computedProps.resources.map((resource) => resource.lazy),
+        [false, false, false, false, true, true, true, true]
+    );
+});
+
+test("eager count falls back when columns is unset", () => {
+    const rw = renderGallery({
+        resources: { name: "Holiday", resources: [{ ...photo }] },
+    });
+
+    assert.equal(rw.computedProps.eagerCount, 3);
+    assert.equal(rw.computedProps.resources[0].lazy, false);
+});
+
+test("thumbnail size is author-controlled and served at 2x", () => {
+    const rw = renderGallery({
+        thumbnailSize: 250,
+        resources: { name: "Holiday", resources: [{ ...photo }] },
+    });
+
+    assert.equal(rw.resizeCalls[0].width, 500);
+    assert.equal(
+        rw.computedProps.resources[0].thumbnail,
+        "https://example.com/photo.jpg?w=500"
+    );
+});
+
+// A lazy slide has no intrinsic size until it loads, so the aspect class has to
+// reserve the box — it previously rendered as an empty "aspect-[]".
+test("lightbox slides get an aspect ratio to reserve their box", () => {
+    const rw = renderGallery({
+        resources: {
+            name: "Holiday",
+            resources: [
+                { image: "https://example.com/wide.jpg", width: 1600, height: 900 },
+                { image: "https://example.com/unknown.jpg" },
+            ],
+        },
+    });
+
+    const [sized, unsized] = rw.computedProps.resources;
+    assert.equal(sized.aspect, "1600/900");
+    assert.equal(unsized.aspect, "auto");
+    for (const resource of rw.computedProps.resources) {
+        assert.ok(resource.aspect, "aspect must never be empty");
+    }
+});
+
+test("every image the gallery emits is lazy and async-decoded", () => {
+    const read = (file) =>
+        fs.readFileSync(`${componentDir}/templates/include/${file}`, "utf8");
+
+    const thumbnail = read("thumbnail.html");
+    // All three branches — video poster, remote placeholder, resource
+    assert.equal(thumbnail.match(/decoding="async"/g)?.length, 3);
+    assert.equal(thumbnail.match(/@if\(image\.lazy\)/g)?.length, 3);
+    // The resource branch must serve the resized thumbnail, not the original
+    assert.match(thumbnail, /src="\{\{image\.thumbnail\}\}"/);
+    assert.ok(
+        !/src="\{\{image\}\}"/.test(thumbnail),
+        "thumbnail must not render the full-size resource"
+    );
+
+    for (const file of ["lightbox.html", "remote-slides.php"]) {
+        assert.match(read(file), /loading="lazy"/, `${file} missing loading=lazy`);
+        assert.match(read(file), /decoding="async"/, `${file} missing decoding`);
+    }
+
+    // The PHP grid mirrors the first-row-eager rule, degrading to all-lazy
+    // rather than a parse error if eagerCount ever interpolates empty
+    const grid = read("remote-grid.php");
+    assert.match(grid, /\$rwGalleryEager_\{\{phpId\}\} = \(int\)'\{\{eagerCount\}\}';/);
+    assert.match(grid, /decoding="async"/);
 });
 
 test("resource mode with no resources shows the dropzone state", () => {

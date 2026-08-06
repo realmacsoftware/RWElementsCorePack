@@ -23,6 +23,7 @@ const transformHook = (rw) => {
         thumbnailAuthorFontSize,
 
         thumbnailAspectRatio,
+        thumbnailSize,
         thumbnailGlobalBordersRadius: thumbnailBorderRadius,
         thumbnailGlobalBoxShadow: thumbnailShadow,
         lightboxPreview,
@@ -73,6 +74,18 @@ const transformHook = (rw) => {
     const isRemote = sourceType === "remote";
     const remotePublished = isRemote && !edit;
 
+    // The first row is above the fold at every breakpoint, so it loads eagerly
+    // and everything below it lazy-loads. columns is responsive, so take the
+    // widest value — the raw numbers only exist on responsiveProps, since
+    // rw.props.columns has already been formatted into "grid-cols-…" classes.
+    const columnCounts = Object.values(rw.responsiveProps?.columns || {})
+        .map((value) => parseInt(value, 10))
+        .filter((value) => Number.isFinite(value));
+    const eagerCount = columnCounts.length ? Math.max(...columnCounts) : 3;
+
+    // Thumbnails are served at 2x so they stay sharp on retina displays.
+    const thumbnailWidth = (Number(thumbnailSize) || 400) * 2;
+
     // Suffix for the PHP variables in the remote templates, so two galleries
     // on the same page don't share state.
     const phpId = String(id).replace(/[^a-zA-Z0-9]/g, "_");
@@ -109,6 +122,7 @@ const transformHook = (rw) => {
                       caption: `Image ${index + 1}`,
                       author: "",
                       isVideo: false,
+                      lazy: index >= eagerCount,
                   }))
                 : [];
             hasResources = galleryResources.length > 0;
@@ -119,11 +133,19 @@ const transformHook = (rw) => {
             hasResources = true;
         }
     } else {
-        resources?.resources?.forEach((resource) => {
-            resource.srcset = "";
-            resource.thumbnail = rw.resizeResource(resource, 400);
+        resources?.resources?.forEach((resource, index) => {
+            resource.thumbnail = rw.resizeResource(resource, thumbnailWidth);
+            resource.lazy = index >= eagerCount;
             resource.alt =
                 resource.alt || resource.caption || resource.author || "";
+
+            // Gives the lightbox slide a box to occupy before its image has
+            // loaded, so lazy slides don't collapse to nothing.
+            resource.aspect =
+                resource.aspect ||
+                (resource.width && resource.height
+                    ? `${resource.width}/${resource.height}`
+                    : "auto");
 
             // check if this is a video
             resource.isVideo =
@@ -297,6 +319,7 @@ const transformHook = (rw) => {
         lightboxShowAuthor: lightboxShowAuthor,
         lightboxWantsMeta: lightboxShowCaption || lightboxShowAuthor,
         resources: galleryResources,
+        eagerCount,
         isRemote,
         remotePublished,
         remoteFolder,
