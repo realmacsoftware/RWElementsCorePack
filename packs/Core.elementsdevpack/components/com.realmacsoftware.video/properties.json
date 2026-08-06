@@ -401,7 +401,7 @@
           "id": "objectPosition",
           "ai": {
             "name": "objectPosition",
-            "description": "Focal point of the image within its box when cropped."
+            "description": "Focal point of the video/poster within its box when cropped."
           },
           "select": {
             "default": "object-center",
