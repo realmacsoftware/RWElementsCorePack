@@ -1065,7 +1065,7 @@
           "id": "contentAlignSelf",
           "ai": {
             "name": "contentAlign",
-            "description": "Block-axis alignment of the content box (CSS align-self)."
+            "description": "Block-axis alignment of the Container's content box within it (CSS align-self). Does not align the Container's direct children."
           },
           "format": "self-{{value}}",
           "select": {
@@ -1099,7 +1099,7 @@
           "id": "contentJustifySelf",
           "ai": {
             "name": "contentJustify",
-            "description": "Inline-axis alignment of the content box (CSS justify-self)."
+            "description": "Inline-axis alignment of the Container's content box within it (CSS justify-self). Does not align the Container's direct children."
           },
           "format": "justify-self-{{value}}",
           "select": {
@@ -1465,7 +1465,7 @@
           "id": "globalWidthType",
           "ai": {
             "name": "widthMode",
-            "description": "Width mode: 'auto', 'full', 'screen', 'container' (breakpoint), or 'theme' (use widthSize)."
+            "description": "Width mode: 'auto', 'full', 'screen', 'container' (breakpoint), or 'theme' (use widthSize). 'auto' fills the available width on block wrappers — it does not shrink-wrap to content."
           },
           "responsive": false,
           "select": {
@@ -1698,7 +1698,7 @@
           "id": "globalMargin",
           "ai": {
             "name": "margin",
-            "description": "Margin (outer spacing) — theme spacing token per side."
+            "description": "Margin (outer spacing) — theme spacing token per side. Set left and right to 'auto' to centre a fixed-width element in normal flow."
           },
           "themeSpacing": {
             "mode": "margin",
