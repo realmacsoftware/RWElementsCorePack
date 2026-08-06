@@ -437,7 +437,7 @@
           "id": "globalMenuItemHoverTextShadow",
           "ai": {
             "name": "itemTextShadowHover",
-            "description": "Menu item hover-state text shadow theme token."
+            "description": "Menu item hover/current-page text shadow theme token."
           },
           "format": "hover:{{value}} aria-[current=page]:{{value}}",
           "themeShadow": {
