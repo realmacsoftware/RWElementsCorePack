@@ -213,7 +213,7 @@
           "id": "globalControlTypeSVGStroke",
           "ai": {
             "name": "stroke",
-            "description": "Enable/disable SVG stroke color control."
+            "description": "Stroke color mode: 'none' disables, 'static' always applies, 'hover' styles start and hover states separately."
           },
           "responsive": false,
           "segmented": {
