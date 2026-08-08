@@ -359,7 +359,7 @@ const transformHook = (rw) => {
         paginationLastLabel: paginationLastLabel || "Last",
         paginationPageText: pageTextFormat,
         // Pre-substituted variant for the static edit-mode pagination mock
-        paginationPageTextStatic: pageTextFormat.replace("{{page}}", "1").replace("{{total}}", "1"),
+        paginationPageTextStatic: pageTextFormat.replace(/\{\{page\}\}/g, "1").replace(/\{\{total\}\}/g, "1"),
         edit,
         alpineConfig: JSON.stringify(alpineConfig).replace(/"/g, "'"),
         csvColumnMeta: JSON.stringify(csvColumnMeta),

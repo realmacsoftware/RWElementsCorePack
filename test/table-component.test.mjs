@@ -237,6 +237,27 @@ test("showFirstLast accepts the string form of the switch value", () => {
     assert.equal(rw.computedProps.showFirstLast, true);
 });
 
+test("static page text substitutes every placeholder occurrence", () => {
+    const rw = renderTable({
+        props: {
+            showPagination: true,
+            paginationPageText: "{{page}}/{{total}} — page {{page}}",
+        },
+    });
+
+    assert.equal(rw.computedProps.paginationPageTextStatic, "1/1 — page 1");
+});
+
+test("alpine template contains no template-engine tokens", () => {
+    const alpinePath = "packs/Core.elementsdevpack/components/com.realmacsoftware.table/templates/alpine.html";
+    const source = fs.readFileSync(alpinePath, "utf8");
+
+    assert.ok(
+        !source.includes("{{"),
+        "templates/*.html are interpolated by the Elements template engine, so a literal {{ in alpine.html gets consumed before the JavaScript reaches the browser. Match {{page}}/{{total}} with regex literals like /\\{\\{page\\}\\}/g instead."
+    );
+});
+
 test("new pagination props stay out of the alpine config", () => {
     const rw = renderTable({
         props: { showPagination: true, showFirstLast: true, paginationPageText: "Pagina {{page}} van {{total}}" },
