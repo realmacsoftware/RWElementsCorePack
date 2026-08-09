@@ -1,4 +1,5 @@
 @portal(bodyEnd, id: "com.realmacsoftware.table.alpine", includeOnce: true)
+@raw()
 <script>
     document.addEventListener("alpine:init", () => {
         Alpine.data("elementsTable", (id, config) => ({
@@ -147,15 +148,11 @@
             },
 
             pageText() {
-                // This file is interpolated by the template engine, so the page/total
-                // placeholders must never appear verbatim here — the engine would eat
-                // them. Regex literals keep the braces apart; the fallback builds the
-                // default without placeholders for the same reason.
-                const fmt = this.$root.dataset.pageText;
-                if (!fmt) return "Page " + this.page + " of " + this.totalPages;
-                return fmt.replace(/\{\{page\}\}/g, this.page).replace(/\{\{total\}\}/g, this.totalPages);
+                const fmt = this.$root.dataset.pageText || "Page {{page}} of {{total}}";
+                return fmt.split("{{page}}").join(this.page).split("{{total}}").join(this.totalPages);
             },
         }));
     });
 </script>
+@endraw
 @endportal

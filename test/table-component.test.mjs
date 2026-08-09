@@ -248,13 +248,24 @@ test("static page text substitutes every placeholder occurrence", () => {
     assert.equal(rw.computedProps.paginationPageTextStatic, "1/1 — page 1");
 });
 
-test("alpine template contains no template-engine tokens", () => {
+test("alpine template contains no template-engine tokens outside @raw blocks", () => {
+    const alpinePath = "packs/Core.elementsdevpack/components/com.realmacsoftware.table/templates/alpine.html";
+    const source = fs.readFileSync(alpinePath, "utf8");
+    const outsideRaw = source.replace(/@raw\(\)[\s\S]*?@endraw/g, "");
+
+    assert.ok(
+        !outsideRaw.includes("{{"),
+        "templates/*.html are interpolated by the Elements template engine, so a literal {{ in alpine.html gets consumed before the JavaScript reaches the browser. Wrap script content that needs literal braces in @raw() ... @endraw."
+    );
+});
+
+test("alpine template contains no backslashes", () => {
     const alpinePath = "packs/Core.elementsdevpack/components/com.realmacsoftware.table/templates/alpine.html";
     const source = fs.readFileSync(alpinePath, "utf8");
 
     assert.ok(
-        !source.includes("{{"),
-        "templates/*.html are interpolated by the Elements template engine, so a literal {{ in alpine.html gets consumed before the JavaScript reaches the browser. Match {{page}}/{{total}} with regex literals like /\\{\\{page\\}\\}/g instead."
+        !source.includes("\\"),
+        "Backslash escape sequences in templates/*.html break the Elements edit-mode renderer (the 3.0.8 regex-literal regression). Avoid regexes and string escapes here — build special strings at runtime by concatenation instead."
     );
 });
 
