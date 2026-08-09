@@ -248,14 +248,23 @@ test("static page text substitutes every placeholder occurrence", () => {
     assert.equal(rw.computedProps.paginationPageTextStatic, "1/1 — page 1");
 });
 
-test("alpine template contains no template-engine tokens outside @raw blocks", () => {
+test("alpine template contains no template-engine tokens", () => {
     const alpinePath = "packs/Core.elementsdevpack/components/com.realmacsoftware.table/templates/alpine.html";
     const source = fs.readFileSync(alpinePath, "utf8");
-    const outsideRaw = source.replace(/@raw\(\)[\s\S]*?@endraw/g, "");
 
     assert.ok(
-        !outsideRaw.includes("{{"),
-        "templates/*.html are interpolated by the Elements template engine, so a literal {{ in alpine.html gets consumed before the JavaScript reaches the browser. Wrap script content that needs literal braces in @raw() ... @endraw."
+        !source.includes("{{"),
+        "templates/*.html are interpolated by the Elements template engine, so a literal {{ in alpine.html gets consumed before the JavaScript reaches the browser. Build the token at runtime instead, e.g. \"{\" + \"{\" + name + \"}\" + \"}\"."
+    );
+});
+
+test("alpine template contains no @raw blocks", () => {
+    const alpinePath = "packs/Core.elementsdevpack/components/com.realmacsoftware.table/templates/alpine.html";
+    const source = fs.readFileSync(alpinePath, "utf8");
+
+    assert.ok(
+        !source.includes("@raw"),
+        "@raw() parses cleanly in the transpiler but the literal {{...}} text it preserves breaks the Elements edit-mode canvas renderer, blanking the entire component (the 8e5dafa regression). Build brace tokens at runtime by concatenation instead."
     );
 });
 

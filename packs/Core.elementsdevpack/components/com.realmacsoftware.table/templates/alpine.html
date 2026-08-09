@@ -1,5 +1,4 @@
 @portal(bodyEnd, id: "com.realmacsoftware.table.alpine", includeOnce: true)
-@raw()
 <script>
     document.addEventListener("alpine:init", () => {
         Alpine.data("elementsTable", (id, config) => ({
@@ -148,11 +147,19 @@
             },
 
             pageText() {
-                const fmt = this.$root.dataset.pageText || "Page {{page}} of {{total}}";
-                return fmt.split("{{page}}").join(this.page).split("{{total}}").join(this.totalPages);
+                // The page/total placeholder tokens must never appear verbatim in
+                // this file (the template engine consumes them), backslash escape
+                // sequences break the edit-mode renderer, and the raw directive is
+                // no escape hatch either: it parses fine but the literal brace
+                // tokens it preserves kill the edit-mode canvas, blanking the
+                // whole table (see the 8e5dafa revert). Runtime token construction
+                // is the only formulation every pipeline stage tolerates — do not
+                // "clean up". Even comments here are lexed for directives/tokens.
+                const token = (name) => "{" + "{" + name + "}" + "}";
+                const fmt = this.$root.dataset.pageText || "Page " + token("page") + " of " + token("total");
+                return fmt.split(token("page")).join(this.page).split(token("total")).join(this.totalPages);
             },
         }));
     });
 </script>
-@endraw
 @endportal
