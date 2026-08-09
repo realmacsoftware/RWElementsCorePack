@@ -1,4 +1,5 @@
 @portal(bodyEnd, id: "com.realmacsoftware.table.alpine", includeOnce: true)
+@raw()
 <script>
     document.addEventListener("alpine:init", () => {
         Alpine.data("elementsTable", (id, config) => ({
@@ -147,15 +148,11 @@
             },
 
             pageText() {
-                // The page/total placeholder tokens must never appear verbatim in
-                // this file (the template engine consumes them), and backslash
-                // escape sequences break the edit-mode renderer — so build the
-                // tokens at runtime instead of writing them literally.
-                const token = (name) => "{" + "{" + name + "}" + "}";
-                const fmt = this.$root.dataset.pageText || "Page " + token("page") + " of " + token("total");
-                return fmt.split(token("page")).join(this.page).split(token("total")).join(this.totalPages);
+                const fmt = this.$root.dataset.pageText || "Page {{page}} of {{total}}";
+                return fmt.split("{{page}}").join(this.page).split("{{total}}").join(this.totalPages);
             },
         }));
     });
 </script>
+@endraw
 @endportal
