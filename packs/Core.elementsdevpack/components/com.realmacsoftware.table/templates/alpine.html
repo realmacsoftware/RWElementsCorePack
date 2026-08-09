@@ -147,13 +147,13 @@
             },
 
             pageText() {
-                // This file is interpolated by the template engine, so the page/total
-                // placeholders must never appear verbatim here — the engine would eat
-                // them. Regex literals keep the braces apart; the fallback builds the
-                // default without placeholders for the same reason.
-                const fmt = this.$root.dataset.pageText;
-                if (!fmt) return "Page " + this.page + " of " + this.totalPages;
-                return fmt.replace(/\{\{page\}\}/g, this.page).replace(/\{\{total\}\}/g, this.totalPages);
+                // The page/total placeholder tokens must never appear verbatim in
+                // this file (the template engine consumes them), and backslash
+                // escape sequences break the edit-mode renderer — so build the
+                // tokens at runtime instead of writing them literally.
+                const token = (name) => "{" + "{" + name + "}" + "}";
+                const fmt = this.$root.dataset.pageText || "Page " + token("page") + " of " + token("total");
+                return fmt.split(token("page")).join(this.page).split(token("total")).join(this.totalPages);
             },
         }));
     });

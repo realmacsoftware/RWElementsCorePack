@@ -254,7 +254,17 @@ test("alpine template contains no template-engine tokens", () => {
 
     assert.ok(
         !source.includes("{{"),
-        "templates/*.html are interpolated by the Elements template engine, so a literal {{ in alpine.html gets consumed before the JavaScript reaches the browser. Match {{page}}/{{total}} with regex literals like /\\{\\{page\\}\\}/g instead."
+        "templates/*.html are interpolated by the Elements template engine, so a literal {{ in alpine.html gets consumed before the JavaScript reaches the browser. Build the token at runtime instead, e.g. \"{\" + \"{\" + name + \"}\" + \"}\"."
+    );
+});
+
+test("alpine template contains no backslashes", () => {
+    const alpinePath = "packs/Core.elementsdevpack/components/com.realmacsoftware.table/templates/alpine.html";
+    const source = fs.readFileSync(alpinePath, "utf8");
+
+    assert.ok(
+        !source.includes("\\"),
+        "Backslash escape sequences in templates/*.html break the Elements edit-mode renderer (the 3.0.8 regex-literal regression). Avoid regexes and string escapes here — build special strings at runtime by concatenation instead."
     );
 });
 
