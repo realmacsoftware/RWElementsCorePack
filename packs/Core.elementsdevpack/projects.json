@@ -1,11 +1,23 @@
 {
-    "projects": [
-        {
-            "filename": "Consultant.elements",
-            "title": "Consultant",
-            "description": "Professional and clean design, built for consultants.",
-            "thumbnail": "consultant.jpg"
-        },
+   "projects": [
+       {
+           "filename": "Consultant.elements",
+           "title": "Consultant",
+           "description": "Refined, minimal website for independent consultants and advisors.",
+           "thumbnail": "consultant.jpg"
+       },
+       {
+              "filename": "Wellness.elements",
+              "title": "Wellness",
+              "description": "Calm, modern website for wellness coaches and holistic practitioners.",
+              "thumbnail": "wellness.jpg"
+          },
+       {
+           "filename": "Yonder.elements",
+           "title": "Yonder",
+           "description": "Polished personal link page for creators, freelancers, and independent professionals.",
+           "thumbnail": "yonder.jpg"
+       },
         {
         "filename": "North Eleven.elements",
         "title": "North Eleven",
