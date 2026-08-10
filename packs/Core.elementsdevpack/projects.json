@@ -18,6 +18,12 @@
            "description": "Polished personal link page for creators, freelancers, and independent professionals.",
            "thumbnail": "yonder.jpg"
        },
+       {
+            "filename": "Profile.elements",
+            "title": "Profile",
+            "description": "Clean, modern profile page for freelancers and independent creatives.",
+            "thumbnail": "profile.jpg"
+        },
         {
         "filename": "North Eleven.elements",
         "title": "North Eleven",
