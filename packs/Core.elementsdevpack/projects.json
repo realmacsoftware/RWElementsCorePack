@@ -1,5 +1,12 @@
 {
-    "projects": [{
+    "projects": [
+        {
+            "filename": "Consultant.elements",
+            "title": "Consultant",
+            "description": "Professional and clean design, built for consultants.",
+            "thumbnail": "consultant.jpg"
+        },
+        {
         "filename": "North Eleven.elements",
         "title": "North Eleven",
         "description": "Clean and refined design inspired by modern architectural aesthetics.",
