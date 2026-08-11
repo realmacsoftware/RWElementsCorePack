@@ -1,5 +1,11 @@
 {
    "projects": [
+      {
+           "filename": "Asterra.elements",
+           "title": "Asterra",
+           "description": "Bold, futuristic landing page for AI startups and emerging technology products.",
+           "thumbnail": "asterra.jpg"
+       },
        {
            "filename": "Consultant.elements",
            "title": "Consultant",
