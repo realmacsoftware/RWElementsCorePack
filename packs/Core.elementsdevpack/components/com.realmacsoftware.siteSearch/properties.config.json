@@ -1,0 +1,299 @@
+{
+  "groups": [
+    {
+      "title": "Settings",
+      "icon": "gearshape",
+      "properties": [
+        {
+          "title": "Search",
+          "heading": {}
+        },
+        {
+          "title": "Minimum Characters",
+          "id": "minChars",
+          "responsive": false,
+          "number": {
+            "default": 2,
+            "subtitle": "Characters typed before searching"
+          }
+        },
+        {
+          "title": "Max Results",
+          "id": "maxResults",
+          "responsive": false,
+          "number": {
+            "default": 10
+          }
+        },
+        {
+          "title": "Hidden Pages",
+          "id": "includeHiddenPages",
+          "responsive": false,
+          "ai": {
+            "name": "includeHiddenPages",
+            "description": "Include pages that are hidden from the navigation menu in search results."
+          },
+          "switch": {
+            "default": false
+          }
+        }
+      ]
+    },
+    {
+      "title": "Font and Text Styles",
+      "icon": "textformat.size",
+      "properties": [
+        {
+          "globalControl": "InputFontAndTextStyles"
+        }
+      ]
+    },
+    {
+      "title": "Placeholder",
+      "icon": "rectangle.and.pencil.and.ellipsis",
+      "properties": [
+        {
+          "title": "Text",
+          "id": "placeholder",
+          "text": {
+            "default": "Search..."
+          }
+        },
+        {
+          "title": "Color",
+          "id": "placeholderColor",
+          "format": "placeholder-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "text",
+              "brightness": 400
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Outline",
+      "icon": "inset.filled.rectangle",
+      "properties": [
+        {
+          "globalControl": "Outline"
+        }
+      ]
+    },
+    {
+      "title": "Results",
+      "icon": "list.bullet.rectangle",
+      "properties": [
+        {
+          "title": "Panel",
+          "heading": {}
+        },
+        {
+          "title": "Background",
+          "id": "resultsBackground",
+          "format": "bg-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 100
+            }
+          }
+        },
+        {
+          "title": "Radius",
+          "id": "resultsBorderRadius",
+          "themeBorderRadius": {
+            "default": {
+              "base": {
+                "topLeft": "Default",
+                "topRight": "Default",
+                "bottomLeft": "Default",
+                "bottomRight": "Default"
+              }
+            }
+          }
+        },
+        {
+          "title": "Shadow",
+          "id": "resultsShadow",
+          "responsive": false,
+          "select": {
+            "default": "shadow-lg",
+            "items": [
+              {
+                "title": "None",
+                "value": "shadow-none"
+              },
+              {
+                "title": "Small",
+                "value": "shadow-sm"
+              },
+              {
+                "title": "Medium",
+                "value": "shadow-md"
+              },
+              {
+                "title": "Large",
+                "value": "shadow-lg"
+              },
+              {
+                "title": "Extra Large",
+                "value": "shadow-xl"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Max Height",
+          "id": "resultsMaxHeight",
+          "format": "max-h-{{value}}",
+          "themeSpacing": {
+            "mode": "single",
+            "default": {
+              "base": {
+                "value": "72"
+              }
+            }
+          }
+        },
+        {
+          "title": "Dividers",
+          "id": "resultsDivider",
+          "responsive": false,
+          "switch": {
+            "default": false
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Items",
+          "heading": {}
+        },
+        {
+          "title": "Padding",
+          "id": "itemPadding",
+          "themeSpacing": {
+            "mode": "padding",
+            "default": {
+              "base": {
+                "top": "3",
+                "right": "4",
+                "bottom": "3",
+                "left": "4"
+              }
+            }
+          }
+        },
+        {
+          "title": "Hover Color",
+          "id": "itemHoverBackground",
+          "format": "hover:bg-{{value}}",
+          "themeColor": {
+            "default": {
+              "name": "surface",
+              "brightness": 200
+            }
+          }
+        },
+        {
+          "divider": {}
+        },
+        {
+          "title": "Empty State",
+          "heading": {}
+        },
+        {
+          "title": "Text",
+          "id": "emptyText",
+          "text": {
+            "default": "No results found"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Layout",
+      "icon": "square.split.bottomrightquarter",
+      "properties": [
+        {
+          "globalControl": "Layout"
+        }
+      ]
+    },
+    {
+      "title": "Sizing",
+      "icon": "arrow.down.backward.and.arrow.up.forward.square",
+      "properties": [
+        {
+          "globalControl": "Sizing"
+        }
+      ]
+    },
+    {
+      "title": "Spacing",
+      "icon": "squareshape.squareshape.dotted",
+      "properties": [
+        {
+          "globalControl": "SpacingInput"
+        }
+      ]
+    },
+    {
+      "title": "Transitions",
+      "icon": "wand.and.stars.inverse",
+      "properties": [
+        {
+          "globalControl": "Transitions"
+        }
+      ]
+    },
+    {
+      "title": "Effects",
+      "icon": "wand.and.stars.inverse",
+      "properties": [
+        {
+          "globalControl": "Effects"
+        }
+      ]
+    },
+    {
+      "title": "Filters",
+      "icon": "camera.filters",
+      "properties": [
+        {
+          "globalControl": "Filters"
+        }
+      ]
+    },
+    {
+      "title": "Transforms",
+      "icon": "skew",
+      "properties": [
+        {
+          "globalControl": "Transforms"
+        }
+      ]
+    },
+    {
+      "title": "Background",
+      "icon": "paintbrush.fill",
+      "properties": [
+        {
+          "globalControl": "BackgroundTransparent"
+        }
+      ]
+    },
+    {
+      "title": "Borders",
+      "icon": "square.dashed",
+      "properties": [
+        {
+          "globalControl": "BordersInput"
+        }
+      ]
+    }
+  ]
+}

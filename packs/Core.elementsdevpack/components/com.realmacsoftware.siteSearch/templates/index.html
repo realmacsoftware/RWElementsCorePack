@@ -1,0 +1,48 @@
+@include("search-index")
+@if(!edit)
+@include("site-search-js")
+@endif
+
+<input
+    type="search"
+    class="{{classes.input}}"
+    placeholder="{{placeholder}}"
+    aria-label="{{placeholder}}"
+    @if(!edit)
+    x-ref="input"
+    x-model="query"
+    x-bind="searchInput"
+    role="combobox"
+    aria-autocomplete="list"
+    :aria-expanded="open"
+    :aria-controls="'site-search-results-' + '{{id}}'"
+    @endif
+/>
+
+<div
+    class="{{classes.panel}}"
+    @if(!edit)
+    x-bind="searchPanel"
+    x-show="open"
+    x-cloak
+    @endif
+>
+    <div
+        @if(!edit)
+        hidden
+        x-ref="itemTemplate"
+        @endif
+    >
+        @dropzone("resultItem", title: "Result Item")
+    </div>
+
+    @if(!edit)
+    <div
+        x-ref="results"
+        role="listbox"
+        data-item-class="{{classes.item}}"
+        :id="'site-search-results-' + '{{id}}'"
+    ></div>
+    <div x-show="showEmpty" x-cloak class="{{classes.empty}}">{{emptyText}}</div>
+    @endif
+</div>
