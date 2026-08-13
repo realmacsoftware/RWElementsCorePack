@@ -540,9 +540,8 @@ const injectPrefixOnDarkModeColors = (prefix, classes) => {
   return classes.replace(/dark:(.*)/g, `dark:${prefix}:$1`);
 };
 const switchToBool = (value) => {
-  if (value === true || value === false) {
-    return value;
-  }
+  if (value === true || value === 1) return true;
+  if (value === false || value === 0) return false;
   if (typeof value === "string") {
     const base = value.trim().split(/\s+/)[0];
     if (base === "true") return true;
@@ -929,7 +928,7 @@ const transformHook = (rw) => {
       advancedClasses(rw)
     ]).toString(),
     summary: classnames([
-      "flex justify-between items-center text-left font-semibold text-gray-800 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500",
+      "flex justify-between items-center text-left font-semibold text-gray-800 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500",
       globalTransitions(rw, true),
       summaryPadding,
       summaryBackground,
@@ -956,9 +955,6 @@ const transformHook = (rw) => {
       }).replace(/"/g, "'")})`,
       "x-bind": "details",
       "data-open": "false",
-      role: "group",
-      "aria-roledescription": "accordion",
-      "aria-label": `Accordion section ${id}`,
       id: globalID || id,
       ...filter.args,
       "data-filter-tags": dataTags

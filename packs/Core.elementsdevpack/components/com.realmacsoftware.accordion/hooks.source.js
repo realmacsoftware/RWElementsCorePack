@@ -53,7 +53,7 @@ const transformHook = (rw) => {
             advancedClasses(rw),
         ]).toString(),
         summary: classnames([
-            "flex justify-between items-center text-left font-semibold text-gray-800 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500",
+            "flex justify-between items-center text-left font-semibold text-gray-800 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500",
             globalTransitions(rw, true),
             summaryPadding,
             summaryBackground,
@@ -81,9 +81,6 @@ const transformHook = (rw) => {
             }).replace(/"/g, "'")})`,
             "x-bind": "details",
             "data-open": "false",
-            role: "group",
-            "aria-roledescription": "accordion",
-            "aria-label": `Accordion section ${id}`,
             id: globalID || id,
             ...filter.args,
             "data-filter-tags": dataTags,
