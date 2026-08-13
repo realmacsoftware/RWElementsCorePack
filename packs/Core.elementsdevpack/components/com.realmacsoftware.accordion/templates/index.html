@@ -1,8 +1,11 @@
 <div 
-    x-bind="summary" 
+    x-bind="summary"
     :id="'accordion-header-' + '{{id}}'"
     role="button"
-    :aria-expanded="open.toString()" 
+    @if(!edit)
+    tabindex="0"
+    @endif
+    :aria-expanded="open.toString()"
     :aria-controls="'accordion-content-' + '{{id}}'"
     class="{{classes.summary}}"
 >
@@ -24,7 +27,6 @@
     @endif
     :id="'accordion-content-' + '{{id}}'"
     role="region"
-    :aria-hidden="(!open).toString()"
     :aria-labelledby="'accordion-header-' + '{{id}}'"
     class="{{classes.content}}"
 >

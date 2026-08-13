@@ -32,6 +32,12 @@
                 ["@click"]() {
                     this.open = !this.open;
                 },
+                ["@keydown.enter.prevent"]() {
+                    this.open = !this.open;
+                },
+                ["@keydown.space.prevent"]() {
+                    this.open = !this.open;
+                },
             },
 
             content: {
