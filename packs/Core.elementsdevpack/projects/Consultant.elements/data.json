@@ -1,369 +1,1185 @@
 {
-  "site" : {
-    "wantsXMLSiteMap" : true,
-    "baseURL" : "https:\/\/www.elementsplatform.com",
-    "title" : "Clem Fandango — Strategy & Growth Consultant",
-    "consolidateCSSFiles" : true,
-    "useCacheBusting" : true,
-    "allowDarkMode" : false,
-    "defaultFileExtension" : "html",
-    "minifyExtraFiles" : true,
-    "legacyV3HoverOnTouch" : false,
-    "cruftlessLinks" : true,
-    "themeName" : "Elements"
-  },
   "images" : {
-    "logoAltText" : "",
     "webIcons" : {
-      "faviconSmall" : {
-        "autoGenerate" : false,
-        "type" : 6
-      },
-      "faviconMedium" : {
-        "autoGenerate" : false,
-        "type" : 5
-      },
-      "faviconLarge" : {
-        "autoGenerate" : false,
-        "type" : 4
-      },
       "medium" : {
-        "autoGenerate" : false,
-        "type" : 1
+        "type" : 1,
+        "autoGenerate" : false
       },
       "large" : {
-        "autoGenerate" : false,
-        "type" : 0
+        "type" : 0,
+        "autoGenerate" : false
+      },
+      "faviconSmall" : {
+        "type" : 6,
+        "autoGenerate" : false
       },
       "pinnedTab" : {
-        "autoGenerate" : false,
-        "type" : 3
+        "type" : 3,
+        "autoGenerate" : false
+      },
+      "faviconLarge" : {
+        "type" : 4,
+        "autoGenerate" : false
+      },
+      "faviconMedium" : {
+        "type" : 5,
+        "autoGenerate" : false
       },
       "small" : {
-        "autoGenerate" : false,
-        "type" : 2
+        "type" : 2,
+        "autoGenerate" : false
       }
+    },
+    "logoAltText" : ""
+  },
+  "privacy" : {
+    "anonymiseThirdPartyRequests" : false
+  },
+  "project" : {
+    "autoStartWebServer" : false,
+    "uniqueBackupName" : "7B89C202-C7F1-4087-A41F-1A63AD2609BD_rwbackup"
+  },
+  "ui" : {
+    "elementEditor" : {
+      "show" : false,
+      "showOutline" : false
+    },
+    "contentArea" : {
+      "darkAppearance" : false,
+      "scale" : 1,
+      "size" : [
+        1024,
+        320
+      ],
+      "responsiveSize" : "lg"
+    },
+    "catalogFilter" : {
+      "smartDocumentElements" : false,
+      "showFavourites" : false
+    },
+    "projectInspector" : {
+      "show" : false
+    },
+    "resourceInspector" : {
+      "show" : false
     }
   },
+  "identifier" : "A2CCAEC4-980F-4C8F-866D-9A194B8C1418",
   "theme" : {
+    "typographies" : [
+
+    ],
+    "textShadows" : [
+
+    ],
+    "colors" : [
+
+    ],
+    "screens" : [
+      {
+        "sfIcon" : "desktopcomputer",
+        "classPrefix" : "2xl",
+        "units" : "auto",
+        "description" : "",
+        "id" : "00687EC7-7249-46FA-B8DA-4FFF130718F9",
+        "pixels" : 1536,
+        "name" : "2xl",
+        "maxContainerWidth" : 0,
+        "enabled" : false
+      },
+      {
+        "sfIcon" : "laptopcomputer",
+        "classPrefix" : "xl",
+        "units" : "auto",
+        "description" : "",
+        "id" : "FF64E14E-31BA-4331-AE54-48332F823C37",
+        "pixels" : 1280,
+        "name" : "xl",
+        "maxContainerWidth" : 0,
+        "enabled" : false
+      },
+      {
+        "sfIcon" : "ipad.landscape",
+        "classPrefix" : "lg",
+        "units" : "auto",
+        "description" : "",
+        "id" : "EA807CCC-EDCA-4DB4-BF3C-AE6A4AF7DF6E",
+        "pixels" : 1024,
+        "name" : "lg",
+        "maxContainerWidth" : 0,
+        "enabled" : true
+      },
+      {
+        "sfIcon" : "ipad",
+        "classPrefix" : "md",
+        "units" : "auto",
+        "description" : "This breakpoint is for tablets and small laptop screens. It usually encompasses widths from 600 pixels to 1023 pixels.",
+        "id" : "283E5038-C7E9-4292-BC06-C942C9AE95AD",
+        "pixels" : 768,
+        "name" : "md",
+        "maxContainerWidth" : 0,
+        "enabled" : true
+      },
+      {
+        "sfIcon" : "iphone.landscape",
+        "classPrefix" : "sm",
+        "units" : "auto",
+        "description" : "This breakpoint targets devices with small sceens like smartphones. The resolution width varies but typically starts from 320 pixels and below 600 pixels.",
+        "id" : "A2687397-F256-4BE0-AAAE-EB3A604EBFC7",
+        "pixels" : 640,
+        "name" : "sm",
+        "maxContainerWidth" : 0,
+        "enabled" : true
+      },
+      {
+        "sfIcon" : "iphone",
+        "classPrefix" : "",
+        "units" : "auto",
+        "description" : "",
+        "id" : "8F61D657-F8DB-49C6-8A95-DF126F07E748",
+        "pixels" : 0,
+        "name" : "mobile",
+        "maxContainerWidth" : 0,
+        "enabled" : true
+      }
+    ],
+    "baseThemeIdentifier" : "com.realmacsoftware.themes.system",
+    "page" : {
+
+    },
+    "fontStyle" : [
+
+    ],
+    "spacing" : [
+
+    ],
     "fontFamily" : [
 
     ],
     "borderWidth" : [
 
     ],
-    "colors" : [
-
-    ],
-    "fontStyle" : [
-
-    ],
-    "page" : {
-
-    },
-    "textShadows" : [
+    "borderRadius" : [
 
     ],
     "shadows" : [
 
-    ],
-    "borderRadius" : [
-
-    ],
-    "baseThemeIdentifier" : "com.realmacsoftware.themes.system",
-    "spacing" : [
-
-    ],
-    "screens" : [
-      {
-        "classPrefix" : "2xl",
-        "enabled" : false,
-        "pixels" : 1536,
-        "maxContainerWidth" : 0,
-        "sfIcon" : "desktopcomputer",
-        "id" : "00687EC7-7249-46FA-B8DA-4FFF130718F9",
-        "description" : "",
-        "name" : "2xl",
-        "units" : "auto"
-      },
-      {
-        "classPrefix" : "xl",
-        "enabled" : false,
-        "pixels" : 1280,
-        "maxContainerWidth" : 0,
-        "sfIcon" : "laptopcomputer",
-        "id" : "FF64E14E-31BA-4331-AE54-48332F823C37",
-        "description" : "",
-        "name" : "xl",
-        "units" : "auto"
-      },
-      {
-        "classPrefix" : "lg",
-        "enabled" : true,
-        "pixels" : 1024,
-        "maxContainerWidth" : 0,
-        "sfIcon" : "ipad.landscape",
-        "id" : "EA807CCC-EDCA-4DB4-BF3C-AE6A4AF7DF6E",
-        "description" : "",
-        "name" : "lg",
-        "units" : "auto"
-      },
-      {
-        "classPrefix" : "md",
-        "enabled" : true,
-        "pixels" : 768,
-        "maxContainerWidth" : 0,
-        "sfIcon" : "ipad",
-        "id" : "283E5038-C7E9-4292-BC06-C942C9AE95AD",
-        "description" : "This breakpoint is for tablets and small laptop screens. It usually encompasses widths from 600 pixels to 1023 pixels.",
-        "name" : "md",
-        "units" : "auto"
-      },
-      {
-        "classPrefix" : "sm",
-        "enabled" : true,
-        "pixels" : 640,
-        "maxContainerWidth" : 0,
-        "sfIcon" : "iphone.landscape",
-        "id" : "A2687397-F256-4BE0-AAAE-EB3A604EBFC7",
-        "description" : "This breakpoint targets devices with small sceens like smartphones. The resolution width varies but typically starts from 320 pixels and below 600 pixels.",
-        "name" : "sm",
-        "units" : "auto"
-      },
-      {
-        "classPrefix" : "",
-        "enabled" : true,
-        "pixels" : 0,
-        "maxContainerWidth" : 0,
-        "sfIcon" : "iphone",
-        "id" : "8F61D657-F8DB-49C6-8A95-DF126F07E748",
-        "description" : "",
-        "name" : "mobile",
-        "units" : "auto"
-      }
-    ],
-    "typographies" : [
-
     ]
   },
   "uiStateIdentifier" : "A2CCAEC4-980F-4C8F-866D-9A194B8C1418",
-  "siteResources" : {
-    "resources" : {
-      "15AAD773-364F-4C67-8090-0D2CD4EA61D1" : {
-        "timeStamp" : 1786311496196.506,
-        "changedStatuses" : {
+  "rootPrefabNode" : {
+    "kind" : {
+      "folder" : {
 
-        },
-        "parentIdentifier" : "0DFCDD81-12E8-46DE-835D-3A6049764677",
-        "isSVG" : false,
-        "hostedImageURLs" : [
-
-        ],
-        "metadata" : {
-          "height" : 1024,
-          "width" : 1536,
-          "aspect" : 1.5,
-          "generationPrompt" : "Cinematic editorial wide photograph of a sophisticated modern architectural workspace interior: a consultant in his late 40s with short greying hair, wearing a charcoal knit sweater, standing by a floor-to-ceiling window looking thoughtfully at the city light, warm morning sun, concrete and oak surfaces, ivory and olive tones, generous negative space on the left side, premium magazine photography, muted warm colour grade, no logos, no text",
-          "generationSize" : "1536x1024"
-        },
-        "kind" : 1,
-        "expanded" : true,
-        "originalName" : "hero-architectural-workspace.png",
-        "name" : "hero-architectural-workspace.jpg",
-        "identifier" : "15AAD773-364F-4C67-8090-0D2CD4EA61D1",
-        "smartFolderKind" : 0,
-        "typeIdentifier" : "public.png"
-      },
-      "0DFCDD81-12E8-46DE-835D-3A6049764677" : {
-        "changedStatuses" : {
-
-        },
-        "identifier" : "0DFCDD81-12E8-46DE-835D-3A6049764677",
-        "timeStamp" : -62135769600000,
-        "expanded" : true,
-        "hostedImageURLs" : [
-
-        ],
-        "smartFolderKind" : 0,
-        "kind" : 0,
-        "name" : "Resources"
-      },
-      "4CAECE24-2325-4CEC-898C-58CDD4EF10D1" : {
-        "timeStamp" : 1786311539018.6802,
-        "parentIdentifier" : "0DFCDD81-12E8-46DE-835D-3A6049764677",
-        "changedStatuses" : {
-
-        },
-        "isSVG" : false,
-        "hostedImageURLs" : [
-
-        ],
-        "kind" : 1,
-        "metadata" : {
-          "height" : 1024,
-          "aspect" : 1.5,
-          "generationPrompt" : "Cinematic full-width editorial photograph of a quiet modern office interior with dramatic warm light and long shadows, empty oak conference table with two chairs and an open notebook, floor-to-ceiling windows, morning haze, muted ivory, olive and terracotta tones, calm and contemplative atmosphere, premium architectural photography, no people, no text",
-          "width" : 1536,
-          "generationSize" : "1536x1024"
-        },
-        "expanded" : true,
-        "originalName" : "image-break-quiet-office.png",
-        "name" : "image-break-quiet-office.jpg",
-        "identifier" : "4CAECE24-2325-4CEC-898C-58CDD4EF10D1",
-        "smartFolderKind" : 0,
-        "typeIdentifier" : "public.png"
-      },
-      "B2218F82-B61D-443F-A6AE-4AA1508A6139" : {
-        "timeStamp" : 1786311915837.676,
-        "changedStatuses" : {
-
-        },
-        "parentIdentifier" : "0DFCDD81-12E8-46DE-835D-3A6049764677",
-        "isSVG" : false,
-        "hostedImageURLs" : [
-
-        ],
-        "metadata" : {
-          "height" : 1536,
-          "width" : 1024,
-          "aspect" : 0.6666666666666666,
-          "generationPrompt" : "Environmental portrait of the same business consultant seated at a wooden desk by a tall window, reviewing handwritten notes, warm directional light, ivory and deep green tones, thoughtful and calm expression, editorial magazine aesthetic, not a corporate headshot, vertical composition, shallow depth of field",
-          "generationSize" : "1024x1536"
-        },
-        "kind" : 1,
-        "expanded" : true,
-        "originalName" : "alex-portrait-desk.png",
-        "name" : "clem-portrait-desk.jpg",
-        "identifier" : "B2218F82-B61D-443F-A6AE-4AA1508A6139",
-        "smartFolderKind" : 0,
-        "typeIdentifier" : "public.png"
-      },
-      "CFBD012F-6E44-477B-B7C6-0CC5591B7C86" : {
-        "timeStamp" : 1786311820040.3982,
-        "changedStatuses" : {
-
-        },
-        "parentIdentifier" : "0DFCDD81-12E8-46DE-835D-3A6049764677",
-        "isSVG" : false,
-        "hostedImageURLs" : [
-
-        ],
-        "metadata" : {
-          "height" : 1024,
-          "width" : 1536,
-          "aspect" : 1.5,
-          "generationPrompt" : "Editorial photograph of a calm, sophisticated architectural workspace: a consultant standing by a large window in a beautiful modern studio office with warm natural light, concrete and oak surfaces, ivory and sage tones, a long wooden table with a notebook, no clichés, no handshakes, cinematic composition with generous negative space on the lower left, muted warm colour grade, premium magazine aesthetic",
-          "generationSize" : "1536x1024"
-        },
-        "kind" : 1,
-        "expanded" : true,
-        "originalName" : "hero-architectural-workspace-2.png",
-        "name" : "hero-architectural-workspace-2.jpg",
-        "identifier" : "CFBD012F-6E44-477B-B7C6-0CC5591B7C86",
-        "smartFolderKind" : 0,
-        "typeIdentifier" : "public.png"
-      },
-      "156A7CA5-81A4-4E82-9553-E7C677A592C4" : {
-        "timeStamp" : 1786311896152.7769,
-        "changedStatuses" : {
-
-        },
-        "parentIdentifier" : "0DFCDD81-12E8-46DE-835D-3A6049764677",
-        "isSVG" : false,
-        "hostedImageURLs" : [
-
-        ],
-        "metadata" : {
-          "height" : 1536,
-          "width" : 1024,
-          "aspect" : 0.6666666666666666,
-          "generationPrompt" : "Candid editorial photograph of two founders in thoughtful conversation at a long oak table in a warm, minimal creative studio, papers and a laptop softly out of focus, natural window light, muted ivory and clay tones, relaxed and genuine, premium documentary style, vertical composition",
-          "generationSize" : "1024x1536"
-        },
-        "kind" : 1,
-        "expanded" : true,
-        "originalName" : "clients-conversation.png",
-        "name" : "clients-conversation.jpg",
-        "identifier" : "156A7CA5-81A4-4E82-9553-E7C677A592C4",
-        "smartFolderKind" : 0,
-        "typeIdentifier" : "public.png"
-      },
-      "5AB9AA8C-CE17-4FE4-9434-0801017AED96" : {
-        "timeStamp" : 1786311871740.0898,
-        "changedStatuses" : {
-
-        },
-        "parentIdentifier" : "0DFCDD81-12E8-46DE-835D-3A6049764677",
-        "isSVG" : false,
-        "hostedImageURLs" : [
-
-        ],
-        "metadata" : {
-          "height" : 1024,
-          "width" : 1536,
-          "aspect" : 1.5,
-          "generationPrompt" : "Cinematic wide editorial photograph of a quiet modern architectural interior: dramatic light falling across a minimal concrete and timber atrium with a single staircase, warm stone and sage green tones, atmospheric, premium, calm, no people in focus, generous negative space, film-like colour grade",
-          "generationSize" : "1536x1024"
-        },
-        "kind" : 1,
-        "expanded" : true,
-        "originalName" : "image-break-architecture.png",
-        "name" : "image-break-architecture.jpg",
-        "identifier" : "5AB9AA8C-CE17-4FE4-9434-0801017AED96",
-        "smartFolderKind" : 0,
-        "typeIdentifier" : "public.png"
-      },
-      "E140A77A-CFA0-4EA1-A627-63194F949646" : {
-        "timeStamp" : 1786311516641.269,
-        "parentIdentifier" : "0DFCDD81-12E8-46DE-835D-3A6049764677",
-        "changedStatuses" : {
-
-        },
-        "isSVG" : false,
-        "hostedImageURLs" : [
-
-        ],
-        "kind" : 1,
-        "metadata" : {
-          "height" : 1536,
-          "aspect" : 0.6666666666666666,
-          "generationPrompt" : "Environmental editorial portrait of a business consultant, man in his late 40s with short greying hair and a warm confident expression, charcoal knit sweater, standing relaxed in a minimalist creative studio with warm natural window light, oak table and stacked notebooks softly out of focus behind him, muted warm ivory and olive colour palette, premium magazine photography style, natural not corporate, no text",
-          "width" : 1024,
-          "generationSize" : "1024x1536"
-        },
-        "expanded" : true,
-        "originalName" : "alex-portrait-studio.png",
-        "name" : "clem-portrait-studio.jpg",
-        "identifier" : "E140A77A-CFA0-4EA1-A627-63194F949646",
-        "smartFolderKind" : 0,
-        "typeIdentifier" : "public.png"
-      },
-      "FA15104F-D30A-4340-B398-C10648E5D409" : {
-        "timeStamp" : 1786311841413.909,
-        "changedStatuses" : {
-
-        },
-        "parentIdentifier" : "0DFCDD81-12E8-46DE-835D-3A6049764677",
-        "isSVG" : false,
-        "hostedImageURLs" : [
-
-        ],
-        "metadata" : {
-          "height" : 1536,
-          "width" : 1024,
-          "aspect" : 0.6666666666666666,
-          "generationPrompt" : "Environmental portrait of a confident business strategy consultant in their late 40s, standing relaxed in a beautiful minimalist studio with warm ivory walls and soft window light, wearing an understated dark green knit and charcoal trousers, natural candid expression, not a corporate headshot, editorial magazine style, muted warm tones, shallow depth of field",
-          "generationSize" : "1024x1536"
-        },
-        "kind" : 1,
-        "expanded" : true,
-        "originalName" : "alex-portrait-studio-2.png",
-        "name" : "clem-portrait-studio-2.jpg",
-        "identifier" : "FA15104F-D30A-4340-B398-C10648E5D409",
-        "smartFolderKind" : 0,
-        "typeIdentifier" : "public.png"
       }
     },
+    "identifier" : "7B68B970-9BA6-4EE4-AFA8-CE7B96517CE1",
+    "title" : "Project",
+    "expanded" : true,
+    "children" : [
+
+    ],
+    "item" : null
+  },
+  "localization" : {
+    "siteLanguage" : "en"
+  },
+  "globalElements" : {
+    "globals" : {
+
+    }
+  },
+  "publishing" : {
+    "publishSettingsConfigured" : false,
+    "publishingDestinations" : [
+
+    ]
+  },
+  "version" : 9,
+  "rootPage" : {
+    "identifier" : "B21C376F-CF36-46BF-B1ED-6D4E2A001301",
+    "browserTitle" : null,
+    "externalPageURL" : null,
+    "children" : [
+      {
+        "identifier" : "F2D0BEC7-4805-4A82-A903-EA200279F6BF",
+        "browserTitle" : "Clem Fandango | Strategy & Growth Consultant",
+        "externalPageURL" : null,
+        "children" : [
+
+        ],
+        "expanded" : true,
+        "code" : null,
+        "createdDate" : 1786311265042.7131,
+        "kind" : "page",
+        "uniqueID" : "page0",
+        "pageDescription" : null,
+        "iconIdentifier" : null,
+        "manifests" : {
+
+        },
+        "title" : "Clem Fandango — Strategy & Growth Consultant",
+        "isIndex" : true,
+        "attributes" : {
+          "shouldArchivePage" : true,
+          "shouldAllowPreview" : true,
+          "filename" : "index.html",
+          "backgroundColor" : {
+            "colorStripId" : "none",
+            "darkColorStripId" : "none",
+            "shade" : 500,
+            "darkShade" : 500
+          },
+          "linkOpensInNewWindow" : false,
+          "customHeader" : "",
+          "customPageEnd" : "",
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "useCustomSiteTitle" : false,
+          "shouldEnableSocialTags" : true,
+          "enabled" : true,
+          "customBodyEnd" : "",
+          "expires" : false,
+          "customBodyStart" : "",
+          "encoding" : 1,
+          "customHeadEnd" : "",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1787064900017.9019,
+          "shouldFollowLinks" : true,
+          "customPageStart" : "",
+          "metaDescription" : "Independent strategy and growth consulting for founders, CEOs and leadership teams facing important decisions.",
+          "shouldIndexPage" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "expiryQuantity" : 2,
+          "credit" : true,
+          "hidden" : false,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : false,
+          "customHeadStart" : "",
+          "expiryUnit" : 0,
+          "shouldIndexImages" : true
+        }
+      }
+    ],
+    "expanded" : true,
+    "code" : null,
+    "createdDate" : 1786311265031.052,
+    "kind" : "folder",
+    "uniqueID" : "B21C376F-CF36-46BF-B1ED-6D4E2A001301",
+    "pageDescription" : null,
+    "iconIdentifier" : null,
+    "manifests" : {
+
+    },
+    "title" : "root",
+    "isIndex" : false,
+    "attributes" : {
+      "shouldArchivePage" : true,
+      "shouldAllowPreview" : true,
+      "filename" : "",
+      "linkOpensInNewWindow" : false,
+      "customHeader" : "",
+      "customPageEnd" : "",
+      "customCSS" : "",
+      "shouldEnableRobotTags" : true,
+      "useCustomSiteTitle" : false,
+      "shouldEnableSocialTags" : true,
+      "enabled" : true,
+      "customBodyEnd" : "",
+      "expires" : false,
+      "customBodyStart" : "",
+      "encoding" : 1,
+      "customHeadEnd" : "",
+      "customSiteTitle" : "",
+      "lastChangedDate" : 1786311265031.0059,
+      "shouldFollowLinks" : true,
+      "customPageStart" : "",
+      "shouldIndexPage" : true,
+      "changedStatuses" : {
+
+      },
+      "expiryQuantity" : 2,
+      "credit" : true,
+      "hidden" : false,
+      "customJavaScript" : "",
+      "excludeFromSitemap" : true,
+      "customHeadStart" : "",
+      "expiryUnit" : 0,
+      "shouldIndexImages" : true
+    }
+  },
+  "wikiRoot" : {
+    "identifier" : "610C3780-B2A5-45EA-B6CE-4EFA4F827147",
+    "browserTitle" : null,
+    "externalPageURL" : null,
+    "children" : [
+      {
+        "identifier" : "E7F6E0CF-416F-484C-AD3B-8A09DF958A4B",
+        "browserTitle" : null,
+        "externalPageURL" : null,
+        "children" : [
+          {
+            "identifier" : "5FFDDF33-9BB1-49AA-8EBF-CA6ACD6B73D2",
+            "browserTitle" : null,
+            "externalPageURL" : null,
+            "children" : [
+
+            ],
+            "expanded" : true,
+            "code" : "---\ntitle: Clem Fandango — Strategy & Growth Consultant\ntags:\n  - consultant\n  - single-page\n  - editorial\nconcerns:\n  - \"Example outcome statistics (32%, 3 markets and 18 months) and the Sarah Mitchell testimonial are demonstration content and must be replaced with genuine client evidence before launch (severity: high)\"\n  - \"LinkedIn destination and Privacy link are placeholders; clem@example.com is a fictional contact address (severity: medium)\"\nlastIngested: \"2026-08-10T00:00:00Z\"\npageId: F2D0BEC7-4805-4A82-A903-EA200279F6BF\npath: \/\nsources:\n  - \"[[entities\/clem-fandango]]\"\ntype: page\n---\n\n# Clem Fandango — Strategy & Growth Consultant\n\nA premium single-page website for independent strategy and growth consultant [[entities\/clem-fandango]]. It targets founders, CEOs and leadership teams at ambitious small and medium-sized businesses.\n\nThe page presents the proposition “Strategy that shapes what comes next” and moves through an immersive hero, philosophy statement, working-together section, four expertise areas, cinematic image break, three-stage approach, client audience, example results, testimonial, biography, final contact prompt and spacious footer.\n\nClem’s expertise is organised around Strategy, Growth, Positioning and Leadership. His working method follows Understand, Decide and Act. The biography positions him as an experienced outside perspective with more than 20 years working with founder-led companies and established organisations navigating change.\n\n**Build mechanics:** Built entirely from standard Elements Container, Flex, Grid, Text, Image and Button components. Content is hardcoded on the page rather than CMS-driven. Photography is stored in project Resources, including `clem-portrait-studio-2.jpg`, `clem-portrait-desk.jpg` and `clients-conversation.jpg`. Styling uses theme-backed colour, spacing, typography, border and responsive breakpoint tokens. The layout is mobile-first, with split sections and multi-column grids introduced at medium and large breakpoints.\n\n## See also\n- [[entities\/clem-fandango]]\n- [[style-writing]]\n- [[style-visual]]\n",
+            "createdDate" : 1786312272277.18,
+            "kind" : "code",
+            "uniqueID" : "5FFDDF33-9BB1-49AA-8EBF-CA6ACD6B73D2",
+            "pageDescription" : null,
+            "iconIdentifier" : null,
+            "manifests" : {
+
+            },
+            "title" : "",
+            "isIndex" : false,
+            "attributes" : {
+              "shouldArchivePage" : true,
+              "shouldAllowPreview" : true,
+              "filename" : "home.md",
+              "linkOpensInNewWindow" : false,
+              "customHeader" : "",
+              "customPageEnd" : "",
+              "customCSS" : "",
+              "shouldEnableRobotTags" : true,
+              "useCustomSiteTitle" : false,
+              "shouldEnableSocialTags" : true,
+              "enabled" : true,
+              "customBodyEnd" : "",
+              "expires" : false,
+              "customBodyStart" : "",
+              "encoding" : 1,
+              "customHeadEnd" : "",
+              "customSiteTitle" : "",
+              "lastChangedDate" : 1786312272285.9678,
+              "shouldFollowLinks" : true,
+              "customPageStart" : "",
+              "shouldIndexPage" : true,
+              "changedStatuses" : {
+                "default" : true
+              },
+              "expiryQuantity" : 2,
+              "credit" : true,
+              "hidden" : false,
+              "customJavaScript" : "",
+              "excludeFromSitemap" : true,
+              "customHeadStart" : "",
+              "expiryUnit" : 0,
+              "shouldIndexImages" : true
+            }
+          }
+        ],
+        "expanded" : true,
+        "code" : null,
+        "createdDate" : 1786311324597.5151,
+        "kind" : "folder",
+        "uniqueID" : "E7F6E0CF-416F-484C-AD3B-8A09DF958A4B",
+        "pageDescription" : null,
+        "iconIdentifier" : null,
+        "manifests" : {
+
+        },
+        "title" : "pages",
+        "isIndex" : false,
+        "attributes" : {
+          "shouldArchivePage" : true,
+          "shouldAllowPreview" : true,
+          "filename" : "",
+          "linkOpensInNewWindow" : false,
+          "customHeader" : "",
+          "customPageEnd" : "",
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "useCustomSiteTitle" : false,
+          "shouldEnableSocialTags" : true,
+          "enabled" : true,
+          "customBodyEnd" : "",
+          "expires" : false,
+          "customBodyStart" : "",
+          "encoding" : 1,
+          "customHeadEnd" : "",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786311324597.502,
+          "shouldFollowLinks" : true,
+          "customPageStart" : "",
+          "shouldIndexPage" : true,
+          "changedStatuses" : {
+
+          },
+          "expiryQuantity" : 2,
+          "credit" : true,
+          "hidden" : false,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "customHeadStart" : "",
+          "expiryUnit" : 0,
+          "shouldIndexImages" : true
+        }
+      },
+      {
+        "identifier" : "3F81414E-75C6-435A-AEA1-016AD4873995",
+        "browserTitle" : null,
+        "externalPageURL" : null,
+        "children" : [
+
+        ],
+        "expanded" : true,
+        "code" : null,
+        "createdDate" : 1786311324597.825,
+        "kind" : "folder",
+        "uniqueID" : "3F81414E-75C6-435A-AEA1-016AD4873995",
+        "pageDescription" : null,
+        "iconIdentifier" : null,
+        "manifests" : {
+
+        },
+        "title" : "concepts",
+        "isIndex" : false,
+        "attributes" : {
+          "shouldArchivePage" : true,
+          "shouldAllowPreview" : true,
+          "filename" : "",
+          "linkOpensInNewWindow" : false,
+          "customHeader" : "",
+          "customPageEnd" : "",
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "useCustomSiteTitle" : false,
+          "shouldEnableSocialTags" : true,
+          "enabled" : true,
+          "customBodyEnd" : "",
+          "expires" : false,
+          "customBodyStart" : "",
+          "encoding" : 1,
+          "customHeadEnd" : "",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786311324597.804,
+          "shouldFollowLinks" : true,
+          "customPageStart" : "",
+          "shouldIndexPage" : true,
+          "changedStatuses" : {
+
+          },
+          "expiryQuantity" : 2,
+          "credit" : true,
+          "hidden" : false,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "customHeadStart" : "",
+          "expiryUnit" : 0,
+          "shouldIndexImages" : true
+        }
+      },
+      {
+        "identifier" : "00BD3A0F-E642-40B1-A466-2AA24FF31766",
+        "browserTitle" : null,
+        "externalPageURL" : null,
+        "children" : [
+          {
+            "identifier" : "FD5BFAD2-ECA5-467B-B5E8-7A36F6235DAC",
+            "browserTitle" : null,
+            "externalPageURL" : null,
+            "children" : [
+
+            ],
+            "expanded" : true,
+            "code" : "---\ntitle: Clem Fandango\ntags:\n  - person\n  - consultant\nconcerns:\n  - \"Clem Fandango is fictional demonstration content; contact details, social profile, client quote and result claims are placeholders (severity: high)\"\ntype: entity\n---\n\n# Clem Fandango\n\nIndependent Strategy & Growth Consultant with more than 20 years of experience. Clem works directly with founders and leadership teams to clarify strategy, solve difficult problems and create sustainable growth.\n\nThe public voice is calm, intelligent, confident, direct and approachable. Engagements emphasise clear thinking, practical strategy and independent perspective.\n\n## See also\n- [[pages\/home]]\n- [[style-writing]]\n",
+            "createdDate" : 1786312272286.221,
+            "kind" : "code",
+            "uniqueID" : "FD5BFAD2-ECA5-467B-B5E8-7A36F6235DAC",
+            "pageDescription" : null,
+            "iconIdentifier" : null,
+            "manifests" : {
+
+            },
+            "title" : "clem-fandango.md",
+            "isIndex" : false,
+            "attributes" : {
+              "shouldArchivePage" : true,
+              "shouldAllowPreview" : true,
+              "filename" : "clem-fandango.md",
+              "linkOpensInNewWindow" : false,
+              "customHeader" : "",
+              "customPageEnd" : "",
+              "customCSS" : "",
+              "shouldEnableRobotTags" : true,
+              "useCustomSiteTitle" : false,
+              "shouldEnableSocialTags" : true,
+              "enabled" : true,
+              "customBodyEnd" : "",
+              "expires" : false,
+              "customBodyStart" : "",
+              "encoding" : 1,
+              "customHeadEnd" : "",
+              "customSiteTitle" : "",
+              "lastChangedDate" : 1786312272292.0852,
+              "shouldFollowLinks" : true,
+              "customPageStart" : "",
+              "shouldIndexPage" : true,
+              "changedStatuses" : {
+                "default" : true
+              },
+              "expiryQuantity" : 2,
+              "credit" : true,
+              "hidden" : false,
+              "customJavaScript" : "",
+              "excludeFromSitemap" : true,
+              "customHeadStart" : "",
+              "expiryUnit" : 0,
+              "shouldIndexImages" : true
+            }
+          }
+        ],
+        "expanded" : true,
+        "code" : null,
+        "createdDate" : 1786311324598.109,
+        "kind" : "folder",
+        "uniqueID" : "00BD3A0F-E642-40B1-A466-2AA24FF31766",
+        "pageDescription" : null,
+        "iconIdentifier" : null,
+        "manifests" : {
+
+        },
+        "title" : "entities",
+        "isIndex" : false,
+        "attributes" : {
+          "shouldArchivePage" : true,
+          "shouldAllowPreview" : true,
+          "filename" : "",
+          "linkOpensInNewWindow" : false,
+          "customHeader" : "",
+          "customPageEnd" : "",
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "useCustomSiteTitle" : false,
+          "shouldEnableSocialTags" : true,
+          "enabled" : true,
+          "customBodyEnd" : "",
+          "expires" : false,
+          "customBodyStart" : "",
+          "encoding" : 1,
+          "customHeadEnd" : "",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786311324598.0999,
+          "shouldFollowLinks" : true,
+          "customPageStart" : "",
+          "shouldIndexPage" : true,
+          "changedStatuses" : {
+
+          },
+          "expiryQuantity" : 2,
+          "credit" : true,
+          "hidden" : false,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "customHeadStart" : "",
+          "expiryUnit" : 0,
+          "shouldIndexImages" : true
+        }
+      },
+      {
+        "identifier" : "A3294541-65FF-4547-8323-5D102570E737",
+        "browserTitle" : null,
+        "externalPageURL" : null,
+        "children" : [
+
+        ],
+        "expanded" : true,
+        "code" : null,
+        "createdDate" : 1786311324598.3792,
+        "kind" : "folder",
+        "uniqueID" : "A3294541-65FF-4547-8323-5D102570E737",
+        "pageDescription" : null,
+        "iconIdentifier" : null,
+        "manifests" : {
+
+        },
+        "title" : "analyses",
+        "isIndex" : false,
+        "attributes" : {
+          "shouldArchivePage" : true,
+          "shouldAllowPreview" : true,
+          "filename" : "",
+          "linkOpensInNewWindow" : false,
+          "customHeader" : "",
+          "customPageEnd" : "",
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "useCustomSiteTitle" : false,
+          "shouldEnableSocialTags" : true,
+          "enabled" : true,
+          "customBodyEnd" : "",
+          "expires" : false,
+          "customBodyStart" : "",
+          "encoding" : 1,
+          "customHeadEnd" : "",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786311324598.37,
+          "shouldFollowLinks" : true,
+          "customPageStart" : "",
+          "shouldIndexPage" : true,
+          "changedStatuses" : {
+
+          },
+          "expiryQuantity" : 2,
+          "credit" : true,
+          "hidden" : false,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "customHeadStart" : "",
+          "expiryUnit" : 0,
+          "shouldIndexImages" : true
+        }
+      },
+      {
+        "identifier" : "6B3BCBC7-C036-4E28-84D7-9986EA4FBA91",
+        "browserTitle" : null,
+        "externalPageURL" : null,
+        "children" : [
+
+        ],
+        "expanded" : true,
+        "code" : "---\ntitle: Project Knowledge\nsummary: Index of all project knowledge pages\n---\n\nThis is the maintained knowledge base for the Clem Fandango strategy and growth consultancy website. Live pages are ingested into interlinked notes so future work can use durable project context.\n\n## Note graph\n\n- **pages\/** — one note per live RapidWeaver page, keyed on `pageId`\n- **concepts\/** — themes and patterns spanning multiple pages\n- **entities\/** — people, clients, tools, components and services\n- **analyses\/** — durable answers to synthesis questions\n\nUse lowercase hyphenated paths and reciprocal `[[folder\/note]]` wikilinks. Page notes record purpose, structure, build mechanics, design-system usage and known concerns.\n\n## Design System\n\n- [[style-writing]] — voice and tone guide\n- [[style-visual]] — layout and visual conventions\n\n## Project admin\n\n- [[overview]] — site purpose, audience and structure\n- [[journal]] — session history and decisions\n- [[concerns]] — known problems and launch risks\n- [[backlog]] — outstanding work\n- [[services]] — external services and integrations\n\n## Project catalog\n\n- [[overview]]\n- [[pages\/home]]\n- [[entities\/clem-fandango]]\n- [[style-writing]]\n- [[style-visual]]\n- [[journal]]\n- [[concerns]]\n- [[backlog]]\n- [[services]]\n",
+        "createdDate" : 1786311324598.948,
+        "kind" : "code",
+        "uniqueID" : "6B3BCBC7-C036-4E28-84D7-9986EA4FBA91",
+        "pageDescription" : null,
+        "iconIdentifier" : null,
+        "manifests" : {
+
+        },
+        "title" : "",
+        "isIndex" : false,
+        "attributes" : {
+          "shouldArchivePage" : true,
+          "shouldAllowPreview" : true,
+          "filename" : "index.md",
+          "linkOpensInNewWindow" : false,
+          "customHeader" : "",
+          "customPageEnd" : "",
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "useCustomSiteTitle" : false,
+          "shouldEnableSocialTags" : true,
+          "enabled" : true,
+          "customBodyEnd" : "",
+          "expires" : false,
+          "customBodyStart" : "",
+          "encoding" : 1,
+          "customHeadEnd" : "",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786312299006.164,
+          "shouldFollowLinks" : true,
+          "customPageStart" : "",
+          "shouldIndexPage" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "expiryQuantity" : 2,
+          "credit" : true,
+          "hidden" : false,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "customHeadStart" : "",
+          "expiryUnit" : 0,
+          "shouldIndexImages" : true
+        }
+      },
+      {
+        "identifier" : "0032F341-B8FB-4390-8C01-763C3CD51142",
+        "browserTitle" : null,
+        "externalPageURL" : null,
+        "children" : [
+
+        ],
+        "expanded" : true,
+        "code" : "---\ntitle: Project Overview\nsummary: Goals, structure, and design intent of this project\n---\n\n## Purpose\n\nPresent [[entities\/clem-fandango]] as a premium independent strategy and growth consultant and convert qualified founders, CEOs and leadership teams into consultation enquiries.\n\n## Target Audience\n\nFounder-led businesses, growing companies, established organisations entering a new phase, and senior leadership teams facing an important strategic decision.\n\n## Structure\n\nA single-page website at [[pages\/home]]. Navigation jumps to About, Expertise, Approach, Results and Contact sections. The page combines editorial photography, oversized serif statements, restrained service and process layouts, credibility content, biography and a final consultation CTA.\n\n## Design Intent\n\nSophisticated and editorial: warm ivory and stone backgrounds, deep olive and taupe sections, muted clay accents, serif display typography, clean sans-serif body text, generous whitespace and minimal decoration.\n\n## See also\n- [[pages\/home]]\n- [[entities\/clem-fandango]]\n- [[style-writing]]\n- [[style-visual]]\n",
+        "createdDate" : 1786311324599.524,
+        "kind" : "code",
+        "uniqueID" : "0032F341-B8FB-4390-8C01-763C3CD51142",
+        "pageDescription" : null,
+        "iconIdentifier" : null,
+        "manifests" : {
+
+        },
+        "title" : "",
+        "isIndex" : false,
+        "attributes" : {
+          "shouldArchivePage" : true,
+          "shouldAllowPreview" : true,
+          "filename" : "overview.md",
+          "linkOpensInNewWindow" : false,
+          "customHeader" : "",
+          "customPageEnd" : "",
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "useCustomSiteTitle" : false,
+          "shouldEnableSocialTags" : true,
+          "enabled" : true,
+          "customBodyEnd" : "",
+          "expires" : false,
+          "customBodyStart" : "",
+          "encoding" : 1,
+          "customHeadEnd" : "",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786312272292.366,
+          "shouldFollowLinks" : true,
+          "customPageStart" : "",
+          "shouldIndexPage" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "expiryQuantity" : 2,
+          "credit" : true,
+          "hidden" : false,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "customHeadStart" : "",
+          "expiryUnit" : 0,
+          "shouldIndexImages" : true
+        }
+      },
+      {
+        "identifier" : "67317C36-E5D7-4FF0-B5EE-B21BE9DC4FFB",
+        "browserTitle" : null,
+        "externalPageURL" : null,
+        "children" : [
+
+        ],
+        "expanded" : true,
+        "code" : "---\ntitle: Writing Style\nsummary: Voice and tone guide — read before authoring any copy\n---\n\n## Voice & Tone\n\nIntelligent, confident, calm, experienced, approachable and direct. Premium without being grandiose. Avoid corporate jargon, hype and generic transformation claims.\n\n## Sentence Rhythm\n\nUse clear declarative sentences, varied between short emphatic statements and measured explanatory paragraphs. Keep paragraphs narrow and concise. Use three-part phrasing sparingly for emphasis.\n\n## Vocabulary\n\nPrefer: clarity, decisions, priorities, perspective, strategy, growth, leadership, practical, deliberate, sustainable. Avoid: unlock your potential, game-changing, cutting-edge, leverage, synergise, world-class.\n\n## Person & POV\n\nFirst-person singular for Clem’s expertise and working style. Address the reader directly when discussing their challenges.\n\n## Heading Style\n\nSentence case. Major headings are concise editorial statements, often with a measured contrast or question. Avoid excessive title case and exclamation marks.\n\n## Caption & Label Style\n\nSection labels use short uppercase phrases with wide tracking. Buttons are direct sentence-case actions. Navigation labels are single words where possible.\n\n## See also\n- [[style-visual]]\n- [[pages\/home]]\n- [[entities\/clem-fandango]]\n",
+        "createdDate" : 1786311324600.1138,
+        "kind" : "code",
+        "uniqueID" : "67317C36-E5D7-4FF0-B5EE-B21BE9DC4FFB",
+        "pageDescription" : null,
+        "iconIdentifier" : null,
+        "manifests" : {
+
+        },
+        "title" : "",
+        "isIndex" : false,
+        "attributes" : {
+          "shouldArchivePage" : true,
+          "shouldAllowPreview" : true,
+          "filename" : "style-writing.md",
+          "linkOpensInNewWindow" : false,
+          "customHeader" : "",
+          "customPageEnd" : "",
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "useCustomSiteTitle" : false,
+          "shouldEnableSocialTags" : true,
+          "enabled" : true,
+          "customBodyEnd" : "",
+          "expires" : false,
+          "customBodyStart" : "",
+          "encoding" : 1,
+          "customHeadEnd" : "",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786312272276.049,
+          "shouldFollowLinks" : true,
+          "customPageStart" : "",
+          "shouldIndexPage" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "expiryQuantity" : 2,
+          "credit" : true,
+          "hidden" : false,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "customHeadStart" : "",
+          "expiryUnit" : 0,
+          "shouldIndexImages" : true
+        }
+      },
+      {
+        "identifier" : "6348E94A-A7D8-4464-B873-6CFB6DE9E48C",
+        "browserTitle" : null,
+        "externalPageURL" : null,
+        "children" : [
+
+        ],
+        "expanded" : true,
+        "code" : "---\ntitle: Visual Style\nsummary: Layout and visual conventions — read before building or restructuring pages\n---\n\n## Layout Patterns\n\n| Pattern | Description | Pages |\n|---------|-------------|-------|\n| Immersive hero | Full-viewport editorial image with dark overlay, minimal overlaid navigation and lower-left copy | Home |\n| Editorial statement | Centred narrow serif statement with generous vertical whitespace | Home |\n| Split image and copy | Edge-to-edge two-column composition, stacking naturally on smaller screens | Home |\n| Typographic service rows | Unboxed columns separated by hairline rules | Home |\n| Image interlude | Cinematic full-width photograph with minimal pull-line | Home |\n| Numbered process | Three wide typographic stages with oversized numbers | Home |\n| Pull quote | Oversized serif quotation without a card | Home |\n\n## Colour Palette\n\n| Role | Value |\n|------|-------|\n| Primary dark | Olive 800–900 |\n| Accent dark | Taupe 700 |\n| Main background | Stone 50 |\n| Secondary background | Stone 100–200 |\n| Text | Stone 700–900 |\n| Small accent | Muted orange 700 |\n\n## Typography\n\n| Role | Font | Size \/ Weight |\n|------|------|---------------|\n| Display headings | Quote serif | 4xl–8xl, regular |\n| Body and navigation | Body sans | Base–xl, regular\/medium |\n| Labels | Body sans | Small, medium, widely tracked |\n\n## Spacing & Rhythm\n\nUse large section padding: 20 tokens on mobile and 28–32 on tablet\/desktop. Maintain narrow body-copy measures between 560px and 760px. Prefer open layouts, generous gaps and hairline dividers over cards, shadows or decorative effects.\n\n## Image Treatment\n\nLarge editorial photography with natural light, warm muted grading and architectural context. Portraits use a 4:5 crop; cinematic interludes use 70–82vh. Avoid corporate stock-photo clichés.\n\n## Navigation Structure\n\nMinimal header over the hero. Full navigation appears at large breakpoints; the consultation CTA remains visible. Single-page links target major section containers. Footer repeats navigation, contact and social links.\n\n## Responsive Behaviour\n\nMobile-first single columns. Two-column editorial sections switch at large screens; service grid moves from one to two to four columns; process and statistics become three columns at medium screens. Display typography scales at medium and large breakpoints.\n\n## See also\n- [[style-writing]]\n- [[pages\/home]]\n",
+        "createdDate" : 1786311324600.646,
+        "kind" : "code",
+        "uniqueID" : "6348E94A-A7D8-4464-B873-6CFB6DE9E48C",
+        "pageDescription" : null,
+        "iconIdentifier" : null,
+        "manifests" : {
+
+        },
+        "title" : "",
+        "isIndex" : false,
+        "attributes" : {
+          "shouldArchivePage" : true,
+          "shouldAllowPreview" : true,
+          "filename" : "style-visual.md",
+          "linkOpensInNewWindow" : false,
+          "customHeader" : "",
+          "customPageEnd" : "",
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "useCustomSiteTitle" : false,
+          "shouldEnableSocialTags" : true,
+          "enabled" : true,
+          "customBodyEnd" : "",
+          "expires" : false,
+          "customBodyStart" : "",
+          "encoding" : 1,
+          "customHeadEnd" : "",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786312272276.756,
+          "shouldFollowLinks" : true,
+          "customPageStart" : "",
+          "shouldIndexPage" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "expiryQuantity" : 2,
+          "credit" : true,
+          "hidden" : false,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "customHeadStart" : "",
+          "expiryUnit" : 0,
+          "shouldIndexImages" : true
+        }
+      },
+      {
+        "identifier" : "16498813-09C1-4B0B-9367-2385C4D6452D",
+        "browserTitle" : null,
+        "externalPageURL" : null,
+        "children" : [
+
+        ],
+        "expanded" : true,
+        "code" : "---\ntitle: Journal\nsummary: Running log of sessions, decisions, and progress\n---\n\nAppend-only log of work sessions, decisions, and notable events. Newest entries at the top.\n\nUse `appendEntry` with a date heading to add new entries.\n\n## 2026-08-09 — Wiki identity correction\n\nReconciled the Project Wiki with the live Clem Fandango site. Renamed the consultant entity, corrected all reciprocal wikilinks, refreshed the home-page ingest from the live page, and updated the overview, writing guide, concerns and catalog.\n\n## 2026-08-09 — Site build\n\nBuilt the complete responsive Clem Fandango consultant website as a single Elements page. Added editorial photography, a full-viewport hero, responsive editorial content sections, services, approach, audience, results, testimonial, biography, final CTA and footer. Used built-in Elements components and theme-backed tokens throughout. Wired single-page navigation to live section targets and added SEO page metadata. Recorded launch placeholders in page\/entity concerns.\n",
+        "createdDate" : 1786311324601.1729,
+        "kind" : "code",
+        "uniqueID" : "16498813-09C1-4B0B-9367-2385C4D6452D",
+        "pageDescription" : null,
+        "iconIdentifier" : null,
+        "manifests" : {
+
+        },
+        "title" : "",
+        "isIndex" : false,
+        "attributes" : {
+          "shouldArchivePage" : true,
+          "shouldAllowPreview" : true,
+          "filename" : "journal.md",
+          "linkOpensInNewWindow" : false,
+          "customHeader" : "",
+          "customPageEnd" : "",
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "useCustomSiteTitle" : false,
+          "shouldEnableSocialTags" : true,
+          "enabled" : true,
+          "customBodyEnd" : "",
+          "expires" : false,
+          "customBodyStart" : "",
+          "encoding" : 1,
+          "customHeadEnd" : "",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786312272292.6,
+          "shouldFollowLinks" : true,
+          "customPageStart" : "",
+          "shouldIndexPage" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "expiryQuantity" : 2,
+          "credit" : true,
+          "hidden" : false,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "customHeadStart" : "",
+          "expiryUnit" : 0,
+          "shouldIndexImages" : true
+        }
+      },
+      {
+        "identifier" : "48B927C4-A940-4A71-86A5-F0590FEA1E15",
+        "browserTitle" : null,
+        "externalPageURL" : null,
+        "children" : [
+
+        ],
+        "expanded" : true,
+        "code" : "---\ntitle: Concerns\nsummary: Derived rollup of known problems, tech debt, and gotchas\n---\n\n**Derived — do not hand-edit.** Regenerated from note concerns and the knowledge lint report.\n\n## Tech Debt \/ Structural\n\n| Severity | Component \/ Page | Description | Notes |\n|----------|------------------|-------------|-------|\n| Medium | Home | LinkedIn destination, Privacy link and clem@example.com are placeholders. | [[pages\/home]] |\n\n## Content \/ Editorial\n\n| Severity | Page | Description | Notes |\n|----------|------|-------------|-------|\n| High | Home | Example results and the Sarah Mitchell testimonial must be replaced with genuine client evidence before launch. | [[pages\/home]] |\n| High | Clem Fandango | The consultant identity and associated proof\/contact details are demonstration content. | [[entities\/clem-fandango]] |\n\n## Open Field Reports\n\nNone.\n",
+        "createdDate" : 1786311324601.705,
+        "kind" : "code",
+        "uniqueID" : "48B927C4-A940-4A71-86A5-F0590FEA1E15",
+        "pageDescription" : null,
+        "iconIdentifier" : null,
+        "manifests" : {
+
+        },
+        "title" : "",
+        "isIndex" : false,
+        "attributes" : {
+          "shouldArchivePage" : true,
+          "shouldAllowPreview" : true,
+          "filename" : "concerns.md",
+          "linkOpensInNewWindow" : false,
+          "customHeader" : "",
+          "customPageEnd" : "",
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "useCustomSiteTitle" : false,
+          "shouldEnableSocialTags" : true,
+          "enabled" : true,
+          "customBodyEnd" : "",
+          "expires" : false,
+          "customBodyStart" : "",
+          "encoding" : 1,
+          "customHeadEnd" : "",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786312299006.902,
+          "shouldFollowLinks" : true,
+          "customPageStart" : "",
+          "shouldIndexPage" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "expiryQuantity" : 2,
+          "credit" : true,
+          "hidden" : false,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "customHeadStart" : "",
+          "expiryUnit" : 0,
+          "shouldIndexImages" : true
+        }
+      },
+      {
+        "identifier" : "F55FE9F3-BD94-4BBF-B85E-790068FB252C",
+        "browserTitle" : null,
+        "externalPageURL" : null,
+        "children" : [
+
+        ],
+        "expanded" : true,
+        "code" : "---\ntitle: Backlog\nsummary: Outstanding work and speculative ideas with priority and status\n---\n\nTracks both committed tasks and speculative ideas. Mark speculative items with `idea` in the Type column.\n\n| Priority | Type | Task | Status |\n|----------|------|------|--------|\n",
+        "createdDate" : 1786311324602.244,
+        "kind" : "code",
+        "uniqueID" : "F55FE9F3-BD94-4BBF-B85E-790068FB252C",
+        "pageDescription" : null,
+        "iconIdentifier" : null,
+        "manifests" : {
+
+        },
+        "title" : "",
+        "isIndex" : false,
+        "attributes" : {
+          "shouldArchivePage" : true,
+          "shouldAllowPreview" : true,
+          "filename" : "backlog.md",
+          "linkOpensInNewWindow" : false,
+          "customHeader" : "",
+          "customPageEnd" : "",
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "useCustomSiteTitle" : false,
+          "shouldEnableSocialTags" : true,
+          "enabled" : true,
+          "customBodyEnd" : "",
+          "expires" : false,
+          "customBodyStart" : "",
+          "encoding" : 1,
+          "customHeadEnd" : "",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786311324602.746,
+          "shouldFollowLinks" : true,
+          "customPageStart" : "",
+          "shouldIndexPage" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "expiryQuantity" : 2,
+          "credit" : true,
+          "hidden" : false,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "customHeadStart" : "",
+          "expiryUnit" : 0,
+          "shouldIndexImages" : true
+        }
+      },
+      {
+        "identifier" : "FB03502B-BDE9-4A7D-A3AC-9C4733A20B8B",
+        "browserTitle" : null,
+        "externalPageURL" : null,
+        "children" : [
+
+        ],
+        "expanded" : true,
+        "code" : "---\ntitle: Services\nsummary: External services, APIs, credentials, and integrations\n---\n\nDocument external services, APIs, and integrations used by this project.\n\n| Service | Purpose | Notes |\n|---------|---------|-------|\n",
+        "createdDate" : 1786311324602.761,
+        "kind" : "code",
+        "uniqueID" : "FB03502B-BDE9-4A7D-A3AC-9C4733A20B8B",
+        "pageDescription" : null,
+        "iconIdentifier" : null,
+        "manifests" : {
+
+        },
+        "title" : "",
+        "isIndex" : false,
+        "attributes" : {
+          "shouldArchivePage" : true,
+          "shouldAllowPreview" : true,
+          "filename" : "services.md",
+          "linkOpensInNewWindow" : false,
+          "customHeader" : "",
+          "customPageEnd" : "",
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "useCustomSiteTitle" : false,
+          "shouldEnableSocialTags" : true,
+          "enabled" : true,
+          "customBodyEnd" : "",
+          "expires" : false,
+          "customBodyStart" : "",
+          "encoding" : 1,
+          "customHeadEnd" : "",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786311324603.291,
+          "shouldFollowLinks" : true,
+          "customPageStart" : "",
+          "shouldIndexPage" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "expiryQuantity" : 2,
+          "credit" : true,
+          "hidden" : false,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "customHeadStart" : "",
+          "expiryUnit" : 0,
+          "shouldIndexImages" : true
+        }
+      },
+      {
+        "identifier" : "5317B169-492F-4CDA-9B3F-F673A0F4B06D",
+        "browserTitle" : null,
+        "externalPageURL" : null,
+        "children" : [
+
+        ],
+        "expanded" : true,
+        "code" : "---\ntitle: Wiki Sync\nsummary: Machine-generated sync snapshot. Do not edit by hand.\n---\n\n<!-- Machine-generated. Do not edit by hand. -->\n\n```json\n{\n  \"pages\" : {\n    \"F2D0BEC7-4805-4A82-A903-EA200279F6BF\" : \"2026-08-18T14:55:00Z\"\n  },\n  \"syncedAt\" : \"2026-08-18T14:55:00Z\"\n}\n```\n",
+        "createdDate" : 1786311324603.3372,
+        "kind" : "code",
+        "uniqueID" : "5317B169-492F-4CDA-9B3F-F673A0F4B06D",
+        "pageDescription" : null,
+        "iconIdentifier" : null,
+        "manifests" : {
+
+        },
+        "title" : "",
+        "isIndex" : false,
+        "attributes" : {
+          "shouldArchivePage" : true,
+          "shouldAllowPreview" : true,
+          "filename" : "sync.md",
+          "linkOpensInNewWindow" : false,
+          "customHeader" : "",
+          "customPageEnd" : "",
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "useCustomSiteTitle" : false,
+          "shouldEnableSocialTags" : true,
+          "enabled" : true,
+          "customBodyEnd" : "",
+          "expires" : false,
+          "customBodyStart" : "",
+          "encoding" : 1,
+          "customHeadEnd" : "",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786312322271.829,
+          "shouldFollowLinks" : true,
+          "customPageStart" : "",
+          "shouldIndexPage" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "expiryQuantity" : 2,
+          "credit" : true,
+          "hidden" : false,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "customHeadStart" : "",
+          "expiryUnit" : 0,
+          "shouldIndexImages" : true
+        }
+      }
+    ],
+    "expanded" : true,
+    "code" : null,
+    "createdDate" : 1786311324597.057,
+    "kind" : "folder",
+    "uniqueID" : "610C3780-B2A5-45EA-B6CE-4EFA4F827147",
+    "pageDescription" : null,
+    "iconIdentifier" : null,
+    "manifests" : {
+
+    },
+    "title" : "Project Wiki",
+    "isIndex" : false,
+    "attributes" : {
+      "shouldArchivePage" : true,
+      "shouldAllowPreview" : true,
+      "filename" : "",
+      "linkOpensInNewWindow" : false,
+      "customHeader" : "",
+      "customPageEnd" : "",
+      "customCSS" : "",
+      "shouldEnableRobotTags" : true,
+      "useCustomSiteTitle" : false,
+      "shouldEnableSocialTags" : true,
+      "enabled" : true,
+      "customBodyEnd" : "",
+      "expires" : false,
+      "customBodyStart" : "",
+      "encoding" : 1,
+      "customHeadEnd" : "",
+      "customSiteTitle" : "",
+      "lastChangedDate" : 1786311324596.667,
+      "shouldFollowLinks" : true,
+      "customPageStart" : "",
+      "shouldIndexPage" : true,
+      "changedStatuses" : {
+
+      },
+      "expiryQuantity" : 2,
+      "credit" : true,
+      "hidden" : false,
+      "customJavaScript" : "",
+      "excludeFromSitemap" : true,
+      "customHeadStart" : "",
+      "expiryUnit" : 0,
+      "shouldIndexImages" : true
+    }
+  },
+  "social" : {
+    "useSocialTags" : true
+  },
+  "customComponents" : {
+    "components" : {
+
+    }
+  },
+  "siteResources" : {
     "root" : "0DFCDD81-12E8-46DE-835D-3A6049764677",
     "children" : {
       "0DFCDD81-12E8-46DE-835D-3A6049764677" : [
@@ -376,1318 +1192,235 @@
         "E140A77A-CFA0-4EA1-A627-63194F949646",
         "15AAD773-364F-4C67-8090-0D2CD4EA61D1"
       ]
-    }
-  },
-  "rootPrefabNode" : {
-    "identifier" : "7B68B970-9BA6-4EE4-AFA8-CE7B96517CE1",
-    "kind" : {
-      "folder" : {
+    },
+    "resources" : {
+      "4CAECE24-2325-4CEC-898C-58CDD4EF10D1" : {
+        "hostedImageURLs" : [
 
+        ],
+        "identifier" : "4CAECE24-2325-4CEC-898C-58CDD4EF10D1",
+        "smartFolderKind" : 0,
+        "metadata" : {
+          "generationSize" : "1536x1024",
+          "height" : 1024,
+          "aspect" : 1.5,
+          "width" : 1536,
+          "generationPrompt" : "Cinematic full-width editorial photograph of a quiet modern office interior with dramatic warm light and long shadows, empty oak conference table with two chairs and an open notebook, floor-to-ceiling windows, morning haze, muted ivory, olive and terracotta tones, calm and contemplative atmosphere, premium architectural photography, no people, no text"
+        },
+        "originalName" : "image-break-quiet-office.png",
+        "kind" : 1,
+        "changedStatuses" : {
+
+        },
+        "parentIdentifier" : "0DFCDD81-12E8-46DE-835D-3A6049764677",
+        "typeIdentifier" : "public.png",
+        "isSVG" : false,
+        "expanded" : true,
+        "timeStamp" : 1786311539018.6802,
+        "name" : "image-break-quiet-office.jpg"
+      },
+      "15AAD773-364F-4C67-8090-0D2CD4EA61D1" : {
+        "hostedImageURLs" : [
+
+        ],
+        "identifier" : "15AAD773-364F-4C67-8090-0D2CD4EA61D1",
+        "smartFolderKind" : 0,
+        "metadata" : {
+          "generationSize" : "1536x1024",
+          "height" : 1024,
+          "aspect" : 1.5,
+          "width" : 1536,
+          "generationPrompt" : "Cinematic editorial wide photograph of a sophisticated modern architectural workspace interior: a consultant in his late 40s with short greying hair, wearing a charcoal knit sweater, standing by a floor-to-ceiling window looking thoughtfully at the city light, warm morning sun, concrete and oak surfaces, ivory and olive tones, generous negative space on the left side, premium magazine photography, muted warm colour grade, no logos, no text"
+        },
+        "originalName" : "hero-architectural-workspace.png",
+        "kind" : 1,
+        "changedStatuses" : {
+
+        },
+        "parentIdentifier" : "0DFCDD81-12E8-46DE-835D-3A6049764677",
+        "typeIdentifier" : "public.png",
+        "isSVG" : false,
+        "expanded" : true,
+        "timeStamp" : 1786311496196.506,
+        "name" : "hero-architectural-workspace.jpg"
+      },
+      "156A7CA5-81A4-4E82-9553-E7C677A592C4" : {
+        "hostedImageURLs" : [
+
+        ],
+        "identifier" : "156A7CA5-81A4-4E82-9553-E7C677A592C4",
+        "smartFolderKind" : 0,
+        "metadata" : {
+          "generationSize" : "1024x1536",
+          "height" : 1536,
+          "aspect" : 0.6666666666666666,
+          "width" : 1024,
+          "generationPrompt" : "Candid editorial photograph of two founders in thoughtful conversation at a long oak table in a warm, minimal creative studio, papers and a laptop softly out of focus, natural window light, muted ivory and clay tones, relaxed and genuine, premium documentary style, vertical composition"
+        },
+        "originalName" : "clients-conversation.png",
+        "kind" : 1,
+        "changedStatuses" : {
+
+        },
+        "parentIdentifier" : "0DFCDD81-12E8-46DE-835D-3A6049764677",
+        "typeIdentifier" : "public.png",
+        "isSVG" : false,
+        "expanded" : true,
+        "timeStamp" : 1786311896152.7769,
+        "name" : "clients-conversation.jpg"
+      },
+      "0DFCDD81-12E8-46DE-835D-3A6049764677" : {
+        "smartFolderKind" : 0,
+        "name" : "Resources",
+        "kind" : 0,
+        "expanded" : true,
+        "changedStatuses" : {
+
+        },
+        "identifier" : "0DFCDD81-12E8-46DE-835D-3A6049764677",
+        "hostedImageURLs" : [
+
+        ],
+        "timeStamp" : -62135769600000
+      },
+      "CFBD012F-6E44-477B-B7C6-0CC5591B7C86" : {
+        "hostedImageURLs" : [
+
+        ],
+        "identifier" : "CFBD012F-6E44-477B-B7C6-0CC5591B7C86",
+        "smartFolderKind" : 0,
+        "metadata" : {
+          "generationSize" : "1536x1024",
+          "aspect" : 1.5,
+          "width" : 1536,
+          "height" : 1024,
+          "generationPrompt" : "Editorial photograph of a calm, sophisticated architectural workspace: a consultant standing by a large window in a beautiful modern studio office with warm natural light, concrete and oak surfaces, ivory and sage tones, a long wooden table with a notebook, no clichés, no handshakes, cinematic composition with generous negative space on the lower left, muted warm colour grade, premium magazine aesthetic"
+        },
+        "timeStamp" : 1786311820040.3982,
+        "isSVG" : false,
+        "kind" : 1,
+        "originalName" : "hero-architectural-workspace-2.png",
+        "typeIdentifier" : "public.png",
+        "changedStatuses" : {
+
+        },
+        "parentIdentifier" : "0DFCDD81-12E8-46DE-835D-3A6049764677",
+        "expanded" : true,
+        "name" : "hero-architectural-workspace-2.jpg"
+      },
+      "B2218F82-B61D-443F-A6AE-4AA1508A6139" : {
+        "hostedImageURLs" : [
+
+        ],
+        "identifier" : "B2218F82-B61D-443F-A6AE-4AA1508A6139",
+        "smartFolderKind" : 0,
+        "metadata" : {
+          "generationSize" : "1024x1536",
+          "height" : 1536,
+          "aspect" : 0.6666666666666666,
+          "width" : 1024,
+          "generationPrompt" : "Environmental portrait of the same business consultant seated at a wooden desk by a tall window, reviewing handwritten notes, warm directional light, ivory and deep green tones, thoughtful and calm expression, editorial magazine aesthetic, not a corporate headshot, vertical composition, shallow depth of field"
+        },
+        "originalName" : "alex-portrait-desk.png",
+        "kind" : 1,
+        "changedStatuses" : {
+
+        },
+        "parentIdentifier" : "0DFCDD81-12E8-46DE-835D-3A6049764677",
+        "typeIdentifier" : "public.png",
+        "isSVG" : false,
+        "expanded" : true,
+        "timeStamp" : 1786311915837.676,
+        "name" : "clem-portrait-desk.jpg"
+      },
+      "FA15104F-D30A-4340-B398-C10648E5D409" : {
+        "hostedImageURLs" : [
+
+        ],
+        "identifier" : "FA15104F-D30A-4340-B398-C10648E5D409",
+        "smartFolderKind" : 0,
+        "metadata" : {
+          "generationSize" : "1024x1536",
+          "height" : 1536,
+          "aspect" : 0.6666666666666666,
+          "width" : 1024,
+          "generationPrompt" : "Environmental portrait of a confident business strategy consultant in their late 40s, standing relaxed in a beautiful minimalist studio with warm ivory walls and soft window light, wearing an understated dark green knit and charcoal trousers, natural candid expression, not a corporate headshot, editorial magazine style, muted warm tones, shallow depth of field"
+        },
+        "originalName" : "alex-portrait-studio-2.png",
+        "kind" : 1,
+        "changedStatuses" : {
+
+        },
+        "parentIdentifier" : "0DFCDD81-12E8-46DE-835D-3A6049764677",
+        "typeIdentifier" : "public.png",
+        "isSVG" : false,
+        "expanded" : true,
+        "timeStamp" : 1786311841413.909,
+        "name" : "clem-portrait-studio-2.jpg"
+      },
+      "E140A77A-CFA0-4EA1-A627-63194F949646" : {
+        "hostedImageURLs" : [
+
+        ],
+        "identifier" : "E140A77A-CFA0-4EA1-A627-63194F949646",
+        "smartFolderKind" : 0,
+        "metadata" : {
+          "generationSize" : "1024x1536",
+          "height" : 1536,
+          "aspect" : 0.6666666666666666,
+          "width" : 1024,
+          "generationPrompt" : "Environmental editorial portrait of a business consultant, man in his late 40s with short greying hair and a warm confident expression, charcoal knit sweater, standing relaxed in a minimalist creative studio with warm natural window light, oak table and stacked notebooks softly out of focus behind him, muted warm ivory and olive colour palette, premium magazine photography style, natural not corporate, no text"
+        },
+        "originalName" : "alex-portrait-studio.png",
+        "kind" : 1,
+        "changedStatuses" : {
+
+        },
+        "parentIdentifier" : "0DFCDD81-12E8-46DE-835D-3A6049764677",
+        "typeIdentifier" : "public.png",
+        "isSVG" : false,
+        "expanded" : true,
+        "timeStamp" : 1786311516641.269,
+        "name" : "clem-portrait-studio.jpg"
+      },
+      "5AB9AA8C-CE17-4FE4-9434-0801017AED96" : {
+        "hostedImageURLs" : [
+
+        ],
+        "identifier" : "5AB9AA8C-CE17-4FE4-9434-0801017AED96",
+        "smartFolderKind" : 0,
+        "metadata" : {
+          "generationSize" : "1536x1024",
+          "aspect" : 1.5,
+          "width" : 1536,
+          "height" : 1024,
+          "generationPrompt" : "Cinematic wide editorial photograph of a quiet modern architectural interior: dramatic light falling across a minimal concrete and timber atrium with a single staircase, warm stone and sage green tones, atmospheric, premium, calm, no people in focus, generous negative space, film-like colour grade"
+        },
+        "timeStamp" : 1786311871740.0898,
+        "isSVG" : false,
+        "kind" : 1,
+        "originalName" : "image-break-architecture.png",
+        "typeIdentifier" : "public.png",
+        "changedStatuses" : {
+
+        },
+        "parentIdentifier" : "0DFCDD81-12E8-46DE-835D-3A6049764677",
+        "expanded" : true,
+        "name" : "image-break-architecture.jpg"
       }
-    },
-    "expanded" : true,
-    "item" : null,
-    "title" : "Project",
-    "children" : [
-
-    ]
-  },
-  "project" : {
-    "autoStartWebServer" : false,
-    "uniqueBackupName" : "7B89C202-C7F1-4087-A41F-1A63AD2609BD_rwbackup"
-  },
-  "privacy" : {
-    "anonymiseThirdPartyRequests" : false
-  },
-  "publishing" : {
-    "publishSettingsConfigured" : false,
-    "publishingDestinations" : [
-
-    ]
-  },
-  "customComponents" : {
-    "components" : {
-
     }
   },
-  "wikiRoot" : {
-    "manifests" : {
-
-    },
-    "iconIdentifier" : null,
-    "children" : [
-      {
-        "manifests" : {
-
-        },
-        "iconIdentifier" : null,
-        "children" : [
-          {
-            "manifests" : {
-
-            },
-            "iconIdentifier" : null,
-            "children" : [
-
-            ],
-            "externalPageURL" : null,
-            "code" : "---\ntitle: Alex Morgan — Strategy & Growth Consultant\ntags:\n  - consultant\n  - single-page\n  - editorial\nconcerns:\n  - \"Example outcome statistics and testimonial are demonstration content and must be replaced with genuine evidence before launch (severity: high)\"\n  - \"LinkedIn destination and Privacy link are placeholders; alex@example.com is a fictional contact address (severity: medium)\"\nlastIngested: \"2026-08-09T22:00:00Z\"\npageId: F2D0BEC7-4805-4A82-A903-EA200279F6BF\npath: \/\nsources:\n  - \"[[entities\/alex-morgan]]\"\ntype: page\n---\n\n# Alex Morgan — Strategy & Growth Consultant\n\nA premium single-page website for independent strategy and growth consultant [[entities\/alex-morgan]]. It targets founders, CEOs and leadership teams at ambitious small and medium-sized businesses.\n\nThe page moves through an immersive hero, philosophy statement, working-together split, expertise, cinematic image break, three-stage approach, client audience, example results, testimonial, biography, final contact prompt and spacious footer.\n\n**Build mechanics:** Built entirely from standard Elements Container, Flex, Grid, Text, Image and Button components. Content is hardcoded on the page rather than CMS-driven. Photography is stored in project Resources. Styling uses theme-backed colour, spacing, typography, border and responsive breakpoint tokens. The layout is mobile-first, with split sections and multi-column grids introduced at medium and large breakpoints.\n\n## See also\n- [[entities\/alex-morgan]]\n- [[style-writing]]\n- [[style-visual]]\n",
-            "attributes" : {
-              "filename" : "home.md",
-              "credit" : true,
-              "shouldArchivePage" : true,
-              "customPageStart" : "",
-              "customCSS" : "",
-              "customSiteTitle" : "",
-              "customHeadStart" : "",
-              "useCustomSiteTitle" : false,
-              "expiryQuantity" : 2,
-              "customBodyStart" : "",
-              "shouldIndexImages" : true,
-              "shouldAllowPreview" : true,
-              "customJavaScript" : "",
-              "customHeadEnd" : "",
-              "hidden" : false,
-              "lastChangedDate" : 1786312272285.9678,
-              "expires" : false,
-              "expiryUnit" : 0,
-              "shouldIndexPage" : true,
-              "changedStatuses" : {
-                "default" : true
-              },
-              "shouldEnableSocialTags" : true,
-              "shouldEnableRobotTags" : true,
-              "linkOpensInNewWindow" : false,
-              "customPageEnd" : "",
-              "encoding" : 1,
-              "shouldFollowLinks" : true,
-              "excludeFromSitemap" : true,
-              "customHeader" : "",
-              "enabled" : true,
-              "customBodyEnd" : ""
-            },
-            "createdDate" : 1786312272277.18,
-            "kind" : "code",
-            "browserTitle" : null,
-            "pageDescription" : null,
-            "identifier" : "5FFDDF33-9BB1-49AA-8EBF-CA6ACD6B73D2",
-            "title" : "",
-            "uniqueID" : "5FFDDF33-9BB1-49AA-8EBF-CA6ACD6B73D2",
-            "expanded" : true,
-            "isIndex" : false
-          }
-        ],
-        "externalPageURL" : null,
-        "code" : null,
-        "attributes" : {
-          "filename" : "",
-          "credit" : true,
-          "shouldArchivePage" : true,
-          "customPageStart" : "",
-          "customCSS" : "",
-          "customSiteTitle" : "",
-          "customHeadStart" : "",
-          "useCustomSiteTitle" : false,
-          "expiryQuantity" : 2,
-          "customBodyStart" : "",
-          "shouldIndexImages" : true,
-          "shouldAllowPreview" : true,
-          "customJavaScript" : "",
-          "customHeadEnd" : "",
-          "hidden" : false,
-          "lastChangedDate" : 1786311324597.502,
-          "expires" : false,
-          "expiryUnit" : 0,
-          "shouldIndexPage" : true,
-          "changedStatuses" : {
-
-          },
-          "shouldEnableSocialTags" : true,
-          "shouldEnableRobotTags" : true,
-          "linkOpensInNewWindow" : false,
-          "customPageEnd" : "",
-          "encoding" : 1,
-          "shouldFollowLinks" : true,
-          "excludeFromSitemap" : true,
-          "customHeader" : "",
-          "enabled" : true,
-          "customBodyEnd" : ""
-        },
-        "createdDate" : 1786311324597.5151,
-        "kind" : "folder",
-        "browserTitle" : null,
-        "pageDescription" : null,
-        "identifier" : "E7F6E0CF-416F-484C-AD3B-8A09DF958A4B",
-        "title" : "pages",
-        "uniqueID" : "E7F6E0CF-416F-484C-AD3B-8A09DF958A4B",
-        "expanded" : true,
-        "isIndex" : false
-      },
-      {
-        "manifests" : {
-
-        },
-        "iconIdentifier" : null,
-        "children" : [
-
-        ],
-        "externalPageURL" : null,
-        "code" : null,
-        "attributes" : {
-          "filename" : "",
-          "credit" : true,
-          "shouldArchivePage" : true,
-          "customPageStart" : "",
-          "customCSS" : "",
-          "customSiteTitle" : "",
-          "customHeadStart" : "",
-          "useCustomSiteTitle" : false,
-          "expiryQuantity" : 2,
-          "customBodyStart" : "",
-          "shouldIndexImages" : true,
-          "shouldAllowPreview" : true,
-          "customJavaScript" : "",
-          "customHeadEnd" : "",
-          "hidden" : false,
-          "lastChangedDate" : 1786311324597.804,
-          "expires" : false,
-          "expiryUnit" : 0,
-          "shouldIndexPage" : true,
-          "changedStatuses" : {
-
-          },
-          "shouldEnableSocialTags" : true,
-          "shouldEnableRobotTags" : true,
-          "linkOpensInNewWindow" : false,
-          "customPageEnd" : "",
-          "encoding" : 1,
-          "shouldFollowLinks" : true,
-          "excludeFromSitemap" : true,
-          "customHeader" : "",
-          "enabled" : true,
-          "customBodyEnd" : ""
-        },
-        "createdDate" : 1786311324597.825,
-        "kind" : "folder",
-        "browserTitle" : null,
-        "pageDescription" : null,
-        "identifier" : "3F81414E-75C6-435A-AEA1-016AD4873995",
-        "title" : "concepts",
-        "uniqueID" : "3F81414E-75C6-435A-AEA1-016AD4873995",
-        "expanded" : true,
-        "isIndex" : false
-      },
-      {
-        "manifests" : {
-
-        },
-        "iconIdentifier" : null,
-        "children" : [
-          {
-            "manifests" : {
-
-            },
-            "iconIdentifier" : null,
-            "children" : [
-
-            ],
-            "externalPageURL" : null,
-            "code" : "---\ntitle: Alex Morgan\ntags:\n  - person\n  - consultant\nconcerns:\n  - \"Alex Morgan is fictional; contact details, social profile, client quote and result claims are placeholders (severity: high)\"\ntype: entity\n---\n\n# Alex Morgan\n\nFictional independent Strategy & Growth Consultant with more than 20 years of experience. Alex works directly with founders and leadership teams to clarify strategy, solve difficult problems and create sustainable growth.\n\nThe public voice is calm, intelligent, confident, direct and approachable. Engagements emphasise clear thinking, practical strategy and independent perspective.\n\n## See also\n- [[pages\/home]]\n- [[style-writing]]\n",
-            "attributes" : {
-              "filename" : "alex-morgan.md",
-              "credit" : true,
-              "shouldArchivePage" : true,
-              "customPageStart" : "",
-              "customCSS" : "",
-              "customSiteTitle" : "",
-              "customHeadStart" : "",
-              "useCustomSiteTitle" : false,
-              "expiryQuantity" : 2,
-              "customBodyStart" : "",
-              "shouldIndexImages" : true,
-              "shouldAllowPreview" : true,
-              "customJavaScript" : "",
-              "customHeadEnd" : "",
-              "hidden" : false,
-              "lastChangedDate" : 1786312272292.0852,
-              "expires" : false,
-              "expiryUnit" : 0,
-              "shouldIndexPage" : true,
-              "changedStatuses" : {
-                "default" : true
-              },
-              "shouldEnableSocialTags" : true,
-              "shouldEnableRobotTags" : true,
-              "linkOpensInNewWindow" : false,
-              "customPageEnd" : "",
-              "encoding" : 1,
-              "shouldFollowLinks" : true,
-              "excludeFromSitemap" : true,
-              "customHeader" : "",
-              "enabled" : true,
-              "customBodyEnd" : ""
-            },
-            "createdDate" : 1786312272286.221,
-            "kind" : "code",
-            "browserTitle" : null,
-            "pageDescription" : null,
-            "identifier" : "FD5BFAD2-ECA5-467B-B5E8-7A36F6235DAC",
-            "title" : "",
-            "uniqueID" : "FD5BFAD2-ECA5-467B-B5E8-7A36F6235DAC",
-            "expanded" : true,
-            "isIndex" : false
-          }
-        ],
-        "externalPageURL" : null,
-        "code" : null,
-        "attributes" : {
-          "filename" : "",
-          "credit" : true,
-          "shouldArchivePage" : true,
-          "customPageStart" : "",
-          "customCSS" : "",
-          "customSiteTitle" : "",
-          "customHeadStart" : "",
-          "useCustomSiteTitle" : false,
-          "expiryQuantity" : 2,
-          "customBodyStart" : "",
-          "shouldIndexImages" : true,
-          "shouldAllowPreview" : true,
-          "customJavaScript" : "",
-          "customHeadEnd" : "",
-          "hidden" : false,
-          "lastChangedDate" : 1786311324598.0999,
-          "expires" : false,
-          "expiryUnit" : 0,
-          "shouldIndexPage" : true,
-          "changedStatuses" : {
-
-          },
-          "shouldEnableSocialTags" : true,
-          "shouldEnableRobotTags" : true,
-          "linkOpensInNewWindow" : false,
-          "customPageEnd" : "",
-          "encoding" : 1,
-          "shouldFollowLinks" : true,
-          "excludeFromSitemap" : true,
-          "customHeader" : "",
-          "enabled" : true,
-          "customBodyEnd" : ""
-        },
-        "createdDate" : 1786311324598.109,
-        "kind" : "folder",
-        "browserTitle" : null,
-        "pageDescription" : null,
-        "identifier" : "00BD3A0F-E642-40B1-A466-2AA24FF31766",
-        "title" : "entities",
-        "uniqueID" : "00BD3A0F-E642-40B1-A466-2AA24FF31766",
-        "expanded" : true,
-        "isIndex" : false
-      },
-      {
-        "manifests" : {
-
-        },
-        "iconIdentifier" : null,
-        "children" : [
-
-        ],
-        "externalPageURL" : null,
-        "code" : null,
-        "attributes" : {
-          "filename" : "",
-          "credit" : true,
-          "shouldArchivePage" : true,
-          "customPageStart" : "",
-          "customCSS" : "",
-          "customSiteTitle" : "",
-          "customHeadStart" : "",
-          "useCustomSiteTitle" : false,
-          "expiryQuantity" : 2,
-          "customBodyStart" : "",
-          "shouldIndexImages" : true,
-          "shouldAllowPreview" : true,
-          "customJavaScript" : "",
-          "customHeadEnd" : "",
-          "hidden" : false,
-          "lastChangedDate" : 1786311324598.37,
-          "expires" : false,
-          "expiryUnit" : 0,
-          "shouldIndexPage" : true,
-          "changedStatuses" : {
-
-          },
-          "shouldEnableSocialTags" : true,
-          "shouldEnableRobotTags" : true,
-          "linkOpensInNewWindow" : false,
-          "customPageEnd" : "",
-          "encoding" : 1,
-          "shouldFollowLinks" : true,
-          "excludeFromSitemap" : true,
-          "customHeader" : "",
-          "enabled" : true,
-          "customBodyEnd" : ""
-        },
-        "createdDate" : 1786311324598.3792,
-        "kind" : "folder",
-        "browserTitle" : null,
-        "pageDescription" : null,
-        "identifier" : "A3294541-65FF-4547-8323-5D102570E737",
-        "title" : "analyses",
-        "uniqueID" : "A3294541-65FF-4547-8323-5D102570E737",
-        "expanded" : true,
-        "isIndex" : false
-      },
-      {
-        "manifests" : {
-
-        },
-        "iconIdentifier" : null,
-        "children" : [
-          {
-            "manifests" : {
-
-            },
-            "iconIdentifier" : null,
-            "children" : [
-
-            ],
-            "externalPageURL" : null,
-            "code" : "---\ntitle: Project title update does not appear in app state\ndate: 2026-08-09\nstatus: open\ntags:\n  - field-report\n---\n\n# Project title update does not appear in app state\n\n## What was being attempted\n\nSet the project title to Alex Morgan — Strategy & Growth Consultant after completing the consultant website.\n\n## Context\n\nSingle-page Elements project; home page title is Alex Morgan — Strategy & Growth Consultant and filename is index.html.\n\n## What was tried\n\n1. Called updateProjectSettings with the desired title during initial setup.\n2. Repeated updateProjectSettings after final validation.\n3. Repeated it again immediately before recordPageSync; every call reported success.\n\n## Expected behaviour\n\nupdateProjectSettings should change the siteSettings title shown in the live app state.\n\n## Actual behaviour\n\nThe tool repeatedly returned updated:[title], but the latest app state still reports siteSettings.title as My Website. The page title, browser title and SEO metadata are correct.\n\n## Recommendations\n\n1. Verify whether siteSettings.title maps to a different writable field than getProjectSettings\/updateProjectSettings title.\n2. Return the effective site title after writes or warn when the UI state did not change.\n",
-            "attributes" : {
-              "filename" : "2026-08-09-project-title-update-does-not-appear-in-.md",
-              "credit" : true,
-              "shouldArchivePage" : true,
-              "customPageStart" : "",
-              "customCSS" : "",
-              "customSiteTitle" : "",
-              "customHeadStart" : "",
-              "useCustomSiteTitle" : false,
-              "expiryQuantity" : 2,
-              "customBodyStart" : "",
-              "shouldIndexImages" : true,
-              "shouldAllowPreview" : true,
-              "customJavaScript" : "",
-              "customHeadEnd" : "",
-              "hidden" : false,
-              "lastChangedDate" : 1786312334370.842,
-              "expires" : false,
-              "expiryUnit" : 0,
-              "shouldIndexPage" : true,
-              "changedStatuses" : {
-                "default" : true
-              },
-              "shouldEnableSocialTags" : true,
-              "shouldEnableRobotTags" : true,
-              "linkOpensInNewWindow" : false,
-              "customPageEnd" : "",
-              "encoding" : 1,
-              "shouldFollowLinks" : true,
-              "excludeFromSitemap" : true,
-              "customHeader" : "",
-              "enabled" : true,
-              "customBodyEnd" : ""
-            },
-            "createdDate" : 1786312334360.444,
-            "kind" : "code",
-            "browserTitle" : null,
-            "pageDescription" : null,
-            "identifier" : "44F903A3-C027-404E-9793-8EEDD786DE1A",
-            "title" : "",
-            "uniqueID" : "44F903A3-C027-404E-9793-8EEDD786DE1A",
-            "expanded" : true,
-            "isIndex" : false
-          }
-        ],
-        "externalPageURL" : null,
-        "code" : null,
-        "attributes" : {
-          "filename" : "",
-          "credit" : true,
-          "shouldArchivePage" : true,
-          "customPageStart" : "",
-          "customCSS" : "",
-          "customSiteTitle" : "",
-          "customHeadStart" : "",
-          "useCustomSiteTitle" : false,
-          "expiryQuantity" : 2,
-          "customBodyStart" : "",
-          "shouldIndexImages" : true,
-          "shouldAllowPreview" : true,
-          "customJavaScript" : "",
-          "customHeadEnd" : "",
-          "hidden" : false,
-          "lastChangedDate" : 1786311324598.6409,
-          "expires" : false,
-          "expiryUnit" : 0,
-          "shouldIndexPage" : true,
-          "changedStatuses" : {
-
-          },
-          "shouldEnableSocialTags" : true,
-          "shouldEnableRobotTags" : true,
-          "linkOpensInNewWindow" : false,
-          "customPageEnd" : "",
-          "encoding" : 1,
-          "shouldFollowLinks" : true,
-          "excludeFromSitemap" : true,
-          "customHeader" : "",
-          "enabled" : true,
-          "customBodyEnd" : ""
-        },
-        "createdDate" : 1786311324598.65,
-        "kind" : "folder",
-        "browserTitle" : null,
-        "pageDescription" : null,
-        "identifier" : "1A2F0F1A-1D21-410B-9A61-9F9E4E2169FD",
-        "title" : "field-reports",
-        "uniqueID" : "1A2F0F1A-1D21-410B-9A61-9F9E4E2169FD",
-        "expanded" : true,
-        "isIndex" : false
-      },
-      {
-        "manifests" : {
-
-        },
-        "iconIdentifier" : null,
-        "children" : [
-
-        ],
-        "externalPageURL" : null,
-        "code" : "---\ntitle: Project Knowledge\nsummary: Index of all project knowledge pages\n---\n\nThis is the AI-maintained knowledge base for this project, following the Karpathy compiled-knowledge pattern. The LLM reads live pages once and compiles them into an interlinked graph of notes. Subsequent sessions read the notes, not the live pages — answers compound rather than being re-derived each time.\n\n## Note graph\n\nThe knowledge graph lives in four folders. Use `[[folder\/note]]` wikilinks for cross-references between notes.\n\n- **pages\/** — one note per live RapidWeaver page; keyed on `pageId`; records purpose, sections, components, and summary in the user's voice\n- **concepts\/** — themes and patterns spanning multiple pages (e.g. \"testimonials pattern\", \"pricing section\")\n- **entities\/** — people, clients, tools, custom components, publishing destinations\n- **analyses\/** — durable answers to synthesis questions; filed when a query answer is worth preserving\n\n### When to create a concept or entity note\n\nCreate a note proactively — do not wait to be asked:\n\n- **entities\/**: any named person appearing in a role (officer, winner, organiser, contact); any named event, race, trophy, award, or external tool\/service.\n- **concepts\/**: any structural or content pattern that appears across 3 or more pages (e.g. same image+link layout, recurring winner table structure, recurring membership pricing model).\n\nUse a lowercase hyphenated slug (e.g. `entities\/ian-wright.md`, `concepts\/photo-album-pattern.md`). Add a `## See also` section with `[[folder\/note]]` wikilinks back to every page note that references it, and add the reciprocal link in each of those page notes.\n\n### Page note format\n\n```yaml\n---\ntitle: Page Title\ntype: page          # page | concept | entity | analysis\npageId: <uuid>      # for type:page — the Elements page UUID (stable across sessions)\npath: \/slug         # site path\nlastIngested: YYYY-MM-DDTHH:MMZ\nsources: []         # [[links]] to notes this draws from\ntags: []\nconcerns:           # known problems, tech debt, or gotchas for this page\/concept\n  - \"Brief description of the issue (severity: low|medium|high)\"\n---\n\n# Page Title\n\nSummary in the user's voice. Sections, components used, index\/sitemap flags.\n\n**Build mechanics** (required — record HOW things are built, not just WHAT they render): list the element types used, any custom components and how many instances, whether data is hardcoded or driven by CMS\/properties, and whether styling uses design-system tokens or bypasses them (e.g. \"12 per-year hand-edited HTML custom components; data hardcoded in template; colours bypass Tailwind tokens\").\n\n## See also\n- [[concepts\/related-concept]]\n- [[entities\/entity-name]]\n```\n\n## Design System\n\n- **[style-writing.md](style-writing.md)** — voice and tone guide; read via `getDesignSystem` before authoring copy\n- **[style-visual.md](style-visual.md)** — layout and visual conventions; read via `getDesignSystem` before building pages\n\n## Project admin\n\n- **[overview.md](overview.md)** — site purpose, target audience, and high-level structure\n- **[journal.md](journal.md)** — append-only session log (newest entries at top)\n- **[concerns.md](concerns.md)** — known problems, tech debt, gotchas, and fragile areas (derived from per-note `concerns:` frontmatter + `lintKnowledge`; regenerated on close)\n- **[backlog.md](backlog.md)** — outstanding work and speculative ideas with priority and status\n- **[services.md](services.md)** — external services, APIs, and integrations\n- **[field-reports\/](field-reports\/)** — structured AI session blocker reports; summaries linked from concerns.md\n\n## Operations\n\nThree recurring workflows — all orchestrated by the LLM using the storage primitives above.\n\n**Ingest** (triggered by drift or new page): `getPageMarkdown(pageId)` → `editKnowledge` writePage `pages\/<slug>.md` with `pageId` + `lastIngested` → touch\/create linked `concepts\/` and `entities\/` notes → add `[[folder\/note]]` wikilinks both directions and `## See also` → refresh `index.md`. If the page reveals a new voice or visual convention, call `updateDesignSystem` to reconcile the design guides.\n\n**Query**: read `index.md` → relevant notes (re-ingest only if `stale: true`) → synthesise with `[[folder\/note]]` wikilinks as citations → optionally file durable answer as `analyses\/<slug>.md`. **Exception — architecture\/improvement requests**: for any \"how do I improve\", \"review\", or \"what's wrong with\" question, always inspect the live document first (`listCustomComponents` + a sample `getCustomComponent` + `getPageContent` on representative pages) before answering, regardless of note freshness. Rank findings by altitude: maintainability\/structure → design-system → content. Record findings into per-note `concerns:` and regenerate `concerns.md`.\n\n**Lint**: call `lintKnowledge` → act on orphans, broken links, stale notes, dangling page notes, index drift → fix and log.\n\n## Project catalog\n\n- [[overview]]\n- [[pages\/home]]\n- [[entities\/alex-morgan]]\n- [[style-writing]]\n- [[style-visual]]\n- [[journal]]\n- [[concerns]]\n- [[backlog]]\n- [[services]]\n",
-        "attributes" : {
-          "filename" : "index.md",
-          "credit" : true,
-          "shouldArchivePage" : true,
-          "customPageStart" : "",
-          "customCSS" : "",
-          "customSiteTitle" : "",
-          "customHeadStart" : "",
-          "useCustomSiteTitle" : false,
-          "expiryQuantity" : 2,
-          "customBodyStart" : "",
-          "shouldIndexImages" : true,
-          "shouldAllowPreview" : true,
-          "customJavaScript" : "",
-          "customHeadEnd" : "",
-          "hidden" : false,
-          "lastChangedDate" : 1786312299006.164,
-          "expires" : false,
-          "expiryUnit" : 0,
-          "shouldIndexPage" : true,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldEnableSocialTags" : true,
-          "shouldEnableRobotTags" : true,
-          "linkOpensInNewWindow" : false,
-          "customPageEnd" : "",
-          "encoding" : 1,
-          "shouldFollowLinks" : true,
-          "excludeFromSitemap" : true,
-          "customHeader" : "",
-          "enabled" : true,
-          "customBodyEnd" : ""
-        },
-        "createdDate" : 1786311324598.948,
-        "kind" : "code",
-        "browserTitle" : null,
-        "pageDescription" : null,
-        "identifier" : "6B3BCBC7-C036-4E28-84D7-9986EA4FBA91",
-        "title" : "",
-        "uniqueID" : "6B3BCBC7-C036-4E28-84D7-9986EA4FBA91",
-        "expanded" : true,
-        "isIndex" : false
-      },
-      {
-        "manifests" : {
-
-        },
-        "iconIdentifier" : null,
-        "children" : [
-
-        ],
-        "externalPageURL" : null,
-        "code" : "---\ntitle: Project Overview\nsummary: Goals, structure, and design intent of this project\n---\n\n## Purpose\n\nPresent [[entities\/alex-morgan]] as a premium independent strategy and growth consultant and convert qualified founders, CEOs and leadership teams into consultation enquiries.\n\n## Target Audience\n\nFounder-led businesses, growing companies, established organisations entering a new phase, and senior leadership teams facing an important strategic decision.\n\n## Structure\n\nA single-page website at [[pages\/home]]. Navigation jumps to About, Expertise, Approach, Results and Contact sections. The page combines editorial photography, oversized serif statements, restrained service and process layouts, credibility content, biography and a final consultation CTA.\n\n## Design Intent\n\nSophisticated and editorial: warm ivory and stone backgrounds, deep olive and taupe sections, muted clay accents, serif display typography, clean sans-serif body text, generous whitespace and minimal decoration.\n\n## See also\n- [[pages\/home]]\n- [[entities\/alex-morgan]]\n- [[style-writing]]\n- [[style-visual]]\n",
-        "attributes" : {
-          "filename" : "overview.md",
-          "credit" : true,
-          "shouldArchivePage" : true,
-          "customPageStart" : "",
-          "customCSS" : "",
-          "customSiteTitle" : "",
-          "customHeadStart" : "",
-          "useCustomSiteTitle" : false,
-          "expiryQuantity" : 2,
-          "customBodyStart" : "",
-          "shouldIndexImages" : true,
-          "shouldAllowPreview" : true,
-          "customJavaScript" : "",
-          "customHeadEnd" : "",
-          "hidden" : false,
-          "lastChangedDate" : 1786312272292.366,
-          "expires" : false,
-          "expiryUnit" : 0,
-          "shouldIndexPage" : true,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldEnableSocialTags" : true,
-          "shouldEnableRobotTags" : true,
-          "linkOpensInNewWindow" : false,
-          "customPageEnd" : "",
-          "encoding" : 1,
-          "shouldFollowLinks" : true,
-          "excludeFromSitemap" : true,
-          "customHeader" : "",
-          "enabled" : true,
-          "customBodyEnd" : ""
-        },
-        "createdDate" : 1786311324599.524,
-        "kind" : "code",
-        "browserTitle" : null,
-        "pageDescription" : null,
-        "identifier" : "0032F341-B8FB-4390-8C01-763C3CD51142",
-        "title" : "",
-        "uniqueID" : "0032F341-B8FB-4390-8C01-763C3CD51142",
-        "expanded" : true,
-        "isIndex" : false
-      },
-      {
-        "manifests" : {
-
-        },
-        "iconIdentifier" : null,
-        "children" : [
-
-        ],
-        "externalPageURL" : null,
-        "code" : "---\ntitle: Writing Style\nsummary: Voice and tone guide — read before authoring any copy\n---\n\n## Voice & Tone\n\nIntelligent, confident, calm, experienced, approachable and direct. Premium without being grandiose. Avoid corporate jargon, hype and generic transformation claims.\n\n## Sentence Rhythm\n\nUse clear declarative sentences, varied between short emphatic statements and measured explanatory paragraphs. Keep paragraphs narrow and concise. Use three-part phrasing sparingly for emphasis.\n\n## Vocabulary\n\nPrefer: clarity, decisions, priorities, perspective, strategy, growth, leadership, practical, deliberate, sustainable. Avoid: unlock your potential, game-changing, cutting-edge, leverage, synergise, world-class.\n\n## Person & POV\n\nFirst-person singular for Alex’s expertise and working style. Address the reader directly when discussing their challenges.\n\n## Heading Style\n\nSentence case. Major headings are concise editorial statements, often with a measured contrast or question. Avoid excessive title case and exclamation marks.\n\n## Caption & Label Style\n\nSection labels use short uppercase phrases with wide tracking. Buttons are direct sentence-case actions. Navigation labels are single words where possible.\n\n## See also\n- [[style-visual]]\n- [[pages\/home]]\n- [[entities\/alex-morgan]]\n",
-        "attributes" : {
-          "filename" : "style-writing.md",
-          "credit" : true,
-          "shouldArchivePage" : true,
-          "customPageStart" : "",
-          "customCSS" : "",
-          "customSiteTitle" : "",
-          "customHeadStart" : "",
-          "useCustomSiteTitle" : false,
-          "expiryQuantity" : 2,
-          "customBodyStart" : "",
-          "shouldIndexImages" : true,
-          "shouldAllowPreview" : true,
-          "customJavaScript" : "",
-          "customHeadEnd" : "",
-          "hidden" : false,
-          "lastChangedDate" : 1786312272276.049,
-          "expires" : false,
-          "expiryUnit" : 0,
-          "shouldIndexPage" : true,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldEnableSocialTags" : true,
-          "shouldEnableRobotTags" : true,
-          "linkOpensInNewWindow" : false,
-          "customPageEnd" : "",
-          "encoding" : 1,
-          "shouldFollowLinks" : true,
-          "excludeFromSitemap" : true,
-          "customHeader" : "",
-          "enabled" : true,
-          "customBodyEnd" : ""
-        },
-        "createdDate" : 1786311324600.1138,
-        "kind" : "code",
-        "browserTitle" : null,
-        "pageDescription" : null,
-        "identifier" : "67317C36-E5D7-4FF0-B5EE-B21BE9DC4FFB",
-        "title" : "",
-        "uniqueID" : "67317C36-E5D7-4FF0-B5EE-B21BE9DC4FFB",
-        "expanded" : true,
-        "isIndex" : false
-      },
-      {
-        "manifests" : {
-
-        },
-        "iconIdentifier" : null,
-        "children" : [
-
-        ],
-        "externalPageURL" : null,
-        "code" : "---\ntitle: Visual Style\nsummary: Layout and visual conventions — read before building or restructuring pages\n---\n\n## Layout Patterns\n\n| Pattern | Description | Pages |\n|---------|-------------|-------|\n| Immersive hero | Full-viewport editorial image with dark overlay, minimal overlaid navigation and lower-left copy | Home |\n| Editorial statement | Centred narrow serif statement with generous vertical whitespace | Home |\n| Split image and copy | Edge-to-edge two-column composition, stacking naturally on smaller screens | Home |\n| Typographic service rows | Unboxed columns separated by hairline rules | Home |\n| Image interlude | Cinematic full-width photograph with minimal pull-line | Home |\n| Numbered process | Three wide typographic stages with oversized numbers | Home |\n| Pull quote | Oversized serif quotation without a card | Home |\n\n## Colour Palette\n\n| Role | Value |\n|------|-------|\n| Primary dark | Olive 800–900 |\n| Accent dark | Taupe 700 |\n| Main background | Stone 50 |\n| Secondary background | Stone 100–200 |\n| Text | Stone 700–900 |\n| Small accent | Muted orange 700 |\n\n## Typography\n\n| Role | Font | Size \/ Weight |\n|------|------|---------------|\n| Display headings | Quote serif | 4xl–8xl, regular |\n| Body and navigation | Body sans | Base–xl, regular\/medium |\n| Labels | Body sans | Small, medium, widely tracked |\n\n## Spacing & Rhythm\n\nUse large section padding: 20 tokens on mobile and 28–32 on tablet\/desktop. Maintain narrow body-copy measures between 560px and 760px. Prefer open layouts, generous gaps and hairline dividers over cards, shadows or decorative effects.\n\n## Image Treatment\n\nLarge editorial photography with natural light, warm muted grading and architectural context. Portraits use a 4:5 crop; cinematic interludes use 70–82vh. Avoid corporate stock-photo clichés.\n\n## Navigation Structure\n\nMinimal header over the hero. Full navigation appears at large breakpoints; the consultation CTA remains visible. Single-page links target major section containers. Footer repeats navigation, contact and social links.\n\n## Responsive Behaviour\n\nMobile-first single columns. Two-column editorial sections switch at large screens; service grid moves from one to two to four columns; process and statistics become three columns at medium screens. Display typography scales at medium and large breakpoints.\n\n## See also\n- [[style-writing]]\n- [[pages\/home]]\n",
-        "attributes" : {
-          "filename" : "style-visual.md",
-          "credit" : true,
-          "shouldArchivePage" : true,
-          "customPageStart" : "",
-          "customCSS" : "",
-          "customSiteTitle" : "",
-          "customHeadStart" : "",
-          "useCustomSiteTitle" : false,
-          "expiryQuantity" : 2,
-          "customBodyStart" : "",
-          "shouldIndexImages" : true,
-          "shouldAllowPreview" : true,
-          "customJavaScript" : "",
-          "customHeadEnd" : "",
-          "hidden" : false,
-          "lastChangedDate" : 1786312272276.756,
-          "expires" : false,
-          "expiryUnit" : 0,
-          "shouldIndexPage" : true,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldEnableSocialTags" : true,
-          "shouldEnableRobotTags" : true,
-          "linkOpensInNewWindow" : false,
-          "customPageEnd" : "",
-          "encoding" : 1,
-          "shouldFollowLinks" : true,
-          "excludeFromSitemap" : true,
-          "customHeader" : "",
-          "enabled" : true,
-          "customBodyEnd" : ""
-        },
-        "createdDate" : 1786311324600.646,
-        "kind" : "code",
-        "browserTitle" : null,
-        "pageDescription" : null,
-        "identifier" : "6348E94A-A7D8-4464-B873-6CFB6DE9E48C",
-        "title" : "",
-        "uniqueID" : "6348E94A-A7D8-4464-B873-6CFB6DE9E48C",
-        "expanded" : true,
-        "isIndex" : false
-      },
-      {
-        "manifests" : {
-
-        },
-        "iconIdentifier" : null,
-        "children" : [
-
-        ],
-        "externalPageURL" : null,
-        "code" : "---\ntitle: Journal\nsummary: Running log of sessions, decisions, and progress\n---\n\nAppend-only log of work sessions, decisions, and notable events. Newest entries at the top.\n\nUse `appendEntry` with a date heading to add new entries.\n\n## 2026-08-09\n\nBuilt the complete responsive Alex Morgan consultant website as a single Elements page. Added five generated editorial photographs, full-viewport hero, responsive editorial content sections, services, approach, audience, results, testimonial, biography, final CTA and footer. Used built-in Elements components and theme-backed tokens throughout. Wired single-page navigation to live section targets and added SEO page metadata. Recorded launch placeholders in page\/entity concerns.\n",
-        "attributes" : {
-          "filename" : "journal.md",
-          "credit" : true,
-          "shouldArchivePage" : true,
-          "customPageStart" : "",
-          "customCSS" : "",
-          "customSiteTitle" : "",
-          "customHeadStart" : "",
-          "useCustomSiteTitle" : false,
-          "expiryQuantity" : 2,
-          "customBodyStart" : "",
-          "shouldIndexImages" : true,
-          "shouldAllowPreview" : true,
-          "customJavaScript" : "",
-          "customHeadEnd" : "",
-          "hidden" : false,
-          "lastChangedDate" : 1786312272292.6,
-          "expires" : false,
-          "expiryUnit" : 0,
-          "shouldIndexPage" : true,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldEnableSocialTags" : true,
-          "shouldEnableRobotTags" : true,
-          "linkOpensInNewWindow" : false,
-          "customPageEnd" : "",
-          "encoding" : 1,
-          "shouldFollowLinks" : true,
-          "excludeFromSitemap" : true,
-          "customHeader" : "",
-          "enabled" : true,
-          "customBodyEnd" : ""
-        },
-        "createdDate" : 1786311324601.1729,
-        "kind" : "code",
-        "browserTitle" : null,
-        "pageDescription" : null,
-        "identifier" : "16498813-09C1-4B0B-9367-2385C4D6452D",
-        "title" : "",
-        "uniqueID" : "16498813-09C1-4B0B-9367-2385C4D6452D",
-        "expanded" : true,
-        "isIndex" : false
-      },
-      {
-        "manifests" : {
-
-        },
-        "iconIdentifier" : null,
-        "children" : [
-
-        ],
-        "externalPageURL" : null,
-        "code" : "---\ntitle: Concerns\nsummary: Derived rollup of known problems, tech debt, and gotchas\n---\n\n**Derived — do not hand-edit.** Regenerated from note concerns and the knowledge lint report.\n\n## Tech Debt \/ Structural\n\n| Severity | Component \/ Page | Description | Notes |\n|----------|------------------|-------------|-------|\n| Medium | Home | LinkedIn destination, Privacy link and alex@example.com are placeholders. | [[pages\/home]] |\n\n## Content \/ Editorial\n\n| Severity | Page | Description | Notes |\n|----------|------|-------------|-------|\n| High | Home | Example results and testimonial must be replaced with genuine client evidence before launch. | [[pages\/home]] |\n| High | Alex Morgan | The consultant identity and all associated proof\/contact details are fictional demonstration content. | [[entities\/alex-morgan]] |\n\n## Open Field Reports\n\nNone.\n",
-        "attributes" : {
-          "filename" : "concerns.md",
-          "credit" : true,
-          "shouldArchivePage" : true,
-          "customPageStart" : "",
-          "customCSS" : "",
-          "customSiteTitle" : "",
-          "customHeadStart" : "",
-          "useCustomSiteTitle" : false,
-          "expiryQuantity" : 2,
-          "customBodyStart" : "",
-          "shouldIndexImages" : true,
-          "shouldAllowPreview" : true,
-          "customJavaScript" : "",
-          "customHeadEnd" : "",
-          "hidden" : false,
-          "lastChangedDate" : 1786312299006.902,
-          "expires" : false,
-          "expiryUnit" : 0,
-          "shouldIndexPage" : true,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldEnableSocialTags" : true,
-          "shouldEnableRobotTags" : true,
-          "linkOpensInNewWindow" : false,
-          "customPageEnd" : "",
-          "encoding" : 1,
-          "shouldFollowLinks" : true,
-          "excludeFromSitemap" : true,
-          "customHeader" : "",
-          "enabled" : true,
-          "customBodyEnd" : ""
-        },
-        "createdDate" : 1786311324601.705,
-        "kind" : "code",
-        "browserTitle" : null,
-        "pageDescription" : null,
-        "identifier" : "48B927C4-A940-4A71-86A5-F0590FEA1E15",
-        "title" : "",
-        "uniqueID" : "48B927C4-A940-4A71-86A5-F0590FEA1E15",
-        "expanded" : true,
-        "isIndex" : false
-      },
-      {
-        "manifests" : {
-
-        },
-        "iconIdentifier" : null,
-        "children" : [
-
-        ],
-        "externalPageURL" : null,
-        "code" : "---\ntitle: Backlog\nsummary: Outstanding work and speculative ideas with priority and status\n---\n\nTracks both committed tasks and speculative ideas. Mark speculative items with `idea` in the Type column.\n\n| Priority | Type | Task | Status |\n|----------|------|------|--------|\n",
-        "attributes" : {
-          "filename" : "backlog.md",
-          "credit" : true,
-          "shouldArchivePage" : true,
-          "customPageStart" : "",
-          "customCSS" : "",
-          "customSiteTitle" : "",
-          "customHeadStart" : "",
-          "useCustomSiteTitle" : false,
-          "expiryQuantity" : 2,
-          "customBodyStart" : "",
-          "shouldIndexImages" : true,
-          "shouldAllowPreview" : true,
-          "customJavaScript" : "",
-          "customHeadEnd" : "",
-          "hidden" : false,
-          "lastChangedDate" : 1786311324602.746,
-          "expires" : false,
-          "expiryUnit" : 0,
-          "shouldIndexPage" : true,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldEnableSocialTags" : true,
-          "shouldEnableRobotTags" : true,
-          "linkOpensInNewWindow" : false,
-          "customPageEnd" : "",
-          "encoding" : 1,
-          "shouldFollowLinks" : true,
-          "excludeFromSitemap" : true,
-          "customHeader" : "",
-          "enabled" : true,
-          "customBodyEnd" : ""
-        },
-        "createdDate" : 1786311324602.244,
-        "kind" : "code",
-        "browserTitle" : null,
-        "pageDescription" : null,
-        "identifier" : "F55FE9F3-BD94-4BBF-B85E-790068FB252C",
-        "title" : "",
-        "uniqueID" : "F55FE9F3-BD94-4BBF-B85E-790068FB252C",
-        "expanded" : true,
-        "isIndex" : false
-      },
-      {
-        "manifests" : {
-
-        },
-        "iconIdentifier" : null,
-        "children" : [
-
-        ],
-        "externalPageURL" : null,
-        "code" : "---\ntitle: Services\nsummary: External services, APIs, credentials, and integrations\n---\n\nDocument external services, APIs, and integrations used by this project.\n\n| Service | Purpose | Notes |\n|---------|---------|-------|\n",
-        "attributes" : {
-          "filename" : "services.md",
-          "credit" : true,
-          "shouldArchivePage" : true,
-          "customPageStart" : "",
-          "customCSS" : "",
-          "customSiteTitle" : "",
-          "customHeadStart" : "",
-          "useCustomSiteTitle" : false,
-          "expiryQuantity" : 2,
-          "customBodyStart" : "",
-          "shouldIndexImages" : true,
-          "shouldAllowPreview" : true,
-          "customJavaScript" : "",
-          "customHeadEnd" : "",
-          "hidden" : false,
-          "lastChangedDate" : 1786311324603.291,
-          "expires" : false,
-          "expiryUnit" : 0,
-          "shouldIndexPage" : true,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldEnableSocialTags" : true,
-          "shouldEnableRobotTags" : true,
-          "linkOpensInNewWindow" : false,
-          "customPageEnd" : "",
-          "encoding" : 1,
-          "shouldFollowLinks" : true,
-          "excludeFromSitemap" : true,
-          "customHeader" : "",
-          "enabled" : true,
-          "customBodyEnd" : ""
-        },
-        "createdDate" : 1786311324602.761,
-        "kind" : "code",
-        "browserTitle" : null,
-        "pageDescription" : null,
-        "identifier" : "FB03502B-BDE9-4A7D-A3AC-9C4733A20B8B",
-        "title" : "",
-        "uniqueID" : "FB03502B-BDE9-4A7D-A3AC-9C4733A20B8B",
-        "expanded" : true,
-        "isIndex" : false
-      },
-      {
-        "manifests" : {
-
-        },
-        "iconIdentifier" : null,
-        "children" : [
-
-        ],
-        "externalPageURL" : null,
-        "code" : "---\ntitle: Wiki Sync\nsummary: Machine-generated sync snapshot. Do not edit by hand.\n---\n\n<!-- Machine-generated. Do not edit by hand. -->\n\n```json\n{\n  \"pages\" : {\n    \"F2D0BEC7-4805-4A82-A903-EA200279F6BF\" : \"2026-08-09T21:52:02Z\"\n  },\n  \"syncedAt\" : \"2026-08-09T21:52:02Z\"\n}\n```\n",
-        "attributes" : {
-          "filename" : "sync.md",
-          "credit" : true,
-          "shouldArchivePage" : true,
-          "customPageStart" : "",
-          "customCSS" : "",
-          "customSiteTitle" : "",
-          "customHeadStart" : "",
-          "useCustomSiteTitle" : false,
-          "expiryQuantity" : 2,
-          "customBodyStart" : "",
-          "shouldIndexImages" : true,
-          "shouldAllowPreview" : true,
-          "customJavaScript" : "",
-          "customHeadEnd" : "",
-          "hidden" : false,
-          "lastChangedDate" : 1786312322271.829,
-          "expires" : false,
-          "expiryUnit" : 0,
-          "shouldIndexPage" : true,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldEnableSocialTags" : true,
-          "shouldEnableRobotTags" : true,
-          "linkOpensInNewWindow" : false,
-          "customPageEnd" : "",
-          "encoding" : 1,
-          "shouldFollowLinks" : true,
-          "excludeFromSitemap" : true,
-          "customHeader" : "",
-          "enabled" : true,
-          "customBodyEnd" : ""
-        },
-        "createdDate" : 1786311324603.3372,
-        "kind" : "code",
-        "browserTitle" : null,
-        "pageDescription" : null,
-        "identifier" : "5317B169-492F-4CDA-9B3F-F673A0F4B06D",
-        "title" : "",
-        "uniqueID" : "5317B169-492F-4CDA-9B3F-F673A0F4B06D",
-        "expanded" : true,
-        "isIndex" : false
-      },
-      {
-        "manifests" : {
-
-        },
-        "iconIdentifier" : null,
-        "children" : [
-          {
-            "manifests" : {
-
-            },
-            "iconIdentifier" : null,
-            "children" : [
-              {
-                "manifests" : {
-
-                },
-                "iconIdentifier" : null,
-                "children" : [
-
-                ],
-                "externalPageURL" : null,
-                "code" : null,
-                "attributes" : {
-                  "filename" : "",
-                  "credit" : true,
-                  "shouldArchivePage" : true,
-                  "customPageStart" : "",
-                  "customCSS" : "",
-                  "customSiteTitle" : "",
-                  "customHeadStart" : "",
-                  "useCustomSiteTitle" : false,
-                  "expiryQuantity" : 2,
-                  "customBodyStart" : "",
-                  "shouldIndexImages" : true,
-                  "shouldAllowPreview" : true,
-                  "customJavaScript" : "",
-                  "customHeadEnd" : "",
-                  "hidden" : false,
-                  "lastChangedDate" : 1786311724829.4502,
-                  "expires" : false,
-                  "expiryUnit" : 0,
-                  "shouldIndexPage" : true,
-                  "changedStatuses" : {
-                    "default" : true
-                  },
-                  "shouldEnableSocialTags" : true,
-                  "shouldEnableRobotTags" : true,
-                  "linkOpensInNewWindow" : false,
-                  "customPageEnd" : "",
-                  "encoding" : 1,
-                  "shouldFollowLinks" : true,
-                  "excludeFromSitemap" : true,
-                  "customHeader" : "",
-                  "enabled" : true,
-                  "customBodyEnd" : ""
-                },
-                "createdDate" : 1786311328987.3308,
-                "kind" : "folder",
-                "browserTitle" : null,
-                "pageDescription" : null,
-                "identifier" : "CBC40693-2C0C-4302-9517-9D828FF1123C",
-                "title" : "raw",
-                "uniqueID" : "CBC40693-2C0C-4302-9517-9D828FF1123C",
-                "expanded" : true,
-                "isIndex" : false
-              }
-            ],
-            "externalPageURL" : null,
-            "code" : null,
-            "attributes" : {
-              "filename" : "",
-              "credit" : true,
-              "shouldArchivePage" : true,
-              "customPageStart" : "",
-              "customCSS" : "",
-              "customSiteTitle" : "",
-              "customHeadStart" : "",
-              "useCustomSiteTitle" : false,
-              "expiryQuantity" : 2,
-              "customBodyStart" : "",
-              "shouldIndexImages" : true,
-              "shouldAllowPreview" : true,
-              "customJavaScript" : "",
-              "customHeadEnd" : "",
-              "hidden" : false,
-              "lastChangedDate" : 1786311724829.013,
-              "expires" : false,
-              "expiryUnit" : 0,
-              "shouldIndexPage" : true,
-              "changedStatuses" : {
-                "default" : true
-              },
-              "shouldEnableSocialTags" : true,
-              "shouldEnableRobotTags" : true,
-              "linkOpensInNewWindow" : false,
-              "customPageEnd" : "",
-              "encoding" : 1,
-              "shouldFollowLinks" : true,
-              "excludeFromSitemap" : true,
-              "customHeader" : "",
-              "enabled" : true,
-              "customBodyEnd" : ""
-            },
-            "createdDate" : 1786311328984.453,
-            "kind" : "folder",
-            "browserTitle" : null,
-            "pageDescription" : null,
-            "identifier" : "8E1BA781-34ED-48E5-9C6A-51057DAF1ABC",
-            "title" : "clove-inspiration",
-            "uniqueID" : "8E1BA781-34ED-48E5-9C6A-51057DAF1ABC",
-            "expanded" : true,
-            "isIndex" : false
-          }
-        ],
-        "externalPageURL" : null,
-        "code" : null,
-        "attributes" : {
-          "filename" : "",
-          "credit" : true,
-          "shouldArchivePage" : true,
-          "customPageStart" : "",
-          "customCSS" : "",
-          "customSiteTitle" : "",
-          "customHeadStart" : "",
-          "useCustomSiteTitle" : false,
-          "expiryQuantity" : 2,
-          "customBodyStart" : "",
-          "shouldIndexImages" : true,
-          "shouldAllowPreview" : true,
-          "customJavaScript" : "",
-          "customHeadEnd" : "",
-          "hidden" : false,
-          "lastChangedDate" : 1786311328980.956,
-          "expires" : false,
-          "expiryUnit" : 0,
-          "shouldIndexPage" : true,
-          "changedStatuses" : {
-
-          },
-          "shouldEnableSocialTags" : true,
-          "shouldEnableRobotTags" : true,
-          "linkOpensInNewWindow" : false,
-          "customPageEnd" : "",
-          "encoding" : 1,
-          "shouldFollowLinks" : true,
-          "excludeFromSitemap" : true,
-          "customHeader" : "",
-          "enabled" : true,
-          "customBodyEnd" : ""
-        },
-        "createdDate" : 1786311328981.004,
-        "kind" : "folder",
-        "browserTitle" : null,
-        "pageDescription" : null,
-        "identifier" : "0DA4CF53-80E1-40C9-9BDE-50E4768C31E4",
-        "title" : "imports",
-        "uniqueID" : "0DA4CF53-80E1-40C9-9BDE-50E4768C31E4",
-        "expanded" : true,
-        "isIndex" : false
-      }
-    ],
-    "externalPageURL" : null,
-    "code" : null,
-    "attributes" : {
-      "filename" : "",
-      "credit" : true,
-      "shouldArchivePage" : true,
-      "customPageStart" : "",
-      "customCSS" : "",
-      "customSiteTitle" : "",
-      "customHeadStart" : "",
-      "useCustomSiteTitle" : false,
-      "expiryQuantity" : 2,
-      "customBodyStart" : "",
-      "shouldIndexImages" : true,
-      "shouldAllowPreview" : true,
-      "customJavaScript" : "",
-      "customHeadEnd" : "",
-      "hidden" : false,
-      "lastChangedDate" : 1786311324596.667,
-      "expires" : false,
-      "expiryUnit" : 0,
-      "shouldIndexPage" : true,
-      "changedStatuses" : {
-
-      },
-      "shouldEnableSocialTags" : true,
-      "shouldEnableRobotTags" : true,
-      "linkOpensInNewWindow" : false,
-      "customPageEnd" : "",
-      "encoding" : 1,
-      "shouldFollowLinks" : true,
-      "excludeFromSitemap" : true,
-      "customHeader" : "",
-      "enabled" : true,
-      "customBodyEnd" : ""
-    },
-    "createdDate" : 1786311324597.057,
-    "kind" : "folder",
-    "browserTitle" : null,
-    "pageDescription" : null,
-    "identifier" : "610C3780-B2A5-45EA-B6CE-4EFA4F827147",
-    "title" : "Project Wiki",
-    "uniqueID" : "610C3780-B2A5-45EA-B6CE-4EFA4F827147",
-    "expanded" : true,
-    "isIndex" : false
-  },
-  "identifier" : "A2CCAEC4-980F-4C8F-866D-9A194B8C1418",
-  "social" : {
-    "useSocialTags" : true
-  },
-  "rootPage" : {
-    "manifests" : {
-
-    },
-    "iconIdentifier" : null,
-    "children" : [
-      {
-        "manifests" : {
-
-        },
-        "iconIdentifier" : null,
-        "children" : [
-
-        ],
-        "externalPageURL" : null,
-        "code" : null,
-        "attributes" : {
-          "filename" : "index.html",
-          "credit" : true,
-          "shouldArchivePage" : true,
-          "customPageStart" : "",
-          "customCSS" : "",
-          "customSiteTitle" : "",
-          "customHeadStart" : "",
-          "useCustomSiteTitle" : false,
-          "expiryQuantity" : 2,
-          "customBodyStart" : "",
-          "shouldIndexImages" : true,
-          "shouldAllowPreview" : true,
-          "customJavaScript" : "",
-          "customHeadEnd" : "",
-          "hidden" : false,
-          "backgroundColor" : {
-            "shade" : 500,
-            "colorStripId" : "none",
-            "darkShade" : 500,
-            "darkColorStripId" : "none"
-          },
-          "lastChangedDate" : 1787050144548.719,
-          "metaDescription" : "Independent strategy and growth consulting for founders, CEOs and leadership teams facing important decisions.",
-          "expiryUnit" : 0,
-          "expires" : false,
-          "shouldIndexPage" : true,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldEnableSocialTags" : true,
-          "shouldEnableRobotTags" : true,
-          "linkOpensInNewWindow" : false,
-          "customPageEnd" : "",
-          "encoding" : 1,
-          "shouldFollowLinks" : true,
-          "excludeFromSitemap" : false,
-          "customHeader" : "",
-          "enabled" : true,
-          "customBodyEnd" : ""
-        },
-        "createdDate" : 1786311265042.7131,
-        "kind" : "page",
-        "browserTitle" : "Clem Fandango | Strategy & Growth Consultant",
-        "pageDescription" : null,
-        "identifier" : "F2D0BEC7-4805-4A82-A903-EA200279F6BF",
-        "title" : "Clem Fandango — Strategy & Growth Consultant",
-        "uniqueID" : "page0",
-        "expanded" : true,
-        "isIndex" : true
-      }
-    ],
-    "externalPageURL" : null,
-    "code" : null,
-    "attributes" : {
-      "filename" : "",
-      "credit" : true,
-      "shouldArchivePage" : true,
-      "customPageStart" : "",
-      "customCSS" : "",
-      "customSiteTitle" : "",
-      "customHeadStart" : "",
-      "useCustomSiteTitle" : false,
-      "expiryQuantity" : 2,
-      "customBodyStart" : "",
-      "shouldIndexImages" : true,
-      "shouldAllowPreview" : true,
-      "customJavaScript" : "",
-      "customHeadEnd" : "",
-      "hidden" : false,
-      "lastChangedDate" : 1786311265031.0059,
-      "expires" : false,
-      "expiryUnit" : 0,
-      "shouldIndexPage" : true,
-      "changedStatuses" : {
-
-      },
-      "shouldEnableSocialTags" : true,
-      "shouldEnableRobotTags" : true,
-      "linkOpensInNewWindow" : false,
-      "customPageEnd" : "",
-      "encoding" : 1,
-      "shouldFollowLinks" : true,
-      "excludeFromSitemap" : true,
-      "customHeader" : "",
-      "enabled" : true,
-      "customBodyEnd" : ""
-    },
-    "createdDate" : 1786311265031.052,
-    "kind" : "folder",
-    "browserTitle" : null,
-    "pageDescription" : null,
-    "identifier" : "B21C376F-CF36-46BF-B1ED-6D4E2A001301",
-    "title" : "root",
-    "uniqueID" : "B21C376F-CF36-46BF-B1ED-6D4E2A001301",
-    "expanded" : true,
-    "isIndex" : false
-  },
-  "ui" : {
-    "catalogFilter" : {
-      "showFavourites" : false,
-      "smartDocumentElements" : false
-    },
-    "elementEditor" : {
-      "show" : false,
-      "showOutline" : false
-    },
-    "contentArea" : {
-      "darkAppearance" : false,
-      "scale" : 1,
-      "responsiveSize" : "lg",
-      "size" : [
-        1024,
-        320
-      ]
-    },
-    "projectInspector" : {
-      "show" : false
-    },
-    "resourceInspector" : {
-      "show" : false
-    }
-  },
-  "localization" : {
-    "siteLanguage" : "en"
-  },
-  "version" : 9,
-  "globalElements" : {
-    "globals" : {
-
-    }
+  "site" : {
+    "defaultFileExtension" : "html",
+    "minifyExtraFiles" : true,
+    "consolidateCSSFiles" : true,
+    "baseURL" : "https:\/\/www.elementsplatform.com",
+    "useCacheBusting" : true,
+    "wantsXMLSiteMap" : true,
+    "cruftlessLinks" : true,
+    "legacyV3HoverOnTouch" : false,
+    "themeName" : "Elements",
+    "allowDarkMode" : false,
+    "title" : "Clem Fandango — Strategy & Growth Consultant"
   }
 }
