@@ -1,1734 +1,1734 @@
 {
-  "rootPrefabNode" : {
-    "kind" : {
-      "folder" : {
-
-      }
-    },
-    "item" : null,
-    "children" : [
-      {
-        "kind" : {
-          "item" : {
-
-          }
-        },
-        "identifier" : "0ECA38F9-16A5-4666-A756-34766EDBEF43",
-        "title" : "Link Button",
-        "expanded" : true,
-        "children" : [
-
-        ],
-        "item" : {
-          "itemIdentifier" : "564006FB-D1DF-41F5-BD25-40A6C92F05EE",
-          "id" : "A9FD1DAA-0515-42FB-9D23-F246FC29F9E6",
-          "kind" : "prefab"
-        }
-      }
-    ],
-    "identifier" : "086BFA65-8B65-48BD-8168-84007CAF0B01",
-    "title" : "Project",
-    "expanded" : true
+  "project" : {
+    "uniqueBackupName" : "D044F78B-7BDB-4001-A881-2F61C09C3628_rwbackup",
+    "autoStartWebServer" : false
   },
-  "uiStateIdentifier" : "379889AE-042A-4F53-BBEA-44B64D1ECAFA",
-  "wikiRoot" : {
-    "title" : "Project Wiki",
-    "attributes" : {
-      "shouldEnableRobotTags" : true,
-      "customBodyEnd" : "",
-      "customBodyStart" : "",
-      "shouldAllowPreview" : true,
-      "expiryUnit" : 0,
-      "useCustomSiteTitle" : false,
-      "shouldEnableSocialTags" : true,
-      "excludeFromSitemap" : true,
-      "shouldFollowLinks" : true,
-      "customJavaScript" : "",
-      "customPageEnd" : "",
-      "customPageStart" : "",
-      "customHeadEnd" : "",
-      "enabled" : true,
-      "customHeader" : "",
-      "encoding" : 1,
-      "customHeadStart" : "",
-      "customCSS" : "",
-      "lastChangedDate" : 1786377754607.9568,
-      "changedStatuses" : {
-
-      },
-      "shouldIndexImages" : true,
-      "expires" : false,
-      "filename" : "",
-      "expiryQuantity" : 2,
-      "shouldIndexPage" : true,
-      "customSiteTitle" : "",
-      "shouldArchivePage" : true,
-      "linkOpensInNewWindow" : false,
-      "hidden" : false,
-      "credit" : true
-    },
-    "pageDescription" : null,
-    "uniqueID" : "55186456-A86D-47FD-9243-95123FB8C7FD",
-    "browserTitle" : null,
-    "identifier" : "55186456-A86D-47FD-9243-95123FB8C7FD",
-    "expanded" : true,
-    "code" : null,
-    "manifests" : {
-
-    },
-    "externalPageURL" : null,
-    "children" : [
-      {
-        "title" : "pages",
-        "attributes" : {
-          "shouldEnableRobotTags" : true,
-          "customBodyEnd" : "",
-          "customBodyStart" : "",
-          "shouldAllowPreview" : true,
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "shouldEnableSocialTags" : true,
-          "excludeFromSitemap" : true,
-          "shouldFollowLinks" : true,
-          "customJavaScript" : "",
-          "customPageEnd" : "",
-          "customPageStart" : "",
-          "customHeadEnd" : "",
-          "enabled" : true,
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "customCSS" : "",
-          "lastChangedDate" : 1786377754608.7542,
-          "changedStatuses" : {
-
-          },
-          "shouldIndexImages" : true,
-          "expires" : false,
-          "filename" : "",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "customSiteTitle" : "",
-          "shouldArchivePage" : true,
-          "linkOpensInNewWindow" : false,
-          "hidden" : false,
-          "credit" : true
-        },
-        "pageDescription" : null,
-        "uniqueID" : "D7AE41D3-53A1-4963-B190-BF4AD6D13D0A",
-        "browserTitle" : null,
-        "identifier" : "D7AE41D3-53A1-4963-B190-BF4AD6D13D0A",
-        "expanded" : true,
-        "code" : null,
-        "manifests" : {
-
-        },
-        "externalPageURL" : null,
-        "children" : [
-          {
-            "title" : "",
-            "attributes" : {
-              "shouldEnableRobotTags" : true,
-              "customBodyEnd" : "",
-              "customBodyStart" : "",
-              "shouldAllowPreview" : true,
-              "expiryUnit" : 0,
-              "useCustomSiteTitle" : false,
-              "shouldEnableSocialTags" : true,
-              "excludeFromSitemap" : true,
-              "shouldFollowLinks" : true,
-              "customJavaScript" : "",
-              "customPageEnd" : "",
-              "customPageStart" : "",
-              "customHeadEnd" : "",
-              "enabled" : true,
-              "customHeader" : "",
-              "encoding" : 1,
-              "customHeadStart" : "",
-              "customCSS" : "",
-              "lastChangedDate" : 1786379462872.1772,
-              "changedStatuses" : {
-                "default" : true
-              },
-              "shouldIndexImages" : true,
-              "expires" : false,
-              "filename" : "profile.md",
-              "expiryQuantity" : 2,
-              "shouldIndexPage" : true,
-              "customSiteTitle" : "",
-              "shouldArchivePage" : true,
-              "linkOpensInNewWindow" : false,
-              "hidden" : false,
-              "credit" : true
-            },
-            "pageDescription" : null,
-            "uniqueID" : "196EF7F8-C48A-47B7-80A9-D626974AB825",
-            "browserTitle" : null,
-            "identifier" : "196EF7F8-C48A-47B7-80A9-D626974AB825",
-            "expanded" : true,
-            "code" : "---\ntitle: Profile\nlastIngested: 2026-08-10\npageId: 23FC5BEC-1143-419A-A5C4-9BFBA50E7E91\nsummary: Single-page link-in-bio profile card for Nick Swivney, freelance website builder\ntype: page\n---\n\n# Profile (home page)\n\nSingle centered profile card on a white, full-screen header background.\n\n## Structure\n\n- **Background** (header, screen height, white) → **Profile Card** flex (max-width 440px, column)\n  - **Bio** flex (column, items centered):\n    1. Avatar — circular 140px image (`hipster-designer-avatar.png`), 2px neutral,200 border\n    2. Name — h1, 5xl, weight 800, heading font: \"Nick Swivney\"\n    3. Role — h2, xs, uppercase widest, neutral,500: \"Freelance Website Builder\"\n    4. Availability badge — pill flex-row (hairline neutral,200 border, radius full, padding 1.5\/3) with a **Status Dot** custom component (pulsing dot, status: available, 8px) + xs\/500 neutral,700 \"Available for projects\"\n    5. Bio line — p, base, centered, neutral,600, relaxed: \"I design and build fast, beautiful websites for small studios and startups.\"\n  - **Buttons** flex: Email (black pill, white text + email icon), Mastodon and GitHub (outlined pills)\n  - **Selected Work** flex (column, gap 4): xs uppercase widest neutral,500 heading + 3-col grid (gap 3) of three 1\/1 rounded-xl images: coffee e-commerce, brand identity, fitness app\n  - Divider (neutral,200)\n  - Footer — xs uppercase neutral,400: \"Building the future, one website at a time.\"\n\n## Style\n\nLight, bold, high-end: white canvas, black\/neutral palette, emerald accent only on the availability dot, full-round pills, xl-rounded work thumbnails.\n\n## See also\n- [[journal]]\n- [[entities\/status-dot]]\n",
-            "manifests" : {
-
-            },
-            "externalPageURL" : null,
-            "children" : [
-
-            ],
-            "iconIdentifier" : null,
-            "isIndex" : false,
-            "kind" : "code",
-            "createdDate" : 1786379174895.998
-          }
-        ],
-        "iconIdentifier" : null,
-        "isIndex" : false,
-        "kind" : "folder",
-        "createdDate" : 1786377754608.7698
-      },
-      {
-        "title" : "concepts",
-        "attributes" : {
-          "shouldEnableRobotTags" : true,
-          "customBodyEnd" : "",
-          "customBodyStart" : "",
-          "shouldAllowPreview" : true,
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "shouldEnableSocialTags" : true,
-          "excludeFromSitemap" : true,
-          "shouldFollowLinks" : true,
-          "customJavaScript" : "",
-          "customPageEnd" : "",
-          "customPageStart" : "",
-          "customHeadEnd" : "",
-          "enabled" : true,
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "customCSS" : "",
-          "lastChangedDate" : 1786377754609.046,
-          "changedStatuses" : {
-
-          },
-          "shouldIndexImages" : true,
-          "expires" : false,
-          "filename" : "",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "customSiteTitle" : "",
-          "shouldArchivePage" : true,
-          "linkOpensInNewWindow" : false,
-          "hidden" : false,
-          "credit" : true
-        },
-        "pageDescription" : null,
-        "uniqueID" : "1FC9453F-58EB-4601-88DE-487C3B0E364E",
-        "browserTitle" : null,
-        "identifier" : "1FC9453F-58EB-4601-88DE-487C3B0E364E",
-        "expanded" : true,
-        "code" : null,
-        "manifests" : {
-
-        },
-        "externalPageURL" : null,
-        "children" : [
-
-        ],
-        "iconIdentifier" : null,
-        "isIndex" : false,
-        "kind" : "folder",
-        "createdDate" : 1786377754609.056
-      },
-      {
-        "title" : "entities",
-        "attributes" : {
-          "shouldEnableRobotTags" : true,
-          "customBodyEnd" : "",
-          "customBodyStart" : "",
-          "shouldAllowPreview" : true,
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "shouldEnableSocialTags" : true,
-          "excludeFromSitemap" : true,
-          "shouldFollowLinks" : true,
-          "customJavaScript" : "",
-          "customPageEnd" : "",
-          "customPageStart" : "",
-          "customHeadEnd" : "",
-          "enabled" : true,
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "customCSS" : "",
-          "lastChangedDate" : 1786377754609.319,
-          "changedStatuses" : {
-
-          },
-          "shouldIndexImages" : true,
-          "expires" : false,
-          "filename" : "",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "customSiteTitle" : "",
-          "shouldArchivePage" : true,
-          "linkOpensInNewWindow" : false,
-          "hidden" : false,
-          "credit" : true
-        },
-        "pageDescription" : null,
-        "uniqueID" : "59E0D5C0-CE8E-4D5E-98FA-A92D9030636C",
-        "browserTitle" : null,
-        "identifier" : "59E0D5C0-CE8E-4D5E-98FA-A92D9030636C",
-        "expanded" : true,
-        "code" : null,
-        "manifests" : {
-
-        },
-        "externalPageURL" : null,
-        "children" : [
-          {
-            "title" : "",
-            "attributes" : {
-              "shouldEnableRobotTags" : true,
-              "customBodyEnd" : "",
-              "customBodyStart" : "",
-              "shouldAllowPreview" : true,
-              "expiryUnit" : 0,
-              "useCustomSiteTitle" : false,
-              "shouldEnableSocialTags" : true,
-              "excludeFromSitemap" : true,
-              "shouldFollowLinks" : true,
-              "customJavaScript" : "",
-              "customPageEnd" : "",
-              "customPageStart" : "",
-              "customHeadEnd" : "",
-              "enabled" : true,
-              "customHeader" : "",
-              "encoding" : 1,
-              "customHeadStart" : "",
-              "customCSS" : "",
-              "lastChangedDate" : 1786379462877.294,
-              "changedStatuses" : {
-                "default" : true
-              },
-              "shouldIndexImages" : true,
-              "expires" : false,
-              "filename" : "status-dot.md",
-              "expiryQuantity" : 2,
-              "shouldIndexPage" : true,
-              "customSiteTitle" : "",
-              "shouldArchivePage" : true,
-              "linkOpensInNewWindow" : false,
-              "hidden" : false,
-              "credit" : true
-            },
-            "pageDescription" : null,
-            "uniqueID" : "4F54A8EF-6FD8-4576-940B-92DFAE9C4ABA",
-            "browserTitle" : null,
-            "identifier" : "4F54A8EF-6FD8-4576-940B-92DFAE9C4ABA",
-            "expanded" : true,
-            "code" : "---\ntitle: Status Dot\nsummary: \"Custom component: pulsing availability indicator with Available\/Unavailable states\"\ntype: entity\n---\n\n# Status Dot (custom component)\n\nCustom component id `13BA620D-6131-4CAA-9222-3D1FD8688BA8`, subtitle \"Pulsing availability indicator\".\n\nA small circular dot with a pulsing ring animation, used in the availability badge on [[pages\/profile]].\n\n## Inspector properties\n\n- **Status** — segmented control, `status`: `available` (emerald #00b981) \/ `unavailable` (red #fb2c36). Default: available.\n- **Size** — number, `dotSize`: diameter in px, 6–24, default 8.\n\n## Implementation notes\n\n- Template: outer span `component-{{id}} status-dot status-dot--{{status}}` with a `__ring` span (pulse) and a `__core` span (solid dot). State is branched via `{{status}}` class interpolation — no hooks needed (template `@if` cannot do `==` comparisons).\n- CSS: `{{dotSize}}px` sizing interpolated directly; keyframes scoped per instance (`status-dot-pulse-{{id}}`); ring scales 1→2.2 while fading, 2s infinite.\n- Colors are hardcoded hex matching the theme's emerald,500 and red,500. If the theme palette changes, update the CSS (or upgrade to themeColor properties with `format: \"var(--color-{{value}})\"`).\n- Both properties are `responsive: false` since values feed CSS, not Tailwind classes.\n\n## See also\n- [[pages\/profile]]\n",
-            "manifests" : {
-
-            },
-            "externalPageURL" : null,
-            "children" : [
-
-            ],
-            "iconIdentifier" : null,
-            "isIndex" : false,
-            "kind" : "code",
-            "createdDate" : 1786379462872.579
-          }
-        ],
-        "iconIdentifier" : null,
-        "isIndex" : false,
-        "kind" : "folder",
-        "createdDate" : 1786377754609.3281
-      },
-      {
-        "title" : "analyses",
-        "attributes" : {
-          "shouldEnableRobotTags" : true,
-          "customBodyEnd" : "",
-          "customBodyStart" : "",
-          "shouldAllowPreview" : true,
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "shouldEnableSocialTags" : true,
-          "excludeFromSitemap" : true,
-          "shouldFollowLinks" : true,
-          "customJavaScript" : "",
-          "customPageEnd" : "",
-          "customPageStart" : "",
-          "customHeadEnd" : "",
-          "enabled" : true,
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "customCSS" : "",
-          "lastChangedDate" : 1786377754609.576,
-          "changedStatuses" : {
-
-          },
-          "shouldIndexImages" : true,
-          "expires" : false,
-          "filename" : "",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "customSiteTitle" : "",
-          "shouldArchivePage" : true,
-          "linkOpensInNewWindow" : false,
-          "hidden" : false,
-          "credit" : true
-        },
-        "pageDescription" : null,
-        "uniqueID" : "9779B4DB-8217-4F98-9B16-8B9DAF840F39",
-        "browserTitle" : null,
-        "identifier" : "9779B4DB-8217-4F98-9B16-8B9DAF840F39",
-        "expanded" : true,
-        "code" : null,
-        "manifests" : {
-
-        },
-        "externalPageURL" : null,
-        "children" : [
-
-        ],
-        "iconIdentifier" : null,
-        "isIndex" : false,
-        "kind" : "folder",
-        "createdDate" : 1786377754609.5837
-      },
-      {
-        "title" : "field-reports",
-        "attributes" : {
-          "shouldEnableRobotTags" : true,
-          "customBodyEnd" : "",
-          "customBodyStart" : "",
-          "shouldAllowPreview" : true,
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "shouldEnableSocialTags" : true,
-          "excludeFromSitemap" : true,
-          "shouldFollowLinks" : true,
-          "customJavaScript" : "",
-          "customPageEnd" : "",
-          "customPageStart" : "",
-          "customHeadEnd" : "",
-          "enabled" : true,
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "customCSS" : "",
-          "lastChangedDate" : 1786377754609.8408,
-          "changedStatuses" : {
-
-          },
-          "shouldIndexImages" : true,
-          "expires" : false,
-          "filename" : "",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "customSiteTitle" : "",
-          "shouldArchivePage" : true,
-          "linkOpensInNewWindow" : false,
-          "hidden" : false,
-          "credit" : true
-        },
-        "pageDescription" : null,
-        "uniqueID" : "BF45E95D-A744-416B-9BD9-E5119A710995",
-        "browserTitle" : null,
-        "identifier" : "BF45E95D-A744-416B-9BD9-E5119A710995",
-        "expanded" : true,
-        "code" : null,
-        "manifests" : {
-
-        },
-        "externalPageURL" : null,
-        "children" : [
-          {
-            "title" : "",
-            "attributes" : {
-              "shouldEnableRobotTags" : true,
-              "customBodyEnd" : "",
-              "customBodyStart" : "",
-              "shouldAllowPreview" : true,
-              "expiryUnit" : 0,
-              "useCustomSiteTitle" : false,
-              "shouldEnableSocialTags" : true,
-              "excludeFromSitemap" : true,
-              "shouldFollowLinks" : true,
-              "customJavaScript" : "",
-              "customPageEnd" : "",
-              "customPageStart" : "",
-              "customHeadEnd" : "",
-              "enabled" : true,
-              "customHeader" : "",
-              "encoding" : 1,
-              "customHeadStart" : "",
-              "customCSS" : "",
-              "lastChangedDate" : 1786378992300.416,
-              "changedStatuses" : {
-                "default" : true
-              },
-              "shouldIndexImages" : true,
-              "expires" : false,
-              "filename" : "2026-08-10-editpagecontent-add-ops-fail-with-phanto.md",
-              "expiryQuantity" : 2,
-              "shouldIndexPage" : true,
-              "customSiteTitle" : "",
-              "shouldArchivePage" : true,
-              "linkOpensInNewWindow" : false,
-              "hidden" : false,
-              "credit" : true
-            },
-            "pageDescription" : null,
-            "uniqueID" : "9861C3C8-C421-41A9-9265-6D2DABA9E0AF",
-            "browserTitle" : null,
-            "identifier" : "9861C3C8-C421-41A9-9265-6D2DABA9E0AF",
-            "expanded" : true,
-            "code" : "---\ntitle: editPageContent add ops fail with phantom 'Node not found' errors; successful adds do not persist\ndate: 2026-08-10\nstatus: open\ntags:\n  - field-report\n---\n\n# editPageContent add ops fail with phantom 'Node not found' errors; successful adds do not persist\n\n## What was being attempted\n\nAdding new components (badge, bio text, work grid) to the Profile page (23FC5BEC-1143-419A-A5C4-9BFBA50E7E91). Set ops on existing nodes worked fine in earlier turns; add ops now fail or silently roll back.\n\n## Context\n\nRapidWeaver Elements, single-page 'Link in Bio' project. Errors reproducible across ~8 attempts over several minutes. Page structure reads consistently via getPageContent.\n\n## What was tried\n\n1. Batch of 1 set + 10 add ops with values → error: Node 'rwBD5CD13C…' not found (an ID not present in my ops or on the page)\n2. Re-read page with getPageContent, retried same batch with verified parent IDs → error: Node 'rwCC802374…' not found (again a phantom ID)\n3. Smaller batch (set + 3 adds) → error: Node 'rw6CB3FC38…' not found\n4. Single add (flex with minimal values) → error: Node 'rw19066D57…' not found\n5. Single add of a text with only content → error: Node 'rwAAF59DD7…' not found\n6. Single bare add of a divider → reported applied:1, but node absent from subsequent getPageContent\n7. Single bare add of a flex → reported applied:1 with ref rwEF7B50F0…, but adding a child to that ID immediately failed with 'not found', and getPageContent confirmed it was never persisted\n8. Fresh getPageContent then full batch again → error: Node 'rw7A2FA8A4…' not found\n\n## Expected behaviour\n\nadd ops should insert nodes under the specified existing parent IDs (verified present via getPageContent immediately before), and applied ops should persist to the document.\n\n## Actual behaviour\n\nBatches fail referencing node IDs that appear in neither the request nor the live page tree (phantom IDs, different each attempt). Adds that report success are absent from the page on the next read. set ops on existing nodes in the same session applied and persisted correctly.\n\n## Recommendations\n\n1. Investigate document\/undo-stack desync between the editing API and the open document when add ops follow generateImageResource or importChatAttachment calls\n2. Make the error surface the actual failing op\/parent instead of an internal phantom node ID\n3. If an applied op is later rolled back, report that rather than returning applied:N\n",
-            "manifests" : {
-
-            },
-            "externalPageURL" : null,
-            "children" : [
-
-            ],
-            "iconIdentifier" : null,
-            "isIndex" : false,
-            "kind" : "code",
-            "createdDate" : 1786378992289.583
-          }
-        ],
-        "iconIdentifier" : null,
-        "isIndex" : false,
-        "kind" : "folder",
-        "createdDate" : 1786377754609.8552
-      },
-      {
-        "title" : "",
-        "attributes" : {
-          "shouldEnableRobotTags" : true,
-          "customBodyEnd" : "",
-          "customBodyStart" : "",
-          "shouldAllowPreview" : true,
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "shouldEnableSocialTags" : true,
-          "excludeFromSitemap" : true,
-          "shouldFollowLinks" : true,
-          "customJavaScript" : "",
-          "customPageEnd" : "",
-          "customPageStart" : "",
-          "customHeadEnd" : "",
-          "enabled" : true,
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "customCSS" : "",
-          "lastChangedDate" : 1786377754610.6401,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldIndexImages" : true,
-          "expires" : false,
-          "filename" : "index.md",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "customSiteTitle" : "",
-          "shouldArchivePage" : true,
-          "linkOpensInNewWindow" : false,
-          "hidden" : false,
-          "credit" : true
-        },
-        "pageDescription" : null,
-        "uniqueID" : "03990D2F-4FF6-4F99-BF16-1224DE2BB6B2",
-        "browserTitle" : null,
-        "identifier" : "03990D2F-4FF6-4F99-BF16-1224DE2BB6B2",
-        "expanded" : true,
-        "code" : "---\ntitle: Project Knowledge\nsummary: Index of all project knowledge pages\n---\n\nThis is the AI-maintained knowledge base for this project, following the Karpathy compiled-knowledge pattern. The LLM reads live pages once and compiles them into an interlinked graph of notes. Subsequent sessions read the notes, not the live pages — answers compound rather than being re-derived each time.\n\n## Note graph\n\nThe knowledge graph lives in four folders. Use `[[folder\/note]]` wikilinks for cross-references between notes.\n\n- **pages\/** — one note per live RapidWeaver page; keyed on `pageId`; records purpose, sections, components, and summary in the user's voice\n- **concepts\/** — themes and patterns spanning multiple pages (e.g. \"testimonials pattern\", \"pricing section\")\n- **entities\/** — people, clients, tools, custom components, publishing destinations\n- **analyses\/** — durable answers to synthesis questions; filed when a query answer is worth preserving\n\n### When to create a concept or entity note\n\nCreate a note proactively — do not wait to be asked:\n\n- **entities\/**: any named person appearing in a role (officer, winner, organiser, contact); any named event, race, trophy, award, or external tool\/service.\n- **concepts\/**: any structural or content pattern that appears across 3 or more pages (e.g. same image+link layout, recurring winner table structure, recurring membership pricing model).\n\nUse a lowercase hyphenated slug (e.g. `entities\/ian-wright.md`, `concepts\/photo-album-pattern.md`). Add a `## See also` section with `[[folder\/note]]` wikilinks back to every page note that references it, and add the reciprocal link in each of those page notes.\n\n### Page note format\n\n```yaml\n---\ntitle: Page Title\ntype: page          # page | concept | entity | analysis\npageId: <uuid>      # for type:page — the Elements page UUID (stable across sessions)\npath: \/slug         # site path\nlastIngested: YYYY-MM-DDTHH:MMZ\nsources: []         # [[links]] to notes this draws from\ntags: []\nconcerns:           # known problems, tech debt, or gotchas for this page\/concept\n  - \"Brief description of the issue (severity: low|medium|high)\"\n---\n\n# Page Title\n\nSummary in the user's voice. Sections, components used, index\/sitemap flags.\n\n**Build mechanics** (required — record HOW things are built, not just WHAT they render): list the element types used, any custom components and how many instances, whether data is hardcoded or driven by CMS\/properties, and whether styling uses design-system tokens or bypasses them (e.g. \"12 per-year hand-edited HTML custom components; data hardcoded in template; colours bypass Tailwind tokens\").\n\n## See also\n- [[concepts\/related-concept]]\n- [[entities\/entity-name]]\n```\n\n## Design System\n\n- **[style-writing.md](style-writing.md)** — voice and tone guide; read via `getDesignSystem` before authoring copy\n- **[style-visual.md](style-visual.md)** — layout and visual conventions; read via `getDesignSystem` before building pages\n\n## Project admin\n\n- **[overview.md](overview.md)** — site purpose, target audience, and high-level structure\n- **[journal.md](journal.md)** — append-only session log (newest entries at top)\n- **[concerns.md](concerns.md)** — known problems, tech debt, gotchas, and fragile areas (derived from per-note `concerns:` frontmatter + `lintKnowledge`; regenerated on close)\n- **[backlog.md](backlog.md)** — outstanding work and speculative ideas with priority and status\n- **[services.md](services.md)** — external services, APIs, and integrations\n- **[field-reports\/](field-reports\/)** — structured AI session blocker reports; summaries linked from concerns.md\n\n## Operations\n\nThree recurring workflows — all orchestrated by the LLM using the storage primitives above.\n\n**Ingest** (triggered by drift or new page): `getPageMarkdown(pageId)` → `editKnowledge` writePage `pages\/<slug>.md` with `pageId` + `lastIngested` → touch\/create linked `concepts\/` and `entities\/` notes → add `[[folder\/note]]` wikilinks both directions and `## See also` → refresh `index.md`. If the page reveals a new voice or visual convention, call `updateDesignSystem` to reconcile the design guides.\n\n**Query**: read `index.md` → relevant notes (re-ingest only if `stale: true`) → synthesise with `[[folder\/note]]` wikilinks as citations → optionally file durable answer as `analyses\/<slug>.md`. **Exception — architecture\/improvement requests**: for any \"how do I improve\", \"review\", or \"what's wrong with\" question, always inspect the live document first (`listCustomComponents` + a sample `getCustomComponent` + `getPageContent` on representative pages) before answering, regardless of note freshness. Rank findings by altitude: maintainability\/structure → design-system → content. Record findings into per-note `concerns:` and regenerate `concerns.md`.\n\n**Lint**: call `lintKnowledge` → act on orphans, broken links, stale notes, dangling page notes, index drift → fix and log.\n",
-        "manifests" : {
-
-        },
-        "externalPageURL" : null,
-        "children" : [
-
-        ],
-        "iconIdentifier" : null,
-        "isIndex" : false,
-        "kind" : "code",
-        "createdDate" : 1786377754610.117
-      },
-      {
-        "title" : "",
-        "attributes" : {
-          "shouldEnableRobotTags" : true,
-          "customBodyEnd" : "",
-          "customBodyStart" : "",
-          "shouldAllowPreview" : true,
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "shouldEnableSocialTags" : true,
-          "excludeFromSitemap" : true,
-          "shouldFollowLinks" : true,
-          "customJavaScript" : "",
-          "customPageEnd" : "",
-          "customPageStart" : "",
-          "customHeadEnd" : "",
-          "enabled" : true,
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "customCSS" : "",
-          "lastChangedDate" : 1786377754611.176,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldIndexImages" : true,
-          "expires" : false,
-          "filename" : "overview.md",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "customSiteTitle" : "",
-          "shouldArchivePage" : true,
-          "linkOpensInNewWindow" : false,
-          "hidden" : false,
-          "credit" : true
-        },
-        "pageDescription" : null,
-        "uniqueID" : "C0CD40BF-FA9A-4B57-8E8B-DD8B94DDB169",
-        "browserTitle" : null,
-        "identifier" : "C0CD40BF-FA9A-4B57-8E8B-DD8B94DDB169",
-        "expanded" : true,
-        "code" : "---\ntitle: Project Overview\nsummary: Goals, structure, and design intent of this project\n---\n\n> On a new project, this is seeded by `newDocument` from the user's brief. On an existing project, derive it by reading pages via `getPageMarkdown`. Update it as the site's scope and structure evolve. Pages are always authoritative over this note.\n\n## Purpose\n\nWhat is this site for? What problem does it solve or goal does it serve?\n\n## Target Audience\n\nWho is this site for?\n\n## Structure\n\nHow is the site organised? List the main pages and folders, and explain how the content is divided.\n",
-        "manifests" : {
-
-        },
-        "externalPageURL" : null,
-        "children" : [
-
-        ],
-        "iconIdentifier" : null,
-        "isIndex" : false,
-        "kind" : "code",
-        "createdDate" : 1786377754610.6511
-      },
-      {
-        "title" : "",
-        "attributes" : {
-          "shouldEnableRobotTags" : true,
-          "customBodyEnd" : "",
-          "customBodyStart" : "",
-          "shouldAllowPreview" : true,
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "shouldEnableSocialTags" : true,
-          "excludeFromSitemap" : true,
-          "shouldFollowLinks" : true,
-          "customJavaScript" : "",
-          "customPageEnd" : "",
-          "customPageStart" : "",
-          "customHeadEnd" : "",
-          "enabled" : true,
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "customCSS" : "",
-          "lastChangedDate" : 1786377754611.6992,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldIndexImages" : true,
-          "expires" : false,
-          "filename" : "style-writing.md",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "customSiteTitle" : "",
-          "shouldArchivePage" : true,
-          "linkOpensInNewWindow" : false,
-          "hidden" : false,
-          "credit" : true
-        },
-        "pageDescription" : null,
-        "uniqueID" : "30D0B33F-2B9A-4BD0-B601-8F75B51EACE4",
-        "browserTitle" : null,
-        "identifier" : "30D0B33F-2B9A-4BD0-B601-8F75B51EACE4",
-        "expanded" : true,
-        "code" : "---\ntitle: Writing Style\ntags:\n  - stub\nsummary: Voice and tone guide — read before authoring any copy\n---\n\n> This is a Design System guide. On a new project, this is seeded by `newDocument` from the user's brief. Update it via `updateDesignSystem(writingStyle:)`. On an existing project, derive it by reading page copy via `getPageMarkdown`. Always reconcile against live pages — pages are authoritative. Read via `getDesignSystem` before authoring any copy. Tag as `derived` once populated from pages; tag as `stale` when the site's copy has clearly moved on.\n\n## Voice & Tone\n\nOverall register (formal\/informal), warmth, and personality.\n\n## Sentence Rhythm\n\nShort sentences or long? Active or passive voice? How are lists used?\n\n## Vocabulary\n\nWords and phrases the author favours. Words and phrases to avoid.\n\n## Person & POV\n\nFirst person, second person, third person? \"We\" or \"I\"?\n\n## Heading Style\n\nTitle case, sentence case? Interrogative, declarative?\n\n## Caption & Label Style\n\nHow are image captions, button labels, and navigation items styled?\n\n## See also\n- [[style-visual]]\n",
-        "manifests" : {
-
-        },
-        "externalPageURL" : null,
-        "children" : [
-
-        ],
-        "iconIdentifier" : null,
-        "isIndex" : false,
-        "kind" : "code",
-        "createdDate" : 1786377754611.188
-      },
-      {
-        "title" : "",
-        "attributes" : {
-          "shouldEnableRobotTags" : true,
-          "customBodyEnd" : "",
-          "customBodyStart" : "",
-          "shouldAllowPreview" : true,
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "shouldEnableSocialTags" : true,
-          "excludeFromSitemap" : true,
-          "shouldFollowLinks" : true,
-          "customJavaScript" : "",
-          "customPageEnd" : "",
-          "customPageStart" : "",
-          "customHeadEnd" : "",
-          "enabled" : true,
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "customCSS" : "",
-          "lastChangedDate" : 1786377754612.228,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldIndexImages" : true,
-          "expires" : false,
-          "filename" : "style-visual.md",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "customSiteTitle" : "",
-          "shouldArchivePage" : true,
-          "linkOpensInNewWindow" : false,
-          "hidden" : false,
-          "credit" : true
-        },
-        "pageDescription" : null,
-        "uniqueID" : "826F15D1-0DF8-4147-96F0-007EA47D7FBE",
-        "browserTitle" : null,
-        "identifier" : "826F15D1-0DF8-4147-96F0-007EA47D7FBE",
-        "expanded" : true,
-        "code" : "---\ntitle: Visual Style\ntags:\n  - stub\nsummary: Layout and visual conventions — read before building or restructuring pages\n---\n\n> This is a Design System guide. On a new project, this is seeded by `newDocument` from the user's brief. Update it via `updateDesignSystem(visualStyle:)`. On an existing project, derive it by inspecting pages via `getPageContent` \/ `getNodeProperties`. Always reconcile against live pages — pages are authoritative. Read via `getDesignSystem` before building or restructuring any layout. Tag as `derived` once populated from pages; tag as `stale` when the site's visual language has clearly moved on.\n\n## Layout Patterns\n\nRecurring structural patterns — hero sections, two-column grids, pricing rows, card layouts.\n\n| Pattern | Description | Pages |\n|---------|-------------|-------|\n\n## Colour Palette\n\n| Role | Value |\n|------|-------|\n| Primary | |\n| Accent | |\n| Background | |\n\n## Typography\n\n| Role | Font | Size \/ Weight |\n|------|------|--------------|\n| Heading | | |\n| Body | | |\n\n## Spacing & Rhythm\n\nNotes on section padding, component gaps, vertical rhythm.\n\n## Image Treatment\n\nAspect ratios, object-fit conventions, caption placement.\n\n## Navigation Structure\n\nHeader\/footer model, mobile nav, active-state conventions.\n\n## See also\n- [[style-writing]]\n",
-        "manifests" : {
-
-        },
-        "externalPageURL" : null,
-        "children" : [
-
-        ],
-        "iconIdentifier" : null,
-        "isIndex" : false,
-        "kind" : "code",
-        "createdDate" : 1786377754611.71
-      },
-      {
-        "title" : "",
-        "attributes" : {
-          "shouldEnableRobotTags" : true,
-          "customBodyEnd" : "",
-          "customBodyStart" : "",
-          "shouldAllowPreview" : true,
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "shouldEnableSocialTags" : true,
-          "excludeFromSitemap" : true,
-          "shouldFollowLinks" : true,
-          "customJavaScript" : "",
-          "customPageEnd" : "",
-          "customPageStart" : "",
-          "customHeadEnd" : "",
-          "enabled" : true,
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "customCSS" : "",
-          "lastChangedDate" : 1786379045809.939,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldIndexImages" : true,
-          "expires" : false,
-          "filename" : "journal.md",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "customSiteTitle" : "",
-          "shouldArchivePage" : true,
-          "linkOpensInNewWindow" : false,
-          "hidden" : false,
-          "credit" : true
-        },
-        "pageDescription" : null,
-        "uniqueID" : "B80B8576-A0F5-4DF6-997B-297C4BC645F7",
-        "browserTitle" : null,
-        "identifier" : "B80B8576-A0F5-4DF6-997B-297C4BC645F7",
-        "expanded" : true,
-        "code" : "---\ntitle: Journal\nsummary: Running log of sessions, decisions, and progress\n---\n\nAppend-only log of work sessions, decisions, and notable events. Newest entries at the top.\n\nUse `appendEntry` with a date heading to add new entries.\n\n## 2026-08-10 — Profile page upgrade blocked by editor bug\n\nRestyled the Profile page (light, bold, high-end): white canvas, 5xl\/800 name, uppercase role label, black pill primary Email button, outlined secondary buttons, new AI-generated hipster designer avatar (resource EE0C4E57-07CB-4E36-BF6A-1D7DE9DDB15D). All `set` ops worked.\n\nThen attempted to add new content (availability badge + bio line + 3-item Selected Work grid) and hit a persistent editor bug: **every `editPageContent` add op fails with 'Node not found' citing phantom node IDs** that exist neither in the request nor on the page; the few adds that reported success never persisted. Full details in the field report `field-reports\/` (same date, 'editPageContent add ops fail with phantom Node not found errors'). User is relaunching Elements to retry.\n\n**Pending work — resume after relaunch** (see [[concerns]]):\n1. Set Bio flex (rw4049421E_AFC8_4989_91F7_B29718476105) alignItems: center\n2. Add availability badge at Bio position 3: flex-row pill (border neutral,200; radius full; padding 1.5,3,1.5,3) containing a 2×2 emerald,500 dot + xs\/500 neutral,700 text 'Available for projects'\n3. Add bio text at Bio position 4: 'I design and build fast, beautiful websites for small studios and startups.' — p, base, center, neutral,600, relaxed, body\n4. Add 'Selected Work' section in Profile Card (rw75E75512_3BEB_4494_8E0D_18E7C86CD17C) at position 2: flex-col gapY 4 with an xs uppercase widest neutral,500 heading + 3-col grid (gap 3) of three 1\/1 images, radius xl:\n   - work-coffee-ecommerce.png → AE35BA35-8C4F-435C-B2B5-2159C5D5CF74\n   - work-brand-identity.png → 2786C424-FB40-4864-A05D-B4E588A96151\n   - work-fitness-app.png → 21984935-3F38-443F-8B35-8A9BEC1D3917\n\nAll three placeholder images are already generated and in Resources — no need to regenerate.\n\n## 2026-08-10 — Profile page upgrade completed after relaunch\n\nRetried the pending batch after the user relaunched Elements — all ops applied successfully this time (the phantom 'Node not found' bug did not recur):\n\n1. Bio flex set to alignItems: center\n2. Availability badge added (pill with emerald,500 dot + 'Available for projects')\n3. Bio line added ('I design and build fast, beautiful websites for small studios and startups.')\n4. 'Selected Work' section added to Profile Card: xs uppercase heading + 3-col grid of the three work images (coffee e-commerce, brand identity, fitness app), 1\/1 aspect, rounded xl\n\nMarked the concern resolved in [[concerns]]. Page note created at [[pages\/profile]].\n\n## 2026-08-10 — Availability dot swapped to SVG\n\nReplaced the flex-based emerald dot in the availability badge with the `circle-dot.svg` resource (SVG element, width 2, emerald,500 fill), per user request. Page note [[pages\/profile]] updated.\n\n## 2026-08-10 — Status Dot custom component\n\nBuilt a 'Status Dot' custom component (pulsing availability indicator) and replaced the static circle-dot.svg in the Profile page availability badge with it. Two inspector states: Available (emerald) \/ Unavailable (red), plus a size control (6–24px, default 8). Pure template+CSS — state branching via class interpolation, per-instance scoped keyframes, no hooks\/JS. Docs researched via sub-agent before authoring. Component notes at [[entities\/status-dot]]; page note [[pages\/profile]] updated.\n",
-        "manifests" : {
-
-        },
-        "externalPageURL" : null,
-        "children" : [
-
-        ],
-        "iconIdentifier" : null,
-        "isIndex" : false,
-        "kind" : "code",
-        "createdDate" : 1786377754612.2397
-      },
-      {
-        "title" : "",
-        "attributes" : {
-          "shouldEnableRobotTags" : true,
-          "customBodyEnd" : "",
-          "customBodyStart" : "",
-          "shouldAllowPreview" : true,
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "shouldEnableSocialTags" : true,
-          "excludeFromSitemap" : true,
-          "shouldFollowLinks" : true,
-          "customJavaScript" : "",
-          "customPageEnd" : "",
-          "customPageStart" : "",
-          "customHeadEnd" : "",
-          "enabled" : true,
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "customCSS" : "",
-          "lastChangedDate" : 1786379045810.267,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldIndexImages" : true,
-          "expires" : false,
-          "filename" : "concerns.md",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "customSiteTitle" : "",
-          "shouldArchivePage" : true,
-          "linkOpensInNewWindow" : false,
-          "hidden" : false,
-          "credit" : true
-        },
-        "pageDescription" : null,
-        "uniqueID" : "90ABA541-F5DA-4FBE-806E-C1D31DFCDC67",
-        "browserTitle" : null,
-        "identifier" : "90ABA541-F5DA-4FBE-806E-C1D31DFCDC67",
-        "expanded" : true,
-        "code" : "---\ntitle: Concerns\nsummary: Derived rollup of known problems, tech debt, and gotchas\n---\n\n**Derived — do not hand-edit.** Regenerated at the end of each session by aggregating the `concerns:` frontmatter from every `pages\/` and `concepts\/` note, plus the document-level findings from `lintKnowledge` (duplicate components, malformed component files, non-token styling). To add a concern, add it to the `concerns:` list in the relevant note; it will surface here on the next `lintKnowledge` run.\n\nDetailed AI session blockers are in `field-reports\/` and summarised here.\n\n## Tech Debt \/ Structural\n\n| Severity | Component \/ Page | Description | Notes |\n|----------|-----------------|-------------|-------|\n\n## Content \/ Editorial\n\n| Severity | Page | Description | Notes |\n|----------|------|-------------|-------|\n\n## Open Field Reports\n\n| Date | Title | Status |\n|------|-------|--------|\n\n## editPageContent add ops failing (2026-08-10)\n\n- **Resolved (2026-08-10)**: after the user relaunched Elements, the previously failing add-op batch (availability badge, bio line, Selected Work grid) applied cleanly in one `editPageContent` call — 11 ops, no errors. The phantom 'Node not found' failures did not recur; likely a stale in-app node-index state fixed by relaunch. Field report remains for reference.\n",
-        "manifests" : {
-
-        },
-        "externalPageURL" : null,
-        "children" : [
-
-        ],
-        "iconIdentifier" : null,
-        "isIndex" : false,
-        "kind" : "code",
-        "createdDate" : 1786377754612.769
-      },
-      {
-        "title" : "",
-        "attributes" : {
-          "shouldEnableRobotTags" : true,
-          "customBodyEnd" : "",
-          "customBodyStart" : "",
-          "shouldAllowPreview" : true,
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "shouldEnableSocialTags" : true,
-          "excludeFromSitemap" : true,
-          "shouldFollowLinks" : true,
-          "customJavaScript" : "",
-          "customPageEnd" : "",
-          "customPageStart" : "",
-          "customHeadEnd" : "",
-          "enabled" : true,
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "customCSS" : "",
-          "lastChangedDate" : 1786377754613.803,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldIndexImages" : true,
-          "expires" : false,
-          "filename" : "backlog.md",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "customSiteTitle" : "",
-          "shouldArchivePage" : true,
-          "linkOpensInNewWindow" : false,
-          "hidden" : false,
-          "credit" : true
-        },
-        "pageDescription" : null,
-        "uniqueID" : "9FB1B89B-CDC5-4F38-8C2F-2F437A929295",
-        "browserTitle" : null,
-        "identifier" : "9FB1B89B-CDC5-4F38-8C2F-2F437A929295",
-        "expanded" : true,
-        "code" : "---\ntitle: Backlog\nsummary: Outstanding work and speculative ideas with priority and status\n---\n\nTracks both committed tasks and speculative ideas. Mark speculative items with `idea` in the Type column.\n\n| Priority | Type | Task | Status |\n|----------|------|------|--------|\n",
-        "manifests" : {
-
-        },
-        "externalPageURL" : null,
-        "children" : [
-
-        ],
-        "iconIdentifier" : null,
-        "isIndex" : false,
-        "kind" : "code",
-        "createdDate" : 1786377754613.2942
-      },
-      {
-        "title" : "",
-        "attributes" : {
-          "shouldEnableRobotTags" : true,
-          "customBodyEnd" : "",
-          "customBodyStart" : "",
-          "shouldAllowPreview" : true,
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "shouldEnableSocialTags" : true,
-          "excludeFromSitemap" : true,
-          "shouldFollowLinks" : true,
-          "customJavaScript" : "",
-          "customPageEnd" : "",
-          "customPageStart" : "",
-          "customHeadEnd" : "",
-          "enabled" : true,
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "customCSS" : "",
-          "lastChangedDate" : 1786377754614.3188,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldIndexImages" : true,
-          "expires" : false,
-          "filename" : "services.md",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "customSiteTitle" : "",
-          "shouldArchivePage" : true,
-          "linkOpensInNewWindow" : false,
-          "hidden" : false,
-          "credit" : true
-        },
-        "pageDescription" : null,
-        "uniqueID" : "1BAC3F00-AAE7-4198-96C9-F2E0EB858ED6",
-        "browserTitle" : null,
-        "identifier" : "1BAC3F00-AAE7-4198-96C9-F2E0EB858ED6",
-        "expanded" : true,
-        "code" : "---\ntitle: Services\nsummary: External services, APIs, credentials, and integrations\n---\n\nDocument external services, APIs, and integrations used by this project.\n\n| Service | Purpose | Notes |\n|---------|---------|-------|\n",
-        "manifests" : {
-
-        },
-        "externalPageURL" : null,
-        "children" : [
-
-        ],
-        "iconIdentifier" : null,
-        "isIndex" : false,
-        "kind" : "code",
-        "createdDate" : 1786377754613.817
-      },
-      {
-        "title" : "",
-        "attributes" : {
-          "shouldEnableRobotTags" : true,
-          "customBodyEnd" : "",
-          "customBodyStart" : "",
-          "shouldAllowPreview" : true,
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "shouldEnableSocialTags" : true,
-          "excludeFromSitemap" : true,
-          "shouldFollowLinks" : true,
-          "customJavaScript" : "",
-          "customPageEnd" : "",
-          "customPageStart" : "",
-          "customHeadEnd" : "",
-          "enabled" : true,
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "customCSS" : "",
-          "lastChangedDate" : 1786377754614.876,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldIndexImages" : true,
-          "expires" : false,
-          "filename" : "sync.md",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "customSiteTitle" : "",
-          "shouldArchivePage" : true,
-          "linkOpensInNewWindow" : false,
-          "hidden" : false,
-          "credit" : true
-        },
-        "pageDescription" : null,
-        "uniqueID" : "A7489D56-87C7-4BC0-8F3A-B0CFC859C410",
-        "browserTitle" : null,
-        "identifier" : "A7489D56-87C7-4BC0-8F3A-B0CFC859C410",
-        "expanded" : true,
-        "code" : "---\ntitle: Wiki Sync\nsummary: Machine-generated sync snapshot. Do not edit by hand.\n---\n\n<!-- Machine-generated. Do not edit by hand. -->\n\n```json\n{\n  \"pages\" : {\n    \"23FC5BEC-1143-419A-A5C4-9BFBA50E7E91\" : \"2026-08-10T16:31:02Z\"\n  },\n  \"syncedAt\" : \"2026-08-10T16:31:02Z\"\n}\n```\n",
-        "manifests" : {
-
-        },
-        "externalPageURL" : null,
-        "children" : [
-
-        ],
-        "iconIdentifier" : null,
-        "isIndex" : false,
-        "kind" : "code",
-        "createdDate" : 1786377754614.3499
-      }
-    ],
-    "iconIdentifier" : null,
-    "isIndex" : false,
-    "kind" : "folder",
-    "createdDate" : 1786377754608.309
-  },
-  "social" : {
-    "useSocialTags" : true
-  },
-  "siteResources" : {
-    "resources" : {
-      "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E" : {
-        "expanded" : true,
-        "name" : "Resources",
-        "timeStamp" : -62135769600000,
-        "identifier" : "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E",
-        "changedStatuses" : {
-
-        },
-        "kind" : 0,
-        "hostedImageURLs" : [
-
-        ],
-        "smartFolderKind" : 0
-      },
-      "21984935-3F38-443F-8B35-8A9BEC1D3917" : {
-        "isSVG" : false,
-        "metadata" : {
-          "generationPrompt" : "Mobile app UI design mockup, fitness tracking app shown on two floating smartphone screens, dark UI with vibrant lime green accents, clean geometric composition on a soft gradient background. High-end portfolio presentation render.",
-          "generationSize" : "1024x1024",
-          "aspect" : 1,
-          "width" : 1024,
-          "height" : 1024
-        },
-        "name" : "work-fitness-app.png",
-        "timeStamp" : 1786378597055.197,
-        "kind" : 1,
-        "expanded" : false,
-        "typeIdentifier" : "public.png",
-        "parentIdentifier" : "7A5B5CA0-0956-4D9A-9EBE-3616E81E56DE",
-        "originalName" : "work-fitness-app.png",
-        "changedStatuses" : {
-
-        },
-        "identifier" : "21984935-3F38-443F-8B35-8A9BEC1D3917",
-        "hostedImageURLs" : [
-
-        ],
-        "smartFolderKind" : 0
-      },
-      "23AAB4DA-BD52-4865-9503-90B4500BAE31" : {
-        "expanded" : false,
-        "name" : "svgs",
-        "timeStamp" : -62135769600000,
-        "identifier" : "23AAB4DA-BD52-4865-9503-90B4500BAE31",
-        "changedStatuses" : {
-
-        },
-        "parentIdentifier" : "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E",
-        "kind" : 0,
-        "hostedImageURLs" : [
-
-        ],
-        "smartFolderKind" : 0
-      },
-      "8EB85E56-164A-4888-B619-F101C1C5593A" : {
-        "expanded" : false,
-        "hostedImageURLs" : [
-
-        ],
-        "name" : "mastodon.svg",
-        "isSVG" : true,
-        "timeStamp" : 1750253948462.6865,
-        "identifier" : "8EB85E56-164A-4888-B619-F101C1C5593A",
-        "changedStatuses" : {
-
-        },
-        "parentIdentifier" : "23AAB4DA-BD52-4865-9503-90B4500BAE31",
-        "kind" : 1,
-        "originalName" : "mastodon.svg",
-        "typeIdentifier" : "public.svg-image",
-        "smartFolderKind" : 0
-      },
-      "F15AB121-3EBB-4DB0-AE3B-08524EDEE011" : {
-        "expanded" : true,
-        "hostedImageURLs" : [
-
-        ],
-        "name" : "star-empty.svg",
-        "isSVG" : true,
-        "timeStamp" : 1750264925370.8977,
-        "identifier" : "F15AB121-3EBB-4DB0-AE3B-08524EDEE011",
-        "changedStatuses" : {
-
-        },
-        "parentIdentifier" : "23AAB4DA-BD52-4865-9503-90B4500BAE31",
-        "kind" : 1,
-        "originalName" : "star-empty.svg",
-        "typeIdentifier" : "public.svg-image",
-        "smartFolderKind" : 0
-      },
-      "EE0C4E57-07CB-4E36-BF6A-1D7DE9DDB15D" : {
-        "isSVG" : false,
-        "metadata" : {
-          "height" : 1024,
-          "generationSize" : "1024x1024",
-          "width" : 1024,
-          "aspect" : 1,
-          "generationPrompt" : "Portrait photo of a stylish hipster graphic designer in his early 30s, well-groomed beard, round tortoiseshell glasses, wearing a mustard-yellow beanie and a denim jacket over a plain tee. Warm natural studio lighting, soft neutral background, shallow depth of field, head-and-shoulders framing, confident subtle smile. High-end editorial photography style."
-        },
-        "name" : "nick-designer-avatar.png",
-        "timeStamp" : 1786378362657.194,
-        "kind" : 1,
-        "expanded" : true,
-        "typeIdentifier" : "public.png",
-        "parentIdentifier" : "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E",
-        "originalName" : "hipster-designer-avatar.png",
-        "changedStatuses" : {
-
-        },
-        "identifier" : "EE0C4E57-07CB-4E36-BF6A-1D7DE9DDB15D",
-        "hostedImageURLs" : [
-
-        ],
-        "smartFolderKind" : 0
-      },
-      "2786C424-FB40-4864-A05D-B4E588A96151" : {
-        "isSVG" : false,
-        "metadata" : {
-          "generationPrompt" : "Brand identity design presentation: business cards, letterhead and logo mark for a modern architecture studio, monochrome palette with a single bold orange accent, arranged in a neat grid on a light grey surface. High-end portfolio photography, soft shadows.",
-          "generationSize" : "1024x1024",
-          "aspect" : 1,
-          "width" : 1024,
-          "height" : 1024
-        },
-        "name" : "work-brand-identity.png",
-        "timeStamp" : 1786378577175.921,
-        "kind" : 1,
-        "expanded" : false,
-        "typeIdentifier" : "public.png",
-        "parentIdentifier" : "7A5B5CA0-0956-4D9A-9EBE-3616E81E56DE",
-        "originalName" : "work-brand-identity.png",
-        "changedStatuses" : {
-
-        },
-        "identifier" : "2786C424-FB40-4864-A05D-B4E588A96151",
-        "hostedImageURLs" : [
-
-        ],
-        "smartFolderKind" : 0
-      },
-      "AE35BA35-8C4F-435C-B2B5-2159C5D5CF74" : {
-        "isSVG" : false,
-        "metadata" : {
-          "generationPrompt" : "Clean website design mockup displayed on a laptop screen, minimal e-commerce homepage for a boutique coffee brand, warm cream and charcoal palette, bold typography, styled flat-lay on a neutral desk background. High-end portfolio presentation shot, soft studio lighting.",
-          "generationSize" : "1024x1024",
-          "aspect" : 1,
-          "width" : 1024,
-          "height" : 1024
-        },
-        "name" : "work-coffee-ecommerce.png",
-        "timeStamp" : 1786378555236.5808,
-        "kind" : 1,
-        "expanded" : false,
-        "typeIdentifier" : "public.png",
-        "parentIdentifier" : "7A5B5CA0-0956-4D9A-9EBE-3616E81E56DE",
-        "originalName" : "work-coffee-ecommerce.png",
-        "changedStatuses" : {
-
-        },
-        "identifier" : "AE35BA35-8C4F-435C-B2B5-2159C5D5CF74",
-        "hostedImageURLs" : [
-
-        ],
-        "smartFolderKind" : 0
-      },
-      "CEA1B591-06BD-41AD-B29A-03DCA134FFB1" : {
-        "expanded" : false,
-        "hostedImageURLs" : [
-
-        ],
-        "name" : "github.svg",
-        "isSVG" : true,
-        "timeStamp" : 1750254092057.1035,
-        "identifier" : "CEA1B591-06BD-41AD-B29A-03DCA134FFB1",
-        "changedStatuses" : {
-
-        },
-        "parentIdentifier" : "23AAB4DA-BD52-4865-9503-90B4500BAE31",
-        "kind" : 1,
-        "originalName" : "github.svg",
-        "typeIdentifier" : "public.svg-image",
-        "smartFolderKind" : 0
-      },
-      "173F49B9-A0F1-4B2F-8C7C-6474B2EB11CC" : {
-        "expanded" : false,
-        "hostedImageURLs" : [
-
-        ],
-        "name" : "email.svg",
-        "isSVG" : true,
-        "timeStamp" : 1750264925370.2178,
-        "identifier" : "173F49B9-A0F1-4B2F-8C7C-6474B2EB11CC",
-        "changedStatuses" : {
-
-        },
-        "parentIdentifier" : "23AAB4DA-BD52-4865-9503-90B4500BAE31",
-        "kind" : 1,
-        "originalName" : "mail.svg",
-        "typeIdentifier" : "public.svg-image",
-        "smartFolderKind" : 0
-      },
-      "7A5B5CA0-0956-4D9A-9EBE-3616E81E56DE" : {
-        "changedStatuses" : {
-
-        },
-        "name" : "work",
-        "parentIdentifier" : "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E",
-        "identifier" : "7A5B5CA0-0956-4D9A-9EBE-3616E81E56DE",
-        "timeStamp" : -62135769600000,
-        "hostedImageURLs" : [
-
-        ],
-        "smartFolderKind" : 0,
-        "kind" : 0,
-        "expanded" : false
-      }
-    },
-    "children" : {
-      "7A5B5CA0-0956-4D9A-9EBE-3616E81E56DE" : [
-        "21984935-3F38-443F-8B35-8A9BEC1D3917",
-        "2786C424-FB40-4864-A05D-B4E588A96151",
-        "AE35BA35-8C4F-435C-B2B5-2159C5D5CF74"
-      ],
-      "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E" : [
-        "7A5B5CA0-0956-4D9A-9EBE-3616E81E56DE",
-        "23AAB4DA-BD52-4865-9503-90B4500BAE31",
-        "EE0C4E57-07CB-4E36-BF6A-1D7DE9DDB15D"
-      ],
-      "23AAB4DA-BD52-4865-9503-90B4500BAE31" : [
-        "173F49B9-A0F1-4B2F-8C7C-6474B2EB11CC",
-        "8EB85E56-164A-4888-B619-F101C1C5593A",
-        "CEA1B591-06BD-41AD-B29A-03DCA134FFB1",
-        "F15AB121-3EBB-4DB0-AE3B-08524EDEE011"
-      ]
-    },
-    "root" : "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E"
-  },
+  "identifier" : "379889AE-042A-4F53-BBEA-44B64D1ECAFA",
   "localization" : {
 
   },
-  "images" : {
-    "webIcons" : {
-      "pinnedTab" : {
-        "autoGenerate" : false,
-        "type" : 3,
-        "resourceIdentifier" : "F15AB121-3EBB-4DB0-AE3B-08524EDEE011",
-        "colorString" : "rgba(0,162,255,1.00)"
-      },
-      "faviconSmall" : {
-        "autoGenerate" : false,
-        "type" : 6
-      },
-      "small" : {
-        "autoGenerate" : false,
-        "type" : 2,
-        "colorString" : "#FFFFFF"
-      },
-      "faviconLarge" : {
-        "autoGenerate" : false,
-        "type" : 4
-      },
-      "medium" : {
-        "autoGenerate" : false,
-        "type" : 1,
-        "colorString" : "#FFFFFF"
-      },
-      "large" : {
-        "autoGenerate" : false,
-        "type" : 0,
-        "colorString" : "#FFFFFF"
-      },
-      "faviconMedium" : {
-        "autoGenerate" : false,
-        "type" : 5
-      }
+  "wikiRoot" : {
+    "manifests" : {
+
     },
-    "logoAltText" : ""
+    "uniqueID" : "55186456-A86D-47FD-9243-95123FB8C7FD",
+    "expanded" : true,
+    "kind" : "folder",
+    "iconIdentifier" : null,
+    "pageDescription" : null,
+    "isIndex" : false,
+    "createdDate" : 1786377754608.309,
+    "externalPageURL" : null,
+    "title" : "Project Wiki",
+    "children" : [
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "D7AE41D3-53A1-4963-B190-BF4AD6D13D0A",
+        "expanded" : true,
+        "kind" : "folder",
+        "iconIdentifier" : null,
+        "pageDescription" : null,
+        "isIndex" : false,
+        "createdDate" : 1786377754608.7698,
+        "externalPageURL" : null,
+        "title" : "pages",
+        "children" : [
+          {
+            "manifests" : {
+
+            },
+            "uniqueID" : "196EF7F8-C48A-47B7-80A9-D626974AB825",
+            "expanded" : true,
+            "kind" : "code",
+            "iconIdentifier" : null,
+            "pageDescription" : null,
+            "isIndex" : false,
+            "createdDate" : 1786379174895.998,
+            "externalPageURL" : null,
+            "title" : "",
+            "children" : [
+
+            ],
+            "browserTitle" : null,
+            "code" : "---\ntitle: Profile\nlastIngested: 2026-08-10\npageId: 23FC5BEC-1143-419A-A5C4-9BFBA50E7E91\nsummary: Single-page link-in-bio profile card for Nick Swivney, freelance website builder\ntype: page\n---\n\n# Profile (home page)\n\nSingle centered profile card on a white, full-screen header background.\n\n## Structure\n\n- **Background** (header, screen height, white) → **Profile Card** flex (max-width 440px, column)\n  - **Bio** flex (column, items centered):\n    1. Avatar — circular 140px image (`hipster-designer-avatar.png`), 2px neutral,200 border\n    2. Name — h1, 5xl, weight 800, heading font: \"Nick Swivney\"\n    3. Role — h2, xs, uppercase widest, neutral,500: \"Freelance Website Builder\"\n    4. Availability badge — pill flex-row (hairline neutral,200 border, radius full, padding 1.5\/3) with a **Status Dot** custom component (pulsing dot, status: available, 8px) + xs\/500 neutral,700 \"Available for projects\"\n    5. Bio line — p, base, centered, neutral,600, relaxed: \"I design and build fast, beautiful websites for small studios and startups.\"\n  - **Buttons** flex: Email (black pill, white text + email icon), Mastodon and GitHub (outlined pills)\n  - **Selected Work** flex (column, gap 4): xs uppercase widest neutral,500 heading + 3-col grid (gap 3) of three 1\/1 rounded-xl images: coffee e-commerce, brand identity, fitness app\n  - Divider (neutral,200)\n  - Footer — xs uppercase neutral,400: \"Building the future, one website at a time.\"\n\n## Style\n\nLight, bold, high-end: white canvas, black\/neutral palette, emerald accent only on the availability dot, full-round pills, xl-rounded work thumbnails.\n\n## See also\n- [[journal]]\n- [[entities\/status-dot]]\n",
+            "identifier" : "196EF7F8-C48A-47B7-80A9-D626974AB825",
+            "attributes" : {
+              "enabled" : true,
+              "shouldIndexImages" : true,
+              "shouldArchivePage" : true,
+              "encoding" : 1,
+              "customHeader" : "",
+              "shouldAllowPreview" : true,
+              "changedStatuses" : {
+                "default" : true
+              },
+              "customPageStart" : "",
+              "shouldEnableRobotTags" : true,
+              "expiryQuantity" : 2,
+              "customHeadStart" : "",
+              "linkOpensInNewWindow" : false,
+              "customBodyStart" : "",
+              "customPageEnd" : "",
+              "customSiteTitle" : "",
+              "filename" : "profile.md",
+              "lastChangedDate" : 1786379462872.1772,
+              "customBodyEnd" : "",
+              "credit" : true,
+              "customHeadEnd" : "",
+              "shouldIndexPage" : true,
+              "hidden" : false,
+              "expiryUnit" : 0,
+              "expires" : false,
+              "shouldFollowLinks" : true,
+              "shouldEnableSocialTags" : true,
+              "useCustomSiteTitle" : false,
+              "excludeFromSitemap" : true,
+              "customCSS" : "",
+              "customJavaScript" : ""
+            }
+          }
+        ],
+        "browserTitle" : null,
+        "code" : null,
+        "identifier" : "D7AE41D3-53A1-4963-B190-BF4AD6D13D0A",
+        "attributes" : {
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "shouldArchivePage" : true,
+          "encoding" : 1,
+          "customHeader" : "",
+          "shouldAllowPreview" : true,
+          "changedStatuses" : {
+
+          },
+          "customPageStart" : "",
+          "shouldEnableRobotTags" : true,
+          "expiryQuantity" : 2,
+          "customHeadStart" : "",
+          "linkOpensInNewWindow" : false,
+          "customBodyStart" : "",
+          "customPageEnd" : "",
+          "customSiteTitle" : "",
+          "filename" : "",
+          "lastChangedDate" : 1786377754608.7542,
+          "customBodyEnd" : "",
+          "credit" : true,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "expires" : false,
+          "shouldFollowLinks" : true,
+          "shouldEnableSocialTags" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customCSS" : "",
+          "customJavaScript" : ""
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "1FC9453F-58EB-4601-88DE-487C3B0E364E",
+        "expanded" : true,
+        "kind" : "folder",
+        "iconIdentifier" : null,
+        "pageDescription" : null,
+        "isIndex" : false,
+        "createdDate" : 1786377754609.056,
+        "externalPageURL" : null,
+        "title" : "concepts",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : null,
+        "identifier" : "1FC9453F-58EB-4601-88DE-487C3B0E364E",
+        "attributes" : {
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "shouldArchivePage" : true,
+          "encoding" : 1,
+          "customHeader" : "",
+          "shouldAllowPreview" : true,
+          "changedStatuses" : {
+
+          },
+          "customPageStart" : "",
+          "shouldEnableRobotTags" : true,
+          "expiryQuantity" : 2,
+          "customHeadStart" : "",
+          "linkOpensInNewWindow" : false,
+          "customBodyStart" : "",
+          "customPageEnd" : "",
+          "customSiteTitle" : "",
+          "filename" : "",
+          "lastChangedDate" : 1786377754609.046,
+          "customBodyEnd" : "",
+          "credit" : true,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "expires" : false,
+          "shouldFollowLinks" : true,
+          "shouldEnableSocialTags" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customCSS" : "",
+          "customJavaScript" : ""
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "59E0D5C0-CE8E-4D5E-98FA-A92D9030636C",
+        "expanded" : true,
+        "kind" : "folder",
+        "iconIdentifier" : null,
+        "pageDescription" : null,
+        "isIndex" : false,
+        "createdDate" : 1786377754609.3281,
+        "externalPageURL" : null,
+        "title" : "entities",
+        "children" : [
+          {
+            "manifests" : {
+
+            },
+            "uniqueID" : "4F54A8EF-6FD8-4576-940B-92DFAE9C4ABA",
+            "expanded" : true,
+            "kind" : "code",
+            "iconIdentifier" : null,
+            "pageDescription" : null,
+            "isIndex" : false,
+            "createdDate" : 1786379462872.579,
+            "externalPageURL" : null,
+            "title" : "",
+            "children" : [
+
+            ],
+            "browserTitle" : null,
+            "code" : "---\ntitle: Status Dot\nsummary: \"Custom component: pulsing availability indicator with Available\/Unavailable states\"\ntype: entity\n---\n\n# Status Dot (custom component)\n\nCustom component id `13BA620D-6131-4CAA-9222-3D1FD8688BA8`, subtitle \"Pulsing availability indicator\".\n\nA small circular dot with a pulsing ring animation, used in the availability badge on [[pages\/profile]].\n\n## Inspector properties\n\n- **Status** — segmented control, `status`: `available` (emerald #00b981) \/ `unavailable` (red #fb2c36). Default: available.\n- **Size** — number, `dotSize`: diameter in px, 6–24, default 8.\n\n## Implementation notes\n\n- Template: outer span `component-{{id}} status-dot status-dot--{{status}}` with a `__ring` span (pulse) and a `__core` span (solid dot). State is branched via `{{status}}` class interpolation — no hooks needed (template `@if` cannot do `==` comparisons).\n- CSS: `{{dotSize}}px` sizing interpolated directly; keyframes scoped per instance (`status-dot-pulse-{{id}}`); ring scales 1→2.2 while fading, 2s infinite.\n- Colors are hardcoded hex matching the theme's emerald,500 and red,500. If the theme palette changes, update the CSS (or upgrade to themeColor properties with `format: \"var(--color-{{value}})\"`).\n- Both properties are `responsive: false` since values feed CSS, not Tailwind classes.\n\n## See also\n- [[pages\/profile]]\n",
+            "identifier" : "4F54A8EF-6FD8-4576-940B-92DFAE9C4ABA",
+            "attributes" : {
+              "enabled" : true,
+              "shouldIndexImages" : true,
+              "shouldArchivePage" : true,
+              "encoding" : 1,
+              "customHeader" : "",
+              "shouldAllowPreview" : true,
+              "changedStatuses" : {
+                "default" : true
+              },
+              "customPageStart" : "",
+              "shouldEnableRobotTags" : true,
+              "expiryQuantity" : 2,
+              "customHeadStart" : "",
+              "linkOpensInNewWindow" : false,
+              "customBodyStart" : "",
+              "customPageEnd" : "",
+              "customSiteTitle" : "",
+              "filename" : "status-dot.md",
+              "lastChangedDate" : 1786379462877.294,
+              "customBodyEnd" : "",
+              "credit" : true,
+              "customHeadEnd" : "",
+              "shouldIndexPage" : true,
+              "hidden" : false,
+              "expiryUnit" : 0,
+              "expires" : false,
+              "shouldFollowLinks" : true,
+              "shouldEnableSocialTags" : true,
+              "useCustomSiteTitle" : false,
+              "excludeFromSitemap" : true,
+              "customCSS" : "",
+              "customJavaScript" : ""
+            }
+          }
+        ],
+        "browserTitle" : null,
+        "code" : null,
+        "identifier" : "59E0D5C0-CE8E-4D5E-98FA-A92D9030636C",
+        "attributes" : {
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "shouldArchivePage" : true,
+          "encoding" : 1,
+          "customHeader" : "",
+          "shouldAllowPreview" : true,
+          "changedStatuses" : {
+
+          },
+          "customPageStart" : "",
+          "shouldEnableRobotTags" : true,
+          "expiryQuantity" : 2,
+          "customHeadStart" : "",
+          "linkOpensInNewWindow" : false,
+          "customBodyStart" : "",
+          "customPageEnd" : "",
+          "customSiteTitle" : "",
+          "filename" : "",
+          "lastChangedDate" : 1786377754609.319,
+          "customBodyEnd" : "",
+          "credit" : true,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "expires" : false,
+          "shouldFollowLinks" : true,
+          "shouldEnableSocialTags" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customCSS" : "",
+          "customJavaScript" : ""
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "9779B4DB-8217-4F98-9B16-8B9DAF840F39",
+        "expanded" : true,
+        "kind" : "folder",
+        "iconIdentifier" : null,
+        "pageDescription" : null,
+        "isIndex" : false,
+        "createdDate" : 1786377754609.5837,
+        "externalPageURL" : null,
+        "title" : "analyses",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : null,
+        "identifier" : "9779B4DB-8217-4F98-9B16-8B9DAF840F39",
+        "attributes" : {
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "shouldArchivePage" : true,
+          "encoding" : 1,
+          "customHeader" : "",
+          "shouldAllowPreview" : true,
+          "changedStatuses" : {
+
+          },
+          "customPageStart" : "",
+          "shouldEnableRobotTags" : true,
+          "expiryQuantity" : 2,
+          "customHeadStart" : "",
+          "linkOpensInNewWindow" : false,
+          "customBodyStart" : "",
+          "customPageEnd" : "",
+          "customSiteTitle" : "",
+          "filename" : "",
+          "lastChangedDate" : 1786377754609.576,
+          "customBodyEnd" : "",
+          "credit" : true,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "expires" : false,
+          "shouldFollowLinks" : true,
+          "shouldEnableSocialTags" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customCSS" : "",
+          "customJavaScript" : ""
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "BF45E95D-A744-416B-9BD9-E5119A710995",
+        "expanded" : true,
+        "kind" : "folder",
+        "iconIdentifier" : null,
+        "pageDescription" : null,
+        "isIndex" : false,
+        "createdDate" : 1786377754609.8552,
+        "externalPageURL" : null,
+        "title" : "field-reports",
+        "children" : [
+          {
+            "manifests" : {
+
+            },
+            "uniqueID" : "9861C3C8-C421-41A9-9265-6D2DABA9E0AF",
+            "expanded" : true,
+            "kind" : "code",
+            "iconIdentifier" : null,
+            "pageDescription" : null,
+            "isIndex" : false,
+            "createdDate" : 1786378992289.583,
+            "externalPageURL" : null,
+            "title" : "",
+            "children" : [
+
+            ],
+            "browserTitle" : null,
+            "code" : "---\ntitle: editPageContent add ops fail with phantom 'Node not found' errors; successful adds do not persist\ndate: 2026-08-10\nstatus: open\ntags:\n  - field-report\n---\n\n# editPageContent add ops fail with phantom 'Node not found' errors; successful adds do not persist\n\n## What was being attempted\n\nAdding new components (badge, bio text, work grid) to the Profile page (23FC5BEC-1143-419A-A5C4-9BFBA50E7E91). Set ops on existing nodes worked fine in earlier turns; add ops now fail or silently roll back.\n\n## Context\n\nRapidWeaver Elements, single-page 'Link in Bio' project. Errors reproducible across ~8 attempts over several minutes. Page structure reads consistently via getPageContent.\n\n## What was tried\n\n1. Batch of 1 set + 10 add ops with values → error: Node 'rwBD5CD13C…' not found (an ID not present in my ops or on the page)\n2. Re-read page with getPageContent, retried same batch with verified parent IDs → error: Node 'rwCC802374…' not found (again a phantom ID)\n3. Smaller batch (set + 3 adds) → error: Node 'rw6CB3FC38…' not found\n4. Single add (flex with minimal values) → error: Node 'rw19066D57…' not found\n5. Single add of a text with only content → error: Node 'rwAAF59DD7…' not found\n6. Single bare add of a divider → reported applied:1, but node absent from subsequent getPageContent\n7. Single bare add of a flex → reported applied:1 with ref rwEF7B50F0…, but adding a child to that ID immediately failed with 'not found', and getPageContent confirmed it was never persisted\n8. Fresh getPageContent then full batch again → error: Node 'rw7A2FA8A4…' not found\n\n## Expected behaviour\n\nadd ops should insert nodes under the specified existing parent IDs (verified present via getPageContent immediately before), and applied ops should persist to the document.\n\n## Actual behaviour\n\nBatches fail referencing node IDs that appear in neither the request nor the live page tree (phantom IDs, different each attempt). Adds that report success are absent from the page on the next read. set ops on existing nodes in the same session applied and persisted correctly.\n\n## Recommendations\n\n1. Investigate document\/undo-stack desync between the editing API and the open document when add ops follow generateImageResource or importChatAttachment calls\n2. Make the error surface the actual failing op\/parent instead of an internal phantom node ID\n3. If an applied op is later rolled back, report that rather than returning applied:N\n",
+            "identifier" : "9861C3C8-C421-41A9-9265-6D2DABA9E0AF",
+            "attributes" : {
+              "enabled" : true,
+              "shouldIndexImages" : true,
+              "shouldArchivePage" : true,
+              "encoding" : 1,
+              "customHeader" : "",
+              "shouldAllowPreview" : true,
+              "changedStatuses" : {
+                "default" : true
+              },
+              "customPageStart" : "",
+              "shouldEnableRobotTags" : true,
+              "expiryQuantity" : 2,
+              "customHeadStart" : "",
+              "linkOpensInNewWindow" : false,
+              "customBodyStart" : "",
+              "customPageEnd" : "",
+              "customSiteTitle" : "",
+              "filename" : "2026-08-10-editpagecontent-add-ops-fail-with-phanto.md",
+              "lastChangedDate" : 1786378992300.416,
+              "customBodyEnd" : "",
+              "credit" : true,
+              "customHeadEnd" : "",
+              "shouldIndexPage" : true,
+              "hidden" : false,
+              "expiryUnit" : 0,
+              "expires" : false,
+              "shouldFollowLinks" : true,
+              "shouldEnableSocialTags" : true,
+              "useCustomSiteTitle" : false,
+              "excludeFromSitemap" : true,
+              "customCSS" : "",
+              "customJavaScript" : ""
+            }
+          }
+        ],
+        "browserTitle" : null,
+        "code" : null,
+        "identifier" : "BF45E95D-A744-416B-9BD9-E5119A710995",
+        "attributes" : {
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "shouldArchivePage" : true,
+          "encoding" : 1,
+          "customHeader" : "",
+          "shouldAllowPreview" : true,
+          "changedStatuses" : {
+
+          },
+          "customPageStart" : "",
+          "shouldEnableRobotTags" : true,
+          "expiryQuantity" : 2,
+          "customHeadStart" : "",
+          "linkOpensInNewWindow" : false,
+          "customBodyStart" : "",
+          "customPageEnd" : "",
+          "customSiteTitle" : "",
+          "filename" : "",
+          "lastChangedDate" : 1786377754609.8408,
+          "customBodyEnd" : "",
+          "credit" : true,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "expires" : false,
+          "shouldFollowLinks" : true,
+          "shouldEnableSocialTags" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customCSS" : "",
+          "customJavaScript" : ""
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "03990D2F-4FF6-4F99-BF16-1224DE2BB6B2",
+        "expanded" : true,
+        "kind" : "code",
+        "iconIdentifier" : null,
+        "pageDescription" : null,
+        "isIndex" : false,
+        "createdDate" : 1786377754610.117,
+        "externalPageURL" : null,
+        "title" : "",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : "---\ntitle: Project Knowledge\nsummary: Index of all project knowledge pages\n---\n\nThis is the AI-maintained knowledge base for this project, following the Karpathy compiled-knowledge pattern. The LLM reads live pages once and compiles them into an interlinked graph of notes. Subsequent sessions read the notes, not the live pages — answers compound rather than being re-derived each time.\n\n## Note graph\n\nThe knowledge graph lives in four folders. Use `[[folder\/note]]` wikilinks for cross-references between notes.\n\n- **pages\/** — one note per live RapidWeaver page; keyed on `pageId`; records purpose, sections, components, and summary in the user's voice\n- **concepts\/** — themes and patterns spanning multiple pages (e.g. \"testimonials pattern\", \"pricing section\")\n- **entities\/** — people, clients, tools, custom components, publishing destinations\n- **analyses\/** — durable answers to synthesis questions; filed when a query answer is worth preserving\n\n### When to create a concept or entity note\n\nCreate a note proactively — do not wait to be asked:\n\n- **entities\/**: any named person appearing in a role (officer, winner, organiser, contact); any named event, race, trophy, award, or external tool\/service.\n- **concepts\/**: any structural or content pattern that appears across 3 or more pages (e.g. same image+link layout, recurring winner table structure, recurring membership pricing model).\n\nUse a lowercase hyphenated slug (e.g. `entities\/ian-wright.md`, `concepts\/photo-album-pattern.md`). Add a `## See also` section with `[[folder\/note]]` wikilinks back to every page note that references it, and add the reciprocal link in each of those page notes.\n\n### Page note format\n\n```yaml\n---\ntitle: Page Title\ntype: page          # page | concept | entity | analysis\npageId: <uuid>      # for type:page — the Elements page UUID (stable across sessions)\npath: \/slug         # site path\nlastIngested: YYYY-MM-DDTHH:MMZ\nsources: []         # [[links]] to notes this draws from\ntags: []\nconcerns:           # known problems, tech debt, or gotchas for this page\/concept\n  - \"Brief description of the issue (severity: low|medium|high)\"\n---\n\n# Page Title\n\nSummary in the user's voice. Sections, components used, index\/sitemap flags.\n\n**Build mechanics** (required — record HOW things are built, not just WHAT they render): list the element types used, any custom components and how many instances, whether data is hardcoded or driven by CMS\/properties, and whether styling uses design-system tokens or bypasses them (e.g. \"12 per-year hand-edited HTML custom components; data hardcoded in template; colours bypass Tailwind tokens\").\n\n## See also\n- [[concepts\/related-concept]]\n- [[entities\/entity-name]]\n```\n\n## Design System\n\n- **[style-writing.md](style-writing.md)** — voice and tone guide; read via `getDesignSystem` before authoring copy\n- **[style-visual.md](style-visual.md)** — layout and visual conventions; read via `getDesignSystem` before building pages\n\n## Project admin\n\n- **[overview.md](overview.md)** — site purpose, target audience, and high-level structure\n- **[journal.md](journal.md)** — append-only session log (newest entries at top)\n- **[concerns.md](concerns.md)** — known problems, tech debt, gotchas, and fragile areas (derived from per-note `concerns:` frontmatter + `lintKnowledge`; regenerated on close)\n- **[backlog.md](backlog.md)** — outstanding work and speculative ideas with priority and status\n- **[services.md](services.md)** — external services, APIs, and integrations\n- **[field-reports\/](field-reports\/)** — structured AI session blocker reports; summaries linked from concerns.md\n\n## Operations\n\nThree recurring workflows — all orchestrated by the LLM using the storage primitives above.\n\n**Ingest** (triggered by drift or new page): `getPageMarkdown(pageId)` → `editKnowledge` writePage `pages\/<slug>.md` with `pageId` + `lastIngested` → touch\/create linked `concepts\/` and `entities\/` notes → add `[[folder\/note]]` wikilinks both directions and `## See also` → refresh `index.md`. If the page reveals a new voice or visual convention, call `updateDesignSystem` to reconcile the design guides.\n\n**Query**: read `index.md` → relevant notes (re-ingest only if `stale: true`) → synthesise with `[[folder\/note]]` wikilinks as citations → optionally file durable answer as `analyses\/<slug>.md`. **Exception — architecture\/improvement requests**: for any \"how do I improve\", \"review\", or \"what's wrong with\" question, always inspect the live document first (`listCustomComponents` + a sample `getCustomComponent` + `getPageContent` on representative pages) before answering, regardless of note freshness. Rank findings by altitude: maintainability\/structure → design-system → content. Record findings into per-note `concerns:` and regenerate `concerns.md`.\n\n**Lint**: call `lintKnowledge` → act on orphans, broken links, stale notes, dangling page notes, index drift → fix and log.\n",
+        "identifier" : "03990D2F-4FF6-4F99-BF16-1224DE2BB6B2",
+        "attributes" : {
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "shouldArchivePage" : true,
+          "encoding" : 1,
+          "customHeader" : "",
+          "shouldAllowPreview" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "customPageStart" : "",
+          "shouldEnableRobotTags" : true,
+          "expiryQuantity" : 2,
+          "customHeadStart" : "",
+          "linkOpensInNewWindow" : false,
+          "customBodyStart" : "",
+          "customPageEnd" : "",
+          "customSiteTitle" : "",
+          "filename" : "index.md",
+          "lastChangedDate" : 1786377754610.6401,
+          "customBodyEnd" : "",
+          "credit" : true,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "expires" : false,
+          "shouldFollowLinks" : true,
+          "shouldEnableSocialTags" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customCSS" : "",
+          "customJavaScript" : ""
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "C0CD40BF-FA9A-4B57-8E8B-DD8B94DDB169",
+        "expanded" : true,
+        "kind" : "code",
+        "iconIdentifier" : null,
+        "pageDescription" : null,
+        "isIndex" : false,
+        "createdDate" : 1786377754610.6511,
+        "externalPageURL" : null,
+        "title" : "",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : "---\ntitle: Project Overview\nsummary: Goals, structure, and design intent of this project\n---\n\n> On a new project, this is seeded by `newDocument` from the user's brief. On an existing project, derive it by reading pages via `getPageMarkdown`. Update it as the site's scope and structure evolve. Pages are always authoritative over this note.\n\n## Purpose\n\nWhat is this site for? What problem does it solve or goal does it serve?\n\n## Target Audience\n\nWho is this site for?\n\n## Structure\n\nHow is the site organised? List the main pages and folders, and explain how the content is divided.\n",
+        "identifier" : "C0CD40BF-FA9A-4B57-8E8B-DD8B94DDB169",
+        "attributes" : {
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "shouldArchivePage" : true,
+          "encoding" : 1,
+          "customHeader" : "",
+          "shouldAllowPreview" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "customPageStart" : "",
+          "shouldEnableRobotTags" : true,
+          "expiryQuantity" : 2,
+          "customHeadStart" : "",
+          "linkOpensInNewWindow" : false,
+          "customBodyStart" : "",
+          "customPageEnd" : "",
+          "customSiteTitle" : "",
+          "filename" : "overview.md",
+          "lastChangedDate" : 1786377754611.176,
+          "customBodyEnd" : "",
+          "credit" : true,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "expires" : false,
+          "shouldFollowLinks" : true,
+          "shouldEnableSocialTags" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customCSS" : "",
+          "customJavaScript" : ""
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "30D0B33F-2B9A-4BD0-B601-8F75B51EACE4",
+        "expanded" : true,
+        "kind" : "code",
+        "iconIdentifier" : null,
+        "pageDescription" : null,
+        "isIndex" : false,
+        "createdDate" : 1786377754611.188,
+        "externalPageURL" : null,
+        "title" : "",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : "---\ntitle: Writing Style\ntags:\n  - stub\nsummary: Voice and tone guide — read before authoring any copy\n---\n\n> This is a Design System guide. On a new project, this is seeded by `newDocument` from the user's brief. Update it via `updateDesignSystem(writingStyle:)`. On an existing project, derive it by reading page copy via `getPageMarkdown`. Always reconcile against live pages — pages are authoritative. Read via `getDesignSystem` before authoring any copy. Tag as `derived` once populated from pages; tag as `stale` when the site's copy has clearly moved on.\n\n## Voice & Tone\n\nOverall register (formal\/informal), warmth, and personality.\n\n## Sentence Rhythm\n\nShort sentences or long? Active or passive voice? How are lists used?\n\n## Vocabulary\n\nWords and phrases the author favours. Words and phrases to avoid.\n\n## Person & POV\n\nFirst person, second person, third person? \"We\" or \"I\"?\n\n## Heading Style\n\nTitle case, sentence case? Interrogative, declarative?\n\n## Caption & Label Style\n\nHow are image captions, button labels, and navigation items styled?\n\n## See also\n- [[style-visual]]\n",
+        "identifier" : "30D0B33F-2B9A-4BD0-B601-8F75B51EACE4",
+        "attributes" : {
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "shouldArchivePage" : true,
+          "encoding" : 1,
+          "customHeader" : "",
+          "shouldAllowPreview" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "customPageStart" : "",
+          "shouldEnableRobotTags" : true,
+          "expiryQuantity" : 2,
+          "customHeadStart" : "",
+          "linkOpensInNewWindow" : false,
+          "customBodyStart" : "",
+          "customPageEnd" : "",
+          "customSiteTitle" : "",
+          "filename" : "style-writing.md",
+          "lastChangedDate" : 1786377754611.6992,
+          "customBodyEnd" : "",
+          "credit" : true,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "expires" : false,
+          "shouldFollowLinks" : true,
+          "shouldEnableSocialTags" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customCSS" : "",
+          "customJavaScript" : ""
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "826F15D1-0DF8-4147-96F0-007EA47D7FBE",
+        "expanded" : true,
+        "kind" : "code",
+        "iconIdentifier" : null,
+        "pageDescription" : null,
+        "isIndex" : false,
+        "createdDate" : 1786377754611.71,
+        "externalPageURL" : null,
+        "title" : "",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : "---\ntitle: Visual Style\ntags:\n  - stub\nsummary: Layout and visual conventions — read before building or restructuring pages\n---\n\n> This is a Design System guide. On a new project, this is seeded by `newDocument` from the user's brief. Update it via `updateDesignSystem(visualStyle:)`. On an existing project, derive it by inspecting pages via `getPageContent` \/ `getNodeProperties`. Always reconcile against live pages — pages are authoritative. Read via `getDesignSystem` before building or restructuring any layout. Tag as `derived` once populated from pages; tag as `stale` when the site's visual language has clearly moved on.\n\n## Layout Patterns\n\nRecurring structural patterns — hero sections, two-column grids, pricing rows, card layouts.\n\n| Pattern | Description | Pages |\n|---------|-------------|-------|\n\n## Colour Palette\n\n| Role | Value |\n|------|-------|\n| Primary | |\n| Accent | |\n| Background | |\n\n## Typography\n\n| Role | Font | Size \/ Weight |\n|------|------|--------------|\n| Heading | | |\n| Body | | |\n\n## Spacing & Rhythm\n\nNotes on section padding, component gaps, vertical rhythm.\n\n## Image Treatment\n\nAspect ratios, object-fit conventions, caption placement.\n\n## Navigation Structure\n\nHeader\/footer model, mobile nav, active-state conventions.\n\n## See also\n- [[style-writing]]\n",
+        "identifier" : "826F15D1-0DF8-4147-96F0-007EA47D7FBE",
+        "attributes" : {
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "shouldArchivePage" : true,
+          "encoding" : 1,
+          "customHeader" : "",
+          "shouldAllowPreview" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "customPageStart" : "",
+          "shouldEnableRobotTags" : true,
+          "expiryQuantity" : 2,
+          "customHeadStart" : "",
+          "linkOpensInNewWindow" : false,
+          "customBodyStart" : "",
+          "customPageEnd" : "",
+          "customSiteTitle" : "",
+          "filename" : "style-visual.md",
+          "lastChangedDate" : 1786377754612.228,
+          "customBodyEnd" : "",
+          "credit" : true,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "expires" : false,
+          "shouldFollowLinks" : true,
+          "shouldEnableSocialTags" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customCSS" : "",
+          "customJavaScript" : ""
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "B80B8576-A0F5-4DF6-997B-297C4BC645F7",
+        "expanded" : true,
+        "kind" : "code",
+        "iconIdentifier" : null,
+        "pageDescription" : null,
+        "isIndex" : false,
+        "createdDate" : 1786377754612.2397,
+        "externalPageURL" : null,
+        "title" : "",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : "---\ntitle: Journal\nsummary: Running log of sessions, decisions, and progress\n---\n\nAppend-only log of work sessions, decisions, and notable events. Newest entries at the top.\n\nUse `appendEntry` with a date heading to add new entries.\n\n## 2026-08-10 — Profile page upgrade blocked by editor bug\n\nRestyled the Profile page (light, bold, high-end): white canvas, 5xl\/800 name, uppercase role label, black pill primary Email button, outlined secondary buttons, new AI-generated hipster designer avatar (resource EE0C4E57-07CB-4E36-BF6A-1D7DE9DDB15D). All `set` ops worked.\n\nThen attempted to add new content (availability badge + bio line + 3-item Selected Work grid) and hit a persistent editor bug: **every `editPageContent` add op fails with 'Node not found' citing phantom node IDs** that exist neither in the request nor on the page; the few adds that reported success never persisted. Full details in the field report `field-reports\/` (same date, 'editPageContent add ops fail with phantom Node not found errors'). User is relaunching Elements to retry.\n\n**Pending work — resume after relaunch** (see [[concerns]]):\n1. Set Bio flex (rw4049421E_AFC8_4989_91F7_B29718476105) alignItems: center\n2. Add availability badge at Bio position 3: flex-row pill (border neutral,200; radius full; padding 1.5,3,1.5,3) containing a 2×2 emerald,500 dot + xs\/500 neutral,700 text 'Available for projects'\n3. Add bio text at Bio position 4: 'I design and build fast, beautiful websites for small studios and startups.' — p, base, center, neutral,600, relaxed, body\n4. Add 'Selected Work' section in Profile Card (rw75E75512_3BEB_4494_8E0D_18E7C86CD17C) at position 2: flex-col gapY 4 with an xs uppercase widest neutral,500 heading + 3-col grid (gap 3) of three 1\/1 images, radius xl:\n   - work-coffee-ecommerce.png → AE35BA35-8C4F-435C-B2B5-2159C5D5CF74\n   - work-brand-identity.png → 2786C424-FB40-4864-A05D-B4E588A96151\n   - work-fitness-app.png → 21984935-3F38-443F-8B35-8A9BEC1D3917\n\nAll three placeholder images are already generated and in Resources — no need to regenerate.\n\n## 2026-08-10 — Profile page upgrade completed after relaunch\n\nRetried the pending batch after the user relaunched Elements — all ops applied successfully this time (the phantom 'Node not found' bug did not recur):\n\n1. Bio flex set to alignItems: center\n2. Availability badge added (pill with emerald,500 dot + 'Available for projects')\n3. Bio line added ('I design and build fast, beautiful websites for small studios and startups.')\n4. 'Selected Work' section added to Profile Card: xs uppercase heading + 3-col grid of the three work images (coffee e-commerce, brand identity, fitness app), 1\/1 aspect, rounded xl\n\nMarked the concern resolved in [[concerns]]. Page note created at [[pages\/profile]].\n\n## 2026-08-10 — Availability dot swapped to SVG\n\nReplaced the flex-based emerald dot in the availability badge with the `circle-dot.svg` resource (SVG element, width 2, emerald,500 fill), per user request. Page note [[pages\/profile]] updated.\n\n## 2026-08-10 — Status Dot custom component\n\nBuilt a 'Status Dot' custom component (pulsing availability indicator) and replaced the static circle-dot.svg in the Profile page availability badge with it. Two inspector states: Available (emerald) \/ Unavailable (red), plus a size control (6–24px, default 8). Pure template+CSS — state branching via class interpolation, per-instance scoped keyframes, no hooks\/JS. Docs researched via sub-agent before authoring. Component notes at [[entities\/status-dot]]; page note [[pages\/profile]] updated.\n",
+        "identifier" : "B80B8576-A0F5-4DF6-997B-297C4BC645F7",
+        "attributes" : {
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "shouldArchivePage" : true,
+          "encoding" : 1,
+          "customHeader" : "",
+          "shouldAllowPreview" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "customPageStart" : "",
+          "shouldEnableRobotTags" : true,
+          "expiryQuantity" : 2,
+          "customHeadStart" : "",
+          "linkOpensInNewWindow" : false,
+          "customBodyStart" : "",
+          "customPageEnd" : "",
+          "customSiteTitle" : "",
+          "filename" : "journal.md",
+          "lastChangedDate" : 1786379045809.939,
+          "customBodyEnd" : "",
+          "credit" : true,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "expires" : false,
+          "shouldFollowLinks" : true,
+          "shouldEnableSocialTags" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customCSS" : "",
+          "customJavaScript" : ""
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "90ABA541-F5DA-4FBE-806E-C1D31DFCDC67",
+        "expanded" : true,
+        "kind" : "code",
+        "iconIdentifier" : null,
+        "pageDescription" : null,
+        "isIndex" : false,
+        "createdDate" : 1786377754612.769,
+        "externalPageURL" : null,
+        "title" : "",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : "---\ntitle: Concerns\nsummary: Derived rollup of known problems, tech debt, and gotchas\n---\n\n**Derived — do not hand-edit.** Regenerated at the end of each session by aggregating the `concerns:` frontmatter from every `pages\/` and `concepts\/` note, plus the document-level findings from `lintKnowledge` (duplicate components, malformed component files, non-token styling). To add a concern, add it to the `concerns:` list in the relevant note; it will surface here on the next `lintKnowledge` run.\n\nDetailed AI session blockers are in `field-reports\/` and summarised here.\n\n## Tech Debt \/ Structural\n\n| Severity | Component \/ Page | Description | Notes |\n|----------|-----------------|-------------|-------|\n\n## Content \/ Editorial\n\n| Severity | Page | Description | Notes |\n|----------|------|-------------|-------|\n\n## Open Field Reports\n\n| Date | Title | Status |\n|------|-------|--------|\n\n## editPageContent add ops failing (2026-08-10)\n\n- **Resolved (2026-08-10)**: after the user relaunched Elements, the previously failing add-op batch (availability badge, bio line, Selected Work grid) applied cleanly in one `editPageContent` call — 11 ops, no errors. The phantom 'Node not found' failures did not recur; likely a stale in-app node-index state fixed by relaunch. Field report remains for reference.\n",
+        "identifier" : "90ABA541-F5DA-4FBE-806E-C1D31DFCDC67",
+        "attributes" : {
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "shouldArchivePage" : true,
+          "encoding" : 1,
+          "customHeader" : "",
+          "shouldAllowPreview" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "customPageStart" : "",
+          "shouldEnableRobotTags" : true,
+          "expiryQuantity" : 2,
+          "customHeadStart" : "",
+          "linkOpensInNewWindow" : false,
+          "customBodyStart" : "",
+          "customPageEnd" : "",
+          "customSiteTitle" : "",
+          "filename" : "concerns.md",
+          "lastChangedDate" : 1786379045810.267,
+          "customBodyEnd" : "",
+          "credit" : true,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "expires" : false,
+          "shouldFollowLinks" : true,
+          "shouldEnableSocialTags" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customCSS" : "",
+          "customJavaScript" : ""
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "9FB1B89B-CDC5-4F38-8C2F-2F437A929295",
+        "expanded" : true,
+        "kind" : "code",
+        "iconIdentifier" : null,
+        "pageDescription" : null,
+        "isIndex" : false,
+        "createdDate" : 1786377754613.2942,
+        "externalPageURL" : null,
+        "title" : "",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : "---\ntitle: Backlog\nsummary: Outstanding work and speculative ideas with priority and status\n---\n\nTracks both committed tasks and speculative ideas. Mark speculative items with `idea` in the Type column.\n\n| Priority | Type | Task | Status |\n|----------|------|------|--------|\n",
+        "identifier" : "9FB1B89B-CDC5-4F38-8C2F-2F437A929295",
+        "attributes" : {
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "shouldArchivePage" : true,
+          "encoding" : 1,
+          "customHeader" : "",
+          "shouldAllowPreview" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "customPageStart" : "",
+          "shouldEnableRobotTags" : true,
+          "expiryQuantity" : 2,
+          "customHeadStart" : "",
+          "linkOpensInNewWindow" : false,
+          "customBodyStart" : "",
+          "customPageEnd" : "",
+          "customSiteTitle" : "",
+          "filename" : "backlog.md",
+          "lastChangedDate" : 1786377754613.803,
+          "customBodyEnd" : "",
+          "credit" : true,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "expires" : false,
+          "shouldFollowLinks" : true,
+          "shouldEnableSocialTags" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customCSS" : "",
+          "customJavaScript" : ""
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "1BAC3F00-AAE7-4198-96C9-F2E0EB858ED6",
+        "expanded" : true,
+        "kind" : "code",
+        "iconIdentifier" : null,
+        "pageDescription" : null,
+        "isIndex" : false,
+        "createdDate" : 1786377754613.817,
+        "externalPageURL" : null,
+        "title" : "",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : "---\ntitle: Services\nsummary: External services, APIs, credentials, and integrations\n---\n\nDocument external services, APIs, and integrations used by this project.\n\n| Service | Purpose | Notes |\n|---------|---------|-------|\n",
+        "identifier" : "1BAC3F00-AAE7-4198-96C9-F2E0EB858ED6",
+        "attributes" : {
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "shouldArchivePage" : true,
+          "encoding" : 1,
+          "customHeader" : "",
+          "shouldAllowPreview" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "customPageStart" : "",
+          "shouldEnableRobotTags" : true,
+          "expiryQuantity" : 2,
+          "customHeadStart" : "",
+          "linkOpensInNewWindow" : false,
+          "customBodyStart" : "",
+          "customPageEnd" : "",
+          "customSiteTitle" : "",
+          "filename" : "services.md",
+          "lastChangedDate" : 1786377754614.3188,
+          "customBodyEnd" : "",
+          "credit" : true,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "expires" : false,
+          "shouldFollowLinks" : true,
+          "shouldEnableSocialTags" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customCSS" : "",
+          "customJavaScript" : ""
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "A7489D56-87C7-4BC0-8F3A-B0CFC859C410",
+        "expanded" : true,
+        "kind" : "code",
+        "iconIdentifier" : null,
+        "pageDescription" : null,
+        "isIndex" : false,
+        "createdDate" : 1786377754614.3499,
+        "externalPageURL" : null,
+        "title" : "",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : "---\ntitle: Wiki Sync\nsummary: Machine-generated sync snapshot. Do not edit by hand.\n---\n\n<!-- Machine-generated. Do not edit by hand. -->\n\n```json\n{\n  \"pages\" : {\n    \"23FC5BEC-1143-419A-A5C4-9BFBA50E7E91\" : \"2026-08-10T16:31:02Z\"\n  },\n  \"syncedAt\" : \"2026-08-10T16:31:02Z\"\n}\n```\n",
+        "identifier" : "A7489D56-87C7-4BC0-8F3A-B0CFC859C410",
+        "attributes" : {
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "shouldArchivePage" : true,
+          "encoding" : 1,
+          "customHeader" : "",
+          "shouldAllowPreview" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "customPageStart" : "",
+          "shouldEnableRobotTags" : true,
+          "expiryQuantity" : 2,
+          "customHeadStart" : "",
+          "linkOpensInNewWindow" : false,
+          "customBodyStart" : "",
+          "customPageEnd" : "",
+          "customSiteTitle" : "",
+          "filename" : "sync.md",
+          "lastChangedDate" : 1786377754614.876,
+          "customBodyEnd" : "",
+          "credit" : true,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "expires" : false,
+          "shouldFollowLinks" : true,
+          "shouldEnableSocialTags" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customCSS" : "",
+          "customJavaScript" : ""
+        }
+      }
+    ],
+    "browserTitle" : null,
+    "code" : null,
+    "identifier" : "55186456-A86D-47FD-9243-95123FB8C7FD",
+    "attributes" : {
+      "enabled" : true,
+      "shouldIndexImages" : true,
+      "shouldArchivePage" : true,
+      "encoding" : 1,
+      "customHeader" : "",
+      "shouldAllowPreview" : true,
+      "changedStatuses" : {
+
+      },
+      "customPageStart" : "",
+      "shouldEnableRobotTags" : true,
+      "expiryQuantity" : 2,
+      "customHeadStart" : "",
+      "linkOpensInNewWindow" : false,
+      "customBodyStart" : "",
+      "customPageEnd" : "",
+      "customSiteTitle" : "",
+      "filename" : "",
+      "lastChangedDate" : 1786377754607.9568,
+      "customBodyEnd" : "",
+      "credit" : true,
+      "customHeadEnd" : "",
+      "shouldIndexPage" : true,
+      "hidden" : false,
+      "expiryUnit" : 0,
+      "expires" : false,
+      "shouldFollowLinks" : true,
+      "shouldEnableSocialTags" : true,
+      "useCustomSiteTitle" : false,
+      "excludeFromSitemap" : true,
+      "customCSS" : "",
+      "customJavaScript" : ""
+    }
+  },
+  "version" : 9,
+  "rootPage" : {
+    "manifests" : {
+
+    },
+    "uniqueID" : "2B26BA57-9F20-45D6-96C5-775F38524636",
+    "expanded" : true,
+    "kind" : "folder",
+    "iconIdentifier" : null,
+    "pageDescription" : null,
+    "isIndex" : false,
+    "createdDate" : 1758748257743.753,
+    "externalPageURL" : null,
+    "title" : "root",
+    "children" : [
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "page0",
+        "expanded" : true,
+        "kind" : "page",
+        "iconIdentifier" : null,
+        "pageDescription" : null,
+        "isIndex" : true,
+        "createdDate" : 1758748257750.999,
+        "externalPageURL" : null,
+        "title" : "Nick Swivney",
+        "children" : [
+
+        ],
+        "browserTitle" : "Nick Swivney | Freelance Website Builder",
+        "code" : null,
+        "identifier" : "23FC5BEC-1143-419A-A5C4-9BFBA50E7E91",
+        "attributes" : {
+          "enabled" : true,
+          "customJavaScript" : "",
+          "shouldArchivePage" : true,
+          "encoding" : 1,
+          "lastExportedPaths" : [
+            "https:\/\/www.realmacsoftware.com\/"
+          ],
+          "customHeader" : "",
+          "shouldAllowPreview" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "openGraphTitle" : "Nick Swivney | Freelance Website Builder",
+          "customPageStart" : "",
+          "shouldEnableRobotTags" : true,
+          "expiryQuantity" : 2,
+          "customHeadStart" : "",
+          "linkOpensInNewWindow" : false,
+          "customBodyStart" : "",
+          "customPageEnd" : "",
+          "customSiteTitle" : "",
+          "filename" : "index.html",
+          "lastChangedDate" : 1787050183193.515,
+          "customBodyEnd" : "",
+          "credit" : true,
+          "metaDescription" : "Nick Swivney is a freelance website builder who creates fast, beautiful websites for small studios and startups.",
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "lastExported" : 1767696310882.112,
+          "backgroundColor" : {
+            "darkColorStripId" : "none",
+            "shade" : 500,
+            "darkShade" : 500,
+            "colorStripId" : "none"
+          },
+          "openGraphDescription" : "Nick Swivney is a freelance website builder who creates fast, beautiful websites for small studios and startups.",
+          "expires" : false,
+          "shouldFollowLinks" : true,
+          "shouldEnableSocialTags" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : false,
+          "customCSS" : "",
+          "shouldIndexImages" : true
+        }
+      }
+    ],
+    "browserTitle" : null,
+    "code" : null,
+    "identifier" : "2B26BA57-9F20-45D6-96C5-775F38524636",
+    "attributes" : {
+      "enabled" : true,
+      "shouldIndexImages" : true,
+      "shouldArchivePage" : true,
+      "encoding" : 1,
+      "customHeader" : "",
+      "shouldAllowPreview" : true,
+      "changedStatuses" : {
+
+      },
+      "customPageStart" : "",
+      "shouldEnableRobotTags" : true,
+      "expiryQuantity" : 2,
+      "customHeadStart" : "",
+      "linkOpensInNewWindow" : false,
+      "customBodyStart" : "",
+      "customPageEnd" : "",
+      "customSiteTitle" : "",
+      "filename" : "",
+      "lastChangedDate" : 1758748257743.6353,
+      "customBodyEnd" : "",
+      "credit" : true,
+      "customHeadEnd" : "",
+      "shouldIndexPage" : true,
+      "hidden" : false,
+      "expiryUnit" : 0,
+      "expires" : false,
+      "shouldFollowLinks" : true,
+      "shouldEnableSocialTags" : true,
+      "useCustomSiteTitle" : false,
+      "excludeFromSitemap" : true,
+      "customCSS" : "",
+      "customJavaScript" : ""
+    }
   },
   "globalElements" : {
     "globals" : {
 
     }
   },
+  "publishing" : {
+    "publishSettingsConfigured" : true,
+    "publishingDestinations" : [
+
+    ]
+  },
   "ui" : {
-    "catalogFilter" : {
-      "smartDocumentElements" : false,
-      "showFavourites" : false
-    },
-    "elementEditor" : {
-      "showOutline" : false,
+    "resourceInspector" : {
       "show" : false
+    },
+    "catalogFilter" : {
+      "showFavourites" : false,
+      "smartDocumentElements" : false
+    },
+    "contentArea" : {
+      "responsiveSize" : "lg",
+      "darkAppearance" : false,
+      "size" : [
+        1004.078125,
+        1058
+      ],
+      "scale" : 1
     },
     "projectInspector" : {
       "show" : false
     },
-    "resourceInspector" : {
+    "elementEditor" : {
+      "showOutline" : false,
       "show" : false
-    },
-    "contentArea" : {
-      "darkAppearance" : false,
-      "size" : [
-        1089.359375,
-        1054
-      ],
-      "scale" : 1,
-      "responsiveSize" : "lg"
     }
   },
-  "theme" : {
-    "colors" : [
+  "rootPrefabNode" : {
+    "identifier" : "086BFA65-8B65-48BD-8168-84007CAF0B01",
+    "kind" : {
+      "folder" : {
 
-    ],
-    "baseThemeIdentifier" : "com.realmacsoftware.themes.system",
-    "borderWidth" : [
-
-    ],
-    "page" : {
-      "backgroundColor" : {
-        "darkShade" : 500,
-        "shade" : 950,
-        "colorStripId" : "none",
-        "darkColorStripId" : "none"
       }
     },
-    "fontStyle" : [
+    "expanded" : true,
+    "children" : [
+      {
+        "title" : "Link Button",
+        "expanded" : true,
+        "item" : {
+          "itemIdentifier" : "564006FB-D1DF-41F5-BD25-40A6C92F05EE",
+          "kind" : "prefab",
+          "id" : "A9FD1DAA-0515-42FB-9D23-F246FC29F9E6"
+        },
+        "children" : [
 
-    ],
-    "screens" : [
-      {
-        "units" : "auto",
-        "name" : "2xl",
-        "id" : "8510883C-406A-4AB5-8AB6-F0EFCA200994",
-        "enabled" : false,
-        "description" : "",
-        "maxContainerWidth" : 0,
-        "sfIcon" : "desktopcomputer",
-        "classPrefix" : "2xl",
-        "pixels" : 1536
-      },
-      {
-        "units" : "auto",
-        "name" : "xl",
-        "id" : "0AD02C36-8F48-4D56-831E-8FDE0C4A5F0E",
-        "enabled" : false,
-        "description" : "",
-        "maxContainerWidth" : 0,
-        "sfIcon" : "laptopcomputer",
-        "classPrefix" : "xl",
-        "pixels" : 1280
-      },
-      {
-        "units" : "auto",
-        "name" : "lg",
-        "id" : "152EF9C7-5F0A-4C29-8DBC-C836E0055855",
-        "enabled" : true,
-        "description" : "",
-        "maxContainerWidth" : 0,
-        "sfIcon" : "ipad.landscape",
-        "classPrefix" : "lg",
-        "pixels" : 1024
-      },
-      {
-        "units" : "auto",
-        "name" : "md",
-        "id" : "9134EA67-4B34-4EF5-A8A8-EB61AD81D24F",
-        "enabled" : true,
-        "description" : "This breakpoint is for tablets and small laptop screens. It usually encompasses widths from 600 pixels to 1023 pixels.",
-        "maxContainerWidth" : 0,
-        "sfIcon" : "ipad",
-        "classPrefix" : "md",
-        "pixels" : 768
-      },
-      {
-        "units" : "auto",
-        "name" : "sm",
-        "id" : "3F5B0258-5C2A-4717-B9FF-EC68947F092C",
-        "enabled" : true,
-        "description" : "This breakpoint targets devices with small sceens like smartphones. The resolution width varies but typically starts from 320 pixels and below 600 pixels.",
-        "maxContainerWidth" : 0,
-        "sfIcon" : "iphone.landscape",
-        "classPrefix" : "sm",
-        "pixels" : 640
-      },
-      {
-        "units" : "auto",
-        "name" : "mobile",
-        "id" : "15BC9FCD-13E5-4A2D-95B0-366374150989",
-        "enabled" : true,
-        "description" : "",
-        "maxContainerWidth" : 0,
-        "sfIcon" : "iphone",
-        "classPrefix" : "",
-        "pixels" : 0
+        ],
+        "identifier" : "0ECA38F9-16A5-4666-A756-34766EDBEF43",
+        "kind" : {
+          "item" : {
+
+          }
+        }
       }
     ],
-    "textShadows" : [
-
-    ],
+    "item" : null,
+    "title" : "Project"
+  },
+  "social" : {
+    "useSocialTags" : true
+  },
+  "theme" : {
     "typographies" : [
 
     ],
+    "baseThemeIdentifier" : "com.realmacsoftware.themes.system",
+    "page" : {
+      "backgroundColor" : {
+        "darkColorStripId" : "none",
+        "shade" : 950,
+        "darkShade" : 500,
+        "colorStripId" : "none"
+      }
+    },
     "shadows" : [
 
     ],
     "borderRadius" : [
 
     ],
+    "spacing" : [
+
+    ],
+    "screens" : [
+      {
+        "id" : "8510883C-406A-4AB5-8AB6-F0EFCA200994",
+        "name" : "2xl",
+        "sfIcon" : "desktopcomputer",
+        "enabled" : false,
+        "classPrefix" : "2xl",
+        "maxContainerWidth" : 0,
+        "units" : "auto",
+        "pixels" : 1536,
+        "description" : ""
+      },
+      {
+        "id" : "0AD02C36-8F48-4D56-831E-8FDE0C4A5F0E",
+        "name" : "xl",
+        "sfIcon" : "laptopcomputer",
+        "enabled" : false,
+        "classPrefix" : "xl",
+        "maxContainerWidth" : 0,
+        "units" : "auto",
+        "pixels" : 1280,
+        "description" : ""
+      },
+      {
+        "id" : "152EF9C7-5F0A-4C29-8DBC-C836E0055855",
+        "name" : "lg",
+        "sfIcon" : "ipad.landscape",
+        "enabled" : true,
+        "classPrefix" : "lg",
+        "maxContainerWidth" : 0,
+        "units" : "auto",
+        "pixels" : 1024,
+        "description" : ""
+      },
+      {
+        "id" : "9134EA67-4B34-4EF5-A8A8-EB61AD81D24F",
+        "name" : "md",
+        "sfIcon" : "ipad",
+        "enabled" : true,
+        "classPrefix" : "md",
+        "maxContainerWidth" : 0,
+        "units" : "auto",
+        "pixels" : 768,
+        "description" : "This breakpoint is for tablets and small laptop screens. It usually encompasses widths from 600 pixels to 1023 pixels."
+      },
+      {
+        "id" : "3F5B0258-5C2A-4717-B9FF-EC68947F092C",
+        "name" : "sm",
+        "sfIcon" : "iphone.landscape",
+        "enabled" : true,
+        "classPrefix" : "sm",
+        "maxContainerWidth" : 0,
+        "units" : "auto",
+        "pixels" : 640,
+        "description" : "This breakpoint targets devices with small sceens like smartphones. The resolution width varies but typically starts from 320 pixels and below 600 pixels."
+      },
+      {
+        "id" : "15BC9FCD-13E5-4A2D-95B0-366374150989",
+        "name" : "mobile",
+        "sfIcon" : "iphone",
+        "enabled" : true,
+        "classPrefix" : "",
+        "maxContainerWidth" : 0,
+        "units" : "auto",
+        "pixels" : 0,
+        "description" : ""
+      }
+    ],
+    "colors" : [
+
+    ],
+    "borderWidth" : [
+
+    ],
+    "fontStyle" : [
+
+    ],
     "fontFamily" : [
 
     ],
-    "spacing" : [
+    "textShadows" : [
 
     ]
   },
-  "version" : 9,
-  "rootPage" : {
-    "title" : "root",
-    "attributes" : {
-      "shouldEnableRobotTags" : true,
-      "customBodyEnd" : "",
-      "customBodyStart" : "",
-      "shouldAllowPreview" : true,
-      "expiryUnit" : 0,
-      "useCustomSiteTitle" : false,
-      "shouldEnableSocialTags" : true,
-      "excludeFromSitemap" : true,
-      "shouldFollowLinks" : true,
-      "customJavaScript" : "",
-      "customPageEnd" : "",
-      "customPageStart" : "",
-      "customHeadEnd" : "",
-      "enabled" : true,
-      "customHeader" : "",
-      "encoding" : 1,
-      "customHeadStart" : "",
-      "customCSS" : "",
-      "lastChangedDate" : 1758748257743.6353,
-      "changedStatuses" : {
+  "siteResources" : {
+    "root" : "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E",
+    "children" : {
+      "23AAB4DA-BD52-4865-9503-90B4500BAE31" : [
+        "173F49B9-A0F1-4B2F-8C7C-6474B2EB11CC",
+        "8EB85E56-164A-4888-B619-F101C1C5593A",
+        "CEA1B591-06BD-41AD-B29A-03DCA134FFB1",
+        "F15AB121-3EBB-4DB0-AE3B-08524EDEE011"
+      ],
+      "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E" : [
+        "7A5B5CA0-0956-4D9A-9EBE-3616E81E56DE",
+        "23AAB4DA-BD52-4865-9503-90B4500BAE31",
+        "EE0C4E57-07CB-4E36-BF6A-1D7DE9DDB15D"
+      ],
+      "7A5B5CA0-0956-4D9A-9EBE-3616E81E56DE" : [
+        "21984935-3F38-443F-8B35-8A9BEC1D3917",
+        "2786C424-FB40-4864-A05D-B4E588A96151",
+        "AE35BA35-8C4F-435C-B2B5-2159C5D5CF74"
+      ]
+    },
+    "resources" : {
+      "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E" : {
+        "smartFolderKind" : 0,
+        "name" : "Resources",
+        "kind" : 0,
+        "identifier" : "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E",
+        "timeStamp" : -62135769600000,
+        "changedStatuses" : {
 
+        },
+        "hostedImageURLs" : [
+
+        ],
+        "expanded" : true
       },
-      "shouldIndexImages" : true,
-      "expires" : false,
-      "filename" : "",
-      "expiryQuantity" : 2,
-      "shouldIndexPage" : true,
-      "customSiteTitle" : "",
-      "shouldArchivePage" : true,
-      "linkOpensInNewWindow" : false,
-      "hidden" : false,
-      "credit" : true
-    },
-    "pageDescription" : null,
-    "uniqueID" : "2B26BA57-9F20-45D6-96C5-775F38524636",
-    "browserTitle" : null,
-    "identifier" : "2B26BA57-9F20-45D6-96C5-775F38524636",
-    "expanded" : true,
-    "code" : null,
-    "manifests" : {
+      "8EB85E56-164A-4888-B619-F101C1C5593A" : {
+        "timeStamp" : 1750253948462.6865,
+        "hostedImageURLs" : [
 
-    },
-    "externalPageURL" : null,
-    "children" : [
-      {
-        "title" : "Nick Swivney",
-        "attributes" : {
-          "shouldEnableRobotTags" : true,
-          "customBodyEnd" : "",
-          "lastExported" : 1767696310882.112,
-          "customBodyStart" : "",
-          "shouldAllowPreview" : true,
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "shouldEnableSocialTags" : true,
-          "excludeFromSitemap" : false,
-          "shouldFollowLinks" : true,
-          "customJavaScript" : "",
-          "customPageEnd" : "",
-          "customPageStart" : "",
-          "customHeadEnd" : "",
-          "enabled" : true,
-          "metaDescription" : "Nick Swivney is a freelance website builder who creates fast, beautiful websites for small studios and startups.",
-          "openGraphDescription" : "Nick Swivney is a freelance website builder who creates fast, beautiful websites for small studios and startups.",
-          "customHeader" : "",
-          "encoding" : 1,
-          "openGraphTitle" : "Nick Swivney | Freelance Website Builder",
-          "customHeadStart" : "",
-          "lastExportedPaths" : [
-            "https:\/\/www.realmacsoftware.com\/"
-          ],
-          "customCSS" : "",
-          "lastChangedDate" : 1786379839931.373,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "backgroundColor" : {
-            "darkShade" : 500,
-            "shade" : 500,
-            "colorStripId" : "none",
-            "darkColorStripId" : "none"
-          },
-          "shouldIndexImages" : true,
-          "expires" : false,
-          "filename" : "index.html",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "customSiteTitle" : "",
-          "shouldArchivePage" : true,
-          "linkOpensInNewWindow" : false,
-          "hidden" : false,
-          "credit" : true
+        ],
+        "typeIdentifier" : "public.svg-image",
+        "expanded" : false,
+        "identifier" : "8EB85E56-164A-4888-B619-F101C1C5593A",
+        "changedStatuses" : {
+
         },
-        "pageDescription" : null,
-        "uniqueID" : "page0",
-        "browserTitle" : "Nick Swivney | Freelance Website Builder",
-        "identifier" : "23FC5BEC-1143-419A-A5C4-9BFBA50E7E91",
+        "kind" : 1,
+        "parentIdentifier" : "23AAB4DA-BD52-4865-9503-90B4500BAE31",
+        "smartFolderKind" : 0,
+        "originalName" : "mastodon.svg",
+        "isSVG" : true,
+        "name" : "mastodon.svg"
+      },
+      "F15AB121-3EBB-4DB0-AE3B-08524EDEE011" : {
+        "smartFolderKind" : 0,
+        "name" : "star-empty.svg",
+        "kind" : 1,
+        "identifier" : "F15AB121-3EBB-4DB0-AE3B-08524EDEE011",
+        "timeStamp" : 1750264925370.8977,
+        "parentIdentifier" : "23AAB4DA-BD52-4865-9503-90B4500BAE31",
+        "changedStatuses" : {
+
+        },
+        "isSVG" : true,
+        "originalName" : "star-empty.svg",
         "expanded" : true,
-        "code" : null,
-        "manifests" : {
-
-        },
-        "externalPageURL" : null,
-        "children" : [
-
-        ],
-        "iconIdentifier" : null,
-        "isIndex" : true,
-        "kind" : "page",
-        "createdDate" : 1758748257750.999
-      }
-    ],
-    "iconIdentifier" : null,
-    "isIndex" : false,
-    "kind" : "folder",
-    "createdDate" : 1758748257743.753
-  },
-  "customComponents" : {
-    "components" : {
-      "4B72B8C6-F4B3-4AC0-BE2E-1C66262D25B7" : {
-        "title" : "HTML",
-        "files" : [
-          {
-            "filename" : "Template",
-            "content" : "\n    <div class=\"max-w-md w-full mx-4\">\n        <!-- Main Card -->\n        <div class=\"bg-white rounded-2xl shadow-xl p-8 text-center\">\n            <!-- Profile Section -->\n            <div class=\"mb-8\">\n                <div class=\"w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center\">\n                    <span class=\"text-white text-3xl font-bold\">D<\/span>\n                <\/div>\n                <h1 class=\"text-3xl font-bold text-gray-900 mb-2\">Dan<\/h1>\n                <p class=\"text-lg text-gray-600 font-medium\">Founder<\/p>\n            <\/div>\n\n            <!-- Contact Links -->\n            <div class=\"space-y-4\">\n                <a href=\"mailto:dan@example.com\" \n                   class=\"w-full flex items-center justify-center px-6 py-3 bg-gray-900 text-white rounded-xl font-medium hover:bg-gray-800 transition-colors duration-200 group\">\n                    <svg class=\"w-5 h-5 mr-3 group-hover:scale-110 transition-transform\" fill=\"currentColor\" viewBox=\"0 0 20 20\">\n                        <path d=\"M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z\"><\/path>\n                        <path d=\"M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z\"><\/path>\n                    <\/svg>\n                    Get in touch\n                <\/a>\n\n                <a href=\"https:\/\/twitter.com\/dan\" \n                   target=\"_blank\"\n                   class=\"w-full flex items-center justify-center px-6 py-3 bg-blue-500 text-white rounded-xl font-medium hover:bg-blue-600 transition-colors duration-200 group\">\n                    <svg class=\"w-5 h-5 mr-3 group-hover:scale-110 transition-transform\" fill=\"currentColor\" viewBox=\"0 0 24 24\">\n                        <path d=\"M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z\"\/>\n                    <\/svg>\n                    Follow on Twitter\n                <\/a>\n\n                <a href=\"https:\/\/github.com\/dan\" \n                   target=\"_blank\"\n                   class=\"w-full flex items-center justify-center px-6 py-3 bg-gray-800 text-white rounded-xl font-medium hover:bg-gray-700 transition-colors duration-200 group\">\n                    <svg class=\"w-5 h-5 mr-3 group-hover:scale-110 transition-transform\" fill=\"currentColor\" viewBox=\"0 0 24 24\">\n                        <path d=\"M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z\"\/>\n                    <\/svg>\n                    View GitHub\n                <\/a>\n            <\/div>\n\n            <!-- Footer -->\n            <div class=\"mt-8 pt-6 border-t border-gray-100\">\n                <p class=\"text-sm text-gray-500\">Building the future, one idea at a time.<\/p>\n            <\/div>\n        <\/div>\n    <\/div>",
-            "identifier" : "9F8DC616-BE97-4CC0-BDB0-4AE5501B0C96",
-            "kind" : {
-              "template" : {
-
-              }
-            }
-          },
-          {
-            "filename" : "Styles",
-            "content" : "",
-            "identifier" : "DCCF659D-A07D-41CB-A469-5C18BFFEAF0A",
-            "kind" : {
-              "css" : {
-
-              }
-            }
-          },
-          {
-            "filename" : "Javascript",
-            "content" : "console.log(`Running JS for element with id: {{id}}`)",
-            "identifier" : "A96A0455-6EE5-40D5-9401-F6E53DAC6044",
-            "kind" : {
-              "js" : {
-
-              }
-            }
-          },
-          {
-            "filename" : "Hooks",
-            "content" : "",
-            "identifier" : "533644D8-8645-420A-A403-DA784CA45995",
-            "kind" : {
-              "hooks" : {
-
-              }
-            }
-          },
-          {
-            "filename" : "Properties",
-            "content" : "",
-            "identifier" : "EA86F50D-BE3A-4832-9432-7BE2B32141ED",
-            "kind" : {
-              "properties" : {
-
-              }
-            }
-          },
-          {
-            "filename" : "Data",
-            "content" : "{\n    \"collections\": [{\n        \"id\" : \"F8A7DF12-9196-4EF0-A1DB-C35F39401941\",\n        \"title\" : \"Features\",\n        \"items\" : [{\n            \"id\" : \"2DA6C715-0A28-4287-9E2B-EA50078AEF23\",\n            \"featureName\" : \"Data Driven\",\n            \"body\" : \"A dynamic and user-friendly platform offering a wide range of services and information.\"\n        }]\n    }]\n}",
-            "identifier" : "5FECA9E9-5D86-499F-9099-46E98E6CFBF6",
-            "kind" : {
-              "data" : {
-
-              }
-            }
-          }
-        ],
-        "build" : "",
-        "group" : "Custom",
-        "version" : "",
-        "identifier" : "4B72B8C6-F4B3-4AC0-BE2E-1C66262D25B7",
-        "uuid" : "2F3D426A-BCF2-464B-BD38-9326D3F21E31",
-        "tags" : [
-
-        ],
-        "subTitle" : "",
-        "hidden" : false,
-        "author" : "",
-        "deprecated" : false,
-        "collections" : [
+        "typeIdentifier" : "public.svg-image",
+        "hostedImageURLs" : [
 
         ]
       },
-      "13BA620D-6131-4CAA-9222-3D1FD8688BA8" : {
-        "title" : "Status Dot",
-        "files" : [
-          {
-            "filename" : "Template",
-            "content" : "<span class=\"component-{{id}} status-dot status-dot--{{status}}\">\n  <span class=\"status-dot__ring\"><\/span>\n  <span class=\"status-dot__core\"><\/span>\n<\/span>",
-            "identifier" : "2CEB0FBA-D33C-47B6-A362-BB5CECF6A115",
-            "kind" : {
-              "template" : {
+      "7A5B5CA0-0956-4D9A-9EBE-3616E81E56DE" : {
+        "smartFolderKind" : 0,
+        "name" : "work",
+        "kind" : 0,
+        "identifier" : "7A5B5CA0-0956-4D9A-9EBE-3616E81E56DE",
+        "timeStamp" : -62135769600000,
+        "parentIdentifier" : "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E",
+        "changedStatuses" : {
 
-              }
-            }
-          },
-          {
-            "filename" : "Styles",
-            "content" : "\/* ── Status Dot ─────────────────────────────────────────── *\/\n\n.component-{{id}} {\n  position: relative;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: {{dotSize}}px;\n  height: {{dotSize}}px;\n  flex-shrink: 0;\n}\n\n\/* Solid core dot *\/\n.component-{{id}} .status-dot__core {\n  position: relative;\n  z-index: 1;\n  width: {{dotSize}}px;\n  height: {{dotSize}}px;\n  border-radius: 9999px;\n}\n\n\/* Expanding\/fading ring *\/\n.component-{{id}} .status-dot__ring {\n  position: absolute;\n  inset: 0;\n  border-radius: 9999px;\n  opacity: 0.6;\n  animation: status-dot-pulse-{{id}} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;\n}\n\n\/* Available: emerald *\/\n.component-{{id}}.status-dot--available .status-dot__core,\n.component-{{id}}.status-dot--available .status-dot__ring {\n  background-color: #00b981;\n}\n\n\/* Unavailable: red *\/\n.component-{{id}}.status-dot--unavailable .status-dot__core,\n.component-{{id}}.status-dot--unavailable .status-dot__ring {\n  background-color: #fb2c36;\n}\n\n\/* Pulse keyframes — scoped per instance *\/\n@keyframes status-dot-pulse-{{id}} {\n  0%, 100% {\n    transform: scale(1);\n    opacity: 0.6;\n  }\n  50% {\n    transform: scale(2.2);\n    opacity: 0;\n  }\n}",
-            "identifier" : "A6990451-D698-42C0-8B7C-0B4E313D8DEF",
-            "kind" : {
-              "css" : {
-
-              }
-            }
-          },
-          {
-            "filename" : "Javascript",
-            "content" : "",
-            "identifier" : "3F710423-99E6-45BB-85AE-D49CCE0F4BD5",
-            "kind" : {
-              "js" : {
-
-              }
-            }
-          },
-          {
-            "filename" : "Hooks",
-            "content" : "",
-            "identifier" : "3D0A257F-3772-49A9-946A-BEC843423A99",
-            "kind" : {
-              "hooks" : {
-
-              }
-            }
-          },
-          {
-            "filename" : "Properties",
-            "content" : "{\n  \"groups\": [\n    {\n      \"title\": \"Status Dot\",\n      \"icon\": \"circle.fill\",\n      \"properties\": [\n        {\n          \"title\": \"Status\",\n          \"id\": \"status\",\n          \"responsive\": false,\n          \"segmented\": {\n            \"default\": \"available\",\n            \"items\": [\n              { \"value\": \"available\", \"title\": \"Available\" },\n              { \"value\": \"unavailable\", \"title\": \"Unavailable\" }\n            ]\n          }\n        },\n        {\n          \"title\": \"Size\",\n          \"id\": \"dotSize\",\n          \"responsive\": false,\n          \"number\": {\n            \"default\": 8,\n            \"min\": 6,\n            \"max\": 24,\n            \"step\": 1,\n            \"round\": true,\n            \"subtitle\": \"Diameter in pixels\"\n          }\n        }\n      ]\n    }\n  ]\n}",
-            "identifier" : "B5DB9D90-C557-4C26-B202-598D50108287",
-            "kind" : {
-              "properties" : {
-
-              }
-            }
-          },
-          {
-            "filename" : "Data",
-            "content" : "",
-            "identifier" : "774FB656-6E27-43BB-8024-4F7C4D5C36AD",
-            "kind" : {
-              "data" : {
-
-              }
-            }
-          }
-        ],
-        "build" : "",
-        "group" : "Custom",
-        "version" : "",
-        "identifier" : "13BA620D-6131-4CAA-9222-3D1FD8688BA8",
-        "uuid" : "9E0D75E7-9DBF-42C4-9A46-254CAFF921DC",
-        "tags" : [
+        },
+        "hostedImageURLs" : [
 
         ],
-        "subTitle" : "Pulsing availability indicator",
-        "hidden" : false,
-        "author" : "",
-        "deprecated" : false,
-        "collections" : [
+        "expanded" : true
+      },
+      "173F49B9-A0F1-4B2F-8C7C-6474B2EB11CC" : {
+        "timeStamp" : 1750264925370.2178,
+        "hostedImageURLs" : [
+
+        ],
+        "typeIdentifier" : "public.svg-image",
+        "expanded" : false,
+        "identifier" : "173F49B9-A0F1-4B2F-8C7C-6474B2EB11CC",
+        "changedStatuses" : {
+
+        },
+        "kind" : 1,
+        "parentIdentifier" : "23AAB4DA-BD52-4865-9503-90B4500BAE31",
+        "smartFolderKind" : 0,
+        "originalName" : "mail.svg",
+        "isSVG" : true,
+        "name" : "email.svg"
+      },
+      "EE0C4E57-07CB-4E36-BF6A-1D7DE9DDB15D" : {
+        "name" : "nick-designer-avatar.jpg",
+        "timeStamp" : 1786378362657.194,
+        "identifier" : "EE0C4E57-07CB-4E36-BF6A-1D7DE9DDB15D",
+        "kind" : 1,
+        "originalName" : "hipster-designer-avatar.png",
+        "smartFolderKind" : 0,
+        "parentIdentifier" : "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E",
+        "typeIdentifier" : "public.png",
+        "expanded" : true,
+        "isSVG" : false,
+        "hostedImageURLs" : [
+
+        ],
+        "metadata" : {
+          "width" : 1024,
+          "height" : 1024,
+          "aspect" : 1,
+          "generationSize" : "1024x1024",
+          "generationPrompt" : "Portrait photo of a stylish hipster graphic designer in his early 30s, well-groomed beard, round tortoiseshell glasses, wearing a mustard-yellow beanie and a denim jacket over a plain tee. Warm natural studio lighting, soft neutral background, shallow depth of field, head-and-shoulders framing, confident subtle smile. High-end editorial photography style."
+        },
+        "changedStatuses" : {
+
+        }
+      },
+      "2786C424-FB40-4864-A05D-B4E588A96151" : {
+        "name" : "work-brand-identity.jpg",
+        "timeStamp" : 1786378577175.921,
+        "identifier" : "2786C424-FB40-4864-A05D-B4E588A96151",
+        "kind" : 1,
+        "originalName" : "work-brand-identity.png",
+        "smartFolderKind" : 0,
+        "parentIdentifier" : "7A5B5CA0-0956-4D9A-9EBE-3616E81E56DE",
+        "expanded" : false,
+        "typeIdentifier" : "public.png",
+        "isSVG" : false,
+        "hostedImageURLs" : [
+
+        ],
+        "metadata" : {
+          "height" : 1024,
+          "aspect" : 1,
+          "generationSize" : "1024x1024",
+          "generationPrompt" : "Brand identity design presentation: business cards, letterhead and logo mark for a modern architecture studio, monochrome palette with a single bold orange accent, arranged in a neat grid on a light grey surface. High-end portfolio photography, soft shadows.",
+          "width" : 1024
+        },
+        "changedStatuses" : {
+
+        }
+      },
+      "21984935-3F38-443F-8B35-8A9BEC1D3917" : {
+        "name" : "work-fitness-app.jpg",
+        "timeStamp" : 1786378597055.197,
+        "identifier" : "21984935-3F38-443F-8B35-8A9BEC1D3917",
+        "kind" : 1,
+        "originalName" : "work-fitness-app.png",
+        "smartFolderKind" : 0,
+        "parentIdentifier" : "7A5B5CA0-0956-4D9A-9EBE-3616E81E56DE",
+        "typeIdentifier" : "public.png",
+        "expanded" : false,
+        "isSVG" : false,
+        "hostedImageURLs" : [
+
+        ],
+        "metadata" : {
+          "width" : 1024,
+          "height" : 1024,
+          "aspect" : 1,
+          "generationSize" : "1024x1024",
+          "generationPrompt" : "Mobile app UI design mockup, fitness tracking app shown on two floating smartphone screens, dark UI with vibrant lime green accents, clean geometric composition on a soft gradient background. High-end portfolio presentation render."
+        },
+        "changedStatuses" : {
+
+        }
+      },
+      "AE35BA35-8C4F-435C-B2B5-2159C5D5CF74" : {
+        "name" : "work-coffee-ecommerce.jpg",
+        "timeStamp" : 1786378555236.5808,
+        "identifier" : "AE35BA35-8C4F-435C-B2B5-2159C5D5CF74",
+        "kind" : 1,
+        "originalName" : "work-coffee-ecommerce.png",
+        "smartFolderKind" : 0,
+        "parentIdentifier" : "7A5B5CA0-0956-4D9A-9EBE-3616E81E56DE",
+        "expanded" : false,
+        "typeIdentifier" : "public.png",
+        "isSVG" : false,
+        "hostedImageURLs" : [
+
+        ],
+        "metadata" : {
+          "height" : 1024,
+          "aspect" : 1,
+          "generationSize" : "1024x1024",
+          "generationPrompt" : "Clean website design mockup displayed on a laptop screen, minimal e-commerce homepage for a boutique coffee brand, warm cream and charcoal palette, bold typography, styled flat-lay on a neutral desk background. High-end portfolio presentation shot, soft studio lighting.",
+          "width" : 1024
+        },
+        "changedStatuses" : {
+
+        }
+      },
+      "23AAB4DA-BD52-4865-9503-90B4500BAE31" : {
+        "smartFolderKind" : 0,
+        "name" : "svgs",
+        "kind" : 0,
+        "identifier" : "23AAB4DA-BD52-4865-9503-90B4500BAE31",
+        "timeStamp" : -62135769600000,
+        "parentIdentifier" : "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E",
+        "changedStatuses" : {
+
+        },
+        "hostedImageURLs" : [
+
+        ],
+        "expanded" : false
+      },
+      "CEA1B591-06BD-41AD-B29A-03DCA134FFB1" : {
+        "smartFolderKind" : 0,
+        "name" : "github.svg",
+        "kind" : 1,
+        "identifier" : "CEA1B591-06BD-41AD-B29A-03DCA134FFB1",
+        "timeStamp" : 1750254092057.1035,
+        "parentIdentifier" : "23AAB4DA-BD52-4865-9503-90B4500BAE31",
+        "changedStatuses" : {
+
+        },
+        "isSVG" : true,
+        "originalName" : "github.svg",
+        "expanded" : false,
+        "typeIdentifier" : "public.svg-image",
+        "hostedImageURLs" : [
 
         ]
       }
     }
   },
-  "project" : {
-    "autoStartWebServer" : false,
-    "uniqueBackupName" : "D044F78B-7BDB-4001-A881-2F61C09C3628_rwbackup"
+  "customComponents" : {
+    "components" : {
+      "4B72B8C6-F4B3-4AC0-BE2E-1C66262D25B7" : {
+        "author" : "",
+        "group" : "Custom",
+        "collections" : [
+
+        ],
+        "files" : [
+          {
+            "filename" : "Template",
+            "kind" : {
+              "template" : {
+
+              }
+            },
+            "identifier" : "9F8DC616-BE97-4CC0-BDB0-4AE5501B0C96",
+            "content" : "\n    <div class=\"max-w-md w-full mx-4\">\n        <!-- Main Card -->\n        <div class=\"bg-white rounded-2xl shadow-xl p-8 text-center\">\n            <!-- Profile Section -->\n            <div class=\"mb-8\">\n                <div class=\"w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center\">\n                    <span class=\"text-white text-3xl font-bold\">D<\/span>\n                <\/div>\n                <h1 class=\"text-3xl font-bold text-gray-900 mb-2\">Dan<\/h1>\n                <p class=\"text-lg text-gray-600 font-medium\">Founder<\/p>\n            <\/div>\n\n            <!-- Contact Links -->\n            <div class=\"space-y-4\">\n                <a href=\"mailto:dan@example.com\" \n                   class=\"w-full flex items-center justify-center px-6 py-3 bg-gray-900 text-white rounded-xl font-medium hover:bg-gray-800 transition-colors duration-200 group\">\n                    <svg class=\"w-5 h-5 mr-3 group-hover:scale-110 transition-transform\" fill=\"currentColor\" viewBox=\"0 0 20 20\">\n                        <path d=\"M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z\"><\/path>\n                        <path d=\"M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z\"><\/path>\n                    <\/svg>\n                    Get in touch\n                <\/a>\n\n                <a href=\"https:\/\/twitter.com\/dan\" \n                   target=\"_blank\"\n                   class=\"w-full flex items-center justify-center px-6 py-3 bg-blue-500 text-white rounded-xl font-medium hover:bg-blue-600 transition-colors duration-200 group\">\n                    <svg class=\"w-5 h-5 mr-3 group-hover:scale-110 transition-transform\" fill=\"currentColor\" viewBox=\"0 0 24 24\">\n                        <path d=\"M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z\"\/>\n                    <\/svg>\n                    Follow on Twitter\n                <\/a>\n\n                <a href=\"https:\/\/github.com\/dan\" \n                   target=\"_blank\"\n                   class=\"w-full flex items-center justify-center px-6 py-3 bg-gray-800 text-white rounded-xl font-medium hover:bg-gray-700 transition-colors duration-200 group\">\n                    <svg class=\"w-5 h-5 mr-3 group-hover:scale-110 transition-transform\" fill=\"currentColor\" viewBox=\"0 0 24 24\">\n                        <path d=\"M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z\"\/>\n                    <\/svg>\n                    View GitHub\n                <\/a>\n            <\/div>\n\n            <!-- Footer -->\n            <div class=\"mt-8 pt-6 border-t border-gray-100\">\n                <p class=\"text-sm text-gray-500\">Building the future, one idea at a time.<\/p>\n            <\/div>\n        <\/div>\n    <\/div>"
+          },
+          {
+            "filename" : "Styles",
+            "kind" : {
+              "css" : {
+
+              }
+            },
+            "identifier" : "DCCF659D-A07D-41CB-A469-5C18BFFEAF0A",
+            "content" : ""
+          },
+          {
+            "filename" : "Javascript",
+            "kind" : {
+              "js" : {
+
+              }
+            },
+            "identifier" : "A96A0455-6EE5-40D5-9401-F6E53DAC6044",
+            "content" : "console.log(`Running JS for element with id: {{id}}`)"
+          },
+          {
+            "filename" : "Hooks",
+            "kind" : {
+              "hooks" : {
+
+              }
+            },
+            "identifier" : "533644D8-8645-420A-A403-DA784CA45995",
+            "content" : ""
+          },
+          {
+            "filename" : "Properties",
+            "kind" : {
+              "properties" : {
+
+              }
+            },
+            "identifier" : "EA86F50D-BE3A-4832-9432-7BE2B32141ED",
+            "content" : ""
+          },
+          {
+            "filename" : "Data",
+            "kind" : {
+              "data" : {
+
+              }
+            },
+            "identifier" : "5FECA9E9-5D86-499F-9099-46E98E6CFBF6",
+            "content" : "{\n    \"collections\": [{\n        \"id\" : \"F8A7DF12-9196-4EF0-A1DB-C35F39401941\",\n        \"title\" : \"Features\",\n        \"items\" : [{\n            \"id\" : \"2DA6C715-0A28-4287-9E2B-EA50078AEF23\",\n            \"featureName\" : \"Data Driven\",\n            \"body\" : \"A dynamic and user-friendly platform offering a wide range of services and information.\"\n        }]\n    }]\n}"
+          }
+        ],
+        "version" : "",
+        "title" : "HTML",
+        "deprecated" : false,
+        "tags" : [
+
+        ],
+        "build" : "",
+        "identifier" : "4B72B8C6-F4B3-4AC0-BE2E-1C66262D25B7",
+        "subTitle" : "",
+        "hidden" : false,
+        "uuid" : "2F3D426A-BCF2-464B-BD38-9326D3F21E31"
+      },
+      "13BA620D-6131-4CAA-9222-3D1FD8688BA8" : {
+        "author" : "",
+        "group" : "Custom",
+        "collections" : [
+
+        ],
+        "files" : [
+          {
+            "filename" : "Template",
+            "kind" : {
+              "template" : {
+
+              }
+            },
+            "identifier" : "2CEB0FBA-D33C-47B6-A362-BB5CECF6A115",
+            "content" : "<span class=\"component-{{id}} status-dot status-dot--{{status}}\">\n  <span class=\"status-dot__ring\"><\/span>\n  <span class=\"status-dot__core\"><\/span>\n<\/span>"
+          },
+          {
+            "filename" : "Styles",
+            "kind" : {
+              "css" : {
+
+              }
+            },
+            "identifier" : "A6990451-D698-42C0-8B7C-0B4E313D8DEF",
+            "content" : "\/* ── Status Dot ─────────────────────────────────────────── *\/\n\n.component-{{id}} {\n  position: relative;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: {{dotSize}}px;\n  height: {{dotSize}}px;\n  flex-shrink: 0;\n}\n\n\/* Solid core dot *\/\n.component-{{id}} .status-dot__core {\n  position: relative;\n  z-index: 1;\n  width: {{dotSize}}px;\n  height: {{dotSize}}px;\n  border-radius: 9999px;\n}\n\n\/* Expanding\/fading ring *\/\n.component-{{id}} .status-dot__ring {\n  position: absolute;\n  inset: 0;\n  border-radius: 9999px;\n  opacity: 0.6;\n  animation: status-dot-pulse-{{id}} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;\n}\n\n\/* Available: emerald *\/\n.component-{{id}}.status-dot--available .status-dot__core,\n.component-{{id}}.status-dot--available .status-dot__ring {\n  background-color: #00b981;\n}\n\n\/* Unavailable: red *\/\n.component-{{id}}.status-dot--unavailable .status-dot__core,\n.component-{{id}}.status-dot--unavailable .status-dot__ring {\n  background-color: #fb2c36;\n}\n\n\/* Pulse keyframes — scoped per instance *\/\n@keyframes status-dot-pulse-{{id}} {\n  0%, 100% {\n    transform: scale(1);\n    opacity: 0.6;\n  }\n  50% {\n    transform: scale(2.2);\n    opacity: 0;\n  }\n}"
+          },
+          {
+            "filename" : "Javascript",
+            "kind" : {
+              "js" : {
+
+              }
+            },
+            "identifier" : "3F710423-99E6-45BB-85AE-D49CCE0F4BD5",
+            "content" : ""
+          },
+          {
+            "filename" : "Hooks",
+            "kind" : {
+              "hooks" : {
+
+              }
+            },
+            "identifier" : "3D0A257F-3772-49A9-946A-BEC843423A99",
+            "content" : ""
+          },
+          {
+            "filename" : "Properties",
+            "kind" : {
+              "properties" : {
+
+              }
+            },
+            "identifier" : "B5DB9D90-C557-4C26-B202-598D50108287",
+            "content" : "{\n  \"groups\": [\n    {\n      \"title\": \"Status Dot\",\n      \"icon\": \"circle.fill\",\n      \"properties\": [\n        {\n          \"title\": \"Status\",\n          \"id\": \"status\",\n          \"responsive\": false,\n          \"segmented\": {\n            \"default\": \"available\",\n            \"items\": [\n              { \"value\": \"available\", \"title\": \"Available\" },\n              { \"value\": \"unavailable\", \"title\": \"Unavailable\" }\n            ]\n          }\n        },\n        {\n          \"title\": \"Size\",\n          \"id\": \"dotSize\",\n          \"responsive\": false,\n          \"number\": {\n            \"default\": 8,\n            \"min\": 6,\n            \"max\": 24,\n            \"step\": 1,\n            \"round\": true,\n            \"subtitle\": \"Diameter in pixels\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+          },
+          {
+            "filename" : "Data",
+            "kind" : {
+              "data" : {
+
+              }
+            },
+            "identifier" : "774FB656-6E27-43BB-8024-4F7C4D5C36AD",
+            "content" : ""
+          }
+        ],
+        "version" : "",
+        "title" : "Status Dot",
+        "deprecated" : false,
+        "tags" : [
+
+        ],
+        "build" : "",
+        "identifier" : "13BA620D-6131-4CAA-9222-3D1FD8688BA8",
+        "subTitle" : "Pulsing availability indicator",
+        "hidden" : false,
+        "uuid" : "9E0D75E7-9DBF-42C4-9A46-254CAFF921DC"
+      }
+    }
   },
-  "identifier" : "379889AE-042A-4F53-BBEA-44B64D1ECAFA",
+  "site" : {
+    "wantsXMLSiteMap" : true,
+    "title" : "Nick Swivney — Freelance Website Builder",
+    "baseURL" : "https:\/\/www.realmacsoftware.com",
+    "consolidateCSSFiles" : true,
+    "useCacheBusting" : true,
+    "allowDarkMode" : false,
+    "defaultFileExtension" : "html",
+    "minifyExtraFiles" : true,
+    "legacyV3HoverOnTouch" : false,
+    "pageTemplate" : "{{page.customPageStart}}{{page.componentPageStart}}\n\n<!doctype html>\n<html class=\"scroll-smooth\" {{page.languageAttributes}}>\n<head>\n    {{page.customHeadStart}}\n    {{page.componentHeadStart}}\n    \n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width\">\n\n    {{page.componentHeader}}\n    {{page.opengraph}}\n    {{page.customHeader}}\n    \n    <title>{{page.title}}<\/title>\n    \n    {{page.componentCSS}}\n    {{page.customCSS}}\n\n    {{page.componentJS}}\n    {{page.customJS}}\n\n    {{page.componentHeadEnd}}\n    {{page.customHeadEnd}}\n<\/head>\n<body class=\"{{page.bodyClasses}}\" {{page.bodyAttributes}}>\n    {{page.customBodyStart}}\n    {{page.componentBodyStart}}\n\n    {{page.content}}\n\n    {{page.componentBodyEnd}}\n    {{page.customBodyEnd}}\n<\/body>\n<\/html>\n\n{{page.componentPageEnd}}\n{{page.customPageEnd}}\n",
+    "cruftlessLinks" : true,
+    "themeName" : "Elements"
+  },
+  "images" : {
+    "webIcons" : {
+      "medium" : {
+        "colorString" : "#FFFFFF",
+        "autoGenerate" : false,
+        "type" : 1
+      },
+      "small" : {
+        "colorString" : "#FFFFFF",
+        "autoGenerate" : false,
+        "type" : 2
+      },
+      "faviconLarge" : {
+        "autoGenerate" : false,
+        "type" : 4
+      },
+      "pinnedTab" : {
+        "resourceIdentifier" : "F15AB121-3EBB-4DB0-AE3B-08524EDEE011",
+        "colorString" : "rgba(0,162,255,1.00)",
+        "autoGenerate" : false,
+        "type" : 3
+      },
+      "faviconMedium" : {
+        "autoGenerate" : false,
+        "type" : 5
+      },
+      "faviconSmall" : {
+        "autoGenerate" : false,
+        "type" : 6
+      },
+      "large" : {
+        "colorString" : "#FFFFFF",
+        "autoGenerate" : false,
+        "type" : 0
+      }
+    },
+    "logoAltText" : ""
+  },
   "privacy" : {
     "anonymiseThirdPartyRequests" : false
   },
-  "site" : {
-    "legacyV3HoverOnTouch" : false,
-    "cruftlessLinks" : true,
-    "pageTemplate" : "{{page.customPageStart}}{{page.componentPageStart}}\n\n<!doctype html>\n<html class=\"scroll-smooth\" {{page.languageAttributes}}>\n<head>\n    {{page.customHeadStart}}\n    {{page.componentHeadStart}}\n    \n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width\">\n\n    {{page.componentHeader}}\n    {{page.opengraph}}\n    {{page.customHeader}}\n    \n    <title>{{page.title}}<\/title>\n    \n    {{page.componentCSS}}\n    {{page.customCSS}}\n\n    {{page.componentJS}}\n    {{page.customJS}}\n\n    {{page.componentHeadEnd}}\n    {{page.customHeadEnd}}\n<\/head>\n<body class=\"{{page.bodyClasses}}\" {{page.bodyAttributes}}>\n    {{page.customBodyStart}}\n    {{page.componentBodyStart}}\n\n    {{page.content}}\n\n    {{page.componentBodyEnd}}\n    {{page.customBodyEnd}}\n<\/body>\n<\/html>\n\n{{page.componentPageEnd}}\n{{page.customPageEnd}}\n",
-    "defaultFileExtension" : "html",
-    "useCacheBusting" : true,
-    "consolidateCSSFiles" : true,
-    "title" : "Nick Swivney — Freelance Website Builder",
-    "wantsXMLSiteMap" : true,
-    "baseURL" : "https:\/\/www.realmacsoftware.com",
-    "minifyExtraFiles" : true,
-    "allowDarkMode" : false,
-    "themeName" : "Elements"
-  },
-  "publishing" : {
-    "publishSettingsConfigured" : true,
-    "publishingDestinations" : [
-
-    ]
-  }
+  "uiStateIdentifier" : "379889AE-042A-4F53-BBEA-44B64D1ECAFA"
 }

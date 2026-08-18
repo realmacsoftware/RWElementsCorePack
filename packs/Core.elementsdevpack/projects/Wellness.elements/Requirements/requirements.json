@@ -4,7 +4,7 @@
       "developerName" : "Realmac Software",
       "displayName" : "Button",
       "elementId" : "com.realmacsoftware.button",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/audio",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/grid",
       "packId" : "com.realmac.corepack",
       "packName" : "Core",
       "packVersion" : 2
@@ -13,7 +13,7 @@
       "developerName" : "Realmac Software",
       "displayName" : "Divider",
       "elementId" : "com.realmacsoftware.divider",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/audio",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/grid",
       "packId" : "com.realmac.corepack",
       "packName" : "Core",
       "packVersion" : 2
@@ -22,7 +22,7 @@
       "developerName" : "Realmac Software",
       "displayName" : "Flex",
       "elementId" : "com.realmacsoftware.flex",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/audio",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/grid",
       "packId" : "com.realmac.corepack",
       "packName" : "Core",
       "packVersion" : 2
@@ -31,7 +31,7 @@
       "developerName" : "Realmac Software",
       "displayName" : "Grid",
       "elementId" : "com.realmacsoftware.grid",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/audio",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/grid",
       "packId" : "com.realmac.corepack",
       "packName" : "Core",
       "packVersion" : 2
@@ -40,7 +40,7 @@
       "developerName" : "Realmac Software",
       "displayName" : "Image",
       "elementId" : "com.realmacsoftware.image",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/audio",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/grid",
       "packId" : "com.realmac.corepack",
       "packName" : "Core",
       "packVersion" : 2
@@ -57,7 +57,7 @@
       "developerName" : "Realmac Software",
       "displayName" : "Text",
       "elementId" : "com.realmacsoftware.text",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/audio",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/grid",
       "packId" : "com.realmac.corepack",
       "packName" : "Core",
       "packVersion" : 2

@@ -1,462 +1,1255 @@
 {
-  "images" : {
-    "webIcons" : {
-      "faviconSmall" : {
-        "autoGenerate" : false,
-        "type" : 6
-      },
-      "pinnedTab" : {
-        "autoGenerate" : false,
-        "type" : 3
-      },
-      "faviconMedium" : {
-        "autoGenerate" : false,
-        "type" : 5
-      },
-      "large" : {
-        "autoGenerate" : false,
-        "type" : 0
-      },
-      "medium" : {
-        "autoGenerate" : false,
-        "type" : 1
-      },
-      "small" : {
-        "autoGenerate" : false,
-        "type" : 2
-      },
-      "faviconLarge" : {
-        "autoGenerate" : false,
-        "type" : 4
-      }
-    },
-    "logoAltText" : ""
-  },
-  "site" : {
-    "legacyV3HoverOnTouch" : false,
-    "defaultFileExtension" : "html",
-    "useCacheBusting" : true,
-    "consolidateCSSFiles" : true,
-    "cruftlessLinks" : true,
-    "themeName" : "Elements",
-    "baseURL" : "https:\/\/www.elementsplatform.com",
-    "wantsXMLSiteMap" : true,
-    "title" : "Bob Fennison — Independent Designer & Creative Consultant",
-    "minifyExtraFiles" : true,
-    "allowDarkMode" : true
-  },
   "localization" : {
     "siteLanguage" : "en"
   },
+  "social" : {
+    "useSocialTags" : true
+  },
+  "rootPage" : {
+    "manifests" : {
+
+    },
+    "uniqueID" : "28E517A6-89A4-478E-8BA5-C25ED7088A3E",
+    "expanded" : true,
+    "iconIdentifier" : null,
+    "kind" : "folder",
+    "pageDescription" : null,
+    "createdDate" : 1786355816253.927,
+    "isIndex" : false,
+    "externalPageURL" : null,
+    "title" : "root",
+    "children" : [
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "page0",
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "kind" : "page",
+        "pageDescription" : null,
+        "createdDate" : 1786355816267.446,
+        "isIndex" : true,
+        "externalPageURL" : null,
+        "title" : "Home",
+        "children" : [
+
+        ],
+        "browserTitle" : "Bob Fennison — Independent Designer & Creative Consultant",
+        "code" : null,
+        "identifier" : "2C795624-7F1C-48D3-8198-947753C609EA",
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "customCSS" : "",
+          "shouldEnableSocialTags" : true,
+          "credit" : false,
+          "customPageEnd" : "",
+          "shouldFollowLinks" : true,
+          "shouldArchivePage" : true,
+          "useCustomSiteTitle" : false,
+          "customJavaScript" : "",
+          "customBodyStart" : "",
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "customPageStart" : "",
+          "customHeader" : "",
+          "linkOpensInNewWindow" : false,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "customBodyEnd" : "",
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldAllowPreview" : true,
+          "backgroundColor" : {
+            "darkShade" : 500,
+            "shade" : 500,
+            "colorStripId" : "none",
+            "darkColorStripId" : "none"
+          },
+          "filename" : "index.html",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1787050292087.511,
+          "customHeadStart" : "",
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "metaDescription" : "Independent designer and creative consultant helping ambitious brands create thoughtful digital experiences.",
+          "excludeFromSitemap" : false,
+          "openGraphTitle" : "Jordan Vale — Independent Designer & Creative Consultant",
+          "openGraphDescription" : "Brand, web and digital product design for ambitious teams worldwide.",
+          "shouldEnableRobotTags" : true,
+          "expires" : false
+        }
+      }
+    ],
+    "browserTitle" : null,
+    "code" : null,
+    "identifier" : "28E517A6-89A4-478E-8BA5-C25ED7088A3E",
+    "attributes" : {
+      "expiryQuantity" : 2,
+      "customCSS" : "",
+      "shouldEnableSocialTags" : true,
+      "credit" : true,
+      "customPageEnd" : "",
+      "shouldFollowLinks" : true,
+      "shouldArchivePage" : true,
+      "useCustomSiteTitle" : false,
+      "customJavaScript" : "",
+      "customBodyStart" : "",
+      "enabled" : true,
+      "shouldIndexImages" : true,
+      "encoding" : 1,
+      "customPageStart" : "",
+      "customHeader" : "",
+      "linkOpensInNewWindow" : false,
+      "customHeadEnd" : "",
+      "shouldIndexPage" : true,
+      "customBodyEnd" : "",
+      "changedStatuses" : {
+
+      },
+      "shouldAllowPreview" : true,
+      "filename" : "",
+      "customSiteTitle" : "",
+      "lastChangedDate" : 1786355816253.73,
+      "customHeadStart" : "",
+      "hidden" : false,
+      "expiryUnit" : 0,
+      "excludeFromSitemap" : true,
+      "shouldEnableRobotTags" : true,
+      "expires" : false
+    }
+  },
+  "version" : 9,
+  "customComponents" : {
+    "components" : {
+
+    }
+  },
+  "privacy" : {
+    "anonymiseThirdPartyRequests" : false
+  },
+  "identifier" : "B603286C-298E-4771-9501-0F041A49F8FE",
+  "wikiRoot" : {
+    "manifests" : {
+
+    },
+    "uniqueID" : "347A4551-88DF-4821-8590-D90E6D6F901C",
+    "expanded" : true,
+    "iconIdentifier" : null,
+    "kind" : "folder",
+    "pageDescription" : null,
+    "createdDate" : 1786355851123.934,
+    "isIndex" : false,
+    "externalPageURL" : null,
+    "title" : "Project Wiki",
+    "children" : [
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "5CF40170-E97B-4B9F-8F32-441AB151ABEB",
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "kind" : "folder",
+        "pageDescription" : null,
+        "createdDate" : 1786355851125.4702,
+        "isIndex" : false,
+        "externalPageURL" : null,
+        "title" : "pages",
+        "children" : [
+          {
+            "manifests" : {
+
+            },
+            "uniqueID" : "D6C0D4A3-E006-4ECE-8033-04C697ED2886",
+            "expanded" : true,
+            "iconIdentifier" : null,
+            "kind" : "code",
+            "pageDescription" : null,
+            "createdDate" : 1786356495494.073,
+            "isIndex" : false,
+            "externalPageURL" : null,
+            "title" : "",
+            "children" : [
+
+            ],
+            "browserTitle" : null,
+            "code" : "---\ntitle: Home\ntags:\n  - profile-template\n  - built\n  - dark-mode\nconcerns: []\nlastIngested: \"2026-08-10T13:30:00Z\"\npageId: 2C795624-7F1C-48D3-8198-947753C609EA\npath: \/\nsources: []\ntype: page\n---\n\n# Home\n\nPremium single-page creator profile template for Bob Fennison, an independent designer and creative consultant.\n\n## Page structure\n\n- Wide editorial coastal cover image\n- Circular portrait overlapping the cover edge\n- Centred name, role and introduction\n- Five linked 48px social Flex circles with centred 20px SVG icons\n- Primary email CTA\n- Featured availability card\n- Five linked portfolio and resource cards\n- Creator metadata and minimal footer\n\n## Light and dark appearance\n\nDark mode is enabled globally. The page background changes from Stone 50 to Stone 950; primary text changes from Stone 900 to Stone 50; and secondary text uses lighter Stone tones. The portrait ring follows the page background.\n\nNeutral cards change from Stone 100 to Stone 900 with adjusted borders and hover surfaces. The lavender newsletter card uses Accent 950 in dark mode, while the sage resources card uses Olive 900. The featured card remains prominent on Stone 800.\n\nSocial controls retain fixed 48px circles and 20px SVGs in both appearances. Default dark styling is monochrome. Service-colour rollovers use deep tinted backgrounds and brighter matching icons for Instagram, LinkedIn, YouTube, X and TikTok.\n\n## Template placeholders\n\nReplace the profile details, example email, social URLs, example.com destinations and generated imagery when adapting the template.\n\n## See also\n- [[concepts\/creator-profile-pattern]]\n- [[style-visual]]\n- [[style-writing]]\n",
+            "identifier" : "D6C0D4A3-E006-4ECE-8033-04C697ED2886",
+            "attributes" : {
+              "expiryQuantity" : 2,
+              "customCSS" : "",
+              "shouldEnableSocialTags" : true,
+              "credit" : true,
+              "customPageEnd" : "",
+              "shouldFollowLinks" : true,
+              "shouldArchivePage" : true,
+              "useCustomSiteTitle" : false,
+              "customJavaScript" : "",
+              "customBodyStart" : "",
+              "enabled" : true,
+              "shouldIndexImages" : true,
+              "encoding" : 1,
+              "customPageStart" : "",
+              "customHeader" : "",
+              "linkOpensInNewWindow" : false,
+              "customHeadEnd" : "",
+              "shouldIndexPage" : true,
+              "customBodyEnd" : "",
+              "changedStatuses" : {
+                "default" : true
+              },
+              "shouldAllowPreview" : true,
+              "filename" : "home.md",
+              "customSiteTitle" : "",
+              "lastChangedDate" : 1786358123386.3489,
+              "customHeadStart" : "",
+              "hidden" : false,
+              "expiryUnit" : 0,
+              "excludeFromSitemap" : true,
+              "shouldEnableRobotTags" : true,
+              "expires" : false
+            }
+          }
+        ],
+        "browserTitle" : null,
+        "code" : null,
+        "identifier" : "5CF40170-E97B-4B9F-8F32-441AB151ABEB",
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "customCSS" : "",
+          "shouldEnableSocialTags" : true,
+          "credit" : true,
+          "customPageEnd" : "",
+          "shouldFollowLinks" : true,
+          "shouldArchivePage" : true,
+          "useCustomSiteTitle" : false,
+          "customJavaScript" : "",
+          "customBodyStart" : "",
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "customPageStart" : "",
+          "customHeader" : "",
+          "linkOpensInNewWindow" : false,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "customBodyEnd" : "",
+          "changedStatuses" : {
+
+          },
+          "shouldAllowPreview" : true,
+          "filename" : "",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786355851125.412,
+          "customHeadStart" : "",
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "excludeFromSitemap" : true,
+          "shouldEnableRobotTags" : true,
+          "expires" : false
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "D1F390B6-F9FD-43E3-B9D5-9C60F5203C4B",
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "kind" : "folder",
+        "pageDescription" : null,
+        "createdDate" : 1786355851126.6428,
+        "isIndex" : false,
+        "externalPageURL" : null,
+        "title" : "concepts",
+        "children" : [
+          {
+            "manifests" : {
+
+            },
+            "uniqueID" : "89BE679C-8781-487F-BD5F-FB8952DBAB45",
+            "expanded" : true,
+            "iconIdentifier" : null,
+            "kind" : "code",
+            "pageDescription" : null,
+            "createdDate" : 1786356495501.272,
+            "isIndex" : false,
+            "externalPageURL" : null,
+            "title" : "",
+            "children" : [
+
+            ],
+            "browserTitle" : null,
+            "code" : "---\ntitle: Creator Profile Pattern\ntags:\n  - profile-template\n  - design-pattern\nconcerns: []\ntype: concept\n---\n\n# Creator Profile Pattern\n\nA reusable single-page personal homepage pattern combining an editorial cover, overlapping portrait, concise introduction, restrained social and contact actions, and a curated stack of linked cards.\n\n## Principles\n\n- Let the cover feel wider than the functional content column.\n- Keep the profile copy compact and centred.\n- Make one current-priority card visually dominant.\n- Keep standard cards consistent; reserve accent colours for one or two links.\n- Treat mobile tap targets and card readability as first-class requirements.\n- Prefer native Elements layout, theme tokens and hover controls over custom code.\n\n## See also\n- [[pages\/home]]\n- [[style-visual]]\n- [[style-writing]]\n",
+            "identifier" : "89BE679C-8781-487F-BD5F-FB8952DBAB45",
+            "attributes" : {
+              "expiryQuantity" : 2,
+              "customCSS" : "",
+              "shouldEnableSocialTags" : true,
+              "credit" : true,
+              "customPageEnd" : "",
+              "shouldFollowLinks" : true,
+              "shouldArchivePage" : true,
+              "useCustomSiteTitle" : false,
+              "customJavaScript" : "",
+              "customBodyStart" : "",
+              "enabled" : true,
+              "shouldIndexImages" : true,
+              "encoding" : 1,
+              "customPageStart" : "",
+              "customHeader" : "",
+              "linkOpensInNewWindow" : false,
+              "customHeadEnd" : "",
+              "shouldIndexPage" : true,
+              "customBodyEnd" : "",
+              "changedStatuses" : {
+                "default" : true
+              },
+              "shouldAllowPreview" : true,
+              "filename" : "creator-profile-pattern.md",
+              "customSiteTitle" : "",
+              "lastChangedDate" : 1786356741626.751,
+              "customHeadStart" : "",
+              "hidden" : false,
+              "expiryUnit" : 0,
+              "excludeFromSitemap" : true,
+              "shouldEnableRobotTags" : true,
+              "expires" : false
+            }
+          }
+        ],
+        "browserTitle" : null,
+        "code" : null,
+        "identifier" : "D1F390B6-F9FD-43E3-B9D5-9C60F5203C4B",
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "customCSS" : "",
+          "shouldEnableSocialTags" : true,
+          "credit" : true,
+          "customPageEnd" : "",
+          "shouldFollowLinks" : true,
+          "shouldArchivePage" : true,
+          "useCustomSiteTitle" : false,
+          "customJavaScript" : "",
+          "customBodyStart" : "",
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "customPageStart" : "",
+          "customHeader" : "",
+          "linkOpensInNewWindow" : false,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "customBodyEnd" : "",
+          "changedStatuses" : {
+
+          },
+          "shouldAllowPreview" : true,
+          "filename" : "",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786355851126.591,
+          "customHeadStart" : "",
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "excludeFromSitemap" : true,
+          "shouldEnableRobotTags" : true,
+          "expires" : false
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "7B581AE3-152E-453E-8575-613155E47740",
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "kind" : "folder",
+        "pageDescription" : null,
+        "createdDate" : 1786355851127.576,
+        "isIndex" : false,
+        "externalPageURL" : null,
+        "title" : "entities",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : null,
+        "identifier" : "7B581AE3-152E-453E-8575-613155E47740",
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "customCSS" : "",
+          "shouldEnableSocialTags" : true,
+          "credit" : true,
+          "customPageEnd" : "",
+          "shouldFollowLinks" : true,
+          "shouldArchivePage" : true,
+          "useCustomSiteTitle" : false,
+          "customJavaScript" : "",
+          "customBodyStart" : "",
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "customPageStart" : "",
+          "customHeader" : "",
+          "linkOpensInNewWindow" : false,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "customBodyEnd" : "",
+          "changedStatuses" : {
+
+          },
+          "shouldAllowPreview" : true,
+          "filename" : "",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786355851127.553,
+          "customHeadStart" : "",
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "excludeFromSitemap" : true,
+          "shouldEnableRobotTags" : true,
+          "expires" : false
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "98CB0437-8131-4ED1-AE7F-B2AED21CA751",
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "kind" : "folder",
+        "pageDescription" : null,
+        "createdDate" : 1786355851128.4731,
+        "isIndex" : false,
+        "externalPageURL" : null,
+        "title" : "analyses",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : null,
+        "identifier" : "98CB0437-8131-4ED1-AE7F-B2AED21CA751",
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "customCSS" : "",
+          "shouldEnableSocialTags" : true,
+          "credit" : true,
+          "customPageEnd" : "",
+          "shouldFollowLinks" : true,
+          "shouldArchivePage" : true,
+          "useCustomSiteTitle" : false,
+          "customJavaScript" : "",
+          "customBodyStart" : "",
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "customPageStart" : "",
+          "customHeader" : "",
+          "linkOpensInNewWindow" : false,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "customBodyEnd" : "",
+          "changedStatuses" : {
+
+          },
+          "shouldAllowPreview" : true,
+          "filename" : "",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786355851128.4338,
+          "customHeadStart" : "",
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "excludeFromSitemap" : true,
+          "shouldEnableRobotTags" : true,
+          "expires" : false
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "E10D9D52-2ED7-4BC0-8573-271FBD0B758D",
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "kind" : "folder",
+        "pageDescription" : null,
+        "createdDate" : 1786355851129.189,
+        "isIndex" : false,
+        "externalPageURL" : null,
+        "title" : "field-reports",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : null,
+        "identifier" : "E10D9D52-2ED7-4BC0-8573-271FBD0B758D",
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "customCSS" : "",
+          "shouldEnableSocialTags" : true,
+          "credit" : true,
+          "customPageEnd" : "",
+          "shouldFollowLinks" : true,
+          "shouldArchivePage" : true,
+          "useCustomSiteTitle" : false,
+          "customJavaScript" : "",
+          "customBodyStart" : "",
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "customPageStart" : "",
+          "customHeader" : "",
+          "linkOpensInNewWindow" : false,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "customBodyEnd" : "",
+          "changedStatuses" : {
+
+          },
+          "shouldAllowPreview" : true,
+          "filename" : "",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786355851129.1619,
+          "customHeadStart" : "",
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "excludeFromSitemap" : true,
+          "shouldEnableRobotTags" : true,
+          "expires" : false
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "3B03B544-635D-4E8E-B8F2-2131301526B2",
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "kind" : "code",
+        "pageDescription" : null,
+        "createdDate" : 1786355851129.936,
+        "isIndex" : false,
+        "externalPageURL" : null,
+        "title" : "",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : "---\ntitle: Project Knowledge\nsummary: Index of all project knowledge pages\n---\n\nThis is the AI-maintained knowledge base for this project, following the Karpathy compiled-knowledge pattern. The LLM reads live pages once and compiles them into an interlinked graph of notes. Subsequent sessions read the notes, not the live pages — answers compound rather than being re-derived each time.\n\n## Note graph\n\nThe knowledge graph lives in four folders. Use `[[folder\/note]]` wikilinks for cross-references between notes.\n\n- **pages\/** — one note per live RapidWeaver page; keyed on `pageId`; records purpose, sections, components, and summary in the user's voice\n- **concepts\/** — themes and patterns spanning multiple pages (e.g. \"testimonials pattern\", \"pricing section\")\n- **entities\/** — people, clients, tools, custom components, publishing destinations\n- **analyses\/** — durable answers to synthesis questions; filed when a query answer is worth preserving\n\n### When to create a concept or entity note\n\nCreate a note proactively — do not wait to be asked:\n\n- **entities\/**: any named person appearing in a role (officer, winner, organiser, contact); any named event, race, trophy, award, or external tool\/service.\n- **concepts\/**: any structural or content pattern that appears across 3 or more pages (e.g. same image+link layout, recurring winner table structure, recurring membership pricing model).\n\nUse a lowercase hyphenated slug (e.g. `entities\/ian-wright.md`, `concepts\/photo-album-pattern.md`). Add a `## See also` section with `[[folder\/note]]` wikilinks back to every page note that references it, and add the reciprocal link in each of those page notes.\n\n### Page note format\n\n```yaml\n---\ntitle: Page Title\ntype: page          # page | concept | entity | analysis\npageId: <uuid>      # for type:page — the Elements page UUID (stable across sessions)\npath: \/slug         # site path\nlastIngested: YYYY-MM-DDTHH:MMZ\nsources: []         # [[links]] to notes this draws from\ntags: []\nconcerns:           # known problems, tech debt, or gotchas for this page\/concept\n  - \"Brief description of the issue (severity: low|medium|high)\"\n---\n\n# Page Title\n\nSummary in the user's voice. Sections, components used, index\/sitemap flags.\n\n**Build mechanics** (required — record HOW things are built, not just WHAT they render): list the element types used, any custom components and how many instances, whether data is hardcoded or driven by CMS\/properties, and whether styling uses design-system tokens or bypasses them (e.g. \"12 per-year hand-edited HTML custom components; data hardcoded in template; colours bypass Tailwind tokens\").\n\n## See also\n- [[concepts\/related-concept]]\n- [[entities\/entity-name]]\n```\n\n## Design System\n\n- [[style-writing]] — voice and tone guide; read via `getDesignSystem` before authoring copy\n- [[style-visual]] — layout and visual conventions; read via `getDesignSystem` before building pages\n\n## Project admin\n\n- [[overview]] — site purpose, target audience, and high-level structure\n- [[journal]] — append-only session log\n- [[concerns]] — known problems, tech debt, gotchas, and fragile areas\n- [[backlog]] — outstanding work and speculative ideas\n- [[services]] — external services, APIs, and integrations\n- **field-reports\/** — structured AI session blocker reports; summaries linked from concerns.md\n\n## Operations\n\nThree recurring workflows — all orchestrated by the LLM using the storage primitives above.\n\n**Ingest** (triggered by drift or new page): `getPageMarkdown(pageId)` → `editKnowledge` writePage `pages\/<slug>.md` with `pageId` + `lastIngested` → touch\/create linked `concepts\/` and `entities\/` notes → add `[[folder\/note]]` wikilinks both directions and `## See also` → refresh `index.md`. If the page reveals a new voice or visual convention, call `updateDesignSystem` to reconcile the design guides.\n\n**Query**: read `index.md` → relevant notes (re-ingest only if `stale: true`) → synthesise with `[[folder\/note]]` wikilinks as citations → optionally file durable answer as `analyses\/<slug>.md`. **Exception — architecture\/improvement requests**: for any \"how do I improve\", \"review\", or \"what's wrong with\" question, always inspect the live document first (`listCustomComponents` + a sample `getCustomComponent` + `getPageContent` on representative pages) before answering, regardless of note freshness. Rank findings by altitude: maintainability\/structure → design-system → content. Record findings into per-note `concerns:` and regenerate `concerns.md`.\n\n**Lint**: call `lintKnowledge` → act on orphans, broken links, stale notes, dangling page notes, index drift → fix and log.\n\n## Site pages and patterns\n\n- [[pages\/home]] — single-page creator profile homepage\n- [[concepts\/creator-profile-pattern]] — reusable premium link-in-bio pattern\n",
+        "identifier" : "3B03B544-635D-4E8E-B8F2-2131301526B2",
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "customCSS" : "",
+          "shouldEnableSocialTags" : true,
+          "credit" : true,
+          "customPageEnd" : "",
+          "shouldFollowLinks" : true,
+          "shouldArchivePage" : true,
+          "useCustomSiteTitle" : false,
+          "customJavaScript" : "",
+          "customBodyStart" : "",
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "customPageStart" : "",
+          "customHeader" : "",
+          "linkOpensInNewWindow" : false,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "customBodyEnd" : "",
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldAllowPreview" : true,
+          "filename" : "index.md",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786356761458.3389,
+          "customHeadStart" : "",
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "excludeFromSitemap" : true,
+          "shouldEnableRobotTags" : true,
+          "expires" : false
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "1307FD9B-B2FD-4BF3-BD86-F47CBECA48D7",
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "kind" : "code",
+        "pageDescription" : null,
+        "createdDate" : 1786355851131.429,
+        "isIndex" : false,
+        "externalPageURL" : null,
+        "title" : "",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : "---\ntitle: Project Overview\nsummary: Goals, structure, and design intent of this project\n---\n\n> On a new project, this is seeded by `newDocument` from the user's brief. On an existing project, derive it by reading pages via `getPageMarkdown`. Update it as the site's scope and structure evolve. Pages are always authoritative over this note.\n\n## Purpose\n\nWhat is this site for? What problem does it solve or goal does it serve?\n\n## Target Audience\n\nWho is this site for?\n\n## Structure\n\nHow is the site organised? List the main pages and folders, and explain how the content is divided.\n",
+        "identifier" : "1307FD9B-B2FD-4BF3-BD86-F47CBECA48D7",
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "customCSS" : "",
+          "shouldEnableSocialTags" : true,
+          "credit" : true,
+          "customPageEnd" : "",
+          "shouldFollowLinks" : true,
+          "shouldArchivePage" : true,
+          "useCustomSiteTitle" : false,
+          "customJavaScript" : "",
+          "customBodyStart" : "",
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "customPageStart" : "",
+          "customHeader" : "",
+          "linkOpensInNewWindow" : false,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "customBodyEnd" : "",
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldAllowPreview" : true,
+          "filename" : "overview.md",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786355851132.6753,
+          "customHeadStart" : "",
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "excludeFromSitemap" : true,
+          "shouldEnableRobotTags" : true,
+          "expires" : false
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "91601E5C-28B9-4101-BCD0-A293E500A3EF",
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "kind" : "code",
+        "pageDescription" : null,
+        "createdDate" : 1786355851132.711,
+        "isIndex" : false,
+        "externalPageURL" : null,
+        "title" : "",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : "---\ntitle: Writing Style\nsummary: Voice and tone guide — read before authoring any copy\n---\n\n## Voice & Tone\n\nConcise, confident and personable. The template speaks in a polished first-person creator voice without hype, jargon or generic marketing language.\n\n## Sentence Rhythm\n\nShort headings, compact labels and one- or two-sentence descriptions. Supporting copy is direct and easy to scan on mobile.\n\n## Vocabulary\n\nPrefer: thoughtful, selected, independent, creative, worldwide, curated, recent.\nAvoid exaggerated claims, buzzwords and overly corporate language.\n\n## Person & POV\n\nFirst person for personal links and status; direct action labels for calls to action.\n\n## Heading Style\n\nSentence case. Names and role lines are compact rather than oversized.\n\n## Caption & Label Style\n\nButton and card labels use short action phrases such as “Get in touch”, “View my portfolio” and “Join the newsletter”. Metadata labels are brief uppercase words.\n\n## See also\n- [[style-visual]]\n- [[concepts\/creator-profile-pattern]]\n",
+        "identifier" : "91601E5C-28B9-4101-BCD0-A293E500A3EF",
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "customCSS" : "",
+          "shouldEnableSocialTags" : true,
+          "credit" : true,
+          "customPageEnd" : "",
+          "shouldFollowLinks" : true,
+          "shouldArchivePage" : true,
+          "useCustomSiteTitle" : false,
+          "customJavaScript" : "",
+          "customBodyStart" : "",
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "customPageStart" : "",
+          "customHeader" : "",
+          "linkOpensInNewWindow" : false,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "customBodyEnd" : "",
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldAllowPreview" : true,
+          "filename" : "style-writing.md",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786356720050.509,
+          "customHeadStart" : "",
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "excludeFromSitemap" : true,
+          "shouldEnableRobotTags" : true,
+          "expires" : false
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "05B7C315-D907-4D82-BAE8-614233131123",
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "kind" : "code",
+        "pageDescription" : null,
+        "createdDate" : 1786355851133.925,
+        "isIndex" : false,
+        "externalPageURL" : null,
+        "title" : "",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : "---\ntitle: Visual Style\nsummary: Layout and visual conventions — read before building or restructuring pages\n---\n\n## Layout Patterns\n\n- Single vertically scrolling personal homepage.\n- Immersive cover image up to 1120px wide, followed by a centred 700px content column.\n- Circular portrait overlaps the cover edge using a native transform.\n- Profile introduction is centred; links form a consistent vertical card stack.\n- Understated metadata rows and a minimal two-item footer close the page.\n\n## Colour Palette\n\n| Role | Light | Dark |\n|------|-------|------|\n| Page background | Stone 50 | Stone 950 |\n| Primary text | Stone 900 | Stone 50 |\n| Secondary text | Stone 500–700 | Stone 200–400 |\n| Neutral cards | Stone 100 \/ Stone 200 border | Stone 900 \/ Stone 700 border |\n| Featured card | Stone 900 | Stone 800 |\n| Lavender card | Accent 100 | Accent 950 |\n| Sage card | Olive 100 | Olive 900 |\n| Availability | Emerald 500 | Emerald 400 |\n\nDark mode uses warm near-black surfaces rather than pure black. Contrast remains strong while preserving the editorial stone palette.\n\n## Typography\n\n| Role | Font | Size \/ Weight |\n|------|------|---------------|\n| Name | System heading | 3xl mobile, 4xl desktop \/ 600 |\n| Role | System body | base–lg \/ 500 |\n| Body | System body | base \/ 400 |\n| Card title | System body | base–lg \/ 600 |\n| Metadata | System body | xs–sm |\n\n## Spacing & Rhythm\n\n- Mobile page gutters: spacing token 4; desktop gutters: token 8.\n- Content column maximum width: 700px.\n- Card gap: token 4; card padding: token 4 mobile and 5 desktop.\n- Profile spacing stays compact; larger pauses separate the profile, link stack and details.\n\n## Image Treatment\n\n- Editorial, desaturated lifestyle imagery with warm stone, muted lavender and sage tones.\n- Cover: 260px mobile, 360px desktop, cover crop.\n- Portrait: 132px mobile, 164px desktop, circular crop with an 8-token ring matching the page background in both appearances.\n- Card thumbnails: square, 64px mobile and 80px desktop, 2xl radius.\n\n## Interaction\n\n- Social links use 48px linked Flex circles with centred 20px SVG icons.\n- Default social styling is monochrome in both appearances.\n- Service-colour rollovers use pastel tints in light mode and restrained deep tints with brighter icons in dark mode.\n- Buttons and cards use 180–200ms transitions.\n- Link cards lift by 3px; social\/contact controls lift by 2px.\n- Whole cards are semantic links.\n\n## Navigation Structure\n\nNo traditional navigation. Social, contact and content links are presented as restrained actions within the single-page profile.\n\n## See also\n- [[style-writing]]\n- [[concepts\/creator-profile-pattern]]\n",
+        "identifier" : "05B7C315-D907-4D82-BAE8-614233131123",
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "customCSS" : "",
+          "shouldEnableSocialTags" : true,
+          "credit" : true,
+          "customPageEnd" : "",
+          "shouldFollowLinks" : true,
+          "shouldArchivePage" : true,
+          "useCustomSiteTitle" : false,
+          "customJavaScript" : "",
+          "customBodyStart" : "",
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "customPageStart" : "",
+          "customHeader" : "",
+          "linkOpensInNewWindow" : false,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "customBodyEnd" : "",
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldAllowPreview" : true,
+          "filename" : "style-visual.md",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786358123385.7378,
+          "customHeadStart" : "",
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "excludeFromSitemap" : true,
+          "shouldEnableRobotTags" : true,
+          "expires" : false
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "E9A29187-7CEA-4CE4-B65D-824D20E444DD",
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "kind" : "code",
+        "pageDescription" : null,
+        "createdDate" : 1786355851135.179,
+        "isIndex" : false,
+        "externalPageURL" : null,
+        "title" : "",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : "---\ntitle: Journal\nsummary: Running log of sessions, decisions, and progress\n---\n\nAppend-only log of work sessions, decisions, and notable events. Newest entries at the top.\n\nUse `appendEntry` with a date heading to add new entries.\n\n## 2026-08-10 — Premium creator profile template\n\nBuilt [[pages\/home]] as a complete premium creator \/ personal-profile template using built-in Elements components. Added generated editorial cover, portrait and card imagery; responsive profile and card layouts; social\/contact actions; metadata; SEO\/Open Graph settings; and native hover transitions. Documented the reusable approach in [[concepts\/creator-profile-pattern]] and updated both design-system guides.\n\n## 2026-08-10 — Social icon resources\n\nReplaced the temporary social initials on [[pages\/home]] with the supplied monochrome Instagram, LinkedIn, YouTube, X and TikTok SVG resources. Preserved the existing 48px circular buttons, links and hover treatment.\n\n## 2026-08-10 — Corrected social icon structure\n\nReplaced the five social Button components on [[pages\/home]] with linked Flex circles containing individual SVG components. Preserved the 48px sizing, monochrome treatment, link destinations and hover lift.\n\n## 2026-08-10 — Service-colour social rollovers\n\nAdded coordinated rollover states to the linked social Flex circles on [[pages\/home]]. Each uses a pastel service-tinted background and border plus a matching SVG fill colour, with 180ms colour transitions and the existing subtle lift.\n\n## 2026-08-10 — Restored social icon sizing\n\nCorrected an oversized social-icon regression on [[pages\/home]]. Restored every SVG to a fixed 20px size with spacing disabled while keeping its parent linked Flex circle at 48px.\n\n## 2026-08-10 — Complete dark appearance\n\nAdded a complete dark appearance to [[pages\/home]] using dual theme-colour values. Updated the page, profile ring, typography, CTA, featured card, neutral and accent cards, social controls, metadata dividers and footer. Preserved all layout dimensions, including 48px social circles and 20px SVG icons.\n",
+        "identifier" : "E9A29187-7CEA-4CE4-B65D-824D20E444DD",
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "customCSS" : "",
+          "shouldEnableSocialTags" : true,
+          "credit" : true,
+          "customPageEnd" : "",
+          "shouldFollowLinks" : true,
+          "shouldArchivePage" : true,
+          "useCustomSiteTitle" : false,
+          "customJavaScript" : "",
+          "customBodyStart" : "",
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "customPageStart" : "",
+          "customHeader" : "",
+          "linkOpensInNewWindow" : false,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "customBodyEnd" : "",
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldAllowPreview" : true,
+          "filename" : "journal.md",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786358123386.6348,
+          "customHeadStart" : "",
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "excludeFromSitemap" : true,
+          "shouldEnableRobotTags" : true,
+          "expires" : false
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "06B53F7E-0337-4B83-9C8A-8AAD80AA651C",
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "kind" : "code",
+        "pageDescription" : null,
+        "createdDate" : 1786355851136.666,
+        "isIndex" : false,
+        "externalPageURL" : null,
+        "title" : "",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : "---\ntitle: Concerns\nsummary: Derived rollup of known problems, tech debt, and gotchas\n---\n\n**Derived — do not hand-edit.** Regenerated at the end of each session by aggregating the `concerns:` frontmatter from every `pages\/` and `concepts\/` note, plus the document-level findings from `lintKnowledge` (duplicate components, malformed component files, non-token styling). To add a concern, add it to the `concerns:` list in the relevant note; it will surface here on the next `lintKnowledge` run.\n\nDetailed AI session blockers are in `field-reports\/` and summarised here.\n\n## Tech Debt \/ Structural\n\n| Severity | Component \/ Page | Description | Notes |\n|----------|-----------------|-------------|-------|\n\n## Content \/ Editorial\n\n| Severity | Page | Description | Notes |\n|----------|------|-------------|-------|\n\n## Open Field Reports\n\n| Date | Title | Status |\n|------|-------|--------|\n",
+        "identifier" : "06B53F7E-0337-4B83-9C8A-8AAD80AA651C",
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "customCSS" : "",
+          "shouldEnableSocialTags" : true,
+          "credit" : true,
+          "customPageEnd" : "",
+          "shouldFollowLinks" : true,
+          "shouldArchivePage" : true,
+          "useCustomSiteTitle" : false,
+          "customJavaScript" : "",
+          "customBodyStart" : "",
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "customPageStart" : "",
+          "customHeader" : "",
+          "linkOpensInNewWindow" : false,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "customBodyEnd" : "",
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldAllowPreview" : true,
+          "filename" : "concerns.md",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786355851137.753,
+          "customHeadStart" : "",
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "excludeFromSitemap" : true,
+          "shouldEnableRobotTags" : true,
+          "expires" : false
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "96363657-4D62-494D-932C-E04740A98CD3",
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "kind" : "code",
+        "pageDescription" : null,
+        "createdDate" : 1786355851137.789,
+        "isIndex" : false,
+        "externalPageURL" : null,
+        "title" : "",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : "---\ntitle: Backlog\nsummary: Outstanding work and speculative ideas with priority and status\n---\n\nTracks both committed tasks and speculative ideas. Mark speculative items with `idea` in the Type column.\n\n| Priority | Type | Task | Status |\n|----------|------|------|--------|\n",
+        "identifier" : "96363657-4D62-494D-932C-E04740A98CD3",
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "customCSS" : "",
+          "shouldEnableSocialTags" : true,
+          "credit" : true,
+          "customPageEnd" : "",
+          "shouldFollowLinks" : true,
+          "shouldArchivePage" : true,
+          "useCustomSiteTitle" : false,
+          "customJavaScript" : "",
+          "customBodyStart" : "",
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "customPageStart" : "",
+          "customHeader" : "",
+          "linkOpensInNewWindow" : false,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "customBodyEnd" : "",
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldAllowPreview" : true,
+          "filename" : "backlog.md",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786355851139.127,
+          "customHeadStart" : "",
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "excludeFromSitemap" : true,
+          "shouldEnableRobotTags" : true,
+          "expires" : false
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "00A8D776-C534-4533-9CC7-35298F12EE5E",
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "kind" : "code",
+        "pageDescription" : null,
+        "createdDate" : 1786355851139.184,
+        "isIndex" : false,
+        "externalPageURL" : null,
+        "title" : "",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : "---\ntitle: Services\nsummary: External services, APIs, credentials, and integrations\n---\n\nDocument external services, APIs, and integrations used by this project.\n\n| Service | Purpose | Notes |\n|---------|---------|-------|\n",
+        "identifier" : "00A8D776-C534-4533-9CC7-35298F12EE5E",
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "customCSS" : "",
+          "shouldEnableSocialTags" : true,
+          "credit" : true,
+          "customPageEnd" : "",
+          "shouldFollowLinks" : true,
+          "shouldArchivePage" : true,
+          "useCustomSiteTitle" : false,
+          "customJavaScript" : "",
+          "customBodyStart" : "",
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "customPageStart" : "",
+          "customHeader" : "",
+          "linkOpensInNewWindow" : false,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "customBodyEnd" : "",
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldAllowPreview" : true,
+          "filename" : "services.md",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786355851140.397,
+          "customHeadStart" : "",
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "excludeFromSitemap" : true,
+          "shouldEnableRobotTags" : true,
+          "expires" : false
+        }
+      },
+      {
+        "manifests" : {
+
+        },
+        "uniqueID" : "F73050E5-2814-4060-8B39-10127DDCA714",
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "kind" : "code",
+        "pageDescription" : null,
+        "createdDate" : 1786355851140.491,
+        "isIndex" : false,
+        "externalPageURL" : null,
+        "title" : "",
+        "children" : [
+
+        ],
+        "browserTitle" : null,
+        "code" : "---\ntitle: Wiki Sync\nsummary: Machine-generated sync snapshot. Do not edit by hand.\n---\n\n<!-- Machine-generated. Do not edit by hand. -->\n\n```json\n{\n  \"pages\" : {\n    \"2C795624-7F1C-48D3-8198-947753C609EA\" : \"2026-08-10T10:35:29Z\"\n  },\n  \"syncedAt\" : \"2026-08-10T10:35:33Z\"\n}\n```\n",
+        "identifier" : "F73050E5-2814-4060-8B39-10127DDCA714",
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "customCSS" : "",
+          "shouldEnableSocialTags" : true,
+          "credit" : true,
+          "customPageEnd" : "",
+          "shouldFollowLinks" : true,
+          "shouldArchivePage" : true,
+          "useCustomSiteTitle" : false,
+          "customJavaScript" : "",
+          "customBodyStart" : "",
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "customPageStart" : "",
+          "customHeader" : "",
+          "linkOpensInNewWindow" : false,
+          "customHeadEnd" : "",
+          "shouldIndexPage" : true,
+          "customBodyEnd" : "",
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldAllowPreview" : true,
+          "filename" : "sync.md",
+          "customSiteTitle" : "",
+          "lastChangedDate" : 1786358133369.896,
+          "customHeadStart" : "",
+          "hidden" : false,
+          "expiryUnit" : 0,
+          "excludeFromSitemap" : true,
+          "shouldEnableRobotTags" : true,
+          "expires" : false
+        }
+      }
+    ],
+    "browserTitle" : null,
+    "code" : null,
+    "identifier" : "347A4551-88DF-4821-8590-D90E6D6F901C",
+    "attributes" : {
+      "expiryQuantity" : 2,
+      "customCSS" : "",
+      "shouldEnableSocialTags" : true,
+      "credit" : true,
+      "customPageEnd" : "",
+      "shouldFollowLinks" : true,
+      "shouldArchivePage" : true,
+      "useCustomSiteTitle" : false,
+      "customJavaScript" : "",
+      "customBodyStart" : "",
+      "enabled" : true,
+      "shouldIndexImages" : true,
+      "encoding" : 1,
+      "customPageStart" : "",
+      "customHeader" : "",
+      "linkOpensInNewWindow" : false,
+      "customHeadEnd" : "",
+      "shouldIndexPage" : true,
+      "customBodyEnd" : "",
+      "changedStatuses" : {
+
+      },
+      "shouldAllowPreview" : true,
+      "filename" : "",
+      "customSiteTitle" : "",
+      "lastChangedDate" : 1786355851122.6091,
+      "customHeadStart" : "",
+      "hidden" : false,
+      "expiryUnit" : 0,
+      "excludeFromSitemap" : true,
+      "shouldEnableRobotTags" : true,
+      "expires" : false
+    }
+  },
+  "globalElements" : {
+    "globals" : {
+
+    }
+  },
+  "ui" : {
+    "elementEditor" : {
+      "showOutline" : false,
+      "show" : false
+    },
+    "projectInspector" : {
+      "show" : false
+    },
+    "resourceInspector" : {
+      "show" : false
+    },
+    "catalogFilter" : {
+      "smartDocumentElements" : false,
+      "showFavourites" : false
+    },
+    "contentArea" : {
+      "size" : [
+        1024,
+        320
+      ],
+      "darkAppearance" : false,
+      "responsiveSize" : "lg",
+      "scale" : 1
+    }
+  },
   "theme" : {
-    "typographies" : [
-
+    "screens" : [
+      {
+        "maxContainerWidth" : 0,
+        "classPrefix" : "2xl",
+        "name" : "2xl",
+        "sfIcon" : "desktopcomputer",
+        "units" : "auto",
+        "description" : "",
+        "pixels" : 1536,
+        "enabled" : false,
+        "id" : "3F8DF5C6-CCBF-408B-A6B7-F692E07141F5"
+      },
+      {
+        "maxContainerWidth" : 0,
+        "classPrefix" : "xl",
+        "name" : "xl",
+        "sfIcon" : "laptopcomputer",
+        "units" : "auto",
+        "description" : "",
+        "pixels" : 1280,
+        "enabled" : false,
+        "id" : "99F51290-E1AF-42DC-8BF9-3D8587CCFF47"
+      },
+      {
+        "maxContainerWidth" : 0,
+        "classPrefix" : "lg",
+        "name" : "lg",
+        "sfIcon" : "ipad.landscape",
+        "units" : "auto",
+        "description" : "",
+        "pixels" : 1024,
+        "enabled" : true,
+        "id" : "E84CC6CF-F038-42ED-9321-027E1B2EE3A3"
+      },
+      {
+        "maxContainerWidth" : 0,
+        "classPrefix" : "md",
+        "name" : "md",
+        "sfIcon" : "ipad",
+        "units" : "auto",
+        "description" : "This breakpoint is for tablets and small laptop screens. It usually encompasses widths from 600 pixels to 1023 pixels.",
+        "pixels" : 768,
+        "enabled" : true,
+        "id" : "90416B57-8C9A-4A1A-90D1-4900A9900CAD"
+      },
+      {
+        "maxContainerWidth" : 0,
+        "classPrefix" : "sm",
+        "name" : "sm",
+        "sfIcon" : "iphone.landscape",
+        "units" : "auto",
+        "description" : "This breakpoint targets devices with small sceens like smartphones. The resolution width varies but typically starts from 320 pixels and below 600 pixels.",
+        "pixels" : 640,
+        "enabled" : true,
+        "id" : "8712955F-D8D9-4674-80F3-A433109EC50D"
+      },
+      {
+        "maxContainerWidth" : 0,
+        "classPrefix" : "",
+        "name" : "mobile",
+        "sfIcon" : "iphone",
+        "units" : "auto",
+        "description" : "",
+        "pixels" : 0,
+        "enabled" : true,
+        "id" : "06136EBB-8CF1-4065-90B9-CEDB0431C5F5"
+      }
     ],
-    "borderRadius" : [
+    "page" : {
 
-    ],
-    "colors" : [
-
-    ],
-    "spacing" : [
+    },
+    "textShadows" : [
 
     ],
     "shadows" : [
 
     ],
     "baseThemeIdentifier" : "com.realmacsoftware.themes.system",
+    "colors" : [
+
+    ],
     "fontStyle" : [
 
     ],
-    "screens" : [
-      {
-        "sfIcon" : "desktopcomputer",
-        "id" : "3F8DF5C6-CCBF-408B-A6B7-F692E07141F5",
-        "units" : "auto",
-        "maxContainerWidth" : 0,
-        "enabled" : false,
-        "name" : "2xl",
-        "classPrefix" : "2xl",
-        "description" : "",
-        "pixels" : 1536
-      },
-      {
-        "sfIcon" : "laptopcomputer",
-        "id" : "99F51290-E1AF-42DC-8BF9-3D8587CCFF47",
-        "units" : "auto",
-        "maxContainerWidth" : 0,
-        "enabled" : false,
-        "name" : "xl",
-        "classPrefix" : "xl",
-        "description" : "",
-        "pixels" : 1280
-      },
-      {
-        "sfIcon" : "ipad.landscape",
-        "id" : "E84CC6CF-F038-42ED-9321-027E1B2EE3A3",
-        "units" : "auto",
-        "maxContainerWidth" : 0,
-        "enabled" : true,
-        "name" : "lg",
-        "classPrefix" : "lg",
-        "description" : "",
-        "pixels" : 1024
-      },
-      {
-        "sfIcon" : "ipad",
-        "id" : "90416B57-8C9A-4A1A-90D1-4900A9900CAD",
-        "units" : "auto",
-        "maxContainerWidth" : 0,
-        "enabled" : true,
-        "name" : "md",
-        "classPrefix" : "md",
-        "description" : "This breakpoint is for tablets and small laptop screens. It usually encompasses widths from 600 pixels to 1023 pixels.",
-        "pixels" : 768
-      },
-      {
-        "sfIcon" : "iphone.landscape",
-        "id" : "8712955F-D8D9-4674-80F3-A433109EC50D",
-        "units" : "auto",
-        "maxContainerWidth" : 0,
-        "enabled" : true,
-        "name" : "sm",
-        "classPrefix" : "sm",
-        "description" : "This breakpoint targets devices with small sceens like smartphones. The resolution width varies but typically starts from 320 pixels and below 600 pixels.",
-        "pixels" : 640
-      },
-      {
-        "sfIcon" : "iphone",
-        "id" : "06136EBB-8CF1-4065-90B9-CEDB0431C5F5",
-        "units" : "auto",
-        "maxContainerWidth" : 0,
-        "enabled" : true,
-        "name" : "mobile",
-        "classPrefix" : "",
-        "description" : "",
-        "pixels" : 0
-      }
-    ],
-    "fontFamily" : [
+    "typographies" : [
 
     ],
     "borderWidth" : [
 
     ],
-    "textShadows" : [
+    "borderRadius" : [
 
     ],
-    "page" : {
-
-    }
-  },
-  "customComponents" : {
-    "components" : {
-
-    }
-  },
-  "publishing" : {
-    "publishingDestinations" : [
+    "spacing" : [
 
     ],
-    "publishSettingsConfigured" : false
+    "fontFamily" : [
+
+    ]
   },
-  "siteResources" : {
-    "resources" : {
-      "12252A43-B22C-4B1D-9665-953A6452518C" : {
-        "name" : "card-portfolio-identity.png",
-        "originalName" : "card-portfolio-identity.png",
-        "identifier" : "12252A43-B22C-4B1D-9665-953A6452518C",
-        "hostedImageURLs" : [
-
-        ],
-        "smartFolderKind" : 0,
-        "parentIdentifier" : "2FC86894-03E5-43F5-B1E4-5034E580F8D2",
-        "typeIdentifier" : "public.png",
-        "metadata" : {
-          "height" : 1024,
-          "width" : 1024,
-          "aspect" : 1,
-          "generationSize" : "1024x1024",
-          "generationPrompt" : "Editorial photograph for a premium creative portfolio card: close-up of an elegant minimalist printed identity system, cream paper, charcoal typography, subtle sage accents, arranged on a warm stone desk in soft natural light, sophisticated, no readable brand names, no people, square crop."
-        },
-        "expanded" : true,
-        "isSVG" : false,
-        "changedStatuses" : {
-
-        },
-        "kind" : 1,
-        "timeStamp" : 1786356387770.3792
+  "uiStateIdentifier" : "B603286C-298E-4771-9501-0F041A49F8FE",
+  "project" : {
+    "autoStartWebServer" : false,
+    "uniqueBackupName" : "2AC807DF-5DDE-4FB1-BAF6-278F9FDDE1E7_rwbackup"
+  },
+  "site" : {
+    "allowDarkMode" : true,
+    "themeName" : "Elements",
+    "wantsXMLSiteMap" : true,
+    "consolidateCSSFiles" : true,
+    "legacyV3HoverOnTouch" : false,
+    "cruftlessLinks" : true,
+    "baseURL" : "https:\/\/www.elementsplatform.com",
+    "title" : "Bob Fennison — Independent Designer & Creative Consultant",
+    "useCacheBusting" : true,
+    "defaultFileExtension" : "html",
+    "minifyExtraFiles" : true
+  },
+  "images" : {
+    "webIcons" : {
+      "faviconSmall" : {
+        "type" : 6,
+        "autoGenerate" : false
       },
-      "A8C4FD03-ACAE-4C5E-B14E-66DD8992263C" : {
-        "originalName" : "profile-portrait.png",
-        "expanded" : true,
-        "timeStamp" : 1786355933455.107,
-        "hostedImageURLs" : [
-
-        ],
-        "smartFolderKind" : 0,
-        "parentIdentifier" : "2FC86894-03E5-43F5-B1E4-5034E580F8D2",
-        "typeIdentifier" : "public.png",
-        "metadata" : {
-          "aspect" : 1,
-          "generationPrompt" : "Professional editorial portrait photograph of a creative consultant in their early 30s, warm natural window light, neutral stone-coloured studio backdrop, wearing a simple dark crew-neck sweater, relaxed genuine slight smile, head-and-shoulders framing centred, shallow depth of field, muted sophisticated colour grade, high-end personal-branding photography.",
-          "width" : 1024,
-          "generationSize" : "1024x1024",
-          "height" : 1024
-        },
-        "isSVG" : false,
-        "identifier" : "A8C4FD03-ACAE-4C5E-B14E-66DD8992263C",
-        "changedStatuses" : {
-
-        },
-        "kind" : 1,
-        "name" : "profile-portrait.png"
+      "pinnedTab" : {
+        "type" : 3,
+        "autoGenerate" : false
       },
-      "7720EADB-3EAD-41B9-B46D-EDC5B1FAC393" : {
-        "changedStatuses" : {
-
-        },
-        "isSVG" : true,
-        "typeIdentifier" : "public.svg-image",
-        "hostedImageURLs" : [
-
-        ],
-        "identifier" : "7720EADB-3EAD-41B9-B46D-EDC5B1FAC393",
-        "parentIdentifier" : "4E429525-7408-4098-8F93-21C9F8DD68B1",
-        "originalName" : "youtube.svg",
-        "kind" : 1,
-        "name" : "youtube.svg",
-        "smartFolderKind" : 0,
-        "expanded" : true,
-        "timeStamp" : 1750254386299.6697
+      "medium" : {
+        "type" : 1,
+        "autoGenerate" : false
       },
-      "858BC3BE-D629-4AE3-B672-D2831E21DECB" : {
-        "timeStamp" : 1750254306948.9531,
-        "kind" : 1,
-        "changedStatuses" : {
-
-        },
-        "smartFolderKind" : 0,
-        "typeIdentifier" : "public.svg-image",
-        "name" : "tiktok.svg",
-        "expanded" : true,
-        "originalName" : "tiktok.svg",
-        "parentIdentifier" : "4E429525-7408-4098-8F93-21C9F8DD68B1",
-        "isSVG" : true,
-        "identifier" : "858BC3BE-D629-4AE3-B672-D2831E21DECB",
-        "hostedImageURLs" : [
-
-        ]
+      "faviconMedium" : {
+        "type" : 5,
+        "autoGenerate" : false
       },
-      "9FF463C1-F4F6-4605-BEF6-A4D81E645133" : {
-        "timeStamp" : 1750254131190.557,
-        "kind" : 1,
-        "changedStatuses" : {
-
-        },
-        "smartFolderKind" : 0,
-        "typeIdentifier" : "public.svg-image",
-        "name" : "instagram.svg",
-        "expanded" : true,
-        "originalName" : "instagram.svg",
-        "parentIdentifier" : "4E429525-7408-4098-8F93-21C9F8DD68B1",
-        "isSVG" : true,
-        "identifier" : "9FF463C1-F4F6-4605-BEF6-A4D81E645133",
-        "hostedImageURLs" : [
-
-        ]
+      "faviconLarge" : {
+        "type" : 4,
+        "autoGenerate" : false
       },
-      "C2CFEA46-DD54-49E9-A775-7966FB15C9F2" : {
-        "name" : "card-consultation-studio.png",
-        "originalName" : "card-consultation-studio.png",
-        "identifier" : "C2CFEA46-DD54-49E9-A775-7966FB15C9F2",
-        "hostedImageURLs" : [
-
-        ],
-        "smartFolderKind" : 0,
-        "parentIdentifier" : "2FC86894-03E5-43F5-B1E4-5034E580F8D2",
-        "typeIdentifier" : "public.png",
-        "metadata" : {
-          "height" : 1024,
-          "width" : 1024,
-          "aspect" : 1,
-          "generationSize" : "1024x1024",
-          "generationPrompt" : "Editorial photograph for a creative consultation card: quiet modern studio corner with two sculptural chairs and a small round table, warm off-white plaster walls, soft sunlight and restrained neutral palette, inviting and high-end, no people, square crop."
-        },
-        "expanded" : true,
-        "isSVG" : false,
-        "changedStatuses" : {
-
-        },
-        "kind" : 1,
-        "timeStamp" : 1786356407079.987
+      "large" : {
+        "type" : 0,
+        "autoGenerate" : false
       },
-      "4E429525-7408-4098-8F93-21C9F8DD68B1" : {
-        "changedStatuses" : {
-
-        },
-        "hostedImageURLs" : [
-
-        ],
-        "identifier" : "4E429525-7408-4098-8F93-21C9F8DD68B1",
-        "parentIdentifier" : "2FC86894-03E5-43F5-B1E4-5034E580F8D2",
-        "kind" : 0,
-        "name" : "icons",
-        "expanded" : true,
-        "smartFolderKind" : 0,
-        "timeStamp" : -62135769600000
-      },
-      "57F69F5B-262E-4D07-B8D9-FA6951A496BD" : {
-        "originalName" : "card-newsletter-lavender.png",
-        "expanded" : true,
-        "timeStamp" : 1786356447452.522,
-        "hostedImageURLs" : [
-
-        ],
-        "smartFolderKind" : 0,
-        "parentIdentifier" : "2FC86894-03E5-43F5-B1E4-5034E580F8D2",
-        "typeIdentifier" : "public.png",
-        "metadata" : {
-          "aspect" : 1,
-          "generationPrompt" : "Editorial abstract image for a premium creator newsletter card: a folded sheet of soft muted lavender paper casting delicate geometric shadows on warm off-white background, minimal, tactile, sophisticated, no text, square crop.",
-          "width" : 1024,
-          "generationSize" : "1024x1024",
-          "height" : 1024
-        },
-        "isSVG" : false,
-        "identifier" : "57F69F5B-262E-4D07-B8D9-FA6951A496BD",
-        "changedStatuses" : {
-
-        },
-        "kind" : 1,
-        "name" : "card-newsletter-lavender.png"
-      },
-      "4D7C1301-1E69-46F8-BF70-36FC1BE03927" : {
-        "changedStatuses" : {
-
-        },
-        "isSVG" : true,
-        "typeIdentifier" : "public.svg-image",
-        "hostedImageURLs" : [
-
-        ],
-        "identifier" : "4D7C1301-1E69-46F8-BF70-36FC1BE03927",
-        "parentIdentifier" : "4E429525-7408-4098-8F93-21C9F8DD68B1",
-        "originalName" : "linkedin.svg",
-        "name" : "linkedin.svg",
-        "kind" : 1,
-        "smartFolderKind" : 0,
-        "expanded" : true,
-        "timeStamp" : 1750254145443.6987
-      },
-      "65B5B7EC-8618-4021-BC39-271FB279B09A" : {
-        "originalName" : "card-tools-sage.png",
-        "expanded" : true,
-        "timeStamp" : 1786356464010.508,
-        "hostedImageURLs" : [
-
-        ],
-        "smartFolderKind" : 0,
-        "parentIdentifier" : "2FC86894-03E5-43F5-B1E4-5034E580F8D2",
-        "typeIdentifier" : "public.png",
-        "metadata" : {
-          "aspect" : 1,
-          "generationPrompt" : "Editorial still life for a curated resources card: tasteful arrangement of a silver laptop edge, design book with blank cover, headphones and small sage ceramic object on a pale stone surface, desaturated calm palette, premium product photography, no logos or text, square crop.",
-          "width" : 1024,
-          "generationSize" : "1024x1024",
-          "height" : 1024
-        },
-        "isSVG" : false,
-        "identifier" : "65B5B7EC-8618-4021-BC39-271FB279B09A",
-        "changedStatuses" : {
-
-        },
-        "kind" : 1,
-        "name" : "card-tools-sage.png"
-      },
-      "2FC86894-03E5-43F5-B1E4-5034E580F8D2" : {
-        "timeStamp" : -62135769600000,
-        "kind" : 0,
-        "changedStatuses" : {
-
-        },
-        "smartFolderKind" : 0,
-        "expanded" : true,
-        "name" : "Resources",
-        "identifier" : "2FC86894-03E5-43F5-B1E4-5034E580F8D2",
-        "hostedImageURLs" : [
-
-        ]
-      },
-      "626E041B-1636-444D-95FA-920E5CBF7A45" : {
-        "timeStamp" : 1750253993686.3252,
-        "kind" : 1,
-        "changedStatuses" : {
-
-        },
-        "smartFolderKind" : 0,
-        "typeIdentifier" : "public.svg-image",
-        "name" : "x-twitter.svg",
-        "expanded" : true,
-        "originalName" : "x-twitter.svg",
-        "parentIdentifier" : "4E429525-7408-4098-8F93-21C9F8DD68B1",
-        "isSVG" : true,
-        "identifier" : "626E041B-1636-444D-95FA-920E5CBF7A45",
-        "hostedImageURLs" : [
-
-        ]
-      },
-      "4EAB763B-67FC-4440-901C-D2AB3AAD7672" : {
-        "originalName" : "cover-coastal-morning.png",
-        "expanded" : true,
-        "timeStamp" : 1786355916385.6611,
-        "hostedImageURLs" : [
-
-        ],
-        "smartFolderKind" : 0,
-        "parentIdentifier" : "2FC86894-03E5-43F5-B1E4-5034E580F8D2",
-        "typeIdentifier" : "public.png",
-        "metadata" : {
-          "aspect" : 1.5,
-          "generationPrompt" : "Atmospheric editorial cover photo for a personal creator website: soft warm morning light over a minimalist coastal landscape, misty muted tones, calm sea and distant headland, subtle warm stone and grey-blue palette, cinematic, high-end travel-editorial feel, no people prominent, no text, gentle haze, sophisticated and calm.",
-          "width" : 1536,
-          "generationSize" : "1536x1024",
-          "height" : 1024
-        },
-        "isSVG" : false,
-        "identifier" : "4EAB763B-67FC-4440-901C-D2AB3AAD7672",
-        "changedStatuses" : {
-
-        },
-        "kind" : 1,
-        "name" : "cover-coastal-morning.png"
-      },
-      "DB1666E2-E934-4499-8452-B71E87E6EF41" : {
-        "originalName" : "card-journal-notebook.png",
-        "expanded" : true,
-        "timeStamp" : 1786356427846.8909,
-        "hostedImageURLs" : [
-
-        ],
-        "smartFolderKind" : 0,
-        "parentIdentifier" : "2FC86894-03E5-43F5-B1E4-5034E580F8D2",
-        "typeIdentifier" : "public.png",
-        "metadata" : {
-          "aspect" : 1,
-          "generationPrompt" : "Editorial still life for a design journal card: open unbranded notebook with abstract sketches, black fountain pen, espresso cup, warm soft daylight on a pale wood desk, calm refined creative atmosphere, no readable text, square crop.",
-          "width" : 1024,
-          "generationSize" : "1024x1024",
-          "height" : 1024
-        },
-        "isSVG" : false,
-        "identifier" : "DB1666E2-E934-4499-8452-B71E87E6EF41",
-        "changedStatuses" : {
-
-        },
-        "kind" : 1,
-        "name" : "card-journal-notebook.png"
+      "small" : {
+        "type" : 2,
+        "autoGenerate" : false
       }
     },
+    "logoAltText" : ""
+  },
+  "rootPrefabNode" : {
+    "item" : null,
+    "title" : "Project",
+    "identifier" : "7375E3E4-CC68-4CCD-AADD-8A906B12FC45",
+    "expanded" : true,
+    "kind" : {
+      "folder" : {
+
+      }
+    },
+    "children" : [
+
+    ]
+  },
+  "publishing" : {
+    "publishSettingsConfigured" : false,
+    "publishingDestinations" : [
+
+    ]
+  },
+  "siteResources" : {
+    "root" : "2FC86894-03E5-43F5-B1E4-5034E580F8D2",
     "children" : {
       "4E429525-7408-4098-8F93-21C9F8DD68B1" : [
         "9FF463C1-F4F6-4605-BEF6-A4D81E645133",
@@ -465,8 +1258,7 @@
         "626E041B-1636-444D-95FA-920E5CBF7A45",
         "858BC3BE-D629-4AE3-B672-D2831E21DECB"
       ],
-      "2FC86894-03E5-43F5-B1E4-5034E580F8D2" : [
-        "4E429525-7408-4098-8F93-21C9F8DD68B1",
+      "3FB1DCC8-AC73-424A-B380-DA1C0B629928" : [
         "65B5B7EC-8618-4021-BC39-271FB279B09A",
         "57F69F5B-262E-4D07-B8D9-FA6951A496BD",
         "DB1666E2-E934-4499-8452-B71E87E6EF41",
@@ -474,1096 +1266,322 @@
         "12252A43-B22C-4B1D-9665-953A6452518C",
         "A8C4FD03-ACAE-4C5E-B14E-66DD8992263C",
         "4EAB763B-67FC-4440-901C-D2AB3AAD7672"
+      ],
+      "2FC86894-03E5-43F5-B1E4-5034E580F8D2" : [
+        "4E429525-7408-4098-8F93-21C9F8DD68B1",
+        "3FB1DCC8-AC73-424A-B380-DA1C0B629928"
       ]
     },
-    "root" : "2FC86894-03E5-43F5-B1E4-5034E580F8D2"
-  },
-  "ui" : {
-    "projectInspector" : {
-      "show" : false
-    },
-    "elementEditor" : {
-      "showOutline" : false,
-      "show" : false
-    },
-    "contentArea" : {
-      "responsiveSize" : "lg",
-      "darkAppearance" : false,
-      "size" : [
-        1292,
-        1096
-      ],
-      "scale" : 1
-    },
-    "catalogFilter" : {
-      "smartDocumentElements" : false,
-      "showFavourites" : false
-    },
-    "resourceInspector" : {
-      "show" : false
+    "resources" : {
+      "858BC3BE-D629-4AE3-B672-D2831E21DECB" : {
+        "isSVG" : true,
+        "typeIdentifier" : "public.svg-image",
+        "name" : "tiktok.svg",
+        "expanded" : false,
+        "parentIdentifier" : "4E429525-7408-4098-8F93-21C9F8DD68B1",
+        "timeStamp" : 1750254306948.9531,
+        "changedStatuses" : {
+
+        },
+        "smartFolderKind" : 0,
+        "hostedImageURLs" : [
+
+        ],
+        "identifier" : "858BC3BE-D629-4AE3-B672-D2831E21DECB",
+        "originalName" : "tiktok.svg",
+        "kind" : 1
+      },
+      "57F69F5B-262E-4D07-B8D9-FA6951A496BD" : {
+        "expanded" : true,
+        "hostedImageURLs" : [
+
+        ],
+        "originalName" : "card-newsletter-lavender.png",
+        "changedStatuses" : {
+
+        },
+        "isSVG" : false,
+        "smartFolderKind" : 0,
+        "kind" : 1,
+        "parentIdentifier" : "3FB1DCC8-AC73-424A-B380-DA1C0B629928",
+        "identifier" : "57F69F5B-262E-4D07-B8D9-FA6951A496BD",
+        "name" : "card-newsletter-lavender.jpg",
+        "metadata" : {
+          "aspect" : 1,
+          "generationPrompt" : "Editorial abstract image for a premium creator newsletter card: a folded sheet of soft muted lavender paper casting delicate geometric shadows on warm off-white background, minimal, tactile, sophisticated, no text, square crop.",
+          "generationSize" : "1024x1024",
+          "width" : 1024,
+          "height" : 1024
+        },
+        "typeIdentifier" : "public.png",
+        "timeStamp" : 1786356447452.522
+      },
+      "12252A43-B22C-4B1D-9665-953A6452518C" : {
+        "expanded" : true,
+        "hostedImageURLs" : [
+
+        ],
+        "originalName" : "card-portfolio-identity.png",
+        "changedStatuses" : {
+
+        },
+        "isSVG" : false,
+        "smartFolderKind" : 0,
+        "kind" : 1,
+        "parentIdentifier" : "3FB1DCC8-AC73-424A-B380-DA1C0B629928",
+        "identifier" : "12252A43-B22C-4B1D-9665-953A6452518C",
+        "name" : "card-portfolio-identity.jpg",
+        "metadata" : {
+          "aspect" : 1,
+          "generationPrompt" : "Editorial photograph for a premium creative portfolio card: close-up of an elegant minimalist printed identity system, cream paper, charcoal typography, subtle sage accents, arranged on a warm stone desk in soft natural light, sophisticated, no readable brand names, no people, square crop.",
+          "generationSize" : "1024x1024",
+          "width" : 1024,
+          "height" : 1024
+        },
+        "typeIdentifier" : "public.png",
+        "timeStamp" : 1786356387770.3792
+      },
+      "3FB1DCC8-AC73-424A-B380-DA1C0B629928" : {
+        "name" : "images",
+        "expanded" : true,
+        "parentIdentifier" : "2FC86894-03E5-43F5-B1E4-5034E580F8D2",
+        "timeStamp" : -62135769600000,
+        "changedStatuses" : {
+
+        },
+        "smartFolderKind" : 0,
+        "hostedImageURLs" : [
+
+        ],
+        "identifier" : "3FB1DCC8-AC73-424A-B380-DA1C0B629928",
+        "kind" : 0
+      },
+      "A8C4FD03-ACAE-4C5E-B14E-66DD8992263C" : {
+        "expanded" : true,
+        "hostedImageURLs" : [
+
+        ],
+        "originalName" : "profile-portrait.png",
+        "changedStatuses" : {
+
+        },
+        "isSVG" : false,
+        "smartFolderKind" : 0,
+        "kind" : 1,
+        "parentIdentifier" : "3FB1DCC8-AC73-424A-B380-DA1C0B629928",
+        "identifier" : "A8C4FD03-ACAE-4C5E-B14E-66DD8992263C",
+        "name" : "profile-portrait.jpg",
+        "metadata" : {
+          "aspect" : 1,
+          "generationPrompt" : "Professional editorial portrait photograph of a creative consultant in their early 30s, warm natural window light, neutral stone-coloured studio backdrop, wearing a simple dark crew-neck sweater, relaxed genuine slight smile, head-and-shoulders framing centred, shallow depth of field, muted sophisticated colour grade, high-end personal-branding photography.",
+          "generationSize" : "1024x1024",
+          "width" : 1024,
+          "height" : 1024
+        },
+        "typeIdentifier" : "public.png",
+        "timeStamp" : 1786355933455.107
+      },
+      "2FC86894-03E5-43F5-B1E4-5034E580F8D2" : {
+        "timeStamp" : -62135769600000,
+        "expanded" : true,
+        "identifier" : "2FC86894-03E5-43F5-B1E4-5034E580F8D2",
+        "name" : "Resources",
+        "changedStatuses" : {
+
+        },
+        "kind" : 0,
+        "hostedImageURLs" : [
+
+        ],
+        "smartFolderKind" : 0
+      },
+      "4EAB763B-67FC-4440-901C-D2AB3AAD7672" : {
+        "expanded" : true,
+        "hostedImageURLs" : [
+
+        ],
+        "changedStatuses" : {
+
+        },
+        "originalName" : "cover-coastal-morning.png",
+        "isSVG" : false,
+        "smartFolderKind" : 0,
+        "kind" : 1,
+        "parentIdentifier" : "3FB1DCC8-AC73-424A-B380-DA1C0B629928",
+        "identifier" : "4EAB763B-67FC-4440-901C-D2AB3AAD7672",
+        "name" : "cover-coastal-morning.jpg",
+        "metadata" : {
+          "aspect" : 1.5,
+          "width" : 1536,
+          "generationPrompt" : "Atmospheric editorial cover photo for a personal creator website: soft warm morning light over a minimalist coastal landscape, misty muted tones, calm sea and distant headland, subtle warm stone and grey-blue palette, cinematic, high-end travel-editorial feel, no people prominent, no text, gentle haze, sophisticated and calm.",
+          "generationSize" : "1536x1024",
+          "height" : 1024
+        },
+        "typeIdentifier" : "public.png",
+        "timeStamp" : 1786355916385.6611
+      },
+      "7720EADB-3EAD-41B9-B46D-EDC5B1FAC393" : {
+        "isSVG" : true,
+        "typeIdentifier" : "public.svg-image",
+        "name" : "youtube.svg",
+        "expanded" : false,
+        "parentIdentifier" : "4E429525-7408-4098-8F93-21C9F8DD68B1",
+        "timeStamp" : 1750254386299.6697,
+        "changedStatuses" : {
+
+        },
+        "smartFolderKind" : 0,
+        "hostedImageURLs" : [
+
+        ],
+        "identifier" : "7720EADB-3EAD-41B9-B46D-EDC5B1FAC393",
+        "kind" : 1,
+        "originalName" : "youtube.svg"
+      },
+      "626E041B-1636-444D-95FA-920E5CBF7A45" : {
+        "isSVG" : true,
+        "typeIdentifier" : "public.svg-image",
+        "name" : "x-twitter.svg",
+        "expanded" : false,
+        "parentIdentifier" : "4E429525-7408-4098-8F93-21C9F8DD68B1",
+        "timeStamp" : 1750253993686.3252,
+        "changedStatuses" : {
+
+        },
+        "smartFolderKind" : 0,
+        "hostedImageURLs" : [
+
+        ],
+        "identifier" : "626E041B-1636-444D-95FA-920E5CBF7A45",
+        "originalName" : "x-twitter.svg",
+        "kind" : 1
+      },
+      "C2CFEA46-DD54-49E9-A775-7966FB15C9F2" : {
+        "expanded" : true,
+        "hostedImageURLs" : [
+
+        ],
+        "originalName" : "card-consultation-studio.png",
+        "changedStatuses" : {
+
+        },
+        "isSVG" : false,
+        "smartFolderKind" : 0,
+        "kind" : 1,
+        "parentIdentifier" : "3FB1DCC8-AC73-424A-B380-DA1C0B629928",
+        "identifier" : "C2CFEA46-DD54-49E9-A775-7966FB15C9F2",
+        "name" : "card-consultation-studio.jpg",
+        "metadata" : {
+          "aspect" : 1,
+          "generationPrompt" : "Editorial photograph for a creative consultation card: quiet modern studio corner with two sculptural chairs and a small round table, warm off-white plaster walls, soft sunlight and restrained neutral palette, inviting and high-end, no people, square crop.",
+          "generationSize" : "1024x1024",
+          "width" : 1024,
+          "height" : 1024
+        },
+        "typeIdentifier" : "public.png",
+        "timeStamp" : 1786356407079.987
+      },
+      "DB1666E2-E934-4499-8452-B71E87E6EF41" : {
+        "expanded" : true,
+        "hostedImageURLs" : [
+
+        ],
+        "changedStatuses" : {
+
+        },
+        "originalName" : "card-journal-notebook.png",
+        "isSVG" : false,
+        "smartFolderKind" : 0,
+        "kind" : 1,
+        "parentIdentifier" : "3FB1DCC8-AC73-424A-B380-DA1C0B629928",
+        "identifier" : "DB1666E2-E934-4499-8452-B71E87E6EF41",
+        "name" : "card-journal-notebook.jpg",
+        "metadata" : {
+          "aspect" : 1,
+          "width" : 1024,
+          "generationPrompt" : "Editorial still life for a design journal card: open unbranded notebook with abstract sketches, black fountain pen, espresso cup, warm soft daylight on a pale wood desk, calm refined creative atmosphere, no readable text, square crop.",
+          "generationSize" : "1024x1024",
+          "height" : 1024
+        },
+        "typeIdentifier" : "public.png",
+        "timeStamp" : 1786356427846.8909
+      },
+      "4D7C1301-1E69-46F8-BF70-36FC1BE03927" : {
+        "isSVG" : true,
+        "typeIdentifier" : "public.svg-image",
+        "name" : "linkedin.svg",
+        "expanded" : false,
+        "parentIdentifier" : "4E429525-7408-4098-8F93-21C9F8DD68B1",
+        "timeStamp" : 1750254145443.6987,
+        "changedStatuses" : {
+
+        },
+        "smartFolderKind" : 0,
+        "hostedImageURLs" : [
+
+        ],
+        "identifier" : "4D7C1301-1E69-46F8-BF70-36FC1BE03927",
+        "originalName" : "linkedin.svg",
+        "kind" : 1
+      },
+      "65B5B7EC-8618-4021-BC39-271FB279B09A" : {
+        "expanded" : true,
+        "hostedImageURLs" : [
+
+        ],
+        "changedStatuses" : {
+
+        },
+        "originalName" : "card-tools-sage.png",
+        "isSVG" : false,
+        "smartFolderKind" : 0,
+        "kind" : 1,
+        "parentIdentifier" : "3FB1DCC8-AC73-424A-B380-DA1C0B629928",
+        "identifier" : "65B5B7EC-8618-4021-BC39-271FB279B09A",
+        "name" : "card-tools-sage.jpg",
+        "metadata" : {
+          "aspect" : 1,
+          "width" : 1024,
+          "generationPrompt" : "Editorial still life for a curated resources card: tasteful arrangement of a silver laptop edge, design book with blank cover, headphones and small sage ceramic object on a pale stone surface, desaturated calm palette, premium product photography, no logos or text, square crop.",
+          "generationSize" : "1024x1024",
+          "height" : 1024
+        },
+        "typeIdentifier" : "public.png",
+        "timeStamp" : 1786356464010.508
+      },
+      "9FF463C1-F4F6-4605-BEF6-A4D81E645133" : {
+        "isSVG" : true,
+        "hostedImageURLs" : [
+
+        ],
+        "timeStamp" : 1750254131190.557,
+        "originalName" : "instagram.svg",
+        "identifier" : "9FF463C1-F4F6-4605-BEF6-A4D81E645133",
+        "name" : "instagram.svg",
+        "expanded" : false,
+        "typeIdentifier" : "public.svg-image",
+        "parentIdentifier" : "4E429525-7408-4098-8F93-21C9F8DD68B1",
+        "kind" : 1,
+        "smartFolderKind" : 0,
+        "changedStatuses" : {
+
+        }
+      },
+      "4E429525-7408-4098-8F93-21C9F8DD68B1" : {
+        "name" : "icons",
+        "expanded" : false,
+        "parentIdentifier" : "2FC86894-03E5-43F5-B1E4-5034E580F8D2",
+        "timeStamp" : -62135769600000,
+        "changedStatuses" : {
+
+        },
+        "smartFolderKind" : 0,
+        "hostedImageURLs" : [
+
+        ],
+        "identifier" : "4E429525-7408-4098-8F93-21C9F8DD68B1",
+        "kind" : 0
+      }
     }
-  },
-  "project" : {
-    "uniqueBackupName" : "2AC807DF-5DDE-4FB1-BAF6-278F9FDDE1E7_rwbackup",
-    "autoStartWebServer" : false
-  },
-  "social" : {
-    "useSocialTags" : true
-  },
-  "globalElements" : {
-    "globals" : {
-
-    }
-  },
-  "wikiRoot" : {
-    "uniqueID" : "347A4551-88DF-4821-8590-D90E6D6F901C",
-    "attributes" : {
-      "credit" : true,
-      "linkOpensInNewWindow" : false,
-      "lastChangedDate" : 1786355851122.6091,
-      "customHeadStart" : "",
-      "shouldEnableSocialTags" : true,
-      "shouldIndexImages" : true,
-      "customSiteTitle" : "",
-      "customJavaScript" : "",
-      "useCustomSiteTitle" : false,
-      "excludeFromSitemap" : true,
-      "customPageStart" : "",
-      "expiryQuantity" : 2,
-      "shouldIndexPage" : true,
-      "shouldFollowLinks" : true,
-      "hidden" : false,
-      "customBodyEnd" : "",
-      "shouldAllowPreview" : true,
-      "enabled" : true,
-      "customCSS" : "",
-      "customHeader" : "",
-      "encoding" : 1,
-      "customHeadEnd" : "",
-      "shouldEnableRobotTags" : true,
-      "changedStatuses" : {
-
-      },
-      "shouldArchivePage" : true,
-      "customBodyStart" : "",
-      "expires" : false,
-      "customPageEnd" : "",
-      "filename" : "",
-      "expiryUnit" : 0
-    },
-    "isIndex" : false,
-    "kind" : "folder",
-    "identifier" : "347A4551-88DF-4821-8590-D90E6D6F901C",
-    "iconIdentifier" : null,
-    "createdDate" : 1786355851123.934,
-    "title" : "Project Wiki",
-    "code" : null,
-    "children" : [
-      {
-        "uniqueID" : "5CF40170-E97B-4B9F-8F32-441AB151ABEB",
-        "attributes" : {
-          "credit" : true,
-          "linkOpensInNewWindow" : false,
-          "lastChangedDate" : 1786355851125.412,
-          "customHeadStart" : "",
-          "shouldEnableSocialTags" : true,
-          "shouldIndexImages" : true,
-          "customSiteTitle" : "",
-          "customJavaScript" : "",
-          "useCustomSiteTitle" : false,
-          "excludeFromSitemap" : true,
-          "customPageStart" : "",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "shouldFollowLinks" : true,
-          "hidden" : false,
-          "customBodyEnd" : "",
-          "shouldAllowPreview" : true,
-          "enabled" : true,
-          "customCSS" : "",
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadEnd" : "",
-          "shouldEnableRobotTags" : true,
-          "changedStatuses" : {
-
-          },
-          "shouldArchivePage" : true,
-          "customBodyStart" : "",
-          "expires" : false,
-          "customPageEnd" : "",
-          "filename" : "",
-          "expiryUnit" : 0
-        },
-        "isIndex" : false,
-        "kind" : "folder",
-        "identifier" : "5CF40170-E97B-4B9F-8F32-441AB151ABEB",
-        "iconIdentifier" : null,
-        "createdDate" : 1786355851125.4702,
-        "title" : "pages",
-        "code" : null,
-        "children" : [
-          {
-            "uniqueID" : "D6C0D4A3-E006-4ECE-8033-04C697ED2886",
-            "attributes" : {
-              "credit" : true,
-              "linkOpensInNewWindow" : false,
-              "lastChangedDate" : 1786358123386.3489,
-              "customHeadStart" : "",
-              "shouldEnableSocialTags" : true,
-              "shouldIndexImages" : true,
-              "customSiteTitle" : "",
-              "customJavaScript" : "",
-              "useCustomSiteTitle" : false,
-              "excludeFromSitemap" : true,
-              "customPageStart" : "",
-              "expiryQuantity" : 2,
-              "shouldIndexPage" : true,
-              "shouldFollowLinks" : true,
-              "hidden" : false,
-              "customBodyEnd" : "",
-              "shouldAllowPreview" : true,
-              "enabled" : true,
-              "customCSS" : "",
-              "customHeader" : "",
-              "encoding" : 1,
-              "customHeadEnd" : "",
-              "shouldEnableRobotTags" : true,
-              "changedStatuses" : {
-                "default" : true
-              },
-              "shouldArchivePage" : true,
-              "customBodyStart" : "",
-              "expires" : false,
-              "customPageEnd" : "",
-              "filename" : "home.md",
-              "expiryUnit" : 0
-            },
-            "isIndex" : false,
-            "kind" : "code",
-            "identifier" : "D6C0D4A3-E006-4ECE-8033-04C697ED2886",
-            "iconIdentifier" : null,
-            "createdDate" : 1786356495494.073,
-            "title" : "",
-            "code" : "---\ntitle: Home\ntags:\n  - profile-template\n  - built\n  - dark-mode\nconcerns: []\nlastIngested: \"2026-08-10T13:30:00Z\"\npageId: 2C795624-7F1C-48D3-8198-947753C609EA\npath: \/\nsources: []\ntype: page\n---\n\n# Home\n\nPremium single-page creator profile template for Bob Fennison, an independent designer and creative consultant.\n\n## Page structure\n\n- Wide editorial coastal cover image\n- Circular portrait overlapping the cover edge\n- Centred name, role and introduction\n- Five linked 48px social Flex circles with centred 20px SVG icons\n- Primary email CTA\n- Featured availability card\n- Five linked portfolio and resource cards\n- Creator metadata and minimal footer\n\n## Light and dark appearance\n\nDark mode is enabled globally. The page background changes from Stone 50 to Stone 950; primary text changes from Stone 900 to Stone 50; and secondary text uses lighter Stone tones. The portrait ring follows the page background.\n\nNeutral cards change from Stone 100 to Stone 900 with adjusted borders and hover surfaces. The lavender newsletter card uses Accent 950 in dark mode, while the sage resources card uses Olive 900. The featured card remains prominent on Stone 800.\n\nSocial controls retain fixed 48px circles and 20px SVGs in both appearances. Default dark styling is monochrome. Service-colour rollovers use deep tinted backgrounds and brighter matching icons for Instagram, LinkedIn, YouTube, X and TikTok.\n\n## Template placeholders\n\nReplace the profile details, example email, social URLs, example.com destinations and generated imagery when adapting the template.\n\n## See also\n- [[concepts\/creator-profile-pattern]]\n- [[style-visual]]\n- [[style-writing]]\n",
-            "children" : [
-
-            ],
-            "pageDescription" : null,
-            "externalPageURL" : null,
-            "expanded" : true,
-            "manifests" : {
-
-            },
-            "browserTitle" : null
-          }
-        ],
-        "pageDescription" : null,
-        "externalPageURL" : null,
-        "expanded" : true,
-        "manifests" : {
-
-        },
-        "browserTitle" : null
-      },
-      {
-        "uniqueID" : "D1F390B6-F9FD-43E3-B9D5-9C60F5203C4B",
-        "attributes" : {
-          "credit" : true,
-          "linkOpensInNewWindow" : false,
-          "lastChangedDate" : 1786355851126.591,
-          "customHeadStart" : "",
-          "shouldEnableSocialTags" : true,
-          "shouldIndexImages" : true,
-          "customSiteTitle" : "",
-          "customJavaScript" : "",
-          "useCustomSiteTitle" : false,
-          "excludeFromSitemap" : true,
-          "customPageStart" : "",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "shouldFollowLinks" : true,
-          "hidden" : false,
-          "customBodyEnd" : "",
-          "shouldAllowPreview" : true,
-          "enabled" : true,
-          "customCSS" : "",
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadEnd" : "",
-          "shouldEnableRobotTags" : true,
-          "changedStatuses" : {
-
-          },
-          "shouldArchivePage" : true,
-          "customBodyStart" : "",
-          "expires" : false,
-          "customPageEnd" : "",
-          "filename" : "",
-          "expiryUnit" : 0
-        },
-        "isIndex" : false,
-        "kind" : "folder",
-        "identifier" : "D1F390B6-F9FD-43E3-B9D5-9C60F5203C4B",
-        "iconIdentifier" : null,
-        "createdDate" : 1786355851126.6428,
-        "title" : "concepts",
-        "code" : null,
-        "children" : [
-          {
-            "uniqueID" : "89BE679C-8781-487F-BD5F-FB8952DBAB45",
-            "attributes" : {
-              "credit" : true,
-              "linkOpensInNewWindow" : false,
-              "lastChangedDate" : 1786356741626.751,
-              "customHeadStart" : "",
-              "shouldEnableSocialTags" : true,
-              "shouldIndexImages" : true,
-              "customSiteTitle" : "",
-              "customJavaScript" : "",
-              "useCustomSiteTitle" : false,
-              "excludeFromSitemap" : true,
-              "customPageStart" : "",
-              "expiryQuantity" : 2,
-              "shouldIndexPage" : true,
-              "shouldFollowLinks" : true,
-              "hidden" : false,
-              "customBodyEnd" : "",
-              "shouldAllowPreview" : true,
-              "enabled" : true,
-              "customCSS" : "",
-              "customHeader" : "",
-              "encoding" : 1,
-              "customHeadEnd" : "",
-              "shouldEnableRobotTags" : true,
-              "changedStatuses" : {
-                "default" : true
-              },
-              "shouldArchivePage" : true,
-              "customBodyStart" : "",
-              "expires" : false,
-              "customPageEnd" : "",
-              "filename" : "creator-profile-pattern.md",
-              "expiryUnit" : 0
-            },
-            "isIndex" : false,
-            "kind" : "code",
-            "identifier" : "89BE679C-8781-487F-BD5F-FB8952DBAB45",
-            "iconIdentifier" : null,
-            "createdDate" : 1786356495501.272,
-            "title" : "",
-            "code" : "---\ntitle: Creator Profile Pattern\ntags:\n  - profile-template\n  - design-pattern\nconcerns: []\ntype: concept\n---\n\n# Creator Profile Pattern\n\nA reusable single-page personal homepage pattern combining an editorial cover, overlapping portrait, concise introduction, restrained social and contact actions, and a curated stack of linked cards.\n\n## Principles\n\n- Let the cover feel wider than the functional content column.\n- Keep the profile copy compact and centred.\n- Make one current-priority card visually dominant.\n- Keep standard cards consistent; reserve accent colours for one or two links.\n- Treat mobile tap targets and card readability as first-class requirements.\n- Prefer native Elements layout, theme tokens and hover controls over custom code.\n\n## See also\n- [[pages\/home]]\n- [[style-visual]]\n- [[style-writing]]\n",
-            "children" : [
-
-            ],
-            "pageDescription" : null,
-            "externalPageURL" : null,
-            "expanded" : true,
-            "manifests" : {
-
-            },
-            "browserTitle" : null
-          }
-        ],
-        "pageDescription" : null,
-        "externalPageURL" : null,
-        "expanded" : true,
-        "manifests" : {
-
-        },
-        "browserTitle" : null
-      },
-      {
-        "uniqueID" : "7B581AE3-152E-453E-8575-613155E47740",
-        "attributes" : {
-          "credit" : true,
-          "linkOpensInNewWindow" : false,
-          "lastChangedDate" : 1786355851127.553,
-          "customHeadStart" : "",
-          "shouldEnableSocialTags" : true,
-          "shouldIndexImages" : true,
-          "customSiteTitle" : "",
-          "customJavaScript" : "",
-          "useCustomSiteTitle" : false,
-          "excludeFromSitemap" : true,
-          "customPageStart" : "",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "shouldFollowLinks" : true,
-          "hidden" : false,
-          "customBodyEnd" : "",
-          "shouldAllowPreview" : true,
-          "enabled" : true,
-          "customCSS" : "",
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadEnd" : "",
-          "shouldEnableRobotTags" : true,
-          "changedStatuses" : {
-
-          },
-          "shouldArchivePage" : true,
-          "customBodyStart" : "",
-          "expires" : false,
-          "customPageEnd" : "",
-          "filename" : "",
-          "expiryUnit" : 0
-        },
-        "isIndex" : false,
-        "kind" : "folder",
-        "identifier" : "7B581AE3-152E-453E-8575-613155E47740",
-        "iconIdentifier" : null,
-        "createdDate" : 1786355851127.576,
-        "title" : "entities",
-        "code" : null,
-        "children" : [
-
-        ],
-        "pageDescription" : null,
-        "externalPageURL" : null,
-        "expanded" : true,
-        "manifests" : {
-
-        },
-        "browserTitle" : null
-      },
-      {
-        "uniqueID" : "98CB0437-8131-4ED1-AE7F-B2AED21CA751",
-        "attributes" : {
-          "credit" : true,
-          "linkOpensInNewWindow" : false,
-          "lastChangedDate" : 1786355851128.4338,
-          "customHeadStart" : "",
-          "shouldEnableSocialTags" : true,
-          "shouldIndexImages" : true,
-          "customSiteTitle" : "",
-          "customJavaScript" : "",
-          "useCustomSiteTitle" : false,
-          "excludeFromSitemap" : true,
-          "customPageStart" : "",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "shouldFollowLinks" : true,
-          "hidden" : false,
-          "customBodyEnd" : "",
-          "shouldAllowPreview" : true,
-          "enabled" : true,
-          "customCSS" : "",
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadEnd" : "",
-          "shouldEnableRobotTags" : true,
-          "changedStatuses" : {
-
-          },
-          "shouldArchivePage" : true,
-          "customBodyStart" : "",
-          "expires" : false,
-          "customPageEnd" : "",
-          "filename" : "",
-          "expiryUnit" : 0
-        },
-        "isIndex" : false,
-        "kind" : "folder",
-        "identifier" : "98CB0437-8131-4ED1-AE7F-B2AED21CA751",
-        "iconIdentifier" : null,
-        "createdDate" : 1786355851128.4731,
-        "title" : "analyses",
-        "code" : null,
-        "children" : [
-
-        ],
-        "pageDescription" : null,
-        "externalPageURL" : null,
-        "expanded" : true,
-        "manifests" : {
-
-        },
-        "browserTitle" : null
-      },
-      {
-        "uniqueID" : "E10D9D52-2ED7-4BC0-8573-271FBD0B758D",
-        "attributes" : {
-          "credit" : true,
-          "linkOpensInNewWindow" : false,
-          "lastChangedDate" : 1786355851129.1619,
-          "customHeadStart" : "",
-          "shouldEnableSocialTags" : true,
-          "shouldIndexImages" : true,
-          "customSiteTitle" : "",
-          "customJavaScript" : "",
-          "useCustomSiteTitle" : false,
-          "excludeFromSitemap" : true,
-          "customPageStart" : "",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "shouldFollowLinks" : true,
-          "hidden" : false,
-          "customBodyEnd" : "",
-          "shouldAllowPreview" : true,
-          "enabled" : true,
-          "customCSS" : "",
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadEnd" : "",
-          "shouldEnableRobotTags" : true,
-          "changedStatuses" : {
-
-          },
-          "shouldArchivePage" : true,
-          "customBodyStart" : "",
-          "expires" : false,
-          "customPageEnd" : "",
-          "filename" : "",
-          "expiryUnit" : 0
-        },
-        "isIndex" : false,
-        "kind" : "folder",
-        "identifier" : "E10D9D52-2ED7-4BC0-8573-271FBD0B758D",
-        "iconIdentifier" : null,
-        "createdDate" : 1786355851129.189,
-        "title" : "field-reports",
-        "code" : null,
-        "children" : [
-
-        ],
-        "pageDescription" : null,
-        "externalPageURL" : null,
-        "expanded" : true,
-        "manifests" : {
-
-        },
-        "browserTitle" : null
-      },
-      {
-        "uniqueID" : "3B03B544-635D-4E8E-B8F2-2131301526B2",
-        "attributes" : {
-          "credit" : true,
-          "linkOpensInNewWindow" : false,
-          "lastChangedDate" : 1786356761458.3389,
-          "customHeadStart" : "",
-          "shouldEnableSocialTags" : true,
-          "shouldIndexImages" : true,
-          "customSiteTitle" : "",
-          "customJavaScript" : "",
-          "useCustomSiteTitle" : false,
-          "excludeFromSitemap" : true,
-          "customPageStart" : "",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "shouldFollowLinks" : true,
-          "hidden" : false,
-          "customBodyEnd" : "",
-          "shouldAllowPreview" : true,
-          "enabled" : true,
-          "customCSS" : "",
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadEnd" : "",
-          "shouldEnableRobotTags" : true,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldArchivePage" : true,
-          "customBodyStart" : "",
-          "expires" : false,
-          "customPageEnd" : "",
-          "filename" : "index.md",
-          "expiryUnit" : 0
-        },
-        "isIndex" : false,
-        "kind" : "code",
-        "identifier" : "3B03B544-635D-4E8E-B8F2-2131301526B2",
-        "iconIdentifier" : null,
-        "createdDate" : 1786355851129.936,
-        "title" : "",
-        "code" : "---\ntitle: Project Knowledge\nsummary: Index of all project knowledge pages\n---\n\nThis is the AI-maintained knowledge base for this project, following the Karpathy compiled-knowledge pattern. The LLM reads live pages once and compiles them into an interlinked graph of notes. Subsequent sessions read the notes, not the live pages — answers compound rather than being re-derived each time.\n\n## Note graph\n\nThe knowledge graph lives in four folders. Use `[[folder\/note]]` wikilinks for cross-references between notes.\n\n- **pages\/** — one note per live RapidWeaver page; keyed on `pageId`; records purpose, sections, components, and summary in the user's voice\n- **concepts\/** — themes and patterns spanning multiple pages (e.g. \"testimonials pattern\", \"pricing section\")\n- **entities\/** — people, clients, tools, custom components, publishing destinations\n- **analyses\/** — durable answers to synthesis questions; filed when a query answer is worth preserving\n\n### When to create a concept or entity note\n\nCreate a note proactively — do not wait to be asked:\n\n- **entities\/**: any named person appearing in a role (officer, winner, organiser, contact); any named event, race, trophy, award, or external tool\/service.\n- **concepts\/**: any structural or content pattern that appears across 3 or more pages (e.g. same image+link layout, recurring winner table structure, recurring membership pricing model).\n\nUse a lowercase hyphenated slug (e.g. `entities\/ian-wright.md`, `concepts\/photo-album-pattern.md`). Add a `## See also` section with `[[folder\/note]]` wikilinks back to every page note that references it, and add the reciprocal link in each of those page notes.\n\n### Page note format\n\n```yaml\n---\ntitle: Page Title\ntype: page          # page | concept | entity | analysis\npageId: <uuid>      # for type:page — the Elements page UUID (stable across sessions)\npath: \/slug         # site path\nlastIngested: YYYY-MM-DDTHH:MMZ\nsources: []         # [[links]] to notes this draws from\ntags: []\nconcerns:           # known problems, tech debt, or gotchas for this page\/concept\n  - \"Brief description of the issue (severity: low|medium|high)\"\n---\n\n# Page Title\n\nSummary in the user's voice. Sections, components used, index\/sitemap flags.\n\n**Build mechanics** (required — record HOW things are built, not just WHAT they render): list the element types used, any custom components and how many instances, whether data is hardcoded or driven by CMS\/properties, and whether styling uses design-system tokens or bypasses them (e.g. \"12 per-year hand-edited HTML custom components; data hardcoded in template; colours bypass Tailwind tokens\").\n\n## See also\n- [[concepts\/related-concept]]\n- [[entities\/entity-name]]\n```\n\n## Design System\n\n- [[style-writing]] — voice and tone guide; read via `getDesignSystem` before authoring copy\n- [[style-visual]] — layout and visual conventions; read via `getDesignSystem` before building pages\n\n## Project admin\n\n- [[overview]] — site purpose, target audience, and high-level structure\n- [[journal]] — append-only session log\n- [[concerns]] — known problems, tech debt, gotchas, and fragile areas\n- [[backlog]] — outstanding work and speculative ideas\n- [[services]] — external services, APIs, and integrations\n- **field-reports\/** — structured AI session blocker reports; summaries linked from concerns.md\n\n## Operations\n\nThree recurring workflows — all orchestrated by the LLM using the storage primitives above.\n\n**Ingest** (triggered by drift or new page): `getPageMarkdown(pageId)` → `editKnowledge` writePage `pages\/<slug>.md` with `pageId` + `lastIngested` → touch\/create linked `concepts\/` and `entities\/` notes → add `[[folder\/note]]` wikilinks both directions and `## See also` → refresh `index.md`. If the page reveals a new voice or visual convention, call `updateDesignSystem` to reconcile the design guides.\n\n**Query**: read `index.md` → relevant notes (re-ingest only if `stale: true`) → synthesise with `[[folder\/note]]` wikilinks as citations → optionally file durable answer as `analyses\/<slug>.md`. **Exception — architecture\/improvement requests**: for any \"how do I improve\", \"review\", or \"what's wrong with\" question, always inspect the live document first (`listCustomComponents` + a sample `getCustomComponent` + `getPageContent` on representative pages) before answering, regardless of note freshness. Rank findings by altitude: maintainability\/structure → design-system → content. Record findings into per-note `concerns:` and regenerate `concerns.md`.\n\n**Lint**: call `lintKnowledge` → act on orphans, broken links, stale notes, dangling page notes, index drift → fix and log.\n\n## Site pages and patterns\n\n- [[pages\/home]] — single-page creator profile homepage\n- [[concepts\/creator-profile-pattern]] — reusable premium link-in-bio pattern\n",
-        "children" : [
-
-        ],
-        "pageDescription" : null,
-        "externalPageURL" : null,
-        "expanded" : true,
-        "manifests" : {
-
-        },
-        "browserTitle" : null
-      },
-      {
-        "uniqueID" : "1307FD9B-B2FD-4BF3-BD86-F47CBECA48D7",
-        "attributes" : {
-          "credit" : true,
-          "linkOpensInNewWindow" : false,
-          "lastChangedDate" : 1786355851132.6753,
-          "customHeadStart" : "",
-          "shouldEnableSocialTags" : true,
-          "shouldIndexImages" : true,
-          "customSiteTitle" : "",
-          "customJavaScript" : "",
-          "useCustomSiteTitle" : false,
-          "excludeFromSitemap" : true,
-          "customPageStart" : "",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "shouldFollowLinks" : true,
-          "hidden" : false,
-          "customBodyEnd" : "",
-          "shouldAllowPreview" : true,
-          "enabled" : true,
-          "customCSS" : "",
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadEnd" : "",
-          "shouldEnableRobotTags" : true,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldArchivePage" : true,
-          "customBodyStart" : "",
-          "expires" : false,
-          "customPageEnd" : "",
-          "filename" : "overview.md",
-          "expiryUnit" : 0
-        },
-        "isIndex" : false,
-        "kind" : "code",
-        "identifier" : "1307FD9B-B2FD-4BF3-BD86-F47CBECA48D7",
-        "iconIdentifier" : null,
-        "createdDate" : 1786355851131.429,
-        "title" : "",
-        "code" : "---\ntitle: Project Overview\nsummary: Goals, structure, and design intent of this project\n---\n\n> On a new project, this is seeded by `newDocument` from the user's brief. On an existing project, derive it by reading pages via `getPageMarkdown`. Update it as the site's scope and structure evolve. Pages are always authoritative over this note.\n\n## Purpose\n\nWhat is this site for? What problem does it solve or goal does it serve?\n\n## Target Audience\n\nWho is this site for?\n\n## Structure\n\nHow is the site organised? List the main pages and folders, and explain how the content is divided.\n",
-        "children" : [
-
-        ],
-        "pageDescription" : null,
-        "externalPageURL" : null,
-        "expanded" : true,
-        "manifests" : {
-
-        },
-        "browserTitle" : null
-      },
-      {
-        "uniqueID" : "91601E5C-28B9-4101-BCD0-A293E500A3EF",
-        "attributes" : {
-          "credit" : true,
-          "linkOpensInNewWindow" : false,
-          "lastChangedDate" : 1786356720050.509,
-          "customHeadStart" : "",
-          "shouldEnableSocialTags" : true,
-          "shouldIndexImages" : true,
-          "customSiteTitle" : "",
-          "customJavaScript" : "",
-          "useCustomSiteTitle" : false,
-          "excludeFromSitemap" : true,
-          "customPageStart" : "",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "shouldFollowLinks" : true,
-          "hidden" : false,
-          "customBodyEnd" : "",
-          "shouldAllowPreview" : true,
-          "enabled" : true,
-          "customCSS" : "",
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadEnd" : "",
-          "shouldEnableRobotTags" : true,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldArchivePage" : true,
-          "customBodyStart" : "",
-          "expires" : false,
-          "customPageEnd" : "",
-          "filename" : "style-writing.md",
-          "expiryUnit" : 0
-        },
-        "isIndex" : false,
-        "kind" : "code",
-        "identifier" : "91601E5C-28B9-4101-BCD0-A293E500A3EF",
-        "iconIdentifier" : null,
-        "createdDate" : 1786355851132.711,
-        "title" : "",
-        "code" : "---\ntitle: Writing Style\nsummary: Voice and tone guide — read before authoring any copy\n---\n\n## Voice & Tone\n\nConcise, confident and personable. The template speaks in a polished first-person creator voice without hype, jargon or generic marketing language.\n\n## Sentence Rhythm\n\nShort headings, compact labels and one- or two-sentence descriptions. Supporting copy is direct and easy to scan on mobile.\n\n## Vocabulary\n\nPrefer: thoughtful, selected, independent, creative, worldwide, curated, recent.\nAvoid exaggerated claims, buzzwords and overly corporate language.\n\n## Person & POV\n\nFirst person for personal links and status; direct action labels for calls to action.\n\n## Heading Style\n\nSentence case. Names and role lines are compact rather than oversized.\n\n## Caption & Label Style\n\nButton and card labels use short action phrases such as “Get in touch”, “View my portfolio” and “Join the newsletter”. Metadata labels are brief uppercase words.\n\n## See also\n- [[style-visual]]\n- [[concepts\/creator-profile-pattern]]\n",
-        "children" : [
-
-        ],
-        "pageDescription" : null,
-        "externalPageURL" : null,
-        "expanded" : true,
-        "manifests" : {
-
-        },
-        "browserTitle" : null
-      },
-      {
-        "uniqueID" : "05B7C315-D907-4D82-BAE8-614233131123",
-        "attributes" : {
-          "credit" : true,
-          "linkOpensInNewWindow" : false,
-          "lastChangedDate" : 1786358123385.7378,
-          "customHeadStart" : "",
-          "shouldEnableSocialTags" : true,
-          "shouldIndexImages" : true,
-          "customSiteTitle" : "",
-          "customJavaScript" : "",
-          "useCustomSiteTitle" : false,
-          "excludeFromSitemap" : true,
-          "customPageStart" : "",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "shouldFollowLinks" : true,
-          "hidden" : false,
-          "customBodyEnd" : "",
-          "shouldAllowPreview" : true,
-          "enabled" : true,
-          "customCSS" : "",
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadEnd" : "",
-          "shouldEnableRobotTags" : true,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldArchivePage" : true,
-          "customBodyStart" : "",
-          "expires" : false,
-          "customPageEnd" : "",
-          "filename" : "style-visual.md",
-          "expiryUnit" : 0
-        },
-        "isIndex" : false,
-        "kind" : "code",
-        "identifier" : "05B7C315-D907-4D82-BAE8-614233131123",
-        "iconIdentifier" : null,
-        "createdDate" : 1786355851133.925,
-        "title" : "",
-        "code" : "---\ntitle: Visual Style\nsummary: Layout and visual conventions — read before building or restructuring pages\n---\n\n## Layout Patterns\n\n- Single vertically scrolling personal homepage.\n- Immersive cover image up to 1120px wide, followed by a centred 700px content column.\n- Circular portrait overlaps the cover edge using a native transform.\n- Profile introduction is centred; links form a consistent vertical card stack.\n- Understated metadata rows and a minimal two-item footer close the page.\n\n## Colour Palette\n\n| Role | Light | Dark |\n|------|-------|------|\n| Page background | Stone 50 | Stone 950 |\n| Primary text | Stone 900 | Stone 50 |\n| Secondary text | Stone 500–700 | Stone 200–400 |\n| Neutral cards | Stone 100 \/ Stone 200 border | Stone 900 \/ Stone 700 border |\n| Featured card | Stone 900 | Stone 800 |\n| Lavender card | Accent 100 | Accent 950 |\n| Sage card | Olive 100 | Olive 900 |\n| Availability | Emerald 500 | Emerald 400 |\n\nDark mode uses warm near-black surfaces rather than pure black. Contrast remains strong while preserving the editorial stone palette.\n\n## Typography\n\n| Role | Font | Size \/ Weight |\n|------|------|---------------|\n| Name | System heading | 3xl mobile, 4xl desktop \/ 600 |\n| Role | System body | base–lg \/ 500 |\n| Body | System body | base \/ 400 |\n| Card title | System body | base–lg \/ 600 |\n| Metadata | System body | xs–sm |\n\n## Spacing & Rhythm\n\n- Mobile page gutters: spacing token 4; desktop gutters: token 8.\n- Content column maximum width: 700px.\n- Card gap: token 4; card padding: token 4 mobile and 5 desktop.\n- Profile spacing stays compact; larger pauses separate the profile, link stack and details.\n\n## Image Treatment\n\n- Editorial, desaturated lifestyle imagery with warm stone, muted lavender and sage tones.\n- Cover: 260px mobile, 360px desktop, cover crop.\n- Portrait: 132px mobile, 164px desktop, circular crop with an 8-token ring matching the page background in both appearances.\n- Card thumbnails: square, 64px mobile and 80px desktop, 2xl radius.\n\n## Interaction\n\n- Social links use 48px linked Flex circles with centred 20px SVG icons.\n- Default social styling is monochrome in both appearances.\n- Service-colour rollovers use pastel tints in light mode and restrained deep tints with brighter icons in dark mode.\n- Buttons and cards use 180–200ms transitions.\n- Link cards lift by 3px; social\/contact controls lift by 2px.\n- Whole cards are semantic links.\n\n## Navigation Structure\n\nNo traditional navigation. Social, contact and content links are presented as restrained actions within the single-page profile.\n\n## See also\n- [[style-writing]]\n- [[concepts\/creator-profile-pattern]]\n",
-        "children" : [
-
-        ],
-        "pageDescription" : null,
-        "externalPageURL" : null,
-        "expanded" : true,
-        "manifests" : {
-
-        },
-        "browserTitle" : null
-      },
-      {
-        "uniqueID" : "E9A29187-7CEA-4CE4-B65D-824D20E444DD",
-        "attributes" : {
-          "credit" : true,
-          "linkOpensInNewWindow" : false,
-          "lastChangedDate" : 1786358123386.6348,
-          "customHeadStart" : "",
-          "shouldEnableSocialTags" : true,
-          "shouldIndexImages" : true,
-          "customSiteTitle" : "",
-          "customJavaScript" : "",
-          "useCustomSiteTitle" : false,
-          "excludeFromSitemap" : true,
-          "customPageStart" : "",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "shouldFollowLinks" : true,
-          "hidden" : false,
-          "customBodyEnd" : "",
-          "shouldAllowPreview" : true,
-          "enabled" : true,
-          "customCSS" : "",
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadEnd" : "",
-          "shouldEnableRobotTags" : true,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldArchivePage" : true,
-          "customBodyStart" : "",
-          "expires" : false,
-          "customPageEnd" : "",
-          "filename" : "journal.md",
-          "expiryUnit" : 0
-        },
-        "isIndex" : false,
-        "kind" : "code",
-        "identifier" : "E9A29187-7CEA-4CE4-B65D-824D20E444DD",
-        "iconIdentifier" : null,
-        "createdDate" : 1786355851135.179,
-        "title" : "",
-        "code" : "---\ntitle: Journal\nsummary: Running log of sessions, decisions, and progress\n---\n\nAppend-only log of work sessions, decisions, and notable events. Newest entries at the top.\n\nUse `appendEntry` with a date heading to add new entries.\n\n## 2026-08-10 — Premium creator profile template\n\nBuilt [[pages\/home]] as a complete premium creator \/ personal-profile template using built-in Elements components. Added generated editorial cover, portrait and card imagery; responsive profile and card layouts; social\/contact actions; metadata; SEO\/Open Graph settings; and native hover transitions. Documented the reusable approach in [[concepts\/creator-profile-pattern]] and updated both design-system guides.\n\n## 2026-08-10 — Social icon resources\n\nReplaced the temporary social initials on [[pages\/home]] with the supplied monochrome Instagram, LinkedIn, YouTube, X and TikTok SVG resources. Preserved the existing 48px circular buttons, links and hover treatment.\n\n## 2026-08-10 — Corrected social icon structure\n\nReplaced the five social Button components on [[pages\/home]] with linked Flex circles containing individual SVG components. Preserved the 48px sizing, monochrome treatment, link destinations and hover lift.\n\n## 2026-08-10 — Service-colour social rollovers\n\nAdded coordinated rollover states to the linked social Flex circles on [[pages\/home]]. Each uses a pastel service-tinted background and border plus a matching SVG fill colour, with 180ms colour transitions and the existing subtle lift.\n\n## 2026-08-10 — Restored social icon sizing\n\nCorrected an oversized social-icon regression on [[pages\/home]]. Restored every SVG to a fixed 20px size with spacing disabled while keeping its parent linked Flex circle at 48px.\n\n## 2026-08-10 — Complete dark appearance\n\nAdded a complete dark appearance to [[pages\/home]] using dual theme-colour values. Updated the page, profile ring, typography, CTA, featured card, neutral and accent cards, social controls, metadata dividers and footer. Preserved all layout dimensions, including 48px social circles and 20px SVG icons.\n",
-        "children" : [
-
-        ],
-        "pageDescription" : null,
-        "externalPageURL" : null,
-        "expanded" : true,
-        "manifests" : {
-
-        },
-        "browserTitle" : null
-      },
-      {
-        "uniqueID" : "06B53F7E-0337-4B83-9C8A-8AAD80AA651C",
-        "attributes" : {
-          "credit" : true,
-          "linkOpensInNewWindow" : false,
-          "lastChangedDate" : 1786355851137.753,
-          "customHeadStart" : "",
-          "shouldEnableSocialTags" : true,
-          "shouldIndexImages" : true,
-          "customSiteTitle" : "",
-          "customJavaScript" : "",
-          "useCustomSiteTitle" : false,
-          "excludeFromSitemap" : true,
-          "customPageStart" : "",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "shouldFollowLinks" : true,
-          "hidden" : false,
-          "customBodyEnd" : "",
-          "shouldAllowPreview" : true,
-          "enabled" : true,
-          "customCSS" : "",
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadEnd" : "",
-          "shouldEnableRobotTags" : true,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldArchivePage" : true,
-          "customBodyStart" : "",
-          "expires" : false,
-          "customPageEnd" : "",
-          "filename" : "concerns.md",
-          "expiryUnit" : 0
-        },
-        "isIndex" : false,
-        "kind" : "code",
-        "identifier" : "06B53F7E-0337-4B83-9C8A-8AAD80AA651C",
-        "iconIdentifier" : null,
-        "createdDate" : 1786355851136.666,
-        "title" : "",
-        "code" : "---\ntitle: Concerns\nsummary: Derived rollup of known problems, tech debt, and gotchas\n---\n\n**Derived — do not hand-edit.** Regenerated at the end of each session by aggregating the `concerns:` frontmatter from every `pages\/` and `concepts\/` note, plus the document-level findings from `lintKnowledge` (duplicate components, malformed component files, non-token styling). To add a concern, add it to the `concerns:` list in the relevant note; it will surface here on the next `lintKnowledge` run.\n\nDetailed AI session blockers are in `field-reports\/` and summarised here.\n\n## Tech Debt \/ Structural\n\n| Severity | Component \/ Page | Description | Notes |\n|----------|-----------------|-------------|-------|\n\n## Content \/ Editorial\n\n| Severity | Page | Description | Notes |\n|----------|------|-------------|-------|\n\n## Open Field Reports\n\n| Date | Title | Status |\n|------|-------|--------|\n",
-        "children" : [
-
-        ],
-        "pageDescription" : null,
-        "externalPageURL" : null,
-        "expanded" : true,
-        "manifests" : {
-
-        },
-        "browserTitle" : null
-      },
-      {
-        "uniqueID" : "96363657-4D62-494D-932C-E04740A98CD3",
-        "attributes" : {
-          "credit" : true,
-          "linkOpensInNewWindow" : false,
-          "lastChangedDate" : 1786355851139.127,
-          "customHeadStart" : "",
-          "shouldEnableSocialTags" : true,
-          "shouldIndexImages" : true,
-          "customSiteTitle" : "",
-          "customJavaScript" : "",
-          "useCustomSiteTitle" : false,
-          "excludeFromSitemap" : true,
-          "customPageStart" : "",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "shouldFollowLinks" : true,
-          "hidden" : false,
-          "customBodyEnd" : "",
-          "shouldAllowPreview" : true,
-          "enabled" : true,
-          "customCSS" : "",
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadEnd" : "",
-          "shouldEnableRobotTags" : true,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldArchivePage" : true,
-          "customBodyStart" : "",
-          "expires" : false,
-          "customPageEnd" : "",
-          "filename" : "backlog.md",
-          "expiryUnit" : 0
-        },
-        "isIndex" : false,
-        "kind" : "code",
-        "identifier" : "96363657-4D62-494D-932C-E04740A98CD3",
-        "iconIdentifier" : null,
-        "createdDate" : 1786355851137.789,
-        "title" : "",
-        "code" : "---\ntitle: Backlog\nsummary: Outstanding work and speculative ideas with priority and status\n---\n\nTracks both committed tasks and speculative ideas. Mark speculative items with `idea` in the Type column.\n\n| Priority | Type | Task | Status |\n|----------|------|------|--------|\n",
-        "children" : [
-
-        ],
-        "pageDescription" : null,
-        "externalPageURL" : null,
-        "expanded" : true,
-        "manifests" : {
-
-        },
-        "browserTitle" : null
-      },
-      {
-        "uniqueID" : "00A8D776-C534-4533-9CC7-35298F12EE5E",
-        "attributes" : {
-          "credit" : true,
-          "linkOpensInNewWindow" : false,
-          "lastChangedDate" : 1786355851140.397,
-          "customHeadStart" : "",
-          "shouldEnableSocialTags" : true,
-          "shouldIndexImages" : true,
-          "customSiteTitle" : "",
-          "customJavaScript" : "",
-          "useCustomSiteTitle" : false,
-          "excludeFromSitemap" : true,
-          "customPageStart" : "",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "shouldFollowLinks" : true,
-          "hidden" : false,
-          "customBodyEnd" : "",
-          "shouldAllowPreview" : true,
-          "enabled" : true,
-          "customCSS" : "",
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadEnd" : "",
-          "shouldEnableRobotTags" : true,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldArchivePage" : true,
-          "customBodyStart" : "",
-          "expires" : false,
-          "customPageEnd" : "",
-          "filename" : "services.md",
-          "expiryUnit" : 0
-        },
-        "isIndex" : false,
-        "kind" : "code",
-        "identifier" : "00A8D776-C534-4533-9CC7-35298F12EE5E",
-        "iconIdentifier" : null,
-        "createdDate" : 1786355851139.184,
-        "title" : "",
-        "code" : "---\ntitle: Services\nsummary: External services, APIs, credentials, and integrations\n---\n\nDocument external services, APIs, and integrations used by this project.\n\n| Service | Purpose | Notes |\n|---------|---------|-------|\n",
-        "children" : [
-
-        ],
-        "pageDescription" : null,
-        "externalPageURL" : null,
-        "expanded" : true,
-        "manifests" : {
-
-        },
-        "browserTitle" : null
-      },
-      {
-        "uniqueID" : "F73050E5-2814-4060-8B39-10127DDCA714",
-        "attributes" : {
-          "credit" : true,
-          "linkOpensInNewWindow" : false,
-          "lastChangedDate" : 1786358133369.896,
-          "customHeadStart" : "",
-          "shouldEnableSocialTags" : true,
-          "shouldIndexImages" : true,
-          "customSiteTitle" : "",
-          "customJavaScript" : "",
-          "useCustomSiteTitle" : false,
-          "excludeFromSitemap" : true,
-          "customPageStart" : "",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "shouldFollowLinks" : true,
-          "hidden" : false,
-          "customBodyEnd" : "",
-          "shouldAllowPreview" : true,
-          "enabled" : true,
-          "customCSS" : "",
-          "customHeader" : "",
-          "encoding" : 1,
-          "customHeadEnd" : "",
-          "shouldEnableRobotTags" : true,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldArchivePage" : true,
-          "customBodyStart" : "",
-          "expires" : false,
-          "customPageEnd" : "",
-          "filename" : "sync.md",
-          "expiryUnit" : 0
-        },
-        "isIndex" : false,
-        "kind" : "code",
-        "identifier" : "F73050E5-2814-4060-8B39-10127DDCA714",
-        "iconIdentifier" : null,
-        "createdDate" : 1786355851140.491,
-        "title" : "",
-        "code" : "---\ntitle: Wiki Sync\nsummary: Machine-generated sync snapshot. Do not edit by hand.\n---\n\n<!-- Machine-generated. Do not edit by hand. -->\n\n```json\n{\n  \"pages\" : {\n    \"2C795624-7F1C-48D3-8198-947753C609EA\" : \"2026-08-10T10:35:29Z\"\n  },\n  \"syncedAt\" : \"2026-08-10T10:35:33Z\"\n}\n```\n",
-        "children" : [
-
-        ],
-        "pageDescription" : null,
-        "externalPageURL" : null,
-        "expanded" : true,
-        "manifests" : {
-
-        },
-        "browserTitle" : null
-      }
-    ],
-    "pageDescription" : null,
-    "externalPageURL" : null,
-    "expanded" : true,
-    "manifests" : {
-
-    },
-    "browserTitle" : null
-  },
-  "rootPrefabNode" : {
-    "expanded" : true,
-    "identifier" : "7375E3E4-CC68-4CCD-AADD-8A906B12FC45",
-    "kind" : {
-      "folder" : {
-
-      }
-    },
-    "children" : [
-
-    ],
-    "title" : "Project",
-    "item" : null
-  },
-  "version" : 9,
-  "rootPage" : {
-    "uniqueID" : "28E517A6-89A4-478E-8BA5-C25ED7088A3E",
-    "attributes" : {
-      "credit" : true,
-      "linkOpensInNewWindow" : false,
-      "lastChangedDate" : 1786355816253.73,
-      "customHeadStart" : "",
-      "shouldEnableSocialTags" : true,
-      "shouldIndexImages" : true,
-      "customSiteTitle" : "",
-      "customJavaScript" : "",
-      "useCustomSiteTitle" : false,
-      "excludeFromSitemap" : true,
-      "customPageStart" : "",
-      "expiryQuantity" : 2,
-      "shouldIndexPage" : true,
-      "shouldFollowLinks" : true,
-      "hidden" : false,
-      "customBodyEnd" : "",
-      "shouldAllowPreview" : true,
-      "enabled" : true,
-      "customCSS" : "",
-      "customHeader" : "",
-      "encoding" : 1,
-      "customHeadEnd" : "",
-      "shouldEnableRobotTags" : true,
-      "changedStatuses" : {
-
-      },
-      "shouldArchivePage" : true,
-      "customBodyStart" : "",
-      "expires" : false,
-      "customPageEnd" : "",
-      "filename" : "",
-      "expiryUnit" : 0
-    },
-    "isIndex" : false,
-    "kind" : "folder",
-    "identifier" : "28E517A6-89A4-478E-8BA5-C25ED7088A3E",
-    "iconIdentifier" : null,
-    "createdDate" : 1786355816253.927,
-    "title" : "root",
-    "code" : null,
-    "children" : [
-      {
-        "uniqueID" : "page0",
-        "attributes" : {
-          "credit" : false,
-          "openGraphTitle" : "Jordan Vale — Independent Designer & Creative Consultant",
-          "linkOpensInNewWindow" : false,
-          "lastChangedDate" : 1786358139705.1968,
-          "backgroundColor" : {
-            "shade" : 500,
-            "colorStripId" : "none",
-            "darkShade" : 500,
-            "darkColorStripId" : "none"
-          },
-          "customHeadStart" : "",
-          "shouldEnableSocialTags" : true,
-          "shouldIndexImages" : true,
-          "customSiteTitle" : "",
-          "useCustomSiteTitle" : false,
-          "excludeFromSitemap" : false,
-          "customJavaScript" : "",
-          "customPageStart" : "",
-          "expiryQuantity" : 2,
-          "shouldIndexPage" : true,
-          "shouldFollowLinks" : true,
-          "hidden" : false,
-          "customBodyEnd" : "",
-          "shouldAllowPreview" : true,
-          "enabled" : true,
-          "customCSS" : "",
-          "customHeader" : "",
-          "openGraphDescription" : "Brand, web and digital product design for ambitious teams worldwide.",
-          "metaDescription" : "Independent designer and creative consultant helping ambitious brands create thoughtful digital experiences.",
-          "encoding" : 1,
-          "customHeadEnd" : "",
-          "shouldEnableRobotTags" : true,
-          "changedStatuses" : {
-            "default" : true
-          },
-          "shouldArchivePage" : true,
-          "customBodyStart" : "",
-          "expires" : false,
-          "customPageEnd" : "",
-          "filename" : "index.html",
-          "expiryUnit" : 0
-        },
-        "isIndex" : true,
-        "kind" : "page",
-        "identifier" : "2C795624-7F1C-48D3-8198-947753C609EA",
-        "iconIdentifier" : null,
-        "createdDate" : 1786355816267.446,
-        "title" : "Home",
-        "code" : null,
-        "children" : [
-
-        ],
-        "pageDescription" : null,
-        "externalPageURL" : null,
-        "expanded" : true,
-        "manifests" : {
-
-        },
-        "browserTitle" : "Bob Fennison — Independent Designer & Creative Consultant"
-      }
-    ],
-    "pageDescription" : null,
-    "externalPageURL" : null,
-    "expanded" : true,
-    "manifests" : {
-
-    },
-    "browserTitle" : null
-  },
-  "uiStateIdentifier" : "B603286C-298E-4771-9501-0F041A49F8FE",
-  "identifier" : "B603286C-298E-4771-9501-0F041A49F8FE",
-  "privacy" : {
-    "anonymiseThirdPartyRequests" : false
   }
 }
