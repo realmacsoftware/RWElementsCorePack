@@ -4,7 +4,7 @@
       "developerName" : "Realmac Software",
       "displayName" : "Background",
       "elementId" : "com.realmacsoftware.background",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/modal",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/grid",
       "packId" : "com.realmac.corepack",
       "packName" : "Core",
       "packVersion" : 2
@@ -13,7 +13,7 @@
       "developerName" : "Realmac Software",
       "displayName" : "Button",
       "elementId" : "com.realmacsoftware.button",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/modal",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/grid",
       "packId" : "com.realmac.corepack",
       "packName" : "Core",
       "packVersion" : 2
@@ -22,7 +22,7 @@
       "developerName" : "Realmac Software",
       "displayName" : "Container",
       "elementId" : "com.realmacsoftware.container",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/modal",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/grid",
       "packId" : "com.realmac.corepack",
       "packName" : "Core",
       "packVersion" : 2
@@ -31,7 +31,7 @@
       "developerName" : "Realmac Software",
       "displayName" : "Divider",
       "elementId" : "com.realmacsoftware.divider",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/modal",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/grid",
       "packId" : "com.realmac.corepack",
       "packName" : "Core",
       "packVersion" : 2
@@ -40,7 +40,7 @@
       "developerName" : "Realmac Software",
       "displayName" : "Flex",
       "elementId" : "com.realmacsoftware.flex",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/modal",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/grid",
       "packId" : "com.realmac.corepack",
       "packName" : "Core",
       "packVersion" : 2
@@ -49,7 +49,7 @@
       "developerName" : "Elements Platform",
       "displayName" : "Form",
       "elementId" : "com.realmacsoftware.form",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/form-radio",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/form-input",
       "packId" : "com.elementsplatform.formspack",
       "packName" : "Forms.elementspack",
       "packVersion" : 1
@@ -58,7 +58,7 @@
       "developerName" : "Elements Platform",
       "displayName" : "Input",
       "elementId" : "com.realmacsoftware.formInput",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/form-radio",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/form-input",
       "packId" : "com.elementsplatform.formspack",
       "packName" : "Forms.elementspack",
       "packVersion" : 1
@@ -67,7 +67,7 @@
       "developerName" : "Elements Platform",
       "displayName" : "Submit",
       "elementId" : "com.realmacsoftware.formSubmit",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/form-radio",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/form-input",
       "packId" : "com.elementsplatform.formspack",
       "packName" : "Forms.elementspack",
       "packVersion" : 1
@@ -76,7 +76,7 @@
       "developerName" : "Realmac Software",
       "displayName" : "Grid",
       "elementId" : "com.realmacsoftware.grid",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/modal",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/grid",
       "packId" : "com.realmac.corepack",
       "packName" : "Core",
       "packVersion" : 2
@@ -85,7 +85,7 @@
       "developerName" : "Realmac Software",
       "displayName" : "Image",
       "elementId" : "com.realmacsoftware.image",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/modal",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/grid",
       "packId" : "com.realmac.corepack",
       "packName" : "Core",
       "packVersion" : 2
@@ -102,7 +102,7 @@
       "developerName" : "Realmac Software",
       "displayName" : "SVG",
       "elementId" : "com.realmacsoftware.svg",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/modal",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/grid",
       "packId" : "com.realmac.corepack",
       "packName" : "Core",
       "packVersion" : 2
@@ -111,7 +111,7 @@
       "developerName" : "Realmac Software",
       "displayName" : "Text",
       "elementId" : "com.realmacsoftware.text",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/modal",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/grid",
       "packId" : "com.realmac.corepack",
       "packName" : "Core",
       "packVersion" : 2
