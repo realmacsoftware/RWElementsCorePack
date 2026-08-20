@@ -14,7 +14,9 @@
           },
 
           get iframeAttributes() {
-            return `autoplay=1&loop=${this.options.loop}&mute=${this.options.muted}&controls=${this.options.controls}`;
+            // Vimeo's mute parameter is "muted"; YouTube's is "mute".
+            const muteParam = this.platform === 'vimeo' ? 'muted' : 'mute';
+            return `autoplay=1&loop=${this.options.loop}&${muteParam}=${this.options.muted}&controls=${this.options.controls}`;
           },
 
           get iframeUrl() {
