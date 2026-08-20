@@ -5,14 +5,14 @@
       "displayName" : "Online Editor",
       "elementId" : "com.elementsplatform.cmsOnlineEditor",
       "packId" : "com.elementsplatform.cms",
-      "packName" : "CMS.elementspack",
+      "packName" : "CMS",
       "packVersion" : 2
     },
     {
       "developerName" : "Realmac Software",
       "displayName" : "Button",
       "elementId" : "com.realmacsoftware.button",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/navigation-breadcrumbs",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/markdown",
       "packId" : "com.realmac.corepack",
       "packName" : "Core",
       "packVersion" : 2
@@ -22,7 +22,7 @@
       "displayName" : "Collection",
       "elementId" : "com.realmacsoftware.cmsCollection",
       "packId" : "com.elementsplatform.cms",
-      "packName" : "CMS.elementspack",
+      "packName" : "CMS",
       "packVersion" : 2
     },
     {
@@ -30,7 +30,7 @@
       "displayName" : "Load More",
       "elementId" : "com.realmacsoftware.cmsCollectionLoadMore",
       "packId" : "com.elementsplatform.cms",
-      "packName" : "CMS.elementspack",
+      "packName" : "CMS",
       "packVersion" : 2
     },
     {
@@ -38,7 +38,7 @@
       "displayName" : "Collection Pagination",
       "elementId" : "com.realmacsoftware.cmsCollectionPagination",
       "packId" : "com.elementsplatform.cms",
-      "packName" : "CMS.elementspack",
+      "packName" : "CMS",
       "packVersion" : 2
     },
     {
@@ -46,7 +46,15 @@
       "displayName" : "Item",
       "elementId" : "com.realmacsoftware.cmsItem",
       "packId" : "com.elementsplatform.cms",
-      "packName" : "CMS.elementspack",
+      "packName" : "CMS",
+      "packVersion" : 2
+    },
+    {
+      "developerName" : "Elements Platform",
+      "displayName" : "Related Items",
+      "elementId" : "com.realmacsoftware.cmsRelatedItems",
+      "packId" : "com.elementsplatform.cms",
+      "packName" : "CMS",
       "packVersion" : 2
     },
     {
@@ -54,14 +62,14 @@
       "displayName" : "Search",
       "elementId" : "com.realmacsoftware.cmsSearch",
       "packId" : "com.elementsplatform.cms",
-      "packName" : "CMS.elementspack",
+      "packName" : "CMS",
       "packVersion" : 2
     },
     {
       "developerName" : "Realmac Software",
       "displayName" : "Container",
       "elementId" : "com.realmacsoftware.container",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/navigation-breadcrumbs",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/markdown",
       "packId" : "com.realmac.corepack",
       "packName" : "Core",
       "packVersion" : 2
@@ -70,7 +78,25 @@
       "developerName" : "Realmac Software",
       "displayName" : "Flex",
       "elementId" : "com.realmacsoftware.flex",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/navigation-breadcrumbs",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/markdown",
+      "packId" : "com.realmac.corepack",
+      "packName" : "Core",
+      "packVersion" : 2
+    },
+    {
+      "developerName" : "Realmac Software",
+      "displayName" : "Grid",
+      "elementId" : "com.realmacsoftware.grid",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/markdown",
+      "packId" : "com.realmac.corepack",
+      "packName" : "Core",
+      "packVersion" : 2
+    },
+    {
+      "developerName" : "Realmac Software",
+      "displayName" : "Image",
+      "elementId" : "com.realmacsoftware.image",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/markdown",
       "packId" : "com.realmac.corepack",
       "packName" : "Core",
       "packVersion" : 2
@@ -79,7 +105,7 @@
       "developerName" : "Realmac Software",
       "displayName" : "Top Pages",
       "elementId" : "com.realmacsoftware.navPageList",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/navigation-breadcrumbs",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/markdown",
       "packId" : "com.realmac.corepack",
       "packName" : "Core",
       "packVersion" : 2
@@ -96,7 +122,7 @@
       "developerName" : "Realmac Software",
       "displayName" : "SVG",
       "elementId" : "com.realmacsoftware.svg",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/navigation-breadcrumbs",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/markdown",
       "packId" : "com.realmac.corepack",
       "packName" : "Core",
       "packVersion" : 2
@@ -105,7 +131,7 @@
       "developerName" : "Realmac Software",
       "displayName" : "Text",
       "elementId" : "com.realmacsoftware.text",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/navigation-breadcrumbs",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/markdown",
       "packId" : "com.realmac.corepack",
       "packName" : "Core",
       "packVersion" : 2
@@ -114,7 +140,7 @@
       "developerName" : "Realmac Software",
       "displayName" : "Typography",
       "elementId" : "com.realmacsoftware.typography",
-      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/navigation-breadcrumbs",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/markdown",
       "packId" : "com.realmac.corepack",
       "packName" : "Core",
       "packVersion" : 2
