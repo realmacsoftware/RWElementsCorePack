@@ -1,82 +1,82 @@
 {
-   "projects": [
-      {
-           "filename": "Asterra.elements",
-           "title": "Asterra",
-           "description": "Bold, futuristic landing page for AI startups and emerging technology products.",
-           "thumbnail": "asterra.jpg"
-       },
-       {
+    "projects": [
+        {
+            "filename": "Artist.elements",
+            "title": "Artist",
+            "description": "A sleek project for artists and musicians",
+            "thumbnail": "artist-thumbnail.jpg"
+        },
+        {
+            "filename": "Asterra.elements",
+            "title": "Asterra",
+            "description": "Bold, futuristic landing page for AI startups and emerging technology products.",
+            "thumbnail": "asterra.jpg"
+        },
+        {
             "filename": "Burger Co.elements",
             "title": "Burger Co",
             "description": "High-impact website for restaurants and modern food brands.",
             "thumbnail": "burger-co.jpg"
         },
-       {
-           "filename": "Consultant.elements",
-           "title": "Consultant",
-           "description": "Refined, minimal website for independent consultants and advisors.",
-           "thumbnail": "consultant.jpg"
-       },
-       {
-              "filename": "Wellness.elements",
-              "title": "Wellness",
-              "description": "Calm, modern website for wellness coaches and holistic practitioners.",
-              "thumbnail": "wellness.jpg"
-          },
-          {
-               "filename": "Kinetic.elements",
-               "title": "Kinetic",
-               "description": "Bold, playful website for creative studios, designers, and digital agencies.",
-               "thumbnail": "kinetic.jpg"
-           },
-       {
-           "filename": "Yonder.elements",
-           "title": "Yonder",
-           "description": "Polished personal link page for creators, freelancers, and independent professionals.",
-           "thumbnail": "yonder.jpg"
-       },
-       {
+        {
+            "filename": "Consultant.elements",
+            "title": "Consultant",
+            "description": "Refined, minimal website for independent consultants and advisors.",
+            "thumbnail": "consultant.jpg"
+        },
+        {
+            "filename": "Fitness.elements",
+            "title": "Fitness",
+            "description": "Designed for fitness centers, personal trainers, and wellness studios.",
+            "thumbnail": "fitness-thumbnail.jpg"
+        },
+        {
+            "filename": "Kinetic.elements",
+            "title": "Kinetic",
+            "description": "Bold, playful website for creative studios, designers, and digital agencies.",
+            "thumbnail": "kinetic.jpg"
+        },
+        {
+            "filename": "Landing.elements",
+            "title": "Landing",
+            "description": "Capture interest and build anticipation for the launch",
+            "thumbnail": "landing-thumbnail.jpg"
+        },
+        {
+            "filename": "Link In Bio.elements",
+            "title": "Link In Bio",
+            "description": "Showcase who you are with a photo, title, and custom links",
+            "thumbnail": "link-in-bio-thumbnail.jpg"
+        },
+        {
+            "filename": "Microblog.elements",
+            "title": "Microblog",
+            "description": "A simple microblogging platform.",
+            "thumbnail": "microblog-thumbnail.jpg"
+        },
+        {
+            "filename": "North Eleven.elements",
+            "title": "North Eleven",
+            "description": "Clean and refined design inspired by modern architectural aesthetics.",
+            "thumbnail": "north-eleven-thumbnail.jpg"
+        },
+        {
             "filename": "Profile.elements",
             "title": "Profile",
             "description": "Clean, modern profile page for freelancers and independent creatives.",
             "thumbnail": "profile.jpg"
         },
         {
-        "filename": "North Eleven.elements",
-        "title": "North Eleven",
-        "description": "Clean and refined design inspired by modern architectural aesthetics.",
-        "thumbnail": "north-eleven-thumbnail.jpg"
-    },
-    {
-        "filename": "Microblog.elements",
-        "title": "Microblog",
-        "description": "A simple microblogging platform.",
-        "thumbnail": "microblog-thumbnail.jpg"
-    },
-    {
-        "filename": "Link In Bio.elements",
-        "title": "Link In Bio",
-        "description": "Showcase who you are with a photo, title, and custom links",
-        "thumbnail": "link-in-bio-thumbnail.jpg"
-    },
-    {
-        "filename": "Landing.elements",
-        "title": "Landing",
-        "description": "Capture interest and build anticipation for the launch",
-        "thumbnail": "landing-thumbnail.jpg"
-    },
-    {
-        "filename": "Fitness.elements",
-        "title": "Fitness",
-        "description": "Designed for fitness centers, personal trainers, and wellness studios.",
-        "thumbnail": "fitness-thumbnail.jpg"
-    },
-    {
-        "filename": "Artist.elements",
-        "title": "Artist",
-        "description": "A sleek project for artists and musicians",
-        "thumbnail": "artist-thumbnail.jpg"
-    }
-]
+            "filename": "Wellness.elements",
+            "title": "Wellness",
+            "description": "Calm, modern website for wellness coaches and holistic practitioners.",
+            "thumbnail": "wellness.jpg"
+        },
+        {
+            "filename": "Yonder.elements",
+            "title": "Yonder",
+            "description": "Polished personal link page for creators, freelancers, and independent professionals.",
+            "thumbnail": "yonder.jpg"
+        }
+    ]
 }
