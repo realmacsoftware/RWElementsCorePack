@@ -1,585 +1,586 @@
 {
+  "siteResources" : {
+    "root" : "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E",
+    "resources" : {
+      "23AAB4DA-BD52-4865-9503-90B4500BAE31" : {
+        "expanded" : false,
+        "identifier" : "23AAB4DA-BD52-4865-9503-90B4500BAE31",
+        "changedStatuses" : {
+
+        },
+        "kind" : 0,
+        "parentIdentifier" : "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E",
+        "name" : "svgs",
+        "hostedImageURLs" : [
+
+        ],
+        "smartFolderKind" : 0,
+        "timeStamp" : -62135769600000
+      },
+      "F15AB121-3EBB-4DB0-AE3B-08524EDEE011" : {
+        "isSVG" : true,
+        "expanded" : true,
+        "identifier" : "F15AB121-3EBB-4DB0-AE3B-08524EDEE011",
+        "typeIdentifier" : "public.svg-image",
+        "kind" : 1,
+        "parentIdentifier" : "23AAB4DA-BD52-4865-9503-90B4500BAE31",
+        "changedStatuses" : {
+
+        },
+        "name" : "star-empty.svg",
+        "hostedImageURLs" : [
+
+        ],
+        "smartFolderKind" : 0,
+        "originalName" : "star-empty.svg",
+        "timeStamp" : 1750264925370.8977
+      },
+      "018922B0-62A7-4E8A-8602-8186CB99520C" : {
+        "parentIdentifier" : "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E",
+        "timeStamp" : 1758884881294.4438,
+        "typeIdentifier" : "public.jpeg",
+        "identifier" : "018922B0-62A7-4E8A-8602-8186CB99520C",
+        "name" : "avatar.jpg",
+        "originalName" : "avatar.jpg",
+        "isSVG" : false,
+        "smartFolderKind" : 0,
+        "expanded" : true,
+        "metadata" : {
+          "height" : 1000,
+          "aspect" : 1,
+          "width" : 1000
+        },
+        "changedStatuses" : {
+
+        },
+        "hostedImageURLs" : [
+
+        ],
+        "kind" : 1
+      },
+      "173F49B9-A0F1-4B2F-8C7C-6474B2EB11CC" : {
+        "isSVG" : true,
+        "expanded" : false,
+        "identifier" : "173F49B9-A0F1-4B2F-8C7C-6474B2EB11CC",
+        "typeIdentifier" : "public.svg-image",
+        "kind" : 1,
+        "parentIdentifier" : "23AAB4DA-BD52-4865-9503-90B4500BAE31",
+        "changedStatuses" : {
+
+        },
+        "name" : "email.svg",
+        "hostedImageURLs" : [
+
+        ],
+        "smartFolderKind" : 0,
+        "originalName" : "mail.svg",
+        "timeStamp" : 1750264925370.2178
+      },
+      "CEA1B591-06BD-41AD-B29A-03DCA134FFB1" : {
+        "isSVG" : true,
+        "expanded" : false,
+        "identifier" : "CEA1B591-06BD-41AD-B29A-03DCA134FFB1",
+        "typeIdentifier" : "public.svg-image",
+        "kind" : 1,
+        "parentIdentifier" : "23AAB4DA-BD52-4865-9503-90B4500BAE31",
+        "changedStatuses" : {
+
+        },
+        "name" : "github.svg",
+        "hostedImageURLs" : [
+
+        ],
+        "smartFolderKind" : 0,
+        "originalName" : "github.svg",
+        "timeStamp" : 1750254092057.1035
+      },
+      "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E" : {
+        "expanded" : true,
+        "identifier" : "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E",
+        "changedStatuses" : {
+
+        },
+        "kind" : 0,
+        "name" : "Resources",
+        "hostedImageURLs" : [
+
+        ],
+        "smartFolderKind" : 0,
+        "timeStamp" : -62135769600000
+      },
+      "8EB85E56-164A-4888-B619-F101C1C5593A" : {
+        "isSVG" : true,
+        "expanded" : false,
+        "identifier" : "8EB85E56-164A-4888-B619-F101C1C5593A",
+        "typeIdentifier" : "public.svg-image",
+        "kind" : 1,
+        "parentIdentifier" : "23AAB4DA-BD52-4865-9503-90B4500BAE31",
+        "changedStatuses" : {
+
+        },
+        "name" : "mastodon.svg",
+        "hostedImageURLs" : [
+
+        ],
+        "smartFolderKind" : 0,
+        "originalName" : "mastodon.svg",
+        "timeStamp" : 1750253948462.6865
+      }
+    },
+    "children" : {
+      "23AAB4DA-BD52-4865-9503-90B4500BAE31" : [
+        "173F49B9-A0F1-4B2F-8C7C-6474B2EB11CC",
+        "8EB85E56-164A-4888-B619-F101C1C5593A",
+        "CEA1B591-06BD-41AD-B29A-03DCA134FFB1",
+        "F15AB121-3EBB-4DB0-AE3B-08524EDEE011"
+      ],
+      "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E" : [
+        "018922B0-62A7-4E8A-8602-8186CB99520C",
+        "23AAB4DA-BD52-4865-9503-90B4500BAE31"
+      ]
+    }
+  },
+  "publishing" : {
+    "publishSettingsConfigured" : true,
+    "publishingDestinations" : [
+
+    ]
+  },
+  "site" : {
+    "wantsXMLSiteMap" : true,
+    "cruftlessLinks" : true,
+    "pageTemplate" : "{{page.customPageStart}}{{page.componentPageStart}}\n\n<!doctype html>\n<html class=\"scroll-smooth\" {{page.languageAttributes}}>\n<head>\n    {{page.customHeadStart}}\n    {{page.componentHeadStart}}\n    \n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width\">\n\n    {{page.componentHeader}}\n    {{page.opengraph}}\n    {{page.customHeader}}\n    \n    <title>{{page.title}}<\/title>\n    \n    {{page.componentCSS}}\n    {{page.customCSS}}\n\n    {{page.componentJS}}\n    {{page.customJS}}\n\n    {{page.componentHeadEnd}}\n    {{page.customHeadEnd}}\n<\/head>\n<body class=\"{{page.bodyClasses}}\" {{page.bodyAttributes}}>\n    {{page.customBodyStart}}\n    {{page.componentBodyStart}}\n\n    {{page.content}}\n\n    {{page.componentBodyEnd}}\n    {{page.customBodyEnd}}\n<\/body>\n<\/html>\n\n{{page.componentPageEnd}}\n{{page.customPageEnd}}\n",
+    "baseURL" : "https:\/\/www.realmacsoftware.com",
+    "defaultFileExtension" : "html",
+    "useCacheBusting" : true,
+    "consolidateCSSFiles" : true,
+    "allowDarkMode" : true,
+    "title" : "Link in Bio",
+    "legacyV3HoverOnTouch" : false,
+    "minifyExtraFiles" : true,
+    "themeName" : "Elements"
+  },
+  "identifier" : "379889AE-042A-4F53-BBEA-44B64D1ECAFA",
+  "ui" : {
+    "catalogFilter" : {
+      "showFavourites" : false,
+      "smartDocumentElements" : false
+    },
+    "resourceInspector" : {
+      "show" : false
+    },
+    "contentArea" : {
+      "scale" : 1,
+      "darkAppearance" : false,
+      "size" : [
+        1024,
+        320
+      ],
+      "responsiveSize" : "lg"
+    },
+    "elementEditor" : {
+      "showOutline" : false,
+      "show" : false
+    },
+    "projectInspector" : {
+      "show" : false
+    }
+  },
+  "version" : 9,
+  "localization" : {
+
+  },
+  "rootPage" : {
+    "children" : [
+      {
+        "children" : [
+
+        ],
+        "code" : null,
+        "title" : "Profile",
+        "identifier" : "23FC5BEC-1143-419A-A5C4-9BFBA50E7E91",
+        "createdDate" : 1758748257750.999,
+        "kind" : "page",
+        "isIndex" : true,
+        "externalPageURL" : null,
+        "manifests" : {
+
+        },
+        "uniqueID" : "page0",
+        "expanded" : true,
+        "pageDescription" : null,
+        "iconIdentifier" : null,
+        "browserTitle" : null,
+        "attributes" : {
+          "customSiteTitle" : "",
+          "encoding" : 1,
+          "filename" : "index.html",
+          "customCSS" : "",
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "customBodyStart" : "",
+          "customPageStart" : "",
+          "linkOpensInNewWindow" : false,
+          "credit" : true,
+          "expiryQuantity" : 2,
+          "hidden" : false,
+          "shouldAllowPreview" : true,
+          "shouldFollowLinks" : true,
+          "customHeadStart" : "",
+          "customHeader" : "",
+          "expires" : false,
+          "customPageEnd" : "",
+          "shouldIndexPage" : true,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldEnableSocialTags" : true,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : false,
+          "lastExported" : 1767696310882.112,
+          "expiryUnit" : 0,
+          "shouldArchivePage" : true,
+          "useCustomSiteTitle" : false,
+          "backgroundColor" : {
+            "colorStripId" : "none",
+            "shade" : 500,
+            "darkShade" : 500,
+            "darkColorStripId" : "none"
+          },
+          "shouldEnableRobotTags" : true,
+          "customHeadEnd" : "",
+          "customBodyEnd" : "",
+          "lastExportedPaths" : [
+            "https:\/\/www.realmacsoftware.com\/"
+          ],
+          "lastChangedDate" : 1783008248634.593
+        }
+      }
+    ],
+    "code" : null,
+    "title" : "root",
+    "identifier" : "2B26BA57-9F20-45D6-96C5-775F38524636",
+    "createdDate" : 1758748257743.753,
+    "kind" : "folder",
+    "isIndex" : false,
+    "externalPageURL" : null,
+    "manifests" : {
+
+    },
+    "uniqueID" : "2B26BA57-9F20-45D6-96C5-775F38524636",
+    "expanded" : true,
+    "pageDescription" : null,
+    "iconIdentifier" : null,
+    "browserTitle" : null,
+    "attributes" : {
+      "customSiteTitle" : "",
+      "encoding" : 1,
+      "filename" : "",
+      "customCSS" : "",
+      "enabled" : true,
+      "shouldIndexImages" : true,
+      "customBodyStart" : "",
+      "customPageStart" : "",
+      "linkOpensInNewWindow" : false,
+      "credit" : true,
+      "expiryQuantity" : 2,
+      "hidden" : false,
+      "shouldAllowPreview" : true,
+      "shouldFollowLinks" : true,
+      "customHeadStart" : "",
+      "customHeader" : "",
+      "expires" : false,
+      "customPageEnd" : "",
+      "shouldIndexPage" : true,
+      "changedStatuses" : {
+
+      },
+      "shouldEnableSocialTags" : true,
+      "customJavaScript" : "",
+      "excludeFromSitemap" : true,
+      "expiryUnit" : 0,
+      "shouldArchivePage" : true,
+      "useCustomSiteTitle" : false,
+      "shouldEnableRobotTags" : true,
+      "customHeadEnd" : "",
+      "customBodyEnd" : "",
+      "lastChangedDate" : 1758748257743.6353
+    }
+  },
   "social" : {
     "useSocialTags" : true
   },
-  "publishing" : {
-    "publishingDestinations" : [
-
-    ],
-    "publishSettingsConfigured" : true
-  },
-  "version" : 9,
   "rootPrefabNode" : {
     "item" : null,
-    "identifier" : "086BFA65-8B65-48BD-8168-84007CAF0B01",
-    "title" : "Project",
-    "expanded" : true,
     "kind" : {
       "folder" : {
 
       }
     },
+    "identifier" : "086BFA65-8B65-48BD-8168-84007CAF0B01",
+    "title" : "Project",
+    "expanded" : true,
     "children" : [
       {
-        "expanded" : true,
-        "item" : {
-          "kind" : "prefab",
-          "itemIdentifier" : "564006FB-D1DF-41F5-BD25-40A6C92F05EE",
-          "id" : "A9FD1DAA-0515-42FB-9D23-F246FC29F9E6"
-        },
-        "children" : [
-
-        ],
-        "title" : "Link Button",
-        "identifier" : "0ECA38F9-16A5-4666-A756-34766EDBEF43",
         "kind" : {
           "item" : {
 
           }
-        }
-      }
-    ]
-  },
-  "project" : {
-    "autoStartWebServer" : false,
-    "uniqueBackupName" : "D044F78B-7BDB-4001-A881-2F61C09C3628_rwbackup"
-  },
-  "rootPage" : {
-    "iconIdentifier" : null,
-    "attributes" : {
-      "shouldIndexImages" : true,
-      "filename" : "",
-      "hidden" : false,
-      "customCSS" : "",
-      "shouldIndexPage" : true,
-      "customBodyStart" : "",
-      "shouldAllowPreview" : true,
-      "customPageStart" : "",
-      "expires" : false,
-      "shouldEnableSocialTags" : true,
-      "useCustomSiteTitle" : false,
-      "excludeFromSitemap" : true,
-      "expiryQuantity" : 2,
-      "customHeader" : "",
-      "changedStatuses" : {
-
-      },
-      "customHeadStart" : "",
-      "customHeadEnd" : "",
-      "credit" : true,
-      "customJavaScript" : "",
-      "customBodyEnd" : "",
-      "lastChangedDate" : 1758748257743.6353,
-      "shouldEnableRobotTags" : true,
-      "customSiteTitle" : "",
-      "customPageEnd" : "",
-      "enabled" : true,
-      "expiryUnit" : 0,
-      "shouldFollowLinks" : true,
-      "linkOpensInNewWindow" : false,
-      "shouldArchivePage" : true,
-      "encoding" : 1
-    },
-    "kind" : "folder",
-    "uniqueID" : "2B26BA57-9F20-45D6-96C5-775F38524636",
-    "expanded" : true,
-    "browserTitle" : null,
-    "children" : [
-      {
-        "iconIdentifier" : null,
-        "attributes" : {
-          "shouldIndexImages" : true,
-          "filename" : "index.html",
-          "lastExportedPaths" : [
-            "https:\/\/www.realmacsoftware.com\/"
-          ],
-          "hidden" : false,
-          "customCSS" : "",
-          "shouldIndexPage" : true,
-          "customBodyStart" : "",
-          "shouldAllowPreview" : true,
-          "customPageStart" : "",
-          "expires" : false,
-          "shouldEnableSocialTags" : true,
-          "useCustomSiteTitle" : false,
-          "excludeFromSitemap" : false,
-          "expiryQuantity" : 2,
-          "customHeader" : "",
-          "changedStatuses" : {
-            "default" : true
-          },
-          "customHeadStart" : "",
-          "customHeadEnd" : "",
-          "credit" : true,
-          "customJavaScript" : "",
-          "lastExported" : 1767696310882.112,
-          "customBodyEnd" : "",
-          "lastChangedDate" : 1783008248634.593,
-          "shouldEnableRobotTags" : true,
-          "customSiteTitle" : "",
-          "customPageEnd" : "",
-          "backgroundColor" : {
-            "shade" : 500,
-            "darkColorStripId" : "none",
-            "darkShade" : 500,
-            "colorStripId" : "none"
-          },
-          "enabled" : true,
-          "expiryUnit" : 0,
-          "shouldFollowLinks" : true,
-          "linkOpensInNewWindow" : false,
-          "shouldArchivePage" : true,
-          "encoding" : 1
         },
-        "kind" : "page",
-        "uniqueID" : "page0",
-        "expanded" : true,
-        "browserTitle" : null,
+        "item" : {
+          "itemIdentifier" : "564006FB-D1DF-41F5-BD25-40A6C92F05EE",
+          "id" : "A9FD1DAA-0515-42FB-9D23-F246FC29F9E6",
+          "kind" : "prefab"
+        },
         "children" : [
 
         ],
-        "pageDescription" : null,
-        "identifier" : "23FC5BEC-1143-419A-A5C4-9BFBA50E7E91",
-        "externalPageURL" : null,
-        "manifests" : {
-
-        },
-        "createdDate" : 1758748257750.999,
-        "isIndex" : true,
-        "title" : "Profile",
-        "code" : null
+        "expanded" : true,
+        "identifier" : "0ECA38F9-16A5-4666-A756-34766EDBEF43",
+        "title" : "Link Button"
       }
-    ],
-    "pageDescription" : null,
-    "identifier" : "2B26BA57-9F20-45D6-96C5-775F38524636",
-    "externalPageURL" : null,
-    "manifests" : {
-
-    },
-    "createdDate" : 1758748257743.753,
-    "isIndex" : false,
-    "title" : "root",
-    "code" : null
+    ]
   },
   "globalElements" : {
     "globals" : {
 
     }
   },
+  "privacy" : {
+    "anonymiseThirdPartyRequests" : false
+  },
+  "project" : {
+    "uniqueBackupName" : "D044F78B-7BDB-4001-A881-2F61C09C3628_rwbackup",
+    "autoStartWebServer" : false
+  },
   "images" : {
     "logoAltText" : "",
     "webIcons" : {
-      "small" : {
-        "autoGenerate" : false,
-        "type" : 2,
-        "resourceIdentifier" : "018922B0-62A7-4E8A-8602-8186CB99520C"
-      },
-      "faviconLarge" : {
-        "autoGenerate" : false,
-        "type" : 4
-      },
       "pinnedTab" : {
         "autoGenerate" : false,
+        "resourceIdentifier" : "F15AB121-3EBB-4DB0-AE3B-08524EDEE011",
         "colorString" : "rgba(0,162,255,1.00)",
-        "type" : 3,
-        "resourceIdentifier" : "F15AB121-3EBB-4DB0-AE3B-08524EDEE011"
+        "type" : 3
       },
       "faviconMedium" : {
         "autoGenerate" : false,
         "type" : 5
       },
-      "medium" : {
-        "autoGenerate" : false,
-        "type" : 1,
-        "resourceIdentifier" : "018922B0-62A7-4E8A-8602-8186CB99520C"
-      },
-      "large" : {
-        "autoGenerate" : false,
-        "colorString" : "#FFFFFF",
-        "type" : 0,
-        "resourceIdentifier" : "018922B0-62A7-4E8A-8602-8186CB99520C"
-      },
       "faviconSmall" : {
         "autoGenerate" : false,
         "type" : 6
+      },
+      "small" : {
+        "autoGenerate" : false,
+        "resourceIdentifier" : "018922B0-62A7-4E8A-8602-8186CB99520C",
+        "type" : 2
+      },
+      "large" : {
+        "autoGenerate" : false,
+        "resourceIdentifier" : "018922B0-62A7-4E8A-8602-8186CB99520C",
+        "colorString" : "#FFFFFF",
+        "type" : 0
+      },
+      "medium" : {
+        "autoGenerate" : false,
+        "resourceIdentifier" : "018922B0-62A7-4E8A-8602-8186CB99520C",
+        "type" : 1
+      },
+      "faviconLarge" : {
+        "autoGenerate" : false,
+        "type" : 4
       }
-    }
-  },
-  "site" : {
-    "useCacheBusting" : true,
-    "pageTemplate" : "{{page.customPageStart}}{{page.componentPageStart}}\n\n<!doctype html>\n<html class=\"scroll-smooth\" {{page.languageAttributes}}>\n<head>\n    {{page.customHeadStart}}\n    {{page.componentHeadStart}}\n    \n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width\">\n\n    {{page.componentHeader}}\n    {{page.opengraph}}\n    {{page.customHeader}}\n    \n    <title>{{page.title}}<\/title>\n    \n    {{page.componentCSS}}\n    {{page.customCSS}}\n\n    {{page.componentJS}}\n    {{page.customJS}}\n\n    {{page.componentHeadEnd}}\n    {{page.customHeadEnd}}\n<\/head>\n<body class=\"{{page.bodyClasses}}\" {{page.bodyAttributes}}>\n    {{page.customBodyStart}}\n    {{page.componentBodyStart}}\n\n    {{page.content}}\n\n    {{page.componentBodyEnd}}\n    {{page.customBodyEnd}}\n<\/body>\n<\/html>\n\n{{page.componentPageEnd}}\n{{page.customPageEnd}}\n",
-    "baseURL" : "https:\/\/www.realmacsoftware.com",
-    "themeName" : "Elements",
-    "minifyExtraFiles" : true,
-    "title" : "Link in Bio",
-    "wantsXMLSiteMap" : true,
-    "consolidateCSSFiles" : true,
-    "cruftlessLinks" : true,
-    "allowDarkMode" : true,
-    "defaultFileExtension" : "html"
-  },
-  "customComponents" : {
-    "components" : {
-      "4B72B8C6-F4B3-4AC0-BE2E-1C66262D25B7" : {
-        "subTitle" : "",
-        "group" : "Custom",
-        "author" : "",
-        "files" : [
-          {
-            "filename" : "Template",
-            "content" : "\n    <div class=\"max-w-md w-full mx-4\">\n        <!-- Main Card -->\n        <div class=\"bg-white rounded-2xl shadow-xl p-8 text-center\">\n            <!-- Profile Section -->\n            <div class=\"mb-8\">\n                <div class=\"w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center\">\n                    <span class=\"text-white text-3xl font-bold\">D<\/span>\n                <\/div>\n                <h1 class=\"text-3xl font-bold text-gray-900 mb-2\">Dan<\/h1>\n                <p class=\"text-lg text-gray-600 font-medium\">Founder<\/p>\n            <\/div>\n\n            <!-- Contact Links -->\n            <div class=\"space-y-4\">\n                <a href=\"mailto:dan@example.com\" \n                   class=\"w-full flex items-center justify-center px-6 py-3 bg-gray-900 text-white rounded-xl font-medium hover:bg-gray-800 transition-colors duration-200 group\">\n                    <svg class=\"w-5 h-5 mr-3 group-hover:scale-110 transition-transform\" fill=\"currentColor\" viewBox=\"0 0 20 20\">\n                        <path d=\"M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z\"><\/path>\n                        <path d=\"M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z\"><\/path>\n                    <\/svg>\n                    Get in touch\n                <\/a>\n\n                <a href=\"https:\/\/twitter.com\/dan\" \n                   target=\"_blank\"\n                   class=\"w-full flex items-center justify-center px-6 py-3 bg-blue-500 text-white rounded-xl font-medium hover:bg-blue-600 transition-colors duration-200 group\">\n                    <svg class=\"w-5 h-5 mr-3 group-hover:scale-110 transition-transform\" fill=\"currentColor\" viewBox=\"0 0 24 24\">\n                        <path d=\"M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z\"\/>\n                    <\/svg>\n                    Follow on Twitter\n                <\/a>\n\n                <a href=\"https:\/\/github.com\/dan\" \n                   target=\"_blank\"\n                   class=\"w-full flex items-center justify-center px-6 py-3 bg-gray-800 text-white rounded-xl font-medium hover:bg-gray-700 transition-colors duration-200 group\">\n                    <svg class=\"w-5 h-5 mr-3 group-hover:scale-110 transition-transform\" fill=\"currentColor\" viewBox=\"0 0 24 24\">\n                        <path d=\"M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z\"\/>\n                    <\/svg>\n                    View GitHub\n                <\/a>\n            <\/div>\n\n            <!-- Footer -->\n            <div class=\"mt-8 pt-6 border-t border-gray-100\">\n                <p class=\"text-sm text-gray-500\">Building the future, one idea at a time.<\/p>\n            <\/div>\n        <\/div>\n    <\/div>",
-            "identifier" : "9F8DC616-BE97-4CC0-BDB0-4AE5501B0C96",
-            "kind" : {
-              "template" : {
-
-              }
-            }
-          },
-          {
-            "filename" : "Styles",
-            "content" : "",
-            "identifier" : "DCCF659D-A07D-41CB-A469-5C18BFFEAF0A",
-            "kind" : {
-              "css" : {
-
-              }
-            }
-          },
-          {
-            "filename" : "Javascript",
-            "content" : "console.log(`Running JS for element with id: {{id}}`)",
-            "identifier" : "A96A0455-6EE5-40D5-9401-F6E53DAC6044",
-            "kind" : {
-              "js" : {
-
-              }
-            }
-          },
-          {
-            "filename" : "Hooks",
-            "content" : "",
-            "identifier" : "533644D8-8645-420A-A403-DA784CA45995",
-            "kind" : {
-              "hooks" : {
-
-              }
-            }
-          },
-          {
-            "filename" : "Properties",
-            "content" : "",
-            "identifier" : "EA86F50D-BE3A-4832-9432-7BE2B32141ED",
-            "kind" : {
-              "properties" : {
-
-              }
-            }
-          },
-          {
-            "filename" : "Data",
-            "content" : "{\n    \"collections\": [{\n        \"id\" : \"F8A7DF12-9196-4EF0-A1DB-C35F39401941\",\n        \"title\" : \"Features\",\n        \"items\" : [{\n            \"id\" : \"2DA6C715-0A28-4287-9E2B-EA50078AEF23\",\n            \"featureName\" : \"Data Driven\",\n            \"body\" : \"A dynamic and user-friendly platform offering a wide range of services and information.\"\n        }]\n    }]\n}",
-            "identifier" : "5FECA9E9-5D86-499F-9099-46E98E6CFBF6",
-            "kind" : {
-              "data" : {
-
-              }
-            }
-          }
-        ],
-        "build" : "",
-        "identifier" : "4B72B8C6-F4B3-4AC0-BE2E-1C66262D25B7",
-        "uuid" : "2F3D426A-BCF2-464B-BD38-9326D3F21E31",
-        "tags" : [
-
-        ],
-        "title" : "HTML",
-        "version" : "",
-        "deprecated" : false,
-        "collections" : [
-
-        ],
-        "hidden" : false
-      }
-    }
-  },
-  "ui" : {
-    "catalogFilter" : {
-      "showFavourites" : false,
-      "smartDocumentElements" : false
-    },
-    "projectInspector" : {
-      "show" : false
-    },
-    "contentArea" : {
-      "size" : [
-        1024,
-        320
-      ],
-      "responsiveSize" : "lg",
-      "scale" : 1,
-      "darkAppearance" : true
-    },
-    "elementEditor" : {
-      "showOutline" : false,
-      "show" : false
-    },
-    "resourceInspector" : {
-      "show" : false
     }
   },
   "uiStateIdentifier" : "379889AE-042A-4F53-BBEA-44B64D1ECAFA",
-  "siteResources" : {
-    "resources" : {
-      "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E" : {
-        "timeStamp" : -62135769600000,
-        "name" : "Resources",
-        "kind" : 0,
-        "hostedImageURLs" : [
-
-        ],
-        "changedStatuses" : {
-
-        },
-        "expanded" : true,
-        "smartFolderKind" : 0,
-        "identifier" : "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E"
-      },
-      "8EB85E56-164A-4888-B619-F101C1C5593A" : {
-        "timeStamp" : 1750253948462.6865,
-        "kind" : 1,
-        "originalName" : "mastodon.svg",
-        "name" : "mastodon.svg",
-        "parentIdentifier" : "23AAB4DA-BD52-4865-9503-90B4500BAE31",
-        "typeIdentifier" : "public.svg-image",
-        "changedStatuses" : {
-
-        },
-        "hostedImageURLs" : [
-
-        ],
-        "isSVG" : true,
-        "expanded" : false,
-        "smartFolderKind" : 0,
-        "identifier" : "8EB85E56-164A-4888-B619-F101C1C5593A"
-      },
-      "CEA1B591-06BD-41AD-B29A-03DCA134FFB1" : {
-        "timeStamp" : 1750254092057.1035,
-        "kind" : 1,
-        "originalName" : "github.svg",
-        "name" : "github.svg",
-        "parentIdentifier" : "23AAB4DA-BD52-4865-9503-90B4500BAE31",
-        "typeIdentifier" : "public.svg-image",
-        "changedStatuses" : {
-
-        },
-        "hostedImageURLs" : [
-
-        ],
-        "isSVG" : true,
-        "expanded" : false,
-        "smartFolderKind" : 0,
-        "identifier" : "CEA1B591-06BD-41AD-B29A-03DCA134FFB1"
-      },
-      "F15AB121-3EBB-4DB0-AE3B-08524EDEE011" : {
-        "timeStamp" : 1750264925370.8977,
-        "kind" : 1,
-        "originalName" : "star-empty.svg",
-        "name" : "star-empty.svg",
-        "parentIdentifier" : "23AAB4DA-BD52-4865-9503-90B4500BAE31",
-        "typeIdentifier" : "public.svg-image",
-        "changedStatuses" : {
-
-        },
-        "hostedImageURLs" : [
-
-        ],
-        "isSVG" : true,
-        "expanded" : true,
-        "smartFolderKind" : 0,
-        "identifier" : "F15AB121-3EBB-4DB0-AE3B-08524EDEE011"
-      },
-      "23AAB4DA-BD52-4865-9503-90B4500BAE31" : {
-        "timeStamp" : -62135769600000,
-        "kind" : 0,
-        "name" : "svgs",
-        "parentIdentifier" : "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E",
-        "hostedImageURLs" : [
-
-        ],
-        "changedStatuses" : {
-
-        },
-        "expanded" : false,
-        "smartFolderKind" : 0,
-        "identifier" : "23AAB4DA-BD52-4865-9503-90B4500BAE31"
-      },
-      "173F49B9-A0F1-4B2F-8C7C-6474B2EB11CC" : {
-        "timeStamp" : 1750264925370.2178,
-        "kind" : 1,
-        "originalName" : "mail.svg",
-        "name" : "email.svg",
-        "parentIdentifier" : "23AAB4DA-BD52-4865-9503-90B4500BAE31",
-        "typeIdentifier" : "public.svg-image",
-        "changedStatuses" : {
-
-        },
-        "hostedImageURLs" : [
-
-        ],
-        "isSVG" : true,
-        "expanded" : false,
-        "smartFolderKind" : 0,
-        "identifier" : "173F49B9-A0F1-4B2F-8C7C-6474B2EB11CC"
-      },
-      "018922B0-62A7-4E8A-8602-8186CB99520C" : {
-        "name" : "avatar.jpg",
-        "kind" : 1,
-        "changedStatuses" : {
-
-        },
-        "timeStamp" : 1758884881294.4438,
-        "isSVG" : false,
-        "hostedImageURLs" : [
-
-        ],
-        "originalName" : "avatar.jpg",
-        "parentIdentifier" : "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E",
-        "smartFolderKind" : 0,
-        "identifier" : "018922B0-62A7-4E8A-8602-8186CB99520C",
-        "typeIdentifier" : "public.jpeg",
-        "metadata" : {
-          "height" : 1000,
-          "aspect" : 1,
-          "width" : 1000
-        },
-        "expanded" : true
-      }
-    },
-    "root" : "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E",
-    "children" : {
-      "01168ACA-1110-4D25-BFAA-D4FC5DD3AB6E" : [
-        "018922B0-62A7-4E8A-8602-8186CB99520C",
-        "23AAB4DA-BD52-4865-9503-90B4500BAE31"
-      ],
-      "23AAB4DA-BD52-4865-9503-90B4500BAE31" : [
-        "173F49B9-A0F1-4B2F-8C7C-6474B2EB11CC",
-        "8EB85E56-164A-4888-B619-F101C1C5593A",
-        "CEA1B591-06BD-41AD-B29A-03DCA134FFB1",
-        "F15AB121-3EBB-4DB0-AE3B-08524EDEE011"
-      ]
-    }
-  },
-  "identifier" : "379889AE-042A-4F53-BBEA-44B64D1ECAFA",
   "theme" : {
-    "shadows" : [
-
-    ],
-    "page" : {
-      "backgroundColor" : {
-        "shade" : 950,
-        "darkColorStripId" : "none",
-        "darkShade" : 500,
-        "colorStripId" : "none"
-      }
-    },
-    "baseThemeIdentifier" : "com.realmacsoftware.themes.system",
     "textShadows" : [
 
     ],
-    "colors" : [
-
-    ],
-    "fontFamily" : [
+    "typographies" : [
 
     ],
     "borderWidth" : [
 
     ],
-    "fontStyle" : [
-
-    ],
     "borderRadius" : [
 
-    ],
-    "screens" : [
-      {
-        "description" : "",
-        "name" : "2xl",
-        "enabled" : false,
-        "pixels" : 1536,
-        "units" : "auto",
-        "maxContainerWidth" : 0,
-        "id" : "8510883C-406A-4AB5-8AB6-F0EFCA200994",
-        "classPrefix" : "2xl",
-        "sfIcon" : "desktopcomputer"
-      },
-      {
-        "description" : "",
-        "name" : "xl",
-        "enabled" : false,
-        "pixels" : 1280,
-        "units" : "auto",
-        "maxContainerWidth" : 0,
-        "id" : "0AD02C36-8F48-4D56-831E-8FDE0C4A5F0E",
-        "classPrefix" : "xl",
-        "sfIcon" : "laptopcomputer"
-      },
-      {
-        "description" : "",
-        "name" : "lg",
-        "enabled" : true,
-        "pixels" : 1024,
-        "units" : "auto",
-        "maxContainerWidth" : 0,
-        "id" : "152EF9C7-5F0A-4C29-8DBC-C836E0055855",
-        "classPrefix" : "lg",
-        "sfIcon" : "ipad.landscape"
-      },
-      {
-        "description" : "This breakpoint is for tablets and small laptop screens. It usually encompasses widths from 600 pixels to 1023 pixels.",
-        "name" : "md",
-        "enabled" : true,
-        "pixels" : 768,
-        "units" : "auto",
-        "maxContainerWidth" : 0,
-        "id" : "9134EA67-4B34-4EF5-A8A8-EB61AD81D24F",
-        "classPrefix" : "md",
-        "sfIcon" : "ipad"
-      },
-      {
-        "description" : "This breakpoint targets devices with small sceens like smartphones. The resolution width varies but typically starts from 320 pixels and below 600 pixels.",
-        "name" : "sm",
-        "enabled" : true,
-        "pixels" : 640,
-        "units" : "auto",
-        "maxContainerWidth" : 0,
-        "id" : "3F5B0258-5C2A-4717-B9FF-EC68947F092C",
-        "classPrefix" : "sm",
-        "sfIcon" : "iphone.landscape"
-      },
-      {
-        "description" : "",
-        "name" : "mobile",
-        "enabled" : true,
-        "pixels" : 0,
-        "units" : "auto",
-        "maxContainerWidth" : 0,
-        "id" : "15BC9FCD-13E5-4A2D-95B0-366374150989",
-        "classPrefix" : "",
-        "sfIcon" : "iphone"
-      }
     ],
     "spacing" : [
 
     ],
-    "typographies" : [
+    "fontFamily" : [
+
+    ],
+    "shadows" : [
+
+    ],
+    "screens" : [
+      {
+        "pixels" : 1536,
+        "classPrefix" : "2xl",
+        "sfIcon" : "desktopcomputer",
+        "maxContainerWidth" : 0,
+        "enabled" : false,
+        "name" : "2xl",
+        "id" : "8510883C-406A-4AB5-8AB6-F0EFCA200994",
+        "units" : "auto",
+        "description" : ""
+      },
+      {
+        "pixels" : 1280,
+        "classPrefix" : "xl",
+        "sfIcon" : "laptopcomputer",
+        "maxContainerWidth" : 0,
+        "enabled" : false,
+        "name" : "xl",
+        "id" : "0AD02C36-8F48-4D56-831E-8FDE0C4A5F0E",
+        "units" : "auto",
+        "description" : ""
+      },
+      {
+        "pixels" : 1024,
+        "classPrefix" : "lg",
+        "sfIcon" : "ipad.landscape",
+        "maxContainerWidth" : 0,
+        "enabled" : true,
+        "name" : "lg",
+        "id" : "152EF9C7-5F0A-4C29-8DBC-C836E0055855",
+        "units" : "auto",
+        "description" : ""
+      },
+      {
+        "pixels" : 768,
+        "classPrefix" : "md",
+        "sfIcon" : "ipad",
+        "maxContainerWidth" : 0,
+        "enabled" : true,
+        "name" : "md",
+        "id" : "9134EA67-4B34-4EF5-A8A8-EB61AD81D24F",
+        "units" : "auto",
+        "description" : "This breakpoint is for tablets and small laptop screens. It usually encompasses widths from 600 pixels to 1023 pixels."
+      },
+      {
+        "pixels" : 640,
+        "classPrefix" : "sm",
+        "sfIcon" : "iphone.landscape",
+        "maxContainerWidth" : 0,
+        "enabled" : true,
+        "name" : "sm",
+        "id" : "3F5B0258-5C2A-4717-B9FF-EC68947F092C",
+        "units" : "auto",
+        "description" : "This breakpoint targets devices with small sceens like smartphones. The resolution width varies but typically starts from 320 pixels and below 600 pixels."
+      },
+      {
+        "pixels" : 0,
+        "classPrefix" : "",
+        "sfIcon" : "iphone",
+        "maxContainerWidth" : 0,
+        "enabled" : true,
+        "name" : "mobile",
+        "id" : "15BC9FCD-13E5-4A2D-95B0-366374150989",
+        "units" : "auto",
+        "description" : ""
+      }
+    ],
+    "colors" : [
+
+    ],
+    "baseThemeIdentifier" : "com.realmacsoftware.themes.system",
+    "page" : {
+      "backgroundColor" : {
+        "colorStripId" : "none",
+        "shade" : 950,
+        "darkColorStripId" : "none",
+        "darkShade" : 500
+      }
+    },
+    "fontStyle" : [
 
     ]
   },
-  "privacy" : {
-    "anonymiseThirdPartyRequests" : false
-  },
-  "localization" : {
+  "customComponents" : {
+    "components" : {
+      "4B72B8C6-F4B3-4AC0-BE2E-1C66262D25B7" : {
+        "build" : "",
+        "collections" : [
 
+        ],
+        "deprecated" : false,
+        "hidden" : false,
+        "uuid" : "2F3D426A-BCF2-464B-BD38-9326D3F21E31",
+        "subTitle" : "",
+        "version" : "",
+        "title" : "HTML",
+        "group" : "Custom",
+        "identifier" : "4B72B8C6-F4B3-4AC0-BE2E-1C66262D25B7",
+        "tags" : [
+
+        ],
+        "files" : [
+          {
+            "content" : "\n    <div class=\"max-w-md w-full mx-4\">\n        <!-- Main Card -->\n        <div class=\"bg-white rounded-2xl shadow-xl p-8 text-center\">\n            <!-- Profile Section -->\n            <div class=\"mb-8\">\n                <div class=\"w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center\">\n                    <span class=\"text-white text-3xl font-bold\">D<\/span>\n                <\/div>\n                <h1 class=\"text-3xl font-bold text-gray-900 mb-2\">Dan<\/h1>\n                <p class=\"text-lg text-gray-600 font-medium\">Founder<\/p>\n            <\/div>\n\n            <!-- Contact Links -->\n            <div class=\"space-y-4\">\n                <a href=\"mailto:dan@example.com\" \n                   class=\"w-full flex items-center justify-center px-6 py-3 bg-gray-900 text-white rounded-xl font-medium hover:bg-gray-800 transition-colors duration-200 group\">\n                    <svg class=\"w-5 h-5 mr-3 group-hover:scale-110 transition-transform\" fill=\"currentColor\" viewBox=\"0 0 20 20\">\n                        <path d=\"M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z\"><\/path>\n                        <path d=\"M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z\"><\/path>\n                    <\/svg>\n                    Get in touch\n                <\/a>\n\n                <a href=\"https:\/\/twitter.com\/dan\" \n                   target=\"_blank\"\n                   class=\"w-full flex items-center justify-center px-6 py-3 bg-blue-500 text-white rounded-xl font-medium hover:bg-blue-600 transition-colors duration-200 group\">\n                    <svg class=\"w-5 h-5 mr-3 group-hover:scale-110 transition-transform\" fill=\"currentColor\" viewBox=\"0 0 24 24\">\n                        <path d=\"M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z\"\/>\n                    <\/svg>\n                    Follow on Twitter\n                <\/a>\n\n                <a href=\"https:\/\/github.com\/dan\" \n                   target=\"_blank\"\n                   class=\"w-full flex items-center justify-center px-6 py-3 bg-gray-800 text-white rounded-xl font-medium hover:bg-gray-700 transition-colors duration-200 group\">\n                    <svg class=\"w-5 h-5 mr-3 group-hover:scale-110 transition-transform\" fill=\"currentColor\" viewBox=\"0 0 24 24\">\n                        <path d=\"M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z\"\/>\n                    <\/svg>\n                    View GitHub\n                <\/a>\n            <\/div>\n\n            <!-- Footer -->\n            <div class=\"mt-8 pt-6 border-t border-gray-100\">\n                <p class=\"text-sm text-gray-500\">Building the future, one idea at a time.<\/p>\n            <\/div>\n        <\/div>\n    <\/div>",
+            "kind" : {
+              "template" : {
+
+              }
+            },
+            "identifier" : "9F8DC616-BE97-4CC0-BDB0-4AE5501B0C96",
+            "filename" : "Template"
+          },
+          {
+            "identifier" : "DCCF659D-A07D-41CB-A469-5C18BFFEAF0A",
+            "kind" : {
+              "css" : {
+
+              }
+            },
+            "filename" : "Styles",
+            "content" : ""
+          },
+          {
+            "content" : "console.log(`Running JS for element with id: {{id}}`)",
+            "kind" : {
+              "js" : {
+
+              }
+            },
+            "identifier" : "A96A0455-6EE5-40D5-9401-F6E53DAC6044",
+            "filename" : "Javascript"
+          },
+          {
+            "identifier" : "533644D8-8645-420A-A403-DA784CA45995",
+            "kind" : {
+              "hooks" : {
+
+              }
+            },
+            "filename" : "Hooks",
+            "content" : ""
+          },
+          {
+            "content" : "",
+            "kind" : {
+              "properties" : {
+
+              }
+            },
+            "identifier" : "EA86F50D-BE3A-4832-9432-7BE2B32141ED",
+            "filename" : "Properties"
+          },
+          {
+            "identifier" : "5FECA9E9-5D86-499F-9099-46E98E6CFBF6",
+            "kind" : {
+              "data" : {
+
+              }
+            },
+            "filename" : "Data",
+            "content" : "{\n    \"collections\": [{\n        \"id\" : \"F8A7DF12-9196-4EF0-A1DB-C35F39401941\",\n        \"title\" : \"Features\",\n        \"items\" : [{\n            \"id\" : \"2DA6C715-0A28-4287-9E2B-EA50078AEF23\",\n            \"featureName\" : \"Data Driven\",\n            \"body\" : \"A dynamic and user-friendly platform offering a wide range of services and information.\"\n        }]\n    }]\n}"
+          }
+        ],
+        "author" : ""
+      }
+    }
   }
 }

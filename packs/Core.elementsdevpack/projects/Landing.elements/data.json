@@ -1,16 +1,16 @@
 {
   "publishing" : {
+    "publishSettingsConfigured" : false,
     "publishingDestinations" : [
 
-    ],
-    "publishSettingsConfigured" : false
+    ]
   },
   "customComponents" : {
     "components" : {
       "FCA17D58-D475-44E0-B84D-6B1B466A228E" : {
         "author" : "",
-        "uuid" : "3C85B41D-ABBE-4FE5-AB95-FC83AFE4213E",
         "identifier" : "FCA17D58-D475-44E0-B84D-6B1B466A228E",
+        "uuid" : "3C85B41D-ABBE-4FE5-AB95-FC83AFE4213E",
         "collections" : [
 
         ],
@@ -22,64 +22,64 @@
         ],
         "files" : [
           {
-            "content" : "<div \n  class=\"\"\n  x-data=\"{ count: 0, hasAnimated: false }\"\n  x-intersect.once=\"if (!hasAnimated) { hasAnimated = true; $nextTick(() => { let start = 0; let end = +{{myNumber}}; let duration = 1500; let startTime = null; function animate(now) { if(!startTime) startTime = now; let progress = Math.min((now - startTime) \/ duration, 1); count = Math.floor(progress * (end - start) + start); if(progress < 1){ requestAnimationFrame(animate); } } requestAnimationFrame(animate); }); }\"\n>\n  @if(edit)\n    <div class=\"font-bold {{textColor}} {{headingTextStyles}} {{fontFamily}}\">{{myNumber}}<\/div>\n  @else\n    <div class=\"font-bold {{textColor}} {{headingTextStyles}} {{fontFamily}}\" x-text=\"count\"><\/div>\n  @endif\n<\/div>",
-            "filename" : "Template",
+            "identifier" : "021CA265-B2C3-4D05-9C4A-A11563C04A08",
             "kind" : {
               "template" : {
 
               }
             },
-            "identifier" : "021CA265-B2C3-4D05-9C4A-A11563C04A08"
+            "content" : "<div \n  class=\"\"\n  x-data=\"{ count: 0, hasAnimated: false }\"\n  x-intersect.once=\"if (!hasAnimated) { hasAnimated = true; $nextTick(() => { let start = 0; let end = +{{myNumber}}; let duration = 1500; let startTime = null; function animate(now) { if(!startTime) startTime = now; let progress = Math.min((now - startTime) \/ duration, 1); count = Math.floor(progress * (end - start) + start); if(progress < 1){ requestAnimationFrame(animate); } } requestAnimationFrame(animate); }); }\"\n>\n  @if(edit)\n    <div class=\"font-bold {{textColor}} {{headingTextStyles}} {{fontFamily}}\">{{myNumber}}<\/div>\n  @else\n    <div class=\"font-bold {{textColor}} {{headingTextStyles}} {{fontFamily}}\" x-text=\"count\"><\/div>\n  @endif\n<\/div>",
+            "filename" : "Template"
           },
           {
-            "content" : "",
-            "filename" : "Styles",
+            "identifier" : "D509C38B-1614-49C1-9E01-C0EEB85B7EE8",
             "kind" : {
               "css" : {
 
               }
             },
-            "identifier" : "D509C38B-1614-49C1-9E01-C0EEB85B7EE8"
+            "content" : "",
+            "filename" : "Styles"
           },
           {
-            "content" : "console.log(`Running JS for element with id: {{id}}`)",
-            "filename" : "Javascript",
+            "identifier" : "33F04429-74AB-4B5A-9C2F-2372F8A702C9",
             "kind" : {
               "js" : {
 
               }
             },
-            "identifier" : "33F04429-74AB-4B5A-9C2F-2372F8A702C9"
+            "content" : "console.log(`Running JS for element with id: {{id}}`)",
+            "filename" : "Javascript"
           },
           {
-            "content" : "",
-            "filename" : "Hooks",
+            "identifier" : "229D0702-9414-465A-A17A-48FFED4C5A36",
             "kind" : {
               "hooks" : {
 
               }
             },
-            "identifier" : "229D0702-9414-465A-A17A-48FFED4C5A36"
+            "content" : "",
+            "filename" : "Hooks"
           },
           {
-            "content" : "{\n  \"groups\": [\n    {\n      \"title\": \"General\",\n      \"icon\": \"gearshape\",\n      \"properties\": [\n        {\n          \"title\": \"Number\",\n          \"id\": \"myNumber\",\n          \"number\": {\n            \"default\": 100\n          }\n        },\n        {\n          \"title\": \"Font\",\n          \"id\": \"fontFamily\",\n          \"themeFont\": {\n            \"default\": {\n              \"base\": { \"name\": \"body\" }\n            }\n          }\n        },\n        {\n          \"title\": \"Size\",\n          \"id\": \"headingTextStyles\",\n          \"themeTextStyle\": {\n            \"default\": {\n              \"base\": {\n                \"name\": \"5xl\"\n              }\n            }\n          }\n        },\n        {\n          \"title\": \"Color\",\n          \"id\": \"textColor\",\n          \"format\": \"text-{{value}}\",\n          \"themeColor\": {\n            \"default\": {\n              \"name\": \"text\",\n              \"brightness\": 300\n            }\n          }\n        }\n      ]\n    }\n  ]\n}",
-            "filename" : "Properties",
+            "identifier" : "2B1AFCC4-781B-406C-80EB-E18D0ADDD0CD",
             "kind" : {
               "properties" : {
 
               }
             },
-            "identifier" : "2B1AFCC4-781B-406C-80EB-E18D0ADDD0CD"
+            "content" : "{\n  \"groups\": [\n    {\n      \"title\": \"General\",\n      \"icon\": \"gearshape\",\n      \"properties\": [\n        {\n          \"title\": \"Number\",\n          \"id\": \"myNumber\",\n          \"number\": {\n            \"default\": 100\n          }\n        },\n        {\n          \"title\": \"Font\",\n          \"id\": \"fontFamily\",\n          \"themeFont\": {\n            \"default\": {\n              \"base\": { \"name\": \"body\" }\n            }\n          }\n        },\n        {\n          \"title\": \"Size\",\n          \"id\": \"headingTextStyles\",\n          \"themeTextStyle\": {\n            \"default\": {\n              \"base\": {\n                \"name\": \"5xl\"\n              }\n            }\n          }\n        },\n        {\n          \"title\": \"Color\",\n          \"id\": \"textColor\",\n          \"format\": \"text-{{value}}\",\n          \"themeColor\": {\n            \"default\": {\n              \"name\": \"text\",\n              \"brightness\": 300\n            }\n          }\n        }\n      ]\n    }\n  ]\n}",
+            "filename" : "Properties"
           },
           {
-            "content" : "{\n    \"collections\": [{\n        \"id\" : \"F8A7DF12-9196-4EF0-A1DB-C35F39401941\",\n        \"title\" : \"Features\",\n        \"items\" : [{\n            \"id\" : \"2DA6C715-0A28-4287-9E2B-EA50078AEF23\",\n            \"featureName\" : \"Data Driven\",\n            \"body\" : \"A dynamic and user-friendly platform offering a wide range of services and information.\"\n        }]\n    }]\n}",
-            "filename" : "Data",
+            "identifier" : "82C630BD-4BBA-4550-AE67-AAFC1DF82FD9",
             "kind" : {
               "data" : {
 
               }
             },
-            "identifier" : "82C630BD-4BBA-4550-AE67-AAFC1DF82FD9"
+            "content" : "{\n    \"collections\": [{\n        \"id\" : \"F8A7DF12-9196-4EF0-A1DB-C35F39401941\",\n        \"title\" : \"Features\",\n        \"items\" : [{\n            \"id\" : \"2DA6C715-0A28-4287-9E2B-EA50078AEF23\",\n            \"featureName\" : \"Data Driven\",\n            \"body\" : \"A dynamic and user-friendly platform offering a wide range of services and information.\"\n        }]\n    }]\n}",
+            "filename" : "Data"
           }
         ],
         "hidden" : false,
@@ -91,7 +91,6 @@
   },
   "version" : 9,
   "images" : {
-    "logoAltText" : "",
     "webIcons" : {
       "faviconSmall" : {
         "autoGenerate" : false,
@@ -121,12 +120,39 @@
         "autoGenerate" : false,
         "type" : 3
       }
-    }
+    },
+    "logoAltText" : ""
   },
-  "social" : {
-    "useSocialTags" : true
+  "site" : {
+    "title" : "Landing",
+    "wantsXMLSiteMap" : true,
+    "useCacheBusting" : true,
+    "consolidateCSSFiles" : true,
+    "allowDarkMode" : false,
+    "cruftlessLinks" : true,
+    "legacyV3HoverOnTouch" : false,
+    "themeName" : "Elements",
+    "defaultFileExtension" : "html",
+    "minifyExtraFiles" : true,
+    "baseURL" : "https:\/\/www.realmacsoftware.com"
   },
   "siteResources" : {
+    "children" : {
+      "D1E46739-8BE7-4510-92B9-6D3F58FE5DCC" : [
+        "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10",
+        "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C"
+      ],
+      "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C" : [
+        "F9E815A6-3C20-4239-9F33-F50FB084417D",
+        "A2EDAD86-F8A8-47F9-A9C0-E6635A025522",
+        "9EC75AAE-1D9F-488D-9C0C-F4D05A3582A2",
+        "54A0E1D4-B649-423E-81FC-7EED50057C81"
+      ],
+      "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10" : [
+        "03E7DC6B-866D-4738-9EAE-D60B9B4D283F",
+        "226989C6-5A1A-4A8C-A8BD-BA1470D365D8"
+      ]
+    },
     "resources" : {
       "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10" : {
         "kind" : 0,
@@ -165,9 +191,9 @@
         "timeStamp" : 1763159363944.1343,
         "parentIdentifier" : "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10",
         "metadata" : {
+          "aspect" : 1.7842857142857143,
           "width" : 2498,
-          "height" : 1400,
-          "aspect" : 1.7842857142857143
+          "height" : 1400
         },
         "identifier" : "03E7DC6B-866D-4738-9EAE-D60B9B4D283F",
         "hostedImageURLs" : [
@@ -245,8 +271,8 @@
         "hostedImageURLs" : [
 
         ],
-        "smartFolderKind" : 0,
         "originalName" : "arrow-keyboard-right.svg",
+        "smartFolderKind" : 0,
         "timeStamp" : 1750264925381.481
       },
       "F9E815A6-3C20-4239-9F33-F50FB084417D" : {
@@ -291,55 +317,22 @@
         "parentIdentifier" : "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10"
       }
     },
-    "children" : {
-      "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10" : [
-        "03E7DC6B-866D-4738-9EAE-D60B9B4D283F",
-        "226989C6-5A1A-4A8C-A8BD-BA1470D365D8"
-      ],
-      "D1E46739-8BE7-4510-92B9-6D3F58FE5DCC" : [
-        "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10",
-        "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C"
-      ],
-      "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C" : [
-        "F9E815A6-3C20-4239-9F33-F50FB084417D",
-        "A2EDAD86-F8A8-47F9-A9C0-E6635A025522",
-        "9EC75AAE-1D9F-488D-9C0C-F4D05A3582A2",
-        "54A0E1D4-B649-423E-81FC-7EED50057C81"
-      ]
-    },
     "root" : "D1E46739-8BE7-4510-92B9-6D3F58FE5DCC"
   },
-  "site" : {
-    "defaultFileExtension" : "html",
-    "baseURL" : "https:\/\/www.realmacsoftware.com",
-    "title" : "Landing",
-    "themeName" : "Elements",
-    "minifyExtraFiles" : true,
-    "useCacheBusting" : true,
-    "consolidateCSSFiles" : true,
-    "allowDarkMode" : false,
-    "wantsXMLSiteMap" : true,
-    "legacyV3HoverOnTouch" : false,
-    "cruftlessLinks" : true
-  },
-  "identifier" : "F161D87E-8B75-40EB-85F5-8D5983D89F99",
-  "privacy" : {
-    "anonymiseThirdPartyRequests" : false
+  "social" : {
+    "useSocialTags" : true
   },
   "project" : {
     "autoStartWebServer" : false,
     "uniqueBackupName" : "824FE9BF-5001-4EEA-B997-22D199D3BC2E_rwbackup"
   },
+  "privacy" : {
+    "anonymiseThirdPartyRequests" : false
+  },
+  "identifier" : "F161D87E-8B75-40EB-85F5-8D5983D89F99",
   "theme" : {
-    "page" : {
-      "backgroundColor" : {
-        "darkShade" : 500,
-        "colorStripId" : "none",
-        "darkColorStripId" : "none",
-        "shade" : 500
-      }
-    },
-    "spacing" : [
+    "baseThemeIdentifier" : "com.realmacsoftware.themes.system",
+    "fontStyle" : [
 
     ],
     "textShadows" : [
@@ -353,9 +346,9 @@
     ],
     "borderRadius" : [
       {
+        "id" : "FB5C17CF-1452-49F4-A26B-3C252CE6BCBC",
         "name" : "glass",
-        "remValue" : 3.5,
-        "id" : "FB5C17CF-1452-49F4-A26B-3C252CE6BCBC"
+        "remValue" : 3.5
       }
     ],
     "typographies" : [
@@ -365,9 +358,6 @@
 
     ],
     "fontFamily" : [
-
-    ],
-    "fontStyle" : [
 
     ],
     "screens" : [
@@ -438,29 +428,39 @@
         "enabled" : true
       }
     ],
-    "baseThemeIdentifier" : "com.realmacsoftware.themes.system"
+    "spacing" : [
+
+    ],
+    "page" : {
+      "backgroundColor" : {
+        "colorStripId" : "none",
+        "darkShade" : 500,
+        "darkColorStripId" : "none",
+        "shade" : 500
+      }
+    }
   },
   "localization" : {
 
   },
   "rootPrefabNode" : {
-    "kind" : {
-      "folder" : {
-
-      }
-    },
     "expanded" : true,
+    "identifier" : "D207B920-9F46-4AE8-9E7A-93E673680E82",
+    "title" : "Project",
     "children" : [
 
     ],
     "item" : null,
-    "title" : "Project",
-    "identifier" : "D207B920-9F46-4AE8-9E7A-93E673680E82"
+    "kind" : {
+      "folder" : {
+
+      }
+    }
   },
   "ui" : {
     "elementEditor" : {
-      "showOutline" : false,
-      "show" : false
+      "show" : false,
+      "showOutline" : false
     },
     "contentArea" : {
       "scale" : 1,
@@ -471,12 +471,12 @@
         984
       ]
     },
-    "catalogFilter" : {
-      "showFavourites" : false,
-      "smartDocumentElements" : false
-    },
     "projectInspector" : {
       "show" : false
+    },
+    "catalogFilter" : {
+      "smartDocumentElements" : false,
+      "showFavourites" : false
     },
     "resourceInspector" : {
       "show" : false
@@ -486,15 +486,16 @@
     "expanded" : true,
     "kind" : "folder",
     "identifier" : "F8B73E6F-D702-4BBB-AAAB-93E3B8AE8F79",
+    "title" : "root",
     "children" : [
       {
         "expanded" : true,
         "kind" : "page",
         "identifier" : "7E7514D1-4ACD-4542-B01D-056E035223EE",
+        "title" : "Home",
         "children" : [
 
         ],
-        "title" : "Home",
         "manifests" : {
 
         },
@@ -513,7 +514,7 @@
           "credit" : true,
           "shouldFollowLinks" : true,
           "customCSS" : "",
-          "lastChangedDate" : 1787263404668.3,
+          "lastChangedDate" : 1787263418520.051,
           "useCustomSiteTitle" : false,
           "linkOpensInNewWindow" : false,
           "customHeadStart" : "",
@@ -534,8 +535,8 @@
           "filename" : "index.html",
           "customPageStart" : "",
           "backgroundColor" : {
-            "darkShade" : 500,
             "colorStripId" : "none",
+            "darkShade" : 500,
             "darkColorStripId" : "none",
             "shade" : 500
           },
@@ -551,10 +552,10 @@
         "expanded" : true,
         "kind" : "page",
         "identifier" : "0BB2DD2C-EEF2-4FFE-8AB7-2897FA454B46",
+        "title" : "Check Email",
         "children" : [
 
         ],
-        "title" : "Check Email",
         "manifests" : {
 
         },
@@ -594,8 +595,8 @@
           "filename" : "index.html",
           "customPageStart" : "",
           "backgroundColor" : {
-            "darkShade" : 500,
             "colorStripId" : "none",
+            "darkShade" : 500,
             "darkColorStripId" : "none",
             "shade" : 500
           },
@@ -608,7 +609,6 @@
         "createdDate" : 1751472846593.1958
       }
     ],
-    "title" : "root",
     "manifests" : {
 
     },
