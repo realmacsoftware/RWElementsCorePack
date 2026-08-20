@@ -1,0 +1,85 @@
+{
+  "components" : [
+    {
+      "developerName" : "Realmac Software",
+      "displayName" : "Button",
+      "elementId" : "com.realmacsoftware.button",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/navigation-menu",
+      "packId" : "com.realmac.corepack",
+      "packName" : "Core.elementspack",
+      "packVersion" : 2
+    },
+    {
+      "developerName" : "Realmac Software",
+      "displayName" : "Container",
+      "elementId" : "com.realmacsoftware.container",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/navigation-menu",
+      "packId" : "com.realmac.corepack",
+      "packName" : "Core.elementspack",
+      "packVersion" : 2
+    },
+    {
+      "developerName" : "Realmac Software",
+      "displayName" : "Flex",
+      "elementId" : "com.realmacsoftware.flex",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/navigation-menu",
+      "packId" : "com.realmac.corepack",
+      "packName" : "Core.elementspack",
+      "packVersion" : 2
+    },
+    {
+      "developerName" : "Elements Platform",
+      "displayName" : "Form",
+      "elementId" : "com.realmacsoftware.form",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/form-input",
+      "packId" : "com.elementsplatform.formspack",
+      "packName" : "Forms.elementspack",
+      "packVersion" : 1
+    },
+    {
+      "developerName" : "Elements Platform",
+      "displayName" : "Input",
+      "elementId" : "com.realmacsoftware.formInput",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/form-input",
+      "packId" : "com.elementsplatform.formspack",
+      "packName" : "Forms.elementspack",
+      "packVersion" : 1
+    },
+    {
+      "developerName" : "Elements Platform",
+      "displayName" : "Submit",
+      "elementId" : "com.realmacsoftware.formSubmit",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/form-input",
+      "packId" : "com.elementsplatform.formspack",
+      "packName" : "Forms.elementspack",
+      "packVersion" : 1
+    },
+    {
+      "developerName" : "Realmac Software",
+      "displayName" : "Image",
+      "elementId" : "com.realmacsoftware.image",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/navigation-menu",
+      "packId" : "com.realmac.corepack",
+      "packName" : "Core.elementspack",
+      "packVersion" : 2
+    },
+    {
+      "developerName" : "Realmac Software",
+      "displayName" : "Root",
+      "elementId" : "com.realmacsoftware.rapidweaver.root",
+      "packId" : "com.realmacsoftware.rapidweaver",
+      "packName" : "RWElements.elementspack",
+      "packVersion" : 1
+    },
+    {
+      "developerName" : "Realmac Software",
+      "displayName" : "Text",
+      "elementId" : "com.realmacsoftware.text",
+      "helpURL" : "https:\/\/docs.realmacsoftware.com\/elements-docs\/elements-app\/components\/built-in-components\/navigation-menu",
+      "packId" : "com.realmac.corepack",
+      "packName" : "Core.elementspack",
+      "packVersion" : 2
+    }
+  ],
+  "version" : 1
+}

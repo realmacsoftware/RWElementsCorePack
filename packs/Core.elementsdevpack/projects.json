@@ -67,6 +67,12 @@
             "thumbnail": "profile.jpg"
         },
         {
+            "filename": "Waitlist.elements",
+            "title": "Waitlist",
+            "description": "Simple email waitlist sign-up with a spacey background.",
+            "thumbnail": "waitlist.jpg"
+        },
+        {
             "filename": "Wellness.elements",
             "title": "Wellness",
             "description": "Calm, modern website for wellness coaches and holistic practitioners.",
