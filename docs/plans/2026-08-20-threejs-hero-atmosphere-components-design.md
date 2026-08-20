@@ -191,7 +191,7 @@ The editor and published adapters must not maintain independently interpreted de
 
 ## Editor adapter and import contract
 
-The edit branch is generated only inside `@if(edit)` and behaves as an ES module:
+The Asterra proof is a project custom component. In that environment the edit branch is generated only inside `@if(edit)` and behaves as an inline ES module:
 
 ```javascript
 import * as THREE from 'three';
@@ -200,6 +200,26 @@ export function mount(el, props) {
   // Create the real canvas and return lifecycle handlers.
 }
 ```
+
+The launch components will ship in a Dev Pack, which uses a URL-addressable editor module instead. Each component places that module at:
+
+```text
+components/<component-id>/assets/page/editor-preview.module.js
+```
+
+Hooks pass `isEdit`, `assetPath`, and the encoded settings payload. The template mounts it only in edit mode:
+
+```html
+@if(isEdit)
+<rwlivepreview
+  module="{{assetPath}}/editor-preview.module.js"
+  props="{{livePreviewProps}}"
+  class="visual-preview"
+></rwlivepreview>
+@endif
+```
+
+The special tag and its attribute names remain lowercase. Dev Pack editor modules must be verified in a normal Elements editor session because local UI-development serving does not represent pack asset module URLs correctly.
 
 The `<rwlivepreview>` element is the mount host, not the canvas. `mount()` creates and appends the actual canvas. CSS must therefore account for the live-preview wrapper and its nested canvas.
 
@@ -213,11 +233,13 @@ Elements can preserve the live-preview host while replacing ancestors or rewriti
 
 Only the core bare `three` import is considered guaranteed until tested otherwise. Three.js add-ons such as loaders, controls, and post-processing modules must not assume that `three/addons/...` resolves in the editor. Required add-ons should be bundled into an editor module or supplied through an explicitly verified module path.
 
+Image resource props include identity, path, and dimensions. When a resource changes, the editor adapter re-queries the currently rendered DOM `src`, loads it into a fresh `Image`, and updates the texture. It does not retain the original sibling `<img>` as a long-lived texture source across Elements rerenders.
+
 ## Published adapter and import contract
 
 The published branch is generated only inside `@if(!edit)`. It runs as normal page JavaScript and dynamically imports a separately pinned Three.js build.
 
-The published version must match the editor's Three.js version. A pack-local vendored module is preferred for predictable availability, but a pinned CDN URL can be used when deliberately chosen. The page must not import a separate copy for every component instance.
+The published version must match the editor's Three.js version. A pack-local vendored module is preferred for predictable availability, but a pinned CDN URL can be used when deliberately chosen. Dependencies shared by the component family live under the pack's `shared/assets/`; component-only dependencies live under that component's `assets/page/`. The page must not import a separate copy for every component instance.
 
 A shared page-level loader owns:
 
