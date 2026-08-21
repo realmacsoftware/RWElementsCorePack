@@ -1,1377 +1,16 @@
 {
-  "uiStateIdentifier" : "EDE1B869-0BAD-44A1-BA2E-02E52B0F2F96",
-  "localization" : {
-
-  },
-  "project" : {
-    "autoStartWebServer" : false,
-    "uniqueBackupName" : "F46358E0-784A-4B35-A9B6-44A7C02B3275_rwbackup"
-  },
-  "rootPage" : {
-    "children" : [
-      {
-        "children" : [
-
-        ],
-        "browserTitle" : "Asterra AI — AI agents for ambitious teams",
-        "expanded" : true,
-        "createdDate" : 1786398197552.939,
-        "code" : null,
-        "identifier" : "22F615A0-D543-4289-A8CF-6AB25ED29ED4",
-        "isIndex" : true,
-        "kind" : "page",
-        "attributes" : {
-          "backgroundColor" : {
-            "darkShade" : 500,
-            "colorStripId" : "none",
-            "darkColorStripId" : "none",
-            "shade" : 500
-          },
-          "customPageStart" : "",
-          "customJavaScript" : "",
-          "shouldArchivePage" : true,
-          "customSiteTitle" : "",
-          "filename" : "index.php",
-          "changedStatuses" : {
-            "default" : true
-          },
-          "customBodyEnd" : "",
-          "shouldEnableSocialTags" : true,
-          "customHeader" : "",
-          "customPageEnd" : "",
-          "credit" : true,
-          "shouldFollowLinks" : true,
-          "shouldIndexImages" : true,
-          "shouldIndexPage" : true,
-          "excludeFromSitemap" : false,
-          "metaDescription" : "Asterra AI gives growing teams secure agents that understand their work, automate busywork, and keep decisions moving.",
-          "hidden" : false,
-          "shouldEnableRobotTags" : true,
-          "enabled" : true,
-          "customBodyStart" : "",
-          "expiryQuantity" : 2,
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "lastChangedDate" : 1787159011482.9941,
-          "shouldAllowPreview" : true,
-          "expires" : false,
-          "customCSS" : "",
-          "customHeadEnd" : "",
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "linkOpensInNewWindow" : false
-        },
-        "title" : "Asterra AI",
-        "uniqueID" : "page0",
-        "iconIdentifier" : null,
-        "externalPageURL" : null,
-        "manifests" : {
-
-        },
-        "pageDescription" : null
-      }
-    ],
-    "browserTitle" : null,
-    "expanded" : true,
-    "createdDate" : 1786398197538.239,
-    "code" : null,
-    "identifier" : "CF35D7F0-D503-4E91-9A23-5A5EA4FA5094",
-    "attributes" : {
-      "customPageStart" : "",
-      "customJavaScript" : "",
-      "shouldArchivePage" : true,
-      "customSiteTitle" : "",
-      "filename" : "",
-      "changedStatuses" : {
-
-      },
-      "customBodyEnd" : "",
-      "shouldEnableSocialTags" : true,
-      "customHeader" : "",
-      "customPageEnd" : "",
-      "credit" : true,
-      "shouldFollowLinks" : true,
-      "shouldIndexImages" : true,
-      "shouldIndexPage" : true,
-      "excludeFromSitemap" : true,
-      "hidden" : false,
-      "shouldEnableRobotTags" : true,
-      "enabled" : true,
-      "customBodyStart" : "",
-      "expiryQuantity" : 2,
-      "encoding" : 1,
-      "customHeadStart" : "",
-      "lastChangedDate" : 1786398197538.184,
-      "shouldAllowPreview" : true,
-      "expires" : false,
-      "customCSS" : "",
-      "customHeadEnd" : "",
-      "expiryUnit" : 0,
-      "useCustomSiteTitle" : false,
-      "linkOpensInNewWindow" : false
-    },
-    "isIndex" : false,
-    "kind" : "folder",
-    "title" : "root",
-    "uniqueID" : "CF35D7F0-D503-4E91-9A23-5A5EA4FA5094",
-    "iconIdentifier" : null,
-    "externalPageURL" : null,
-    "manifests" : {
-
-    },
-    "pageDescription" : null
-  },
-  "version" : 9,
   "publishing" : {
+    "publishSettingsConfigured" : false,
     "publishingDestinations" : [
 
-    ],
-    "publishSettingsConfigured" : false
+    ]
   },
-  "globalElements" : {
-    "globals" : {
-
-    }
-  },
-  "rootPrefabNode" : {
-    "children" : [
-
-    ],
-    "title" : "Project",
-    "identifier" : "EC34884F-B64D-4D1B-92FC-A1C8646D8FD2",
-    "item" : null,
-    "kind" : {
-      "folder" : {
-
-      }
-    },
-    "expanded" : true
-  },
-  "site" : {
-    "consolidateCSSFiles" : true,
-    "useCacheBusting" : true,
-    "minifyExtraFiles" : true,
-    "legacyV3HoverOnTouch" : false,
-    "baseURL" : "https:\/\/www.elementsapp.com",
-    "themeName" : "Elements",
-    "cruftlessLinks" : true,
-    "title" : "Asterra AI",
-    "wantsXMLSiteMap" : true,
-    "allowDarkMode" : false,
-    "defaultFileExtension" : "html"
-  },
-  "social" : {
-    "useSocialTags" : true
-  },
-  "wikiRoot" : {
-    "children" : [
-      {
-        "children" : [
-          {
-            "children" : [
-
-            ],
-            "browserTitle" : null,
-            "expanded" : true,
-            "createdDate" : 1786441422068.471,
-            "code" : "---\nconcerns:\n  - Navigation and footer\/social links are plain text and not yet wired.\n  - The waitlist form has no SMTP or webhook delivery configured.\n  - Avatar overlap retains fixed-pixel translateX offsets (-12\/-24\/-36px), rather than theme tokens.\nlastIngested: 2026-08-11\npageId: 22F615A0-D543-4289-A8CF-6AB25ED29ED4\ntype: page\n---\n\n# Asterra AI (Home \/ index.php)\n\nSingle-page private-beta \/ early-access landing for **Asterra AI**, a secure AI-agent platform for ambitious, growing teams.\n\n## Layout\nTwo-column CSS grid, collapsing to one column on mobile.\n- **Left grid item:** neutral-950 content panel with navigation, hero, social proof, and footer.\n- **Right grid item:** a native Elements Container that owns the image-panel sizing and contains the **Three.js Image Ripple** component.\n\nThe right Container uses:\n- Full width\n- 50vh height on mobile\n- 100vh height from the lg breakpoint\n- Full content width and height\n- Stretch alignment\n- Zero padding and margin\n- Hidden overflow\n- Neutral-950 fallback background\n\n## Component notes\n- **Three.js Image Ripple** is intentionally sizing-agnostic and fills its parent at 100% width and height.\n- Its image is selected through the **Ripple Image** resource well in the Inspector.\n- The native parent Container controls responsive height, width, spacing, and clipping.\n- The shader responds to mouse, pointer, and touch movement.\n- The source image remains visible if WebGL or the pinned Three.js CDN module cannot load.\n\n## Notes \/ debt\n- Navigation and footer\/social links are plain text and not yet wired.\n- The waitlist form has no SMTP or webhook delivery configured.\n- Avatar overlap uses fixed-pixel translateX offsets (-12\/-24\/-36px) rather than theme tokens.\n\n## See also\n- [[overview]]\n- [[style-writing]]\n- [[style-visual]]\n- [[services]]\n- [[concerns]]\n",
-            "identifier" : "17703235-9442-45B5-8A8D-D5D69FBC088D",
-            "attributes" : {
-              "customPageStart" : "",
-              "customJavaScript" : "",
-              "shouldArchivePage" : true,
-              "customSiteTitle" : "",
-              "filename" : "asterra-ai.md",
-              "changedStatuses" : {
-                "default" : true
-              },
-              "customBodyEnd" : "",
-              "shouldEnableSocialTags" : true,
-              "customHeader" : "",
-              "customPageEnd" : "",
-              "credit" : true,
-              "shouldFollowLinks" : true,
-              "shouldIndexImages" : true,
-              "shouldIndexPage" : true,
-              "excludeFromSitemap" : true,
-              "hidden" : false,
-              "shouldEnableRobotTags" : true,
-              "enabled" : true,
-              "customBodyStart" : "",
-              "expiryQuantity" : 2,
-              "encoding" : 1,
-              "customHeadStart" : "",
-              "lastChangedDate" : 1786441432248.161,
-              "shouldAllowPreview" : true,
-              "expires" : false,
-              "customCSS" : "",
-              "customHeadEnd" : "",
-              "expiryUnit" : 0,
-              "useCustomSiteTitle" : false,
-              "linkOpensInNewWindow" : false
-            },
-            "isIndex" : false,
-            "kind" : "code",
-            "title" : "",
-            "uniqueID" : "17703235-9442-45B5-8A8D-D5D69FBC088D",
-            "iconIdentifier" : null,
-            "externalPageURL" : null,
-            "manifests" : {
-
-            },
-            "pageDescription" : null
-          }
-        ],
-        "browserTitle" : null,
-        "expanded" : true,
-        "createdDate" : 1786398280876.947,
-        "code" : null,
-        "identifier" : "9BE47F3B-7011-46BE-8DF2-A5FD353AB636",
-        "isIndex" : false,
-        "kind" : "folder",
-        "attributes" : {
-          "customPageStart" : "",
-          "customJavaScript" : "",
-          "shouldArchivePage" : true,
-          "customSiteTitle" : "",
-          "filename" : "",
-          "changedStatuses" : {
-
-          },
-          "customBodyEnd" : "",
-          "shouldEnableSocialTags" : true,
-          "customHeader" : "",
-          "customPageEnd" : "",
-          "credit" : true,
-          "shouldFollowLinks" : true,
-          "shouldIndexImages" : true,
-          "shouldIndexPage" : true,
-          "excludeFromSitemap" : true,
-          "hidden" : false,
-          "shouldEnableRobotTags" : true,
-          "enabled" : true,
-          "customBodyStart" : "",
-          "expiryQuantity" : 2,
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "lastChangedDate" : 1786398280876.927,
-          "shouldAllowPreview" : true,
-          "expires" : false,
-          "customCSS" : "",
-          "customHeadEnd" : "",
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "linkOpensInNewWindow" : false
-        },
-        "title" : "pages",
-        "uniqueID" : "9BE47F3B-7011-46BE-8DF2-A5FD353AB636",
-        "iconIdentifier" : null,
-        "externalPageURL" : null,
-        "manifests" : {
-
-        },
-        "pageDescription" : null
-      },
-      {
-        "children" : [
-
-        ],
-        "browserTitle" : null,
-        "expanded" : true,
-        "createdDate" : 1786398280877.4,
-        "code" : null,
-        "identifier" : "FC674A91-D283-448D-B3F8-272287DBB57D",
-        "attributes" : {
-          "customPageStart" : "",
-          "customJavaScript" : "",
-          "shouldArchivePage" : true,
-          "customSiteTitle" : "",
-          "filename" : "",
-          "changedStatuses" : {
-
-          },
-          "customBodyEnd" : "",
-          "shouldEnableSocialTags" : true,
-          "customHeader" : "",
-          "customPageEnd" : "",
-          "credit" : true,
-          "shouldFollowLinks" : true,
-          "shouldIndexImages" : true,
-          "shouldIndexPage" : true,
-          "excludeFromSitemap" : true,
-          "hidden" : false,
-          "shouldEnableRobotTags" : true,
-          "enabled" : true,
-          "customBodyStart" : "",
-          "expiryQuantity" : 2,
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "lastChangedDate" : 1786398280877.387,
-          "shouldAllowPreview" : true,
-          "expires" : false,
-          "customCSS" : "",
-          "customHeadEnd" : "",
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "linkOpensInNewWindow" : false
-        },
-        "isIndex" : false,
-        "kind" : "folder",
-        "title" : "concepts",
-        "uniqueID" : "FC674A91-D283-448D-B3F8-272287DBB57D",
-        "iconIdentifier" : null,
-        "externalPageURL" : null,
-        "manifests" : {
-
-        },
-        "pageDescription" : null
-      },
-      {
-        "children" : [
-
-        ],
-        "browserTitle" : null,
-        "expanded" : true,
-        "createdDate" : 1786398280877.811,
-        "code" : null,
-        "identifier" : "F08F4C53-EDBD-45AE-AFC7-CCB168BCE7D7",
-        "attributes" : {
-          "customPageStart" : "",
-          "customJavaScript" : "",
-          "shouldArchivePage" : true,
-          "customSiteTitle" : "",
-          "filename" : "",
-          "changedStatuses" : {
-
-          },
-          "customBodyEnd" : "",
-          "shouldEnableSocialTags" : true,
-          "customHeader" : "",
-          "customPageEnd" : "",
-          "credit" : true,
-          "shouldFollowLinks" : true,
-          "shouldIndexImages" : true,
-          "shouldIndexPage" : true,
-          "excludeFromSitemap" : true,
-          "hidden" : false,
-          "shouldEnableRobotTags" : true,
-          "enabled" : true,
-          "customBodyStart" : "",
-          "expiryQuantity" : 2,
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "lastChangedDate" : 1786398280877.798,
-          "shouldAllowPreview" : true,
-          "expires" : false,
-          "customCSS" : "",
-          "customHeadEnd" : "",
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "linkOpensInNewWindow" : false
-        },
-        "isIndex" : false,
-        "kind" : "folder",
-        "title" : "entities",
-        "uniqueID" : "F08F4C53-EDBD-45AE-AFC7-CCB168BCE7D7",
-        "iconIdentifier" : null,
-        "externalPageURL" : null,
-        "manifests" : {
-
-        },
-        "pageDescription" : null
-      },
-      {
-        "children" : [
-
-        ],
-        "browserTitle" : null,
-        "expanded" : true,
-        "createdDate" : 1786398280878.196,
-        "code" : null,
-        "identifier" : "80EF01A5-8843-4893-90FB-C805592EAF50",
-        "isIndex" : false,
-        "kind" : "folder",
-        "attributes" : {
-          "customPageStart" : "",
-          "customJavaScript" : "",
-          "shouldArchivePage" : true,
-          "customSiteTitle" : "",
-          "filename" : "",
-          "changedStatuses" : {
-
-          },
-          "customBodyEnd" : "",
-          "shouldEnableSocialTags" : true,
-          "customHeader" : "",
-          "customPageEnd" : "",
-          "credit" : true,
-          "shouldFollowLinks" : true,
-          "shouldIndexImages" : true,
-          "shouldIndexPage" : true,
-          "excludeFromSitemap" : true,
-          "hidden" : false,
-          "shouldEnableRobotTags" : true,
-          "enabled" : true,
-          "customBodyStart" : "",
-          "expiryQuantity" : 2,
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "lastChangedDate" : 1786398280878.185,
-          "shouldAllowPreview" : true,
-          "expires" : false,
-          "customCSS" : "",
-          "customHeadEnd" : "",
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "linkOpensInNewWindow" : false
-        },
-        "title" : "analyses",
-        "uniqueID" : "80EF01A5-8843-4893-90FB-C805592EAF50",
-        "iconIdentifier" : null,
-        "externalPageURL" : null,
-        "manifests" : {
-
-        },
-        "pageDescription" : null
-      },
-      {
-        "children" : [
-
-        ],
-        "browserTitle" : null,
-        "expanded" : true,
-        "createdDate" : 1786398280878.604,
-        "code" : null,
-        "identifier" : "CF834401-0AD1-43C9-A04C-536B3AD5A0A7",
-        "attributes" : {
-          "customPageStart" : "",
-          "customJavaScript" : "",
-          "shouldArchivePage" : true,
-          "customSiteTitle" : "",
-          "filename" : "",
-          "changedStatuses" : {
-
-          },
-          "customBodyEnd" : "",
-          "shouldEnableSocialTags" : true,
-          "customHeader" : "",
-          "customPageEnd" : "",
-          "credit" : true,
-          "shouldFollowLinks" : true,
-          "shouldIndexImages" : true,
-          "shouldIndexPage" : true,
-          "excludeFromSitemap" : true,
-          "hidden" : false,
-          "shouldEnableRobotTags" : true,
-          "enabled" : true,
-          "customBodyStart" : "",
-          "expiryQuantity" : 2,
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "lastChangedDate" : 1786398280878.593,
-          "shouldAllowPreview" : true,
-          "expires" : false,
-          "customCSS" : "",
-          "customHeadEnd" : "",
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "linkOpensInNewWindow" : false
-        },
-        "isIndex" : false,
-        "kind" : "folder",
-        "title" : "field-reports",
-        "uniqueID" : "CF834401-0AD1-43C9-A04C-536B3AD5A0A7",
-        "iconIdentifier" : null,
-        "externalPageURL" : null,
-        "manifests" : {
-
-        },
-        "pageDescription" : null
-      },
-      {
-        "children" : [
-
-        ],
-        "browserTitle" : null,
-        "expanded" : true,
-        "createdDate" : 1786398280879.0222,
-        "code" : "---\ntype: index\n---\n\n# Asterra AI — Project Wiki\n\nSingle-page private-beta \/ early-access landing for **Asterra AI**, a secure AI-agent platform for ambitious teams.\n\n## Pages\n- [[pages\/asterra-ai]] — Home (index.php), the split-hero early-access landing.\n\n## Design System\n- [[style-writing]] — voice & copy conventions.\n- [[style-visual]] — layout, colour, typography.\n\n## Project Operations\n- [[backlog]] — outstanding work and speculative ideas.\n- [[services]] — external services, APIs, credentials, and integrations.\n\n## Admin\n- [[journal]] — session history.\n- [[overview]] — project intent.\n- [[concerns]] — known debt.\n",
-        "identifier" : "8E867E91-D2E9-407A-BFC9-BD523CB476A7",
-        "attributes" : {
-          "customPageStart" : "",
-          "customJavaScript" : "",
-          "shouldArchivePage" : true,
-          "customSiteTitle" : "",
-          "filename" : "index.md",
-          "changedStatuses" : {
-            "default" : true
-          },
-          "customBodyEnd" : "",
-          "shouldEnableSocialTags" : true,
-          "customHeader" : "",
-          "customPageEnd" : "",
-          "credit" : true,
-          "shouldFollowLinks" : true,
-          "shouldIndexImages" : true,
-          "shouldIndexPage" : true,
-          "excludeFromSitemap" : true,
-          "hidden" : false,
-          "shouldEnableRobotTags" : true,
-          "enabled" : true,
-          "customBodyStart" : "",
-          "expiryQuantity" : 2,
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "lastChangedDate" : 1786398280879.781,
-          "shouldAllowPreview" : true,
-          "expires" : false,
-          "customCSS" : "",
-          "customHeadEnd" : "",
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "linkOpensInNewWindow" : false
-        },
-        "isIndex" : false,
-        "kind" : "code",
-        "title" : "",
-        "uniqueID" : "8E867E91-D2E9-407A-BFC9-BD523CB476A7",
-        "iconIdentifier" : null,
-        "externalPageURL" : null,
-        "manifests" : {
-
-        },
-        "pageDescription" : null
-      },
-      {
-        "children" : [
-
-        ],
-        "browserTitle" : null,
-        "expanded" : true,
-        "createdDate" : 1786398280879.7952,
-        "code" : "---\ntitle: Project Overview\nsummary: Goals, structure, and design intent of this project\n---\n\n## Purpose\n\nAsterra AI is an early-access landing page for a secure AI-agent platform that helps growing teams automate operational work and move decisions forward.\n\n## Target Audience\n\nLeaders and operators at ambitious growing teams looking for practical, secure AI assistance across their work.\n\n## Structure\n\nA single, split-hero homepage introduces the private beta, captures early-access interest, and establishes momentum through lightweight social proof.\n\n## See also\n- [[pages\/asterra-ai]]\n- [[style-writing]]\n- [[style-visual]]\n",
-        "identifier" : "CE3BBF64-1462-42BB-BAF6-700B4521C89A",
-        "isIndex" : false,
-        "kind" : "code",
-        "attributes" : {
-          "customPageStart" : "",
-          "customJavaScript" : "",
-          "shouldArchivePage" : true,
-          "customSiteTitle" : "",
-          "filename" : "overview.md",
-          "changedStatuses" : {
-            "default" : true
-          },
-          "customBodyEnd" : "",
-          "shouldEnableSocialTags" : true,
-          "customHeader" : "",
-          "customPageEnd" : "",
-          "credit" : true,
-          "shouldFollowLinks" : true,
-          "shouldIndexImages" : true,
-          "shouldIndexPage" : true,
-          "excludeFromSitemap" : true,
-          "hidden" : false,
-          "shouldEnableRobotTags" : true,
-          "enabled" : true,
-          "customBodyStart" : "",
-          "expiryQuantity" : 2,
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "lastChangedDate" : 1786398280880.5198,
-          "shouldAllowPreview" : true,
-          "expires" : false,
-          "customCSS" : "",
-          "customHeadEnd" : "",
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "linkOpensInNewWindow" : false
-        },
-        "title" : "",
-        "uniqueID" : "CE3BBF64-1462-42BB-BAF6-700B4521C89A",
-        "iconIdentifier" : null,
-        "externalPageURL" : null,
-        "manifests" : {
-
-        },
-        "pageDescription" : null
-      },
-      {
-        "children" : [
-
-        ],
-        "browserTitle" : null,
-        "expanded" : true,
-        "createdDate" : 1786398280880.5352,
-        "code" : "---\ntitle: Writing Style\nsummary: Voice and tone guide — read before authoring any copy\n---\n\n## Voice & Tone\nConfident, calm, and modern. Product marketing for a secure AI-agent platform built for ambitious teams. Aspirational but never hyperbolic.\n\n## Sentence Rhythm\nShort, declarative. Headlines make a clear promise (\"Your company, amplified by AI.\"). Supporting copy stays focused on outcomes rather than technical detail.\n\n## Vocabulary\nFavours capable, grounded language: \"secure\", \"agents\", \"understand\", \"automate\", \"moving\". Avoids hype, jargon, and exclamation marks.\n\n## Person & POV\nSecond person implied (\"your company\", \"their work\"). Brand referred to by name (\"Asterra AI\").\n\n## Heading Style\nSentence case, declarative, occasionally paired with a single concise accent phrase.\n\n## Caption & Label Style\nUppercase, wide letter-spacing, small size for eyebrows, badges, nav, footer, and social-proof labels. Button labels are title case (\"Request Access\").\n",
-        "identifier" : "F19D1330-6958-4E3B-AE5D-834B3E0F6353",
-        "attributes" : {
-          "customPageStart" : "",
-          "customJavaScript" : "",
-          "shouldArchivePage" : true,
-          "customSiteTitle" : "",
-          "filename" : "style-writing.md",
-          "changedStatuses" : {
-            "default" : true
-          },
-          "customBodyEnd" : "",
-          "shouldEnableSocialTags" : true,
-          "customHeader" : "",
-          "customPageEnd" : "",
-          "credit" : true,
-          "shouldFollowLinks" : true,
-          "shouldIndexImages" : true,
-          "shouldIndexPage" : true,
-          "excludeFromSitemap" : true,
-          "hidden" : false,
-          "shouldEnableRobotTags" : true,
-          "enabled" : true,
-          "customBodyStart" : "",
-          "expiryQuantity" : 2,
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "lastChangedDate" : 1786398280881.28,
-          "shouldAllowPreview" : true,
-          "expires" : false,
-          "customCSS" : "",
-          "customHeadEnd" : "",
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "linkOpensInNewWindow" : false
-        },
-        "isIndex" : false,
-        "kind" : "code",
-        "title" : "",
-        "uniqueID" : "F19D1330-6958-4E3B-AE5D-834B3E0F6353",
-        "iconIdentifier" : null,
-        "externalPageURL" : null,
-        "manifests" : {
-
-        },
-        "pageDescription" : null
-      },
-      {
-        "children" : [
-
-        ],
-        "browserTitle" : null,
-        "expanded" : true,
-        "createdDate" : 1786398280881.294,
-        "code" : "---\ntitle: Visual Style\nsummary: Layout and visual conventions — read before building or restructuring pages\n---\n\n## Layout Patterns\n| Pattern | Description | Pages |\n|---------|-------------|-------|\n| Split hero | Two-column grid: black content panel (left) + full-bleed iridescent gradient image (right). Single column on mobile, 2-col at lg. Content column uses flex-col justify-between (nav top, hero middle, logo cloud\/footer bottom). | Vela (home) |\n\n## Colour Palette\n| Role | Value |\n|------|-------|\n| Background | neutral-950 (#0a0a0a) black panel |\n| Surface | neutral-900 (#171717) for pills\/inputs, neutral-800 borders |\n| Text primary | neutral-50 (#fafafa) |\n| Text muted | neutral-400\/500\/600 |\n| Accent | accent-400 (#d193de) — italic emphasis word |\n| CTA button | white bg, neutral-950 label |\n\n## Typography\n| Role | Font | Size \/ Weight |\n|------|------|--------------|\n| Headline | quote (serif) | 6xl \/ 500, accent word italic |\n| Body | body (sans) | lg \/ 400, relaxed leading |\n| Eyebrows\/labels | body | xs \/ 500, uppercase, wide tracking |\n\n## Spacing & Rhythm\nLeft panel padding 8\/6 (mobile) → 10\/12 (lg). Hero maxWidth ~34rem. Section gaps via flex gapY 6–10.\n\n## Image Treatment\nHero gradient is a full-bleed cover image on the right panel, min-height 50vh mobile \/ full height at lg.\n\n## Navigation Structure\nInline top nav (logo left, links right, hidden below md). Footer: copyright left, social links right, splits to row at sm.\n",
-        "identifier" : "1189B1CB-5225-4BC3-BE0D-079FD7A9BABC",
-        "attributes" : {
-          "customPageStart" : "",
-          "customJavaScript" : "",
-          "shouldArchivePage" : true,
-          "customSiteTitle" : "",
-          "filename" : "style-visual.md",
-          "changedStatuses" : {
-            "default" : true
-          },
-          "customBodyEnd" : "",
-          "shouldEnableSocialTags" : true,
-          "customHeader" : "",
-          "customPageEnd" : "",
-          "credit" : true,
-          "shouldFollowLinks" : true,
-          "shouldIndexImages" : true,
-          "shouldIndexPage" : true,
-          "excludeFromSitemap" : true,
-          "hidden" : false,
-          "shouldEnableRobotTags" : true,
-          "enabled" : true,
-          "customBodyStart" : "",
-          "expiryQuantity" : 2,
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "lastChangedDate" : 1786398280881.998,
-          "shouldAllowPreview" : true,
-          "expires" : false,
-          "customCSS" : "",
-          "customHeadEnd" : "",
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "linkOpensInNewWindow" : false
-        },
-        "isIndex" : false,
-        "kind" : "code",
-        "title" : "",
-        "uniqueID" : "1189B1CB-5225-4BC3-BE0D-079FD7A9BABC",
-        "iconIdentifier" : null,
-        "externalPageURL" : null,
-        "manifests" : {
-
-        },
-        "pageDescription" : null
-      },
-      {
-        "children" : [
-
-        ],
-        "browserTitle" : null,
-        "expanded" : true,
-        "createdDate" : 1786398280882.012,
-        "code" : "---\ntitle: Journal\nsummary: Running log of sessions, decisions, and progress\n---\n\nAppend-only log of work sessions, decisions, and notable events. Newest entries at the top.\n\nUse `appendEntry` with a date heading to add new entries.\n\n## 2026-08-10 — Built Vela waitlist landing\n\nBuilt the single-page Vela coming-soon landing from a user screenshot. Two-column split hero (black content panel + iridescent gradient image, AI-generated). Composed from primitives (no templates available): grid + flex + text + form. Set page to index.php (Form requires PHP). Seeded the design system (writing + visual) from this build. Known follow-ups: wire nav\/footer links, configure Form delivery.\n\n## 2026-08-10 — Refined Vela social proof\n\nGenerated and added four cohesive professional headshot resources to the Vela homepage social-proof row. Replaced the previous gradient placeholders with circular, dark-bordered portraits while preserving the compact staggered overlap and existing waitlist count.\n\n## 2026-08-11 — Rebranded landing as Asterra AI\n\nRewrote the Vela landing page as **Asterra AI**, a secure AI-agent platform for ambitious teams. Updated navigation, private-beta message, hero copy, social proof, logo cloud, footer, browser metadata, site title, and writing guidance. Preserved the existing split-hero layout, portraits, and waitlist form.\n\n## 2026-08-11\n\nRepaired the **Pulsing Dot** custom component on [[pages\/asterra-ai]]. Its size now uses an inline CSS custom property, allowing fractional theme spacing values to render correctly instead of depending on generated utility classes.\n\n## 2026-08-11\n\nConfirmed that the **Pulsing Dot** custom component renderer emitted no visible output even when reduced to literal HTML, SVG, and plain text. Replaced its sole on-page use with a native accent-coloured text dot to preserve the early-access badge; filed a field report for the renderer failure.\n\n## 2026-08-11 — Pulsing Dot repair\n\nRebuilt the Pulsing Dot as a self-contained CSS core-and-ring animation. The pulse no longer depends on JavaScript and is intended to run in both the editor canvas and preview; reduced-motion preferences disable the expanding ring. Remaining debt: its accent colour is still a hardcoded hex pending a theme-backed component property.\n\n## 2026-08-11 — Status Dot theme colour\n\nUpdated the Status Dot custom component to remove its Available\/Unavailable segmented state. It now exposes one single-mode theme colour picker, applying the chosen theme background colour to both the solid core and pulse ring. Size and animation controls remain intact. Removed the resolved hardcoded-colour concern from [[pages\/asterra-ai]] and regenerated [[concerns]].\n\n## 2026-08-11 — Three.js ripple image settings\n\nBuilt and placed the **Three.js Image Ripple** custom component in the right hero panel on [[pages\/asterra-ai]]. It reacts to mouse, pointer, and touch movement, includes reduced-motion and static-image fallbacks, and exposes controls for the shader behavior. Replaced the original component dropzone with a **Ripple Image** resource well in the Inspector and preserved the existing holographic flower artwork. Recorded the pinned jsDelivr Three.js dependency in [[services]].\n\n## 2026-08-11 — Standalone ripple sizing\n\nExpanded the **Three.js Image Ripple** component with standalone sizing controls: responsive widths, alignment, fill\/fixed\/viewport\/aspect-ratio height modes, and separate mobile\/desktop values. Replaced the wrapped instance on [[pages\/asterra-ai]] with an equivalent ripple directly inside the two-column hero Grid, then removed the obsolete right-side Background wrapper.\n\n## 2026-08-11 — Ripple root sizing repair\n\nRepaired the standalone **Three.js Image Ripple** sizing on [[pages\/asterra-ai]]. Elements was stretching the custom-component wrapper to the Grid row while a shorter nested host contained the image, exposing a large white area beneath it in the editor. Moved the component classes, sizing, background, data attributes, and WebGL host onto the actual custom-component root via `rw.setRootElement()`, and removed the redundant nested host.\n\n## 2026-08-11 — Native Container ripple layout\n\nReplaced standalone custom-component sizing with a native Elements Container on [[pages\/asterra-ai]]. The Container is the Grid’s right-hand item and owns responsive sizing (50vh mobile, 100vh at lg), clipping, and fallback background. The **Three.js Image Ripple** is now a simple 100% width\/height child with no competing layout controls.\n\n## 2026-08-11 — Ripple runtime repair\n\nRestored the interactive runtime for the selected **Three.js Image Ripple** on [[pages\/asterra-ai]]. The script had been explicitly skipping Elements edit mode, and an intermediate cleanup patch introduced invalid JavaScript. Removed the edit-mode guard, repaired the lifecycle\/cleanup block, moved pointer tracking to `window` so the editor selection overlay does not intercept movement, limited activation to the image bounds, and rebuilt the live instance.\n\n## 2026-08-11 — Ripple preview layer alignment\n\nFixed the Preview layer mismatch for the **Three.js Image Ripple** on [[pages\/asterra-ai]]. Made the native Container a positioned frame, pinned the custom-component root to all four Container edges, and hid the fallback source image once WebGL reports ready so the canvas becomes the sole visible image layer.\n\n## 2026-08-11 — Fixed Three.js Image Ripple layout break in preview\n\nThe Three.js Image Ripple custom component was breaking the page layout in preview. Root cause: its root element was styled `position: absolute; inset: 0`, so it sat outside normal flow and depended entirely on a positioned ancestor — fragile against the Core container's wrapper structure and able to overlay the page when anchoring escaped the intended cell. Fixed by making the root flow-based: `position: relative; width: 100%; height: 100%; flex: 1 1 auto; min-height: 16rem` (inner image\/canvas layers remain absolute within it). Verified against Core pack source that the parent container's content wrapper is `relative flex flex-col h-screen`, so the component now fills its grid cell exactly. Also fixed `@if(edit)` in the template referencing an undefined property — the hook now sets `edit: rw.project.mode === 'edit'` (previously only a `data-edit` attribute existed), and added a fallback to the `--color-neutral-950` background variable. User should re-run preview to confirm.\n\n## 2026-08-11 — Root-caused and fixed custom component preview breakage\n\nFollow-up to the ripple fix: preview was still broken. Inspected the actual preview build via the local PHP preview server and found `{{id}}` interpolates to an empty string in the Styles slot (and template) of custom components at build time, so every `.component-{{id}}` selector matched nothing — the Three.js Image Ripple rendered completely unstyled and its full-size source image blew out the page layout. Rewrote the ripple Styles scoped to the static `.three-ripple` class (no interpolation). Applied the same pattern to Status Dot (static `.status-dot` scoping, static keyframe name, size via inline `--dot-size` custom property, root element built in Hooks with `setRootElement`) — its CSS had been dropped from the build entirely and the dot was invisible in preview. Verified in a real browser: layout correct, WebGL ripple active (`is-ready`, canvas filling the 960×1080 cell), dot pulsing, no horizontal overflow. Field report closed with root cause and the working pattern.\n\n## 2026-08-11 — Added Ambient strength slider; found inspector slider registration quirk\n\nAdded an \"Ambient strength\" slider to the Three.js Image Ripple (new `idleStrength` property → `data-idle-strength` → `uIdleStrength` shader uniform), and made ambient drift stronger\/faster by default. In the process discovered that **slider property definitions with small fractional values are silently dropped from the component schema\/inspector** — observed failures: `step: 0.002`, `step: 0.1`, `step: 0.001`, and `min: 0.5`; observed successes: `step: 1`, `step: 0.5` with `min >= 1`. The component's original Strength and Speed sliders had never actually appeared in the inspector because of this. Fix pattern: define sliders with integer-ish ranges (e.g. Strength 2–80 = thousandths, Ambient strength 1–50 = thousandths) and convert to the real value in Hooks when writing the `data-*` attribute. All six ripple properties now register and their values flow through to preview correctly.\n",
-        "identifier" : "A70A1D90-08FE-42A5-98ED-9D3949D73C02",
-        "isIndex" : false,
-        "kind" : "code",
-        "attributes" : {
-          "customPageStart" : "",
-          "customJavaScript" : "",
-          "shouldArchivePage" : true,
-          "customSiteTitle" : "",
-          "filename" : "journal.md",
-          "changedStatuses" : {
-            "default" : true
-          },
-          "customBodyEnd" : "",
-          "shouldEnableSocialTags" : true,
-          "customHeader" : "",
-          "customPageEnd" : "",
-          "credit" : true,
-          "shouldFollowLinks" : true,
-          "shouldIndexImages" : true,
-          "shouldIndexPage" : true,
-          "excludeFromSitemap" : true,
-          "hidden" : false,
-          "shouldEnableRobotTags" : true,
-          "enabled" : true,
-          "customBodyStart" : "",
-          "expiryQuantity" : 2,
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "lastChangedDate" : 1786398280882.719,
-          "shouldAllowPreview" : true,
-          "expires" : false,
-          "customCSS" : "",
-          "customHeadEnd" : "",
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "linkOpensInNewWindow" : false
-        },
-        "title" : "",
-        "uniqueID" : "A70A1D90-08FE-42A5-98ED-9D3949D73C02",
-        "iconIdentifier" : null,
-        "externalPageURL" : null,
-        "manifests" : {
-
-        },
-        "pageDescription" : null
-      },
-      {
-        "children" : [
-
-        ],
-        "browserTitle" : null,
-        "expanded" : true,
-        "createdDate" : 1786398280882.735,
-        "code" : "---\ntitle: Concerns\nsummary: Derived rollup of known problems, tech debt, and gotchas\n---\n\n**Derived — do not hand-edit.** Regenerated from project notes and document-level audit findings.\n\n## Tech Debt \/ Structural\n\n| Severity | Component \/ Page | Description | Notes |\n|---|---|---|---|\n| Low | [[pages\/asterra-ai]] | Avatar overlap uses fixed-pixel translateX offsets (-12\/-24\/-36px), rather than theme tokens. | Preserves the compact social-proof composition; revisit only if the theme spacing scale changes. |\n\n## Content \/ Editorial\n\n| Severity | Page | Description | Notes |\n|---|---|---|---|\n| Low | [[pages\/asterra-ai]] | Navigation and footer\/social links are plain text and are not yet wired. | Add destination links before launch. |\n| Medium | [[pages\/asterra-ai]] | The early-access form has no SMTP or webhook delivery configured. | Configure delivery before collecting live sign-ups. |\n\n## Open Field Reports\n\n| Date | Title | Status |\n|---|---|---|\n| 2026-08-11 | Custom component instances render blank despite literal template output | Open — retest before closing; Status Dot now renders with CSS animation and theme-backed colour. |\n",
-        "identifier" : "2447E65B-E3BC-4CB9-A08B-3291F2BF82B4",
-        "attributes" : {
-          "customPageStart" : "",
-          "customJavaScript" : "",
-          "shouldArchivePage" : true,
-          "customSiteTitle" : "",
-          "filename" : "concerns.md",
-          "changedStatuses" : {
-            "default" : true
-          },
-          "customBodyEnd" : "",
-          "shouldEnableSocialTags" : true,
-          "customHeader" : "",
-          "customPageEnd" : "",
-          "credit" : true,
-          "shouldFollowLinks" : true,
-          "shouldIndexImages" : true,
-          "shouldIndexPage" : true,
-          "excludeFromSitemap" : true,
-          "hidden" : false,
-          "shouldEnableRobotTags" : true,
-          "enabled" : true,
-          "customBodyStart" : "",
-          "expiryQuantity" : 2,
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "lastChangedDate" : 1786398280883.4219,
-          "shouldAllowPreview" : true,
-          "expires" : false,
-          "customCSS" : "",
-          "customHeadEnd" : "",
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "linkOpensInNewWindow" : false
-        },
-        "isIndex" : false,
-        "kind" : "code",
-        "title" : "",
-        "uniqueID" : "2447E65B-E3BC-4CB9-A08B-3291F2BF82B4",
-        "iconIdentifier" : null,
-        "externalPageURL" : null,
-        "manifests" : {
-
-        },
-        "pageDescription" : null
-      },
-      {
-        "children" : [
-
-        ],
-        "browserTitle" : null,
-        "expanded" : true,
-        "createdDate" : 1786398280883.4373,
-        "code" : "---\ntitle: Backlog\nsummary: Outstanding work and speculative ideas with priority and status\n---\n\nTracks both committed tasks and speculative ideas. Mark speculative items with `idea` in the Type column.\n\n| Priority | Type | Task | Status |\n|----------|------|------|--------|\n",
-        "identifier" : "35A90538-B0AA-495E-91F9-BDC8C2B368CE",
-        "attributes" : {
-          "customPageStart" : "",
-          "customJavaScript" : "",
-          "shouldArchivePage" : true,
-          "customSiteTitle" : "",
-          "filename" : "backlog.md",
-          "changedStatuses" : {
-            "default" : true
-          },
-          "customBodyEnd" : "",
-          "shouldEnableSocialTags" : true,
-          "customHeader" : "",
-          "customPageEnd" : "",
-          "credit" : true,
-          "shouldFollowLinks" : true,
-          "shouldIndexImages" : true,
-          "shouldIndexPage" : true,
-          "excludeFromSitemap" : true,
-          "hidden" : false,
-          "shouldEnableRobotTags" : true,
-          "enabled" : true,
-          "customBodyStart" : "",
-          "expiryQuantity" : 2,
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "lastChangedDate" : 1786398280884.0771,
-          "shouldAllowPreview" : true,
-          "expires" : false,
-          "customCSS" : "",
-          "customHeadEnd" : "",
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "linkOpensInNewWindow" : false
-        },
-        "isIndex" : false,
-        "kind" : "code",
-        "title" : "",
-        "uniqueID" : "35A90538-B0AA-495E-91F9-BDC8C2B368CE",
-        "iconIdentifier" : null,
-        "externalPageURL" : null,
-        "manifests" : {
-
-        },
-        "pageDescription" : null
-      },
-      {
-        "children" : [
-
-        ],
-        "browserTitle" : null,
-        "expanded" : true,
-        "createdDate" : 1786398280884.093,
-        "code" : "---\ntitle: Services\nsummary: External services, APIs, credentials, and integrations\n---\n\nDocument external services, APIs, and integrations used by this project.\n\n| Service | Purpose | Notes |\n|---------|---------|-------|\n| jsDelivr | Loads the pinned Three.js ES module for the interactive hero ripple. | `three@0.165.0`; the source image remains visible if the CDN or WebGL is unavailable. |\n\n## See also\n- [[pages\/asterra-ai]]\n",
-        "identifier" : "E5444FC7-F88B-43BB-923C-E5C341419271",
-        "isIndex" : false,
-        "kind" : "code",
-        "attributes" : {
-          "customPageStart" : "",
-          "customJavaScript" : "",
-          "shouldArchivePage" : true,
-          "customSiteTitle" : "",
-          "filename" : "services.md",
-          "changedStatuses" : {
-            "default" : true
-          },
-          "customBodyEnd" : "",
-          "shouldEnableSocialTags" : true,
-          "customHeader" : "",
-          "customPageEnd" : "",
-          "credit" : true,
-          "shouldFollowLinks" : true,
-          "shouldIndexImages" : true,
-          "shouldIndexPage" : true,
-          "excludeFromSitemap" : true,
-          "hidden" : false,
-          "shouldEnableRobotTags" : true,
-          "enabled" : true,
-          "customBodyStart" : "",
-          "expiryQuantity" : 2,
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "lastChangedDate" : 1786398280884.737,
-          "shouldAllowPreview" : true,
-          "expires" : false,
-          "customCSS" : "",
-          "customHeadEnd" : "",
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "linkOpensInNewWindow" : false
-        },
-        "title" : "",
-        "uniqueID" : "E5444FC7-F88B-43BB-923C-E5C341419271",
-        "iconIdentifier" : null,
-        "externalPageURL" : null,
-        "manifests" : {
-
-        },
-        "pageDescription" : null
-      },
-      {
-        "children" : [
-
-        ],
-        "browserTitle" : null,
-        "expanded" : true,
-        "createdDate" : 1786398280884.763,
-        "code" : "---\ntitle: Wiki Sync\nsummary: Machine-generated sync snapshot. Do not edit by hand.\n---\n\n<!-- Machine-generated. Do not edit by hand. -->\n\n```json\n{\n  \"pages\" : {\n    \"22F615A0-D543-4289-A8CF-6AB25ED29ED4\" : \"2026-08-11T12:28:53Z\"\n  },\n  \"syncedAt\" : \"2026-08-11T12:31:15Z\"\n}\n```\n",
-        "identifier" : "B114D7A1-FDB8-4209-9DBC-4A88DAB5D619",
-        "attributes" : {
-          "customPageStart" : "",
-          "customJavaScript" : "",
-          "shouldArchivePage" : true,
-          "customSiteTitle" : "",
-          "filename" : "sync.md",
-          "changedStatuses" : {
-            "default" : true
-          },
-          "customBodyEnd" : "",
-          "shouldEnableSocialTags" : true,
-          "customHeader" : "",
-          "customPageEnd" : "",
-          "credit" : true,
-          "shouldFollowLinks" : true,
-          "shouldIndexImages" : true,
-          "shouldIndexPage" : true,
-          "excludeFromSitemap" : true,
-          "hidden" : false,
-          "shouldEnableRobotTags" : true,
-          "enabled" : true,
-          "customBodyStart" : "",
-          "expiryQuantity" : 2,
-          "encoding" : 1,
-          "customHeadStart" : "",
-          "lastChangedDate" : 1786398280885.427,
-          "shouldAllowPreview" : true,
-          "expires" : false,
-          "customCSS" : "",
-          "customHeadEnd" : "",
-          "expiryUnit" : 0,
-          "useCustomSiteTitle" : false,
-          "linkOpensInNewWindow" : false
-        },
-        "isIndex" : false,
-        "kind" : "code",
-        "title" : "",
-        "uniqueID" : "B114D7A1-FDB8-4209-9DBC-4A88DAB5D619",
-        "iconIdentifier" : null,
-        "externalPageURL" : null,
-        "manifests" : {
-
-        },
-        "pageDescription" : null
-      }
-    ],
-    "browserTitle" : null,
-    "expanded" : true,
-    "createdDate" : 1786398280876.1611,
-    "code" : null,
-    "identifier" : "7F47CC1F-D2D1-465F-9EB4-12FA576F4329",
-    "attributes" : {
-      "customPageStart" : "",
-      "customJavaScript" : "",
-      "shouldArchivePage" : true,
-      "customSiteTitle" : "",
-      "filename" : "",
-      "changedStatuses" : {
-
-      },
-      "customBodyEnd" : "",
-      "shouldEnableSocialTags" : true,
-      "customHeader" : "",
-      "customPageEnd" : "",
-      "credit" : true,
-      "shouldFollowLinks" : true,
-      "shouldIndexImages" : true,
-      "shouldIndexPage" : true,
-      "excludeFromSitemap" : true,
-      "hidden" : false,
-      "shouldEnableRobotTags" : true,
-      "enabled" : true,
-      "customBodyStart" : "",
-      "expiryQuantity" : 2,
-      "encoding" : 1,
-      "customHeadStart" : "",
-      "lastChangedDate" : 1786398280876.1138,
-      "shouldAllowPreview" : true,
-      "expires" : false,
-      "customCSS" : "",
-      "customHeadEnd" : "",
-      "expiryUnit" : 0,
-      "useCustomSiteTitle" : false,
-      "linkOpensInNewWindow" : false
-    },
-    "isIndex" : false,
-    "kind" : "folder",
-    "title" : "Project Wiki",
-    "uniqueID" : "7F47CC1F-D2D1-465F-9EB4-12FA576F4329",
-    "iconIdentifier" : null,
-    "externalPageURL" : null,
-    "manifests" : {
-
-    },
-    "pageDescription" : null
-  },
-  "siteResources" : {
-    "resources" : {
-      "C0C05EBB-63A7-4D03-956E-01CD3D065D54" : {
-        "changedStatuses" : {
-
-        },
-        "originalName" : "holographic-flower-hero.png",
-        "smartFolderKind" : 0,
-        "metadata" : {
-          "width" : 1024,
-          "aspect" : 0.6666666666666666,
-          "generationSize" : "1024x1536",
-          "height" : 1536,
-          "generationPrompt" : "Abstract ethereal analog film photograph of a single large dark violet-indigo flower silhouette, heavily blurred and dreamlike, softly dissolving at the edges, centered on an iridescent holographic gradient background of soft pink, lilac, peach and hints of mint green. A single thin diagonal streak of bright neon light crosses the upper portion of the frame. Heavy analog film grain, scanned film texture with subtle edge artifacts, lo-fi photographic feel, moody yet luminous, dreamy, high-end art print aesthetic. No text, no watermark."
-        },
-        "kind" : 1,
-        "isSVG" : false,
-        "name" : "holographic-flower-hero.jpg",
-        "typeIdentifier" : "public.png",
-        "timeStamp" : 1786398280875.562,
-        "identifier" : "C0C05EBB-63A7-4D03-956E-01CD3D065D54",
-        "hostedImageURLs" : [
-
-        ],
-        "parentIdentifier" : "D212530E-F051-4EF7-9105-5326A08EAFC8",
-        "expanded" : true
-      },
-      "D212530E-F051-4EF7-9105-5326A08EAFC8" : {
-        "expanded" : true,
-        "parentIdentifier" : "55B46BD4-EAC4-4AC3-B1CD-C175AB3C5091",
-        "timeStamp" : -62135769600000,
-        "changedStatuses" : {
-
-        },
-        "name" : "images",
-        "smartFolderKind" : 0,
-        "identifier" : "D212530E-F051-4EF7-9105-5326A08EAFC8",
-        "kind" : 0,
-        "hostedImageURLs" : [
-
-        ]
-      },
-      "21B04840-7098-4A6A-801A-A214F245F95D" : {
-        "originalName" : "linkedin.svg",
-        "expanded" : false,
-        "isSVG" : true,
-        "name" : "linkedin.svg",
-        "hostedImageURLs" : [
-
-        ],
-        "identifier" : "21B04840-7098-4A6A-801A-A214F245F95D",
-        "typeIdentifier" : "public.svg-image",
-        "smartFolderKind" : 0,
-        "timeStamp" : 1750254145443.6987,
-        "parentIdentifier" : "F68EC8BC-A959-4A54-BF57-3F8872EEB5AA",
-        "kind" : 1,
-        "changedStatuses" : {
-
-        }
-      },
-      "F68EC8BC-A959-4A54-BF57-3F8872EEB5AA" : {
-        "expanded" : false,
-        "parentIdentifier" : "55B46BD4-EAC4-4AC3-B1CD-C175AB3C5091",
-        "timeStamp" : -62135769600000,
-        "changedStatuses" : {
-
-        },
-        "name" : "Icons",
-        "identifier" : "F68EC8BC-A959-4A54-BF57-3F8872EEB5AA",
-        "smartFolderKind" : 0,
-        "kind" : 0,
-        "hostedImageURLs" : [
-
-        ]
-      },
-      "8DF28EF7-4829-4CE5-82A6-564D5B9E0A31" : {
-        "changedStatuses" : {
-
-        },
-        "originalName" : "waveform.jpg",
-        "smartFolderKind" : 0,
-        "metadata" : {
-          "height" : 1537,
-          "width" : 1023,
-          "aspect" : 0.6655823031880286
-        },
-        "kind" : 1,
-        "isSVG" : false,
-        "name" : "waveform.jpg",
-        "typeIdentifier" : "public.jpeg",
-        "timeStamp" : 1786455304551.946,
-        "identifier" : "8DF28EF7-4829-4CE5-82A6-564D5B9E0A31",
-        "hostedImageURLs" : [
-
-        ],
-        "parentIdentifier" : "D212530E-F051-4EF7-9105-5326A08EAFC8",
-        "expanded" : true
-      },
-      "78E47ECF-4319-40B5-9DBE-0C1A36DAEE9C" : {
-        "changedStatuses" : {
-
-        },
-        "originalName" : "portrait-four.jpg",
-        "smartFolderKind" : 0,
-        "metadata" : {
-          "height" : 1500,
-          "width" : 1500,
-          "aspect" : 1
-        },
-        "isSVG" : false,
-        "kind" : 1,
-        "name" : "portrait-four.jpg",
-        "typeIdentifier" : "public.jpeg",
-        "identifier" : "78E47ECF-4319-40B5-9DBE-0C1A36DAEE9C",
-        "timeStamp" : 1786436914774.5537,
-        "hostedImageURLs" : [
-
-        ],
-        "parentIdentifier" : "9B4156C3-34DB-492A-B1A3-097316E99F53",
-        "expanded" : false
-      },
-      "0FC0F039-02D8-4E8D-8D22-7B26FF132D69" : {
-        "originalName" : "tiktok.svg",
-        "expanded" : false,
-        "isSVG" : true,
-        "name" : "tiktok.svg",
-        "hostedImageURLs" : [
-
-        ],
-        "identifier" : "0FC0F039-02D8-4E8D-8D22-7B26FF132D69",
-        "typeIdentifier" : "public.svg-image",
-        "smartFolderKind" : 0,
-        "timeStamp" : 1750254306948.9531,
-        "parentIdentifier" : "F68EC8BC-A959-4A54-BF57-3F8872EEB5AA",
-        "kind" : 1,
-        "changedStatuses" : {
-
-        }
-      },
-      "9EC75AAE-1D9F-488D-9C0C-F4D05A3582A2" : {
-        "parentIdentifier" : "F68EC8BC-A959-4A54-BF57-3F8872EEB5AA",
-        "expanded" : false,
-        "originalName" : "x-twitter.svg",
-        "timeStamp" : 1750253993686.3252,
-        "typeIdentifier" : "public.svg-image",
-        "name" : "x-twitter.svg",
-        "changedStatuses" : {
-
-        },
-        "identifier" : "9EC75AAE-1D9F-488D-9C0C-F4D05A3582A2",
-        "smartFolderKind" : 0,
-        "kind" : 1,
-        "isSVG" : true,
-        "hostedImageURLs" : [
-
-        ]
-      },
-      "F9E815A6-3C20-4239-9F33-F50FB084417D" : {
-        "parentIdentifier" : "F68EC8BC-A959-4A54-BF57-3F8872EEB5AA",
-        "expanded" : false,
-        "originalName" : "instagram.svg",
-        "timeStamp" : 1750254131190.557,
-        "typeIdentifier" : "public.svg-image",
-        "name" : "instagram.svg",
-        "changedStatuses" : {
-
-        },
-        "smartFolderKind" : 0,
-        "identifier" : "F9E815A6-3C20-4239-9F33-F50FB084417D",
-        "kind" : 1,
-        "isSVG" : true,
-        "hostedImageURLs" : [
-
-        ]
-      },
-      "55B46BD4-EAC4-4AC3-B1CD-C175AB3C5091" : {
-        "expanded" : true,
-        "timeStamp" : -62135769600000,
-        "changedStatuses" : {
-
-        },
-        "name" : "Resources",
-        "identifier" : "55B46BD4-EAC4-4AC3-B1CD-C175AB3C5091",
-        "smartFolderKind" : 0,
-        "kind" : 0,
-        "hostedImageURLs" : [
-
-        ]
-      },
-      "21524EEB-CCA3-4D9C-8EA8-30F2B08917E4" : {
-        "changedStatuses" : {
-
-        },
-        "originalName" : "portrait-two.jpg",
-        "smartFolderKind" : 0,
-        "metadata" : {
-          "height" : 1500,
-          "width" : 1500,
-          "aspect" : 1
-        },
-        "kind" : 1,
-        "isSVG" : false,
-        "name" : "portrait-two.jpg",
-        "typeIdentifier" : "public.jpeg",
-        "timeStamp" : 1786436914768.2551,
-        "identifier" : "21524EEB-CCA3-4D9C-8EA8-30F2B08917E4",
-        "hostedImageURLs" : [
-
-        ],
-        "parentIdentifier" : "9B4156C3-34DB-492A-B1A3-097316E99F53",
-        "expanded" : false
-      },
-      "35CDC420-C642-453D-B092-A96FF2C78BB5" : {
-        "changedStatuses" : {
-
-        },
-        "originalName" : "portrait-one.jpg",
-        "smartFolderKind" : 0,
-        "metadata" : {
-          "height" : 1500,
-          "width" : 1500,
-          "aspect" : 1
-        },
-        "isSVG" : false,
-        "kind" : 1,
-        "name" : "portrait-one.jpg",
-        "typeIdentifier" : "public.jpeg",
-        "identifier" : "35CDC420-C642-453D-B092-A96FF2C78BB5",
-        "timeStamp" : 1786436914774.2678,
-        "hostedImageURLs" : [
-
-        ],
-        "parentIdentifier" : "9B4156C3-34DB-492A-B1A3-097316E99F53",
-        "expanded" : false
-      },
-      "E8BCA33C-02EE-4BA9-BC67-9DE3FB441F2A" : {
-        "changedStatuses" : {
-
-        },
-        "originalName" : "portrait-three.jpg",
-        "smartFolderKind" : 0,
-        "metadata" : {
-          "height" : 1500,
-          "width" : 1500,
-          "aspect" : 1
-        },
-        "isSVG" : false,
-        "kind" : 1,
-        "name" : "portrait-three.jpg",
-        "typeIdentifier" : "public.jpeg",
-        "identifier" : "E8BCA33C-02EE-4BA9-BC67-9DE3FB441F2A",
-        "timeStamp" : 1786436914765.8716,
-        "hostedImageURLs" : [
-
-        ],
-        "parentIdentifier" : "9B4156C3-34DB-492A-B1A3-097316E99F53",
-        "expanded" : false
-      },
-      "CC8D1F49-DA28-44AF-A34C-5B31A3159C14" : {
-        "changedStatuses" : {
-
-        },
-        "originalName" : "vela-hero-gradient.png",
-        "smartFolderKind" : 0,
-        "metadata" : {
-          "height" : 1536,
-          "width" : 1024,
-          "aspect" : 0.6666666666666666,
-          "generationPrompt" : "Abstract 3D iridescent gradient artwork, dark background with vivid electric blue, cyan, magenta, and purple luminous light streaks forming a soft flowing flower-like bloom shape. Two bright diagonal glowing light bands crossing the frame. Chromatic, ethereal, high-contrast, glossy volumetric light, deep blacks. Vertical composition, premium tech aesthetic.",
-          "generationSize" : "1024x1536"
-        },
-        "isSVG" : false,
-        "kind" : 1,
-        "name" : "vela-hero-gradient.jpg",
-        "typeIdentifier" : "public.png",
-        "identifier" : "CC8D1F49-DA28-44AF-A34C-5B31A3159C14",
-        "timeStamp" : 1786399017572.849,
-        "hostedImageURLs" : [
-
-        ],
-        "parentIdentifier" : "D212530E-F051-4EF7-9105-5326A08EAFC8",
-        "expanded" : true
-      },
-      "9B4156C3-34DB-492A-B1A3-097316E99F53" : {
-        "expanded" : true,
-        "parentIdentifier" : "55B46BD4-EAC4-4AC3-B1CD-C175AB3C5091",
-        "timeStamp" : -62135769600000,
-        "changedStatuses" : {
-
-        },
-        "name" : "portraits",
-        "smartFolderKind" : 0,
-        "identifier" : "9B4156C3-34DB-492A-B1A3-097316E99F53",
-        "kind" : 0,
-        "hostedImageURLs" : [
-
-        ]
-      }
-    },
-    "root" : "55B46BD4-EAC4-4AC3-B1CD-C175AB3C5091",
-    "children" : {
-      "D212530E-F051-4EF7-9105-5326A08EAFC8" : [
-        "CC8D1F49-DA28-44AF-A34C-5B31A3159C14",
-        "C0C05EBB-63A7-4D03-956E-01CD3D065D54",
-        "8DF28EF7-4829-4CE5-82A6-564D5B9E0A31"
-      ],
-      "55B46BD4-EAC4-4AC3-B1CD-C175AB3C5091" : [
-        "D212530E-F051-4EF7-9105-5326A08EAFC8",
-        "9B4156C3-34DB-492A-B1A3-097316E99F53",
-        "F68EC8BC-A959-4A54-BF57-3F8872EEB5AA"
-      ],
-      "9B4156C3-34DB-492A-B1A3-097316E99F53" : [
-        "21524EEB-CCA3-4D9C-8EA8-30F2B08917E4",
-        "E8BCA33C-02EE-4BA9-BC67-9DE3FB441F2A",
-        "35CDC420-C642-453D-B092-A96FF2C78BB5",
-        "78E47ECF-4319-40B5-9DBE-0C1A36DAEE9C"
-      ],
-      "F68EC8BC-A959-4A54-BF57-3F8872EEB5AA" : [
-        "21B04840-7098-4A6A-801A-A214F245F95D",
-        "F9E815A6-3C20-4239-9F33-F50FB084417D",
-        "9EC75AAE-1D9F-488D-9C0C-F4D05A3582A2",
-        "0FC0F039-02D8-4E8D-8D22-7B26FF132D69"
-      ]
-    }
+  "privacy" : {
+    "anonymiseThirdPartyRequests" : false
   },
   "images" : {
+    "logoAltText" : "",
     "webIcons" : {
-      "faviconLarge" : {
-        "type" : 4,
-        "autoGenerate" : false
-      },
-      "faviconMedium" : {
-        "type" : 5,
-        "autoGenerate" : false
-      },
-      "large" : {
-        "type" : 0,
-        "autoGenerate" : false
-      },
-      "small" : {
-        "type" : 2,
-        "autoGenerate" : false
-      },
-      "pinnedTab" : {
-        "type" : 3,
-        "autoGenerate" : false
-      },
       "faviconSmall" : {
         "type" : 6,
         "autoGenerate" : false
@@ -1379,145 +18,1479 @@
       "medium" : {
         "type" : 1,
         "autoGenerate" : false
+      },
+      "small" : {
+        "type" : 2,
+        "autoGenerate" : false
+      },
+      "large" : {
+        "type" : 0,
+        "autoGenerate" : false
+      },
+      "faviconLarge" : {
+        "type" : 4,
+        "autoGenerate" : false
+      },
+      "pinnedTab" : {
+        "type" : 3,
+        "autoGenerate" : false
+      },
+      "faviconMedium" : {
+        "type" : 5,
+        "autoGenerate" : false
       }
-    },
-    "logoAltText" : ""
+    }
   },
+  "uiStateIdentifier" : "EDE1B869-0BAD-44A1-BA2E-02E52B0F2F96",
+  "globalElements" : {
+    "globals" : {
+
+    }
+  },
+  "ui" : {
+    "projectInspector" : {
+      "show" : false
+    },
+    "contentArea" : {
+      "size" : [
+        1426,
+        956
+      ],
+      "scale" : 0.9803646563814866,
+      "darkAppearance" : false,
+      "responsiveSize" : "lg"
+    },
+    "catalogFilter" : {
+      "showFavourites" : false,
+      "smartDocumentElements" : false
+    },
+    "elementEditor" : {
+      "show" : false,
+      "showOutline" : true
+    },
+    "resourceInspector" : {
+      "show" : false
+    }
+  },
+  "identifier" : "EDE1B869-0BAD-44A1-BA2E-02E52B0F2F96",
+  "project" : {
+    "uniqueBackupName" : "F46358E0-784A-4B35-A9B6-44A7C02B3275_rwbackup",
+    "autoStartWebServer" : false
+  },
+  "wikiRoot" : {
+    "externalPageURL" : null,
+    "manifests" : {
+
+    },
+    "expanded" : true,
+    "createdDate" : 1786398280876.1611,
+    "kind" : "folder",
+    "title" : "Project Wiki",
+    "pageDescription" : null,
+    "code" : null,
+    "uniqueID" : "7F47CC1F-D2D1-465F-9EB4-12FA576F4329",
+    "browserTitle" : null,
+    "iconIdentifier" : null,
+    "isIndex" : false,
+    "identifier" : "7F47CC1F-D2D1-465F-9EB4-12FA576F4329",
+    "children" : [
+      {
+        "externalPageURL" : null,
+        "manifests" : {
+
+        },
+        "expanded" : true,
+        "createdDate" : 1786398280876.947,
+        "kind" : "folder",
+        "title" : "pages",
+        "pageDescription" : null,
+        "code" : null,
+        "uniqueID" : "9BE47F3B-7011-46BE-8DF2-A5FD353AB636",
+        "browserTitle" : null,
+        "iconIdentifier" : null,
+        "isIndex" : false,
+        "identifier" : "9BE47F3B-7011-46BE-8DF2-A5FD353AB636",
+        "children" : [
+          {
+            "externalPageURL" : null,
+            "manifests" : {
+
+            },
+            "expanded" : true,
+            "createdDate" : 1786441422068.471,
+            "kind" : "code",
+            "title" : "",
+            "pageDescription" : null,
+            "code" : "---\nconcerns:\n  - Navigation and footer\/social links are plain text and not yet wired.\n  - The waitlist form has no SMTP or webhook delivery configured.\n  - Avatar overlap retains fixed-pixel translateX offsets (-12\/-24\/-36px), rather than theme tokens.\nlastIngested: 2026-08-11\npageId: 22F615A0-D543-4289-A8CF-6AB25ED29ED4\ntype: page\n---\n\n# Asterra AI (Home \/ index.php)\n\nSingle-page private-beta \/ early-access landing for **Asterra AI**, a secure AI-agent platform for ambitious, growing teams.\n\n## Layout\nTwo-column CSS grid, collapsing to one column on mobile.\n- **Left grid item:** neutral-950 content panel with navigation, hero, social proof, and footer.\n- **Right grid item:** a native Elements Container that owns the image-panel sizing and contains the **Three.js Image Ripple** component.\n\nThe right Container uses:\n- Full width\n- 50vh height on mobile\n- 100vh height from the lg breakpoint\n- Full content width and height\n- Stretch alignment\n- Zero padding and margin\n- Hidden overflow\n- Neutral-950 fallback background\n\n## Component notes\n- **Three.js Image Ripple** is intentionally sizing-agnostic and fills its parent at 100% width and height.\n- Its image is selected through the **Ripple Image** resource well in the Inspector.\n- The native parent Container controls responsive height, width, spacing, and clipping.\n- The shader responds to mouse, pointer, and touch movement.\n- The source image remains visible if WebGL or the pinned Three.js CDN module cannot load.\n\n## Notes \/ debt\n- Navigation and footer\/social links are plain text and not yet wired.\n- The waitlist form has no SMTP or webhook delivery configured.\n- Avatar overlap uses fixed-pixel translateX offsets (-12\/-24\/-36px) rather than theme tokens.\n\n## See also\n- [[overview]]\n- [[style-writing]]\n- [[style-visual]]\n- [[services]]\n- [[concerns]]\n",
+            "uniqueID" : "17703235-9442-45B5-8A8D-D5D69FBC088D",
+            "browserTitle" : null,
+            "iconIdentifier" : null,
+            "isIndex" : false,
+            "identifier" : "17703235-9442-45B5-8A8D-D5D69FBC088D",
+            "children" : [
+
+            ],
+            "attributes" : {
+              "expiryQuantity" : 2,
+              "linkOpensInNewWindow" : false,
+              "customJavaScript" : "",
+              "shouldArchivePage" : true,
+              "customBodyStart" : "",
+              "shouldAllowPreview" : true,
+              "customCSS" : "",
+              "shouldEnableRobotTags" : true,
+              "enabled" : true,
+              "useCustomSiteTitle" : false,
+              "excludeFromSitemap" : true,
+              "customPageStart" : "",
+              "expires" : false,
+              "customHeader" : "",
+              "shouldIndexPage" : true,
+              "shouldIndexImages" : true,
+              "lastChangedDate" : 1786441432248.161,
+              "encoding" : 1,
+              "changedStatuses" : {
+                "default" : true
+              },
+              "shouldEnableSocialTags" : true,
+              "hidden" : false,
+              "credit" : true,
+              "customPageEnd" : "",
+              "filename" : "asterra-ai.md",
+              "customSiteTitle" : "",
+              "expiryUnit" : 0,
+              "customHeadEnd" : "",
+              "shouldFollowLinks" : true,
+              "customBodyEnd" : "",
+              "customHeadStart" : ""
+            }
+          }
+        ],
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "linkOpensInNewWindow" : false,
+          "customJavaScript" : "",
+          "shouldArchivePage" : true,
+          "customBodyStart" : "",
+          "shouldAllowPreview" : true,
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "enabled" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customPageStart" : "",
+          "expires" : false,
+          "customHeader" : "",
+          "shouldIndexPage" : true,
+          "shouldIndexImages" : true,
+          "lastChangedDate" : 1786398280876.927,
+          "encoding" : 1,
+          "changedStatuses" : {
+
+          },
+          "shouldEnableSocialTags" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customPageEnd" : "",
+          "filename" : "",
+          "customSiteTitle" : "",
+          "expiryUnit" : 0,
+          "customHeadEnd" : "",
+          "shouldFollowLinks" : true,
+          "customBodyEnd" : "",
+          "customHeadStart" : ""
+        }
+      },
+      {
+        "externalPageURL" : null,
+        "manifests" : {
+
+        },
+        "expanded" : true,
+        "createdDate" : 1786398280877.4,
+        "kind" : "folder",
+        "title" : "concepts",
+        "pageDescription" : null,
+        "code" : null,
+        "uniqueID" : "FC674A91-D283-448D-B3F8-272287DBB57D",
+        "browserTitle" : null,
+        "iconIdentifier" : null,
+        "isIndex" : false,
+        "identifier" : "FC674A91-D283-448D-B3F8-272287DBB57D",
+        "children" : [
+
+        ],
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "linkOpensInNewWindow" : false,
+          "customJavaScript" : "",
+          "shouldArchivePage" : true,
+          "customBodyStart" : "",
+          "shouldAllowPreview" : true,
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "enabled" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customPageStart" : "",
+          "expires" : false,
+          "customHeader" : "",
+          "shouldIndexPage" : true,
+          "shouldIndexImages" : true,
+          "lastChangedDate" : 1786398280877.387,
+          "encoding" : 1,
+          "changedStatuses" : {
+
+          },
+          "shouldEnableSocialTags" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customPageEnd" : "",
+          "filename" : "",
+          "customSiteTitle" : "",
+          "expiryUnit" : 0,
+          "customHeadEnd" : "",
+          "shouldFollowLinks" : true,
+          "customBodyEnd" : "",
+          "customHeadStart" : ""
+        }
+      },
+      {
+        "externalPageURL" : null,
+        "manifests" : {
+
+        },
+        "expanded" : true,
+        "createdDate" : 1786398280877.811,
+        "kind" : "folder",
+        "title" : "entities",
+        "pageDescription" : null,
+        "code" : null,
+        "uniqueID" : "F08F4C53-EDBD-45AE-AFC7-CCB168BCE7D7",
+        "browserTitle" : null,
+        "iconIdentifier" : null,
+        "isIndex" : false,
+        "identifier" : "F08F4C53-EDBD-45AE-AFC7-CCB168BCE7D7",
+        "children" : [
+
+        ],
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "linkOpensInNewWindow" : false,
+          "customJavaScript" : "",
+          "shouldArchivePage" : true,
+          "customBodyStart" : "",
+          "shouldAllowPreview" : true,
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "enabled" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customPageStart" : "",
+          "expires" : false,
+          "customHeader" : "",
+          "shouldIndexPage" : true,
+          "shouldIndexImages" : true,
+          "lastChangedDate" : 1786398280877.798,
+          "encoding" : 1,
+          "changedStatuses" : {
+
+          },
+          "shouldEnableSocialTags" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customPageEnd" : "",
+          "filename" : "",
+          "customSiteTitle" : "",
+          "expiryUnit" : 0,
+          "customHeadEnd" : "",
+          "shouldFollowLinks" : true,
+          "customBodyEnd" : "",
+          "customHeadStart" : ""
+        }
+      },
+      {
+        "externalPageURL" : null,
+        "manifests" : {
+
+        },
+        "expanded" : true,
+        "createdDate" : 1786398280878.196,
+        "kind" : "folder",
+        "title" : "analyses",
+        "pageDescription" : null,
+        "code" : null,
+        "uniqueID" : "80EF01A5-8843-4893-90FB-C805592EAF50",
+        "browserTitle" : null,
+        "iconIdentifier" : null,
+        "isIndex" : false,
+        "identifier" : "80EF01A5-8843-4893-90FB-C805592EAF50",
+        "children" : [
+
+        ],
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "linkOpensInNewWindow" : false,
+          "customJavaScript" : "",
+          "shouldArchivePage" : true,
+          "customBodyStart" : "",
+          "shouldAllowPreview" : true,
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "enabled" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customPageStart" : "",
+          "expires" : false,
+          "customHeader" : "",
+          "shouldIndexPage" : true,
+          "shouldIndexImages" : true,
+          "lastChangedDate" : 1786398280878.185,
+          "encoding" : 1,
+          "changedStatuses" : {
+
+          },
+          "shouldEnableSocialTags" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customPageEnd" : "",
+          "filename" : "",
+          "customSiteTitle" : "",
+          "expiryUnit" : 0,
+          "customHeadEnd" : "",
+          "shouldFollowLinks" : true,
+          "customBodyEnd" : "",
+          "customHeadStart" : ""
+        }
+      },
+      {
+        "externalPageURL" : null,
+        "manifests" : {
+
+        },
+        "expanded" : true,
+        "createdDate" : 1786398280878.604,
+        "kind" : "folder",
+        "title" : "field-reports",
+        "pageDescription" : null,
+        "code" : null,
+        "uniqueID" : "CF834401-0AD1-43C9-A04C-536B3AD5A0A7",
+        "browserTitle" : null,
+        "iconIdentifier" : null,
+        "isIndex" : false,
+        "identifier" : "CF834401-0AD1-43C9-A04C-536B3AD5A0A7",
+        "children" : [
+
+        ],
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "linkOpensInNewWindow" : false,
+          "customJavaScript" : "",
+          "shouldArchivePage" : true,
+          "customBodyStart" : "",
+          "shouldAllowPreview" : true,
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "enabled" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customPageStart" : "",
+          "expires" : false,
+          "customHeader" : "",
+          "shouldIndexPage" : true,
+          "shouldIndexImages" : true,
+          "lastChangedDate" : 1786398280878.593,
+          "encoding" : 1,
+          "changedStatuses" : {
+
+          },
+          "shouldEnableSocialTags" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customPageEnd" : "",
+          "filename" : "",
+          "customSiteTitle" : "",
+          "expiryUnit" : 0,
+          "customHeadEnd" : "",
+          "shouldFollowLinks" : true,
+          "customBodyEnd" : "",
+          "customHeadStart" : ""
+        }
+      },
+      {
+        "externalPageURL" : null,
+        "manifests" : {
+
+        },
+        "expanded" : true,
+        "createdDate" : 1786398280879.0222,
+        "kind" : "code",
+        "title" : "",
+        "pageDescription" : null,
+        "code" : "---\ntype: index\n---\n\n# Asterra AI — Project Wiki\n\nSingle-page private-beta \/ early-access landing for **Asterra AI**, a secure AI-agent platform for ambitious teams.\n\n## Pages\n- [[pages\/asterra-ai]] — Home (index.php), the split-hero early-access landing.\n\n## Design System\n- [[style-writing]] — voice & copy conventions.\n- [[style-visual]] — layout, colour, typography.\n\n## Project Operations\n- [[backlog]] — outstanding work and speculative ideas.\n- [[services]] — external services, APIs, credentials, and integrations.\n\n## Admin\n- [[journal]] — session history.\n- [[overview]] — project intent.\n- [[concerns]] — known debt.\n",
+        "uniqueID" : "8E867E91-D2E9-407A-BFC9-BD523CB476A7",
+        "browserTitle" : null,
+        "iconIdentifier" : null,
+        "isIndex" : false,
+        "identifier" : "8E867E91-D2E9-407A-BFC9-BD523CB476A7",
+        "children" : [
+
+        ],
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "linkOpensInNewWindow" : false,
+          "customJavaScript" : "",
+          "shouldArchivePage" : true,
+          "customBodyStart" : "",
+          "shouldAllowPreview" : true,
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "enabled" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customPageStart" : "",
+          "expires" : false,
+          "customHeader" : "",
+          "shouldIndexPage" : true,
+          "shouldIndexImages" : true,
+          "lastChangedDate" : 1786398280879.781,
+          "encoding" : 1,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldEnableSocialTags" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customPageEnd" : "",
+          "filename" : "index.md",
+          "customSiteTitle" : "",
+          "expiryUnit" : 0,
+          "customHeadEnd" : "",
+          "shouldFollowLinks" : true,
+          "customBodyEnd" : "",
+          "customHeadStart" : ""
+        }
+      },
+      {
+        "externalPageURL" : null,
+        "manifests" : {
+
+        },
+        "expanded" : true,
+        "createdDate" : 1786398280879.7952,
+        "kind" : "code",
+        "title" : "",
+        "pageDescription" : null,
+        "code" : "---\ntitle: Project Overview\nsummary: Goals, structure, and design intent of this project\n---\n\n## Purpose\n\nAsterra AI is an early-access landing page for a secure AI-agent platform that helps growing teams automate operational work and move decisions forward.\n\n## Target Audience\n\nLeaders and operators at ambitious growing teams looking for practical, secure AI assistance across their work.\n\n## Structure\n\nA single, split-hero homepage introduces the private beta, captures early-access interest, and establishes momentum through lightweight social proof.\n\n## See also\n- [[pages\/asterra-ai]]\n- [[style-writing]]\n- [[style-visual]]\n",
+        "uniqueID" : "CE3BBF64-1462-42BB-BAF6-700B4521C89A",
+        "browserTitle" : null,
+        "iconIdentifier" : null,
+        "isIndex" : false,
+        "identifier" : "CE3BBF64-1462-42BB-BAF6-700B4521C89A",
+        "children" : [
+
+        ],
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "linkOpensInNewWindow" : false,
+          "customJavaScript" : "",
+          "shouldArchivePage" : true,
+          "customBodyStart" : "",
+          "shouldAllowPreview" : true,
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "enabled" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customPageStart" : "",
+          "expires" : false,
+          "customHeader" : "",
+          "shouldIndexPage" : true,
+          "shouldIndexImages" : true,
+          "lastChangedDate" : 1786398280880.5198,
+          "encoding" : 1,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldEnableSocialTags" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customPageEnd" : "",
+          "filename" : "overview.md",
+          "customSiteTitle" : "",
+          "expiryUnit" : 0,
+          "customHeadEnd" : "",
+          "shouldFollowLinks" : true,
+          "customBodyEnd" : "",
+          "customHeadStart" : ""
+        }
+      },
+      {
+        "externalPageURL" : null,
+        "manifests" : {
+
+        },
+        "expanded" : true,
+        "createdDate" : 1786398280880.5352,
+        "kind" : "code",
+        "title" : "",
+        "pageDescription" : null,
+        "code" : "---\ntitle: Writing Style\nsummary: Voice and tone guide — read before authoring any copy\n---\n\n## Voice & Tone\nConfident, calm, and modern. Product marketing for a secure AI-agent platform built for ambitious teams. Aspirational but never hyperbolic.\n\n## Sentence Rhythm\nShort, declarative. Headlines make a clear promise (\"Your company, amplified by AI.\"). Supporting copy stays focused on outcomes rather than technical detail.\n\n## Vocabulary\nFavours capable, grounded language: \"secure\", \"agents\", \"understand\", \"automate\", \"moving\". Avoids hype, jargon, and exclamation marks.\n\n## Person & POV\nSecond person implied (\"your company\", \"their work\"). Brand referred to by name (\"Asterra AI\").\n\n## Heading Style\nSentence case, declarative, occasionally paired with a single concise accent phrase.\n\n## Caption & Label Style\nUppercase, wide letter-spacing, small size for eyebrows, badges, nav, footer, and social-proof labels. Button labels are title case (\"Request Access\").\n",
+        "uniqueID" : "F19D1330-6958-4E3B-AE5D-834B3E0F6353",
+        "browserTitle" : null,
+        "iconIdentifier" : null,
+        "isIndex" : false,
+        "identifier" : "F19D1330-6958-4E3B-AE5D-834B3E0F6353",
+        "children" : [
+
+        ],
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "linkOpensInNewWindow" : false,
+          "customJavaScript" : "",
+          "shouldArchivePage" : true,
+          "customBodyStart" : "",
+          "shouldAllowPreview" : true,
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "enabled" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customPageStart" : "",
+          "expires" : false,
+          "customHeader" : "",
+          "shouldIndexPage" : true,
+          "shouldIndexImages" : true,
+          "lastChangedDate" : 1786398280881.28,
+          "encoding" : 1,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldEnableSocialTags" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customPageEnd" : "",
+          "filename" : "style-writing.md",
+          "customSiteTitle" : "",
+          "expiryUnit" : 0,
+          "customHeadEnd" : "",
+          "shouldFollowLinks" : true,
+          "customBodyEnd" : "",
+          "customHeadStart" : ""
+        }
+      },
+      {
+        "externalPageURL" : null,
+        "manifests" : {
+
+        },
+        "expanded" : true,
+        "createdDate" : 1786398280881.294,
+        "kind" : "code",
+        "title" : "",
+        "pageDescription" : null,
+        "code" : "---\ntitle: Visual Style\nsummary: Layout and visual conventions — read before building or restructuring pages\n---\n\n## Layout Patterns\n| Pattern | Description | Pages |\n|---------|-------------|-------|\n| Split hero | Two-column grid: black content panel (left) + full-bleed iridescent gradient image (right). Single column on mobile, 2-col at lg. Content column uses flex-col justify-between (nav top, hero middle, logo cloud\/footer bottom). | Vela (home) |\n\n## Colour Palette\n| Role | Value |\n|------|-------|\n| Background | neutral-950 (#0a0a0a) black panel |\n| Surface | neutral-900 (#171717) for pills\/inputs, neutral-800 borders |\n| Text primary | neutral-50 (#fafafa) |\n| Text muted | neutral-400\/500\/600 |\n| Accent | accent-400 (#d193de) — italic emphasis word |\n| CTA button | white bg, neutral-950 label |\n\n## Typography\n| Role | Font | Size \/ Weight |\n|------|------|--------------|\n| Headline | quote (serif) | 6xl \/ 500, accent word italic |\n| Body | body (sans) | lg \/ 400, relaxed leading |\n| Eyebrows\/labels | body | xs \/ 500, uppercase, wide tracking |\n\n## Spacing & Rhythm\nLeft panel padding 8\/6 (mobile) → 10\/12 (lg). Hero maxWidth ~34rem. Section gaps via flex gapY 6–10.\n\n## Image Treatment\nHero gradient is a full-bleed cover image on the right panel, min-height 50vh mobile \/ full height at lg.\n\n## Navigation Structure\nInline top nav (logo left, links right, hidden below md). Footer: copyright left, social links right, splits to row at sm.\n",
+        "uniqueID" : "1189B1CB-5225-4BC3-BE0D-079FD7A9BABC",
+        "browserTitle" : null,
+        "iconIdentifier" : null,
+        "isIndex" : false,
+        "identifier" : "1189B1CB-5225-4BC3-BE0D-079FD7A9BABC",
+        "children" : [
+
+        ],
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "linkOpensInNewWindow" : false,
+          "customJavaScript" : "",
+          "shouldArchivePage" : true,
+          "customBodyStart" : "",
+          "shouldAllowPreview" : true,
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "enabled" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customPageStart" : "",
+          "expires" : false,
+          "customHeader" : "",
+          "shouldIndexPage" : true,
+          "shouldIndexImages" : true,
+          "lastChangedDate" : 1786398280881.998,
+          "encoding" : 1,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldEnableSocialTags" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customPageEnd" : "",
+          "filename" : "style-visual.md",
+          "customSiteTitle" : "",
+          "expiryUnit" : 0,
+          "customHeadEnd" : "",
+          "shouldFollowLinks" : true,
+          "customBodyEnd" : "",
+          "customHeadStart" : ""
+        }
+      },
+      {
+        "externalPageURL" : null,
+        "manifests" : {
+
+        },
+        "expanded" : true,
+        "createdDate" : 1786398280882.012,
+        "kind" : "code",
+        "title" : "",
+        "pageDescription" : null,
+        "code" : "---\ntitle: Journal\nsummary: Running log of sessions, decisions, and progress\n---\n\nAppend-only log of work sessions, decisions, and notable events. Newest entries at the top.\n\nUse `appendEntry` with a date heading to add new entries.\n\n## 2026-08-10 — Built Vela waitlist landing\n\nBuilt the single-page Vela coming-soon landing from a user screenshot. Two-column split hero (black content panel + iridescent gradient image, AI-generated). Composed from primitives (no templates available): grid + flex + text + form. Set page to index.php (Form requires PHP). Seeded the design system (writing + visual) from this build. Known follow-ups: wire nav\/footer links, configure Form delivery.\n\n## 2026-08-10 — Refined Vela social proof\n\nGenerated and added four cohesive professional headshot resources to the Vela homepage social-proof row. Replaced the previous gradient placeholders with circular, dark-bordered portraits while preserving the compact staggered overlap and existing waitlist count.\n\n## 2026-08-11 — Rebranded landing as Asterra AI\n\nRewrote the Vela landing page as **Asterra AI**, a secure AI-agent platform for ambitious teams. Updated navigation, private-beta message, hero copy, social proof, logo cloud, footer, browser metadata, site title, and writing guidance. Preserved the existing split-hero layout, portraits, and waitlist form.\n\n## 2026-08-11\n\nRepaired the **Pulsing Dot** custom component on [[pages\/asterra-ai]]. Its size now uses an inline CSS custom property, allowing fractional theme spacing values to render correctly instead of depending on generated utility classes.\n\n## 2026-08-11\n\nConfirmed that the **Pulsing Dot** custom component renderer emitted no visible output even when reduced to literal HTML, SVG, and plain text. Replaced its sole on-page use with a native accent-coloured text dot to preserve the early-access badge; filed a field report for the renderer failure.\n\n## 2026-08-11 — Pulsing Dot repair\n\nRebuilt the Pulsing Dot as a self-contained CSS core-and-ring animation. The pulse no longer depends on JavaScript and is intended to run in both the editor canvas and preview; reduced-motion preferences disable the expanding ring. Remaining debt: its accent colour is still a hardcoded hex pending a theme-backed component property.\n\n## 2026-08-11 — Status Dot theme colour\n\nUpdated the Status Dot custom component to remove its Available\/Unavailable segmented state. It now exposes one single-mode theme colour picker, applying the chosen theme background colour to both the solid core and pulse ring. Size and animation controls remain intact. Removed the resolved hardcoded-colour concern from [[pages\/asterra-ai]] and regenerated [[concerns]].\n\n## 2026-08-11 — Three.js ripple image settings\n\nBuilt and placed the **Three.js Image Ripple** custom component in the right hero panel on [[pages\/asterra-ai]]. It reacts to mouse, pointer, and touch movement, includes reduced-motion and static-image fallbacks, and exposes controls for the shader behavior. Replaced the original component dropzone with a **Ripple Image** resource well in the Inspector and preserved the existing holographic flower artwork. Recorded the pinned jsDelivr Three.js dependency in [[services]].\n\n## 2026-08-11 — Standalone ripple sizing\n\nExpanded the **Three.js Image Ripple** component with standalone sizing controls: responsive widths, alignment, fill\/fixed\/viewport\/aspect-ratio height modes, and separate mobile\/desktop values. Replaced the wrapped instance on [[pages\/asterra-ai]] with an equivalent ripple directly inside the two-column hero Grid, then removed the obsolete right-side Background wrapper.\n\n## 2026-08-11 — Ripple root sizing repair\n\nRepaired the standalone **Three.js Image Ripple** sizing on [[pages\/asterra-ai]]. Elements was stretching the custom-component wrapper to the Grid row while a shorter nested host contained the image, exposing a large white area beneath it in the editor. Moved the component classes, sizing, background, data attributes, and WebGL host onto the actual custom-component root via `rw.setRootElement()`, and removed the redundant nested host.\n\n## 2026-08-11 — Native Container ripple layout\n\nReplaced standalone custom-component sizing with a native Elements Container on [[pages\/asterra-ai]]. The Container is the Grid’s right-hand item and owns responsive sizing (50vh mobile, 100vh at lg), clipping, and fallback background. The **Three.js Image Ripple** is now a simple 100% width\/height child with no competing layout controls.\n\n## 2026-08-11 — Ripple runtime repair\n\nRestored the interactive runtime for the selected **Three.js Image Ripple** on [[pages\/asterra-ai]]. The script had been explicitly skipping Elements edit mode, and an intermediate cleanup patch introduced invalid JavaScript. Removed the edit-mode guard, repaired the lifecycle\/cleanup block, moved pointer tracking to `window` so the editor selection overlay does not intercept movement, limited activation to the image bounds, and rebuilt the live instance.\n\n## 2026-08-11 — Ripple preview layer alignment\n\nFixed the Preview layer mismatch for the **Three.js Image Ripple** on [[pages\/asterra-ai]]. Made the native Container a positioned frame, pinned the custom-component root to all four Container edges, and hid the fallback source image once WebGL reports ready so the canvas becomes the sole visible image layer.\n\n## 2026-08-11 — Fixed Three.js Image Ripple layout break in preview\n\nThe Three.js Image Ripple custom component was breaking the page layout in preview. Root cause: its root element was styled `position: absolute; inset: 0`, so it sat outside normal flow and depended entirely on a positioned ancestor — fragile against the Core container's wrapper structure and able to overlay the page when anchoring escaped the intended cell. Fixed by making the root flow-based: `position: relative; width: 100%; height: 100%; flex: 1 1 auto; min-height: 16rem` (inner image\/canvas layers remain absolute within it). Verified against Core pack source that the parent container's content wrapper is `relative flex flex-col h-screen`, so the component now fills its grid cell exactly. Also fixed `@if(edit)` in the template referencing an undefined property — the hook now sets `edit: rw.project.mode === 'edit'` (previously only a `data-edit` attribute existed), and added a fallback to the `--color-neutral-950` background variable. User should re-run preview to confirm.\n\n## 2026-08-11 — Root-caused and fixed custom component preview breakage\n\nFollow-up to the ripple fix: preview was still broken. Inspected the actual preview build via the local PHP preview server and found `{{id}}` interpolates to an empty string in the Styles slot (and template) of custom components at build time, so every `.component-{{id}}` selector matched nothing — the Three.js Image Ripple rendered completely unstyled and its full-size source image blew out the page layout. Rewrote the ripple Styles scoped to the static `.three-ripple` class (no interpolation). Applied the same pattern to Status Dot (static `.status-dot` scoping, static keyframe name, size via inline `--dot-size` custom property, root element built in Hooks with `setRootElement`) — its CSS had been dropped from the build entirely and the dot was invisible in preview. Verified in a real browser: layout correct, WebGL ripple active (`is-ready`, canvas filling the 960×1080 cell), dot pulsing, no horizontal overflow. Field report closed with root cause and the working pattern.\n\n## 2026-08-11 — Added Ambient strength slider; found inspector slider registration quirk\n\nAdded an \"Ambient strength\" slider to the Three.js Image Ripple (new `idleStrength` property → `data-idle-strength` → `uIdleStrength` shader uniform), and made ambient drift stronger\/faster by default. In the process discovered that **slider property definitions with small fractional values are silently dropped from the component schema\/inspector** — observed failures: `step: 0.002`, `step: 0.1`, `step: 0.001`, and `min: 0.5`; observed successes: `step: 1`, `step: 0.5` with `min >= 1`. The component's original Strength and Speed sliders had never actually appeared in the inspector because of this. Fix pattern: define sliders with integer-ish ranges (e.g. Strength 2–80 = thousandths, Ambient strength 1–50 = thousandths) and convert to the real value in Hooks when writing the `data-*` attribute. All six ripple properties now register and their values flow through to preview correctly.\n",
+        "uniqueID" : "A70A1D90-08FE-42A5-98ED-9D3949D73C02",
+        "browserTitle" : null,
+        "iconIdentifier" : null,
+        "isIndex" : false,
+        "identifier" : "A70A1D90-08FE-42A5-98ED-9D3949D73C02",
+        "children" : [
+
+        ],
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "linkOpensInNewWindow" : false,
+          "customJavaScript" : "",
+          "shouldArchivePage" : true,
+          "customBodyStart" : "",
+          "shouldAllowPreview" : true,
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "enabled" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customPageStart" : "",
+          "expires" : false,
+          "customHeader" : "",
+          "shouldIndexPage" : true,
+          "shouldIndexImages" : true,
+          "lastChangedDate" : 1786398280882.719,
+          "encoding" : 1,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldEnableSocialTags" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customPageEnd" : "",
+          "filename" : "journal.md",
+          "customSiteTitle" : "",
+          "expiryUnit" : 0,
+          "customHeadEnd" : "",
+          "shouldFollowLinks" : true,
+          "customBodyEnd" : "",
+          "customHeadStart" : ""
+        }
+      },
+      {
+        "externalPageURL" : null,
+        "manifests" : {
+
+        },
+        "expanded" : true,
+        "createdDate" : 1786398280882.735,
+        "kind" : "code",
+        "title" : "",
+        "pageDescription" : null,
+        "code" : "---\ntitle: Concerns\nsummary: Derived rollup of known problems, tech debt, and gotchas\n---\n\n**Derived — do not hand-edit.** Regenerated from project notes and document-level audit findings.\n\n## Tech Debt \/ Structural\n\n| Severity | Component \/ Page | Description | Notes |\n|---|---|---|---|\n| Low | [[pages\/asterra-ai]] | Avatar overlap uses fixed-pixel translateX offsets (-12\/-24\/-36px), rather than theme tokens. | Preserves the compact social-proof composition; revisit only if the theme spacing scale changes. |\n\n## Content \/ Editorial\n\n| Severity | Page | Description | Notes |\n|---|---|---|---|\n| Low | [[pages\/asterra-ai]] | Navigation and footer\/social links are plain text and are not yet wired. | Add destination links before launch. |\n| Medium | [[pages\/asterra-ai]] | The early-access form has no SMTP or webhook delivery configured. | Configure delivery before collecting live sign-ups. |\n\n## Open Field Reports\n\n| Date | Title | Status |\n|---|---|---|\n| 2026-08-11 | Custom component instances render blank despite literal template output | Open — retest before closing; Status Dot now renders with CSS animation and theme-backed colour. |\n",
+        "uniqueID" : "2447E65B-E3BC-4CB9-A08B-3291F2BF82B4",
+        "browserTitle" : null,
+        "iconIdentifier" : null,
+        "isIndex" : false,
+        "identifier" : "2447E65B-E3BC-4CB9-A08B-3291F2BF82B4",
+        "children" : [
+
+        ],
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "linkOpensInNewWindow" : false,
+          "customJavaScript" : "",
+          "shouldArchivePage" : true,
+          "customBodyStart" : "",
+          "shouldAllowPreview" : true,
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "enabled" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customPageStart" : "",
+          "expires" : false,
+          "customHeader" : "",
+          "shouldIndexPage" : true,
+          "shouldIndexImages" : true,
+          "lastChangedDate" : 1786398280883.4219,
+          "encoding" : 1,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldEnableSocialTags" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customPageEnd" : "",
+          "filename" : "concerns.md",
+          "customSiteTitle" : "",
+          "expiryUnit" : 0,
+          "customHeadEnd" : "",
+          "shouldFollowLinks" : true,
+          "customBodyEnd" : "",
+          "customHeadStart" : ""
+        }
+      },
+      {
+        "externalPageURL" : null,
+        "manifests" : {
+
+        },
+        "expanded" : true,
+        "createdDate" : 1786398280883.4373,
+        "kind" : "code",
+        "title" : "",
+        "pageDescription" : null,
+        "code" : "---\ntitle: Backlog\nsummary: Outstanding work and speculative ideas with priority and status\n---\n\nTracks both committed tasks and speculative ideas. Mark speculative items with `idea` in the Type column.\n\n| Priority | Type | Task | Status |\n|----------|------|------|--------|\n",
+        "uniqueID" : "35A90538-B0AA-495E-91F9-BDC8C2B368CE",
+        "browserTitle" : null,
+        "iconIdentifier" : null,
+        "isIndex" : false,
+        "identifier" : "35A90538-B0AA-495E-91F9-BDC8C2B368CE",
+        "children" : [
+
+        ],
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "linkOpensInNewWindow" : false,
+          "customJavaScript" : "",
+          "shouldArchivePage" : true,
+          "customBodyStart" : "",
+          "shouldAllowPreview" : true,
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "enabled" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customPageStart" : "",
+          "expires" : false,
+          "customHeader" : "",
+          "shouldIndexPage" : true,
+          "shouldIndexImages" : true,
+          "lastChangedDate" : 1786398280884.0771,
+          "encoding" : 1,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldEnableSocialTags" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customPageEnd" : "",
+          "filename" : "backlog.md",
+          "customSiteTitle" : "",
+          "expiryUnit" : 0,
+          "customHeadEnd" : "",
+          "shouldFollowLinks" : true,
+          "customBodyEnd" : "",
+          "customHeadStart" : ""
+        }
+      },
+      {
+        "externalPageURL" : null,
+        "manifests" : {
+
+        },
+        "expanded" : true,
+        "createdDate" : 1786398280884.093,
+        "kind" : "code",
+        "title" : "",
+        "pageDescription" : null,
+        "code" : "---\ntitle: Services\nsummary: External services, APIs, credentials, and integrations\n---\n\nDocument external services, APIs, and integrations used by this project.\n\n| Service | Purpose | Notes |\n|---------|---------|-------|\n| jsDelivr | Loads the pinned Three.js ES module for the interactive hero ripple. | `three@0.165.0`; the source image remains visible if the CDN or WebGL is unavailable. |\n\n## See also\n- [[pages\/asterra-ai]]\n",
+        "uniqueID" : "E5444FC7-F88B-43BB-923C-E5C341419271",
+        "browserTitle" : null,
+        "iconIdentifier" : null,
+        "isIndex" : false,
+        "identifier" : "E5444FC7-F88B-43BB-923C-E5C341419271",
+        "children" : [
+
+        ],
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "linkOpensInNewWindow" : false,
+          "customJavaScript" : "",
+          "shouldArchivePage" : true,
+          "customBodyStart" : "",
+          "shouldAllowPreview" : true,
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "enabled" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customPageStart" : "",
+          "expires" : false,
+          "customHeader" : "",
+          "shouldIndexPage" : true,
+          "shouldIndexImages" : true,
+          "lastChangedDate" : 1786398280884.737,
+          "encoding" : 1,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldEnableSocialTags" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customPageEnd" : "",
+          "filename" : "services.md",
+          "customSiteTitle" : "",
+          "expiryUnit" : 0,
+          "customHeadEnd" : "",
+          "shouldFollowLinks" : true,
+          "customBodyEnd" : "",
+          "customHeadStart" : ""
+        }
+      },
+      {
+        "externalPageURL" : null,
+        "manifests" : {
+
+        },
+        "expanded" : true,
+        "createdDate" : 1786398280884.763,
+        "kind" : "code",
+        "title" : "",
+        "pageDescription" : null,
+        "code" : "---\ntitle: Wiki Sync\nsummary: Machine-generated sync snapshot. Do not edit by hand.\n---\n\n<!-- Machine-generated. Do not edit by hand. -->\n\n```json\n{\n  \"pages\" : {\n    \"22F615A0-D543-4289-A8CF-6AB25ED29ED4\" : \"2026-08-20T09:52:12Z\"\n  },\n  \"syncedAt\" : \"2026-08-20T09:52:21Z\"\n}\n```\n",
+        "uniqueID" : "B114D7A1-FDB8-4209-9DBC-4A88DAB5D619",
+        "browserTitle" : null,
+        "iconIdentifier" : null,
+        "isIndex" : false,
+        "identifier" : "B114D7A1-FDB8-4209-9DBC-4A88DAB5D619",
+        "children" : [
+
+        ],
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "linkOpensInNewWindow" : false,
+          "customJavaScript" : "",
+          "shouldArchivePage" : true,
+          "customBodyStart" : "",
+          "shouldAllowPreview" : true,
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "enabled" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : true,
+          "customPageStart" : "",
+          "expires" : false,
+          "customHeader" : "",
+          "shouldIndexPage" : true,
+          "shouldIndexImages" : true,
+          "lastChangedDate" : 1786398280885.427,
+          "encoding" : 1,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldEnableSocialTags" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customPageEnd" : "",
+          "filename" : "sync.md",
+          "customSiteTitle" : "",
+          "expiryUnit" : 0,
+          "customHeadEnd" : "",
+          "shouldFollowLinks" : true,
+          "customBodyEnd" : "",
+          "customHeadStart" : ""
+        }
+      }
+    ],
+    "attributes" : {
+      "expiryQuantity" : 2,
+      "linkOpensInNewWindow" : false,
+      "customJavaScript" : "",
+      "shouldArchivePage" : true,
+      "customBodyStart" : "",
+      "shouldAllowPreview" : true,
+      "customCSS" : "",
+      "shouldEnableRobotTags" : true,
+      "enabled" : true,
+      "useCustomSiteTitle" : false,
+      "excludeFromSitemap" : true,
+      "customPageStart" : "",
+      "expires" : false,
+      "customHeader" : "",
+      "shouldIndexPage" : true,
+      "shouldIndexImages" : true,
+      "lastChangedDate" : 1786398280876.1138,
+      "encoding" : 1,
+      "changedStatuses" : {
+
+      },
+      "shouldEnableSocialTags" : true,
+      "hidden" : false,
+      "credit" : true,
+      "customPageEnd" : "",
+      "filename" : "",
+      "customSiteTitle" : "",
+      "expiryUnit" : 0,
+      "customHeadEnd" : "",
+      "shouldFollowLinks" : true,
+      "customBodyEnd" : "",
+      "customHeadStart" : ""
+    }
+  },
+  "rootPage" : {
+    "externalPageURL" : null,
+    "manifests" : {
+
+    },
+    "expanded" : true,
+    "createdDate" : 1786398197538.239,
+    "kind" : "folder",
+    "title" : "root",
+    "pageDescription" : null,
+    "code" : null,
+    "uniqueID" : "CF35D7F0-D503-4E91-9A23-5A5EA4FA5094",
+    "browserTitle" : null,
+    "iconIdentifier" : null,
+    "isIndex" : false,
+    "identifier" : "CF35D7F0-D503-4E91-9A23-5A5EA4FA5094",
+    "children" : [
+      {
+        "externalPageURL" : null,
+        "manifests" : {
+
+        },
+        "expanded" : true,
+        "createdDate" : 1786398197552.939,
+        "kind" : "page",
+        "title" : "Asterra AI",
+        "pageDescription" : null,
+        "code" : null,
+        "uniqueID" : "page0",
+        "browserTitle" : "Asterra AI — AI agents for ambitious teams",
+        "iconIdentifier" : null,
+        "isIndex" : true,
+        "identifier" : "22F615A0-D543-4289-A8CF-6AB25ED29ED4",
+        "children" : [
+
+        ],
+        "attributes" : {
+          "expiryQuantity" : 2,
+          "linkOpensInNewWindow" : false,
+          "customJavaScript" : "",
+          "shouldArchivePage" : true,
+          "customBodyStart" : "",
+          "shouldAllowPreview" : true,
+          "customCSS" : "",
+          "shouldEnableRobotTags" : true,
+          "enabled" : true,
+          "useCustomSiteTitle" : false,
+          "excludeFromSitemap" : false,
+          "customPageStart" : "",
+          "expires" : false,
+          "metaDescription" : "Asterra AI gives growing teams secure agents that understand their work, automate busywork, and keep decisions moving.",
+          "customHeader" : "",
+          "shouldIndexPage" : true,
+          "shouldIndexImages" : true,
+          "lastChangedDate" : 1787219588512.5188,
+          "encoding" : 1,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldEnableSocialTags" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customPageEnd" : "",
+          "filename" : "index.php",
+          "customSiteTitle" : "",
+          "backgroundColor" : {
+            "darkColorStripId" : "none",
+            "darkShade" : 500,
+            "colorStripId" : "none",
+            "shade" : 500
+          },
+          "expiryUnit" : 0,
+          "customHeadEnd" : "",
+          "shouldFollowLinks" : true,
+          "customBodyEnd" : "",
+          "customHeadStart" : ""
+        }
+      }
+    ],
+    "attributes" : {
+      "expiryQuantity" : 2,
+      "linkOpensInNewWindow" : false,
+      "customJavaScript" : "",
+      "shouldArchivePage" : true,
+      "customBodyStart" : "",
+      "shouldAllowPreview" : true,
+      "customCSS" : "",
+      "shouldEnableRobotTags" : true,
+      "enabled" : true,
+      "useCustomSiteTitle" : false,
+      "excludeFromSitemap" : true,
+      "customPageStart" : "",
+      "expires" : false,
+      "customHeader" : "",
+      "shouldIndexPage" : true,
+      "shouldIndexImages" : true,
+      "lastChangedDate" : 1786398197538.184,
+      "encoding" : 1,
+      "changedStatuses" : {
+
+      },
+      "shouldEnableSocialTags" : true,
+      "hidden" : false,
+      "credit" : true,
+      "customPageEnd" : "",
+      "filename" : "",
+      "customSiteTitle" : "",
+      "expiryUnit" : 0,
+      "customHeadEnd" : "",
+      "shouldFollowLinks" : true,
+      "customBodyEnd" : "",
+      "customHeadStart" : ""
+    }
+  },
+  "version" : 9,
   "theme" : {
-    "typographies" : [
+    "fontStyle" : [
 
     ],
     "page" : {
 
     },
+    "spacing" : [
+
+    ],
+    "screens" : [
+      {
+        "units" : "auto",
+        "pixels" : 1536,
+        "name" : "2xl",
+        "enabled" : false,
+        "id" : "279778FA-4064-4E77-8277-E2001ECFC326",
+        "sfIcon" : "desktopcomputer",
+        "maxContainerWidth" : 0,
+        "classPrefix" : "2xl",
+        "description" : ""
+      },
+      {
+        "units" : "auto",
+        "pixels" : 1280,
+        "name" : "xl",
+        "enabled" : false,
+        "id" : "E934AE5C-0926-4933-A427-79A16F218077",
+        "sfIcon" : "laptopcomputer",
+        "maxContainerWidth" : 0,
+        "classPrefix" : "xl",
+        "description" : ""
+      },
+      {
+        "units" : "auto",
+        "pixels" : 1024,
+        "name" : "lg",
+        "enabled" : true,
+        "id" : "4B9C0DB0-4048-429F-AA90-E676E8102408",
+        "sfIcon" : "ipad.landscape",
+        "maxContainerWidth" : 0,
+        "classPrefix" : "lg",
+        "description" : ""
+      },
+      {
+        "units" : "auto",
+        "pixels" : 768,
+        "name" : "md",
+        "enabled" : true,
+        "id" : "09871118-F19F-442F-AB09-7967DA2733BA",
+        "sfIcon" : "ipad",
+        "maxContainerWidth" : 0,
+        "classPrefix" : "md",
+        "description" : "This breakpoint is for tablets and small laptop screens. It usually encompasses widths from 600 pixels to 1023 pixels."
+      },
+      {
+        "units" : "auto",
+        "pixels" : 640,
+        "name" : "sm",
+        "enabled" : true,
+        "id" : "C87F1F40-BE08-4EB0-B4F3-B8D48D1A3F7E",
+        "sfIcon" : "iphone.landscape",
+        "maxContainerWidth" : 0,
+        "classPrefix" : "sm",
+        "description" : "This breakpoint targets devices with small sceens like smartphones. The resolution width varies but typically starts from 320 pixels and below 600 pixels."
+      },
+      {
+        "units" : "auto",
+        "pixels" : 0,
+        "name" : "mobile",
+        "enabled" : true,
+        "id" : "3ADCB1FD-4D34-4DAF-A079-9E498AD49977",
+        "sfIcon" : "iphone",
+        "maxContainerWidth" : 0,
+        "classPrefix" : "",
+        "description" : ""
+      }
+    ],
     "colors" : [
 
     ],
-    "baseThemeIdentifier" : "com.realmacsoftware.themes.system",
     "borderWidth" : [
 
     ],
     "fontFamily" : [
 
     ],
-    "shadows" : [
-
-    ],
-    "fontStyle" : [
-
-    ],
-    "spacing" : [
-
-    ],
     "borderRadius" : [
 
     ],
-    "screens" : [
-      {
-        "description" : "",
-        "enabled" : false,
-        "name" : "2xl",
-        "maxContainerWidth" : 0,
-        "units" : "auto",
-        "pixels" : 1536,
-        "sfIcon" : "desktopcomputer",
-        "classPrefix" : "2xl",
-        "id" : "279778FA-4064-4E77-8277-E2001ECFC326"
-      },
-      {
-        "description" : "",
-        "enabled" : false,
-        "name" : "xl",
-        "maxContainerWidth" : 0,
-        "units" : "auto",
-        "pixels" : 1280,
-        "sfIcon" : "laptopcomputer",
-        "classPrefix" : "xl",
-        "id" : "E934AE5C-0926-4933-A427-79A16F218077"
-      },
-      {
-        "description" : "",
-        "enabled" : true,
-        "name" : "lg",
-        "maxContainerWidth" : 0,
-        "units" : "auto",
-        "pixels" : 1024,
-        "sfIcon" : "ipad.landscape",
-        "classPrefix" : "lg",
-        "id" : "4B9C0DB0-4048-429F-AA90-E676E8102408"
-      },
-      {
-        "description" : "This breakpoint is for tablets and small laptop screens. It usually encompasses widths from 600 pixels to 1023 pixels.",
-        "enabled" : true,
-        "name" : "md",
-        "maxContainerWidth" : 0,
-        "units" : "auto",
-        "pixels" : 768,
-        "sfIcon" : "ipad",
-        "classPrefix" : "md",
-        "id" : "09871118-F19F-442F-AB09-7967DA2733BA"
-      },
-      {
-        "description" : "This breakpoint targets devices with small sceens like smartphones. The resolution width varies but typically starts from 320 pixels and below 600 pixels.",
-        "enabled" : true,
-        "name" : "sm",
-        "maxContainerWidth" : 0,
-        "units" : "auto",
-        "pixels" : 640,
-        "sfIcon" : "iphone.landscape",
-        "classPrefix" : "sm",
-        "id" : "C87F1F40-BE08-4EB0-B4F3-B8D48D1A3F7E"
-      },
-      {
-        "description" : "",
-        "enabled" : true,
-        "name" : "mobile",
-        "maxContainerWidth" : 0,
-        "units" : "auto",
-        "pixels" : 0,
-        "sfIcon" : "iphone",
-        "classPrefix" : "",
-        "id" : "3ADCB1FD-4D34-4DAF-A079-9E498AD49977"
-      }
+    "shadows" : [
+
     ],
     "textShadows" : [
 
-    ]
+    ],
+    "typographies" : [
+
+    ],
+    "baseThemeIdentifier" : "com.realmacsoftware.themes.system"
   },
-  "identifier" : "EDE1B869-0BAD-44A1-BA2E-02E52B0F2F96",
-  "ui" : {
-    "catalogFilter" : {
-      "smartDocumentElements" : false,
-      "showFavourites" : false
+  "siteResources" : {
+    "root" : "55B46BD4-EAC4-4AC3-B1CD-C175AB3C5091",
+    "resources" : {
+      "21B04840-7098-4A6A-801A-A214F245F95D" : {
+        "typeIdentifier" : "public.svg-image",
+        "changedStatuses" : {
+
+        },
+        "name" : "linkedin.svg",
+        "kind" : 1,
+        "originalName" : "linkedin.svg",
+        "identifier" : "21B04840-7098-4A6A-801A-A214F245F95D",
+        "parentIdentifier" : "F68EC8BC-A959-4A54-BF57-3F8872EEB5AA",
+        "smartFolderKind" : 0,
+        "timeStamp" : 1750254145443.6987,
+        "isSVG" : true,
+        "hostedImageURLs" : [
+
+        ],
+        "expanded" : false
+      },
+      "21524EEB-CCA3-4D9C-8EA8-30F2B08917E4" : {
+        "hostedImageURLs" : [
+
+        ],
+        "expanded" : false,
+        "identifier" : "21524EEB-CCA3-4D9C-8EA8-30F2B08917E4",
+        "parentIdentifier" : "9B4156C3-34DB-492A-B1A3-097316E99F53",
+        "timeStamp" : 1786436914768.2551,
+        "originalName" : "portrait-two.jpg",
+        "typeIdentifier" : "public.jpeg",
+        "metadata" : {
+          "height" : 1500,
+          "aspect" : 1,
+          "width" : 1500
+        },
+        "smartFolderKind" : 0,
+        "changedStatuses" : {
+
+        },
+        "isSVG" : false,
+        "name" : "portrait-two.jpg",
+        "kind" : 1
+      },
+      "9EC75AAE-1D9F-488D-9C0C-F4D05A3582A2" : {
+        "originalName" : "x-twitter.svg",
+        "changedStatuses" : {
+
+        },
+        "timeStamp" : 1750253993686.3252,
+        "name" : "x-twitter.svg",
+        "isSVG" : true,
+        "parentIdentifier" : "F68EC8BC-A959-4A54-BF57-3F8872EEB5AA",
+        "identifier" : "9EC75AAE-1D9F-488D-9C0C-F4D05A3582A2",
+        "typeIdentifier" : "public.svg-image",
+        "expanded" : false,
+        "hostedImageURLs" : [
+
+        ],
+        "kind" : 1,
+        "smartFolderKind" : 0
+      },
+      "78E47ECF-4319-40B5-9DBE-0C1A36DAEE9C" : {
+        "hostedImageURLs" : [
+
+        ],
+        "expanded" : false,
+        "identifier" : "78E47ECF-4319-40B5-9DBE-0C1A36DAEE9C",
+        "parentIdentifier" : "9B4156C3-34DB-492A-B1A3-097316E99F53",
+        "timeStamp" : 1786436914774.5537,
+        "originalName" : "portrait-four.jpg",
+        "typeIdentifier" : "public.jpeg",
+        "metadata" : {
+          "height" : 1500,
+          "aspect" : 1,
+          "width" : 1500
+        },
+        "smartFolderKind" : 0,
+        "changedStatuses" : {
+
+        },
+        "isSVG" : false,
+        "name" : "portrait-four.jpg",
+        "kind" : 1
+      },
+      "35CDC420-C642-453D-B092-A96FF2C78BB5" : {
+        "timeStamp" : 1786436914774.2678,
+        "originalName" : "portrait-one.jpg",
+        "expanded" : false,
+        "hostedImageURLs" : [
+
+        ],
+        "metadata" : {
+          "height" : 1500,
+          "aspect" : 1,
+          "width" : 1500
+        },
+        "name" : "portrait-one.jpg",
+        "kind" : 1,
+        "typeIdentifier" : "public.jpeg",
+        "parentIdentifier" : "9B4156C3-34DB-492A-B1A3-097316E99F53",
+        "isSVG" : false,
+        "identifier" : "35CDC420-C642-453D-B092-A96FF2C78BB5",
+        "smartFolderKind" : 0,
+        "changedStatuses" : {
+
+        }
+      },
+      "F68EC8BC-A959-4A54-BF57-3F8872EEB5AA" : {
+        "changedStatuses" : {
+
+        },
+        "name" : "Icons",
+        "kind" : 0,
+        "hostedImageURLs" : [
+
+        ],
+        "identifier" : "F68EC8BC-A959-4A54-BF57-3F8872EEB5AA",
+        "parentIdentifier" : "55B46BD4-EAC4-4AC3-B1CD-C175AB3C5091",
+        "smartFolderKind" : 0,
+        "timeStamp" : -62135769600000,
+        "expanded" : false
+      },
+      "8DF28EF7-4829-4CE5-82A6-564D5B9E0A31" : {
+        "hostedImageURLs" : [
+
+        ],
+        "expanded" : true,
+        "identifier" : "8DF28EF7-4829-4CE5-82A6-564D5B9E0A31",
+        "parentIdentifier" : "D212530E-F051-4EF7-9105-5326A08EAFC8",
+        "timeStamp" : 1786455304551.946,
+        "originalName" : "waveform.jpg",
+        "typeIdentifier" : "public.jpeg",
+        "metadata" : {
+          "height" : 1537,
+          "aspect" : 0.6655823031880286,
+          "width" : 1023
+        },
+        "smartFolderKind" : 0,
+        "changedStatuses" : {
+
+        },
+        "isSVG" : false,
+        "name" : "waveform.jpg",
+        "kind" : 1
+      },
+      "CC8D1F49-DA28-44AF-A34C-5B31A3159C14" : {
+        "hostedImageURLs" : [
+
+        ],
+        "expanded" : true,
+        "identifier" : "CC8D1F49-DA28-44AF-A34C-5B31A3159C14",
+        "timeStamp" : 1786399017572.849,
+        "parentIdentifier" : "D212530E-F051-4EF7-9105-5326A08EAFC8",
+        "originalName" : "vela-hero-gradient.png",
+        "typeIdentifier" : "public.png",
+        "metadata" : {
+          "generationPrompt" : "Abstract 3D iridescent gradient artwork, dark background with vivid electric blue, cyan, magenta, and purple luminous light streaks forming a soft flowing flower-like bloom shape. Two bright diagonal glowing light bands crossing the frame. Chromatic, ethereal, high-contrast, glossy volumetric light, deep blacks. Vertical composition, premium tech aesthetic.",
+          "aspect" : 0.6666666666666666,
+          "width" : 1024,
+          "generationSize" : "1024x1536",
+          "height" : 1536
+        },
+        "isSVG" : false,
+        "changedStatuses" : {
+
+        },
+        "smartFolderKind" : 0,
+        "name" : "vela-hero-gradient.jpg",
+        "kind" : 1
+      },
+      "9B4156C3-34DB-492A-B1A3-097316E99F53" : {
+        "changedStatuses" : {
+
+        },
+        "name" : "portraits",
+        "kind" : 0,
+        "hostedImageURLs" : [
+
+        ],
+        "identifier" : "9B4156C3-34DB-492A-B1A3-097316E99F53",
+        "parentIdentifier" : "55B46BD4-EAC4-4AC3-B1CD-C175AB3C5091",
+        "smartFolderKind" : 0,
+        "timeStamp" : -62135769600000,
+        "expanded" : true
+      },
+      "55B46BD4-EAC4-4AC3-B1CD-C175AB3C5091" : {
+        "changedStatuses" : {
+
+        },
+        "timeStamp" : -62135769600000,
+        "name" : "Resources",
+        "hostedImageURLs" : [
+
+        ],
+        "identifier" : "55B46BD4-EAC4-4AC3-B1CD-C175AB3C5091",
+        "expanded" : true,
+        "kind" : 0,
+        "smartFolderKind" : 0
+      },
+      "E8BCA33C-02EE-4BA9-BC67-9DE3FB441F2A" : {
+        "hostedImageURLs" : [
+
+        ],
+        "expanded" : false,
+        "identifier" : "E8BCA33C-02EE-4BA9-BC67-9DE3FB441F2A",
+        "timeStamp" : 1786436914765.8716,
+        "parentIdentifier" : "9B4156C3-34DB-492A-B1A3-097316E99F53",
+        "originalName" : "portrait-three.jpg",
+        "typeIdentifier" : "public.jpeg",
+        "metadata" : {
+          "aspect" : 1,
+          "width" : 1500,
+          "height" : 1500
+        },
+        "isSVG" : false,
+        "changedStatuses" : {
+
+        },
+        "smartFolderKind" : 0,
+        "name" : "portrait-three.jpg",
+        "kind" : 1
+      },
+      "F9E815A6-3C20-4239-9F33-F50FB084417D" : {
+        "originalName" : "instagram.svg",
+        "changedStatuses" : {
+
+        },
+        "timeStamp" : 1750254131190.557,
+        "name" : "instagram.svg",
+        "isSVG" : true,
+        "parentIdentifier" : "F68EC8BC-A959-4A54-BF57-3F8872EEB5AA",
+        "identifier" : "F9E815A6-3C20-4239-9F33-F50FB084417D",
+        "typeIdentifier" : "public.svg-image",
+        "expanded" : false,
+        "hostedImageURLs" : [
+
+        ],
+        "kind" : 1,
+        "smartFolderKind" : 0
+      },
+      "D212530E-F051-4EF7-9105-5326A08EAFC8" : {
+        "changedStatuses" : {
+
+        },
+        "timeStamp" : -62135769600000,
+        "name" : "images",
+        "hostedImageURLs" : [
+
+        ],
+        "parentIdentifier" : "55B46BD4-EAC4-4AC3-B1CD-C175AB3C5091",
+        "identifier" : "D212530E-F051-4EF7-9105-5326A08EAFC8",
+        "expanded" : true,
+        "kind" : 0,
+        "smartFolderKind" : 0
+      },
+      "0FC0F039-02D8-4E8D-8D22-7B26FF132D69" : {
+        "originalName" : "tiktok.svg",
+        "changedStatuses" : {
+
+        },
+        "timeStamp" : 1750254306948.9531,
+        "name" : "tiktok.svg",
+        "isSVG" : true,
+        "parentIdentifier" : "F68EC8BC-A959-4A54-BF57-3F8872EEB5AA",
+        "identifier" : "0FC0F039-02D8-4E8D-8D22-7B26FF132D69",
+        "typeIdentifier" : "public.svg-image",
+        "expanded" : false,
+        "hostedImageURLs" : [
+
+        ],
+        "kind" : 1,
+        "smartFolderKind" : 0
+      }
     },
-    "projectInspector" : {
-      "show" : false
-    },
-    "resourceInspector" : {
-      "show" : false
-    },
-    "elementEditor" : {
-      "showOutline" : true,
-      "show" : false
-    },
-    "contentArea" : {
-      "scale" : 0.998286203941731,
-      "darkAppearance" : false,
-      "size" : [
-        1167,
-        839
+    "children" : {
+      "F68EC8BC-A959-4A54-BF57-3F8872EEB5AA" : [
+        "21B04840-7098-4A6A-801A-A214F245F95D",
+        "F9E815A6-3C20-4239-9F33-F50FB084417D",
+        "9EC75AAE-1D9F-488D-9C0C-F4D05A3582A2",
+        "0FC0F039-02D8-4E8D-8D22-7B26FF132D69"
       ],
-      "responsiveSize" : "lg"
+      "9B4156C3-34DB-492A-B1A3-097316E99F53" : [
+        "21524EEB-CCA3-4D9C-8EA8-30F2B08917E4",
+        "E8BCA33C-02EE-4BA9-BC67-9DE3FB441F2A",
+        "35CDC420-C642-453D-B092-A96FF2C78BB5",
+        "78E47ECF-4319-40B5-9DBE-0C1A36DAEE9C"
+      ],
+      "D212530E-F051-4EF7-9105-5326A08EAFC8" : [
+        "CC8D1F49-DA28-44AF-A34C-5B31A3159C14",
+        "8DF28EF7-4829-4CE5-82A6-564D5B9E0A31"
+      ],
+      "55B46BD4-EAC4-4AC3-B1CD-C175AB3C5091" : [
+        "D212530E-F051-4EF7-9105-5326A08EAFC8",
+        "9B4156C3-34DB-492A-B1A3-097316E99F53",
+        "F68EC8BC-A959-4A54-BF57-3F8872EEB5AA"
+      ]
     }
+  },
+  "social" : {
+    "useSocialTags" : true
+  },
+  "rootPrefabNode" : {
+    "title" : "Project",
+    "identifier" : "EC34884F-B64D-4D1B-92FC-A1C8646D8FD2",
+    "expanded" : true,
+    "children" : [
+
+    ],
+    "item" : null,
+    "kind" : {
+      "folder" : {
+
+      }
+    }
+  },
+  "site" : {
+    "themeName" : "Elements",
+    "wantsXMLSiteMap" : true,
+    "useCacheBusting" : true,
+    "cruftlessLinks" : true,
+    "allowDarkMode" : false,
+    "consolidateCSSFiles" : true,
+    "baseURL" : "https:\/\/www.elementsapp.com",
+    "minifyExtraFiles" : true,
+    "legacyV3HoverOnTouch" : false,
+    "title" : "Asterra AI",
+    "defaultFileExtension" : "html"
   },
   "customComponents" : {
     "components" : {
       "D8C8012A-0143-4541-AB30-F721FD7518F1" : {
-        "subTitle" : "Interactive pointer and touch distortion",
         "files" : [
           {
-            "content" : "<div class=\"three-ripple__source\">\n  @if(rippleImage.image)\n    <img src=\"{{rippleImage.image}}\" alt=\"{{rippleImage.alt}}\" loading=\"eager\" decoding=\"async\">\n  @endif\n<\/div>\n@if(edit)\n<rwlivepreview props=\"{{livePreviewProps}}\" class=\"three-ripple__canvas\"><\/rwlivepreview>\n@endif\n@if(!edit)\n<canvas class=\"three-ripple__canvas\" aria-hidden=\"true\"><\/canvas>\n@endif\n",
             "identifier" : "6AF1BAF7-1BE6-4B97-B878-2BF21A048678",
+            "content" : "<div class=\"three-ripple__source\">\n  @if(rippleImage.image)\n    <img src=\"{{rippleImage.image}}\" alt=\"{{rippleImage.alt}}\" loading=\"eager\" decoding=\"async\">\n  @endif\n<\/div>\n@if(edit)\n<rwlivepreview props=\"{{livePreviewProps}}\" class=\"three-ripple__canvas\"><\/rwlivepreview>\n@endif\n@if(!edit)\n<canvas class=\"three-ripple__canvas\" aria-hidden=\"true\"><\/canvas>\n@endif\n",
             "kind" : {
               "template" : {
 
@@ -1526,28 +1499,28 @@
             "filename" : "Template"
           },
           {
+            "identifier" : "A585AF9A-22FA-4C62-AB04-59B61C6BD234",
             "content" : "\/* Scoped by the static .three-ripple class (set on the root by Hooks).\n   Per-instance {{id}} interpolation is unreliable in preview\/publish builds,\n   so no template interpolation is used in this file. *\/\n\n.three-ripple {\n  position: relative;\n  display: block;\n  box-sizing: border-box;\n  flex: 1 1 auto;\n  width: 100%;\n  height: 100%;\n  min-width: 0;\n  min-height: 16rem;\n  overflow: hidden;\n  isolation: isolate;\n  background: var(--color-neutral-950);\n}\n\n.three-ripple .three-ripple__source,\n.three-ripple .three-ripple__canvas {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n}\n\n.three-ripple .three-ripple__source {\n  z-index: 1;\n}\n\n.three-ripple .three-ripple__source img {\n  display: block;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center;\n}\n\n.three-ripple .three-ripple__canvas {\n  z-index: 2;\n  display: block;\n  opacity: 0;\n  pointer-events: none;\n  transition: opacity 240ms ease;\n}\n\n.three-ripple .three-ripple__canvas canvas {\n  display: block;\n  width: 100%;\n  height: 100%;\n}\n\n.three-ripple.is-ready .three-ripple__canvas {\n  opacity: 1;\n}\n\n.three-ripple.is-ready .three-ripple__source {\n  visibility: hidden;\n}\n\n@media (prefers-reduced-motion: reduce) {\n  .three-ripple .three-ripple__canvas {\n    transition: none;\n  }\n}\n",
             "kind" : {
               "css" : {
 
               }
             },
-            "identifier" : "A585AF9A-22FA-4C62-AB04-59B61C6BD234",
             "filename" : "Styles"
           },
           {
             "identifier" : "71801D26-FB91-4045-B74B-6C7C7318EA09",
-            "filename" : "Javascript",
+            "content" : "@if(edit)\nimport * as THREE from 'three';\n\nconst attrSrc = (image) => (image && image.getAttribute('src')) || '';\n\nconst liveImage = (canvas) => {\n  const root = canvas.closest('.three-ripple');\n  if (root) {\n    const image = root.querySelector('.three-ripple__source img');\n    if (image) return image;\n  }\n  const host = canvas.parentElement;\n  return host?.parentElement?.querySelector('.three-ripple__source img') || null;\n};\n\nconst loadUrl = (url) => new Promise((resolve) => {\n  if (!url) {\n    resolve(null);\n    return;\n  }\n  const image = new Image();\n  image.onload = () => resolve(image.naturalWidth > 0 ? image : null);\n  image.onerror = () => resolve(null);\n  image.src = url;\n});\n\nexport function mount(el, props) {\n  const canvas = document.createElement('canvas');\n  canvas.setAttribute('aria-hidden', 'true');\n  el.appendChild(canvas);\n\n  const getRoot = () => {\n    if (canvas.isConnected) {\n      const live = canvas.closest('.three-ripple');\n      if (live) return live;\n    }\n    return el.closest('.three-ripple') || el.parentElement;\n  };\n\n  let renderer = null;\n  let scene = null;\n  let camera = null;\n  let geometry = null;\n  let material = null;\n  let texture = null;\n  let uniforms = null;\n  let frame = 0;\n  let last = performance.now();\n  let targetActivity = 0;\n  let destroyed = false;\n  let visible = true;\n  let pending = props || {};\n  let lastLoadedSrc = '';\n  let loadGen = 0;\n  let resizeObserver = null;\n  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');\n\n  const applyProps = (next) => {\n    pending = next || {};\n    if (!uniforms) return;\n    uniforms.uStrength.value = Number(pending.strength) || 0.025;\n    uniforms.uSpeed.value = Number(pending.speed) || 2.2;\n    uniforms.uFrequency.value = Number(pending.frequency) || 28;\n    uniforms.uDecay.value = Number(pending.decay) || 7;\n    uniforms.uIdle.value = pending.idle === false ? 0 : 1;\n    uniforms.uIdleStrength.value = Number(pending.idleStrength) || 0.012;\n  };\n\n  let resizeFrame = 0;\n  let lastWidth = 0;\n  let lastHeight = 0;\n\n  const applySize = (force = false) => {\n    if (!renderer || !uniforms) return;\n    const box = getRoot();\n    const width = Math.max(Math.round(box.clientWidth), 1);\n    const height = Math.max(Math.round(box.clientHeight), 1);\n    if (!force && width === lastWidth && height === lastHeight) return;\n    lastWidth = width;\n    lastHeight = height;\n    renderer.setSize(width, height, false);\n    uniforms.uResolution.value.set(width, height);\n    if (scene && camera) renderer.render(scene, camera);\n  };\n\n  const resize = () => {\n    if (resizeFrame || !renderer) return;\n    resizeFrame = requestAnimationFrame(() => {\n      resizeFrame = 0;\n      applySize();\n    });\n  };\n\n  const updatePointer = (event) => {\n    if (!uniforms) return;\n    const rect = canvas.getBoundingClientRect();\n    if (!rect.width || !rect.height) return;\n    const isInside = event.clientX >= rect.left && event.clientX <= rect.right && event.clientY >= rect.top && event.clientY <= rect.bottom;\n    if (!isInside) {\n      targetActivity = 0;\n      return;\n    }\n    uniforms.uTarget.value.set(\n      (event.clientX - rect.left) \/ rect.width,\n      1 - (event.clientY - rect.top) \/ rect.height\n    );\n    targetActivity = reducedMotion.matches ? 0 : 1;\n  };\n\n  const setTexture = (image) => {\n    if (!image || !image.naturalWidth || !uniforms) return;\n    const next = new THREE.Texture(image);\n    next.colorSpace = THREE.NoColorSpace;\n    next.minFilter = THREE.LinearFilter;\n    next.magFilter = THREE.LinearFilter;\n    next.needsUpdate = true;\n    const prev = texture;\n    texture = next;\n    uniforms.uTexture.value = next;\n    uniforms.uImageSize.value.set(image.naturalWidth, image.naturalHeight);\n    if (prev) prev.dispose();\n    if (renderer && scene && camera) renderer.render(scene, camera);\n  };\n\n  const syncTexture = (src) => {\n    if (!src || src === lastLoadedSrc) return;\n    const gen = ++loadGen;\n    lastLoadedSrc = src;\n    loadUrl(src).then((fresh) => {\n      if (destroyed || gen !== loadGen) return;\n      if (!fresh) {\n        lastLoadedSrc = '';\n        return;\n      }\n      if (uniforms) setTexture(fresh);\n    });\n  };\n\n  const pollSource = () => {\n    syncTexture(attrSrc(liveImage(canvas)));\n  };\n\n  const render = (now) => {\n    if (destroyed) return;\n    frame = requestAnimationFrame(render);\n    pollSource();\n    if (!visible || !renderer) return;\n    const liveRoot = getRoot();\n    if (liveRoot && !liveRoot.classList.contains('is-ready')) liveRoot.classList.add('is-ready');\n    const delta = Math.min((now - last) \/ 1000, 0.05);\n    last = now;\n    uniforms.uTime.value += delta;\n    uniforms.uPointer.value.lerp(uniforms.uTarget.value, 0.14);\n    uniforms.uActivity.value += (targetActivity - uniforms.uActivity.value) * 0.08;\n    renderer.render(scene, camera);\n  };\n\n  const waitForSrc = () => new Promise((resolve) => {\n    const started = performance.now();\n    const check = () => {\n      const src = attrSrc(liveImage(canvas));\n      if (src) {\n        resolve(src);\n        return;\n      }\n      if (destroyed || performance.now() - started > 10000) {\n        resolve('');\n        return;\n      }\n      requestAnimationFrame(check);\n    };\n    check();\n  });\n\n  const start = async () => {\n    const src = await waitForSrc();\n    if (destroyed || !el.isConnected || !src) return;\n    const image = await loadUrl(src);\n    if (destroyed || !image) return;\n    lastLoadedSrc = src;\n\n    renderer = new THREE.WebGLRenderer({\n      canvas,\n      alpha: false,\n      antialias: false,\n      powerPreference: 'high-performance'\n    });\n    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));\n    renderer.outputColorSpace = THREE.SRGBColorSpace;\n\n    scene = new THREE.Scene();\n    camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);\n    geometry = new THREE.PlaneGeometry(2, 2);\n    texture = new THREE.Texture(image);\n    texture.colorSpace = THREE.NoColorSpace;\n    texture.minFilter = THREE.LinearFilter;\n    texture.magFilter = THREE.LinearFilter;\n    texture.needsUpdate = true;\n\n    uniforms = {\n      uTexture: { value: texture },\n      uTime: { value: 0 },\n      uPointer: { value: new THREE.Vector2(0.5, 0.5) },\n      uTarget: { value: new THREE.Vector2(0.5, 0.5) },\n      uResolution: { value: new THREE.Vector2(1, 1) },\n      uImageSize: { value: new THREE.Vector2(image.naturalWidth, image.naturalHeight) },\n      uStrength: { value: 0.025 },\n      uSpeed: { value: 2.2 },\n      uFrequency: { value: 28 },\n      uDecay: { value: 7 },\n      uActivity: { value: 0 },\n      uIdle: { value: 1 },\n      uIdleStrength: { value: 0.012 }\n    };\n    applyProps(pending);\n\n    material = new THREE.ShaderMaterial({\n      uniforms,\n      vertexShader: `\n        varying vec2 vUv;\n        void main() {\n          vUv = uv;\n          gl_Position = vec4(position, 1.0);\n        }\n      `,\n      fragmentShader: `\n        precision highp float;\n        uniform sampler2D uTexture;\n        uniform float uTime;\n        uniform vec2 uPointer;\n        uniform vec2 uResolution;\n        uniform vec2 uImageSize;\n        uniform float uStrength;\n        uniform float uSpeed;\n        uniform float uFrequency;\n        uniform float uDecay;\n        uniform float uActivity;\n        uniform float uIdle;\n        uniform float uIdleStrength;\n        varying vec2 vUv;\n\n        vec2 coverUv(vec2 uv, vec2 screenSize, vec2 imageSize) {\n          float screenRatio = screenSize.x \/ screenSize.y;\n          float imageRatio = imageSize.x \/ imageSize.y;\n          vec2 scale = vec2(1.0);\n          if (screenRatio > imageRatio) {\n            scale.y = imageRatio \/ screenRatio;\n          } else {\n            scale.x = screenRatio \/ imageRatio;\n          }\n          return (uv - 0.5) * scale + 0.5;\n        }\n\n        void main() {\n          vec2 aspect = vec2(uResolution.x \/ max(uResolution.y, 1.0), 1.0);\n          vec2 delta = (vUv - uPointer) * aspect;\n          float distanceToPointer = length(delta);\n          float wave = sin(distanceToPointer * uFrequency - uTime * uSpeed);\n          float falloff = exp(-distanceToPointer * uDecay);\n          float idleTime = uTime * 0.9;\n          vec2 idleWave = vec2(\n            sin(vUv.y * 12.0 + idleTime) + 0.5 * sin(vUv.y * 23.0 - idleTime * 1.3),\n            cos(vUv.x * 14.0 - idleTime * 0.8) + 0.5 * sin(vUv.x * 21.0 + idleTime * 1.1)\n          ) * uIdleStrength * uIdle * (1.0 - uActivity * 0.6);\n          vec2 direction = normalize(delta + vec2(0.0001));\n          vec2 displacement = direction * wave * falloff * uStrength * uActivity;\n          displacement += idleWave;\n          vec2 uv = coverUv(vUv + displacement, uResolution, uImageSize);\n          gl_FragColor = texture2D(uTexture, clamp(uv, 0.001, 0.999));\n        }\n      `\n    });\n\n    scene.add(new THREE.Mesh(geometry, material));\n    resizeObserver = new ResizeObserver(resize);\n    resizeObserver.observe(getRoot());\n    window.addEventListener('pointermove', updatePointer, { passive: true });\n    window.addEventListener('pointerdown', updatePointer, { passive: true });\n    applySize();\n    getRoot().classList.add('is-ready');\n    lastLoadedSrc = '';\n    pollSource();\n    frame = requestAnimationFrame(render);\n  };\n\n  start();\n\n  return {\n    update(next) {\n      const prev = pending;\n      applyProps(next);\n      const imageChanged = !prev ||\n        prev.image !== pending.image ||\n        prev.width !== pending.width ||\n        prev.height !== pending.height;\n      if (imageChanged) lastLoadedSrc = '';\n      pollSource();\n    },\n    setVisible(isVisible) {\n      visible = isVisible;\n    },\n    dispose() {\n      if (destroyed) return;\n      destroyed = true;\n      cancelAnimationFrame(frame);\n      cancelAnimationFrame(resizeFrame);\n      if (resizeObserver) resizeObserver.disconnect();\n      window.removeEventListener('pointermove', updatePointer);\n      window.removeEventListener('pointerdown', updatePointer);\n      if (texture) texture.dispose();\n      if (material) material.dispose();\n      if (geometry) geometry.dispose();\n      if (renderer) {\n        renderer.dispose();\n        renderer.forceContextLoss();\n      }\n      const root = getRoot();\n      if (root) root.classList.remove('is-ready');\n      canvas.remove();\n    }\n  };\n}\n@endif\n@if(!edit)\n(() => {\n  const SELECTOR = '[data-three-ripple]';\n  const THREE_URL = 'https:\/\/cdn.jsdelivr.net\/npm\/three@0.165.0\/build\/three.module.min.js';\n\n  window.__elementsThreeRipple = window.__elementsThreeRipple || {\n    module: null,\n    observer: null\n  };\n\n  const shared = window.__elementsThreeRipple;\n  const loadThree = () => shared.module || (shared.module = import(THREE_URL));\n\n  const waitForImage = (host) => new Promise((resolve) => {\n    const started = performance.now();\n\n    const check = () => {\n      const image = host.querySelector('.three-ripple__source img');\n      if (image && image.complete && image.naturalWidth > 0) {\n        resolve(image);\n        return;\n      }\n      if (performance.now() - started > 10000 || !host.isConnected) {\n        resolve(null);\n        return;\n      }\n      requestAnimationFrame(check);\n    };\n\n    check();\n  });\n\n  const init = async (host) => {\n    if (host.dataset.rippleInitialised === 'true') return;\n    host.dataset.rippleInitialised = 'true';\n\n    const image = await waitForImage(host);\n    if (!image || !host.isConnected) {\n      host.dataset.rippleInitialised = 'false';\n      return;\n    }\n\n    let THREE;\n    try {\n      THREE = await loadThree();\n    } catch (error) {\n      console.warn('Three.js Image Ripple: Three.js could not be loaded.', error);\n      host.dataset.rippleInitialised = 'false';\n      return;\n    }\n\n    const canvas = host.querySelector('.three-ripple__canvas');\n    if (!canvas || !host.isConnected) return;\n\n    const renderer = new THREE.WebGLRenderer({\n      canvas,\n      alpha: false,\n      antialias: false,\n      powerPreference: 'high-performance'\n    });\n    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));\n    renderer.outputColorSpace = THREE.SRGBColorSpace;\n\n    const scene = new THREE.Scene();\n    const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);\n    const geometry = new THREE.PlaneGeometry(2, 2);\n    const texture = new THREE.Texture(image);\n    texture.colorSpace = THREE.NoColorSpace;\n    texture.minFilter = THREE.LinearFilter;\n    texture.magFilter = THREE.LinearFilter;\n    texture.needsUpdate = true;\n\n    const uniforms = {\n      uTexture: { value: texture },\n      uTime: { value: 0 },\n      uPointer: { value: new THREE.Vector2(0.5, 0.5) },\n      uTarget: { value: new THREE.Vector2(0.5, 0.5) },\n      uResolution: { value: new THREE.Vector2(1, 1) },\n      uImageSize: { value: new THREE.Vector2(image.naturalWidth, image.naturalHeight) },\n      uStrength: { value: Number(host.dataset.strength) || 0.025 },\n      uSpeed: { value: Number(host.dataset.speed) || 2.2 },\n      uFrequency: { value: Number(host.dataset.frequency) || 28 },\n      uDecay: { value: Number(host.dataset.decay) || 7 },\n      uActivity: { value: 0 },\n      uIdle: { value: host.dataset.idle === 'true' ? 1 : 0 },\n      uIdleStrength: { value: Number(host.dataset.idleStrength) || 0.012 }\n    };\n\n    const material = new THREE.ShaderMaterial({\n      uniforms,\n      vertexShader: `\n        varying vec2 vUv;\n        void main() {\n          vUv = uv;\n          gl_Position = vec4(position, 1.0);\n        }\n      `,\n      fragmentShader: `\n        precision highp float;\n        uniform sampler2D uTexture;\n        uniform float uTime;\n        uniform vec2 uPointer;\n        uniform vec2 uResolution;\n        uniform vec2 uImageSize;\n        uniform float uStrength;\n        uniform float uSpeed;\n        uniform float uFrequency;\n        uniform float uDecay;\n        uniform float uActivity;\n        uniform float uIdle;\n        uniform float uIdleStrength;\n        varying vec2 vUv;\n\n        vec2 coverUv(vec2 uv, vec2 screenSize, vec2 imageSize) {\n          float screenRatio = screenSize.x \/ screenSize.y;\n          float imageRatio = imageSize.x \/ imageSize.y;\n          vec2 scale = vec2(1.0);\n          if (screenRatio > imageRatio) {\n            scale.y = imageRatio \/ screenRatio;\n          } else {\n            scale.x = screenRatio \/ imageRatio;\n          }\n          return (uv - 0.5) * scale + 0.5;\n        }\n\n        void main() {\n          vec2 aspect = vec2(uResolution.x \/ max(uResolution.y, 1.0), 1.0);\n          vec2 delta = (vUv - uPointer) * aspect;\n          float distanceToPointer = length(delta);\n          float wave = sin(distanceToPointer * uFrequency - uTime * uSpeed);\n          float falloff = exp(-distanceToPointer * uDecay);\n          float idleTime = uTime * 0.9;\n          vec2 idleWave = vec2(\n            sin(vUv.y * 12.0 + idleTime) + 0.5 * sin(vUv.y * 23.0 - idleTime * 1.3),\n            cos(vUv.x * 14.0 - idleTime * 0.8) + 0.5 * sin(vUv.x * 21.0 + idleTime * 1.1)\n          ) * uIdleStrength * uIdle * (1.0 - uActivity * 0.6);\n          vec2 direction = normalize(delta + vec2(0.0001));\n          vec2 displacement = direction * wave * falloff * uStrength * uActivity;\n          displacement += idleWave;\n          vec2 uv = coverUv(vUv + displacement, uResolution, uImageSize);\n          gl_FragColor = texture2D(uTexture, clamp(uv, 0.001, 0.999));\n        }\n      `\n    });\n\n    const mesh = new THREE.Mesh(geometry, material);\n    scene.add(mesh);\n\n    let width = 0;\n    let height = 0;\n    let resizeFrame = 0;\n    let frame = 0;\n    let last = performance.now();\n\n    let targetActivity = 0;\n    let destroyed = false;\n    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');\n\n    const applySize = () => {\n      const nextWidth = Math.max(Math.round(host.clientWidth), 1);\n      const nextHeight = Math.max(Math.round(host.clientHeight), 1);\n      if (nextWidth === width && nextHeight === height) return;\n      width = nextWidth;\n      height = nextHeight;\n      renderer.setSize(width, height, false);\n      uniforms.uResolution.value.set(width, height);\n      renderer.render(scene, camera);\n    };\n\n    const resize = () => {\n      if (resizeFrame || destroyed) return;\n      resizeFrame = requestAnimationFrame(() => {\n        resizeFrame = 0;\n        applySize();\n      });\n    };\n\n    const updatePointer = (event) => {\n      const rect = host.getBoundingClientRect();\n      if (!rect.width || !rect.height) return;\n      const isInside = event.clientX >= rect.left && event.clientX <= rect.right && event.clientY >= rect.top && event.clientY <= rect.bottom;\n      if (!isInside) {\n        targetActivity = 0;\n        return;\n      }\n      uniforms.uTarget.value.set(\n        (event.clientX - rect.left) \/ rect.width,\n        1 - (event.clientY - rect.top) \/ rect.height\n      );\n      targetActivity = reducedMotion.matches ? 0 : 1;\n    };\n\n    const render = (now) => {\n      if (destroyed) return;\n      frame = requestAnimationFrame(render);\n      const delta = Math.min((now - last) \/ 1000, 0.05);\n      last = now;\n      uniforms.uTime.value += delta;\n      uniforms.uPointer.value.lerp(uniforms.uTarget.value, 0.14);\n      uniforms.uActivity.value += (targetActivity - uniforms.uActivity.value) * 0.08;\n      renderer.render(scene, camera);\n    };\n\n    const resizeObserver = new ResizeObserver(resize);\n    resizeObserver.observe(host);\n    window.addEventListener('pointermove', updatePointer, { passive: true });\n    window.addEventListener('pointerdown', updatePointer, { passive: true });\n\n    const destroy = () => {\n      if (destroyed) return;\n      destroyed = true;\n      cancelAnimationFrame(frame);\n      cancelAnimationFrame(resizeFrame);\n      resizeObserver.disconnect();\n      window.removeEventListener('pointermove', updatePointer);\n      window.removeEventListener('pointerdown', updatePointer);\n      texture.dispose();\n      material.dispose();\n      geometry.dispose();\n      renderer.dispose();\n      host.classList.remove('is-ready');\n      delete host.dataset.rippleInitialised;\n    };\n\n    host.__destroyThreeRipple?.();\n    host.__destroyThreeRipple = destroy;\n    applySize();\n    host.classList.add('is-ready');\n    frame = requestAnimationFrame(render);\n  };\n\n  const scan = (root = document) => {\n    if (root.matches?.(SELECTOR)) init(root);\n    root.querySelectorAll?.(SELECTOR).forEach(init);\n  };\n\n  scan();\n\n  if (!shared.observer) {\n    shared.observer = new MutationObserver((mutations) => {\n      mutations.forEach((mutation) => {\n        mutation.addedNodes.forEach((node) => {\n          if (node.nodeType === 1) scan(node);\n        });\n        mutation.removedNodes.forEach((node) => {\n          if (node.nodeType !== 1) return;\n          if (node.matches?.(SELECTOR)) node.__destroyThreeRipple?.();\n          node.querySelectorAll?.(SELECTOR).forEach((host) => host.__destroyThreeRipple?.());\n        });\n      });\n    });\n    shared.observer.observe(document.documentElement, { childList: true, subtree: true });\n  }\n})();\n@endif\n",
             "kind" : {
               "js" : {
 
               }
             },
-            "content" : "@if(edit)\nimport * as THREE from 'three';\n\nconst waitForImage = (root) => new Promise((resolve) => {\n  const started = performance.now();\n  const check = () => {\n    const image = root.querySelector('.three-ripple__source img');\n    if (image && image.complete && image.naturalWidth > 0) {\n      resolve(image);\n      return;\n    }\n    if (performance.now() - started > 10000 || !root.isConnected) {\n      resolve(null);\n      return;\n    }\n    requestAnimationFrame(check);\n  };\n  check();\n});\n\nexport function mount(el, props) {\n  const canvas = document.createElement('canvas');\n  canvas.setAttribute('aria-hidden', 'true');\n  el.appendChild(canvas);\n\n  \/\/ The editor preserves the canvas across re-renders, but ancestor elements\n  \/\/ (including the component root) can be replaced or have their class\n  \/\/ attribute rewritten at any time. Always resolve the root from the canvas\n  \/\/ and never assume an imperative class survives.\n  const initialRoot = el.closest('.three-ripple') || el.parentElement;\n  const getRoot = () => (canvas.isConnected && canvas.closest('.three-ripple')) || initialRoot;\n\n  let renderer = null;\n  let scene = null;\n  let camera = null;\n  let geometry = null;\n  let material = null;\n  let texture = null;\n  let uniforms = null;\n  let frame = 0;\n  let last = performance.now();\n  let targetActivity = 0;\n  let destroyed = false;\n  let visible = true;\n  let currentImage = props && props.image ? props.image : '';\n  let pending = props || {};\n  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');\n\n  const applyProps = (next) => {\n    pending = next || {};\n    if (!uniforms) return;\n    uniforms.uStrength.value = Number(pending.strength) || 0.025;\n    uniforms.uSpeed.value = Number(pending.speed) || 2.2;\n    uniforms.uFrequency.value = Number(pending.frequency) || 28;\n    uniforms.uDecay.value = Number(pending.decay) || 7;\n    uniforms.uIdle.value = pending.idle === false ? 0 : 1;\n    uniforms.uIdleStrength.value = Number(pending.idleStrength) || 0.012;\n  };\n\n  let resizeTimer = null;\n  let lastResizeEvent = 0;\n  const fullPixelRatio = () => Math.min(window.devicePixelRatio || 1, 2);\n\n  const applySize = () => {\n    if (!renderer || !uniforms) return;\n    const box = getRoot();\n    const width = Math.max(box.clientWidth, 1);\n    const height = Math.max(box.clientHeight, 1);\n    renderer.setSize(width, height, false);\n    uniforms.uResolution.value.set(width, height);\n    \/\/ setSize clears the drawing buffer; repaint immediately so a blank or\n    \/\/ stale-stretched frame is never composited while waiting for the next rAF.\n    if (scene && camera) renderer.render(scene, camera);\n  };\n\n  const resize = () => {\n    if (!renderer) return;\n    const now = performance.now();\n    \/\/ During live editor-width drags a resize event arrives with every mouse\n    \/\/ move. Rendering the full-resolution shader while the page relayouts per\n    \/\/ event starves frame presentation, so drop to a cheap pixel ratio for the\n    \/\/ duration of the storm and restore full quality once it settles.\n    if (now - lastResizeEvent < 200) {\n      if (renderer.getPixelRatio() !== 1) renderer.setPixelRatio(1);\n    }\n    lastResizeEvent = now;\n    applySize();\n    clearTimeout(resizeTimer);\n    resizeTimer = setTimeout(() => {\n      if (!renderer) return;\n      renderer.setPixelRatio(fullPixelRatio());\n      applySize();\n    }, 180);\n  };\n\n  const updatePointer = (event) => {\n    if (!uniforms) return;\n    const rect = canvas.getBoundingClientRect();\n    if (!rect.width || !rect.height) return;\n    const isInside = event.clientX >= rect.left && event.clientX <= rect.right && event.clientY >= rect.top && event.clientY <= rect.bottom;\n    if (!isInside) {\n      targetActivity = 0;\n      return;\n    }\n    uniforms.uTarget.value.set(\n      (event.clientX - rect.left) \/ rect.width,\n      1 - (event.clientY - rect.top) \/ rect.height\n    );\n    targetActivity = reducedMotion.matches ? 0 : 1;\n  };\n\n  const render = (now) => {\n    if (destroyed) return;\n    frame = requestAnimationFrame(render);\n    if (!visible || !renderer) return;\n    const liveRoot = getRoot();\n    if (liveRoot && !liveRoot.classList.contains('is-ready')) liveRoot.classList.add('is-ready');\n    const delta = Math.min((now - last) \/ 1000, 0.05);\n    last = now;\n    uniforms.uTime.value += delta;\n    uniforms.uPointer.value.lerp(uniforms.uTarget.value, 0.14);\n    uniforms.uActivity.value += (targetActivity - uniforms.uActivity.value) * 0.08;\n    renderer.render(scene, camera);\n  };\n\n  const setTexture = (image) => {\n    if (!image || !uniforms || !texture) return;\n    texture.image = image;\n    texture.needsUpdate = true;\n    uniforms.uImageSize.value.set(image.naturalWidth, image.naturalHeight);\n  };\n\n  let resizeObserver = null;\n\n  const start = async () => {\n    const image = await waitForImage(getRoot());\n    if (destroyed || !el.isConnected) return;\n    if (!image) return;\n\n    renderer = new THREE.WebGLRenderer({\n      canvas,\n      alpha: false,\n      antialias: false,\n      powerPreference: 'high-performance'\n    });\n    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));\n    renderer.outputColorSpace = THREE.SRGBColorSpace;\n\n    scene = new THREE.Scene();\n    camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);\n    geometry = new THREE.PlaneGeometry(2, 2);\n    texture = new THREE.Texture(image);\n    texture.colorSpace = THREE.NoColorSpace;\n    texture.minFilter = THREE.LinearFilter;\n    texture.magFilter = THREE.LinearFilter;\n    texture.needsUpdate = true;\n\n    uniforms = {\n      uTexture: { value: texture },\n      uTime: { value: 0 },\n      uPointer: { value: new THREE.Vector2(0.5, 0.5) },\n      uTarget: { value: new THREE.Vector2(0.5, 0.5) },\n      uResolution: { value: new THREE.Vector2(1, 1) },\n      uImageSize: { value: new THREE.Vector2(image.naturalWidth, image.naturalHeight) },\n      uStrength: { value: 0.025 },\n      uSpeed: { value: 2.2 },\n      uFrequency: { value: 28 },\n      uDecay: { value: 7 },\n      uActivity: { value: 0 },\n      uIdle: { value: 1 },\n      uIdleStrength: { value: 0.012 }\n    };\n    applyProps(pending);\n\n    material = new THREE.ShaderMaterial({\n      uniforms,\n      vertexShader: `\n        varying vec2 vUv;\n        void main() {\n          vUv = uv;\n          gl_Position = vec4(position, 1.0);\n        }\n      `,\n      fragmentShader: `\n        precision highp float;\n        uniform sampler2D uTexture;\n        uniform float uTime;\n        uniform vec2 uPointer;\n        uniform vec2 uResolution;\n        uniform vec2 uImageSize;\n        uniform float uStrength;\n        uniform float uSpeed;\n        uniform float uFrequency;\n        uniform float uDecay;\n        uniform float uActivity;\n        uniform float uIdle;\n        uniform float uIdleStrength;\n        varying vec2 vUv;\n\n        vec2 coverUv(vec2 uv, vec2 screenSize, vec2 imageSize) {\n          float screenRatio = screenSize.x \/ screenSize.y;\n          float imageRatio = imageSize.x \/ imageSize.y;\n          vec2 scale = vec2(1.0);\n          if (screenRatio > imageRatio) {\n            scale.y = imageRatio \/ screenRatio;\n          } else {\n            scale.x = screenRatio \/ imageRatio;\n          }\n          return (uv - 0.5) * scale + 0.5;\n        }\n\n        void main() {\n          vec2 aspect = vec2(uResolution.x \/ max(uResolution.y, 1.0), 1.0);\n          vec2 delta = (vUv - uPointer) * aspect;\n          float distanceToPointer = length(delta);\n          float wave = sin(distanceToPointer * uFrequency - uTime * uSpeed);\n          float falloff = exp(-distanceToPointer * uDecay);\n          float idleTime = uTime * 0.9;\n          vec2 idleWave = vec2(\n            sin(vUv.y * 12.0 + idleTime) + 0.5 * sin(vUv.y * 23.0 - idleTime * 1.3),\n            cos(vUv.x * 14.0 - idleTime * 0.8) + 0.5 * sin(vUv.x * 21.0 + idleTime * 1.1)\n          ) * uIdleStrength * uIdle * (1.0 - uActivity * 0.6);\n          vec2 direction = normalize(delta + vec2(0.0001));\n          vec2 displacement = direction * wave * falloff * uStrength * uActivity;\n          displacement += idleWave;\n          vec2 uv = coverUv(vUv + displacement, uResolution, uImageSize);\n          gl_FragColor = texture2D(uTexture, clamp(uv, 0.001, 0.999));\n        }\n      `\n    });\n\n    scene.add(new THREE.Mesh(geometry, material));\n    \/\/ Observe the canvas rather than the root: the canvas is the one element\n    \/\/ guaranteed to survive editor re-renders, and it tracks the same box.\n    resizeObserver = new ResizeObserver(resize);\n    resizeObserver.observe(canvas);\n    window.addEventListener('pointermove', updatePointer, { passive: true });\n    window.addEventListener('pointerdown', updatePointer, { passive: true });\n    applySize();\n    getRoot().classList.add('is-ready');\n    frame = requestAnimationFrame(render);\n  };\n\n  start();\n\n  return {\n    update(next) {\n      const imageUrl = next && next.image ? next.image : '';\n      applyProps(next);\n      if (imageUrl !== currentImage) {\n        currentImage = imageUrl;\n        waitForImage(getRoot()).then((image) => {\n          if (!destroyed) setTexture(image);\n        });\n      }\n    },\n    setVisible(isVisible) {\n      visible = isVisible;\n    },\n    dispose() {\n      if (destroyed) return;\n      destroyed = true;\n      cancelAnimationFrame(frame);\n      clearTimeout(resizeTimer);\n      if (resizeObserver) resizeObserver.disconnect();\n      window.removeEventListener('pointermove', updatePointer);\n      window.removeEventListener('pointerdown', updatePointer);\n      if (texture) texture.dispose();\n      if (material) material.dispose();\n      if (geometry) geometry.dispose();\n      if (renderer) {\n        renderer.dispose();\n        renderer.forceContextLoss();\n      }\n      getRoot().classList.remove('is-ready');\n      canvas.remove();\n    }\n  };\n}\n@endif\n@if(!edit)\n(() => {\n  const SELECTOR = '[data-three-ripple]';\n  const THREE_URL = 'https:\/\/cdn.jsdelivr.net\/npm\/three@0.165.0\/build\/three.module.min.js';\n\n  window.__elementsThreeRipple = window.__elementsThreeRipple || {\n    module: null,\n    observer: null\n  };\n\n  const shared = window.__elementsThreeRipple;\n  const loadThree = () => shared.module || (shared.module = import(THREE_URL));\n\n  const waitForImage = (host) => new Promise((resolve) => {\n    const started = performance.now();\n\n    const check = () => {\n      const image = host.querySelector('.three-ripple__source img');\n      if (image && image.complete && image.naturalWidth > 0) {\n        resolve(image);\n        return;\n      }\n      if (performance.now() - started > 10000 || !host.isConnected) {\n        resolve(null);\n        return;\n      }\n      requestAnimationFrame(check);\n    };\n\n    check();\n  });\n\n  const init = async (host) => {\n    if (host.dataset.rippleInitialised === 'true') return;\n    host.dataset.rippleInitialised = 'true';\n\n    const image = await waitForImage(host);\n    if (!image || !host.isConnected) {\n      host.dataset.rippleInitialised = 'false';\n      return;\n    }\n\n    let THREE;\n    try {\n      THREE = await loadThree();\n    } catch (error) {\n      console.warn('Three.js Image Ripple: Three.js could not be loaded.', error);\n      host.dataset.rippleInitialised = 'false';\n      return;\n    }\n\n    const canvas = host.querySelector('.three-ripple__canvas');\n    if (!canvas || !host.isConnected) return;\n\n    const renderer = new THREE.WebGLRenderer({\n      canvas,\n      alpha: false,\n      antialias: false,\n      powerPreference: 'high-performance'\n    });\n    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));\n    renderer.outputColorSpace = THREE.SRGBColorSpace;\n\n    const scene = new THREE.Scene();\n    const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);\n    const geometry = new THREE.PlaneGeometry(2, 2);\n    const texture = new THREE.Texture(image);\n    texture.colorSpace = THREE.NoColorSpace;\n    texture.minFilter = THREE.LinearFilter;\n    texture.magFilter = THREE.LinearFilter;\n    texture.needsUpdate = true;\n\n    const uniforms = {\n      uTexture: { value: texture },\n      uTime: { value: 0 },\n      uPointer: { value: new THREE.Vector2(0.5, 0.5) },\n      uTarget: { value: new THREE.Vector2(0.5, 0.5) },\n      uResolution: { value: new THREE.Vector2(1, 1) },\n      uImageSize: { value: new THREE.Vector2(image.naturalWidth, image.naturalHeight) },\n      uStrength: { value: Number(host.dataset.strength) || 0.025 },\n      uSpeed: { value: Number(host.dataset.speed) || 2.2 },\n      uFrequency: { value: Number(host.dataset.frequency) || 28 },\n      uDecay: { value: Number(host.dataset.decay) || 7 },\n      uActivity: { value: 0 },\n      uIdle: { value: host.dataset.idle === 'true' ? 1 : 0 },\n      uIdleStrength: { value: Number(host.dataset.idleStrength) || 0.012 }\n    };\n\n    const material = new THREE.ShaderMaterial({\n      uniforms,\n      vertexShader: `\n        varying vec2 vUv;\n        void main() {\n          vUv = uv;\n          gl_Position = vec4(position, 1.0);\n        }\n      `,\n      fragmentShader: `\n        precision highp float;\n        uniform sampler2D uTexture;\n        uniform float uTime;\n        uniform vec2 uPointer;\n        uniform vec2 uResolution;\n        uniform vec2 uImageSize;\n        uniform float uStrength;\n        uniform float uSpeed;\n        uniform float uFrequency;\n        uniform float uDecay;\n        uniform float uActivity;\n        uniform float uIdle;\n        uniform float uIdleStrength;\n        varying vec2 vUv;\n\n        vec2 coverUv(vec2 uv, vec2 screenSize, vec2 imageSize) {\n          float screenRatio = screenSize.x \/ screenSize.y;\n          float imageRatio = imageSize.x \/ imageSize.y;\n          vec2 scale = vec2(1.0);\n          if (screenRatio > imageRatio) {\n            scale.y = imageRatio \/ screenRatio;\n          } else {\n            scale.x = screenRatio \/ imageRatio;\n          }\n          return (uv - 0.5) * scale + 0.5;\n        }\n\n        void main() {\n          vec2 aspect = vec2(uResolution.x \/ max(uResolution.y, 1.0), 1.0);\n          vec2 delta = (vUv - uPointer) * aspect;\n          float distanceToPointer = length(delta);\n          float wave = sin(distanceToPointer * uFrequency - uTime * uSpeed);\n          float falloff = exp(-distanceToPointer * uDecay);\n          float idleTime = uTime * 0.9;\n          vec2 idleWave = vec2(\n            sin(vUv.y * 12.0 + idleTime) + 0.5 * sin(vUv.y * 23.0 - idleTime * 1.3),\n            cos(vUv.x * 14.0 - idleTime * 0.8) + 0.5 * sin(vUv.x * 21.0 + idleTime * 1.1)\n          ) * uIdleStrength * uIdle * (1.0 - uActivity * 0.6);\n          vec2 direction = normalize(delta + vec2(0.0001));\n          vec2 displacement = direction * wave * falloff * uStrength * uActivity;\n          displacement += idleWave;\n          vec2 uv = coverUv(vUv + displacement, uResolution, uImageSize);\n          gl_FragColor = texture2D(uTexture, clamp(uv, 0.001, 0.999));\n        }\n      `\n    });\n\n    const mesh = new THREE.Mesh(geometry, material);\n    scene.add(mesh);\n\n    let width = 1;\n    let height = 1;\n    let frame = 0;\n    let last = performance.now();\n\n    let targetActivity = 0;\n    let destroyed = false;\n    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');\n\n    const resize = () => {\n      width = Math.max(host.clientWidth, 1);\n      height = Math.max(host.clientHeight, 1);\n      renderer.setSize(width, height, false);\n      uniforms.uResolution.value.set(width, height);\n    };\n\n    const updatePointer = (event) => {\n      const rect = host.getBoundingClientRect();\n      if (!rect.width || !rect.height) return;\n      const isInside = event.clientX >= rect.left && event.clientX <= rect.right && event.clientY >= rect.top && event.clientY <= rect.bottom;\n      if (!isInside) {\n        targetActivity = 0;\n        return;\n      }\n      uniforms.uTarget.value.set(\n        (event.clientX - rect.left) \/ rect.width,\n        1 - (event.clientY - rect.top) \/ rect.height\n      );\n      targetActivity = reducedMotion.matches ? 0 : 1;\n    };\n\n    const render = (now) => {\n      if (destroyed) return;\n      frame = requestAnimationFrame(render);\n      const delta = Math.min((now - last) \/ 1000, 0.05);\n      last = now;\n      uniforms.uTime.value += delta;\n      uniforms.uPointer.value.lerp(uniforms.uTarget.value, 0.14);\n      uniforms.uActivity.value += (targetActivity - uniforms.uActivity.value) * 0.08;\n      renderer.render(scene, camera);\n    };\n\n    const resizeObserver = new ResizeObserver(resize);\n    resizeObserver.observe(host);\n    window.addEventListener('pointermove', updatePointer, { passive: true });\n    window.addEventListener('pointerdown', updatePointer, { passive: true });\n\n    const destroy = () => {\n      if (destroyed) return;\n      destroyed = true;\n      cancelAnimationFrame(frame);\n      resizeObserver.disconnect();\n      window.removeEventListener('pointermove', updatePointer);\n      window.removeEventListener('pointerdown', updatePointer);\n      texture.dispose();\n      material.dispose();\n      geometry.dispose();\n      renderer.dispose();\n      host.classList.remove('is-ready');\n      delete host.dataset.rippleInitialised;\n    };\n\n    host.__destroyThreeRipple?.();\n    host.__destroyThreeRipple = destroy;\n    resize();\n    host.classList.add('is-ready');\n    frame = requestAnimationFrame(render);\n  };\n\n  const scan = (root = document) => {\n    if (root.matches?.(SELECTOR)) init(root);\n    root.querySelectorAll?.(SELECTOR).forEach(init);\n  };\n\n  scan();\n\n  if (!shared.observer) {\n    shared.observer = new MutationObserver((mutations) => {\n      mutations.forEach((mutation) => {\n        mutation.addedNodes.forEach((node) => {\n          if (node.nodeType === 1) scan(node);\n        });\n        mutation.removedNodes.forEach((node) => {\n          if (node.nodeType !== 1) return;\n          if (node.matches?.(SELECTOR)) node.__destroyThreeRipple?.();\n          node.querySelectorAll?.(SELECTOR).forEach((host) => host.__destroyThreeRipple?.());\n        });\n      });\n    });\n    shared.observer.observe(document.documentElement, { childList: true, subtree: true });\n  }\n})();\n@endif\n"
+            "filename" : "Javascript"
           },
           {
-            "content" : "const transformHook = (rw) => {\n  const clamp = (value, min, max, fallback) => {\n    const number = Number(value);\n    return Number.isFinite(number) ? Math.min(Math.max(number, min), max) : fallback;\n  };\n\n  const id = rw.node.id;\n  const strength = clamp(rw.props.rippleStrength, 2, 80, 25);\n  const speed = clamp(rw.props.rippleSpeed, 1, 8, 2);\n  const frequency = clamp(rw.props.rippleFrequency, 6, 70, 28);\n  const decay = clamp(rw.props.rippleDecay, 2, 18, 7);\n  const idleStrength = clamp(rw.props.idleStrength, 1, 50, 12);\n  const idle = rw.props.idleMotion !== false;\n\n  rw.setRootElement({\n    as: 'div',\n    class: `component-${id} three-ripple`,\n    args: {\n      'data-three-ripple': '',\n      'data-edit': rw.project.mode === 'edit' ? 'true' : 'false',\n      'data-strength': String(clamp(rw.props.rippleStrength, 2, 80, 25) \/ 1000),\n      'data-speed': String(clamp(rw.props.rippleSpeed, 1, 8, 2)),\n      'data-frequency': String(clamp(rw.props.rippleFrequency, 6, 70, 28)),\n      'data-decay': String(clamp(rw.props.rippleDecay, 2, 18, 7)),\n      'data-idle': rw.props.idleMotion === false ? 'false' : 'true',\n      'data-idle-strength': String(clamp(rw.props.idleStrength, 1, 50, 12) \/ 1000)\n    }\n  });\n\n  rw.setProps({\n    edit: rw.project.mode === 'edit',\n    livePreviewProps: encodeURIComponent(JSON.stringify({\n      image: rw.props.rippleImage && rw.props.rippleImage.image ? rw.props.rippleImage.image : '',\n      strength: strength \/ 1000,\n      speed: speed,\n      frequency: frequency,\n      decay: decay,\n      idle: idle,\n      idleStrength: idleStrength \/ 1000\n    })),\n    rippleStrength: clamp(rw.props.rippleStrength, 2, 80, 25),\n    rippleSpeed: clamp(rw.props.rippleSpeed, 1, 8, 2),\n    rippleFrequency: clamp(rw.props.rippleFrequency, 6, 70, 28),\n    rippleDecay: clamp(rw.props.rippleDecay, 2, 18, 7),\n    idleStrength: clamp(rw.props.idleStrength, 1, 50, 12)\n  });\n};\n\nexports.transformHook = transformHook;",
             "identifier" : "AE06A598-7C97-4075-8460-943CB7E93BE3",
+            "content" : "const transformHook = (rw) => {\n  const clamp = (value, min, max, fallback) => {\n    const number = Number(value);\n    return Number.isFinite(number) ? Math.min(Math.max(number, min), max) : fallback;\n  };\n\n  const id = rw.node.id;\n  const strength = clamp(rw.props.rippleStrength, 2, 80, 25);\n  const speed = clamp(rw.props.rippleSpeed, 1, 8, 2);\n  const frequency = clamp(rw.props.rippleFrequency, 6, 70, 28);\n  const decay = clamp(rw.props.rippleDecay, 2, 18, 7);\n  const idleStrength = clamp(rw.props.idleStrength, 1, 50, 12);\n  const idle = rw.props.idleMotion !== false;\n  const rippleImage = rw.props.rippleImage || {};\n\n  rw.setRootElement({\n    as: 'div',\n    class: `component-${id} three-ripple`,\n    args: {\n      'data-three-ripple': '',\n      'data-edit': rw.project.mode === 'edit' ? 'true' : 'false',\n      'data-strength': String(clamp(rw.props.rippleStrength, 2, 80, 25) \/ 1000),\n      'data-speed': String(clamp(rw.props.rippleSpeed, 1, 8, 2)),\n      'data-frequency': String(clamp(rw.props.rippleFrequency, 6, 70, 28)),\n      'data-decay': String(clamp(rw.props.rippleDecay, 2, 18, 7)),\n      'data-idle': rw.props.idleMotion === false ? 'false' : 'true',\n      'data-idle-strength': String(clamp(rw.props.idleStrength, 1, 50, 12) \/ 1000)\n    }\n  });\n\n  rw.setProps({\n    edit: rw.project.mode === 'edit',\n    livePreviewProps: encodeURIComponent(JSON.stringify({\n      image: rippleImage.image || '',\n      width: rippleImage.width || 0,\n      height: rippleImage.height || 0,\n      strength: strength \/ 1000,\n      speed: speed,\n      frequency: frequency,\n      decay: decay,\n      idle: idle,\n      idleStrength: idleStrength \/ 1000\n    })),\n    rippleStrength: clamp(rw.props.rippleStrength, 2, 80, 25),\n    rippleSpeed: clamp(rw.props.rippleSpeed, 1, 8, 2),\n    rippleFrequency: clamp(rw.props.rippleFrequency, 6, 70, 28),\n    rippleDecay: clamp(rw.props.rippleDecay, 2, 18, 7),\n    idleStrength: clamp(rw.props.idleStrength, 1, 50, 12)\n  });\n};\n\nexports.transformHook = transformHook;\n",
             "kind" : {
               "hooks" : {
 
@@ -1556,48 +1529,48 @@
             "filename" : "Hooks"
           },
           {
-            "content" : "{\n  \"groups\": [\n    {\n      \"title\": \"Image\",\n      \"icon\": \"photo\",\n      \"properties\": [\n        {\n          \"title\": \"Ripple Image\",\n          \"id\": \"rippleImage\",\n          \"responsive\": false,\n          \"info\": \"Choose or drop an image from Resources.\",\n          \"resource\": { \"accepts\": \"image\/*,!.svg\" }\n        },\n        {\n          \"title\": \"This component fills its parent. Use the parent Container controls for height, width, spacing, and responsive sizing.\",\n          \"information\": {}\n        }\n      ]\n    },\n    {\n      \"title\": \"Ripple\",\n      \"icon\": \"water.waves\",\n      \"properties\": [\n        {\n          \"title\": \"Strength\",\n          \"id\": \"rippleStrength\",\n          \"responsive\": false,\n          \"info\": \"Controls the amount of image distortion.\",\n          \"slider\": { \"default\": 25, \"min\": 2, \"max\": 80, \"step\": 1, \"round\": true }\n        },\n        {\n          \"title\": \"Speed\",\n          \"id\": \"rippleSpeed\",\n          \"responsive\": false,\n          \"slider\": { \"default\": 2, \"min\": 1, \"max\": 8, \"step\": 0.5, \"round\": false }\n        },\n        {\n          \"title\": \"Frequency\",\n          \"id\": \"rippleFrequency\",\n          \"responsive\": false,\n          \"info\": \"Higher values create tighter ripple rings.\",\n          \"slider\": { \"default\": 28, \"min\": 6, \"max\": 70, \"step\": 1, \"round\": true }\n        },\n        {\n          \"title\": \"Falloff\",\n          \"id\": \"rippleDecay\",\n          \"responsive\": false,\n          \"info\": \"Controls how quickly the distortion fades away from the pointer.\",\n          \"slider\": { \"default\": 7, \"min\": 2, \"max\": 18, \"step\": 0.5, \"round\": false }\n        },\n        {\n          \"title\": \"Ambient motion\",\n          \"id\": \"idleMotion\",\n          \"responsive\": false,\n          \"switch\": { \"default\": true, \"subtitle\": \"Adds a subtle drift when the pointer is idle.\" }\n        },\n        {\n          \"title\": \"Ambient strength\",\n          \"id\": \"idleStrength\",\n          \"responsive\": false,\n          \"info\": \"Controls the amount of ambient drift.\",\n          \"slider\": { \"default\": 12, \"min\": 1, \"max\": 50, \"step\": 1, \"round\": true }\n        }\n      ]\n    }\n  ]\n}",
+            "identifier" : "56746D38-7561-4283-9D69-EBD9EE22A72F",
+            "content" : "{\n  \"groups\": [\n    {\n      \"title\": \"Image\",\n      \"icon\": \"photo\",\n      \"properties\": [\n        {\n          \"title\": \"Ripple Image\",\n          \"id\": \"rippleImage\",\n          \"responsive\": false,\n          \"info\": \"Choose or drop an image from Resources.\",\n          \"resource\": { \"accepts\": \"image\/*,!.svg\" }\n        },\n        {\n          \"title\": \"This component fills its parent. Use the parent Container controls for height, width, spacing, and responsive sizing.\",\n          \"information\": {}\n        }\n      ]\n    },\n    {\n      \"title\": \"Ripple\",\n      \"icon\": \"water.waves\",\n      \"properties\": [\n        {\n          \"title\": \"Strength\",\n          \"id\": \"rippleStrength\",\n          \"responsive\": false,\n          \"info\": \"Controls the amount of image distortion.\",\n          \"slider\": { \"default\": 25, \"min\": 2, \"max\": 80, \"step\": 1, \"round\": true }\n        },\n        {\n          \"title\": \"Speed\",\n          \"id\": \"rippleSpeed\",\n          \"responsive\": false,\n          \"slider\": { \"default\": 2, \"min\": 1, \"max\": 8, \"step\": 0.5, \"round\": false }\n        },\n        {\n          \"title\": \"Frequency\",\n          \"id\": \"rippleFrequency\",\n          \"responsive\": false,\n          \"info\": \"Higher values create tighter ripple rings.\",\n          \"slider\": { \"default\": 28, \"min\": 6, \"max\": 70, \"step\": 1, \"round\": true }\n        },\n        {\n          \"title\": \"Falloff\",\n          \"id\": \"rippleDecay\",\n          \"responsive\": false,\n          \"info\": \"Controls how quickly the distortion fades away from the pointer.\",\n          \"slider\": { \"default\": 7, \"min\": 2, \"max\": 18, \"step\": 0.5, \"round\": false }\n        },\n        {\n          \"title\": \"Ambient Motion\",\n          \"id\": \"idleMotion\",\n          \"responsive\": false,\n          \"switch\": { \"default\": true }\n        },\n        {\n          \"title\": \"Strength\",\n          \"id\": \"idleStrength\",\n          \"responsive\": false,\n          \"visible\": \"idleMotion == true\",\n          \"info\": \"Controls the amount of ambient drift.\",\n          \"slider\": { \"default\": 12, \"min\": 1, \"max\": 50, \"step\": 1, \"round\": true }\n        }\n      ]\n    }\n  ]\n}",
             "kind" : {
               "properties" : {
 
               }
             },
-            "identifier" : "56746D38-7561-4283-9D69-EBD9EE22A72F",
             "filename" : "Properties"
           },
           {
             "identifier" : "0329AA07-0199-4EB1-8EAE-56C2834656CE",
-            "filename" : "Data",
+            "content" : "",
             "kind" : {
               "data" : {
 
               }
             },
-            "content" : ""
+            "filename" : "Data"
           }
         ],
         "tags" : [
 
         ],
-        "uuid" : "448BBFB2-01A1-4C74-A68C-E0D153FA9786",
+        "build" : "",
         "hidden" : false,
-        "deprecated" : false,
-        "version" : "",
-        "group" : "Custom",
-        "identifier" : "D8C8012A-0143-4541-AB30-F721FD7518F1",
+        "title" : "Image Ripple",
         "collections" : [
 
         ],
-        "build" : "",
-        "title" : "Image Ripple",
-        "author" : ""
+        "version" : "",
+        "author" : "",
+        "subTitle" : "Interactive pointer and touch distortion",
+        "group" : "Custom",
+        "deprecated" : false,
+        "identifier" : "D8C8012A-0143-4541-AB30-F721FD7518F1",
+        "uuid" : "448BBFB2-01A1-4C74-A68C-E0D153FA9786"
       },
       "13BA620D-6131-4CAA-9222-3D1FD8688BA8" : {
-        "subTitle" : "",
         "files" : [
           {
-            "content" : "<span class=\"component-{{id}} status-dot\" style=\"--dot-size: {{dotSize}}px\">\n  <span class=\"status-dot__ring {{dotColor}}\"><\/span>\n  <span class=\"status-dot__core {{dotColor}}\"><\/span>\n<\/span>",
             "identifier" : "90615B34-DC43-45C2-A307-4A85AB373EFC",
+            "content" : "<span class=\"component-{{id}} status-dot\" style=\"--dot-size: {{dotSize}}px\">\n  <span class=\"status-dot__ring {{dotColor}}\"><\/span>\n  <span class=\"status-dot__core {{dotColor}}\"><\/span>\n<\/span>",
             "kind" : {
               "template" : {
 
@@ -1606,28 +1579,28 @@
             "filename" : "Template"
           },
           {
+            "identifier" : "E3F3F4D7-737B-42D0-A7C7-19BC46770E5E",
             "content" : "\/* ── Status Dot ─────────────────────────────────────────── *\/\n\/* Scoped by the static .status-dot class. Per-instance {{id}}\n   interpolation is unreliable in preview\/publish builds, so the size\n   is passed as an inline --dot-size variable from the template. *\/\n\n.status-dot {\n  position: relative;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: var(--dot-size, 8px);\n  height: var(--dot-size, 8px);\n  flex-shrink: 0;\n}\n\n\/* Solid core dot *\/\n.status-dot .status-dot__core {\n  position: relative;\n  z-index: 1;\n  width: 100%;\n  height: 100%;\n  border-radius: 9999px;\n}\n\n\/* Expanding\/fading ring *\/\n.status-dot .status-dot__ring {\n  position: absolute;\n  inset: 0;\n  border-radius: 9999px;\n  opacity: 0.6;\n  animation: status-dot-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;\n}\n\n@keyframes status-dot-pulse {\n  0%, 100% {\n    transform: scale(1);\n    opacity: 0.6;\n  }\n  50% {\n    transform: scale(2.2);\n    opacity: 0;\n  }\n}\n\n@media (prefers-reduced-motion: reduce) {\n  .status-dot .status-dot__ring {\n    animation: none;\n  }\n}",
             "kind" : {
               "css" : {
 
               }
             },
-            "identifier" : "E3F3F4D7-737B-42D0-A7C7-19BC46770E5E",
             "filename" : "Styles"
           },
           {
             "identifier" : "F8141516-2021-4C22-83F7-012BCECB63AA",
-            "filename" : "Javascript",
+            "content" : "",
             "kind" : {
               "js" : {
 
               }
             },
-            "content" : ""
+            "filename" : "Javascript"
           },
           {
-            "content" : "",
             "identifier" : "C9B39556-EE6C-410A-AB5B-60E3C5D80313",
+            "content" : "",
             "kind" : {
               "hooks" : {
 
@@ -1636,45 +1609,46 @@
             "filename" : "Hooks"
           },
           {
+            "identifier" : "F1496E5E-1554-4313-8CCE-BA66190C48FD",
             "content" : "{\n  \"groups\": [\n    {\n      \"title\": \"Status Dot\",\n      \"icon\": \"circle.fill\",\n      \"properties\": [\n        {\n          \"title\": \"Dot Colour\",\n          \"id\": \"dotColor\",\n          \"responsive\": false,\n          \"format\": \"bg-{{value}}\",\n          \"themeColor\": {\n            \"mode\": \"single\",\n            \"default\": {\n              \"name\": \"emerald\",\n              \"brightness\": 500\n            }\n          }\n        },\n        {\n          \"title\": \"Size\",\n          \"id\": \"dotSize\",\n          \"responsive\": false,\n          \"number\": {\n            \"default\": 8,\n            \"min\": 6,\n            \"max\": 24,\n            \"step\": 1,\n            \"round\": true,\n            \"subtitle\": \"Diameter in pixels\"\n          }\n        }\n      ]\n    }\n  ]\n}",
             "kind" : {
               "properties" : {
 
               }
             },
-            "identifier" : "F1496E5E-1554-4313-8CCE-BA66190C48FD",
             "filename" : "Properties"
           },
           {
             "identifier" : "92887C08-7AE6-4D39-9549-270E2E489B8E",
-            "filename" : "Data",
+            "content" : "",
             "kind" : {
               "data" : {
 
               }
             },
-            "content" : ""
+            "filename" : "Data"
           }
         ],
         "tags" : [
 
         ],
-        "uuid" : "9E0D75E7-9DBF-42C4-9A46-254CAFF921DC",
+        "build" : "",
         "hidden" : false,
-        "deprecated" : false,
-        "version" : "",
-        "group" : "Custom",
-        "identifier" : "13BA620D-6131-4CAA-9222-3D1FD8688BA8",
+        "title" : "Status Dot",
         "collections" : [
 
         ],
-        "build" : "",
-        "title" : "Status Dot",
-        "author" : ""
+        "version" : "",
+        "author" : "",
+        "subTitle" : "",
+        "group" : "Custom",
+        "deprecated" : false,
+        "identifier" : "13BA620D-6131-4CAA-9222-3D1FD8688BA8",
+        "uuid" : "9E0D75E7-9DBF-42C4-9A46-254CAFF921DC"
       }
     }
   },
-  "privacy" : {
-    "anonymiseThirdPartyRequests" : false
+  "localization" : {
+
   }
 }

@@ -1,191 +1,143 @@
 {
+  "publishing" : {
+    "publishSettingsConfigured" : false,
+    "publishingDestinations" : [
+
+    ]
+  },
+  "customComponents" : {
+    "components" : {
+      "FCA17D58-D475-44E0-B84D-6B1B466A228E" : {
+        "author" : "",
+        "identifier" : "FCA17D58-D475-44E0-B84D-6B1B466A228E",
+        "uuid" : "3C85B41D-ABBE-4FE5-AB95-FC83AFE4213E",
+        "collections" : [
+
+        ],
+        "title" : "Custom Counter",
+        "deprecated" : false,
+        "build" : "",
+        "tags" : [
+
+        ],
+        "files" : [
+          {
+            "identifier" : "021CA265-B2C3-4D05-9C4A-A11563C04A08",
+            "kind" : {
+              "template" : {
+
+              }
+            },
+            "content" : "<div \n  class=\"\"\n  x-data=\"{ count: 0, hasAnimated: false }\"\n  x-intersect.once=\"if (!hasAnimated) { hasAnimated = true; $nextTick(() => { let start = 0; let end = +{{myNumber}}; let duration = 1500; let startTime = null; function animate(now) { if(!startTime) startTime = now; let progress = Math.min((now - startTime) \/ duration, 1); count = Math.floor(progress * (end - start) + start); if(progress < 1){ requestAnimationFrame(animate); } } requestAnimationFrame(animate); }); }\"\n>\n  @if(edit)\n    <div class=\"font-bold {{textColor}} {{headingTextStyles}} {{fontFamily}}\">{{myNumber}}<\/div>\n  @else\n    <div class=\"font-bold {{textColor}} {{headingTextStyles}} {{fontFamily}}\" x-text=\"count\"><\/div>\n  @endif\n<\/div>",
+            "filename" : "Template"
+          },
+          {
+            "identifier" : "D509C38B-1614-49C1-9E01-C0EEB85B7EE8",
+            "kind" : {
+              "css" : {
+
+              }
+            },
+            "content" : "",
+            "filename" : "Styles"
+          },
+          {
+            "identifier" : "33F04429-74AB-4B5A-9C2F-2372F8A702C9",
+            "kind" : {
+              "js" : {
+
+              }
+            },
+            "content" : "console.log(`Running JS for element with id: {{id}}`)",
+            "filename" : "Javascript"
+          },
+          {
+            "identifier" : "229D0702-9414-465A-A17A-48FFED4C5A36",
+            "kind" : {
+              "hooks" : {
+
+              }
+            },
+            "content" : "",
+            "filename" : "Hooks"
+          },
+          {
+            "identifier" : "2B1AFCC4-781B-406C-80EB-E18D0ADDD0CD",
+            "kind" : {
+              "properties" : {
+
+              }
+            },
+            "content" : "{\n  \"groups\": [\n    {\n      \"title\": \"General\",\n      \"icon\": \"gearshape\",\n      \"properties\": [\n        {\n          \"title\": \"Number\",\n          \"id\": \"myNumber\",\n          \"number\": {\n            \"default\": 100\n          }\n        },\n        {\n          \"title\": \"Font\",\n          \"id\": \"fontFamily\",\n          \"themeFont\": {\n            \"default\": {\n              \"base\": { \"name\": \"body\" }\n            }\n          }\n        },\n        {\n          \"title\": \"Size\",\n          \"id\": \"headingTextStyles\",\n          \"themeTextStyle\": {\n            \"default\": {\n              \"base\": {\n                \"name\": \"5xl\"\n              }\n            }\n          }\n        },\n        {\n          \"title\": \"Color\",\n          \"id\": \"textColor\",\n          \"format\": \"text-{{value}}\",\n          \"themeColor\": {\n            \"default\": {\n              \"name\": \"text\",\n              \"brightness\": 300\n            }\n          }\n        }\n      ]\n    }\n  ]\n}",
+            "filename" : "Properties"
+          },
+          {
+            "identifier" : "82C630BD-4BBA-4550-AE67-AAFC1DF82FD9",
+            "kind" : {
+              "data" : {
+
+              }
+            },
+            "content" : "{\n    \"collections\": [{\n        \"id\" : \"F8A7DF12-9196-4EF0-A1DB-C35F39401941\",\n        \"title\" : \"Features\",\n        \"items\" : [{\n            \"id\" : \"2DA6C715-0A28-4287-9E2B-EA50078AEF23\",\n            \"featureName\" : \"Data Driven\",\n            \"body\" : \"A dynamic and user-friendly platform offering a wide range of services and information.\"\n        }]\n    }]\n}",
+            "filename" : "Data"
+          }
+        ],
+        "hidden" : false,
+        "subTitle" : "",
+        "group" : "Custom",
+        "version" : ""
+      }
+    }
+  },
+  "version" : 9,
+  "images" : {
+    "webIcons" : {
+      "faviconSmall" : {
+        "autoGenerate" : false,
+        "type" : 6
+      },
+      "medium" : {
+        "autoGenerate" : false,
+        "type" : 1
+      },
+      "faviconMedium" : {
+        "autoGenerate" : false,
+        "type" : 5
+      },
+      "large" : {
+        "autoGenerate" : false,
+        "type" : 0
+      },
+      "faviconLarge" : {
+        "autoGenerate" : false,
+        "type" : 4
+      },
+      "small" : {
+        "autoGenerate" : false,
+        "type" : 2
+      },
+      "pinnedTab" : {
+        "autoGenerate" : false,
+        "type" : 3
+      }
+    },
+    "logoAltText" : ""
+  },
   "site" : {
-    "baseURL" : "https:\/\/www.realmacsoftware.com",
-    "themeName" : "Elements",
+    "title" : "Landing",
+    "wantsXMLSiteMap" : true,
     "useCacheBusting" : true,
     "consolidateCSSFiles" : true,
     "allowDarkMode" : false,
     "cruftlessLinks" : true,
-    "wantsXMLSiteMap" : true,
+    "legacyV3HoverOnTouch" : false,
+    "themeName" : "Elements",
     "defaultFileExtension" : "html",
-    "title" : "Landing",
-    "minifyExtraFiles" : true
+    "minifyExtraFiles" : true,
+    "baseURL" : "https:\/\/www.realmacsoftware.com"
   },
   "siteResources" : {
-    "resources" : {
-      "74428BAC-FF0E-4211-BF58-A34502EA37B2" : {
-        "typeIdentifier" : "public.jpeg",
-        "originalName" : "solaris.jpg",
-        "timeStamp" : 1750366332235.5872,
-        "isSVG" : false,
-        "changedStatuses" : {
-
-        },
-        "kind" : 1,
-        "smartFolderKind" : 0,
-        "name" : "solaris.jpg",
-        "metadata" : {
-          "caption" : "Create a wavy gradient header background in rainbow colours, keep it clean and smooth --ar 4:3 --v 7 Job ID: cc7a7f46-71b4-4ce1-8817-a9024098023e",
-          "author" : "theriverboatcaptain",
-          "width" : 1984,
-          "height" : 1495,
-          "aspect" : 1.3270903010033446
-        },
-        "expanded" : false,
-        "hostedImageURLs" : [
-
-        ],
-        "parentIdentifier" : "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10",
-        "identifier" : "74428BAC-FF0E-4211-BF58-A34502EA37B2"
-      },
-      "54A0E1D4-B649-423E-81FC-7EED50057C81" : {
-        "name" : "arrow.svg",
-        "kind" : 1,
-        "changedStatuses" : {
-
-        },
-        "parentIdentifier" : "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C",
-        "isSVG" : true,
-        "originalName" : "arrow-keyboard-right.svg",
-        "timeStamp" : 1750264925381.481,
-        "smartFolderKind" : 0,
-        "expanded" : false,
-        "hostedImageURLs" : [
-
-        ],
-        "typeIdentifier" : "public.svg-image",
-        "identifier" : "54A0E1D4-B649-423E-81FC-7EED50057C81"
-      },
-      "9EC75AAE-1D9F-488D-9C0C-F4D05A3582A2" : {
-        "kind" : 1,
-        "hostedImageURLs" : [
-
-        ],
-        "expanded" : false,
-        "identifier" : "9EC75AAE-1D9F-488D-9C0C-F4D05A3582A2",
-        "typeIdentifier" : "public.svg-image",
-        "name" : "x-twitter.svg",
-        "originalName" : "x-twitter.svg",
-        "changedStatuses" : {
-
-        },
-        "smartFolderKind" : 0,
-        "timeStamp" : 1750253993686.3252,
-        "isSVG" : true,
-        "parentIdentifier" : "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C"
-      },
-      "8AEA3401-7258-4C6C-BA41-C23690A55342" : {
-        "typeIdentifier" : "public.jpeg",
-        "originalName" : "skylight.jpg",
-        "timeStamp" : 1750368884319.799,
-        "isSVG" : false,
-        "changedStatuses" : {
-
-        },
-        "kind" : 1,
-        "smartFolderKind" : 0,
-        "name" : "skylight.jpg",
-        "metadata" : {
-          "caption" : "sunrise sky, fluffy clouds, fantasy, morning, smooth, wallpaper in a digital paint style --ar 4:3 --v 7 Job ID: 063601c6-6ed8-449d-b5e5-56d3b9f5ca75",
-          "author" : "theriverboatcaptain",
-          "width" : 1395,
-          "height" : 1051,
-          "aspect" : 1.3273073263558515
-        },
-        "expanded" : false,
-        "hostedImageURLs" : [
-
-        ],
-        "parentIdentifier" : "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10",
-        "identifier" : "8AEA3401-7258-4C6C-BA41-C23690A55342"
-      },
-      "A2EDAD86-F8A8-47F9-A9C0-E6635A025522" : {
-        "name" : "facebook.svg",
-        "kind" : 1,
-        "changedStatuses" : {
-
-        },
-        "parentIdentifier" : "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C",
-        "isSVG" : true,
-        "originalName" : "facebook.svg",
-        "timeStamp" : 1750254072900.8809,
-        "smartFolderKind" : 0,
-        "expanded" : false,
-        "hostedImageURLs" : [
-
-        ],
-        "typeIdentifier" : "public.svg-image",
-        "identifier" : "A2EDAD86-F8A8-47F9-A9C0-E6635A025522"
-      },
-      "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10" : {
-        "kind" : 0,
-        "hostedImageURLs" : [
-
-        ],
-        "expanded" : true,
-        "identifier" : "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10",
-        "name" : "backgrounds",
-        "changedStatuses" : {
-
-        },
-        "smartFolderKind" : 0,
-        "timeStamp" : -62135769600000,
-        "parentIdentifier" : "D1E46739-8BE7-4510-92B9-6D3F58FE5DCC"
-      },
-      "D1E46739-8BE7-4510-92B9-6D3F58FE5DCC" : {
-        "kind" : 0,
-        "hostedImageURLs" : [
-
-        ],
-        "expanded" : true,
-        "identifier" : "D1E46739-8BE7-4510-92B9-6D3F58FE5DCC",
-        "name" : "Resources",
-        "changedStatuses" : {
-
-        },
-        "smartFolderKind" : 0,
-        "timeStamp" : -62135769600000
-      },
-      "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C" : {
-        "kind" : 0,
-        "hostedImageURLs" : [
-
-        ],
-        "expanded" : false,
-        "identifier" : "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C",
-        "name" : "Icons",
-        "changedStatuses" : {
-
-        },
-        "smartFolderKind" : 0,
-        "timeStamp" : -62135769600000,
-        "parentIdentifier" : "D1E46739-8BE7-4510-92B9-6D3F58FE5DCC"
-      },
-      "F9E815A6-3C20-4239-9F33-F50FB084417D" : {
-        "kind" : 1,
-        "hostedImageURLs" : [
-
-        ],
-        "expanded" : false,
-        "identifier" : "F9E815A6-3C20-4239-9F33-F50FB084417D",
-        "typeIdentifier" : "public.svg-image",
-        "name" : "instagram.svg",
-        "originalName" : "instagram.svg",
-        "changedStatuses" : {
-
-        },
-        "smartFolderKind" : 0,
-        "timeStamp" : 1750254131190.557,
-        "isSVG" : true,
-        "parentIdentifier" : "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C"
-      }
-    },
-    "root" : "D1E46739-8BE7-4510-92B9-6D3F58FE5DCC",
     "children" : {
-      "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10" : [
-        "74428BAC-FF0E-4211-BF58-A34502EA37B2",
-        "8AEA3401-7258-4C6C-BA41-C23690A55342"
-      ],
       "D1E46739-8BE7-4510-92B9-6D3F58FE5DCC" : [
         "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10",
         "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C"
@@ -195,59 +147,211 @@
         "A2EDAD86-F8A8-47F9-A9C0-E6635A025522",
         "9EC75AAE-1D9F-488D-9C0C-F4D05A3582A2",
         "54A0E1D4-B649-423E-81FC-7EED50057C81"
+      ],
+      "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10" : [
+        "03E7DC6B-866D-4738-9EAE-D60B9B4D283F",
+        "226989C6-5A1A-4A8C-A8BD-BA1470D365D8"
       ]
-    }
-  },
-  "rootPrefabNode" : {
-    "identifier" : "D207B920-9F46-4AE8-9E7A-93E673680E82",
-    "item" : null,
-    "children" : [
+    },
+    "resources" : {
+      "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10" : {
+        "kind" : 0,
+        "hostedImageURLs" : [
 
-    ],
-    "title" : "Project",
-    "kind" : {
-      "folder" : {
+        ],
+        "expanded" : true,
+        "name" : "backgrounds",
+        "changedStatuses" : {
 
+        },
+        "smartFolderKind" : 0,
+        "timeStamp" : -62135769600000,
+        "parentIdentifier" : "D1E46739-8BE7-4510-92B9-6D3F58FE5DCC",
+        "identifier" : "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10"
+      },
+      "9EC75AAE-1D9F-488D-9C0C-F4D05A3582A2" : {
+        "isSVG" : true,
+        "kind" : 1,
+        "originalName" : "x-twitter.svg",
+        "hostedImageURLs" : [
+
+        ],
+        "expanded" : false,
+        "name" : "x-twitter.svg",
+        "changedStatuses" : {
+
+        },
+        "smartFolderKind" : 0,
+        "timeStamp" : 1750253993686.3252,
+        "parentIdentifier" : "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C",
+        "typeIdentifier" : "public.svg-image",
+        "identifier" : "9EC75AAE-1D9F-488D-9C0C-F4D05A3582A2"
+      },
+      "03E7DC6B-866D-4738-9EAE-D60B9B4D283F" : {
+        "timeStamp" : 1763159363944.1343,
+        "parentIdentifier" : "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10",
+        "metadata" : {
+          "aspect" : 1.7842857142857143,
+          "width" : 2498,
+          "height" : 1400
+        },
+        "identifier" : "03E7DC6B-866D-4738-9EAE-D60B9B4D283F",
+        "hostedImageURLs" : [
+
+        ],
+        "originalName" : "puple-gradient.jpg",
+        "kind" : 1,
+        "typeIdentifier" : "public.jpeg",
+        "smartFolderKind" : 0,
+        "expanded" : true,
+        "isSVG" : false,
+        "name" : "puple-gradient.jpg",
+        "changedStatuses" : {
+
+        }
+      },
+      "A2EDAD86-F8A8-47F9-A9C0-E6635A025522" : {
+        "isSVG" : true,
+        "kind" : 1,
+        "originalName" : "facebook.svg",
+        "hostedImageURLs" : [
+
+        ],
+        "expanded" : false,
+        "name" : "facebook.svg",
+        "changedStatuses" : {
+
+        },
+        "smartFolderKind" : 0,
+        "timeStamp" : 1750254072900.8809,
+        "parentIdentifier" : "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C",
+        "typeIdentifier" : "public.svg-image",
+        "identifier" : "A2EDAD86-F8A8-47F9-A9C0-E6635A025522"
+      },
+      "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C" : {
+        "kind" : 0,
+        "hostedImageURLs" : [
+
+        ],
+        "expanded" : false,
+        "name" : "Icons",
+        "changedStatuses" : {
+
+        },
+        "smartFolderKind" : 0,
+        "timeStamp" : -62135769600000,
+        "parentIdentifier" : "D1E46739-8BE7-4510-92B9-6D3F58FE5DCC",
+        "identifier" : "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C"
+      },
+      "D1E46739-8BE7-4510-92B9-6D3F58FE5DCC" : {
+        "kind" : 0,
+        "hostedImageURLs" : [
+
+        ],
+        "expanded" : true,
+        "name" : "Resources",
+        "changedStatuses" : {
+
+        },
+        "smartFolderKind" : 0,
+        "timeStamp" : -62135769600000,
+        "identifier" : "D1E46739-8BE7-4510-92B9-6D3F58FE5DCC"
+      },
+      "54A0E1D4-B649-423E-81FC-7EED50057C81" : {
+        "isSVG" : true,
+        "expanded" : false,
+        "identifier" : "54A0E1D4-B649-423E-81FC-7EED50057C81",
+        "typeIdentifier" : "public.svg-image",
+        "kind" : 1,
+        "parentIdentifier" : "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C",
+        "changedStatuses" : {
+
+        },
+        "name" : "arrow.svg",
+        "hostedImageURLs" : [
+
+        ],
+        "originalName" : "arrow-keyboard-right.svg",
+        "smartFolderKind" : 0,
+        "timeStamp" : 1750264925381.481
+      },
+      "F9E815A6-3C20-4239-9F33-F50FB084417D" : {
+        "isSVG" : true,
+        "kind" : 1,
+        "originalName" : "instagram.svg",
+        "hostedImageURLs" : [
+
+        ],
+        "expanded" : false,
+        "name" : "instagram.svg",
+        "changedStatuses" : {
+
+        },
+        "smartFolderKind" : 0,
+        "timeStamp" : 1750254131190.557,
+        "parentIdentifier" : "3BC1F6F7-A7F2-4170-91C2-2BBBFC06E53C",
+        "typeIdentifier" : "public.svg-image",
+        "identifier" : "F9E815A6-3C20-4239-9F33-F50FB084417D"
+      },
+      "226989C6-5A1A-4A8C-A8BD-BA1470D365D8" : {
+        "name" : "purple-blue-gradient.jpg",
+        "timeStamp" : 1763159364012.2205,
+        "metadata" : {
+          "width" : 2498,
+          "aspect" : 1.7842857142857143,
+          "height" : 1400
+        },
+        "identifier" : "226989C6-5A1A-4A8C-A8BD-BA1470D365D8",
+        "hostedImageURLs" : [
+
+        ],
+        "originalName" : "purple-blue-gradient.jpg",
+        "kind" : 1,
+        "typeIdentifier" : "public.jpeg",
+        "smartFolderKind" : 0,
+        "expanded" : true,
+        "isSVG" : false,
+        "changedStatuses" : {
+
+        },
+        "parentIdentifier" : "AEE196D6-71B7-43C9-A27C-E8D7E3C3AD10"
       }
     },
-    "expanded" : true
+    "root" : "D1E46739-8BE7-4510-92B9-6D3F58FE5DCC"
   },
-  "globalElements" : {
-    "globals" : {
-
-    }
+  "social" : {
+    "useSocialTags" : true
   },
-  "localization" : {
-
+  "project" : {
+    "autoStartWebServer" : false,
+    "uniqueBackupName" : "824FE9BF-5001-4EEA-B997-22D199D3BC2E_rwbackup"
   },
-  "ui" : {
-    "resourceInspector" : {
-      "show" : false
-    },
-    "projectInspector" : {
-      "show" : false
-    },
-    "catalogFilter" : {
-      "smartDocumentElements" : false,
-      "showFavourites" : false
-    },
-    "contentArea" : {
-      "size" : [
-        390,
-        1090
-      ],
-      "darkAppearance" : false,
-      "scale" : 1,
-      "responsiveSize" : "xl"
-    },
-    "elementEditor" : {
-      "showOutline" : false,
-      "show" : false
-    }
+  "privacy" : {
+    "anonymiseThirdPartyRequests" : false
   },
-  "uiStateIdentifier" : "F161D87E-8B75-40EB-85F5-8D5983D89F99",
+  "identifier" : "F161D87E-8B75-40EB-85F5-8D5983D89F99",
   "theme" : {
-    "spacing" : [
+    "baseThemeIdentifier" : "com.realmacsoftware.themes.system",
+    "fontStyle" : [
+
+    ],
+    "textShadows" : [
+
+    ],
+    "colors" : [
+
+    ],
+    "borderWidth" : [
+
+    ],
+    "borderRadius" : [
+      {
+        "id" : "FB5C17CF-1452-49F4-A26B-3C252CE6BCBC",
+        "name" : "glass",
+        "remValue" : 3.5
+      }
+    ],
+    "typographies" : [
 
     ],
     "shadows" : [
@@ -256,412 +360,305 @@
     "fontFamily" : [
 
     ],
-    "page" : {
-      "backgroundColor" : {
-        "shade" : 500,
-        "darkColorStripId" : "none",
-        "darkShade" : 500,
-        "colorStripId" : "none"
-      }
-    },
-    "textShadows" : [
-
-    ],
-    "borderWidth" : [
-
-    ],
     "screens" : [
       {
-        "units" : "auto",
-        "enabled" : false,
-        "name" : "2xl",
-        "pixels" : 1536,
-        "classPrefix" : "2xl",
+        "description" : "",
         "id" : "E04B08D5-626C-45A8-80AE-D5E66EE25968",
+        "pixels" : 1536,
+        "maxContainerWidth" : 0,
+        "classPrefix" : "2xl",
+        "name" : "2xl",
+        "units" : "auto",
         "sfIcon" : "desktopcomputer",
-        "maxContainerWidth" : 0,
-        "description" : ""
+        "enabled" : false
       },
       {
-        "units" : "auto",
-        "enabled" : true,
-        "name" : "xl",
-        "pixels" : 1280,
-        "classPrefix" : "xl",
+        "description" : "",
         "id" : "C0DBFD02-D6CA-4A4E-9156-7B7FC038690D",
+        "pixels" : 1280,
+        "maxContainerWidth" : 0,
+        "classPrefix" : "xl",
+        "name" : "xl",
+        "units" : "auto",
         "sfIcon" : "laptopcomputer",
-        "maxContainerWidth" : 0,
-        "description" : ""
+        "enabled" : true
       },
       {
-        "units" : "auto",
-        "enabled" : true,
-        "name" : "lg",
-        "pixels" : 1024,
-        "classPrefix" : "lg",
+        "description" : "",
         "id" : "10FE4EB2-9D30-45BD-AE74-59366DD6F787",
+        "pixels" : 1024,
+        "maxContainerWidth" : 0,
+        "classPrefix" : "lg",
+        "name" : "lg",
+        "units" : "auto",
         "sfIcon" : "ipad.landscape",
-        "maxContainerWidth" : 0,
-        "description" : ""
+        "enabled" : true
       },
       {
-        "units" : "auto",
-        "enabled" : true,
-        "name" : "md",
-        "pixels" : 768,
-        "classPrefix" : "md",
+        "description" : "This breakpoint is for tablets and small laptop screens. It usually encompasses widths from 600 pixels to 1023 pixels.",
         "id" : "B21487E6-A7E2-40F2-B2D0-3C2024C43B7A",
+        "pixels" : 768,
+        "maxContainerWidth" : 0,
+        "classPrefix" : "md",
+        "name" : "md",
+        "units" : "auto",
         "sfIcon" : "ipad",
-        "maxContainerWidth" : 0,
-        "description" : "This breakpoint is for tablets and small laptop screens. It usually encompasses widths from 600 pixels to 1023 pixels."
+        "enabled" : true
       },
       {
-        "units" : "auto",
-        "enabled" : true,
-        "name" : "sm",
-        "pixels" : 640,
-        "classPrefix" : "sm",
+        "description" : "This breakpoint targets devices with small sceens like smartphones. The resolution width varies but typically starts from 320 pixels and below 600 pixels.",
         "id" : "8C0EEB8B-7CDB-41AE-A3BA-107180CDCB23",
-        "sfIcon" : "iphone.landscape",
+        "pixels" : 640,
         "maxContainerWidth" : 0,
-        "description" : "This breakpoint targets devices with small sceens like smartphones. The resolution width varies but typically starts from 320 pixels and below 600 pixels."
+        "classPrefix" : "sm",
+        "name" : "sm",
+        "units" : "auto",
+        "sfIcon" : "iphone.landscape",
+        "enabled" : true
       },
       {
-        "units" : "auto",
-        "enabled" : true,
-        "name" : "mobile",
-        "pixels" : 0,
-        "classPrefix" : "",
+        "description" : "",
         "id" : "83CC4579-FB7E-49EF-977F-A3E955D35166",
-        "sfIcon" : "iphone",
+        "pixels" : 0,
         "maxContainerWidth" : 0,
-        "description" : ""
+        "classPrefix" : "",
+        "name" : "mobile",
+        "units" : "auto",
+        "sfIcon" : "iphone",
+        "enabled" : true
       }
     ],
-    "typographies" : [
+    "spacing" : [
 
     ],
-    "fontStyle" : [
-
-    ],
-    "baseThemeIdentifier" : "com.realmacsoftware.themes.system",
-    "borderRadius" : [
-      {
-        "remValue" : 3.5,
-        "name" : "glass",
-        "id" : "FB5C17CF-1452-49F4-A26B-3C252CE6BCBC"
+    "page" : {
+      "backgroundColor" : {
+        "colorStripId" : "none",
+        "darkShade" : 500,
+        "darkColorStripId" : "none",
+        "shade" : 500
       }
-    ],
-    "colors" : [
+    }
+  },
+  "localization" : {
 
-    ]
   },
-  "social" : {
-    "useSocialTags" : true
+  "rootPrefabNode" : {
+    "expanded" : true,
+    "identifier" : "D207B920-9F46-4AE8-9E7A-93E673680E82",
+    "title" : "Project",
+    "children" : [
+
+    ],
+    "item" : null,
+    "kind" : {
+      "folder" : {
+
+      }
+    }
   },
-  "privacy" : {
-    "anonymiseThirdPartyRequests" : false
+  "ui" : {
+    "elementEditor" : {
+      "show" : false,
+      "showOutline" : false
+    },
+    "contentArea" : {
+      "scale" : 1,
+      "responsiveSize" : "xl",
+      "darkAppearance" : false,
+      "size" : [
+        1404.859375,
+        984
+      ]
+    },
+    "projectInspector" : {
+      "show" : false
+    },
+    "catalogFilter" : {
+      "smartDocumentElements" : false,
+      "showFavourites" : false
+    },
+    "resourceInspector" : {
+      "show" : false
+    }
   },
   "rootPage" : {
+    "expanded" : true,
+    "kind" : "folder",
+    "identifier" : "F8B73E6F-D702-4BBB-AAAB-93E3B8AE8F79",
+    "title" : "root",
     "children" : [
       {
+        "expanded" : true,
+        "kind" : "page",
+        "identifier" : "7E7514D1-4ACD-4542-B01D-056E035223EE",
+        "title" : "Home",
         "children" : [
 
         ],
-        "kind" : "page",
         "manifests" : {
 
         },
-        "isIndex" : true,
         "code" : null,
-        "identifier" : "7E7514D1-4ACD-4542-B01D-056E035223EE",
-        "browserTitle" : "Landing",
-        "iconIdentifier" : null,
         "pageDescription" : null,
-        "uniqueID" : "page0",
-        "createdDate" : 1751131322047.461,
+        "isIndex" : true,
+        "browserTitle" : "Landing",
         "attributes" : {
-          "customBodyEnd" : "",
-          "shouldAllowPreview" : true,
-          "shouldIndexPage" : true,
           "excludeFromSitemap" : false,
-          "expiryUnit" : 0,
-          "enabled" : true,
-          "backgroundColor" : {
-            "shade" : 500,
-            "darkColorStripId" : "none",
-            "darkShade" : 500,
-            "colorStripId" : "none"
-          },
-          "expiryQuantity" : 2,
-          "customCSS" : "",
-          "shouldEnableSocialTags" : true,
           "encoding" : 1,
-          "useCustomSiteTitle" : false,
-          "lastChangedDate" : 1783008086873.7202,
-          "shouldIndexImages" : true,
-          "expires" : false,
-          "shouldEnableRobotTags" : true,
-          "shouldFollowLinks" : true,
-          "customHeader" : "",
-          "customHeadEnd" : "",
+          "customJavaScript" : "",
+          "hidden" : false,
           "shouldArchivePage" : true,
+          "customPageEnd" : "",
+          "shouldIndexImages" : true,
+          "credit" : true,
+          "shouldFollowLinks" : true,
+          "customCSS" : "",
+          "lastChangedDate" : 1787263418520.051,
+          "useCustomSiteTitle" : false,
           "linkOpensInNewWindow" : false,
+          "customHeadStart" : "",
+          "enabled" : true,
+          "shouldEnableRobotTags" : true,
           "changedStatuses" : {
             "default" : true
           },
-          "customPageEnd" : "",
-          "credit" : true,
-          "customBodyStart" : "",
-          "customHeadStart" : "",
-          "customPageStart" : "",
+          "shouldAllowPreview" : true,
+          "shouldEnableSocialTags" : true,
           "customSiteTitle" : "",
+          "customBodyStart" : "",
+          "customHeader" : "",
+          "expiryUnit" : 0,
+          "expiryQuantity" : 2,
+          "customBodyEnd" : "",
+          "shouldIndexPage" : true,
           "filename" : "index.html",
-          "hidden" : false,
-          "customJavaScript" : ""
+          "customPageStart" : "",
+          "backgroundColor" : {
+            "colorStripId" : "none",
+            "darkShade" : 500,
+            "darkColorStripId" : "none",
+            "shade" : 500
+          },
+          "expires" : false,
+          "customHeadEnd" : ""
         },
-        "title" : "Home",
         "externalPageURL" : null,
-        "expanded" : true
+        "uniqueID" : "page0",
+        "iconIdentifier" : null,
+        "createdDate" : 1751131322047.461
       },
       {
+        "expanded" : true,
+        "kind" : "page",
+        "identifier" : "0BB2DD2C-EEF2-4FFE-8AB7-2897FA454B46",
+        "title" : "Check Email",
         "children" : [
 
         ],
-        "kind" : "page",
         "manifests" : {
 
         },
-        "isIndex" : false,
         "code" : null,
-        "identifier" : "0BB2DD2C-EEF2-4FFE-8AB7-2897FA454B46",
-        "browserTitle" : null,
-        "iconIdentifier" : null,
         "pageDescription" : null,
-        "uniqueID" : "page1",
-        "createdDate" : 1751472846593.1958,
+        "isIndex" : false,
+        "browserTitle" : null,
         "attributes" : {
-          "customBodyEnd" : "",
-          "shouldAllowPreview" : true,
-          "shouldIndexPage" : true,
           "excludeFromSitemap" : false,
-          "expiryUnit" : 0,
-          "enabled" : true,
-          "backgroundColor" : {
-            "shade" : 500,
-            "darkColorStripId" : "none",
-            "darkShade" : 500,
-            "colorStripId" : "none"
-          },
-          "expiryQuantity" : 2,
-          "customCSS" : "",
-          "shouldEnableSocialTags" : true,
           "encoding" : 1,
-          "useCustomSiteTitle" : false,
-          "lastChangedDate" : 1772321022100.98,
-          "shouldIndexImages" : true,
-          "expires" : false,
-          "shouldEnableRobotTags" : true,
-          "shouldFollowLinks" : true,
-          "customHeader" : "",
-          "customHeadEnd" : "",
+          "customJavaScript" : "",
+          "hidden" : false,
           "shouldArchivePage" : true,
+          "customPageEnd" : "",
+          "shouldIndexImages" : true,
+          "credit" : true,
+          "shouldFollowLinks" : true,
+          "customCSS" : "",
+          "lastChangedDate" : 1787263165581.438,
+          "useCustomSiteTitle" : false,
           "linkOpensInNewWindow" : false,
+          "customHeadStart" : "",
+          "enabled" : true,
+          "shouldEnableRobotTags" : true,
           "changedStatuses" : {
             "default" : true
           },
-          "customPageEnd" : "",
-          "credit" : true,
-          "customBodyStart" : "",
-          "customHeadStart" : "",
-          "customPageStart" : "",
+          "shouldAllowPreview" : true,
+          "shouldEnableSocialTags" : true,
           "customSiteTitle" : "",
+          "customBodyStart" : "",
+          "customHeader" : "",
+          "expiryUnit" : 0,
+          "expiryQuantity" : 2,
+          "customBodyEnd" : "",
+          "shouldIndexPage" : true,
           "filename" : "index.html",
-          "hidden" : false,
-          "customJavaScript" : ""
+          "customPageStart" : "",
+          "backgroundColor" : {
+            "colorStripId" : "none",
+            "darkShade" : 500,
+            "darkColorStripId" : "none",
+            "shade" : 500
+          },
+          "expires" : false,
+          "customHeadEnd" : ""
         },
-        "title" : "Check Email",
         "externalPageURL" : null,
-        "expanded" : true
+        "uniqueID" : "page1",
+        "iconIdentifier" : null,
+        "createdDate" : 1751472846593.1958
       }
     ],
-    "kind" : "folder",
     "manifests" : {
 
     },
-    "isIndex" : false,
     "code" : null,
-    "identifier" : "F8B73E6F-D702-4BBB-AAAB-93E3B8AE8F79",
-    "browserTitle" : null,
-    "iconIdentifier" : null,
     "pageDescription" : null,
-    "uniqueID" : "F8B73E6F-D702-4BBB-AAAB-93E3B8AE8F79",
-    "createdDate" : 1751131322040.632,
+    "isIndex" : false,
+    "browserTitle" : null,
     "attributes" : {
-      "customBodyEnd" : "",
-      "shouldAllowPreview" : true,
-      "shouldIndexPage" : true,
       "excludeFromSitemap" : false,
-      "expiryUnit" : 0,
-      "enabled" : true,
-      "expiryQuantity" : 2,
-      "customCSS" : "",
-      "shouldEnableSocialTags" : true,
       "encoding" : 1,
-      "useCustomSiteTitle" : false,
-      "lastChangedDate" : 1751131322040.557,
-      "shouldIndexImages" : true,
-      "expires" : false,
-      "shouldEnableRobotTags" : true,
-      "shouldFollowLinks" : true,
-      "customHeader" : "",
-      "customHeadEnd" : "",
+      "customJavaScript" : "",
+      "hidden" : false,
       "shouldArchivePage" : true,
+      "customPageEnd" : "",
+      "shouldIndexImages" : true,
+      "credit" : true,
+      "shouldFollowLinks" : true,
+      "customCSS" : "",
+      "lastChangedDate" : 1751131322040.557,
+      "useCustomSiteTitle" : false,
       "linkOpensInNewWindow" : false,
+      "customHeadStart" : "",
+      "enabled" : true,
+      "shouldEnableRobotTags" : true,
       "changedStatuses" : {
 
       },
-      "customPageEnd" : "",
-      "credit" : true,
-      "customBodyStart" : "",
-      "customHeadStart" : "",
-      "customPageStart" : "",
+      "shouldAllowPreview" : true,
+      "shouldEnableSocialTags" : true,
       "customSiteTitle" : "",
+      "customBodyStart" : "",
+      "customHeader" : "",
+      "expiryUnit" : 0,
+      "expiryQuantity" : 2,
+      "customBodyEnd" : "",
+      "shouldIndexPage" : true,
       "filename" : "",
-      "hidden" : false,
-      "customJavaScript" : ""
+      "customPageStart" : "",
+      "expires" : false,
+      "customHeadEnd" : ""
     },
-    "title" : "root",
     "externalPageURL" : null,
-    "expanded" : true
+    "uniqueID" : "F8B73E6F-D702-4BBB-AAAB-93E3B8AE8F79",
+    "iconIdentifier" : null,
+    "createdDate" : 1751131322040.632
   },
-  "project" : {
-    "uniqueBackupName" : "824FE9BF-5001-4EEA-B997-22D199D3BC2E_rwbackup",
-    "autoStartWebServer" : false
-  },
-  "publishing" : {
-    "publishingDestinations" : [
+  "globalElements" : {
+    "globals" : {
 
-    ],
-    "publishSettingsConfigured" : false
-  },
-  "identifier" : "F161D87E-8B75-40EB-85F5-8D5983D89F99",
-  "version" : 9,
-  "images" : {
-    "logoAltText" : "",
-    "webIcons" : {
-      "faviconMedium" : {
-        "autoGenerate" : false,
-        "type" : 5
-      },
-      "pinnedTab" : {
-        "autoGenerate" : false,
-        "type" : 3
-      },
-      "faviconLarge" : {
-        "autoGenerate" : false,
-        "type" : 4
-      },
-      "faviconSmall" : {
-        "autoGenerate" : false,
-        "type" : 6
-      },
-      "large" : {
-        "autoGenerate" : false,
-        "type" : 0
-      },
-      "medium" : {
-        "autoGenerate" : false,
-        "type" : 1
-      },
-      "small" : {
-        "autoGenerate" : false,
-        "type" : 2
-      }
     }
   },
-  "customComponents" : {
-    "components" : {
-      "FCA17D58-D475-44E0-B84D-6B1B466A228E" : {
-        "collections" : [
-
-        ],
-        "subTitle" : "",
-        "version" : "",
-        "build" : "",
-        "deprecated" : false,
-        "identifier" : "FCA17D58-D475-44E0-B84D-6B1B466A228E",
-        "author" : "",
-        "tags" : [
-
-        ],
-        "uuid" : "3C85B41D-ABBE-4FE5-AB95-FC83AFE4213E",
-        "hidden" : false,
-        "group" : "Custom",
-        "files" : [
-          {
-            "filename" : "Template",
-            "content" : "<div \n  class=\"\"\n  x-data=\"{ count: 0, hasAnimated: false }\"\n  x-intersect.once=\"if (!hasAnimated) { hasAnimated = true; $nextTick(() => { let start = 0; let end = +{{myNumber}}; let duration = 1500; let startTime = null; function animate(now) { if(!startTime) startTime = now; let progress = Math.min((now - startTime) \/ duration, 1); count = Math.floor(progress * (end - start) + start); if(progress < 1){ requestAnimationFrame(animate); } } requestAnimationFrame(animate); }); }\"\n>\n  @if(edit)\n    <div class=\"font-bold {{textColor}} {{headingTextStyles}} {{fontFamily}}\">{{myNumber}}<\/div>\n  @else\n    <div class=\"font-bold {{textColor}} {{headingTextStyles}} {{fontFamily}}\" x-text=\"count\"><\/div>\n  @endif\n<\/div>",
-            "kind" : {
-              "template" : {
-
-              }
-            },
-            "identifier" : "021CA265-B2C3-4D05-9C4A-A11563C04A08"
-          },
-          {
-            "filename" : "Styles",
-            "content" : "",
-            "kind" : {
-              "css" : {
-
-              }
-            },
-            "identifier" : "D509C38B-1614-49C1-9E01-C0EEB85B7EE8"
-          },
-          {
-            "filename" : "Javascript",
-            "content" : "console.log(`Running JS for element with id: {{id}}`)",
-            "kind" : {
-              "js" : {
-
-              }
-            },
-            "identifier" : "33F04429-74AB-4B5A-9C2F-2372F8A702C9"
-          },
-          {
-            "filename" : "Hooks",
-            "content" : "",
-            "kind" : {
-              "hooks" : {
-
-              }
-            },
-            "identifier" : "229D0702-9414-465A-A17A-48FFED4C5A36"
-          },
-          {
-            "filename" : "Properties",
-            "content" : "{\n  \"groups\": [\n    {\n      \"title\": \"General\",\n      \"icon\": \"gearshape\",\n      \"properties\": [\n        {\n          \"title\": \"Number\",\n          \"id\": \"myNumber\",\n          \"number\": {\n            \"default\": 100\n          }\n        },\n        {\n          \"title\": \"Font\",\n          \"id\": \"fontFamily\",\n          \"themeFont\": {\n            \"default\": {\n              \"base\": { \"name\": \"body\" }\n            }\n          }\n        },\n        {\n          \"title\": \"Size\",\n          \"id\": \"headingTextStyles\",\n          \"themeTextStyle\": {\n            \"default\": {\n              \"base\": {\n                \"name\": \"5xl\"\n              }\n            }\n          }\n        },\n        {\n          \"title\": \"Color\",\n          \"id\": \"textColor\",\n          \"format\": \"text-{{value}}\",\n          \"themeColor\": {\n            \"default\": {\n              \"name\": \"text\",\n              \"brightness\": 300\n            }\n          }\n        }\n      ]\n    }\n  ]\n}",
-            "kind" : {
-              "properties" : {
-
-              }
-            },
-            "identifier" : "2B1AFCC4-781B-406C-80EB-E18D0ADDD0CD"
-          },
-          {
-            "filename" : "Data",
-            "content" : "{\n    \"collections\": [{\n        \"id\" : \"F8A7DF12-9196-4EF0-A1DB-C35F39401941\",\n        \"title\" : \"Features\",\n        \"items\" : [{\n            \"id\" : \"2DA6C715-0A28-4287-9E2B-EA50078AEF23\",\n            \"featureName\" : \"Data Driven\",\n            \"body\" : \"A dynamic and user-friendly platform offering a wide range of services and information.\"\n        }]\n    }]\n}",
-            "kind" : {
-              "data" : {
-
-              }
-            },
-            "identifier" : "82C630BD-4BBA-4550-AE67-AAFC1DF82FD9"
-          }
-        ],
-        "title" : "Custom Counter"
-      }
-    }
-  }
+  "uiStateIdentifier" : "F161D87E-8B75-40EB-85F5-8D5983D89F99"
 }

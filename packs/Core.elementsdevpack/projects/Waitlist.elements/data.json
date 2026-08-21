@@ -1,0 +1,1670 @@
+{
+  "privacy" : {
+    "anonymiseThirdPartyRequests" : false
+  },
+  "site" : {
+    "title" : "Waitlist",
+    "cruftlessLinks" : true,
+    "minifyExtraFiles" : true,
+    "legacyV3HoverOnTouch" : false,
+    "wantsXMLSiteMap" : true,
+    "consolidateCSSFiles" : true,
+    "useCacheBusting" : true,
+    "baseURL" : "https:\/\/www.elementsplatform.com",
+    "defaultFileExtension" : "html",
+    "allowDarkMode" : false,
+    "themeName" : "Elements"
+  },
+  "publishing" : {
+    "publishingDestinations" : [
+
+    ],
+    "publishSettingsConfigured" : false
+  },
+  "images" : {
+    "logoAltText" : "",
+    "webIcons" : {
+      "faviconMedium" : {
+        "type" : 5,
+        "autoGenerate" : false
+      },
+      "large" : {
+        "type" : 0,
+        "autoGenerate" : false
+      },
+      "faviconSmall" : {
+        "type" : 6,
+        "autoGenerate" : false
+      },
+      "pinnedTab" : {
+        "type" : 3,
+        "autoGenerate" : false
+      },
+      "faviconLarge" : {
+        "type" : 4,
+        "autoGenerate" : false
+      },
+      "medium" : {
+        "type" : 1,
+        "autoGenerate" : false
+      },
+      "small" : {
+        "type" : 2,
+        "autoGenerate" : false
+      }
+    }
+  },
+  "customComponents" : {
+    "components" : {
+      "96DF04CD-3288-4337-A444-D97F85E56AE8" : {
+        "collections" : [
+
+        ],
+        "version" : "",
+        "files" : [
+          {
+            "kind" : {
+              "template" : {
+
+              }
+            },
+            "content" : "<div class=\"component-{{id}} floating-content\" style=\"--floating-duration: {{floatingDuration}}; --floating-drift: {{floatingDrift}}; --floating-twist-start: {{floatingTwistStart}}; --floating-twist-end: {{floatingTwistEnd}}; --floating-play-state: {{floatingPlayState}};\">\n  @dropzone(\"content\", title: \"Floating Content\")\n<\/div>",
+            "identifier" : "82013DCA-9167-4E0D-98AE-9AD6A5BB7558",
+            "filename" : "Template"
+          },
+          {
+            "filename" : "Styles",
+            "identifier" : "C1C93F0E-42EA-4FBF-A269-5804DD7D5C98",
+            "content" : ".component-{{id}}.floating-content {\n  animation: floating-content-{{id}} var(--floating-duration, 6s) ease-in-out infinite;\n  animation-play-state: var(--floating-play-state, running);\n  will-change: transform;\n}\n\n@keyframes floating-content-{{id}} {\n  0%, 100% { transform: translate3d(0, 0, 0) rotate(var(--floating-twist-start, 0deg)); }\n  50% { transform: translate3d(0, calc(-1 * var(--floating-drift, 8px)), 0) rotate(var(--floating-twist-end, 0deg)); }\n}\n\n@media (prefers-reduced-motion: reduce) {\n  .component-{{id}}.floating-content {\n    animation: none;\n  }\n}",
+            "kind" : {
+              "css" : {
+
+              }
+            }
+          },
+          {
+            "filename" : "Javascript",
+            "content" : "",
+            "identifier" : "8B1321F5-CA44-4CB2-A4C3-84AEFCB33D44",
+            "kind" : {
+              "js" : {
+
+              }
+            }
+          },
+          {
+            "kind" : {
+              "hooks" : {
+
+              }
+            },
+            "content" : "const transformHook = (rw) => {\n  const props = rw.props || {};\n  const numberInRange = (value, fallback, min, max) => {\n    const parsed = Number(value);\n    return Number.isFinite(parsed) ? Math.min(max, Math.max(min, parsed)) : fallback;\n  };\n\n  const duration = numberInRange(props.duration, 6, 2, 16);\n  const drift = numberInRange(props.drift, 8, 0, 32);\n  const twistEnabled = props.twistEnabled === \"enabled\";\n  const playState = props.playState === \"paused\" ? \"paused\" : \"running\";\n\n  rw.setProps({\n    floatingDuration: `${duration}s`,\n    floatingDrift: `${drift}px`,\n    floatingTwistStart: twistEnabled ? \"1deg\" : \"0deg\",\n    floatingTwistEnd: twistEnabled ? \"-1deg\" : \"0deg\",\n    floatingPlayState: playState\n  });\n};\n\nexports.transformHook = transformHook;",
+            "identifier" : "80FD7BCE-EC82-4455-B887-A84CDB5C8DC4",
+            "filename" : "Hooks"
+          },
+          {
+            "filename" : "Properties",
+            "identifier" : "393CABDF-2137-4EEE-8849-B1B8C12CA4B0",
+            "content" : "{\n  \"groups\": [\n    {\n      \"title\": \"Animation\",\n      \"icon\": \"wind\",\n      \"properties\": [\n        {\n          \"title\": \"Animate\",\n          \"id\": \"playState\",\n          \"responsive\": false,\n          \"switch\": {\n            \"default\": true,\n            \"trueValue\": \"running\",\n            \"falseValue\": \"paused\"\n          }\n        },\n        {\n          \"title\": \"Speed\",\n          \"id\": \"duration\",\n          \"responsive\": false,\n          \"slider\": {\n            \"default\": 6,\n            \"min\": 2,\n            \"max\": 16,\n            \"step\": 1,\n            \"units\": \"sec\",\n            \"round\": true\n          }\n        },\n        {\n          \"title\": \"Vertical Drift\",\n          \"id\": \"drift\",\n          \"responsive\": false,\n          \"slider\": {\n            \"default\": 8,\n            \"min\": 0,\n            \"max\": 32,\n            \"step\": 1,\n            \"units\": \"px\",\n            \"round\": true\n          }\n        },\n        {\n          \"title\": \"Twist\",\n          \"id\": \"twistEnabled\",\n          \"responsive\": false,\n          \"switch\": {\n            \"default\": true,\n            \"trueValue\": \"enabled\",\n            \"falseValue\": \"disabled\"\n          }\n        }\n      ]\n    }\n  ]\n}",
+            "kind" : {
+              "properties" : {
+
+              }
+            }
+          },
+          {
+            "filename" : "Data",
+            "content" : "",
+            "identifier" : "D5D1F7E2-84E9-4521-A488-0D695C53FE35",
+            "kind" : {
+              "data" : {
+
+              }
+            }
+          }
+        ],
+        "uuid" : "8A11A0B3-BB66-47F3-88FF-5B3198BA0FD2",
+        "deprecated" : false,
+        "tags" : [
+
+        ],
+        "title" : "Floating Content",
+        "subTitle" : "A gently drifting wrapper with an editable content area",
+        "identifier" : "96DF04CD-3288-4337-A444-D97F85E56AE8",
+        "hidden" : false,
+        "author" : "",
+        "group" : "Custom",
+        "build" : ""
+      },
+      "13BA620D-6131-4CAA-9222-3D1FD8688BA8" : {
+        "collections" : [
+
+        ],
+        "version" : "",
+        "files" : [
+          {
+            "kind" : {
+              "template" : {
+
+              }
+            },
+            "content" : "<span class=\"component-{{id}} status-dot\" style=\"--dot-size: {{dotSize}}px\">\n  <span class=\"status-dot__ring {{dotColor}}\"><\/span>\n  <span class=\"status-dot__core {{dotColor}}\"><\/span>\n<\/span>",
+            "identifier" : "71DAA789-4065-4950-B2C6-B51789B7DD69",
+            "filename" : "Template"
+          },
+          {
+            "filename" : "Styles",
+            "identifier" : "E42B3F36-C79B-496A-9C30-610B827C02B6",
+            "content" : "\/* ── Status Dot ─────────────────────────────────────────── *\/\n\/* Scoped by the static .status-dot class. Per-instance {{id}}\n   interpolation is unreliable in preview\/publish builds, so the size\n   is passed as an inline --dot-size variable from the template. *\/\n\n.status-dot {\n  position: relative;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: var(--dot-size, 8px);\n  height: var(--dot-size, 8px);\n  flex-shrink: 0;\n}\n\n\/* Solid core dot *\/\n.status-dot .status-dot__core {\n  position: relative;\n  z-index: 1;\n  width: 100%;\n  height: 100%;\n  border-radius: 9999px;\n}\n\n\/* Expanding\/fading ring *\/\n.status-dot .status-dot__ring {\n  position: absolute;\n  inset: 0;\n  border-radius: 9999px;\n  opacity: 0.6;\n  animation: status-dot-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;\n}\n\n@keyframes status-dot-pulse {\n  0%, 100% {\n    transform: scale(1);\n    opacity: 0.6;\n  }\n  50% {\n    transform: scale(2.2);\n    opacity: 0;\n  }\n}\n\n@media (prefers-reduced-motion: reduce) {\n  .status-dot .status-dot__ring {\n    animation: none;\n  }\n}",
+            "kind" : {
+              "css" : {
+
+              }
+            }
+          },
+          {
+            "filename" : "Javascript",
+            "content" : "",
+            "identifier" : "D696414C-F653-4D6E-AA06-5D704BF51942",
+            "kind" : {
+              "js" : {
+
+              }
+            }
+          },
+          {
+            "kind" : {
+              "hooks" : {
+
+              }
+            },
+            "content" : "",
+            "identifier" : "7E75B893-F898-4698-9A90-895715950D5D",
+            "filename" : "Hooks"
+          },
+          {
+            "filename" : "Properties",
+            "identifier" : "ACBA4EBA-4C58-4521-8291-C404B3B89253",
+            "content" : "{\n  \"groups\": [\n    {\n      \"title\": \"Status Dot\",\n      \"icon\": \"circle.fill\",\n      \"properties\": [\n        {\n          \"title\": \"Dot Colour\",\n          \"id\": \"dotColor\",\n          \"responsive\": false,\n          \"format\": \"bg-{{value}}\",\n          \"themeColor\": {\n            \"mode\": \"single\",\n            \"default\": {\n              \"name\": \"emerald\",\n              \"brightness\": 500\n            }\n          }\n        },\n        {\n          \"title\": \"Size\",\n          \"id\": \"dotSize\",\n          \"responsive\": false,\n          \"number\": {\n            \"default\": 8,\n            \"min\": 6,\n            \"max\": 24,\n            \"step\": 1,\n            \"round\": true,\n            \"subtitle\": \"Diameter in pixels\"\n          }\n        }\n      ]\n    }\n  ]\n}",
+            "kind" : {
+              "properties" : {
+
+              }
+            }
+          },
+          {
+            "filename" : "Data",
+            "content" : "",
+            "identifier" : "1188AEDE-247E-45C7-9C68-C6052D5FDB06",
+            "kind" : {
+              "data" : {
+
+              }
+            }
+          }
+        ],
+        "uuid" : "9E0D75E7-9DBF-42C4-9A46-254CAFF921DC",
+        "deprecated" : false,
+        "tags" : [
+
+        ],
+        "title" : "Status Dot",
+        "subTitle" : "",
+        "identifier" : "13BA620D-6131-4CAA-9222-3D1FD8688BA8",
+        "hidden" : false,
+        "author" : "",
+        "group" : "Custom",
+        "build" : ""
+      }
+    }
+  },
+  "rootPage" : {
+    "isIndex" : false,
+    "uniqueID" : "2C103028-00AE-49E6-B923-0B75C73BF5F9",
+    "pageDescription" : null,
+    "externalPageURL" : null,
+    "expanded" : true,
+    "iconIdentifier" : null,
+    "code" : null,
+    "title" : "root",
+    "createdDate" : 1787089121605.944,
+    "identifier" : "2C103028-00AE-49E6-B923-0B75C73BF5F9",
+    "kind" : "folder",
+    "attributes" : {
+      "shouldIndexImages" : true,
+      "encoding" : 1,
+      "filename" : "",
+      "customCSS" : "",
+      "enabled" : true,
+      "customSiteTitle" : "",
+      "customBodyStart" : "",
+      "customPageStart" : "",
+      "linkOpensInNewWindow" : false,
+      "expiryQuantity" : 2,
+      "shouldFollowLinks" : true,
+      "shouldAllowPreview" : true,
+      "hidden" : false,
+      "credit" : true,
+      "customHeadStart" : "",
+      "customHeader" : "",
+      "expires" : false,
+      "customPageEnd" : "",
+      "changedStatuses" : {
+
+      },
+      "shouldIndexPage" : true,
+      "shouldEnableSocialTags" : true,
+      "customJavaScript" : "",
+      "excludeFromSitemap" : true,
+      "expiryUnit" : 0,
+      "useCustomSiteTitle" : false,
+      "shouldArchivePage" : true,
+      "shouldEnableRobotTags" : true,
+      "customHeadEnd" : "",
+      "customBodyEnd" : "",
+      "lastChangedDate" : 1787089121605.914
+    },
+    "children" : [
+      {
+        "isIndex" : true,
+        "uniqueID" : "page0",
+        "pageDescription" : null,
+        "externalPageURL" : null,
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "code" : null,
+        "title" : "Home",
+        "createdDate" : 1787089121616.066,
+        "identifier" : "611993F7-650A-4EC0-8974-B8B345C6A55A",
+        "kind" : "page",
+        "attributes" : {
+          "customSiteTitle" : "",
+          "encoding" : 1,
+          "filename" : "index.php",
+          "customCSS" : "",
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "customBodyStart" : "",
+          "customPageStart" : "",
+          "linkOpensInNewWindow" : false,
+          "openGraphDescription" : "Join the waitlist and be among the first to see what Something Amazing is building.",
+          "expiryQuantity" : 2,
+          "shouldFollowLinks" : true,
+          "shouldAllowPreview" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customHeadStart" : "",
+          "customHeader" : "",
+          "openGraphTitle" : "Something Amazing — Coming Soon",
+          "metaDescription" : "Something Amazing is on the way. Join the waitlist to be among the first to see what we’re working on.",
+          "customPageEnd" : "",
+          "expires" : false,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldIndexPage" : true,
+          "shouldEnableSocialTags" : true,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : false,
+          "expiryUnit" : 0,
+          "useCustomSiteTitle" : false,
+          "shouldArchivePage" : true,
+          "backgroundColor" : {
+            "colorStripId" : "none",
+            "shade" : 500,
+            "darkColorStripId" : "none",
+            "darkShade" : 500
+          },
+          "shouldEnableRobotTags" : true,
+          "customHeadEnd" : "",
+          "customBodyEnd" : "",
+          "lastChangedDate" : 1787262510014.2231
+        },
+        "children" : [
+
+        ],
+        "manifests" : {
+
+        },
+        "browserTitle" : "Join the Waitlist"
+      },
+      {
+        "isIndex" : false,
+        "uniqueID" : "page1",
+        "pageDescription" : null,
+        "externalPageURL" : null,
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "code" : null,
+        "title" : "Confirm",
+        "createdDate" : 1787262401326.387,
+        "identifier" : "EE67537F-021B-404A-BE35-F27AF05A78AF",
+        "kind" : "page",
+        "attributes" : {
+          "customSiteTitle" : "",
+          "encoding" : 1,
+          "filename" : "index.php",
+          "enabled" : true,
+          "shouldIndexImages" : true,
+          "customCSS" : "",
+          "customBodyStart" : "",
+          "customPageStart" : "",
+          "linkOpensInNewWindow" : false,
+          "openGraphDescription" : "Join the waitlist and be among the first to see what Something Amazing is building.",
+          "expiryQuantity" : 2,
+          "shouldFollowLinks" : true,
+          "shouldAllowPreview" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customHeadStart" : "",
+          "customHeader" : "",
+          "openGraphTitle" : "Something Amazing — Coming Soon",
+          "metaDescription" : "Something Amazing is on the way. Join the waitlist to be among the first to see what we’re working on.",
+          "customPageEnd" : "",
+          "expires" : false,
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldIndexPage" : true,
+          "shouldEnableSocialTags" : true,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : false,
+          "expiryUnit" : 0,
+          "useCustomSiteTitle" : false,
+          "shouldArchivePage" : true,
+          "backgroundColor" : {
+            "darkColorStripId" : "none",
+            "darkShade" : 500,
+            "colorStripId" : "none",
+            "shade" : 500
+          },
+          "foldername" : "",
+          "shouldEnableRobotTags" : true,
+          "customHeadEnd" : "",
+          "customBodyEnd" : "",
+          "lastChangedDate" : 1787262506658.703
+        },
+        "children" : [
+
+        ],
+        "manifests" : {
+
+        },
+        "browserTitle" : "Join the Waitlist Copy"
+      }
+    ],
+    "manifests" : {
+
+    },
+    "browserTitle" : null
+  },
+  "rootPrefabNode" : {
+    "kind" : {
+      "folder" : {
+
+      }
+    },
+    "title" : "Project",
+    "expanded" : true,
+    "item" : null,
+    "children" : [
+
+    ],
+    "identifier" : "4D6B4EF4-39B2-49AD-BEE7-BFA621D485C7"
+  },
+  "version" : 9,
+  "uiStateIdentifier" : "A42889EE-3D45-4D5A-8395-B647ACACAB0D",
+  "project" : {
+    "autoStartWebServer" : false,
+    "uniqueBackupName" : "42F39ECD-6BA3-433A-BDA1-BB740A33EDE6_rwbackup"
+  },
+  "wikiRoot" : {
+    "isIndex" : false,
+    "uniqueID" : "46BC60BD-A7AF-4F37-A2ED-F94ABC7623D3",
+    "pageDescription" : null,
+    "externalPageURL" : null,
+    "expanded" : true,
+    "iconIdentifier" : null,
+    "code" : null,
+    "title" : "Project Wiki",
+    "createdDate" : 1787091327776.3171,
+    "identifier" : "46BC60BD-A7AF-4F37-A2ED-F94ABC7623D3",
+    "kind" : "folder",
+    "attributes" : {
+      "shouldIndexImages" : true,
+      "encoding" : 1,
+      "filename" : "",
+      "customCSS" : "",
+      "enabled" : true,
+      "customSiteTitle" : "",
+      "customBodyStart" : "",
+      "customPageStart" : "",
+      "linkOpensInNewWindow" : false,
+      "expiryQuantity" : 2,
+      "shouldFollowLinks" : true,
+      "shouldAllowPreview" : true,
+      "hidden" : false,
+      "credit" : true,
+      "customHeadStart" : "",
+      "customHeader" : "",
+      "expires" : false,
+      "customPageEnd" : "",
+      "changedStatuses" : {
+
+      },
+      "shouldIndexPage" : true,
+      "shouldEnableSocialTags" : true,
+      "customJavaScript" : "",
+      "excludeFromSitemap" : true,
+      "expiryUnit" : 0,
+      "useCustomSiteTitle" : false,
+      "shouldArchivePage" : true,
+      "shouldEnableRobotTags" : true,
+      "customHeadEnd" : "",
+      "customBodyEnd" : "",
+      "lastChangedDate" : 1787091327776.2542
+    },
+    "children" : [
+      {
+        "isIndex" : false,
+        "uniqueID" : "2BDC9154-977C-4F88-9546-630D8E767197",
+        "pageDescription" : null,
+        "externalPageURL" : null,
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "code" : null,
+        "title" : "pages",
+        "createdDate" : 1787091327776.701,
+        "identifier" : "2BDC9154-977C-4F88-9546-630D8E767197",
+        "kind" : "folder",
+        "attributes" : {
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "filename" : "",
+          "customCSS" : "",
+          "enabled" : true,
+          "customSiteTitle" : "",
+          "customBodyStart" : "",
+          "customPageStart" : "",
+          "linkOpensInNewWindow" : false,
+          "expiryQuantity" : 2,
+          "shouldFollowLinks" : true,
+          "shouldAllowPreview" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customHeadStart" : "",
+          "customHeader" : "",
+          "expires" : false,
+          "customPageEnd" : "",
+          "changedStatuses" : {
+
+          },
+          "shouldIndexPage" : true,
+          "shouldEnableSocialTags" : true,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "expiryUnit" : 0,
+          "useCustomSiteTitle" : false,
+          "shouldArchivePage" : true,
+          "shouldEnableRobotTags" : true,
+          "customHeadEnd" : "",
+          "customBodyEnd" : "",
+          "lastChangedDate" : 1787091327776.686
+        },
+        "children" : [
+          {
+            "isIndex" : false,
+            "uniqueID" : "59520B21-73E8-46ED-A2C2-BBE0B2ADF824",
+            "pageDescription" : null,
+            "externalPageURL" : null,
+            "expanded" : true,
+            "iconIdentifier" : null,
+            "code" : "---\ntitle: Home\ntags:\n  - landing-page\n  - coming-soon\nconcerns: []\nlastIngested: \"2026-08-19T11:25:00Z\"\npageId: 611993F7-650A-4EC0-8974-B8B345C6A55A\npath: \/\nsources:\n  - \"[[entities\/three-js-particle-banner]]\"\ntype: page\n---\n\n# Home\n\nThe home page is a full-screen coming-soon landing page with a visual hero background, waitlist signup, and social proof avatars. It uses a centered hero composition over a reusable floating-content wrapper.\n\n## Responsive behavior\n\nThe signup control stacks vertically on mobile to prevent horizontal overflow, then returns to an inline row from the small breakpoint upward. The input fills the available mobile width and returns to its intrinsic width on larger screens. The hero headline uses a compact `4xl` size on mobile and restores the `6xl` treatment from the small breakpoint upward.\n\n## Build mechanics\n\nBuilt from a full-width, screen-height Container with an image background, nested Flex layout, Text elements, a Form with Input and Submit controls, and avatar Image elements. The hero content is wrapped by one **Floating Content** custom component. Its inspector provides Animate, Speed, Vertical Drift, and a Twist toggle. With Twist enabled, the wrapper animates between 3° and −3° rotation; when disabled, it drifts vertically without rotation. The layout uses responsive breakpoint overrides and theme-backed spacing, colours, typography, and sizing tokens.\n\n## See also\n- [[entities\/three-js-particle-banner]]\n",
+            "title" : "",
+            "createdDate" : 1787136982014.4,
+            "identifier" : "59520B21-73E8-46ED-A2C2-BBE0B2ADF824",
+            "kind" : "code",
+            "attributes" : {
+              "shouldIndexImages" : true,
+              "encoding" : 1,
+              "filename" : "home.md",
+              "customCSS" : "",
+              "enabled" : true,
+              "customSiteTitle" : "",
+              "customBodyStart" : "",
+              "customPageStart" : "",
+              "linkOpensInNewWindow" : false,
+              "expiryQuantity" : 2,
+              "shouldFollowLinks" : true,
+              "shouldAllowPreview" : true,
+              "hidden" : false,
+              "credit" : true,
+              "customHeadStart" : "",
+              "customHeader" : "",
+              "expires" : false,
+              "customPageEnd" : "",
+              "changedStatuses" : {
+                "default" : true
+              },
+              "shouldIndexPage" : true,
+              "shouldEnableSocialTags" : true,
+              "customJavaScript" : "",
+              "excludeFromSitemap" : true,
+              "expiryUnit" : 0,
+              "useCustomSiteTitle" : false,
+              "shouldArchivePage" : true,
+              "shouldEnableRobotTags" : true,
+              "customHeadEnd" : "",
+              "customBodyEnd" : "",
+              "lastChangedDate" : 1787137022797.89
+            },
+            "children" : [
+
+            ],
+            "manifests" : {
+
+            },
+            "browserTitle" : null
+          }
+        ],
+        "manifests" : {
+
+        },
+        "browserTitle" : null
+      },
+      {
+        "isIndex" : false,
+        "uniqueID" : "AE9B1A3D-5C83-4F86-9CF0-017B07962F90",
+        "pageDescription" : null,
+        "externalPageURL" : null,
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "code" : null,
+        "title" : "concepts",
+        "createdDate" : 1787091327776.914,
+        "identifier" : "AE9B1A3D-5C83-4F86-9CF0-017B07962F90",
+        "kind" : "folder",
+        "attributes" : {
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "filename" : "",
+          "customCSS" : "",
+          "enabled" : true,
+          "customSiteTitle" : "",
+          "customBodyStart" : "",
+          "customPageStart" : "",
+          "linkOpensInNewWindow" : false,
+          "expiryQuantity" : 2,
+          "shouldFollowLinks" : true,
+          "shouldAllowPreview" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customHeadStart" : "",
+          "customHeader" : "",
+          "expires" : false,
+          "customPageEnd" : "",
+          "changedStatuses" : {
+
+          },
+          "shouldIndexPage" : true,
+          "shouldEnableSocialTags" : true,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "expiryUnit" : 0,
+          "useCustomSiteTitle" : false,
+          "shouldArchivePage" : true,
+          "shouldEnableRobotTags" : true,
+          "customHeadEnd" : "",
+          "customBodyEnd" : "",
+          "lastChangedDate" : 1787091327776.9019
+        },
+        "children" : [
+
+        ],
+        "manifests" : {
+
+        },
+        "browserTitle" : null
+      },
+      {
+        "isIndex" : false,
+        "uniqueID" : "AAD09E38-351D-4387-9D6D-22BE49F4408C",
+        "pageDescription" : null,
+        "externalPageURL" : null,
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "code" : null,
+        "title" : "entities",
+        "createdDate" : 1787091327777.103,
+        "identifier" : "AAD09E38-351D-4387-9D6D-22BE49F4408C",
+        "kind" : "folder",
+        "attributes" : {
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "filename" : "",
+          "customCSS" : "",
+          "enabled" : true,
+          "customSiteTitle" : "",
+          "customBodyStart" : "",
+          "customPageStart" : "",
+          "linkOpensInNewWindow" : false,
+          "expiryQuantity" : 2,
+          "shouldFollowLinks" : true,
+          "shouldAllowPreview" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customHeadStart" : "",
+          "customHeader" : "",
+          "expires" : false,
+          "customPageEnd" : "",
+          "changedStatuses" : {
+
+          },
+          "shouldIndexPage" : true,
+          "shouldEnableSocialTags" : true,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "expiryUnit" : 0,
+          "useCustomSiteTitle" : false,
+          "shouldArchivePage" : true,
+          "shouldEnableRobotTags" : true,
+          "customHeadEnd" : "",
+          "customBodyEnd" : "",
+          "lastChangedDate" : 1787091327777.094
+        },
+        "children" : [
+          {
+            "isIndex" : false,
+            "uniqueID" : "41D0B953-1856-4002-B1F8-F99A22AC8694",
+            "pageDescription" : null,
+            "externalPageURL" : null,
+            "expanded" : true,
+            "iconIdentifier" : null,
+            "code" : "---\ntitle: Three.js Particle Banner\ntags:\n  - custom-component\n  - three-js\n  - animation\nconcerns:\n  - \"Three.js is loaded from jsDelivr at runtime, so the animation requires network access; the static background and dropzone remain available if loading fails (severity: low).\"\ntype: entity\n---\n\n# Three.js Particle Banner\n\nReusable custom component providing a full-screen cursor-reactive particle field with a centred editable dropzone.\n\n**Implementation:** A transparent Three.js WebGL canvas overlays a configurable background. Particles drift continuously and repel smoothly from the pointer. Inspector controls cover background and particle colours, density, size, opacity, speed, interaction radius, and force. Rendering caps device pixel ratio at 2, resizes with `ResizeObserver`, disposes WebGL resources when removed, and disables animation for `prefers-reduced-motion`.\n\n## See also\n- [[pages\/home]]\n",
+            "title" : "",
+            "createdDate" : 1787136982021.617,
+            "identifier" : "41D0B953-1856-4002-B1F8-F99A22AC8694",
+            "kind" : "code",
+            "attributes" : {
+              "shouldIndexImages" : true,
+              "encoding" : 1,
+              "filename" : "three-js-particle-banner.md",
+              "customCSS" : "",
+              "enabled" : true,
+              "customSiteTitle" : "",
+              "customBodyStart" : "",
+              "customPageStart" : "",
+              "linkOpensInNewWindow" : false,
+              "expiryQuantity" : 2,
+              "shouldFollowLinks" : true,
+              "shouldAllowPreview" : true,
+              "hidden" : false,
+              "credit" : true,
+              "customHeadStart" : "",
+              "customHeader" : "",
+              "expires" : false,
+              "customPageEnd" : "",
+              "changedStatuses" : {
+                "default" : true
+              },
+              "shouldIndexPage" : true,
+              "shouldEnableSocialTags" : true,
+              "customJavaScript" : "",
+              "excludeFromSitemap" : true,
+              "expiryUnit" : 0,
+              "useCustomSiteTitle" : false,
+              "shouldArchivePage" : true,
+              "shouldEnableRobotTags" : true,
+              "customHeadEnd" : "",
+              "customBodyEnd" : "",
+              "lastChangedDate" : 1787136982024.485
+            },
+            "children" : [
+
+            ],
+            "manifests" : {
+
+            },
+            "browserTitle" : null
+          }
+        ],
+        "manifests" : {
+
+        },
+        "browserTitle" : null
+      },
+      {
+        "isIndex" : false,
+        "uniqueID" : "891E507B-8596-4C18-B9FA-EA70F4052C11",
+        "pageDescription" : null,
+        "externalPageURL" : null,
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "code" : null,
+        "title" : "analyses",
+        "createdDate" : 1787091327777.2761,
+        "identifier" : "891E507B-8596-4C18-B9FA-EA70F4052C11",
+        "kind" : "folder",
+        "attributes" : {
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "filename" : "",
+          "customCSS" : "",
+          "enabled" : true,
+          "customSiteTitle" : "",
+          "customBodyStart" : "",
+          "customPageStart" : "",
+          "linkOpensInNewWindow" : false,
+          "expiryQuantity" : 2,
+          "shouldFollowLinks" : true,
+          "shouldAllowPreview" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customHeadStart" : "",
+          "customHeader" : "",
+          "expires" : false,
+          "customPageEnd" : "",
+          "changedStatuses" : {
+
+          },
+          "shouldIndexPage" : true,
+          "shouldEnableSocialTags" : true,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "expiryUnit" : 0,
+          "useCustomSiteTitle" : false,
+          "shouldArchivePage" : true,
+          "shouldEnableRobotTags" : true,
+          "customHeadEnd" : "",
+          "customBodyEnd" : "",
+          "lastChangedDate" : 1787091327777.2678
+        },
+        "children" : [
+
+        ],
+        "manifests" : {
+
+        },
+        "browserTitle" : null
+      },
+      {
+        "isIndex" : false,
+        "uniqueID" : "367AF462-24FB-4E00-BEF5-86F3F2971E54",
+        "pageDescription" : null,
+        "externalPageURL" : null,
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "code" : null,
+        "title" : "field-reports",
+        "createdDate" : 1787091327777.457,
+        "identifier" : "367AF462-24FB-4E00-BEF5-86F3F2971E54",
+        "kind" : "folder",
+        "attributes" : {
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "filename" : "",
+          "customCSS" : "",
+          "enabled" : true,
+          "customSiteTitle" : "",
+          "customBodyStart" : "",
+          "customPageStart" : "",
+          "linkOpensInNewWindow" : false,
+          "expiryQuantity" : 2,
+          "shouldFollowLinks" : true,
+          "shouldAllowPreview" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customHeadStart" : "",
+          "customHeader" : "",
+          "expires" : false,
+          "customPageEnd" : "",
+          "changedStatuses" : {
+
+          },
+          "shouldIndexPage" : true,
+          "shouldEnableSocialTags" : true,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "expiryUnit" : 0,
+          "useCustomSiteTitle" : false,
+          "shouldArchivePage" : true,
+          "shouldEnableRobotTags" : true,
+          "customHeadEnd" : "",
+          "customBodyEnd" : "",
+          "lastChangedDate" : 1787091327777.4492
+        },
+        "children" : [
+          {
+            "isIndex" : false,
+            "uniqueID" : "5DD02B89-6610-4ED0-BA60-B52E424443E6",
+            "pageDescription" : null,
+            "externalPageURL" : null,
+            "expanded" : true,
+            "iconIdentifier" : null,
+            "code" : "---\ntitle: Custom component slider silently omitted from schema\ndate: 2026-08-20\nstatus: open\ntags:\n  - field-report\n---\n\n# Custom component slider silently omitted from schema\n\n## What was being attempted\n\nAttempted to add a Twist slider to the Floating Content custom component, but Elements silently excludes the property from getComponentSchema and the inspector.\n\n## Context\n\nFloating Content custom component; properties JSON uses slider controls; Elements schema inspection.\n\n## What was tried\n\n1. Added a slider with id twist, range -2 to 2 and decimal step 0.05; omitted from schema.\n2. Changed to a non-negative 0 to 2 range; still omitted.\n3. Renamed id to twistAmount to avoid a possible reserved name collision; still omitted.\n\n## Expected behaviour\n\nA valid slider defined in the component Properties JSON should appear in getComponentSchema and the inspector, or the editor should return a validation warning.\n\n## Actual behaviour\n\neditCustomComponent reports success without warnings, but getComponentSchema includes only the pre-existing Animate, Speed, and Vertical Drift controls.\n\n## Recommendations\n\n1. Expose a validation diagnostic for properties that the parser skips.\n2. Document any unsupported slider ranges, ids, or step-value combinations.\n",
+            "title" : "",
+            "createdDate" : 1787261939407.892,
+            "identifier" : "5DD02B89-6610-4ED0-BA60-B52E424443E6",
+            "kind" : "code",
+            "attributes" : {
+              "shouldIndexImages" : true,
+              "encoding" : 1,
+              "filename" : "2026-08-20-custom-component-slider-silently-omitted.md",
+              "customCSS" : "",
+              "enabled" : true,
+              "customSiteTitle" : "",
+              "customBodyStart" : "",
+              "customPageStart" : "",
+              "linkOpensInNewWindow" : false,
+              "expiryQuantity" : 2,
+              "shouldFollowLinks" : true,
+              "shouldAllowPreview" : true,
+              "hidden" : false,
+              "credit" : true,
+              "customHeadStart" : "",
+              "customHeader" : "",
+              "expires" : false,
+              "customPageEnd" : "",
+              "changedStatuses" : {
+                "default" : true
+              },
+              "shouldIndexPage" : true,
+              "shouldEnableSocialTags" : true,
+              "customJavaScript" : "",
+              "excludeFromSitemap" : true,
+              "expiryUnit" : 0,
+              "useCustomSiteTitle" : false,
+              "shouldArchivePage" : true,
+              "shouldEnableRobotTags" : true,
+              "customHeadEnd" : "",
+              "customBodyEnd" : "",
+              "lastChangedDate" : 1787261939416.726
+            },
+            "children" : [
+
+            ],
+            "manifests" : {
+
+            },
+            "browserTitle" : null
+          }
+        ],
+        "manifests" : {
+
+        },
+        "browserTitle" : null
+      },
+      {
+        "isIndex" : false,
+        "uniqueID" : "F3D16DC1-A3BC-442E-BA41-D6BEA7EC485A",
+        "pageDescription" : null,
+        "externalPageURL" : null,
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "code" : "---\ntitle: Project Knowledge\nsummary: Index of all project knowledge pages\n---\n\nThis is the AI-maintained knowledge base for this project, following the Karpathy compiled-knowledge pattern. The LLM reads live pages once and compiles them into an interlinked graph of notes. Subsequent sessions read the notes, not the live pages — answers compound rather than being re-derived each time.\n\n## Note graph\n\nThe knowledge graph lives in four folders. Use `[[folder\/note]]` wikilinks for cross-references between notes.\n\n- **pages\/** — one note per live RapidWeaver page; keyed on `pageId`; records purpose, sections, components, and summary in the user's voice\n- **concepts\/** — themes and patterns spanning multiple pages (e.g. \"testimonials pattern\", \"pricing section\")\n- **entities\/** — people, clients, tools, custom components, publishing destinations\n- **analyses\/** — durable answers to synthesis questions; filed when a query answer is worth preserving\n\n### When to create a concept or entity note\n\nCreate a note proactively — do not wait to be asked:\n\n- **entities\/**: any named person appearing in a role (officer, winner, organiser, contact); any named event, race, trophy, award, or external tool\/service.\n- **concepts\/**: any structural or content pattern that appears across 3 or more pages (e.g. same image+link layout, recurring winner table structure, recurring membership pricing model).\n\nUse a lowercase hyphenated slug (e.g. `entities\/ian-wright.md`, `concepts\/photo-album-pattern.md`). Add a `## See also` section with `[[folder\/note]]` wikilinks back to every page note that references it, and add the reciprocal link in each of those page notes.\n\n### Page note format\n\n```yaml\n---\ntitle: Page Title\ntype: page          # page | concept | entity | analysis\npageId: <uuid>      # for type:page — the Elements page UUID (stable across sessions)\npath: \/slug         # site path\nlastIngested: YYYY-MM-DDTHH:MMZ\nsources: []         # [[links]] to notes this draws from\ntags: []\nconcerns:           # known problems, tech debt, or gotchas for this page\/concept\n  - \"Brief description of the issue (severity: low|medium|high)\"\n---\n\n# Page Title\n\nSummary in the user's voice. Sections, components used, index\/sitemap flags.\n\n**Build mechanics** (required — record HOW things are built, not just WHAT they render): list the element types used, any custom components and how many instances, whether data is hardcoded or driven by CMS\/properties, and whether styling uses design-system tokens or bypasses them (e.g. \"12 per-year hand-edited HTML custom components; data hardcoded in template; colours bypass Tailwind tokens\").\n\n## See also\n- [[concepts\/related-concept]]\n- [[entities\/entity-name]]\n```\n\n## Design System\n\n- **[style-writing.md](style-writing.md)** — voice and tone guide; read via `getDesignSystem` before authoring copy\n- **[style-visual.md](style-visual.md)** — layout and visual conventions; read via `getDesignSystem` before building pages\n\n## Project admin\n\n- **[overview.md](overview.md)** — site purpose, target audience, and high-level structure\n- **[journal.md](journal.md)** — append-only session log (newest entries at top)\n- **[concerns.md](concerns.md)** — known problems, tech debt, gotchas, and fragile areas (derived from per-note `concerns:` frontmatter + `lintKnowledge`; regenerated on close)\n- **[backlog.md](backlog.md)** — outstanding work and speculative ideas with priority and status\n- **[services.md](services.md)** — external services, APIs, and integrations\n- **[field-reports\/](field-reports\/)** — structured AI session blocker reports; summaries linked from concerns.md\n\n## Operations\n\nThree recurring workflows — all orchestrated by the LLM using the storage primitives above.\n\n**Ingest** (triggered by drift or new page): `getPageMarkdown(pageId)` → `editKnowledge` writePage `pages\/<slug>.md` with `pageId` + `lastIngested` → touch\/create linked `concepts\/` and `entities\/` notes → add `[[folder\/note]]` wikilinks both directions and `## See also` → refresh `index.md`. If the page reveals a new voice or visual convention, call `updateDesignSystem` to reconcile the design guides.\n\n**Query**: read `index.md` → relevant notes (re-ingest only if `stale: true`) → synthesise with `[[folder\/note]]` wikilinks as citations → optionally file durable answer as `analyses\/<slug>.md`. **Exception — architecture\/improvement requests**: for any \"how do I improve\", \"review\", or \"what's wrong with\" question, always inspect the live document first (`listCustomComponents` + a sample `getCustomComponent` + `getPageContent` on representative pages) before answering, regardless of note freshness. Rank findings by altitude: maintainability\/structure → design-system → content. Record findings into per-note `concerns:` and regenerate `concerns.md`.\n\n**Lint**: call `lintKnowledge` → act on orphans, broken links, stale notes, dangling page notes, index drift → fix and log.\n\n## Project notes\n\n- [[pages\/home]] — index landing page and current hero structure\n- [[entities\/three-js-particle-banner]] — reusable cursor-reactive WebGL banner\n\n## Knowledge administration\n\n- [[overview]] — project purpose and structure\n- [[style-writing]] — writing style guide\n- [[style-visual]] — visual style guide\n- [[journal]] — session history\n- [[concerns]] — derived debt and issue rollup\n- [[backlog]] — outstanding work\n- [[services]] — external services and integrations\n",
+        "title" : "",
+        "createdDate" : 1787091327777.637,
+        "identifier" : "F3D16DC1-A3BC-442E-BA41-D6BEA7EC485A",
+        "kind" : "code",
+        "attributes" : {
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "filename" : "index.md",
+          "customCSS" : "",
+          "enabled" : true,
+          "customSiteTitle" : "",
+          "customBodyStart" : "",
+          "customPageStart" : "",
+          "linkOpensInNewWindow" : false,
+          "expiryQuantity" : 2,
+          "shouldFollowLinks" : true,
+          "shouldAllowPreview" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customHeadStart" : "",
+          "customHeader" : "",
+          "expires" : false,
+          "customPageEnd" : "",
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldIndexPage" : true,
+          "shouldEnableSocialTags" : true,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "expiryUnit" : 0,
+          "useCustomSiteTitle" : false,
+          "shouldArchivePage" : true,
+          "shouldEnableRobotTags" : true,
+          "customHeadEnd" : "",
+          "customBodyEnd" : "",
+          "lastChangedDate" : 1787091327777.991
+        },
+        "children" : [
+
+        ],
+        "manifests" : {
+
+        },
+        "browserTitle" : null
+      },
+      {
+        "isIndex" : false,
+        "uniqueID" : "CF339F4B-5511-4120-8726-BCC49BA23B8D",
+        "pageDescription" : null,
+        "externalPageURL" : null,
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "code" : "---\ntitle: Project Overview\nsummary: Goals, structure, and design intent of this project\n---\n\n> On a new project, this is seeded by `newDocument` from the user's brief. On an existing project, derive it by reading pages via `getPageMarkdown`. Update it as the site's scope and structure evolve. Pages are always authoritative over this note.\n\n## Purpose\n\nWhat is this site for? What problem does it solve or goal does it serve?\n\n## Target Audience\n\nWho is this site for?\n\n## Structure\n\nHow is the site organised? List the main pages and folders, and explain how the content is divided.\n",
+        "title" : "",
+        "createdDate" : 1787091327778.0051,
+        "identifier" : "CF339F4B-5511-4120-8726-BCC49BA23B8D",
+        "kind" : "code",
+        "attributes" : {
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "filename" : "overview.md",
+          "customCSS" : "",
+          "enabled" : true,
+          "customSiteTitle" : "",
+          "customBodyStart" : "",
+          "customPageStart" : "",
+          "linkOpensInNewWindow" : false,
+          "expiryQuantity" : 2,
+          "shouldFollowLinks" : true,
+          "shouldAllowPreview" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customHeadStart" : "",
+          "customHeader" : "",
+          "expires" : false,
+          "customPageEnd" : "",
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldIndexPage" : true,
+          "shouldEnableSocialTags" : true,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "expiryUnit" : 0,
+          "useCustomSiteTitle" : false,
+          "shouldArchivePage" : true,
+          "shouldEnableRobotTags" : true,
+          "customHeadEnd" : "",
+          "customBodyEnd" : "",
+          "lastChangedDate" : 1787091327778.3662
+        },
+        "children" : [
+
+        ],
+        "manifests" : {
+
+        },
+        "browserTitle" : null
+      },
+      {
+        "isIndex" : false,
+        "uniqueID" : "1EA6EBA5-DB3F-4842-8B0C-D82B82B58FD2",
+        "pageDescription" : null,
+        "externalPageURL" : null,
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "code" : "---\ntitle: Writing Style\ntags:\n  - stub\nsummary: Voice and tone guide — read before authoring any copy\n---\n\n> This is a Design System guide. On a new project, this is seeded by `newDocument` from the user's brief. Update it via `updateDesignSystem(writingStyle:)`. On an existing project, derive it by reading page copy via `getPageMarkdown`. Always reconcile against live pages — pages are authoritative. Read via `getDesignSystem` before authoring any copy. Tag as `derived` once populated from pages; tag as `stale` when the site's copy has clearly moved on.\n\n## Voice & Tone\n\nOverall register (formal\/informal), warmth, and personality.\n\n## Sentence Rhythm\n\nShort sentences or long? Active or passive voice? How are lists used?\n\n## Vocabulary\n\nWords and phrases the author favours. Words and phrases to avoid.\n\n## Person & POV\n\nFirst person, second person, third person? \"We\" or \"I\"?\n\n## Heading Style\n\nTitle case, sentence case? Interrogative, declarative?\n\n## Caption & Label Style\n\nHow are image captions, button labels, and navigation items styled?\n\n## See also\n- [[style-visual]]\n",
+        "title" : "",
+        "createdDate" : 1787091327778.377,
+        "identifier" : "1EA6EBA5-DB3F-4842-8B0C-D82B82B58FD2",
+        "kind" : "code",
+        "attributes" : {
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "filename" : "style-writing.md",
+          "customCSS" : "",
+          "enabled" : true,
+          "customSiteTitle" : "",
+          "customBodyStart" : "",
+          "customPageStart" : "",
+          "linkOpensInNewWindow" : false,
+          "expiryQuantity" : 2,
+          "shouldFollowLinks" : true,
+          "shouldAllowPreview" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customHeadStart" : "",
+          "customHeader" : "",
+          "expires" : false,
+          "customPageEnd" : "",
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldIndexPage" : true,
+          "shouldEnableSocialTags" : true,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "expiryUnit" : 0,
+          "useCustomSiteTitle" : false,
+          "shouldArchivePage" : true,
+          "shouldEnableRobotTags" : true,
+          "customHeadEnd" : "",
+          "customBodyEnd" : "",
+          "lastChangedDate" : 1787091327778.73
+        },
+        "children" : [
+
+        ],
+        "manifests" : {
+
+        },
+        "browserTitle" : null
+      },
+      {
+        "isIndex" : false,
+        "uniqueID" : "72FF0DC5-830C-446B-BAAD-179AEC9FD64C",
+        "pageDescription" : null,
+        "externalPageURL" : null,
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "code" : "---\ntitle: Visual Style\ntags:\n  - stub\nsummary: Layout and visual conventions — read before building or restructuring pages\n---\n\n> This is a Design System guide. On a new project, this is seeded by `newDocument` from the user's brief. Update it via `updateDesignSystem(visualStyle:)`. On an existing project, derive it by inspecting pages via `getPageContent` \/ `getNodeProperties`. Always reconcile against live pages — pages are authoritative. Read via `getDesignSystem` before building or restructuring any layout. Tag as `derived` once populated from pages; tag as `stale` when the site's visual language has clearly moved on.\n\n## Layout Patterns\n\nRecurring structural patterns — hero sections, two-column grids, pricing rows, card layouts.\n\n| Pattern | Description | Pages |\n|---------|-------------|-------|\n\n## Colour Palette\n\n| Role | Value |\n|------|-------|\n| Primary | |\n| Accent | |\n| Background | |\n\n## Typography\n\n| Role | Font | Size \/ Weight |\n|------|------|--------------|\n| Heading | | |\n| Body | | |\n\n## Spacing & Rhythm\n\nNotes on section padding, component gaps, vertical rhythm.\n\n## Image Treatment\n\nAspect ratios, object-fit conventions, caption placement.\n\n## Navigation Structure\n\nHeader\/footer model, mobile nav, active-state conventions.\n\n## See also\n- [[style-writing]]\n",
+        "title" : "",
+        "createdDate" : 1787091327778.745,
+        "identifier" : "72FF0DC5-830C-446B-BAAD-179AEC9FD64C",
+        "kind" : "code",
+        "attributes" : {
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "filename" : "style-visual.md",
+          "customCSS" : "",
+          "enabled" : true,
+          "customSiteTitle" : "",
+          "customBodyStart" : "",
+          "customPageStart" : "",
+          "linkOpensInNewWindow" : false,
+          "expiryQuantity" : 2,
+          "shouldFollowLinks" : true,
+          "shouldAllowPreview" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customHeadStart" : "",
+          "customHeader" : "",
+          "expires" : false,
+          "customPageEnd" : "",
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldIndexPage" : true,
+          "shouldEnableSocialTags" : true,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "expiryUnit" : 0,
+          "useCustomSiteTitle" : false,
+          "shouldArchivePage" : true,
+          "shouldEnableRobotTags" : true,
+          "customHeadEnd" : "",
+          "customBodyEnd" : "",
+          "lastChangedDate" : 1787091327779.0952
+        },
+        "children" : [
+
+        ],
+        "manifests" : {
+
+        },
+        "browserTitle" : null
+      },
+      {
+        "isIndex" : false,
+        "uniqueID" : "B4C22076-6353-4B82-898A-01F5970F27C9",
+        "pageDescription" : null,
+        "externalPageURL" : null,
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "code" : "---\ntitle: Journal\nsummary: Running log of sessions, decisions, and progress\n---\n\nAppend-only log of work sessions, decisions, and notable events. Newest entries at the top.\n\nUse `appendEntry` with a date heading to add new entries.\n\n## 2026-08-18\n\nBuilt a reusable Three.js Particle Banner custom component with 100dvh height, cursor-repelled particles, reduced-motion support, responsive WebGL sizing and cleanup, configurable visual controls, and a centred content dropzone. Placed it first on the index page. Recorded the older duplicated hero implementations as consolidation debt.\n",
+        "title" : "",
+        "createdDate" : 1787091327779.109,
+        "identifier" : "B4C22076-6353-4B82-898A-01F5970F27C9",
+        "kind" : "code",
+        "attributes" : {
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "filename" : "journal.md",
+          "customCSS" : "",
+          "enabled" : true,
+          "customSiteTitle" : "",
+          "customBodyStart" : "",
+          "customPageStart" : "",
+          "linkOpensInNewWindow" : false,
+          "expiryQuantity" : 2,
+          "shouldFollowLinks" : true,
+          "shouldAllowPreview" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customHeadStart" : "",
+          "customHeader" : "",
+          "expires" : false,
+          "customPageEnd" : "",
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldIndexPage" : true,
+          "shouldEnableSocialTags" : true,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "expiryUnit" : 0,
+          "useCustomSiteTitle" : false,
+          "shouldArchivePage" : true,
+          "shouldEnableRobotTags" : true,
+          "customHeadEnd" : "",
+          "customBodyEnd" : "",
+          "lastChangedDate" : 1787091327779.459
+        },
+        "children" : [
+
+        ],
+        "manifests" : {
+
+        },
+        "browserTitle" : null
+      },
+      {
+        "isIndex" : false,
+        "uniqueID" : "E1004CF1-232F-41A9-AE94-97DE7E86EE67",
+        "pageDescription" : null,
+        "externalPageURL" : null,
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "code" : "---\ntitle: Concerns\nsummary: Derived rollup of known problems, tech debt, and gotchas\n---\n\n**Derived — do not hand-edit.** Regenerated from note concerns and document lint findings.\n\n## Tech Debt \/ Structural\n\n| Severity | Component \/ Page | Description | Notes |\n|---|---|---|---|\n| Low | Three.js Particle Banner | Three.js is loaded from jsDelivr at runtime, so the animation requires network access. | The static background and centred dropzone remain available if loading fails. |\n\n## Content \/ Editorial\n\nNo current editorial concerns.\n\n## Open Field Reports\n\nNo open field reports.\n\n## See also\n- [[pages\/home]]\n- [[entities\/three-js-particle-banner]]\n",
+        "title" : "",
+        "createdDate" : 1787091327779.471,
+        "identifier" : "E1004CF1-232F-41A9-AE94-97DE7E86EE67",
+        "kind" : "code",
+        "attributes" : {
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "filename" : "concerns.md",
+          "customCSS" : "",
+          "enabled" : true,
+          "customSiteTitle" : "",
+          "customBodyStart" : "",
+          "customPageStart" : "",
+          "linkOpensInNewWindow" : false,
+          "expiryQuantity" : 2,
+          "shouldFollowLinks" : true,
+          "shouldAllowPreview" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customHeadStart" : "",
+          "customHeader" : "",
+          "expires" : false,
+          "customPageEnd" : "",
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldIndexPage" : true,
+          "shouldEnableSocialTags" : true,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "expiryUnit" : 0,
+          "useCustomSiteTitle" : false,
+          "shouldArchivePage" : true,
+          "shouldEnableRobotTags" : true,
+          "customHeadEnd" : "",
+          "customBodyEnd" : "",
+          "lastChangedDate" : 1787091327779.8118
+        },
+        "children" : [
+
+        ],
+        "manifests" : {
+
+        },
+        "browserTitle" : null
+      },
+      {
+        "isIndex" : false,
+        "uniqueID" : "310312D9-7C24-4333-904D-B95C412F3DFD",
+        "pageDescription" : null,
+        "externalPageURL" : null,
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "code" : "---\ntitle: Backlog\nsummary: Outstanding work and speculative ideas with priority and status\n---\n\nTracks both committed tasks and speculative ideas. Mark speculative items with `idea` in the Type column.\n\n| Priority | Type | Task | Status |\n|----------|------|------|--------|\n",
+        "title" : "",
+        "createdDate" : 1787091327779.825,
+        "identifier" : "310312D9-7C24-4333-904D-B95C412F3DFD",
+        "kind" : "code",
+        "attributes" : {
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "filename" : "backlog.md",
+          "customCSS" : "",
+          "enabled" : true,
+          "customSiteTitle" : "",
+          "customBodyStart" : "",
+          "customPageStart" : "",
+          "linkOpensInNewWindow" : false,
+          "expiryQuantity" : 2,
+          "shouldFollowLinks" : true,
+          "shouldAllowPreview" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customHeadStart" : "",
+          "customHeader" : "",
+          "expires" : false,
+          "customPageEnd" : "",
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldIndexPage" : true,
+          "shouldEnableSocialTags" : true,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "expiryUnit" : 0,
+          "useCustomSiteTitle" : false,
+          "shouldArchivePage" : true,
+          "shouldEnableRobotTags" : true,
+          "customHeadEnd" : "",
+          "customBodyEnd" : "",
+          "lastChangedDate" : 1787091327780.198
+        },
+        "children" : [
+
+        ],
+        "manifests" : {
+
+        },
+        "browserTitle" : null
+      },
+      {
+        "isIndex" : false,
+        "uniqueID" : "D62F9B6F-E332-4B53-A8B5-085DDFCB6137",
+        "pageDescription" : null,
+        "externalPageURL" : null,
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "code" : "---\ntitle: Services\nsummary: External services, APIs, credentials, and integrations\n---\n\nDocument external services, APIs, and integrations used by this project.\n\n| Service | Purpose | Notes |\n|---------|---------|-------|\n",
+        "title" : "",
+        "createdDate" : 1787091327780.2139,
+        "identifier" : "D62F9B6F-E332-4B53-A8B5-085DDFCB6137",
+        "kind" : "code",
+        "attributes" : {
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "filename" : "services.md",
+          "customCSS" : "",
+          "enabled" : true,
+          "customSiteTitle" : "",
+          "customBodyStart" : "",
+          "customPageStart" : "",
+          "linkOpensInNewWindow" : false,
+          "expiryQuantity" : 2,
+          "shouldFollowLinks" : true,
+          "shouldAllowPreview" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customHeadStart" : "",
+          "customHeader" : "",
+          "expires" : false,
+          "customPageEnd" : "",
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldIndexPage" : true,
+          "shouldEnableSocialTags" : true,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "expiryUnit" : 0,
+          "useCustomSiteTitle" : false,
+          "shouldArchivePage" : true,
+          "shouldEnableRobotTags" : true,
+          "customHeadEnd" : "",
+          "customBodyEnd" : "",
+          "lastChangedDate" : 1787091327780.544
+        },
+        "children" : [
+
+        ],
+        "manifests" : {
+
+        },
+        "browserTitle" : null
+      },
+      {
+        "isIndex" : false,
+        "uniqueID" : "F2063B4E-CA74-4112-AA98-1123A11E8BF1",
+        "pageDescription" : null,
+        "externalPageURL" : null,
+        "expanded" : true,
+        "iconIdentifier" : null,
+        "code" : "---\ntitle: Wiki Sync\nsummary: Machine-generated sync snapshot. Do not edit by hand.\n---\n\n<!-- Machine-generated. Do not edit by hand. -->\n\n```json\n{\n  \"pages\" : {\n    \"611993F7-650A-4EC0-8974-B8B345C6A55A\" : \"2026-08-20T21:41:44Z\"\n  },\n  \"syncedAt\" : \"2026-08-20T21:41:45Z\"\n}\n```\n",
+        "title" : "",
+        "createdDate" : 1787091327780.5671,
+        "identifier" : "F2063B4E-CA74-4112-AA98-1123A11E8BF1",
+        "kind" : "code",
+        "attributes" : {
+          "shouldIndexImages" : true,
+          "encoding" : 1,
+          "filename" : "sync.md",
+          "customCSS" : "",
+          "enabled" : true,
+          "customSiteTitle" : "",
+          "customBodyStart" : "",
+          "customPageStart" : "",
+          "linkOpensInNewWindow" : false,
+          "expiryQuantity" : 2,
+          "shouldFollowLinks" : true,
+          "shouldAllowPreview" : true,
+          "hidden" : false,
+          "credit" : true,
+          "customHeadStart" : "",
+          "customHeader" : "",
+          "expires" : false,
+          "customPageEnd" : "",
+          "changedStatuses" : {
+            "default" : true
+          },
+          "shouldIndexPage" : true,
+          "shouldEnableSocialTags" : true,
+          "customJavaScript" : "",
+          "excludeFromSitemap" : true,
+          "expiryUnit" : 0,
+          "useCustomSiteTitle" : false,
+          "shouldArchivePage" : true,
+          "shouldEnableRobotTags" : true,
+          "customHeadEnd" : "",
+          "customBodyEnd" : "",
+          "lastChangedDate" : 1787091327780.9172
+        },
+        "children" : [
+
+        ],
+        "manifests" : {
+
+        },
+        "browserTitle" : null
+      }
+    ],
+    "manifests" : {
+
+    },
+    "browserTitle" : null
+  },
+  "globalElements" : {
+    "globals" : {
+
+    }
+  },
+  "social" : {
+    "useSocialTags" : true
+  },
+  "theme" : {
+    "borderRadius" : [
+
+    ],
+    "screens" : [
+      {
+        "classPrefix" : "2xl",
+        "name" : "2xl",
+        "maxContainerWidth" : 0,
+        "description" : "",
+        "units" : "auto",
+        "id" : "D593046E-8BAF-4339-964B-87E8B1759988",
+        "pixels" : 1536,
+        "sfIcon" : "desktopcomputer",
+        "enabled" : false
+      },
+      {
+        "classPrefix" : "xl",
+        "name" : "xl",
+        "maxContainerWidth" : 0,
+        "description" : "",
+        "units" : "auto",
+        "id" : "3FF277EF-D1A2-400D-A1A9-8F13F57C915E",
+        "pixels" : 1280,
+        "sfIcon" : "laptopcomputer",
+        "enabled" : false
+      },
+      {
+        "classPrefix" : "lg",
+        "name" : "lg",
+        "maxContainerWidth" : 0,
+        "description" : "",
+        "units" : "auto",
+        "id" : "69D9D4A8-B6FA-4419-8AFE-C9316E3890EE",
+        "pixels" : 1024,
+        "sfIcon" : "ipad.landscape",
+        "enabled" : true
+      },
+      {
+        "classPrefix" : "md",
+        "name" : "md",
+        "maxContainerWidth" : 0,
+        "description" : "This breakpoint is for tablets and small laptop screens. It usually encompasses widths from 600 pixels to 1023 pixels.",
+        "units" : "auto",
+        "id" : "A337AE9B-1C2D-4F36-B0E1-26AF9DC3BE74",
+        "pixels" : 768,
+        "sfIcon" : "ipad",
+        "enabled" : true
+      },
+      {
+        "classPrefix" : "sm",
+        "name" : "sm",
+        "maxContainerWidth" : 0,
+        "description" : "This breakpoint targets devices with small sceens like smartphones. The resolution width varies but typically starts from 320 pixels and below 600 pixels.",
+        "units" : "auto",
+        "id" : "A4534A85-1B3C-4D24-87FB-2FCCFE1C41BB",
+        "pixels" : 640,
+        "sfIcon" : "iphone.landscape",
+        "enabled" : true
+      },
+      {
+        "classPrefix" : "",
+        "name" : "mobile",
+        "maxContainerWidth" : 0,
+        "description" : "",
+        "units" : "auto",
+        "id" : "BFCE7E22-3776-457E-A9A5-88C2A95B877A",
+        "pixels" : 0,
+        "sfIcon" : "iphone",
+        "enabled" : true
+      }
+    ],
+    "colors" : [
+
+    ],
+    "fontFamily" : [
+
+    ],
+    "fontStyle" : [
+
+    ],
+    "typographies" : [
+
+    ],
+    "textShadows" : [
+
+    ],
+    "page" : {
+
+    },
+    "baseThemeIdentifier" : "com.realmacsoftware.themes.system",
+    "shadows" : [
+
+    ],
+    "spacing" : [
+
+    ],
+    "borderWidth" : [
+
+    ]
+  },
+  "identifier" : "A42889EE-3D45-4D5A-8395-B647ACACAB0D",
+  "localization" : {
+
+  },
+  "siteResources" : {
+    "root" : "EC218A82-9002-4481-B5AB-FC831D11CC8D",
+    "resources" : {
+      "EC218A82-9002-4481-B5AB-FC831D11CC8D" : {
+        "hostedImageURLs" : [
+
+        ],
+        "name" : "Resources",
+        "kind" : 0,
+        "smartFolderKind" : 0,
+        "changedStatuses" : {
+
+        },
+        "expanded" : true,
+        "identifier" : "EC218A82-9002-4481-B5AB-FC831D11CC8D",
+        "timeStamp" : -62135769600000
+      },
+      "5EDE549C-D1C6-4719-A017-B7FE2866045B" : {
+        "smartFolderKind" : 0,
+        "typeIdentifier" : "public.jpeg",
+        "metadata" : {
+          "width" : 1500,
+          "height" : 1500,
+          "aspect" : 1
+        },
+        "parentIdentifier" : "EC218A82-9002-4481-B5AB-FC831D11CC8D",
+        "changedStatuses" : {
+
+        },
+        "originalName" : "avatar-studio-03.jpg",
+        "expanded" : true,
+        "hostedImageURLs" : [
+
+        ],
+        "timeStamp" : 1786485663567.6729,
+        "name" : "avatar-studio-03.jpg",
+        "isSVG" : false,
+        "identifier" : "5EDE549C-D1C6-4719-A017-B7FE2866045B",
+        "kind" : 1
+      },
+      "3A7A4EF9-1387-46DB-B936-6DEF5DD997E5" : {
+        "smartFolderKind" : 0,
+        "typeIdentifier" : "public.png",
+        "metadata" : {
+          "width" : 1717,
+          "height" : 916,
+          "aspect" : 1.8744541484716157
+        },
+        "parentIdentifier" : "EC218A82-9002-4481-B5AB-FC831D11CC8D",
+        "changedStatuses" : {
+
+        },
+        "originalName" : "442f2ee3-4c02-4f7c-b254-d0718ce9f31a.png",
+        "expanded" : true,
+        "hostedImageURLs" : [
+
+        ],
+        "timeStamp" : 1787089821852.2917,
+        "name" : "space.png",
+        "isSVG" : false,
+        "identifier" : "3A7A4EF9-1387-46DB-B936-6DEF5DD997E5",
+        "kind" : 1
+      },
+      "C0C72D82-1204-4B5B-AA6F-76E22CE84690" : {
+        "smartFolderKind" : 0,
+        "typeIdentifier" : "public.jpeg",
+        "metadata" : {
+          "width" : 1500,
+          "height" : 1500,
+          "aspect" : 1
+        },
+        "parentIdentifier" : "EC218A82-9002-4481-B5AB-FC831D11CC8D",
+        "changedStatuses" : {
+
+        },
+        "originalName" : "avatar-studio-02.jpg",
+        "expanded" : true,
+        "hostedImageURLs" : [
+
+        ],
+        "timeStamp" : 1786485663561.7068,
+        "name" : "avatar-studio-02.jpg",
+        "isSVG" : false,
+        "identifier" : "C0C72D82-1204-4B5B-AA6F-76E22CE84690",
+        "kind" : 1
+      },
+      "2A4B619C-53E1-4297-83FF-93B4CF795F48" : {
+        "smartFolderKind" : 0,
+        "typeIdentifier" : "public.jpeg",
+        "metadata" : {
+          "width" : 1500,
+          "height" : 1500,
+          "aspect" : 1
+        },
+        "parentIdentifier" : "EC218A82-9002-4481-B5AB-FC831D11CC8D",
+        "changedStatuses" : {
+
+        },
+        "originalName" : "avatar-studio-01.jpg",
+        "expanded" : true,
+        "hostedImageURLs" : [
+
+        ],
+        "timeStamp" : 1786485663561.732,
+        "name" : "avatar-studio-01.jpg",
+        "isSVG" : false,
+        "identifier" : "2A4B619C-53E1-4297-83FF-93B4CF795F48",
+        "kind" : 1
+      },
+      "BC718584-6714-4BB6-A472-93CC9E26CFBD" : {
+        "smartFolderKind" : 0,
+        "typeIdentifier" : "public.jpeg",
+        "metadata" : {
+          "width" : 1500,
+          "height" : 1500,
+          "aspect" : 1
+        },
+        "parentIdentifier" : "EC218A82-9002-4481-B5AB-FC831D11CC8D",
+        "changedStatuses" : {
+
+        },
+        "originalName" : "avatar-studio-04.jpg",
+        "expanded" : true,
+        "hostedImageURLs" : [
+
+        ],
+        "timeStamp" : 1786485663571.2336,
+        "name" : "avatar-studio-04.jpg",
+        "isSVG" : false,
+        "identifier" : "BC718584-6714-4BB6-A472-93CC9E26CFBD",
+        "kind" : 1
+      }
+    },
+    "children" : {
+      "EC218A82-9002-4481-B5AB-FC831D11CC8D" : [
+        "3A7A4EF9-1387-46DB-B936-6DEF5DD997E5",
+        "2A4B619C-53E1-4297-83FF-93B4CF795F48",
+        "C0C72D82-1204-4B5B-AA6F-76E22CE84690",
+        "5EDE549C-D1C6-4719-A017-B7FE2866045B",
+        "BC718584-6714-4BB6-A472-93CC9E26CFBD"
+      ]
+    }
+  },
+  "ui" : {
+    "catalogFilter" : {
+      "showFavourites" : false,
+      "smartDocumentElements" : false
+    },
+    "projectInspector" : {
+      "show" : false
+    },
+    "resourceInspector" : {
+      "show" : false
+    },
+    "elementEditor" : {
+      "show" : false,
+      "showOutline" : true
+    },
+    "contentArea" : {
+      "size" : [
+        1024,
+        320
+      ],
+      "darkAppearance" : false,
+      "responsiveSize" : "lg",
+      "scale" : 1
+    }
+  }
+}
