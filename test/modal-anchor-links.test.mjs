@@ -196,17 +196,33 @@ test("waits for the dialog's focus handover to finish", () => {
     assert.equal(page.target.scrollCalls.length, 1);
 });
 
-test("stops waiting rather than stranding the jump", () => {
+test("stops waiting rather than stranding the jump when lock clears but focus never settles", () => {
     const page = makePage();
 
     page.click();
-    // Focus never settles and the lock never comes off.
     for (let i = 0; i < 200 && page.frames.length; i += 1) {
+        page.documentElement.style.overflow = "";
         page.focusIn();
         page.frames.shift()();
     }
 
     assert.equal(page.target.scrollCalls.length, 1, "scroll still happens");
+});
+
+test("bails out when scroll lock is still held at ceiling", () => {
+    const page = makePage();
+
+    page.click();
+    for (let i = 0; i < 200 && page.frames.length; i += 1) {
+        page.focusIn();
+        page.frames.shift()();
+    }
+
+    assert.equal(
+        page.target.scrollCalls.length,
+        0,
+        "should not scroll while page is still locked"
+    );
 });
 
 test("stops listening for focus once it has scrolled", () => {

@@ -113,6 +113,8 @@
 
             document.removeEventListener("focusin", onFocusIn, true);
 
+            if (locked) return;
+
             target.scrollIntoView({ block: "start" });
         };
 
