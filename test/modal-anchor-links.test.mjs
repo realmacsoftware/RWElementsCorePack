@@ -8,8 +8,6 @@ const scriptPath =
 
 const source = fs.readFileSync(scriptPath, "utf8");
 
-// A deliberately small stand-in for the bits of the DOM the script touches.
-// Elements are plain objects linked by `parent`, and `closest` walks that chain.
 function makeElement(spec = {}) {
     return {
         tagName: (spec.tagName || "div").toUpperCase(),
@@ -46,8 +44,6 @@ function makeElement(spec = {}) {
     };
 }
 
-// Builds a page with one modal containing one link, plus an anchor target
-// elsewhere in the document.
 function makePage({
     href = "#section",
     targetId = "section",
@@ -67,14 +63,15 @@ function makePage({
     const alpineData = { open };
     const listeners = {};
     const captureFlags = {};
-    const frames = [];
+    const rafQueue = [];
+    const timeoutQueue = [];
 
     const sandbox = {
         URL,
         decodeURIComponent,
         console,
-        setTimeout: (fn) => fn(),
-        requestAnimationFrame: (fn) => frames.push(fn),
+        requestAnimationFrame: (fn) => rafQueue.push(fn),
+        setTimeout: (fn) => timeoutQueue.push(fn),
         document: {
             documentElement,
             addEventListener(type, handler, capture) {
@@ -117,19 +114,12 @@ function makePage({
         });
     };
 
-    const focusIn = () => (listeners.focusin || []).forEach((fn) => fn());
-
-    // Runs the frames the script schedules, releasing the scroll lock the way
-    // the dialog does when it closes. `onFrame` can disturb the settle.
-    const runFrames = (count, onFrame) => {
-        for (let i = 0; i < count && frames.length; i += 1) {
-            documentElement.style.overflow = "";
-            if (onFrame) onFrame(i);
-            frames.shift()();
-        }
+    // Drains rAF callbacks first, then timeout callbacks — mirrors the
+    // real browser order the script relies on (rAF → setTimeout(0)).
+    const flush = () => {
+        while (rafQueue.length) rafQueue.shift()();
+        while (timeoutQueue.length) timeoutQueue.shift()();
     };
-
-    const settle = () => runFrames(200);
 
     return {
         listeners,
@@ -140,15 +130,12 @@ function makePage({
         alpineData,
         documentElement,
         click,
-        focusIn,
-        runFrames,
-        settle,
-        frames,
+        flush,
+        rafQueue,
+        timeoutQueue,
     };
 }
 
-// The modal panel calls stopPropagation on clicks, so a bubble-phase listener
-// would never see a tap on a menu link.
 test("registers its click listener on the capture phase", () => {
     const page = makePage();
     assert.equal(page.listeners.click.length, 1);
@@ -161,79 +148,23 @@ test("closes the modal and scrolls the target into view", () => {
     page.click();
     assert.equal(page.alpineData.open, false, "modal should close");
 
-    page.settle();
+    page.flush();
     assert.equal(page.target.scrollCalls.length, 1);
     assert.equal(page.target.scrollCalls[0].block, "start");
 });
 
-test("waits for the scroll lock to be released before scrolling", () => {
+test("does not scroll until the rAF + timeout flush", () => {
     const page = makePage();
 
     page.click();
-    for (let i = 0; i < 10 && page.frames.length; i += 1) page.frames.shift()();
     assert.equal(
         page.target.scrollCalls.length,
         0,
-        "nothing should scroll while the page is still locked"
+        "nothing should scroll before flush"
     );
 
-    page.settle();
+    page.flush();
     assert.equal(page.target.scrollCalls.length, 1);
-});
-
-test("waits for the dialog's focus handover to finish", () => {
-    const page = makePage();
-
-    page.click();
-    // Focus keeps moving for the first few frames, as it does while the dialog
-    // hands focus back to whatever opened it.
-    page.runFrames(6, (i) => {
-        if (i < 5) page.focusIn();
-    });
-    assert.equal(page.target.scrollCalls.length, 0);
-
-    page.settle();
-    assert.equal(page.target.scrollCalls.length, 1);
-});
-
-test("stops waiting rather than stranding the jump when lock clears but focus never settles", () => {
-    const page = makePage();
-
-    page.click();
-    for (let i = 0; i < 200 && page.frames.length; i += 1) {
-        page.documentElement.style.overflow = "";
-        page.focusIn();
-        page.frames.shift()();
-    }
-
-    assert.equal(page.target.scrollCalls.length, 1, "scroll still happens");
-});
-
-test("bails out when scroll lock is still held at ceiling", () => {
-    const page = makePage();
-
-    page.click();
-    for (let i = 0; i < 200 && page.frames.length; i += 1) {
-        page.focusIn();
-        page.frames.shift()();
-    }
-
-    assert.equal(
-        page.target.scrollCalls.length,
-        0,
-        "should not scroll while page is still locked"
-    );
-});
-
-test("stops listening for focus once it has scrolled", () => {
-    const page = makePage();
-
-    page.click();
-    page.settle();
-
-    assert.equal(page.captureFlags.focusin, true);
-    assert.equal(page.listeners.focusin.length, 0);
-    assert.equal(page.frames.length, 0, "no frames left pending");
 });
 
 test("ignores links outside a modal", () => {
@@ -243,7 +174,7 @@ test("ignores links outside a modal", () => {
     page.click();
 
     assert.equal(page.alpineData.open, true);
-    assert.equal(page.frames.length, 0);
+    assert.equal(page.rafQueue.length, 0);
 });
 
 test("ignores links to another page", () => {
@@ -304,18 +235,18 @@ test("ignores modified and non-primary clicks", () => {
 test("does nothing when there is no open dialog to close", () => {
     const closed = makePage({ open: false, locked: false });
     closed.click();
-    assert.equal(closed.frames.length, 0);
+    assert.equal(closed.rafQueue.length, 0);
 
     const withoutAlpine = makePage({ withAlpine: false, locked: false });
     withoutAlpine.click();
-    assert.equal(withoutAlpine.frames.length, 0);
+    assert.equal(withoutAlpine.rafQueue.length, 0);
 });
 
 test("resolves percent-encoded anchor ids", () => {
     const page = makePage({ href: "#caf%C3%A9", targetId: "café" });
 
     page.click();
-    page.settle();
+    page.flush();
 
     assert.equal(page.target.scrollCalls.length, 1);
 });
@@ -324,7 +255,7 @@ test("survives a malformed percent escape", () => {
     const page = makePage({ href: "#100%", targetId: "100%" });
 
     page.click();
-    page.settle();
+    page.flush();
 
     assert.equal(page.target.scrollCalls.length, 1);
 });

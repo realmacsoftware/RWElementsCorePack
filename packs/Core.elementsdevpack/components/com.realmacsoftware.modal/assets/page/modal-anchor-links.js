@@ -19,14 +19,6 @@
 (() => {
     const MODAL_SELECTOR = "[data-modal-id]";
 
-    // Frames without a focus change before we treat the close as settled. The
-    // dialog hands focus back a frame or so after it closes.
-    const QUIET_FRAMES = 3;
-
-    // Ceiling on the wait, so a modal that never unlocks (a second one still
-    // open, say) or a page that keeps stealing focus can't strand the jump.
-    const MAX_SETTLE_FRAMES = 40;
-
     const isPlainLeftClick = (event) =>
         !event.defaultPrevented &&
         event.button === 0 &&
@@ -35,8 +27,6 @@
         !event.shiftKey &&
         !event.altKey;
 
-    // Returns the hash for a link that points somewhere in the current document,
-    // or null for anything the browser should handle on its own.
     const sameDocumentHash = (link) => {
         let url;
 
@@ -70,8 +60,6 @@
         );
     };
 
-    // Returns true only when there was an open dialog to close -- if there
-    // wasn't, nothing is holding the scroll lock and the browser needs no help.
     const closeModal = (modal) => {
         const Alpine = window.Alpine;
 
@@ -86,43 +74,17 @@
         return true;
     };
 
-    // Waits for the scroll lock to come off and for the dialog's focus handover
-    // to finish, then re-runs the jump. Doing it any earlier just gets undone by
-    // the focus restore.
-    const scrollWhenSettled = (target) => {
-        let frames = 0;
-        let quiet = 0;
-
-        const onFocusIn = () => {
-            quiet = 0;
-        };
-
-        document.addEventListener("focusin", onFocusIn, true);
-
-        const tick = () => {
-            frames += 1;
-            quiet += 1;
-
-            const locked =
-                document.documentElement.style.overflow === "hidden";
-
-            if ((locked || quiet < QUIET_FRAMES) && frames < MAX_SETTLE_FRAMES) {
-                requestAnimationFrame(tick);
-                return;
-            }
-
-            document.removeEventListener("focusin", onFocusIn, true);
-
-            if (locked) return;
-
-            target.scrollIntoView({ block: "start" });
-        };
-
-        requestAnimationFrame(tick);
+    // Alpine's focus-trap deactivate restores focus via setTimeout(fn, 0).
+    // Scheduling our scroll inside rAF → setTimeout(0) puts it after that
+    // restore in typical event-loop order, without any frame-counting machine.
+    const scrollAfterFocusRestore = (target) => {
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                target.scrollIntoView({ block: "start" });
+            }, 0);
+        });
     };
 
-    // Capture phase: the modal panel stops click propagation, so a listener on
-    // the bubble phase would never see these taps.
     document.addEventListener(
         "click",
         (event) => {
@@ -147,7 +109,7 @@
 
             if (!closeModal(modal)) return;
 
-            scrollWhenSettled(target);
+            scrollAfterFocusRestore(target);
         },
         true
     );
