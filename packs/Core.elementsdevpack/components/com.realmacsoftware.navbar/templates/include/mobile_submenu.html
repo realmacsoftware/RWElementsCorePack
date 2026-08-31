@@ -21,28 +21,49 @@
             <span>{{child.title}}</span>
             @include("mobile_submenu_indicator")
         </button>
+        @else @if(child.hasPages)
+        <div class="flex items-stretch justify-between">
+            <a
+                class="{{classes.mobile.item}} flex flex-1 items-center"
+                href="{{child.url}}"
+                @click.stop
+                @if(child.isActive)
+                aria-current="page"
+                @endif
+                @if(child.hasActiveChild)
+                data-active-child
+                @endif
+                @if(child.openInNewWindow)
+                target="_blank"
+                @endif
+                >{{child.title}}</a
+            >
+            <button
+                @click.stop="open = !open"
+                aria-expanded="false"
+                x-bind:aria-expanded="open.toString()"
+                class="flex cursor-pointer items-center pl-2"
+            >
+                @include("mobile_submenu_indicator")
+            </button>
+        </div>
         @else
-        <div
-            class="{{classes.mobile.item}} flex justify-between items-center"
+        <a
+            class="{{classes.mobile.item}} block"
+            href="{{child.url}}"
+            @click.stop
             @if(child.isActive)
             aria-current="page"
             @endif
             @if(child.hasActiveChild)
             data-active-child
             @endif
+            @if(child.openInNewWindow)
+            target="_blank"
+            @endif
+            >{{child.title}}</a
         >
-            <a
-                class="block"
-                href="{{child.url}}"
-                @click.stop
-                @if(child.openInNewWindow)
-                target="_blank"
-                @endif
-                >{{child.title}}</a
-            >
-            @includeIf(child.hasPages, template: "mobile_submenu_indicator")
-        </div>
-        @endif @includeIf(child.hasPages, template: "mobile_submenu_menu")
+        @endif @endif @includeIf(child.hasPages, template: "mobile_submenu_menu")
     </li>
     @endeach
 </ul>
