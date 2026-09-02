@@ -37,9 +37,18 @@ Do not pretend Playwright can click the Mac inspector.
 
 ## Launch
 
+### Set REPO_ROOT
+
+Every section below uses `$REPO_ROOT`. Define it once at the start of your
+verification session:
+
+```bash
+export REPO_ROOT="${REPO_ROOT:-$(git rev-parse --show-toplevel)}"
+```
+
 ### Prerequisites
 
-- Node.js ≥ 18 (the VM has v22)
+- Node.js ≥ 18
 - `npm install` completed (with `rw-elements-tools` resolved — see Doctor)
 
 ### Install dependencies
@@ -258,6 +267,8 @@ Evidence directory: `$EVIDENCE_DIR` (defaults to `/tmp/core-pack-verify-<id>/evi
 Tear down only what THIS run created. Never kill by process name.
 
 ```bash
+export REPO_ROOT="${REPO_ROOT:-$(git rev-parse --show-toplevel)}"
+
 # 1. Stop the preview server (by PID file)
 if [ -f "$VERIFY_PID_FILE" ]; then
   kill "$(cat "$VERIFY_PID_FILE")" 2>/dev/null
@@ -293,7 +304,7 @@ Node.js ≥ 18.
 ## Quick-reference: full verification run
 
 ```bash
-export REPO_ROOT="/workspace"
+export REPO_ROOT="${REPO_ROOT:-$(git rev-parse --show-toplevel)}"
 export RUN_ID="$$"
 export VERIFY_PORT=8899
 export VERIFY_PID_FILE="/tmp/core-pack-verify-${RUN_ID}/preview.pid"
