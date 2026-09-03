@@ -915,6 +915,7 @@ const transformHook = (rw) => {
   const groupId = accordionGroup == "custom" ? accordionCustomGroupId : parent.id;
   const classes = {
     details: classnames([
+      "rw-accordion",
       `group/${id} transform`,
       globalLayout(rw),
       globalSizing(rw),
@@ -955,6 +956,9 @@ const transformHook = (rw) => {
       }).replace(/"/g, "'")})`,
       "x-bind": "details",
       "data-open": "false",
+      // Stable non-ARIA identity for site-wide custom CSS (RapidWeaver #4467).
+      // Replaces hooks removed in #118 without restoring role/aria-roledescription/aria-label.
+      "data-rw-accordion": "",
       id: globalID || id,
       ...filter.args,
       "data-filter-tags": dataTags
