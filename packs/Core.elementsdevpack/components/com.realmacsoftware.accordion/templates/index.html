@@ -13,7 +13,7 @@
         @dropzone("title", title: "Title")
     </span>
     @if(showIcon)
-    <span class="{{classes.icon}}" aria-hidden="true">
+    <span :data-open="open.toString()" class="{{classes.icon}}" aria-hidden="true">
         @include("icon")
     </span>
     @endif

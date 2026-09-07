@@ -340,7 +340,7 @@
           "visible": "showIcon == true && iconState == 'closed'",
           "title": "Rotation",
           "id": "iconRotationClosed",
-          "format": "{{value}}",
+          "format": "data-[open=false]:[&>svg]:rotate-[{{value}}deg]",
           "number": {
             "default": 180,
             "subtitle": "in degrees"
