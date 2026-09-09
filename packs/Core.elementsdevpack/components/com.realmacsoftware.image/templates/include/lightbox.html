@@ -4,9 +4,13 @@
 
 @portal(bodyEnd)
 <div x-cloak x-data="imageLightbox('{{id}}')">
-    <div x-show="open" x-transition:leave="duration-200" class="fixed inset-0 z-50 grid place-items-center">
+    <div
+        x-show="open"
+        x-transition:leave="duration-200"
+        @click="$dispatch('image-lightbox-close', { id: '{{id}}' })"
+        class="fixed inset-0 z-50 grid place-items-center"
+    >
         <div
-            @click="$dispatch('image-lightbox-close', { id: '{{id}}' })"
             class="{{classes.lightbox.overlay}}"
             x-show="open"
             x-transition:enter="transition ease-out duration-300"
@@ -17,7 +21,7 @@
             x-transition:leave-end="opacity-0"
         ></div>
         <button
-            @click="$dispatch('image-lightbox-close', { id: '{{id}}' })"
+            type="button"
             class="absolute top-0 right-0 p-4 text-white z-20"
         >
             <svg

@@ -204,6 +204,29 @@
                 },
                 {
                     "visible": "wantsLightbox == true",
+                    "title": "Cursor",
+                    "id": "imageLightboxCursor",
+                    "ai": {
+                        "name": "lightboxCursor",
+                        "description": "Cursor over a lightbox-enabled image: zoom or hand."
+                    },
+                    "responsive": false,
+                    "select": {
+                        "default": "zoom",
+                        "items": [
+                            {
+                                "title": "Zoom",
+                                "value": "zoom"
+                            },
+                            {
+                                "title": "Hand",
+                                "value": "hand"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "visible": "wantsLightbox == true",
                     "title": "Backdrop",
                     "heading": {}
                 },

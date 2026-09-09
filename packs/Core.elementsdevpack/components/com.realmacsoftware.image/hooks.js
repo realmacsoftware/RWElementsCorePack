@@ -535,6 +535,7 @@ const transformHook = (rw) => {
     imageSizingType,
     imageProtection,
     imageFetchPriority,
+    imageLightboxCursor,
     imageLightboxColor,
     imageLightboxColorOpacity,
     imageLightboxGlobalFiltersBackdropBlur,
@@ -562,7 +563,8 @@ const transformHook = (rw) => {
   const wantsLightboxAtAnyBreakpoint = Object.values(wantsLightbox).some((v) => v === true);
   const lightboxCursorClasses = Object.entries(wantsLightbox).map(([breakpoint, enabled]) => {
     const prefix = breakpoint === "base" ? "" : `${breakpoint}:`;
-    return enabled ? `${prefix}cursor-zoom-in` : `${prefix}cursor-default`;
+    const cursor = imageLightboxCursor === "hand" ? "cursor-pointer" : "cursor-zoom-in";
+    return enabled ? `${prefix}${cursor}` : `${prefix}cursor-default`;
   }).join(" ");
   const lightboxBreakpoints = Object.entries(wantsLightbox).map(([breakpoint, enabled]) => ({
     minWidth: breakpoint === "base" ? 0 : screens[breakpoint] || 0,
