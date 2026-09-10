@@ -15,5 +15,8 @@ Thumbs.db
 *.swp
 *.swo
 
+# Generated test fixtures
+test/fixtures/
+
 # Worktrees
 .worktrees/
