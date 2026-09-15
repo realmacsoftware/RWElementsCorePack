@@ -204,26 +204,25 @@ const globalTransitions = (app, alwaysWantsHover = false) => {
   ]).toString() : "";
 };
 const OPAQUE_RASTER_FORMATS = /* @__PURE__ */ new Set(["jpeg", "jpg", "bmp"]);
-const shapeMarginLength = (formatted) => {
-  var _a, _b;
-  const value = (_b = (_a = `${formatted || ""}`.match(/\[shape-margin:(.+?)\]/)) == null ? void 0 : _a[1]) == null ? void 0 : _b.trim();
-  if (!value) {
+const shapeMarginTokenToLength = (value) => {
+  const token = `${value || ""}`.trim();
+  if (!token) {
     return null;
   }
-  if (value === "0") {
+  if (token === "0") {
     return "0";
   }
-  if (value === "px") {
+  if (token === "px") {
     return "1px";
   }
-  if (/[a-z%]$/i.test(value)) {
-    return value;
+  if (/[a-z%]$/i.test(token)) {
+    return token;
   }
-  const token = Number(value);
-  if (!Number.isNaN(token)) {
-    return `${token * 0.25}rem`;
+  const numeric = Number(token);
+  if (!Number.isNaN(numeric)) {
+    return `${numeric * 0.25}rem`;
   }
-  return value;
+  return token;
 };
 const extensionOf = (url) => {
   var _a;
@@ -331,6 +330,24 @@ const marginByBreakpointFromFormatted = (formatted) => {
   }
   return values;
 };
+const getShapeMarginClasses = (marginByBp, breakpointNames) => {
+  const breakpoints = ["base", ...breakpointNames];
+  const classes = [];
+  let prevLength = null;
+  for (const bp of breakpoints) {
+    const raw = resolveResponsiveValue(breakpoints, marginByBp, bp, null);
+    const length = shapeMarginTokenToLength(raw);
+    if (!length) {
+      continue;
+    }
+    if (bp !== "base" && length === prevLength) {
+      continue;
+    }
+    classes.push(withBreakpointPrefix(bp, `[shape-margin:${length}]`));
+    prevLength = length;
+  }
+  return classes.filter(Boolean).join(" ");
+};
 const isInlineSvgMarkup = (value) => {
   return typeof value === "string" && value.includes("<svg");
 };
@@ -406,17 +423,15 @@ const transformHook = (rw) => {
     styles.push(`shape-outside: url('${shapeSourceUrl}${cacheKey}')`);
     styles.push(`shape-image-threshold: ${threshold}`);
   }
-  const shapeMarginValue = shapeMarginLength(shapeMargin);
-  if (styles.length > 0 && shapeMarginValue) {
-    styles.push(`shape-margin: ${shapeMarginValue}`);
-  }
   const mediaStyle = styles.length > 0 ? `${styles.join("; ")};` : "";
   const floatClasses = [mediaFloat, mediaWidth];
   const { mediaFloat: floatByBp } = rw.responsiveProps || {};
   const { names: breakpointNames = [] } = ((_a = rw.theme) == null ? void 0 : _a.breakpoints) || {};
+  const marginByBp = marginByBreakpointFromFormatted(shapeMargin);
+  const shapeMarginClasses = styles.length > 0 ? getShapeMarginClasses(marginByBp, breakpointNames) : "";
   const floatMarginClasses = getFloatMarginClasses(
     floatByBp || {},
-    marginByBreakpointFromFormatted(shapeMargin),
+    marginByBp,
     breakpointNames
   );
   const classes = {
@@ -435,6 +450,7 @@ const transformHook = (rw) => {
     media: classnames([
       ...floatClasses,
       floatMarginClasses,
+      shapeMarginClasses,
       "h-auto max-w-full"
     ]).toString(),
     embedFrame: classnames([
