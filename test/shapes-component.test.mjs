@@ -152,13 +152,14 @@ test("auto shape emits an inline shape-outside url style with threshold", () => 
 
     assert.equal(
         rw.computedProps.mediaStyle,
-        "shape-outside: url('https://example.com/cutout.png#rwt=0.75'); shape-image-threshold: 0.75; shape-margin: 1rem;"
+        "shape-outside: url('https://example.com/cutout.png#rwt=0.75'); shape-image-threshold: 0.75;"
     );
     assert.doesNotMatch(rw.computedProps.classes.media, /shape-outside/);
+    assert.match(rw.computedProps.classes.media, /\[shape-margin:1rem\]/);
     assert.equal(rw.computedProps.isImage, true);
 });
 
-test("float and width classes pass through to the media, margin goes inline", () => {
+test("float and width classes pass through to the media, margin is a shape-margin utility", () => {
     const rw = renderShapes({
         media: image,
         mediaFloat: "float-none md:float-right",
@@ -168,8 +169,8 @@ test("float and width classes pass through to the media, margin goes inline", ()
 
     assert.match(rw.computedProps.classes.media, /float-none md:float-right/);
     assert.match(rw.computedProps.classes.media, /w-\[50%\]/);
-    assert.doesNotMatch(rw.computedProps.classes.media, /shape-margin/);
-    assert.match(rw.computedProps.mediaStyle, /shape-margin: 1\.5rem;/);
+    assert.match(rw.computedProps.classes.media, /\[shape-margin:1\.5rem\]/);
+    assert.doesNotMatch(rw.computedProps.mediaStyle, /shape-margin/);
 });
 
 test("shape margin accepts custom css lengths from theme spacing", () => {
@@ -178,7 +179,8 @@ test("shape margin accepts custom css lengths from theme spacing", () => {
         shapeMargin: "[shape-margin:24px]",
     });
 
-    assert.match(rw.computedProps.mediaStyle, /shape-margin: 24px;/);
+    assert.match(rw.computedProps.classes.media, /\[shape-margin:24px\]/);
+    assert.doesNotMatch(rw.computedProps.mediaStyle, /shape-margin/);
 });
 
 test("opaque jpeg uses responsive tailwind margins instead of shape-outside", () => {
@@ -277,6 +279,7 @@ test("opaque jpeg applies responsive margin values with float-right", () => {
     assert.match(rw.computedProps.classes.media, /\bmb-4\b/);
     assert.match(rw.computedProps.classes.media, /\bmd:ml-6\b/);
     assert.match(rw.computedProps.classes.media, /\bmd:mb-6\b/);
+    assert.doesNotMatch(rw.computedProps.classes.media, /shape-margin/);
 });
 
 // The shape-outside float area is clipped to the margin box, so the real margin
@@ -287,7 +290,7 @@ test("png keeps inline shape styles and gains real float margins", () => {
     const rw = renderShapes({ media: image, shapeImageThreshold: 75 });
 
     assert.match(rw.computedProps.mediaStyle, /shape-outside: url\('https:\/\/example.com\/cutout.png#rwt=0\.75'\)/);
-    assert.match(rw.computedProps.mediaStyle, /shape-margin: 1rem;/);
+    assert.match(rw.computedProps.classes.media, /\[shape-margin:1rem\]/);
     assert.match(rw.computedProps.classes.media, /\bmr-4\b/);
     assert.match(rw.computedProps.classes.media, /\bmb-4\b/);
 });
@@ -299,9 +302,56 @@ test("custom url png gets both inline shape styles and float margins", () => {
     });
 
     assert.match(rw.computedProps.mediaStyle, /shape-outside: url\('https:\/\/example.com\/cutout.png/);
-    assert.match(rw.computedProps.mediaStyle, /shape-margin: 1rem;/);
+    assert.match(rw.computedProps.classes.media, /\[shape-margin:1rem\]/);
     assert.match(rw.computedProps.classes.media, /\bmr-4\b/);
     assert.match(rw.computedProps.classes.media, /\bmb-4\b/);
+});
+
+test("png wrap-shape applies breakpoint media margin as a responsive shape-margin utility", () => {
+    const rw = renderShapes(
+        {
+            media: image,
+            shapeMargin: "[shape-margin:4] md:[shape-margin:8]",
+        },
+        "preview",
+        {
+            responsiveProps: {
+                mediaFloat: { base: "left" },
+                shapeMargin: { base: {}, md: {} },
+            },
+            breakpointNames: ["sm", "md", "lg", "xl", "2xl"],
+        }
+    );
+
+    assert.match(rw.computedProps.mediaStyle, /shape-outside:/);
+    assert.doesNotMatch(rw.computedProps.mediaStyle, /shape-margin/);
+    assert.match(rw.computedProps.classes.media, /\[shape-margin:1rem\]/);
+    assert.match(rw.computedProps.classes.media, /md:\[shape-margin:2rem\]/);
+    assert.doesNotMatch(rw.computedProps.classes.media, /md:\[shape-margin:1rem\]/);
+    assert.match(rw.computedProps.classes.media, /\bmr-4\b/);
+    assert.match(rw.computedProps.classes.media, /\bmd:mr-8\b/);
+});
+
+test("svg wrap-shape applies breakpoint media margin as a responsive shape-margin utility", () => {
+    const rw = renderShapes(
+        {
+            media: svg,
+            shapeMargin: "[shape-margin:4] md:[shape-margin:6]",
+        },
+        "preview",
+        {
+            responsiveProps: {
+                mediaFloat: { base: "left" },
+                shapeMargin: { base: {}, md: {} },
+            },
+            breakpointNames: ["sm", "md", "lg", "xl", "2xl"],
+        }
+    );
+
+    assert.match(rw.computedProps.mediaStyle, /shape-outside: url\('data:image\/svg\+xml/);
+    assert.doesNotMatch(rw.computedProps.mediaStyle, /shape-margin/);
+    assert.match(rw.computedProps.classes.media, /\[shape-margin:1rem\]/);
+    assert.match(rw.computedProps.classes.media, /md:\[shape-margin:1\.5rem\]/);
 });
 
 test("auto shape degrades to a plain rectangle with float margins for video", () => {

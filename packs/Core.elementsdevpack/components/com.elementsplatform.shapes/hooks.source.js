@@ -1,29 +1,29 @@
 const OPAQUE_RASTER_FORMATS = new Set(["jpeg", "jpg", "bmp"]);
 
-const shapeMarginLength = (formatted) => {
-    const value = `${formatted || ""}`.match(/\[shape-margin:(.+?)\]/)?.[1]?.trim();
-    if (!value) {
+const shapeMarginTokenToLength = (value) => {
+    const token = `${value || ""}`.trim();
+    if (!token) {
         return null;
     }
 
-    if (value === "0") {
+    if (token === "0") {
         return "0";
     }
 
-    if (value === "px") {
+    if (token === "px") {
         return "1px";
     }
 
-    if (/[a-z%]$/i.test(value)) {
-        return value;
+    if (/[a-z%]$/i.test(token)) {
+        return token;
     }
 
-    const token = Number(value);
-    if (!Number.isNaN(token)) {
-        return `${token * 0.25}rem`;
+    const numeric = Number(token);
+    if (!Number.isNaN(numeric)) {
+        return `${numeric * 0.25}rem`;
     }
 
-    return value;
+    return token;
 };
 
 const extensionOf = (url) => {
@@ -161,6 +161,31 @@ const marginByBreakpointFromFormatted = (formatted) => {
     return values;
 };
 
+// shape-margin is a private format token, not a Tailwind spacing utility, so
+// convert each breakpoint value to a CSS length and emit [shape-margin:…]
+// arbitrary properties (md: prefixes work the same as Width / Float)
+const getShapeMarginClasses = (marginByBp, breakpointNames) => {
+    const breakpoints = ["base", ...breakpointNames];
+    const classes = [];
+    let prevLength = null;
+
+    for (const bp of breakpoints) {
+        const raw = resolveResponsiveValue(breakpoints, marginByBp, bp, null);
+        const length = shapeMarginTokenToLength(raw);
+        if (!length) {
+            continue;
+        }
+        if (bp !== "base" && length === prevLength) {
+            continue;
+        }
+
+        classes.push(withBreakpointPrefix(bp, `[shape-margin:${length}]`));
+        prevLength = length;
+    }
+
+    return classes.filter(Boolean).join(" ");
+};
+
 const isInlineSvgMarkup = (value) => {
     return typeof value === "string" && value.includes("<svg");
 };
@@ -256,8 +281,9 @@ const transformHook = (rw) => {
 
     const svgImageUrl = isSvg && media?.image ? svgShapeUrl(media.image) : "";
 
-    // Shape values (url(), polygon(), etc.) are unsafe as Tailwind class names
-    // and won't exist in the compiled CSS, so all shape CSS goes inline
+    // Shape-outside urls are unsafe as Tailwind class names and won't exist in
+    // the compiled CSS, so those declarations stay inline. shape-margin is a
+    // simple length, so it is emitted as responsive [shape-margin:…] utilities.
     const styles = [];
 
     const shapeSourceUrl = isResourceMedia
@@ -273,23 +299,22 @@ const transformHook = (rw) => {
         styles.push(`shape-image-threshold: ${threshold}`);
     }
 
-    const shapeMarginValue = shapeMarginLength(shapeMargin);
-    if (styles.length > 0 && shapeMarginValue) {
-        styles.push(`shape-margin: ${shapeMarginValue}`);
-    }
-
     const mediaStyle = styles.length > 0 ? `${styles.join("; ")};` : "";
 
     const floatClasses = [mediaFloat, mediaWidth];
 
     const { mediaFloat: floatByBp } = rw.responsiveProps || {};
     const { names: breakpointNames = [] } = rw.theme?.breakpoints || {};
+    const marginByBp = marginByBreakpointFromFormatted(shapeMargin);
+    const shapeMarginClasses = styles.length > 0
+        ? getShapeMarginClasses(marginByBp, breakpointNames)
+        : "";
     // The shape-outside float area is clipped to the margin box, so shape-margin
     // needs real margins to expand into; for opaque images (e.g. a PNG with no
     // transparency) and video the margin classes are the entire mechanism
     const floatMarginClasses = getFloatMarginClasses(
         floatByBp || {},
-        marginByBreakpointFromFormatted(shapeMargin),
+        marginByBp,
         breakpointNames
     );
 
@@ -309,6 +334,7 @@ const transformHook = (rw) => {
         media: classnames([
             ...floatClasses,
             floatMarginClasses,
+            shapeMarginClasses,
             "h-auto max-w-full",
         ]).toString(),
         embedFrame: classnames([
