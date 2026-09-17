@@ -3742,6 +3742,10 @@
         {
           "title": "Classes",
           "id": "cssClasses",
+          "ai": {
+            "name": "cssClasses",
+            "description": "Space-separated CSS class names (no leading dots). Prefer Inspector settings when they already cover the same styling."
+          },
           "textArea": {
             "default": ""
           }
@@ -3749,6 +3753,10 @@
         {
           "title": "ID",
           "id": "globalID",
+          "ai": {
+            "name": "htmlId",
+            "description": "HTML id (no leading #). Unique on the page. Registers an on-page anchor in the Link panel, a CSS/JS hook, and the Tailwind hover-group name."
+          },
           "responsive": false,
           "text": {
             "default": ""
