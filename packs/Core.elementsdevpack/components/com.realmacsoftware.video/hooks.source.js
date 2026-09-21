@@ -1,3 +1,18 @@
+const DEFAULT_VIDEO_ASPECT = "16/9";
+
+const resolveVideoAspectClass = (rw) =>
+    rw.props.aspectRatio == "aspect-[auto]"
+        ? "aspect-video"
+        : aspectRatioClasses(rw);
+
+const aspectRatioCssPair = (aspectClass) => {
+    if (aspectClass === "aspect-video") return DEFAULT_VIDEO_ASPECT;
+    const match = String(aspectClass).match(
+        /aspect-\[(\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)\]/
+    );
+    return match ? `${match[1]}/${match[2]}` : DEFAULT_VIDEO_ASPECT;
+};
+
 const transformHook = (rw) => {
     const {
         globalID,
@@ -86,11 +101,12 @@ const transformHook = (rw) => {
         image: `${assetPath}/video-placeholder.png`,
     };
 
+    const videoAspectClass = resolveVideoAspectClass(rw);
+    const videoAspectCss = aspectRatioCssPair(videoAspectClass);
+
     const wrapperClasses = classnames([
         `group/${id} group/video relative`,
-        rw.props.aspectRatio == "aspect-[auto]"
-            ? `aspect-video`
-            : aspectRatioClasses(rw),
+        videoAspectClass,
         advancedClasses(rw),
         globalLayout(rw),
         globalSizing(rw),
@@ -103,13 +119,13 @@ const transformHook = (rw) => {
     ]).toString();
 
     const videoClasses = classnames([
-        `aspect-video w-full h-auto`,
+        `${videoAspectClass} w-full h-auto`,
         objectClasses(rw),
         globalPadding,
     ]).toString();
 
     const videoLightboxClasses = classnames([
-        `aspect-video w-[min(95vw,calc(95vh*16/9))] max-w-[1920px] max-h-[95vh]`,
+        `${videoAspectClass} w-[min(95vw,calc(95vh*${videoAspectCss}))] max-w-[1920px] max-h-[95vh]`,
         objectClasses(rw),
         globalPadding,
     ]).toString();
