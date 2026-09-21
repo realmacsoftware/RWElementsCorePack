@@ -72,13 +72,13 @@
         {
           "visible": "layout == 'cardRow'",
           "information": {},
-          "title": "Show several cards at once with a peek of the next card. Visitors can swipe freely; desktop arrows still step the row."
+          "title": "Show several cards at once with a peek of the next card. Use the breakpoint switcher on Visible Slides to set how many show on mobile, tablet, desktop, and large displays."
         },
         {
           "enable": "layout == 'cardRow'",
           "title": "Visible Slides",
           "id": "visibleSlides",
-          "responsive": false,
+          "responsive": true,
           "slider": {
             "default": "3",
             "items": [
@@ -105,29 +105,6 @@
               {
                 "title": "6",
                 "value": "6"
-              }
-            ]
-          }
-        },
-        {
-          "enable": "layout == 'cardRow'",
-          "title": "Visible on Mobile",
-          "id": "visibleSlidesMobile",
-          "responsive": false,
-          "slider": {
-            "default": "1",
-            "items": [
-              {
-                "title": "1",
-                "value": "1"
-              },
-              {
-                "title": "2",
-                "value": "2"
-              },
-              {
-                "title": "3",
-                "value": "3"
               }
             ]
           }

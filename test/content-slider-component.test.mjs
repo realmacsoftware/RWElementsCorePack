@@ -56,12 +56,25 @@ function defaultSlides(count = 3) {
     }));
 }
 
-function renderSlider({ props = {}, slides, mode = "preview" } = {}) {
+function renderSlider({
+    props = {},
+    slides,
+    mode = "preview",
+    responsiveProps = {},
+    screens = { sm: 640, md: 768, lg: 1024, xl: 1280, "2xl": 1536 },
+} = {}) {
     const transformHook = loadTransformHook();
     const rw = {
         props: {
             globalID: "",
             ...props,
+        },
+        responsiveProps,
+        theme: {
+            breakpoints: {
+                names: ["sm", "md", "lg", "xl", "2xl"],
+                screens,
+            },
         },
         node: { id: "node-1" },
         project: { mode },
@@ -104,13 +117,12 @@ test("single layout stays one slide at a time without free scroll", () => {
     assert.equal(options.breakpoints, undefined);
 });
 
-test("card row shows a desktop peek and free-scrolls from mobile", () => {
+test("card row shows a peek and free-scrolls at the base visible count", () => {
     const options = swiperOptions(
         renderSlider({
             props: {
                 layout: "cardRow",
                 visibleSlides: "3",
-                visibleSlidesMobile: "1",
                 peekNext: true,
                 slideGap: 16,
                 scrollMode: "free",
@@ -118,15 +130,38 @@ test("card row shows a desktop peek and free-scrolls from mobile", () => {
         }),
     );
 
-    assert.equal(options.slidesPerView, 1.25);
+    assert.equal(options.slidesPerView, 3.25);
     assert.equal(options.spaceBetween, 16);
     assert.equal(options.loop, false);
     assert.equal(options.rewind, true);
     assert.equal(options.grabCursor, true);
     assert.equal(options.watchOverflow, true);
     assert.deepEqual(options.freeMode, { enabled: true, momentum: true });
-    assert.equal(options.breakpoints[768].slidesPerView, 3.25);
+    assert.equal(options.breakpoints, undefined);
     assert.equal(options.effect, "slide");
+});
+
+test("card row maps responsive visibleSlides onto Swiper breakpoints", () => {
+    const options = swiperOptions(
+        renderSlider({
+            props: {
+                layout: "cardRow",
+                visibleSlides: "1",
+                peekNext: true,
+                slideGap: 16,
+                scrollMode: "free",
+            },
+            responsiveProps: {
+                visibleSlides: { base: "1", md: "2", lg: "3", xl: "4" },
+            },
+        }),
+    );
+
+    assert.equal(options.slidesPerView, 1.25);
+    assert.equal(options.breakpoints[768].slidesPerView, 2.25);
+    assert.equal(options.breakpoints[1024].slidesPerView, 3.25);
+    assert.equal(options.breakpoints[1280].slidesPerView, 4.25);
+    assert.equal(options.breakpoints[640], undefined);
 });
 
 test("card row without peek uses whole-card slidesPerView", () => {
@@ -135,7 +170,6 @@ test("card row without peek uses whole-card slidesPerView", () => {
             props: {
                 layout: "cardRow",
                 visibleSlides: "4",
-                visibleSlidesMobile: "2",
                 peekNext: false,
                 slideGap: "24",
                 scrollMode: "snap",
@@ -143,10 +177,10 @@ test("card row without peek uses whole-card slidesPerView", () => {
         }),
     );
 
-    assert.equal(options.slidesPerView, 2);
+    assert.equal(options.slidesPerView, 4);
     assert.equal(options.spaceBetween, 24);
     assert.equal(options.freeMode, false);
-    assert.equal(options.breakpoints[768].slidesPerView, 4);
+    assert.equal(options.breakpoints, undefined);
 });
 
 test("card row forces slide effect even when fade is selected", () => {
@@ -157,7 +191,6 @@ test("card row forces slide effect even when fade is selected", () => {
                 transitionEffect: "fade",
                 peekNext: true,
                 visibleSlides: "3",
-                visibleSlidesMobile: "1",
             },
         }),
     );
@@ -205,6 +238,21 @@ test("card row editor lays slides in a horizontal scrolling row", () => {
     assert.match(rw.computedProps.cardRowSlideStyle, /3\.25/);
     assert.match(rw.computedProps.cardRowSlideStyle, /min-width:\s*0/);
 
+    const widest = renderSlider({
+        props: {
+            layout: "cardRow",
+            visibleSlides: "1",
+            peekNext: true,
+            slideGap: 16,
+        },
+        responsiveProps: {
+            visibleSlides: { base: "1", lg: "3" },
+        },
+        mode: "edit",
+        slides: defaultSlides(5),
+    });
+    assert.match(widest.computedProps.cardRowSlideStyle, /3\.25/);
+
     const template = fs.readFileSync(`${componentDir}/templates/index.html`, "utf8");
     assert.match(template, /cardRowViewportStyle/);
     assert.match(template, /cardRowTrackStyle/);
@@ -240,7 +288,7 @@ test("inspector exposes card-row layout, peek, gap, and scroll controls", () => 
     const ids = properties.map((property) => property.id).filter(Boolean);
 
     assert.deepEqual(
-        ["layout", "visibleSlides", "visibleSlidesMobile", "peekNext", "slideGap", "scrollMode"].every(
+        ["layout", "visibleSlides", "peekNext", "slideGap", "scrollMode"].every(
             (id) => ids.includes(id),
         ),
         true,
@@ -251,6 +299,13 @@ test("inspector exposes card-row layout, peek, gap, and scroll controls", () => 
     assert.deepEqual(
         layout.segmented.items.map((item) => item.value),
         ["single", "cardRow"],
+    );
+
+    const visibleSlides = properties.find((property) => property.id === "visibleSlides");
+    assert.equal(visibleSlides.responsive, true);
+    assert.equal(
+        properties.some((property) => property.id === "visibleSlidesMobile"),
+        false,
     );
 
     const effect = properties.find((property) => property.id === "transitionEffect");

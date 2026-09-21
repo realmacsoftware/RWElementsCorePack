@@ -1,5 +1,6 @@
 const PEEK_AMOUNT = 0.25;
-const CARD_ROW_BREAKPOINT = 768;
+const DEVICE_ORDER = ["base", "sm", "md", "lg", "xl", "2xl"];
+const DEFAULT_SCREENS = { sm: 640, md: 768, lg: 1024, xl: 1280, "2xl": 1536 };
 
 const isTrue = (value) => value === true || value === "true";
 
@@ -10,12 +11,40 @@ const toCount = (value, fallback) => {
 
 const applyPeek = (count, peek) => (peek ? count + PEEK_AMOUNT : count);
 
+const hasCount = (value) => value !== undefined && value !== null && value !== "";
+
+const resolveVisibleSlideViews = (visibleSlides, responsiveVisible, theme, peek) => {
+    const screens = { ...DEFAULT_SCREENS, ...(theme?.breakpoints?.screens || {}) };
+    const raw = responsiveVisible && typeof responsiveVisible === "object" ? responsiveVisible : {};
+    let current = toCount(hasCount(raw.base) ? raw.base : visibleSlides, 3);
+    const baseView = applyPeek(current, peek);
+    const breakpoints = {};
+    let editorCount = current;
+
+    DEVICE_ORDER.slice(1).forEach((name) => {
+        if (!hasCount(raw[name])) {
+            return;
+        }
+        current = toCount(raw[name], current);
+        editorCount = Math.max(editorCount, current);
+        const minWidth = screens[name];
+        if (minWidth) {
+            breakpoints[minWidth] = { slidesPerView: applyPeek(current, peek) };
+        }
+    });
+
+    return {
+        baseView,
+        breakpoints,
+        editorView: applyPeek(editorCount, peek),
+    };
+};
+
 const transformHook = (rw) => {
     const {
         globalID,
         layout,
         visibleSlides,
-        visibleSlidesMobile,
         peekNext,
         slideGap,
         scrollMode,
@@ -42,11 +71,13 @@ const transformHook = (rw) => {
     const edit = mode === "edit";
     const isCardRow = (layout || "single") === "cardRow";
     const peekEnabled = peekNext === undefined ? true : isTrue(peekNext);
-    const desktopCount = toCount(visibleSlides, 3);
-    const mobileCount = toCount(visibleSlidesMobile, 1);
     const gap = Math.max(0, parseInt(slideGap, 10) || (isCardRow ? 16 : 0));
-    const desktopView = applyPeek(desktopCount, isCardRow && peekEnabled);
-    const mobileView = applyPeek(mobileCount, isCardRow && peekEnabled);
+    const visibleViews = resolveVisibleSlideViews(
+        visibleSlides,
+        rw.responsiveProps?.visibleSlides,
+        rw.theme,
+        isCardRow && peekEnabled,
+    );
     const isFreeScroll = !isCardRow ? false : (scrollMode || "free") === "free";
 
     // Get slides from collection
@@ -70,7 +101,7 @@ const transformHook = (rw) => {
         hideInEditor: edit && !isCardRow && index !== activeSlideIndex,
     }));
 
-    const cardRowSlot = `calc((100% - ${gap}px * ${desktopView - 1}) / ${desktopView})`;
+    const cardRowSlot = `calc((100% - ${gap}px * ${visibleViews.editorView - 1}) / ${visibleViews.editorView})`;
     const cardRowViewportStyle = edit && isCardRow
         ? "overflow-x: auto;"
         : "";
@@ -130,7 +161,7 @@ const transformHook = (rw) => {
     const swiperOptions = {
         loop: isLoop,
         rewind: !isLoop,
-        slidesPerView: isCardRow ? mobileView : 1,
+        slidesPerView: isCardRow ? visibleViews.baseView : 1,
         spaceBetween: isCardRow ? gap : 0,
         speed: 400,
         effect: effect,
@@ -141,11 +172,9 @@ const transformHook = (rw) => {
         swiperOptions.grabCursor = true;
         swiperOptions.watchOverflow = true;
         swiperOptions.freeMode = isFreeScroll ? { enabled: true, momentum: true } : false;
-        swiperOptions.breakpoints = {
-            [CARD_ROW_BREAKPOINT]: {
-                slidesPerView: desktopView,
-            },
-        };
+        if (Object.keys(visibleViews.breakpoints).length > 0) {
+            swiperOptions.breakpoints = visibleViews.breakpoints;
+        }
     }
 
     // Add fade-specific options for smooth crossfade
