@@ -582,7 +582,10 @@ const transformHook = (rw) => {
     isActive: index === activeSlideIndex,
     hideInEditor: edit && !isCardRow && index !== activeSlideIndex
   }));
-  const cardRowSlideStyle = edit && isCardRow ? `width: calc((100% - ${gap * (desktopView - 1)}px) / ${desktopView}); margin-right: ${gap}px;` : "";
+  const cardRowSlot = `calc((100% - ${gap}px * ${desktopView - 1}) / ${desktopView})`;
+  const cardRowViewportStyle = edit && isCardRow ? "overflow-x: auto;" : "";
+  const cardRowTrackStyle = edit && isCardRow ? `display: flex; flex-wrap: nowrap; align-items: stretch; gap: ${gap}px;` : "";
+  const cardRowSlideStyle = edit && isCardRow ? `flex: 0 0 ${cardRowSlot}; width: ${cardRowSlot}; max-width: ${cardRowSlot}; min-width: 0; box-sizing: border-box; position: relative;` : "";
   const classes = {
     wrapper: classnames([
       `group/${id}`,
@@ -593,10 +596,7 @@ const transformHook = (rw) => {
       globalBorders(rw),
       advancedClasses(rw)
     ]).toString(),
-    swiper: classnames([
-      "swiper",
-      edit && isCardRow ? "overflow-x-auto" : ""
-    ]).toString(),
+    swiper: "swiper",
     swiperWrapper: "swiper-wrapper",
     slide: classnames([
       "swiper-slide",
@@ -667,6 +667,8 @@ const transformHook = (rw) => {
     showArrows: isTrue(showArrows),
     showDots: isTrue(showDots),
     swiperOptions: JSON.stringify(swiperOptions).replace(/"/g, "'"),
+    cardRowViewportStyle,
+    cardRowTrackStyle,
     cardRowSlideStyle,
     isCardRow,
     activeSlideIndex,

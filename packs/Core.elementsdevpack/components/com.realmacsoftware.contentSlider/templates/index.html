@@ -2,11 +2,19 @@
 
 <div
     class="{{classes.swiper}}"
+    @if(cardRowViewportStyle)
+    style="{{cardRowViewportStyle}}"
+    @endif
     @if(!edit)
     x-data="elementsContentSlider('{{id}}', {{swiperOptions}})"
     @endif
 >
-    <div class="{{classes.swiperWrapper}}">
+    <div
+        class="{{classes.swiperWrapper}}"
+        @if(cardRowTrackStyle)
+        style="{{cardRowTrackStyle}}"
+        @endif
+    >
         @each(slide in slides)
         <div
             class="{{classes.slide}}"

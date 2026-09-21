@@ -183,8 +183,42 @@ test("card row editor keeps every slide visible so cards can be edited", () => {
         rw.computedProps.slides.every((slide) => slide.hideInEditor === false),
         true,
     );
-    assert.match(rw.computedProps.cardRowSlideStyle, /width:/);
-    assert.match(rw.computedProps.cardRowSlideStyle, /16px|margin-right/);
+});
+
+test("card row editor lays slides in a horizontal scrolling row", () => {
+    const rw = renderSlider({
+        props: {
+            layout: "cardRow",
+            visibleSlides: "3",
+            peekNext: true,
+            slideGap: 16,
+        },
+        mode: "edit",
+        slides: defaultSlides(5),
+    });
+
+    assert.match(rw.computedProps.cardRowViewportStyle, /overflow-x:\s*auto/);
+    assert.match(rw.computedProps.cardRowTrackStyle, /display:\s*flex/);
+    assert.match(rw.computedProps.cardRowTrackStyle, /nowrap/);
+    assert.match(rw.computedProps.cardRowTrackStyle, /16px/);
+    assert.match(rw.computedProps.cardRowSlideStyle, /flex:\s*0 0/);
+    assert.match(rw.computedProps.cardRowSlideStyle, /3\.25/);
+    assert.match(rw.computedProps.cardRowSlideStyle, /min-width:\s*0/);
+
+    const template = fs.readFileSync(`${componentDir}/templates/index.html`, "utf8");
+    assert.match(template, /cardRowViewportStyle/);
+    assert.match(template, /cardRowTrackStyle/);
+});
+
+test("preview card row leaves layout to Swiper instead of editor row styles", () => {
+    const rw = renderSlider({
+        props: { layout: "cardRow", peekNext: true, visibleSlides: "3" },
+        mode: "preview",
+    });
+
+    assert.equal(rw.computedProps.cardRowViewportStyle, "");
+    assert.equal(rw.computedProps.cardRowTrackStyle, "");
+    assert.equal(rw.computedProps.cardRowSlideStyle, "");
 });
 
 test("single layout still hides inactive slides in the editor", () => {
