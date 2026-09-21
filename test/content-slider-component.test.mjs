@@ -234,23 +234,22 @@ test("card row editor lays slides in a horizontal scrolling row", () => {
     assert.match(rw.computedProps.cardRowTrackStyle, /display:\s*flex/);
     assert.match(rw.computedProps.cardRowTrackStyle, /nowrap/);
     assert.match(rw.computedProps.cardRowTrackStyle, /16px/);
-    assert.match(rw.computedProps.classes.slide, /content-slider-card/);
-    assert.match(rw.computedProps.cardRowMediaCss, /#node-1/);
-    assert.match(rw.computedProps.cardRowMediaCss, /3\.25/);
-    assert.match(rw.computedProps.cardRowSlideStyle, /min-width:\s*0/);
-    assert.doesNotMatch(rw.computedProps.cardRowSlideStyle, /flex:\s*0 0/);
+    assert.match(rw.computedProps.classes.slide, /shrink-0/);
+    assert.match(rw.computedProps.classes.slide, /3\.25/);
+    assert.match(rw.computedProps.cardRowSlideStyle, /flex:\s*0 0/);
+    assert.match(rw.computedProps.cardRowSlideStyle, /3\.25/);
 
     const template = fs.readFileSync(`${componentDir}/templates/index.html`, "utf8");
     assert.match(template, /cardRowViewportStyle/);
     assert.match(template, /cardRowTrackStyle/);
-    assert.match(template, /cardRowMediaCss/);
+    assert.equal(template.includes("cardRowMediaCss"), false);
 });
 
 test("card row editor applies larger-breakpoint visibleSlides overrides", () => {
     const rw = renderSlider({
         props: {
             layout: "cardRow",
-            visibleSlides: "2",
+            visibleSlides: "1",
             peekNext: true,
             slideGap: 16,
         },
@@ -261,11 +260,11 @@ test("card row editor applies larger-breakpoint visibleSlides overrides", () => 
         slides: defaultSlides(5),
     });
 
-    assert.match(rw.computedProps.cardRowMediaCss, /2\.25/);
-    assert.match(rw.computedProps.cardRowMediaCss, /min-width:\s*768px/);
-    assert.match(rw.computedProps.cardRowMediaCss, /1\.25/);
+    assert.match(rw.computedProps.classes.slide, /2\.25/);
+    assert.match(rw.computedProps.classes.slide, /md:!w-\[calc/);
+    assert.match(rw.computedProps.classes.slide, /1\.25/);
+    assert.match(rw.computedProps.cardRowSlideStyle, /1\.25/);
     assert.doesNotMatch(rw.computedProps.cardRowSlideStyle, /2\.25/);
-    assert.doesNotMatch(rw.computedProps.cardRowSlideStyle, /flex:\s*0 0/);
 });
 
 test("preview card row leaves layout to Swiper instead of editor row styles", () => {
@@ -277,7 +276,7 @@ test("preview card row leaves layout to Swiper instead of editor row styles", ()
     assert.equal(rw.computedProps.cardRowViewportStyle, "");
     assert.equal(rw.computedProps.cardRowTrackStyle, "");
     assert.equal(rw.computedProps.cardRowSlideStyle, "");
-    assert.equal(rw.computedProps.cardRowMediaCss, "");
+    assert.doesNotMatch(rw.computedProps.classes.slide, /!w-\[/);
 });
 
 test("single layout still hides inactive slides in the editor", () => {

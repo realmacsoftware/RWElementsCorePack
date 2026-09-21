@@ -44,16 +44,24 @@ const slotDeclarations = (gap, view) => {
     return `flex: 0 0 ${slot}; width: ${slot}; max-width: ${slot};`;
 };
 
-const buildCardRowMediaCss = (cssId, gap, visibleViews) => {
-    if (!cssId) {
-        return "";
-    }
-    const selector = `#${cssId} .content-slider-card`;
-    let css = `${selector} { ${slotDeclarations(gap, visibleViews.baseView)} }`;
-    Object.entries(visibleViews.breakpoints).forEach(([minWidth, options]) => {
-        css += ` @media (min-width: ${minWidth}px) { ${selector} { ${slotDeclarations(gap, options.slidesPerView)} } }`;
+const widthUtility = (count, peek, gap) => {
+    const view = applyPeek(count, peek);
+    return `!w-[${slotCalc(gap, view)}]`;
+};
+
+const cardRowWidthClasses = (visibleSlides, raw, peek, gap) => {
+    const values = raw && typeof raw === "object" ? raw : {};
+    const baseCount = toCount(hasCount(values.base) ? values.base : visibleSlides, 3);
+    const classes = ["shrink-0", "min-w-0", widthUtility(baseCount, peek, gap)];
+
+    DEVICE_ORDER.slice(1).forEach((name) => {
+        if (!hasCount(values[name])) {
+            return;
+        }
+        classes.push(`${name}:${widthUtility(toCount(values[name], baseCount), peek, gap)}`);
     });
-    return css;
+
+    return classes;
 };
 
 const transformHook = (rw) => {
@@ -117,7 +125,8 @@ const transformHook = (rw) => {
         hideInEditor: edit && !isCardRow && index !== activeSlideIndex,
     }));
 
-    const cssId = globalID || id;
+    const currentCount = toCount(visibleSlides, toCount(rw.responsiveProps?.visibleSlides?.base, 3));
+    const currentView = applyPeek(currentCount, isCardRow && peekEnabled);
     const cardRowViewportStyle = edit && isCardRow
         ? "overflow-x: auto; width: 100%;"
         : "";
@@ -125,10 +134,7 @@ const transformHook = (rw) => {
         ? `display: flex; flex-wrap: nowrap; align-items: stretch; gap: ${gap}px; width: 100%;`
         : "";
     const cardRowSlideStyle = edit && isCardRow
-        ? "min-width: 0; box-sizing: border-box; position: relative;"
-        : "";
-    const cardRowMediaCss = edit && isCardRow
-        ? buildCardRowMediaCss(cssId, gap, visibleViews)
+        ? `${slotDeclarations(gap, currentView)} min-width: 0; box-sizing: border-box; position: relative;`
         : "";
 
     // Build classes object
@@ -147,7 +153,14 @@ const transformHook = (rw) => {
         slide: classnames([
             "swiper-slide",
             "min-h-[100px]",
-            edit && isCardRow ? "content-slider-card" : "",
+            ...(edit && isCardRow
+                ? cardRowWidthClasses(
+                    visibleSlides,
+                    rw.responsiveProps?.visibleSlides,
+                    peekEnabled,
+                    gap,
+                )
+                : []),
         ]).toString(),
         arrows: classnames([
             "absolute inset-0 flex items-center justify-between pointer-events-none px-2 z-10",
@@ -225,7 +238,6 @@ const transformHook = (rw) => {
         cardRowViewportStyle,
         cardRowTrackStyle,
         cardRowSlideStyle,
-        cardRowMediaCss,
         isCardRow,
         activeSlideIndex,
         isAutoPlay,
