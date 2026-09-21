@@ -1,6 +1,14 @@
 const PEEK_AMOUNT = 0.25;
 const DEVICE_ORDER = ["base", "sm", "md", "lg", "xl", "2xl"];
 const DEFAULT_SCREENS = { sm: 640, md: 768, lg: 1024, xl: 1280, "2xl": 1536 };
+const WIDTH_FOR_COUNT = {
+    1: "w-full",
+    2: "w-1/2",
+    3: "w-1/3",
+    4: "w-1/4",
+    5: "w-1/5",
+    6: "w-1/6",
+};
 
 const isTrue = (value) => value === true || value === "true";
 
@@ -13,9 +21,21 @@ const applyPeek = (count, peek) => (peek ? count + PEEK_AMOUNT : count);
 
 const hasCount = (value) => value !== undefined && value !== null && value !== "";
 
+const isBreakpointMap = (value) =>
+    value !== null && typeof value === "object" && !Array.isArray(value);
+
+// Documented on the rw.getResponsiveValues page as `rw.responsiveProps`:
+// https://docs.realmacsoftware.com/elements-docs/elements-language/component/hooks.js/available-data/rw.getresponsivevalues
+const getResponsiveValues = (rw) => {
+    if (typeof rw.getResponsiveValues === "function") {
+        return rw.getResponsiveValues() || {};
+    }
+    return rw.responsiveProps || rw.responsive || {};
+};
+
 const resolveVisibleSlideViews = (visibleSlides, responsiveVisible, theme, peek) => {
     const screens = { ...DEFAULT_SCREENS, ...(theme?.breakpoints?.screens || {}) };
-    const raw = responsiveVisible && typeof responsiveVisible === "object" ? responsiveVisible : {};
+    const raw = isBreakpointMap(responsiveVisible) ? responsiveVisible : {};
     let current = toCount(hasCount(raw.base) ? raw.base : visibleSlides, 3);
     const baseView = applyPeek(current, peek);
     const breakpoints = {};
@@ -37,30 +57,27 @@ const resolveVisibleSlideViews = (visibleSlides, responsiveVisible, theme, peek)
     };
 };
 
-const slotCalc = (gap, view) => `calc((100% - ${gap}px * ${view - 1}) / ${view})`;
-
-const slotDeclarations = (gap, view) => {
-    const slot = slotCalc(gap, view);
-    return `flex: 0 0 ${slot}; width: ${slot}; max-width: ${slot};`;
+const widthClassForCount = (value, fallback) => {
+    const count = Math.max(1, Math.min(6, Math.round(toCount(value, fallback))));
+    return WIDTH_FOR_COUNT[count];
 };
 
-const widthUtility = (count, peek, gap) => {
-    const view = applyPeek(count, peek);
-    return `!w-[${slotCalc(gap, view)}]`;
-};
+// Same pattern as the docs: Object.entries(rw.responsiveProps.x) → `base` has
+// no prefix, other breakpoints become `md:`, `lg:`, …
+const cardRowWidthClasses = (responsiveVisible, fallback) => {
+    const values = isBreakpointMap(responsiveVisible) ? { ...responsiveVisible } : {};
+    if (!hasCount(values.base)) {
+        values.base = toCount(fallback, 3);
+    }
 
-const cardRowWidthClasses = (visibleSlides, raw, peek, gap) => {
-    const values = raw && typeof raw === "object" ? raw : {};
-    const baseCount = toCount(hasCount(values.base) ? values.base : visibleSlides, 3);
-    const classes = ["shrink-0", "min-w-0", widthUtility(baseCount, peek, gap)];
-
-    DEVICE_ORDER.slice(1).forEach((name) => {
-        if (!hasCount(values[name])) {
+    const classes = ["shrink-0", "min-w-0"];
+    Object.entries(values).forEach(([breakpoint, value]) => {
+        if (!hasCount(value)) {
             return;
         }
-        classes.push(`${name}:${widthUtility(toCount(values[name], baseCount), peek, gap)}`);
+        const prefix = breakpoint === "base" ? "" : `${breakpoint}:`;
+        classes.push(`${prefix}${widthClassForCount(value, 3)}`);
     });
-
     return classes;
 };
 
@@ -90,6 +107,7 @@ const transformHook = (rw) => {
         dotColorActive,
     } = rw.props;
 
+    const { visibleSlides: visibleSlidesByBreakpoint } = getResponsiveValues(rw);
     const { mode } = rw.project;
     const { id } = rw.node;
     const edit = mode === "edit";
@@ -98,25 +116,22 @@ const transformHook = (rw) => {
     const gap = Math.max(0, parseInt(slideGap, 10) || (isCardRow ? 16 : 0));
     const visibleViews = resolveVisibleSlideViews(
         visibleSlides,
-        rw.responsiveProps?.visibleSlides,
+        visibleSlidesByBreakpoint,
         rw.theme,
         isCardRow && peekEnabled,
     );
     const isFreeScroll = !isCardRow ? false : (scrollMode || "free") === "free";
 
-    // Get slides from collection
     const collectionSlides = rw.collections.slides || [];
     const count = Math.max(1, collectionSlides.length);
     const isAutoPlay = isTrue(autoPlay);
     const interval = parseInt(autoPlayInterval) || 3000;
     const isLoop = !isCardRow;
 
-    // Determine which slide to show as active in editor mode
     const activeSlideIndex = edit
         ? Math.max(0, Math.min((parseInt(editorActiveSlide) || 1) - 1, count - 1))
         : 0;
 
-    // Map collection slides to template data
     const slides = collectionSlides.map((slide, index) => ({
         ...slide,
         index,
@@ -125,19 +140,8 @@ const transformHook = (rw) => {
         hideInEditor: edit && !isCardRow && index !== activeSlideIndex,
     }));
 
-    const currentCount = toCount(visibleSlides, toCount(rw.responsiveProps?.visibleSlides?.base, 3));
-    const currentView = applyPeek(currentCount, isCardRow && peekEnabled);
-    const cardRowViewportStyle = edit && isCardRow
-        ? "overflow-x: auto; width: 100%;"
-        : "";
-    const cardRowTrackStyle = edit && isCardRow
-        ? `display: flex; flex-wrap: nowrap; align-items: stretch; gap: ${gap}px; width: 100%;`
-        : "";
-    const cardRowSlideStyle = edit && isCardRow
-        ? `${slotDeclarations(gap, currentView)} min-width: 0; box-sizing: border-box; position: relative;`
-        : "";
+    const cardRowTrackStyle = edit && isCardRow ? `gap: ${gap}px;` : "";
 
-    // Build classes object
     const classes = {
         wrapper: classnames([
             `group/${id}`,
@@ -148,18 +152,19 @@ const transformHook = (rw) => {
             globalBorders(rw),
             advancedClasses(rw),
         ]).toString(),
-        swiper: "swiper",
-        swiperWrapper: "swiper-wrapper",
+        swiper: classnames([
+            "swiper",
+            edit && isCardRow ? "overflow-x-auto w-full" : "",
+        ]).toString(),
+        swiperWrapper: classnames([
+            "swiper-wrapper",
+            edit && isCardRow ? "flex flex-nowrap items-stretch w-full" : "",
+        ]).toString(),
         slide: classnames([
             "swiper-slide",
             "min-h-[100px]",
             ...(edit && isCardRow
-                ? cardRowWidthClasses(
-                    visibleSlides,
-                    rw.responsiveProps?.visibleSlides,
-                    peekEnabled,
-                    gap,
-                )
+                ? cardRowWidthClasses(visibleSlidesByBreakpoint, visibleSlides)
                 : []),
         ]).toString(),
         arrows: classnames([
@@ -187,10 +192,8 @@ const transformHook = (rw) => {
         paginationBulletActive: dotColorActive,
     };
 
-    // Fade only works for a single full-width slide
     const effect = isCardRow ? "slide" : (transitionEffect || "slide");
 
-    // Swiper options to pass to Alpine
     const swiperOptions = {
         loop: isLoop,
         rewind: !isLoop,
@@ -210,7 +213,6 @@ const transformHook = (rw) => {
         }
     }
 
-    // Add fade-specific options for smooth crossfade
     if (effect === "fade") {
         swiperOptions.fadeEffect = { crossFade: true };
     }
@@ -235,9 +237,7 @@ const transformHook = (rw) => {
         showArrows: isTrue(showArrows),
         showDots: isTrue(showDots),
         swiperOptions: JSON.stringify(swiperOptions).replace(/"/g, "'"),
-        cardRowViewportStyle,
         cardRowTrackStyle,
-        cardRowSlideStyle,
         isCardRow,
         activeSlideIndex,
         isAutoPlay,

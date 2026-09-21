@@ -2,9 +2,6 @@
 
 <div
     class="{{classes.swiper}}"
-    @if(cardRowViewportStyle)
-    style="{{cardRowViewportStyle}}"
-    @endif
     @if(!edit)
     x-data="elementsContentSlider('{{id}}', {{swiperOptions}})"
     @endif
@@ -20,8 +17,6 @@
             class="{{classes.slide}}"
             @if(slide.hideInEditor)
             style="display: none;"
-            @elseif(cardRowSlideStyle)
-            style="{{cardRowSlideStyle}}"
             @endif
         >
             @dropzone("slide", title: "Slide Content")
