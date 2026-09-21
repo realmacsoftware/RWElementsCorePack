@@ -17,6 +17,7 @@ const transformHook = (rw) => {
         mute: muted,
         controls,
         startAt,
+        preload,
 
         globalPadding,
     } = rw.props;
@@ -60,6 +61,10 @@ const transformHook = (rw) => {
 
     const hasThumbnail = thumbnail;
     const hasDarkThumbnail = thumbnailDark;
+
+    const preloadHint = ["none", "metadata", "auto"].includes(preload)
+        ? preload
+        : "metadata";
 
     const options = {
         autoplay,
@@ -182,6 +187,7 @@ const transformHook = (rw) => {
         thumbnailDark,
         thumbnailAlt: video?.alt || thumbnailAlt || "",
         wantsLightbox: wantsLightbox && !isEditMode,
+        preload: preloadHint,
     });
 };
 

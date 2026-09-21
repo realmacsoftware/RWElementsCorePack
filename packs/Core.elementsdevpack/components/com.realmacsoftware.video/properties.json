@@ -59,6 +59,32 @@
           "switch": {}
         },
         {
+          "title": "Preload",
+          "id": "preload",
+          "responsive": false,
+          "ai": {
+            "name": "preload",
+            "description": "HTML video preload hint for self-hosted MP4: none (don't fetch), metadata (duration/dimensions), or auto (full video). Does not apply to YouTube or Vimeo."
+          },
+          "select": {
+            "default": "metadata",
+            "items": [
+              {
+                "value": "none",
+                "title": "None"
+              },
+              {
+                "value": "metadata",
+                "title": "Metadata"
+              },
+              {
+                "value": "auto",
+                "title": "Auto"
+              }
+            ]
+          }
+        },
+        {
           "divider": {}
         },
         {
