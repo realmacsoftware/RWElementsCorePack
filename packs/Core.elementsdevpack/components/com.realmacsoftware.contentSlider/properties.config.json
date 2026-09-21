@@ -23,14 +23,17 @@
                     "divider": {}
                 },
                 {
+                    "visible": "layout != 'cardRow'",
                     "title": "Editor Preview",
                     "heading": {}
                 },
                 {
+                    "visible": "layout != 'cardRow'",
                     "information": {},
                     "title": "Preview the slide that will be shown in the editor."
                 },
                 {
+                    "visible": "layout != 'cardRow'",
                     "title": "Active Slide",
                     "id": "editorActiveSlide",
                     "responsive": false,
@@ -45,10 +48,96 @@
             "icon": "play.rectangle",
             "properties": [
                 {
+                    "title": "Layout",
+                    "heading": {}
+                },
+                {
+                    "title": "Layout",
+                    "id": "layout",
+                    "responsive": false,
+                    "segmented": {
+                        "default": "single",
+                        "items": [
+                            {
+                                "title": "Single",
+                                "value": "single"
+                            },
+                            {
+                                "title": "Card row",
+                                "value": "cardRow"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "visible": "layout == 'cardRow'",
+                    "information": {},
+                    "title": "Show several cards at once with a peek of the next card. Use the breakpoint switcher on Visible Slides to set how many show on mobile, tablet, desktop, and large displays."
+                },
+                {
+                    "enable": "layout == 'cardRow'",
+                    "title": "Visible Slides",
+                    "id": "visibleSlides",
+                    "responsive": true,
+                    "slider": {
+                        "default": "3",
+                        "items": [
+                            { "title": "1", "value": "1" },
+                            { "title": "2", "value": "2" },
+                            { "title": "3", "value": "3" },
+                            { "title": "4", "value": "4" },
+                            { "title": "5", "value": "5" },
+                            { "title": "6", "value": "6" }
+                        ]
+                    }
+                },
+                {
+                    "enable": "layout == 'cardRow'",
+                    "title": "Peek Next Card",
+                    "id": "peekNext",
+                    "responsive": false,
+                    "switch": {
+                        "default": true
+                    }
+                },
+                {
+                    "enable": "layout == 'cardRow'",
+                    "title": "Gap",
+                    "id": "slideGap",
+                    "responsive": false,
+                    "number": {
+                        "default": 16,
+                        "subtitle": "pixels between cards"
+                    }
+                },
+                {
+                    "enable": "layout == 'cardRow'",
+                    "title": "Scroll",
+                    "id": "scrollMode",
+                    "responsive": false,
+                    "segmented": {
+                        "default": "free",
+                        "items": [
+                            {
+                                "title": "Free",
+                                "value": "free"
+                            },
+                            {
+                                "title": "Snap",
+                                "value": "snap"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "divider": {}
+                },
+                {
                     "title": "Transition",
                     "heading": {}
                 },
                 {
+                    "enable": "layout != 'cardRow'",
                     "title": "Effect",
                     "id": "transitionEffect",
                     "responsive": false,
