@@ -523,6 +523,7 @@ const transformHook = (rw) => {
     mute: muted,
     controls,
     startAt,
+    preload,
     globalPadding
   } = rw.props;
   const {
@@ -542,6 +543,7 @@ const transformHook = (rw) => {
   const thumbnailDark = isResourceThumbnail ? thumbnailResourceDark : customThumbnailSrcDark ? { image: customThumbnailSrcDark } : null;
   const hasThumbnail = thumbnail;
   const hasDarkThumbnail = thumbnailDark;
+  const preloadHint = ["none", "metadata", "auto"].includes(preload) ? preload : "metadata";
   const options = {
     autoplay,
     loop,
@@ -641,7 +643,8 @@ const transformHook = (rw) => {
     thumbnail,
     thumbnailDark,
     thumbnailAlt: (video == null ? void 0 : video.alt) || thumbnailAlt || "",
-    wantsLightbox: wantsLightbox && !isEditMode
+    wantsLightbox: wantsLightbox && !isEditMode,
+    preload: preloadHint
   });
 };
 exports.transformHook = transformHook;
