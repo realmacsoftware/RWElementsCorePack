@@ -582,7 +582,7 @@ const transformHook = (rw) => {
     isActive: index === activeSlideIndex,
     hideInEditor: edit && !isCardRow && index !== activeSlideIndex
   }));
-  const editorSlideStyle = edit && isCardRow ? `width: calc((100% - ${gap * (desktopView - 1)}px) / ${desktopView}); margin-right: ${gap}px;` : "";
+  const cardRowSlideStyle = edit && isCardRow ? `width: calc((100% - ${gap * (desktopView - 1)}px) / ${desktopView}); margin-right: ${gap}px;` : "";
   const classes = {
     wrapper: classnames([
       `group/${id}`,
@@ -667,7 +667,7 @@ const transformHook = (rw) => {
     showArrows: isTrue(showArrows),
     showDots: isTrue(showDots),
     swiperOptions: JSON.stringify(swiperOptions).replace(/"/g, "'"),
-    editorSlideStyle,
+    cardRowSlideStyle,
     isCardRow,
     activeSlideIndex,
     isAutoPlay,

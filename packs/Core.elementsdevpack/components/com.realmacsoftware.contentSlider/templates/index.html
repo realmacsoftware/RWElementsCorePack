@@ -12,8 +12,8 @@
             class="{{classes.slide}}"
             @if(slide.hideInEditor)
             style="display: none;"
-            @elseif(editorSlideStyle)
-            style="{{editorSlideStyle}}"
+            @elseif(cardRowSlideStyle)
+            style="{{cardRowSlideStyle}}"
             @endif
         >
             @dropzone("slide", title: "Slide Content")

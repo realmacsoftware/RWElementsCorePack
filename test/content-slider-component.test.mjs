@@ -183,8 +183,8 @@ test("card row editor keeps every slide visible so cards can be edited", () => {
         rw.computedProps.slides.every((slide) => slide.hideInEditor === false),
         true,
     );
-    assert.match(rw.computedProps.editorSlideStyle, /width:/);
-    assert.match(rw.computedProps.editorSlideStyle, /16px|margin-right/);
+    assert.match(rw.computedProps.cardRowSlideStyle, /width:/);
+    assert.match(rw.computedProps.cardRowSlideStyle, /16px|margin-right/);
 });
 
 test("single layout still hides inactive slides in the editor", () => {
@@ -198,7 +198,7 @@ test("single layout still hides inactive slides in the editor", () => {
         rw.computedProps.slides.map((slide) => slide.hideInEditor),
         [true, false, true],
     );
-    assert.equal(rw.computedProps.editorSlideStyle, "");
+    assert.equal(rw.computedProps.cardRowSlideStyle, "");
 });
 
 test("inspector exposes card-row layout, peek, gap, and scroll controls", () => {
@@ -221,6 +221,13 @@ test("inspector exposes card-row layout, peek, gap, and scroll controls", () => 
 
     const effect = properties.find((property) => property.id === "transitionEffect");
     assert.match(String(effect.enable || effect.visible || ""), /layout/);
+});
+
+test("card-row slide style is not named with a reserved edit prefix", () => {
+    const template = fs.readFileSync(`${componentDir}/templates/index.html`, "utf8");
+
+    assert.match(template, /cardRowSlideStyle/);
+    assert.equal(template.includes("editorSlideStyle"), false);
 });
 
 test("alpine forwards freeMode, breakpoints, and grabCursor to Swiper", () => {
