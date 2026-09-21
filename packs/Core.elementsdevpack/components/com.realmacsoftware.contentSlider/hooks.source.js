@@ -19,14 +19,12 @@ const resolveVisibleSlideViews = (visibleSlides, responsiveVisible, theme, peek)
     let current = toCount(hasCount(raw.base) ? raw.base : visibleSlides, 3);
     const baseView = applyPeek(current, peek);
     const breakpoints = {};
-    let editorCount = current;
 
     DEVICE_ORDER.slice(1).forEach((name) => {
         if (!hasCount(raw[name])) {
             return;
         }
         current = toCount(raw[name], current);
-        editorCount = Math.max(editorCount, current);
         const minWidth = screens[name];
         if (minWidth) {
             breakpoints[minWidth] = { slidesPerView: applyPeek(current, peek) };
@@ -36,8 +34,26 @@ const resolveVisibleSlideViews = (visibleSlides, responsiveVisible, theme, peek)
     return {
         baseView,
         breakpoints,
-        editorView: applyPeek(editorCount, peek),
     };
+};
+
+const slotCalc = (gap, view) => `calc((100% - ${gap}px * ${view - 1}) / ${view})`;
+
+const slotDeclarations = (gap, view) => {
+    const slot = slotCalc(gap, view);
+    return `flex: 0 0 ${slot}; width: ${slot}; max-width: ${slot};`;
+};
+
+const buildCardRowMediaCss = (cssId, gap, visibleViews) => {
+    if (!cssId) {
+        return "";
+    }
+    const selector = `#${cssId} .content-slider-card`;
+    let css = `${selector} { ${slotDeclarations(gap, visibleViews.baseView)} }`;
+    Object.entries(visibleViews.breakpoints).forEach(([minWidth, options]) => {
+        css += ` @media (min-width: ${minWidth}px) { ${selector} { ${slotDeclarations(gap, options.slidesPerView)} } }`;
+    });
+    return css;
 };
 
 const transformHook = (rw) => {
@@ -101,15 +117,18 @@ const transformHook = (rw) => {
         hideInEditor: edit && !isCardRow && index !== activeSlideIndex,
     }));
 
-    const cardRowSlot = `calc((100% - ${gap}px * ${visibleViews.editorView - 1}) / ${visibleViews.editorView})`;
+    const cssId = globalID || id;
     const cardRowViewportStyle = edit && isCardRow
-        ? "overflow-x: auto;"
+        ? "overflow-x: auto; width: 100%;"
         : "";
     const cardRowTrackStyle = edit && isCardRow
-        ? `display: flex; flex-wrap: nowrap; align-items: stretch; gap: ${gap}px;`
+        ? `display: flex; flex-wrap: nowrap; align-items: stretch; gap: ${gap}px; width: 100%;`
         : "";
     const cardRowSlideStyle = edit && isCardRow
-        ? `flex: 0 0 ${cardRowSlot}; width: ${cardRowSlot}; max-width: ${cardRowSlot}; min-width: 0; box-sizing: border-box; position: relative;`
+        ? "min-width: 0; box-sizing: border-box; position: relative;"
+        : "";
+    const cardRowMediaCss = edit && isCardRow
+        ? buildCardRowMediaCss(cssId, gap, visibleViews)
         : "";
 
     // Build classes object
@@ -128,6 +147,7 @@ const transformHook = (rw) => {
         slide: classnames([
             "swiper-slide",
             "min-h-[100px]",
+            edit && isCardRow ? "content-slider-card" : "",
         ]).toString(),
         arrows: classnames([
             "absolute inset-0 flex items-center justify-between pointer-events-none px-2 z-10",
@@ -205,6 +225,7 @@ const transformHook = (rw) => {
         cardRowViewportStyle,
         cardRowTrackStyle,
         cardRowSlideStyle,
+        cardRowMediaCss,
         isCardRow,
         activeSlideIndex,
         isAutoPlay,
