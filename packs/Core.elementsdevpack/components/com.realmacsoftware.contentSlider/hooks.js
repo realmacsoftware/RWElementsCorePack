@@ -607,6 +607,24 @@ const cardRowWidthClasses = (responsiveVisible, fallback) => {
     return classes;
 };
 
+const cardRowPeekVarClasses = (responsiveVisible, fallback, peek) => {
+    const values = isBreakpointMap(responsiveVisible) ? { ...responsiveVisible } : {};
+    if (!hasCount(values.base)) {
+        values.base = toCount(fallback, 3);
+    }
+
+    const classes = [];
+    Object.entries(values).forEach(([breakpoint, value]) => {
+        if (!hasCount(value)) {
+            return;
+        }
+        const prefix = breakpoint === "base" ? "" : `${breakpoint}:`;
+        const view = applyPeek(toCount(value, 3), peek);
+        classes.push(`${prefix}[--visible-slides:${view}]`);
+    });
+    return classes;
+};
+
 const transformHook = (rw) => {
     const {
         globalID,
@@ -666,7 +684,10 @@ const transformHook = (rw) => {
         hideInEditor: edit && !isCardRow && index !== activeSlideIndex,
     }));
 
-    const cardRowTrackStyle = edit && isCardRow ? `gap: ${gap}px;` : "";
+    const cardRowPeek = edit && isCardRow && peekEnabled;
+    const cardRowTrackStyle = edit && isCardRow
+        ? `gap: ${gap}px; --slide-gap: ${gap}px;`
+        : "";
 
     const classes = {
         wrapper: classnames([
@@ -691,6 +712,9 @@ const transformHook = (rw) => {
             "min-h-[100px]",
             ...(edit && isCardRow
                 ? cardRowWidthClasses(visibleSlidesByBreakpoint, visibleSlides)
+                : []),
+            ...(cardRowPeek
+                ? cardRowPeekVarClasses(visibleSlidesByBreakpoint, visibleSlides, true)
                 : []),
         ]).toString(),
         arrows: classnames([
@@ -764,6 +788,7 @@ const transformHook = (rw) => {
         showDots: isTrue(showDots),
         swiperOptions: JSON.stringify(swiperOptions).replace(/"/g, "'"),
         cardRowTrackStyle,
+        cardRowPeek,
         isCardRow,
         activeSlideIndex,
         isAutoPlay,

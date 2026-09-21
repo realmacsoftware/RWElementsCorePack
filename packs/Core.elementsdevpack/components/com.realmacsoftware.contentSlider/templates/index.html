@@ -6,6 +6,12 @@
     x-data="elementsContentSlider('{{id}}', {{swiperOptions}})"
     @endif
 >
+    @if(cardRowPeek)
+    <span
+        class="hidden [--visible-slides:1.25] [--visible-slides:2.25] [--visible-slides:3.25] [--visible-slides:4.25] [--visible-slides:5.25] [--visible-slides:6.25] sm:[--visible-slides:1.25] sm:[--visible-slides:2.25] sm:[--visible-slides:3.25] sm:[--visible-slides:4.25] sm:[--visible-slides:5.25] sm:[--visible-slides:6.25] md:[--visible-slides:1.25] md:[--visible-slides:2.25] md:[--visible-slides:3.25] md:[--visible-slides:4.25] md:[--visible-slides:5.25] md:[--visible-slides:6.25] lg:[--visible-slides:1.25] lg:[--visible-slides:2.25] lg:[--visible-slides:3.25] lg:[--visible-slides:4.25] lg:[--visible-slides:5.25] lg:[--visible-slides:6.25] xl:[--visible-slides:1.25] xl:[--visible-slides:2.25] xl:[--visible-slides:3.25] xl:[--visible-slides:4.25] xl:[--visible-slides:5.25] xl:[--visible-slides:6.25] 2xl:[--visible-slides:1.25] 2xl:[--visible-slides:2.25] 2xl:[--visible-slides:3.25] 2xl:[--visible-slides:4.25] 2xl:[--visible-slides:5.25] 2xl:[--visible-slides:6.25]"
+        aria-hidden="true"
+    ></span>
+    @endif
     <div
         class="{{classes.swiperWrapper}}"
         @if(cardRowTrackStyle)
@@ -14,7 +20,7 @@
     >
         @each(slide in slides)
         <div
-            class="{{classes.slide}}"
+            class="{{classes.slide}} @if(cardRowPeek) max-w-[calc((100%-var(--slide-gap,0px)*(var(--visible-slides)-1))/var(--visible-slides))] basis-[calc((100%-var(--slide-gap,0px)*(var(--visible-slides)-1))/var(--visible-slides))] @endif"
             @if(slide.hideInEditor)
             style="display: none;"
             @endif

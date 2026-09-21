@@ -242,11 +242,15 @@ test("card row editor lays slides in a horizontal scrolling row", () => {
     assert.match(rw.computedProps.classes.slide, /shrink-0/);
     assert.match(rw.computedProps.classes.slide, /\bw-1\/3\b/);
     assert.equal(rw.computedProps.cardRowSlideStyle, undefined);
-    assert.doesNotMatch(rw.computedProps.classes.slide, /calc/);
+    assert.equal(rw.computedProps.cardRowPeek, true);
+    assert.match(rw.computedProps.classes.slide, /\[--visible-slides:3\.25\]/);
+    assert.match(rw.computedProps.cardRowTrackStyle, /--slide-gap:\s*16px/);
     assert.doesNotMatch(rw.computedProps.classes.slide, /!w-\[/);
 
     const template = fs.readFileSync(`${componentDir}/templates/index.html`, "utf8");
     assert.match(template, /cardRowTrackStyle/);
+    assert.match(template, /cardRowPeek/);
+    assert.match(template, /--visible-slides/);
     assert.equal(template.includes("cardRowViewportStyle"), false);
     assert.equal(template.includes("cardRowSlideStyle"), false);
     assert.equal(template.includes("cardRowMediaCss"), false);
@@ -270,7 +274,9 @@ test("card row editor maps rw.responsiveProps visibleSlides onto Tailwind widths
     assert.match(rw.computedProps.classes.slide, /\bw-1\/2\b/);
     assert.match(rw.computedProps.classes.slide, /\bmd:w-full\b/);
     assert.match(rw.computedProps.classes.slide, /\blg:w-1\/4\b/);
-    assert.doesNotMatch(rw.computedProps.classes.slide, /calc/);
+    assert.match(rw.computedProps.classes.slide, /\[--visible-slides:2\.25\]/);
+    assert.match(rw.computedProps.classes.slide, /md:\[--visible-slides:1\.25\]/);
+    assert.match(rw.computedProps.classes.slide, /lg:\[--visible-slides:4\.25\]/);
     assert.doesNotMatch(rw.computedProps.classes.slide, /!w-\[/);
 });
 
@@ -292,7 +298,55 @@ test("card row editor prefers rw.getResponsiveValues when the runtime provides i
 
     assert.match(rw.computedProps.classes.slide, /\bw-1\/2\b/);
     assert.match(rw.computedProps.classes.slide, /\bxl:w-1\/5\b/);
+    assert.match(rw.computedProps.classes.slide, /\[--visible-slides:2\.25\]/);
+    assert.match(rw.computedProps.classes.slide, /xl:\[--visible-slides:5\.25\]/);
     assert.doesNotMatch(rw.computedProps.classes.slide, /\bw-1\/3\b/);
+});
+
+test("card row editor peeks the next card from raw per-device visible slides", () => {
+    const rw = renderSlider({
+        props: {
+            layout: "cardRow",
+            visibleSlides: "1",
+            peekNext: true,
+            slideGap: 16,
+        },
+        responsiveProps: {
+            visibleSlides: { base: "1", md: "3" },
+        },
+        mode: "edit",
+        slides: defaultSlides(5),
+    });
+
+    assert.equal(rw.computedProps.cardRowPeek, true);
+    assert.match(rw.computedProps.classes.slide, /\bw-full\b/);
+    assert.match(rw.computedProps.classes.slide, /\bmd:w-1\/3\b/);
+    assert.match(rw.computedProps.classes.slide, /\[--visible-slides:1\.25\]/);
+    assert.match(rw.computedProps.classes.slide, /md:\[--visible-slides:3\.25\]/);
+
+    const template = fs.readFileSync(`${componentDir}/templates/index.html`, "utf8");
+    assert.match(
+        template,
+        /max-w-\[calc\(\(100%-var\(--slide-gap,0px\)\*\(var\(--visible-slides\)-1\)\)\/var\(--visible-slides\)\)\]/,
+    );
+});
+
+test("card row editor skips peek widths when Peek Next is off", () => {
+    const rw = renderSlider({
+        props: {
+            layout: "cardRow",
+            visibleSlides: "3",
+            peekNext: false,
+            slideGap: 16,
+        },
+        mode: "edit",
+        slides: defaultSlides(5),
+    });
+
+    assert.equal(rw.computedProps.cardRowPeek, false);
+    assert.match(rw.computedProps.classes.slide, /\bw-1\/3\b/);
+    assert.doesNotMatch(rw.computedProps.classes.slide, /visible-slides/);
+    assert.doesNotMatch(rw.computedProps.classes.slide, /3\.25/);
 });
 
 test("preview card row leaves layout to Swiper instead of editor row styles", () => {
@@ -302,8 +356,10 @@ test("preview card row leaves layout to Swiper instead of editor row styles", ()
     });
 
     assert.equal(rw.computedProps.cardRowTrackStyle, "");
+    assert.equal(rw.computedProps.cardRowPeek, false);
     assert.doesNotMatch(rw.computedProps.classes.swiper, /overflow-x-auto/);
     assert.doesNotMatch(rw.computedProps.classes.slide, /w-1\/3/);
+    assert.doesNotMatch(rw.computedProps.classes.slide, /visible-slides/);
     assert.doesNotMatch(rw.computedProps.classes.slide, /!w-\[/);
 });
 
