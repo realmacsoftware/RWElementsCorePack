@@ -12,6 +12,8 @@
             class="{{classes.slide}}"
             @if(slide.hideInEditor)
             style="display: none;"
+            @elseif(editorSlideStyle)
+            style="{{editorSlideStyle}}"
             @endif
         >
             @dropzone("slide", title: "Slide Content")

@@ -1,6 +1,24 @@
+const PEEK_AMOUNT = 0.25;
+const CARD_ROW_BREAKPOINT = 768;
+
+const isTrue = (value) => value === true || value === "true";
+
+const toCount = (value, fallback) => {
+    const parsed = parseFloat(value);
+    return Number.isFinite(parsed) && parsed >= 1 ? parsed : fallback;
+};
+
+const applyPeek = (count, peek) => (peek ? count + PEEK_AMOUNT : count);
+
 const transformHook = (rw) => {
     const {
         globalID,
+        layout,
+        visibleSlides,
+        visibleSlidesMobile,
+        peekNext,
+        slideGap,
+        scrollMode,
         transitionEffect,
         autoPlay,
         autoPlayInterval,
@@ -22,13 +40,21 @@ const transformHook = (rw) => {
     const { mode } = rw.project;
     const { id } = rw.node;
     const edit = mode === "edit";
+    const isCardRow = (layout || "single") === "cardRow";
+    const peekEnabled = peekNext === undefined ? true : isTrue(peekNext);
+    const desktopCount = toCount(visibleSlides, 3);
+    const mobileCount = toCount(visibleSlidesMobile, 1);
+    const gap = Math.max(0, parseInt(slideGap, 10) || (isCardRow ? 16 : 0));
+    const desktopView = applyPeek(desktopCount, isCardRow && peekEnabled);
+    const mobileView = applyPeek(mobileCount, isCardRow && peekEnabled);
+    const isFreeScroll = !isCardRow ? false : (scrollMode || "free") === "free";
 
     // Get slides from collection
     const collectionSlides = rw.collections.slides || [];
     const count = Math.max(1, collectionSlides.length);
-    const isAutoPlay = autoPlay === true || autoPlay === "true";
+    const isAutoPlay = isTrue(autoPlay);
     const interval = parseInt(autoPlayInterval) || 3000;
-    const isLoop = true;
+    const isLoop = !isCardRow;
 
     // Determine which slide to show as active in editor mode
     const activeSlideIndex = edit
@@ -41,8 +67,12 @@ const transformHook = (rw) => {
         index,
         number: index + 1,
         isActive: index === activeSlideIndex,
-        hideInEditor: edit && index !== activeSlideIndex,
+        hideInEditor: edit && !isCardRow && index !== activeSlideIndex,
     }));
+
+    const editorSlideStyle = edit && isCardRow
+        ? `width: calc((100% - ${gap * (desktopView - 1)}px) / ${desktopView}); margin-right: ${gap}px;`
+        : "";
 
     // Build classes object
     const classes = {
@@ -55,7 +85,10 @@ const transformHook = (rw) => {
             globalBorders(rw),
             advancedClasses(rw),
         ]).toString(),
-        swiper: "swiper",
+        swiper: classnames([
+            "swiper",
+            edit && isCardRow ? "overflow-x-auto" : "",
+        ]).toString(),
         swiperWrapper: "swiper-wrapper",
         slide: classnames([
             "swiper-slide",
@@ -86,22 +119,33 @@ const transformHook = (rw) => {
         paginationBulletActive: dotColorActive,
     };
 
-    // Parse transition settings
-    const effect = transitionEffect || 'slide';
+    // Fade only works for a single full-width slide
+    const effect = isCardRow ? "slide" : (transitionEffect || "slide");
 
     // Swiper options to pass to Alpine
     const swiperOptions = {
         loop: isLoop,
         rewind: !isLoop,
-        slidesPerView: 1,
-        spaceBetween: 0,
+        slidesPerView: isCardRow ? mobileView : 1,
+        spaceBetween: isCardRow ? gap : 0,
         speed: 400,
         effect: effect,
         autoplay: isAutoPlay ? { delay: interval, disableOnInteraction: false } : false,
     };
 
+    if (isCardRow) {
+        swiperOptions.grabCursor = true;
+        swiperOptions.watchOverflow = true;
+        swiperOptions.freeMode = isFreeScroll ? { enabled: true, momentum: true } : false;
+        swiperOptions.breakpoints = {
+            [CARD_ROW_BREAKPOINT]: {
+                slidesPerView: desktopView,
+            },
+        };
+    }
+
     // Add fade-specific options for smooth crossfade
-    if (effect === 'fade') {
+    if (effect === "fade") {
         swiperOptions.fadeEffect = { crossFade: true };
     }
 
@@ -122,9 +166,11 @@ const transformHook = (rw) => {
         classes,
         slides,
         edit,
-        showArrows: showArrows === true || showArrows === "true",
-        showDots: showDots === true || showDots === "true",
+        showArrows: isTrue(showArrows),
+        showDots: isTrue(showDots),
         swiperOptions: JSON.stringify(swiperOptions).replace(/"/g, "'"),
+        editorSlideStyle,
+        isCardRow,
         activeSlideIndex,
         isAutoPlay,
         isLoop,

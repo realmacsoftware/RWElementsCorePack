@@ -24,11 +24,13 @@
         },
         {
           "title": "Editor Preview",
-          "heading": {}
+          "heading": {},
+          "visible": "layout != 'cardRow'"
         },
         {
           "information": {},
-          "title": "Preview the slide that will be shown in the editor."
+          "title": "Preview the slide that will be shown in the editor.",
+          "visible": "layout != 'cardRow'"
         },
         {
           "title": "Active Slide",
@@ -36,7 +38,8 @@
           "responsive": false,
           "number": {
             "default": 1
-          }
+          },
+          "visible": "layout != 'cardRow'"
         }
       ]
     },
@@ -44,6 +47,132 @@
       "title": "Playback",
       "icon": "play.rectangle",
       "properties": [
+        {
+          "title": "Layout",
+          "heading": {}
+        },
+        {
+          "title": "Layout",
+          "id": "layout",
+          "responsive": false,
+          "segmented": {
+            "default": "single",
+            "items": [
+              {
+                "title": "Single",
+                "value": "single"
+              },
+              {
+                "title": "Card row",
+                "value": "cardRow"
+              }
+            ]
+          }
+        },
+        {
+          "visible": "layout == 'cardRow'",
+          "information": {},
+          "title": "Show several cards at once with a peek of the next card. Visitors can swipe freely; desktop arrows still step the row."
+        },
+        {
+          "enable": "layout == 'cardRow'",
+          "title": "Visible Slides",
+          "id": "visibleSlides",
+          "responsive": false,
+          "slider": {
+            "default": "3",
+            "items": [
+              {
+                "title": "1",
+                "value": "1"
+              },
+              {
+                "title": "2",
+                "value": "2"
+              },
+              {
+                "title": "3",
+                "value": "3"
+              },
+              {
+                "title": "4",
+                "value": "4"
+              },
+              {
+                "title": "5",
+                "value": "5"
+              },
+              {
+                "title": "6",
+                "value": "6"
+              }
+            ]
+          }
+        },
+        {
+          "enable": "layout == 'cardRow'",
+          "title": "Visible on Mobile",
+          "id": "visibleSlidesMobile",
+          "responsive": false,
+          "slider": {
+            "default": "1",
+            "items": [
+              {
+                "title": "1",
+                "value": "1"
+              },
+              {
+                "title": "2",
+                "value": "2"
+              },
+              {
+                "title": "3",
+                "value": "3"
+              }
+            ]
+          }
+        },
+        {
+          "enable": "layout == 'cardRow'",
+          "title": "Peek Next Card",
+          "id": "peekNext",
+          "responsive": false,
+          "switch": {
+            "default": true
+          }
+        },
+        {
+          "enable": "layout == 'cardRow'",
+          "title": "Gap",
+          "id": "slideGap",
+          "responsive": false,
+          "number": {
+            "default": 16,
+            "subtitle": "pixels between cards"
+          }
+        },
+        {
+          "enable": "layout == 'cardRow'",
+          "title": "Scroll",
+          "id": "scrollMode",
+          "responsive": false,
+          "segmented": {
+            "default": "free",
+            "items": [
+              {
+                "title": "Free",
+                "value": "free"
+              },
+              {
+                "title": "Snap",
+                "value": "snap"
+              }
+            ]
+          }
+        },
+        {
+          "divider": {}
+        },
         {
           "title": "Transition",
           "heading": {}
@@ -64,7 +193,8 @@
                 "value": "fade"
               }
             ]
-          }
+          },
+          "enable": "layout != 'cardRow'"
         },
         {
           "divider": {}
