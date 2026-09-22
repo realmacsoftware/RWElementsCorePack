@@ -639,6 +639,8 @@ const transformHook = (rw) => {
         editorActiveSlide,
         showArrows,
         showDots,
+        arrowPlacement,
+        arrowAlignment,
         arrowSize,
         arrowBorderRadius,
         arrowBgColor,
@@ -671,6 +673,8 @@ const transformHook = (rw) => {
     const isAutoPlay = isTrue(autoPlay);
     const interval = parseInt(autoPlayInterval) || 3000;
     const isLoop = !isCardRow;
+    const isArrowsBelow = (arrowPlacement || "overlay") === "below";
+    const belowArrowJustify = arrowAlignment || "justify-center";
 
     const activeSlideIndex = edit
         ? Math.max(0, Math.min((parseInt(editorActiveSlide) || 1) - 1, count - 1))
@@ -717,9 +721,16 @@ const transformHook = (rw) => {
                 ? cardRowPeekVarClasses(visibleSlidesByBreakpoint, visibleSlides, true)
                 : []),
         ]).toString(),
-        arrows: classnames([
-            "absolute inset-0 flex items-center justify-between pointer-events-none px-2 z-10",
-        ]).toString(),
+        arrows: classnames(
+            isArrowsBelow
+                ? [
+                    "relative flex items-center mt-4 gap-2 pointer-events-none z-10",
+                    belowArrowJustify,
+                ]
+                : [
+                    "absolute inset-0 flex items-center justify-between pointer-events-none px-2 z-10",
+                ],
+        ).toString(),
         arrowButton: classnames([
             "pointer-events-auto flex items-center justify-center cursor-pointer transition-all",
             arrowSize,

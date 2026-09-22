@@ -239,6 +239,50 @@
         },
         {
           "enable": "showArrows == true",
+          "title": "Position",
+          "id": "arrowPlacement",
+          "responsive": false,
+          "segmented": {
+            "default": "overlay",
+            "items": [
+              {
+                "title": "On content",
+                "value": "overlay"
+              },
+              {
+                "title": "Below",
+                "value": "below"
+              }
+            ]
+          }
+        },
+        {
+          "enable": "showArrows == true",
+          "visible": "arrowPlacement == 'below'",
+          "title": "Alignment",
+          "id": "arrowAlignment",
+          "responsive": false,
+          "format": "justify-{{value}}",
+          "segmented": {
+            "default": "center",
+            "items": [
+              {
+                "icon": "arrow.left.to.line.compact",
+                "value": "start"
+              },
+              {
+                "icon": "arrow.right.and.line.vertical.and.arrow.left",
+                "value": "center"
+              },
+              {
+                "icon": "arrow.right.to.line.compact",
+                "value": "end"
+              }
+            ]
+          }
+        },
+        {
+          "enable": "showArrows == true",
           "title": "Size",
           "id": "arrowSize",
           "format": "size-{{value}}",

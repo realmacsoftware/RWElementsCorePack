@@ -111,6 +111,13 @@ function playbackProperties() {
     return playback.properties;
 }
 
+function navigationProperties() {
+    const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
+    const navigation = config.groups.find((group) => group.title === "Navigation");
+    assert.ok(navigation, "Navigation group exists");
+    return navigation.properties;
+}
+
 test("single layout stays one slide at a time without free scroll", () => {
     const options = swiperOptions(renderSlider());
 
@@ -420,4 +427,83 @@ test("alpine forwards freeMode, breakpoints, and grabCursor to Swiper", () => {
     assert.match(alpine, /config\.breakpoints/);
     assert.match(alpine, /config\.grabCursor/);
     assert.match(alpine, /config\.watchOverflow/);
+});
+
+test("default arrows overlay the slides on both sides", () => {
+    const rw = renderSlider();
+
+    assert.match(rw.computedProps.classes.arrows, /absolute/);
+    assert.match(rw.computedProps.classes.arrows, /inset-0/);
+    assert.match(rw.computedProps.classes.arrows, /justify-between/);
+    assert.doesNotMatch(rw.computedProps.classes.arrows, /mt-4/);
+    assert.doesNotMatch(rw.computedProps.classes.arrows, /justify-center/);
+});
+
+test("below arrows sit under the slider and default to center", () => {
+    const rw = renderSlider({
+        props: {
+            arrowPlacement: "below",
+        },
+    });
+
+    assert.match(rw.computedProps.classes.arrows, /relative/);
+    assert.match(rw.computedProps.classes.arrows, /mt-4/);
+    assert.match(rw.computedProps.classes.arrows, /justify-center/);
+    assert.doesNotMatch(rw.computedProps.classes.arrows, /absolute/);
+    assert.doesNotMatch(rw.computedProps.classes.arrows, /inset-0/);
+    assert.doesNotMatch(rw.computedProps.classes.arrows, /justify-between/);
+});
+
+test("below arrows honor left, center, and right alignment", () => {
+    const left = renderSlider({
+        props: { arrowPlacement: "below", arrowAlignment: "justify-start" },
+    });
+    const center = renderSlider({
+        props: { arrowPlacement: "below", arrowAlignment: "justify-center" },
+    });
+    const right = renderSlider({
+        props: { arrowPlacement: "below", arrowAlignment: "justify-end" },
+    });
+
+    assert.match(left.computedProps.classes.arrows, /justify-start/);
+    assert.match(center.computedProps.classes.arrows, /justify-center/);
+    assert.match(right.computedProps.classes.arrows, /justify-end/);
+});
+
+test("overlay arrows ignore alignment so they stay on both sides", () => {
+    const rw = renderSlider({
+        props: {
+            arrowPlacement: "overlay",
+            arrowAlignment: "justify-start",
+        },
+    });
+
+    assert.match(rw.computedProps.classes.arrows, /justify-between/);
+    assert.doesNotMatch(rw.computedProps.classes.arrows, /justify-start/);
+});
+
+test("inspector exposes below-arrow placement and alignment controls", () => {
+    const properties = navigationProperties();
+    const ids = properties.map((property) => property.id).filter(Boolean);
+
+    assert.equal(ids.includes("arrowPlacement"), true);
+    assert.equal(ids.includes("arrowAlignment"), true);
+
+    const placement = properties.find((property) => property.id === "arrowPlacement");
+    assert.equal(placement.segmented.default, "overlay");
+    assert.deepEqual(
+        placement.segmented.items.map((item) => item.value),
+        ["overlay", "below"],
+    );
+    assert.equal(placement.enable, "showArrows == true");
+
+    const alignment = properties.find((property) => property.id === "arrowAlignment");
+    assert.equal(alignment.segmented.default, "center");
+    assert.deepEqual(
+        alignment.segmented.items.map((item) => item.value),
+        ["start", "center", "end"],
+    );
+    assert.equal(alignment.enable, "showArrows == true");
+    assert.equal(alignment.visible, "arrowPlacement == 'below'");
+    assert.equal(alignment.format, "justify-{{value}}");
 });
