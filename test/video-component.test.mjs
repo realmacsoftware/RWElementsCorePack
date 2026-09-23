@@ -26,15 +26,33 @@ function classnames(initialClasses = "") {
     };
 }
 
+function aspectRatioClasses(rw) {
+    const { aspectRatio, aspectRatioCustom } = rw.props;
+    const mapped = {
+        "aspect-[auto]": rw.component.title == "Video" ? "aspect-video" : "aspect-[auto]",
+        "aspect-[custom]": aspectRatioCustom,
+    };
+    return classnames().add(mapped[aspectRatio] || aspectRatio).toString();
+}
+
+function objectClasses(rw) {
+    const { aspectRatio, objectFit, objectPosition } = rw.props;
+    return classnames([
+        aspectRatio !== "aspect-[auto]" ? objectFit : "",
+        objectPosition,
+    ]).toString();
+}
+
 function loadTransformHook() {
     const source = fs.readFileSync(hookPath, "utf8");
     const sandbox = {
         exports: {},
         JSON,
+        Array,
         String,
         classnames,
-        aspectRatioClasses: () => "aspect-ratio",
-        objectClasses: () => "object-fit",
+        aspectRatioClasses,
+        objectClasses,
         advancedClasses: () => "advanced",
         globalLayout: () => "layout",
         globalSizing: () => "sizing",
@@ -55,12 +73,39 @@ function renderVideo({ props = {}, mode = "preview" } = {}) {
     const rw = {
         props: {
             globalID: "",
+            imageType: "resource",
+            image: null,
+            imageDark: null,
+            imageAlt: "",
+            wantsLightbox: false,
+            videoLightboxColor: "",
+            videoLightboxColorOpacity: "",
+            videoLightboxGlobalFiltersBackdropBlur: "",
+            overlayColor: "",
+            overlayOpacity: "",
+            video: null,
+            autoplay: "never",
+            loop: false,
+            mute: true,
+            controls: false,
+            startAt: 0,
+            globalPadding: "",
+            aspectRatio: "aspect-[auto]",
+            aspectRatioCustom: "aspect-[7/5]",
+            objectFit: "object-cover",
+            objectPosition: "object-center",
             ...props,
         },
-        responsiveProps: {},
+        responsiveProps: {
+            imageCustomSource: {},
+            imageCustomSourceDark: {},
+            imageCmsField: {},
+            imageCmsFieldDark: {},
+        },
         node: { id: "node-1" },
         project: { mode },
         component: {
+            title: "Video",
             assetPath: "/assets/video",
             sharedAssetPath: "/shared",
         },
@@ -91,6 +136,10 @@ function mp4VideoTags(template) {
     return [...template.matchAll(/<video\b[\s\S]*?<\/video>/g)].map(
         (match) => match[0]
     );
+}
+
+function classTokens(classString) {
+    return new Set(String(classString).split(/\s+/).filter(Boolean));
 }
 
 test("inspector exposes a Preload select with none / metadata / auto", () => {
@@ -162,4 +211,69 @@ test("preload is still emitted for YouTube/Vimeo even though those templates ign
 
     assert.equal(rw.computedProps.isMP4, false);
     assert.equal(rw.computedProps.preload, "none");
+});
+
+test("auto aspect keeps 16:9 on the wrapper, inner player, and lightbox", () => {
+    const { computedProps, root } = renderVideo();
+    const wrapper = classTokens(root.class);
+    const video = classTokens(computedProps.classes.video);
+    const lightbox = classTokens(computedProps.classes.videoLightbox);
+
+    assert.ok(wrapper.has("aspect-video"));
+    assert.ok(video.has("aspect-video"));
+    assert.ok(video.has("w-full"));
+    assert.ok(video.has("h-auto"));
+    assert.ok(lightbox.has("aspect-video"));
+    assert.ok(lightbox.has("w-[min(95vw,calc(95vh*16/9))]"));
+});
+
+test("tall 4/5 aspect is applied to the inner player, not a hard-coded 16:9", () => {
+    const { computedProps, root } = renderVideo({
+        props: { aspectRatio: "aspect-[4/5]" },
+    });
+    const wrapper = classTokens(root.class);
+    const video = classTokens(computedProps.classes.video);
+    const lightbox = classTokens(computedProps.classes.videoLightbox);
+
+    assert.ok(wrapper.has("aspect-[4/5]"));
+    assert.ok(video.has("aspect-[4/5]"));
+    assert.ok(lightbox.has("aspect-[4/5]"));
+    assert.ok(!video.has("aspect-video"));
+    assert.ok(!lightbox.has("aspect-video"));
+    assert.ok(lightbox.has("w-[min(95vw,calc(95vh*4/5))]"));
+    assert.ok(!lightbox.has("w-[min(95vw,calc(95vh*16/9))]"));
+});
+
+test("custom 9/16 aspect follows through to the inner player and lightbox", () => {
+    const { computedProps, root } = renderVideo({
+        props: {
+            aspectRatio: "aspect-[custom]",
+            aspectRatioCustom: "aspect-[9/16]",
+        },
+    });
+    const wrapper = classTokens(root.class);
+    const video = classTokens(computedProps.classes.video);
+    const lightbox = classTokens(computedProps.classes.videoLightbox);
+
+    assert.ok(wrapper.has("aspect-[9/16]"));
+    assert.ok(video.has("aspect-[9/16]"));
+    assert.ok(lightbox.has("aspect-[9/16]"));
+    assert.ok(!video.has("aspect-video"));
+    assert.ok(!lightbox.has("aspect-video"));
+    assert.ok(lightbox.has("w-[min(95vw,calc(95vh*9/16))]"));
+});
+
+test("explicit wide 16/9 uses aspect-[16/9] on the inner player instead of aspect-video", () => {
+    const { computedProps, root } = renderVideo({
+        props: { aspectRatio: "aspect-[16/9]" },
+    });
+    const wrapper = classTokens(root.class);
+    const video = classTokens(computedProps.classes.video);
+    const lightbox = classTokens(computedProps.classes.videoLightbox);
+
+    assert.ok(wrapper.has("aspect-[16/9]"));
+    assert.ok(video.has("aspect-[16/9]"));
+    assert.ok(lightbox.has("aspect-[16/9]"));
+    assert.ok(!video.has("aspect-video"));
+    assert.ok(lightbox.has("w-[min(95vw,calc(95vh*16/9))]"));
 });
