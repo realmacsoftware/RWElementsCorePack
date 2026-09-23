@@ -1,49 +1,45 @@
-<li x-data="{ open: false }" class="cursor-pointer">
-    <div
-        class="{{classes.mobile.item}} flex items-center justify-between"
-        @click="open = !open"
-        @if(page.isActive)
-        aria-current="page"
-        @endif
-        @if(page.hasActiveChild)
-        data-active-child
-        @endif
-    >
-        @if(page.isFolder)
-        <button
-            aria-expanded="false"
-            x-bind:aria-expanded="open.toString()"
-            class="flex justify-between items-center"
-            @if(page.isActive)
-            aria-current="page"
-            @endif
-        >
-            <span>{{page.title}}</span>
-            @include("mobile_submenu_indicator")
-        </button>
-        @else
+<li x-data="{ open: false }">
+    @if(page.hasPages)
+    <div class="flex items-stretch justify-between">
         <a
-            class="flex justify-between items-center"
+            class="{{classes.mobile.item}} flex flex-1 items-center"
             href="{{page.url}}"
             @if(page.isActive)
             aria-current="page"
+            @endif
+            @if(page.hasActiveChild)
+            data-active-child
             @endif
             @if(page.openInNewWindow)
             target="_blank"
             @endif
             >{{page.title}}</a
         >
-        @if(page.hasPages)
         <button
             @click.stop="open = !open"
             aria-expanded="false"
             x-bind:aria-expanded="open.toString()"
-            class="pl-2"
+            class="flex cursor-pointer items-center pl-2"
         >
             @include("mobile_submenu_indicator")
         </button>
-        @endif @endif
     </div>
+    @else
+    <a
+        class="{{classes.mobile.item}} block"
+        href="{{page.url}}"
+        @if(page.isActive)
+        aria-current="page"
+        @endif
+        @if(page.hasActiveChild)
+        data-active-child
+        @endif
+        @if(page.openInNewWindow)
+        target="_blank"
+        @endif
+        >{{page.title}}</a
+    >
+    @endif
 
     @includeIf(page.hasPages, template: "mobile_submenu")
 </li>
