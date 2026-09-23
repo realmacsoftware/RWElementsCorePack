@@ -420,6 +420,29 @@ test("card-row template does not use reserved edit-prefixed variables", () => {
     assert.equal(/\bedit[A-Z]/.test(template), false);
 });
 
+test("autoplay stops after the user interacts with the slider", () => {
+    const options = swiperOptions(
+        renderSlider({
+            props: { autoPlay: true, autoPlayInterval: "5000" },
+        }),
+    );
+
+    assert.deepEqual(options.autoplay, {
+        delay: 5000,
+        disableOnInteraction: true,
+    });
+});
+
+test("autoplay stays off when disabled", () => {
+    const options = swiperOptions(
+        renderSlider({
+            props: { autoPlay: false },
+        }),
+    );
+
+    assert.equal(options.autoplay, false);
+});
+
 test("alpine forwards freeMode, breakpoints, and grabCursor to Swiper", () => {
     const alpine = fs.readFileSync(alpinePath, "utf8");
 
@@ -427,6 +450,7 @@ test("alpine forwards freeMode, breakpoints, and grabCursor to Swiper", () => {
     assert.match(alpine, /config\.breakpoints/);
     assert.match(alpine, /config\.grabCursor/);
     assert.match(alpine, /config\.watchOverflow/);
+    assert.match(alpine, /swiperConfig\.autoplay = config\.autoplay/);
 });
 
 test("default arrows overlay the slides on both sides", () => {

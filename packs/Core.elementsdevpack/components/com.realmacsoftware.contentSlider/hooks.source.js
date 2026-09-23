@@ -236,7 +236,7 @@ const transformHook = (rw) => {
         spaceBetween: isCardRow ? gap : 0,
         speed: 400,
         effect: effect,
-        autoplay: isAutoPlay ? { delay: interval, disableOnInteraction: false } : false,
+        autoplay: isAutoPlay ? { delay: interval, disableOnInteraction: true } : false,
     };
 
     if (isCardRow) {
