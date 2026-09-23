@@ -161,5 +161,73 @@ test("preload is still emitted for YouTube/Vimeo even though those templates ign
     });
 
     assert.equal(rw.computedProps.isMP4, false);
+    assert.equal(rw.computedProps.videoSrc, "");
     assert.equal(rw.computedProps.preload, "none");
+});
+
+test("mp4 templates play the hook-computed videoSrc, not a resource field", () => {
+    const index = fs.readFileSync(`${componentDir}/templates/index.html`, "utf8");
+    const lightbox = fs.readFileSync(
+        `${componentDir}/templates/include/lightbox.html`,
+        "utf8"
+    );
+
+    assert.match(index, /src="\{\{videoSrc\}\}"/);
+    assert.match(lightbox, /src="\{\{videoSrc\}\}"/);
+    assert.doesNotMatch(index, /src="\{\{video\.path\}\}"/);
+    assert.doesNotMatch(lightbox, /src="\{\{video\.path\}\}"/);
+});
+
+test("transform hook resolves a playable mp4 src before swapping the poster", () => {
+    const fromPath = renderVideo({
+        props: {
+            video: { format: "mp4", path: "/media/hero.mp4" },
+        },
+    });
+    assert.equal(fromPath.computedProps.isMP4, true);
+    assert.equal(fromPath.computedProps.videoSrc, "/media/hero.mp4");
+    assert.equal(
+        fromPath.computedProps.video.image,
+        "/assets/video/video-placeholder.png"
+    );
+
+    const fromFile = renderVideo({
+        props: {
+            video: {
+                format: "mp4",
+                file: "https://cdn.example.com/hero.mp4",
+                path: "https://example.com/folder",
+                image: "https://example.com/folder/hero.png",
+            },
+        },
+    });
+    assert.equal(fromFile.computedProps.videoSrc, "https://cdn.example.com/hero.mp4");
+
+    const fromPoster = renderVideo({
+        props: {
+            video: {
+                format: "mp4",
+                name: "hero.mp4",
+                image: "https://example.com/resources/hero.png",
+            },
+        },
+    });
+    assert.equal(
+        fromPoster.computedProps.videoSrc,
+        "https://example.com/resources/hero.mp4"
+    );
+});
+
+test("mp4 is detected from the filename when format is missing", () => {
+    const rw = renderVideo({
+        props: {
+            video: {
+                name: "walkthrough.mp4",
+                path: "/files/walkthrough.mp4",
+            },
+        },
+    });
+
+    assert.equal(rw.computedProps.isMP4, true);
+    assert.equal(rw.computedProps.videoSrc, "/files/walkthrough.mp4");
 });

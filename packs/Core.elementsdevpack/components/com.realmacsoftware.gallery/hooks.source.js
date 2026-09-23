@@ -1,3 +1,53 @@
+// After RapidWeaver #4452, resource.image (and a bare {{item}}) for an MP4 is
+// the poster PNG, not the video file. Folder children also have path set to
+// the containing folder, not the file (see RapidWeaver #4377). The playable
+// URL is resource.file when the app provides it; otherwise derive it from a
+// candidate that still looks like a video, or from the poster basename.
+const MP4_FILE_RE = /\.(mp4|m4v)(?:[?#].*)?$/i;
+const POSTER_FILE_RE = /\.(png|jpe?g|webp|gif|avif)(?:[?#].*)?$/i;
+
+const isMp4FileUrl = (value) =>
+    MP4_FILE_RE.test(String(value || "").split("?")[0]);
+
+const isMp4Resource = (resource) => {
+    if (!resource) return false;
+    const format = String(resource.format || "").toLowerCase();
+    if (format === "mp4" || format === "video/mp4" || format === "m4v") {
+        return true;
+    }
+    return isMp4FileUrl(
+        resource.file || resource.path || resource.name || resource.filename
+    );
+};
+
+const joinUrl = (base, name) => {
+    const folder = String(base || "").replace(/\/+$/, "");
+    const file = String(name || "").replace(/^\/+/, "");
+    if (!folder || !file) return "";
+    return `${folder}/${file}`;
+};
+
+const mp4SrcFromPoster = (image) => {
+    const url = String(image || "");
+    if (!POSTER_FILE_RE.test(url.split("?")[0])) return "";
+    return url.replace(/\.(png|jpe?g|webp|gif|avif)(?=[?#]|$)/i, ".mp4");
+};
+
+const resolveMp4Src = (resource) => {
+    if (!resource) return "";
+    const name = resource.name || resource.filename || "";
+    const withExt = [
+        resource.file,
+        resource.url,
+        resource.path,
+        resource.image,
+        joinUrl(resource.path, name),
+        mp4SrcFromPoster(resource.image),
+    ].find(isMp4FileUrl);
+    if (withExt) return withExt;
+    return resource.file ? String(resource.file) : "";
+};
+
 const transformHook = (rw) => {
     const {
         globalID,
@@ -170,14 +220,17 @@ const transformHook = (rw) => {
             resource.isVideo =
                 resource.format === "youtube" ||
                 resource.format === "vimeo" ||
-                resource.format === "mp4";
+                isMp4Resource(resource);
 
             // if it is a video, set booleans for isYoutube and isVimeo and isMP4
             if (resource.isVideo) {
                 resource.isYouTube =
                     resource.format === "youtube" ? true : false;
                 resource.isVimeo = resource.format === "vimeo" ? true : false;
-                resource.isMP4 = resource.format === "mp4" ? true : false;
+                resource.isMP4 = isMp4Resource(resource);
+                resource.videoSrc = resource.isMP4
+                    ? resolveMp4Src(resource)
+                    : "";
                 resource.options = {};
 
                 resource.caption = resource.name;
