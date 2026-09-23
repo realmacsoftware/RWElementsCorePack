@@ -40,10 +40,21 @@ function loadTransformHook() {
         classnames,
         advancedClasses: () => "advanced",
         globalHTMLTag: (rw, fallback) => fallback,
+        // Shipping copy is inlined at build time; npm's rw-elements-tools
+        // omits the file, so keep a compatible fallback for this harness.
+        switchToBool(value) {
+            if (value === true || value === "true") return true;
+            if (value === false || value === "false") return false;
+            return value;
+        },
     };
     const context = vm.createContext(sandbox);
 
-    for (const file of [switchToBoolPath, hookPath]) {
+    const files = fs.existsSync(switchToBoolPath)
+        ? [switchToBoolPath, hookPath]
+        : [hookPath];
+
+    for (const file of files) {
         vm.runInContext(fs.readFileSync(file, "utf8"), context, {
             filename: file,
         });
@@ -507,8 +518,100 @@ test("remote mode ships the PHP templates it depends on", () => {
     assert.match(lightbox, /@includeIf\(remotePublished, template: "remote-slides"\)/);
 });
 
+const movie = {
+    format: "mp4",
+    name: "Holiday.mp4",
+    image: "https://example.com/gallery/Holiday.png",
+    path: "https://example.com/gallery",
+};
+
+test("mp4 resources expose a playable videoSrc, not the poster", () => {
+    const rw = renderGallery({
+        resources: {
+            name: "Holiday",
+            resources: [
+                {
+                    ...movie,
+                    file: "https://cdn.example.com/Holiday.mp4",
+                },
+                {
+                    format: "mp4",
+                    name: "Clip.mp4",
+                    path: "https://example.com/files/Clip.mp4",
+                    image: "https://example.com/files/Clip.png",
+                },
+                {
+                    format: "mp4",
+                    name: "FolderChild.mp4",
+                    path: "https://example.com/resources/album",
+                    image: "https://example.com/resources/album/FolderChild.png",
+                },
+                {
+                    format: "mp4",
+                    name: "PosterOnly.mp4",
+                    image: "https://example.com/posters/PosterOnly.png",
+                },
+                { ...clip },
+            ],
+        },
+    });
+
+    const [withFile, withPath, folderChild, posterOnly, youtube] =
+        rw.computedProps.resources;
+
+    assert.equal(withFile.isMP4, true);
+    assert.equal(withFile.isVideo, true);
+    assert.equal(withFile.videoSrc, "https://cdn.example.com/Holiday.mp4");
+    assert.equal(withFile.image, "https://example.com/gallery/Holiday.png");
+
+    assert.equal(withPath.videoSrc, "https://example.com/files/Clip.mp4");
+    assert.equal(
+        folderChild.videoSrc,
+        "https://example.com/resources/album/FolderChild.mp4"
+    );
+    assert.equal(
+        posterOnly.videoSrc,
+        "https://example.com/posters/PosterOnly.mp4"
+    );
+
+    assert.equal(youtube.isVideo, true);
+    assert.equal(youtube.isMP4, false);
+    assert.equal(youtube.videoSrc, "");
+});
+
+test("mp4 is detected from the filename when format is missing", () => {
+    const rw = renderGallery({
+        resources: {
+            name: "Holiday",
+            resources: [
+                {
+                    name: "drone-shot.mp4",
+                    path: "https://example.com/media/drone-shot.mp4",
+                },
+            ],
+        },
+    });
+
+    const [resource] = rw.computedProps.resources;
+    assert.equal(resource.isMP4, true);
+    assert.equal(resource.isVideo, true);
+    assert.equal(resource.videoSrc, "https://example.com/media/drone-shot.mp4");
+});
+
+test("lightbox mp4 template plays videoSrc and keeps the poster on the video", () => {
+    const mp4 = fs.readFileSync(`${componentDir}/templates/include/mp4.html`, "utf8");
+
+    assert.match(mp4, /src="\{\{item\.videoSrc\}\}"/);
+    assert.match(mp4, /poster="\{\{item\.image\}\}"/);
+    assert.match(mp4, /\bcontrols\b/);
+    assert.match(mp4, /\bplaysinline\b/);
+    assert.doesNotMatch(mp4, /src="\{\{item\}\}"/);
+    assert.match(mp4, /lightboxItemMedia/);
+    assert.doesNotMatch(mp4, /id="self-hosted-video"/);
+});
+
 test("compiled files mirror the source changes", () => {
-    const markers = ["sourceType", "remoteFolderURL", "remotePublished", "phpId"];
+    const markers = ["sourceType", "remoteFolderURL", "remotePublished", "phpId", "videoSrc"];
 
     const hooksSource = fs.readFileSync(hookPath, "utf8");
     const hooksCompiled = fs.readFileSync(`${componentDir}/hooks.js`, "utf8");
