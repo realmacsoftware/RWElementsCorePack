@@ -199,7 +199,9 @@
 <audio
     x-ref="audio"
     data-initial-volume="{{initialVolume}}"
-    @ended="nextTrack"
+    data-loop="@if(loop)true@elsefalse@endif"
+    preload="auto"
+    @ended="handleEnded"
     @timeupdate="updateTime"
     @loadedmetadata="updateDuration"
 ></audio>
@@ -223,6 +225,12 @@
             isMuted: false,
             volumeAdjustable: true,
             _lastVolume: 1,
+            loop: true,
+            _holdTime: false,
+            _pendingSeek: null,
+            _seekGeneration: 0,
+            _blobUrls: null,
+            _blobFetches: null,
 
             get currentTrack() {
                 return this.tracks[this.currentTrackIndex] || {};
@@ -250,9 +258,22 @@
                     };
                 });
 
+                const audioEl = this.$refs.audio;
+                this.loop = audioEl?.dataset.loop !== "false";
+
                 if (this.tracks.length > 0) {
-                    this.$refs.audio.src = this.tracks[0].url;
+                    this.assignSource(this.tracks[0].url, { keepGeneration: true });
+                } else {
+                    this.syncLoopMode();
                 }
+
+                audioEl?.addEventListener("seeked", () => {
+                    if (!this._holdTime) return;
+                    const drift = Math.abs(
+                        (audioEl.currentTime || 0) - (this.currentTime || 0)
+                    );
+                    if (drift < 0.75) this._holdTime = false;
+                });
 
                 // Volume: feature-detect (iOS Safari ignores volume writes),
                 // then apply the configured initial volume.
@@ -311,6 +332,8 @@
                 this.stopProgressLoop();
                 this._barObserver?.disconnect();
                 this._barObserver = null;
+                this._blobUrls?.forEach((url) => URL.revokeObjectURL(url));
+                this._blobUrls = null;
             },
 
             watchProgressBarHeight() {
@@ -335,7 +358,9 @@
                         this._rafId = null;
                         return;
                     }
-                    if (!this.isScrubbing) this.currentTime = audio.currentTime;
+                    if (!this.isScrubbing && !this._holdTime) {
+                        this.currentTime = audio.currentTime;
+                    }
                     this._rafId = requestAnimationFrame(step);
                 };
                 this._rafId = requestAnimationFrame(step);
@@ -390,9 +415,8 @@
 
             loadTrack(index) {
                 this.currentTrackIndex = index;
-                const audio = this.$refs.audio;
-                audio.src = this.tracks[index].url;
-                audio.play();
+                this.assignSource(this.tracks[index].url);
+                this.$refs.audio.play();
                 this.isPlaying = true;
             },
 
@@ -400,25 +424,58 @@
                 this.currentTrackIndex =
                     (this.currentTrackIndex - 1 + this.tracks.length) %
                     this.tracks.length;
-                const audio = this.$refs.audio;
-                audio.src = this.tracks[this.currentTrackIndex].url;
-                audio.play();
+                this.assignSource(this.tracks[this.currentTrackIndex].url);
+                this.$refs.audio.play();
                 this.isPlaying = true;
             },
 
             nextTrack() {
                 this.currentTrackIndex =
                     (this.currentTrackIndex + 1) % this.tracks.length;
-                const audio = this.$refs.audio;
-                audio.src = this.tracks[this.currentTrackIndex].url;
-                audio.play();
+                this.assignSource(this.tracks[this.currentTrackIndex].url);
+                this.$refs.audio.play();
                 this.isPlaying = true;
+            },
+
+            // A single file uses the media loop attribute. A playlist still
+            // needs `ended` so it can advance, and only wraps when Loop is on.
+            syncLoopMode() {
+                const audio = this.$refs.audio;
+                if (!audio) return;
+                audio.loop = this.loop && this.tracks.length <= 1;
+            },
+
+            assignSource(url, { keepGeneration = false } = {}) {
+                if (!keepGeneration) this._seekGeneration++;
+                this._pendingSeek = null;
+                this._holdTime = false;
+                const audio = this.$refs.audio;
+                if (audio && url) audio.src = url;
+                this.syncLoopMode();
+            },
+
+            handleEnded() {
+                if (this.currentTrackIndex < this.tracks.length - 1) {
+                    this.nextTrack();
+                    return;
+                }
+                if (this.loop) {
+                    if (this.tracks.length <= 1) {
+                        this.applySeek(0);
+                        this.$refs.audio.play();
+                        this.isPlaying = true;
+                        return;
+                    }
+                    this.loadTrack(0);
+                    return;
+                }
+                this.isPlaying = false;
             },
 
             // Covers the cases the animation loop doesn't run for: seeking
             // while paused, and the initial position on load.
             updateTime() {
-                if (!this.isScrubbing) {
+                if (!this.isScrubbing && !this._holdTime) {
                     this.currentTime = this.$refs.audio.currentTime;
                 }
             },
@@ -428,23 +485,142 @@
             },
 
             seek(time) {
-                this.$refs.audio.currentTime = parseFloat(time);
-                this.currentTime = parseFloat(time);
+                this.applySeek(parseFloat(time));
             },
 
             skipBack() {
                 const audio = this.$refs.audio;
-                audio.currentTime = Math.max(0, audio.currentTime - 10);
-                this.currentTime = audio.currentTime;
+                this.applySeek((audio.currentTime || 0) - 10);
             },
 
             skipForward() {
                 const audio = this.$refs.audio;
-                audio.currentTime = Math.min(
-                    audio.duration,
-                    audio.currentTime + 10
-                );
-                this.currentTime = audio.currentTime;
+                this.applySeek((audio.currentTime || 0) + 10);
+            },
+
+            // Chromium only seeks inside `seekable`. Hosts that omit
+            // Accept-Ranges leave that range at [0, 0], so currentTime writes
+            // are ignored (Safari still seeks). Fall back to a blob URL, which
+            // is seekable without server range support.
+            applySeek(time) {
+                const audio = this.$refs.audio;
+                if (!audio) return;
+                const target = this.clampSeekTime(audio, time);
+                if (target == null) return;
+                this.currentTime = target;
+                if (this.canSeekTo(audio, target)) {
+                    audio.currentTime = target;
+                    return;
+                }
+                this._holdTime = true;
+                this._pendingSeek = target;
+                const generation = this._seekGeneration;
+                this.loadSeekableSource(audio, generation)
+                    .then(() => {
+                        if (generation !== this._seekGeneration) return;
+                        const pending = this._pendingSeek;
+                        if (pending == null || !this.canSeekTo(audio, pending)) {
+                            return;
+                        }
+                        audio.currentTime = pending;
+                        this.currentTime = pending;
+                        this._pendingSeek = null;
+                    })
+                    .catch(() => {
+                        if (generation !== this._seekGeneration) return;
+                        this._holdTime = false;
+                        this._pendingSeek = null;
+                    });
+            },
+
+            clampSeekTime(audio, time) {
+                let t = Number(time);
+                if (!Number.isFinite(t)) return null;
+                if (t < 0) t = 0;
+                if (Number.isFinite(audio.duration)) {
+                    t = Math.min(t, audio.duration);
+                }
+                return t;
+            },
+
+            canSeekTo(audio, time) {
+                const ranges = audio.seekable;
+                if (!ranges || ranges.length === 0) return false;
+                for (let i = 0; i < ranges.length; i++) {
+                    if (time >= ranges.start(i) - 0.01 && time <= ranges.end(i) + 0.05) {
+                        return true;
+                    }
+                }
+                return false;
+            },
+
+            loadSeekableSource(audio, generation) {
+                const source = audio.currentSrc || audio.src;
+                if (!source || source.startsWith("blob:")) return Promise.resolve();
+                if (!this._blobUrls) this._blobUrls = new Map();
+                const cached = this._blobUrls.get(source);
+                if (cached) return this.swapToBlob(audio, cached, generation);
+                if (!this._blobFetches) this._blobFetches = new Map();
+                let pending = this._blobFetches.get(source);
+                if (!pending) {
+                    pending = fetch(source)
+                        .then((response) => {
+                            if (!response.ok) throw new Error(String(response.status));
+                            return response.blob();
+                        })
+                        .then((blob) => {
+                            const url = URL.createObjectURL(blob);
+                            this._blobUrls.set(source, url);
+                            return url;
+                        })
+                        .finally(() => {
+                            this._blobFetches.delete(source);
+                        });
+                    this._blobFetches.set(source, pending);
+                }
+                return pending.then((url) => this.swapToBlob(audio, url, generation));
+            },
+
+            swapToBlob(audio, blobUrl, generation) {
+                if (generation !== this._seekGeneration) return Promise.resolve();
+                if (audio.src === blobUrl) return Promise.resolve();
+                const playing = !audio.paused;
+                const volume = audio.volume;
+                const muted = audio.muted;
+                return new Promise((resolve, reject) => {
+                    const finish = () => {
+                        audio.volume = volume;
+                        audio.muted = muted;
+                        const pending = this._pendingSeek;
+                        if (pending != null && this.canSeekTo(audio, pending)) {
+                            audio.currentTime = pending;
+                            this.currentTime = pending;
+                        }
+                        if (!playing) {
+                            resolve();
+                            return;
+                        }
+                        audio.play().then(resolve).catch(resolve);
+                    };
+                    const onReady = () => {
+                        audio.removeEventListener("loadedmetadata", onReady);
+                        audio.removeEventListener("error", onError);
+                        if (generation !== this._seekGeneration) {
+                            resolve();
+                            return;
+                        }
+                        finish();
+                    };
+                    const onError = () => {
+                        audio.removeEventListener("loadedmetadata", onReady);
+                        audio.removeEventListener("error", onError);
+                        reject(new Error("blob load failed"));
+                    };
+                    audio.addEventListener("loadedmetadata", onReady);
+                    audio.addEventListener("error", onError);
+                    audio.src = blobUrl;
+                    this.syncLoopMode();
+                });
             },
 
             startScrubbing(event) {
