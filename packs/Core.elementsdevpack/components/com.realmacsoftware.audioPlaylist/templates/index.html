@@ -731,12 +731,14 @@
                 );
             },
 
-            // Extend the fill to the thumb's centre so the two meet seamlessly.
+            // Cover the whole thumb. Stopping at its centre leaves the fill's
+            // rounded cap short of the circle, so the track shows through on
+            // the thumb's left edge.
             progressFillWidth() {
                 if (!this.duration) return "0%";
                 const progress = this.progressRatio();
                 return `calc(${progress * 100}% + ${
-                    (0.5 - progress) * this.thumbSize()
+                    (1 - progress) * this.thumbSize()
                 }px)`;
             },
 
