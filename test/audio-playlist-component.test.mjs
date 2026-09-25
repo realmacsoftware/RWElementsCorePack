@@ -194,6 +194,18 @@ test("time and pause switches normalize to booleans", () => {
     assert.equal(off.pauseWhenOutOfView, false);
 });
 
+test("progress fill covers the thumb so the track cannot show behind it", () => {
+    const template = fs.readFileSync(
+        "packs/Core.elementsdevpack/components/com.realmacsoftware.audioPlaylist/templates/index.html",
+        "utf8"
+    );
+    const start = template.indexOf("progressFillWidth() {");
+    const fill = template.slice(start, template.indexOf("thumbLeft() {", start));
+
+    assert.match(fill, /\(1 - progress\) \* this\.thumbSize\(\)/);
+    assert.doesNotMatch(fill, /\(0\.5 - progress\)/);
+});
+
 test("loop defaults on so existing players keep repeating", () => {
     assert.equal(renderAudioPlaylist().computedProps.loop, true);
     assert.equal(renderAudioPlaylist({ props: { loop: undefined } }).computedProps.loop, true);
