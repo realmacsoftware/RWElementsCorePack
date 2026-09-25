@@ -194,6 +194,18 @@ test("time and pause switches normalize to booleans", () => {
     assert.equal(off.pauseWhenOutOfView, false);
 });
 
+test("loop defaults on so existing players keep repeating", () => {
+    assert.equal(renderAudioPlaylist().computedProps.loop, true);
+    assert.equal(renderAudioPlaylist({ props: { loop: undefined } }).computedProps.loop, true);
+});
+
+test("loop can be turned off from the inspector", () => {
+    assert.equal(renderAudioPlaylist({ props: { loop: false } }).computedProps.loop, false);
+    assert.equal(renderAudioPlaylist({ props: { loop: "false" } }).computedProps.loop, false);
+    assert.equal(renderAudioPlaylist({ props: { loop: "true" } }).computedProps.loop, true);
+    assert.equal(renderAudioPlaylist({ props: { loop: true } }).computedProps.loop, true);
+});
+
 test("pause when off screen wires the intersect binding on the root", () => {
     const on = renderAudioPlaylist({ props: { pauseWhenOutOfView: true } });
     assert.equal(on.root.args["x-bind"], "pauseWhenHidden");

@@ -25,6 +25,14 @@
                     "switch": {
                         "default": false
                     }
+                },
+                {
+                    "title": "Loop",
+                    "property": "loop",
+                    "responsive": false,
+                    "switch": {
+                        "default": true
+                    }
                 }
             ]
         },
