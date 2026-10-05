@@ -1,8 +1,9 @@
-// After RapidWeaver #4452, resource.image (and a bare {{item}}) for an MP4 is
-// the poster PNG, not the video file. Folder children also have path set to
-// the containing folder, not the file (see RapidWeaver #4377). The playable
-// URL is resource.file when the app provides it; otherwise derive it from a
-// candidate that still looks like a video, or from the poster basename.
+// In preview/publish, resource.image (and a bare {{item}}) for an MP4 is the
+// exported poster, not the video file. Gallery items are folder children, so
+// their path is the containing folder, not the file (see RapidWeaver #4377),
+// and name is the display name, not the published filename. The playable URL
+// is resource.file when the app provides it; otherwise derive it from a
+// candidate that still looks like a video, or from the poster's filename.
 const MP4_FILE_RE = /\.(mp4|m4v)(?:[?#].*)?$/i;
 const POSTER_FILE_RE = /\.(png|jpe?g|webp|gif|avif)(?:[?#].*)?$/i;
 
@@ -27,10 +28,27 @@ const joinUrl = (base, name) => {
     return `${folder}/${file}`;
 };
 
-const mp4SrcFromPoster = (image) => {
+// Extension of the published video file. The app keeps the case of the
+// original extension (Clip.MP4 publishes as clip.MP4).
+const mp4Extension = (resource) => {
+    const name = String(resource.name || resource.filename || "");
+    const match = name.match(/\.(mp4|m4v)$/i);
+    if (match) return match[1];
+    return String(resource.format || "").toLowerCase() === "m4v" ? "m4v" : "mp4";
+};
+
+// The app exports a video's poster next to the video as
+// "<safe-basename>-poster.png", where the video is "<safe-basename>.<ext>"
+// (RWResource.posterSlug and slug). The safe basename is lowercased and has
+// spaces and punctuation replaced, so swap the poster suffix back rather
+// than rebuilding the filename from resource.name.
+const mp4SrcFromPoster = (image, ext = "mp4") => {
     const url = String(image || "");
     if (!POSTER_FILE_RE.test(url.split("?")[0])) return "";
-    return url.replace(/\.(png|jpe?g|webp|gif|avif)(?=[?#]|$)/i, ".mp4");
+    return url.replace(
+        /(?:-poster)?\.(png|jpe?g|webp|gif|avif)(?=[?#]|$)/i,
+        `.${ext}`
+    );
 };
 
 const resolveMp4Src = (resource) => {
@@ -41,8 +59,8 @@ const resolveMp4Src = (resource) => {
         resource.url,
         resource.path,
         resource.image,
+        mp4SrcFromPoster(resource.image, mp4Extension(resource)),
         joinUrl(resource.path, name),
-        mp4SrcFromPoster(resource.image),
     ].find(isMp4FileUrl);
     if (withExt) return withExt;
     return resource.file ? String(resource.file) : "";

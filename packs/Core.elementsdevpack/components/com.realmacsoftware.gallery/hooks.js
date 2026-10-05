@@ -115,10 +115,19 @@ const joinUrl = (base, name) => {
   if (!folder || !file) return "";
   return `${folder}/${file}`;
 };
-const mp4SrcFromPoster = (image) => {
+const mp4Extension = (resource) => {
+  const name = String(resource.name || resource.filename || "");
+  const match = name.match(/\.(mp4|m4v)$/i);
+  if (match) return match[1];
+  return String(resource.format || "").toLowerCase() === "m4v" ? "m4v" : "mp4";
+};
+const mp4SrcFromPoster = (image, ext = "mp4") => {
   const url = String(image || "");
   if (!POSTER_FILE_RE.test(url.split("?")[0])) return "";
-  return url.replace(/\.(png|jpe?g|webp|gif|avif)(?=[?#]|$)/i, ".mp4");
+  return url.replace(
+    /(?:-poster)?\.(png|jpe?g|webp|gif|avif)(?=[?#]|$)/i,
+    `.${ext}`
+  );
 };
 const resolveMp4Src = (resource) => {
   if (!resource) return "";
@@ -128,8 +137,8 @@ const resolveMp4Src = (resource) => {
     resource.url,
     resource.path,
     resource.image,
-    joinUrl(resource.path, name),
-    mp4SrcFromPoster(resource.image)
+    mp4SrcFromPoster(resource.image, mp4Extension(resource)),
+    joinUrl(resource.path, name)
   ].find(isMp4FileUrl);
   if (withExt) return withExt;
   return resource.file ? String(resource.file) : "";
