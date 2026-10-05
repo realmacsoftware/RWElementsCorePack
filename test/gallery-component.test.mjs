@@ -687,6 +687,25 @@ test("lightbox root toggles invisible and pointer-events-none from one x-effect"
     assert.match(root[0], /toggle\('pointer-events-none', !show\)/);
 });
 
+// Navigating or closing while a lightbox video is playing used to leave the
+// previous soundtrack running (#57685 points 1 and 3). Pause without resetting
+// currentTime so returning to a paused clip still resumes mid-way (point 2).
+test("lightbox Alpine pauses video/audio on prev/next and on close", () => {
+    const alpine = fs.readFileSync(
+        `${componentDir}/templates/alpine-gallery-lightbox.html`,
+        "utf8"
+    );
+
+    assert.match(alpine, /pauseLightboxMedia\s*\(/);
+    assert.match(alpine, /querySelectorAll\(\s*["']video, audio["']/);
+    assert.match(alpine, /media\.pause\s*\(/);
+    assert.doesNotMatch(alpine, /media\.currentTime\s*=/);
+    assert.match(alpine, /next\s*\(\)\s*\{[\s\S]*?pauseLightboxMedia\s*\(/);
+    assert.match(alpine, /prev\s*\(\)\s*\{[\s\S]*?pauseLightboxMedia\s*\(/);
+    assert.match(alpine, /hide\s*\(\)\s*\{[\s\S]*?pauseLightboxMedia\s*\(/);
+    assert.match(alpine, /\$watch\(\s*["']show["'][\s\S]*?!value[\s\S]*?pauseLightboxMedia\s*\(/);
+});
+
 test("compiled files mirror the source changes", () => {
     const markers = ["sourceType", "remoteFolderURL", "remotePublished", "phpId", "videoSrc"];
 
