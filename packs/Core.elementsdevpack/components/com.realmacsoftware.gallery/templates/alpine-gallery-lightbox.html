@@ -15,6 +15,19 @@ includeOnce: true)
                 this.setupEventListeners();
             },
 
+            // Pause lightbox video/audio without resetting currentTime so a
+            // paused clip still resumes mid-way when the user returns (#57685).
+            pauseLightboxMedia() {
+                const root = this.$el;
+                if (!root) {
+                    return;
+                }
+
+                root.querySelectorAll("video, audio").forEach((media) => {
+                    media.pause();
+                });
+            },
+
             setupKeyboardControls() {
                 const keyActions = {
                     Escape: () => this.hide(),
@@ -56,6 +69,10 @@ includeOnce: true)
                     if (value && this.scrollTarget !== null) {
                         this.scrollToTarget();
                     }
+                    // Overlay/close set show=false directly; pause any playing media.
+                    if (!value) {
+                        this.pauseLightboxMedia();
+                    }
                 });
             },
 
@@ -70,14 +87,17 @@ includeOnce: true)
             },
 
             hide() {
+                this.pauseLightboxMedia();
                 this.show = false;
             },
 
             next() {
+                this.pauseLightboxMedia();
                 this.to((current, offset) => current + offset * this.skip);
             },
 
             prev() {
+                this.pauseLightboxMedia();
                 this.to((current, offset) => current - offset * this.skip);
             },
 

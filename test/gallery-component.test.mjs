@@ -598,6 +598,65 @@ test("mp4 is detected from the filename when format is missing", () => {
     assert.equal(resource.videoSrc, "https://example.com/media/drone-shot.mp4");
 });
 
+// Shape of a Gallery folder child in preview/publish, from
+// RWResource.templateProperties: path is the folder, name is the display name,
+// and image is the exported poster "<safe-basename>-poster.png". The video is
+// published next to it as "<safe-basename>.<ext>" (#168).
+test("folder-child mp4s resolve to the published file, not the display name or poster", () => {
+    const rw = renderGallery({
+        resources: {
+            name: "Album",
+            resources: [
+                {
+                    format: "mp4",
+                    name: "Holiday Clip.mp4",
+                    path: "../resources/album",
+                    image: "../resources/album/holiday-clip-poster.png",
+                },
+                {
+                    format: "mp4",
+                    name: "Drone.MP4",
+                    path: "../resources/album",
+                    image: "../resources/album/drone-poster.png",
+                },
+                {
+                    format: "m4v",
+                    name: "Intro",
+                    path: "resources/album",
+                    image: "resources/album/intro-poster.png",
+                },
+            ],
+        },
+    });
+
+    const [spaced, upper, noExt] = rw.computedProps.resources;
+
+    assert.equal(spaced.isMP4, true);
+    assert.equal(spaced.videoSrc, "../resources/album/holiday-clip.mp4");
+    assert.equal(spaced.image, "../resources/album/holiday-clip-poster.png");
+    assert.equal(upper.videoSrc, "../resources/album/drone.MP4");
+    assert.equal(noExt.videoSrc, "resources/album/intro.m4v");
+});
+
+test("folder-child mp4s from apps that still put the video in image keep playing", () => {
+    const rw = renderGallery({
+        resources: {
+            name: "Album",
+            resources: [
+                {
+                    format: "mp4",
+                    name: "Holiday Clip.mp4",
+                    path: "../resources/album",
+                    image: "../resources/album/holiday-clip.mp4",
+                },
+            ],
+        },
+    });
+
+    const [resource] = rw.computedProps.resources;
+    assert.equal(resource.videoSrc, "../resources/album/holiday-clip.mp4");
+});
+
 test("lightbox mp4 template plays videoSrc and keeps the poster on the video", () => {
     const mp4 = fs.readFileSync(`${componentDir}/templates/include/mp4.html`, "utf8");
 
@@ -608,6 +667,43 @@ test("lightbox mp4 template plays videoSrc and keeps the poster on the video", (
     assert.doesNotMatch(mp4, /src="\{\{item\}\}"/);
     assert.match(mp4, /lightboxItemMedia/);
     assert.doesNotMatch(mp4, /id="self-hosted-video"/);
+});
+
+// A second x-effect on the same element is dropped by the HTML parser, so the
+// open lightbox kept pointer-events-none and the video controls (and the
+// close/prev/next buttons) never received clicks (#168).
+test("lightbox root toggles invisible and pointer-events-none from one x-effect", () => {
+    const lightbox = fs.readFileSync(
+        `${componentDir}/templates/include/lightbox.html`,
+        "utf8"
+    );
+    // Attribute values contain "=>", so read up to the tag's own closing line.
+    const root = lightbox.match(/<div\s+x-data="galleryLightbox[\s\S]*?\n>/);
+    assert.ok(root, "lightbox root element not found");
+
+    const effects = root[0].match(/\bx-effect=/g) || [];
+    assert.equal(effects.length, 1, "duplicate x-effect attributes on the lightbox root");
+    assert.match(root[0], /toggle\('invisible', !show\)/);
+    assert.match(root[0], /toggle\('pointer-events-none', !show\)/);
+});
+
+// Navigating or closing while a lightbox video is playing used to leave the
+// previous soundtrack running (#57685 points 1 and 3). Pause without resetting
+// currentTime so returning to a paused clip still resumes mid-way (point 2).
+test("lightbox Alpine pauses video/audio on prev/next and on close", () => {
+    const alpine = fs.readFileSync(
+        `${componentDir}/templates/alpine-gallery-lightbox.html`,
+        "utf8"
+    );
+
+    assert.match(alpine, /pauseLightboxMedia\s*\(/);
+    assert.match(alpine, /querySelectorAll\(\s*["']video, audio["']/);
+    assert.match(alpine, /media\.pause\s*\(/);
+    assert.doesNotMatch(alpine, /media\.currentTime\s*=/);
+    assert.match(alpine, /next\s*\(\)\s*\{[\s\S]*?pauseLightboxMedia\s*\(/);
+    assert.match(alpine, /prev\s*\(\)\s*\{[\s\S]*?pauseLightboxMedia\s*\(/);
+    assert.match(alpine, /hide\s*\(\)\s*\{[\s\S]*?pauseLightboxMedia\s*\(/);
+    assert.match(alpine, /\$watch\(\s*["']show["'][\s\S]*?!value[\s\S]*?pauseLightboxMedia\s*\(/);
 });
 
 test("compiled files mirror the source changes", () => {

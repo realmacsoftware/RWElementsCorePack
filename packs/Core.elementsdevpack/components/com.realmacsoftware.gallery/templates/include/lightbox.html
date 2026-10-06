@@ -4,8 +4,7 @@
     @if(!edit)
     x-cloak
     @endif
-    x-effect="setTimeout(() => $el.classList.toggle('invisible', !show), show ? 0 : 300)"
-    x-effect="setTimeout(() => $el.classList.toggle('pointer-events-none', !show), show ? 0 : 300)"
+    x-effect="setTimeout(() => { $el.classList.toggle('invisible', !show); $el.classList.toggle('pointer-events-none', !show); }, show ? 0 : 300)"
     :class="{ 'visible': show }"
     class="isolate fixed inset-0 z-50 flex w-full items-center justify-center pointer-events-none"
 >
