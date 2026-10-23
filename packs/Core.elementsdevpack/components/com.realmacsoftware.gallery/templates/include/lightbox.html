@@ -108,6 +108,7 @@
                 @each(item in resources)
                 <li
                     class="{{classes.lightboxItem}}"
+                    x-bind="focusableWhenVisible"
                     @click="show = false"
                     role="option"
                 >

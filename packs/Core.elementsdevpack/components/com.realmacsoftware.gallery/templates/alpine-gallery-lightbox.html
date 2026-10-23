@@ -17,9 +17,13 @@ includeOnce: true)
 
             // Pause lightbox video/audio without resetting currentTime so a
             // paused clip still resumes mid-way when the user returns (#57685).
-            pauseLightboxMedia() {
-                const root = this.$el;
-                if (!root) {
+            // Query from the component root. next()/prev()/hide() run from the
+            // arrow buttons' @click, and Alpine's $el is that button, which
+            // contains no media (#177). Pass a slide to pause only its media
+            // when that slide leaves the scrollport.
+            pauseLightboxMedia(scope) {
+                const root = scope || this.$root;
+                if (!root || typeof root.querySelectorAll !== "function") {
                     return;
                 }
 
@@ -117,8 +121,13 @@ includeOnce: true)
                 "x-intersect:enter"() {
                     this.$el.removeAttribute("tabindex");
                 },
-                "x-intersect:leave"() {
+                // Inset the root. A full-bleed snap leaves the previous slide's
+                // edge on the viewport boundary, which threshold 0 still counts
+                // as intersecting, so a plain leave never fires on swipe (#177).
+                "x-intersect:leave.margin.-1px.-40px.-1px.-40px"() {
                     this.$el.setAttribute("tabindex", "-1");
+                    // Swipe and trackpad scrolling never call next()/prev().
+                    this.pauseLightboxMedia(this.$el);
                 },
             },
 
