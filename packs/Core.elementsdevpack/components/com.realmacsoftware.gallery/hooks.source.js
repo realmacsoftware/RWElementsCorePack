@@ -1,3 +1,71 @@
+// In preview/publish, resource.image (and a bare {{item}}) for an MP4 is the
+// exported poster, not the video file. Gallery items are folder children, so
+// their path is the containing folder, not the file (see RapidWeaver #4377),
+// and name is the display name, not the published filename. The playable URL
+// is resource.file when the app provides it; otherwise derive it from a
+// candidate that still looks like a video, or from the poster's filename.
+const MP4_FILE_RE = /\.(mp4|m4v)(?:[?#].*)?$/i;
+const POSTER_FILE_RE = /\.(png|jpe?g|webp|gif|avif)(?:[?#].*)?$/i;
+
+const isMp4FileUrl = (value) =>
+    MP4_FILE_RE.test(String(value || "").split("?")[0]);
+
+const isMp4Resource = (resource) => {
+    if (!resource) return false;
+    const format = String(resource.format || "").toLowerCase();
+    if (format === "mp4" || format === "video/mp4" || format === "m4v") {
+        return true;
+    }
+    return isMp4FileUrl(
+        resource.file || resource.path || resource.name || resource.filename
+    );
+};
+
+const joinUrl = (base, name) => {
+    const folder = String(base || "").replace(/\/+$/, "");
+    const file = String(name || "").replace(/^\/+/, "");
+    if (!folder || !file) return "";
+    return `${folder}/${file}`;
+};
+
+// Extension of the published video file. The app keeps the case of the
+// original extension (Clip.MP4 publishes as clip.MP4).
+const mp4Extension = (resource) => {
+    const name = String(resource.name || resource.filename || "");
+    const match = name.match(/\.(mp4|m4v)$/i);
+    if (match) return match[1];
+    return String(resource.format || "").toLowerCase() === "m4v" ? "m4v" : "mp4";
+};
+
+// The app exports a video's poster next to the video as
+// "<safe-basename>-poster.png", where the video is "<safe-basename>.<ext>"
+// (RWResource.posterSlug and slug). The safe basename is lowercased and has
+// spaces and punctuation replaced, so swap the poster suffix back rather
+// than rebuilding the filename from resource.name.
+const mp4SrcFromPoster = (image, ext = "mp4") => {
+    const url = String(image || "");
+    if (!POSTER_FILE_RE.test(url.split("?")[0])) return "";
+    return url.replace(
+        /(?:-poster)?\.(png|jpe?g|webp|gif|avif)(?=[?#]|$)/i,
+        `.${ext}`
+    );
+};
+
+const resolveMp4Src = (resource) => {
+    if (!resource) return "";
+    const name = resource.name || resource.filename || "";
+    const withExt = [
+        resource.file,
+        resource.url,
+        resource.path,
+        resource.image,
+        mp4SrcFromPoster(resource.image, mp4Extension(resource)),
+        joinUrl(resource.path, name),
+    ].find(isMp4FileUrl);
+    if (withExt) return withExt;
+    return resource.file ? String(resource.file) : "";
+};
+
 const transformHook = (rw) => {
     const {
         globalID,
@@ -170,14 +238,17 @@ const transformHook = (rw) => {
             resource.isVideo =
                 resource.format === "youtube" ||
                 resource.format === "vimeo" ||
-                resource.format === "mp4";
+                isMp4Resource(resource);
 
             // if it is a video, set booleans for isYoutube and isVimeo and isMP4
             if (resource.isVideo) {
                 resource.isYouTube =
                     resource.format === "youtube" ? true : false;
                 resource.isVimeo = resource.format === "vimeo" ? true : false;
-                resource.isMP4 = resource.format === "mp4" ? true : false;
+                resource.isMP4 = isMp4Resource(resource);
+                resource.videoSrc = resource.isMP4
+                    ? resolveMp4Src(resource)
+                    : "";
                 resource.options = {};
 
                 resource.caption = resource.name;

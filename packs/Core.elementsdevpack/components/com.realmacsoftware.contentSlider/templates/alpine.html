@@ -65,6 +65,19 @@
                     effect: config.effect || 'slide',
                 };
 
+                if (config.freeMode) {
+                    swiperConfig.freeMode = config.freeMode;
+                }
+                if (config.breakpoints) {
+                    swiperConfig.breakpoints = config.breakpoints;
+                }
+                if (config.grabCursor) {
+                    swiperConfig.grabCursor = true;
+                }
+                if (config.watchOverflow) {
+                    swiperConfig.watchOverflow = true;
+                }
+
                 // Add fade-specific options for smooth crossfade
                 if (config.effect === 'fade') {
                     swiperConfig.fadeEffect = config.fadeEffect || { crossFade: true };

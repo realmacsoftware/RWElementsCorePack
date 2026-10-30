@@ -96,6 +96,53 @@ const switchToBool = (value) => {
   }
   return void 0;
 };
+const MP4_FILE_RE = /\.(mp4|m4v)(?:[?#].*)?$/i;
+const POSTER_FILE_RE = /\.(png|jpe?g|webp|gif|avif)(?:[?#].*)?$/i;
+const isMp4FileUrl = (value) => MP4_FILE_RE.test(String(value || "").split("?")[0]);
+const isMp4Resource = (resource) => {
+  if (!resource) return false;
+  const format = String(resource.format || "").toLowerCase();
+  if (format === "mp4" || format === "video/mp4" || format === "m4v") {
+    return true;
+  }
+  return isMp4FileUrl(
+    resource.file || resource.path || resource.name || resource.filename
+  );
+};
+const joinUrl = (base, name) => {
+  const folder = String(base || "").replace(/\/+$/, "");
+  const file = String(name || "").replace(/^\/+/, "");
+  if (!folder || !file) return "";
+  return `${folder}/${file}`;
+};
+const mp4Extension = (resource) => {
+  const name = String(resource.name || resource.filename || "");
+  const match = name.match(/\.(mp4|m4v)$/i);
+  if (match) return match[1];
+  return String(resource.format || "").toLowerCase() === "m4v" ? "m4v" : "mp4";
+};
+const mp4SrcFromPoster = (image, ext = "mp4") => {
+  const url = String(image || "");
+  if (!POSTER_FILE_RE.test(url.split("?")[0])) return "";
+  return url.replace(
+    /(?:-poster)?\.(png|jpe?g|webp|gif|avif)(?=[?#]|$)/i,
+    `.${ext}`
+  );
+};
+const resolveMp4Src = (resource) => {
+  if (!resource) return "";
+  const name = resource.name || resource.filename || "";
+  const withExt = [
+    resource.file,
+    resource.url,
+    resource.path,
+    resource.image,
+    mp4SrcFromPoster(resource.image, mp4Extension(resource)),
+    joinUrl(resource.path, name)
+  ].find(isMp4FileUrl);
+  if (withExt) return withExt;
+  return resource.file ? String(resource.file) : "";
+};
 const transformHook = (rw) => {
   var _a, _b, _c;
   const {
@@ -195,11 +242,12 @@ const transformHook = (rw) => {
       resource.lazy = wantsLazyThumbnails && index >= eagerCount;
       resource.alt = resource.alt || resource.caption || resource.author || "";
       resource.aspect = resource.aspect || (resource.width && resource.height ? `${resource.width}/${resource.height}` : "auto");
-      resource.isVideo = resource.format === "youtube" || resource.format === "vimeo" || resource.format === "mp4";
+      resource.isVideo = resource.format === "youtube" || resource.format === "vimeo" || isMp4Resource(resource);
       if (resource.isVideo) {
         resource.isYouTube = resource.format === "youtube" ? true : false;
         resource.isVimeo = resource.format === "vimeo" ? true : false;
-        resource.isMP4 = resource.format === "mp4" ? true : false;
+        resource.isMP4 = isMp4Resource(resource);
+        resource.videoSrc = resource.isMP4 ? resolveMp4Src(resource) : "";
         resource.options = {};
         resource.caption = resource.name;
         resource.author = resources.name;
