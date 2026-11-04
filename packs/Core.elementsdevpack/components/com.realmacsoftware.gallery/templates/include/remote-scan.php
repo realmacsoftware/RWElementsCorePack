@@ -1,9 +1,14 @@
 <?php
 /**
- * Reads the configured server folder and builds the image list used by the
+ * Reads the configured server folder and builds the media list used by the
  * remote grid and lightbox slides. Runs once per gallery instance — the
  * variables are suffixed with the node id so two galleries on one page
  * don't share state.
+ *
+ * Images (jpg, jpeg, png, gif, webp, avif) and self-hosted videos
+ * (mp4, m4v, webm, mov) are gallery items. Companion thumbnail images are
+ * paired with an item and never listed themselves. A video whose name
+ * contains "thumb" stays a clip.
  *
  * The folder can be written relative to the page ("resources/Instagram"),
  * relative to the site root ("/resources/Instagram") or as a full URL on this
@@ -82,9 +87,16 @@ if (!isset($rwGalleryImages_{{phpId}})) {
         }
 
         if ($rwGalleryDir_{{phpId}} !== false) {
-            $rwGalleryAllowed_{{phpId}} = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'avif'];
+            $rwGalleryImageExt_{{phpId}} = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'avif'];
+            $rwGalleryVideoMime_{{phpId}} = [
+                'mp4' => 'video/mp4',
+                'm4v' => 'video/mp4',
+                'webm' => 'video/webm',
+                'mov' => 'video/quicktime',
+            ];
             $rwGalleryFiles_{{phpId}} = [];
             $rwGalleryThumbs_{{phpId}} = [];
+            $rwGalleryMimes_{{phpId}} = [];
 
             // A companion thumbnail is any file whose name ends in a "thumb"
             // marker: photo_thumb.jpg, photo-thumb.jpg, photo.thumb.jpg,
@@ -110,11 +122,22 @@ if (!isset($rwGalleryImages_{{phpId}})) {
                 $rwGalleryExt_{{phpId}} = strtolower(
                     pathinfo($rwGalleryEntry_{{phpId}}, PATHINFO_EXTENSION)
                 );
-                if (!in_array($rwGalleryExt_{{phpId}}, $rwGalleryAllowed_{{phpId}}, true)) {
+                $rwGalleryIsImage_{{phpId}} = in_array(
+                    $rwGalleryExt_{{phpId}},
+                    $rwGalleryImageExt_{{phpId}},
+                    true
+                );
+                $rwGalleryMime_{{phpId}} = $rwGalleryVideoMime_{{phpId}}[$rwGalleryExt_{{phpId}}] ?? '';
+                if (!$rwGalleryIsImage_{{phpId}} && $rwGalleryMime_{{phpId}} === '') {
                     continue;
                 }
                 $rwGalleryStem_{{phpId}} = $rwGalleryStemOf_{{phpId}}($rwGalleryEntry_{{phpId}});
-                if (preg_match($rwGalleryMarker_{{phpId}}, $rwGalleryStem_{{phpId}})) {
+                // Only images can be companion posters. A clip named like a
+                // thumbnail is still a gallery item.
+                if (
+                    $rwGalleryIsImage_{{phpId}}
+                    && preg_match($rwGalleryMarker_{{phpId}}, $rwGalleryStem_{{phpId}})
+                ) {
                     $rwGalleryThumbs_{{phpId}}[
                         strtolower(trim(preg_replace(
                             $rwGalleryMarker_{{phpId}},
@@ -124,6 +147,7 @@ if (!isset($rwGalleryImages_{{phpId}})) {
                     ] = $rwGalleryEntry_{{phpId}};
                 } else {
                     $rwGalleryFiles_{{phpId}}[] = $rwGalleryEntry_{{phpId}};
+                    $rwGalleryMimes_{{phpId}}[$rwGalleryEntry_{{phpId}}] = $rwGalleryMime_{{phpId}};
                 }
             }
 
@@ -147,13 +171,20 @@ if (!isset($rwGalleryImages_{{phpId}})) {
                 $rwGallerySrc_{{phpId}} = $rwGalleryBase_{{phpId}} . '/' . rawurlencode($rwGalleryFile_{{phpId}});
                 $rwGalleryKey_{{phpId}} = strtolower(trim($rwGalleryStem_{{phpId}}));
                 $rwGalleryCaption_{{phpId}} = trim(preg_replace('/[-_]+/', ' ', $rwGalleryStem_{{phpId}}));
+                $rwGalleryMime_{{phpId}} = $rwGalleryMimes_{{phpId}}[$rwGalleryFile_{{phpId}}] ?? '';
+                $rwGalleryPoster_{{phpId}} = isset($rwGalleryThumbs_{{phpId}}[$rwGalleryKey_{{phpId}}])
+                    ? $rwGalleryBase_{{phpId}} . '/' . rawurlencode($rwGalleryThumbs_{{phpId}}[$rwGalleryKey_{{phpId}}])
+                    : '';
 
                 $rwGalleryImages_{{phpId}}[] = [
                     'src' => $rwGallerySrc_{{phpId}},
-                    'thumb' => isset($rwGalleryThumbs_{{phpId}}[$rwGalleryKey_{{phpId}}])
-                        ? $rwGalleryBase_{{phpId}} . '/' . rawurlencode($rwGalleryThumbs_{{phpId}}[$rwGalleryKey_{{phpId}}])
+                    'thumb' => $rwGalleryPoster_{{phpId}} !== ''
+                        ? $rwGalleryPoster_{{phpId}}
                         : $rwGallerySrc_{{phpId}},
                     'caption' => $rwGalleryCaption_{{phpId}},
+                    'isVideo' => $rwGalleryMime_{{phpId}} !== '',
+                    'mime' => $rwGalleryMime_{{phpId}},
+                    'poster' => $rwGalleryPoster_{{phpId}},
                 ];
             }
         }

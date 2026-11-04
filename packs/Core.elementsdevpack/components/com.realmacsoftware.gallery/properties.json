@@ -40,7 +40,7 @@
         {
           "visible": "sourceType == 'remote'",
           "information": {},
-          "title": "Full URL or relative path. Must be on the same server as your published site."
+          "title": "Full URL or relative path to a folder of images or videos on the same server as your published site."
         }
       ]
     },
