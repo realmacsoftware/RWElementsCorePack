@@ -497,6 +497,59 @@ test("companion thumbnails are paired, never listed as gallery items", () => {
     }
 });
 
+test("a leaf resource is not treated as a folder of gallery items", () => {
+    const dropped = renderGallery({
+        resources: {
+            name: "Warehoused videos",
+            url: "https://example.com/videos/",
+            format: "directory",
+        },
+    });
+
+    assert.equal(dropped.computedProps.hasResources, false);
+    assert.equal(dropped.computedProps.isRemote, false);
+    assert.equal(dropped.computedProps.resources, undefined);
+
+    const folder = renderGallery({
+        resources: {
+            name: "Playlist",
+            resources: [{ ...clip }],
+        },
+    });
+    assert.equal(folder.computedProps.hasResources, true);
+    assert.equal(folder.computedProps.resources.length, 1);
+    assert.equal(folder.computedProps.resources[0].isYouTube, true);
+});
+
+test("remote folder scan lists videos and the lightbox does not autoplay them", () => {
+    const scan = fs.readFileSync(
+        `${componentDir}/templates/include/remote-scan.php`,
+        "utf8"
+    );
+    for (const ext of ["jpg", "jpeg", "png", "gif", "webp", "avif", "mp4", "m4v", "webm", "mov"]) {
+        assert.match(scan, new RegExp(`'${ext}'`), `remote scan should accept .${ext}`);
+    }
+    assert.match(scan, /'isVideo'/);
+    assert.match(scan, /rawurlencode/);
+    assert.match(scan, /natcasesort/);
+
+    const slides = fs.readFileSync(
+        `${componentDir}/templates/include/remote-slides.php`,
+        "utf8"
+    );
+    const grid = fs.readFileSync(
+        `${componentDir}/templates/include/remote-grid.php`,
+        "utf8"
+    );
+    assert.match(slides, /<video/);
+    assert.match(slides, /\bcontrols\b/);
+    assert.match(slides, /\bplaysinline\b/);
+    assert.doesNotMatch(slides, /autoplay/);
+    assert.match(grid, /<video/);
+    assert.match(grid, /\bmuted\b/);
+    assert.doesNotMatch(grid, /autoplay/);
+});
+
 test("remote mode ships the PHP templates it depends on", () => {
     const info = JSON.parse(fs.readFileSync(`${componentDir}/info.json`, "utf8"));
     // Without this the page publishes as .html and the PHP never executes

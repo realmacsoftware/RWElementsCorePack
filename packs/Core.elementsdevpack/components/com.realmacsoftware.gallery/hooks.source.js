@@ -192,6 +192,12 @@ const transformHook = (rw) => {
     // (which differs under local preview).
     const pageDocRoot = sanitiseForPhp(rw.page?.docRootPath);
 
+    // A folder resource is { name, resources: [child, ...] }. YouTube
+    // playlists arrive that way because the app expands them into child
+    // resources. A leaf — a single file, or a remote directory the app has
+    // not expanded — has no children, so the drop zone stays up. A server
+    // folder URL belongs in remote mode (remoteFolderURL), which the
+    // published PHP scan reads.
     let galleryResources = resources?.resources;
     let hasResources = galleryResources?.length > 0;
 
